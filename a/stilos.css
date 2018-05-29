@@ -1,0 +1,121 @@
+tr {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+
+#ListaChamados tr {  
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: 12px;
+}
+
+
+.TamanhoDoTextoDeVersaoERelease {
+	font-size:18px;
+	font-weight:bold;
+	color:#F00
+}
+
+a {  
+  color: #2200FF; 
+  text-decoration: none
+}
+
+a:hover {  color: #FF0000; text-decoration: none }
+.unnamed1 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #0000FF}
+body {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px}
+.unnamed2 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #0000FF}
+.bordaTexto {border-width : 1px;border-style : solid;border-color : black;font-family : Verdana; font-size : 10px;color: #003300;; background-color: #FFFFFF}
+
+.tabelaTitulo2 {
+	background-color: #39F;
+	font-weight: bolder;
+	color: #FFF;
+}
+
+.tabelaCorpo2 {
+	background-color: #FFF;
+	color: #000;
+}
+
+
+.tabelaBorda {  background-color: #FF6600}
+.tabelaFundo {  background-color: #FCE9BC}
+.tabelaTitulo {  font-family: Verdana, Arial, Helvetica, sans-serif; font-weight: bold; color: #FFFFFF; background-color: #FF9900}
+.textoAzulSemBorda {
+	border-color : Gray;
+	border-style : solid;
+	border-width : 1px;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 11;
+	color : Blue;
+	}
+.CalendarToday {
+	font-weight: bold;
+	text-decoration: underline;
+	background-color: #00CCFF;
+	font-style: italic;
+	color: #003366;
+
+}
+
+a.fundoclaro {
+	color : #000000;
+	text-decoration : none;
+}
+
+a.fundoclaro:hover {
+	text-decoration : underline;
+	font-weight: bold;
+	color: #003333;
+
+
+}
+.borda_fina {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            color: #666666; border: #CCCCCC;
+            border-style: solid; 
+            border-top-width: 1px;
+            border-right-width: 1px;
+            border-bottom-width: 1px; 
+            border-left-width: 1px}
+.bordaTexto {
+           border-width : 1px;
+           border-style : solid;
+	       border-color : 3399cc;
+	       font-family : Verdana;
+           font-size : 10px;
+           color: #003300;}
+TABLE.Mtable TD {border-bottom:1px solid #000033}
+.bordagrafite01 {
+	border: 1px solid #CCCCCC;
+}
+.bordagrafite02 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	border: 1px solid #999999;
+}
+.alpha {
+	filter: Alpha(Opacity=60);
+}
+.CalendarFeriado {
+	font-weight: bold;
+	text-decoration: underline;
+	background-color: #FFC4C4;
+	font-style: italic;
+	color: #003366;
+}
+.ListaContatos {
+	width:460px;
+	overflow: auto;
+	height: 400px;
+}
+.Restricao_1 {
+	color: #00F;
+	float:left
+}
+.Restricao_0 {
+	color: #F00;	
+	float:left
+}

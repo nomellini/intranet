@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<FORM ENCTYPE="multipart/form-data" ACTION="teste.php" METHOD=POST name="form">
+  <p> 
+    <INPUT TYPE="hidden" name="MAX_FILE_SIZE" value="10000000">
+    Send this file: </p>
+  <p>Indique a letra que esta o adm : 
+    <select name="letra" onClick=seleciona();>
+      <option value="Z:\" selected>z:\</option>
+      <option value="Y:\">Y:\</option>
+    </select>
+    <br>
+    <INPUT NAME="userfile1" TYPE="file"  >
+    \DTM\CLIENTE.TXT<br>
+    <INPUT NAME="userfile2" TYPE="file"  >
+    \DTM\SISTEMAS.TXT<br>
+    <INPUT NAME="userfile3" TYPE="file" >
+    \DTM\TREINADO.TXT</p>
+  <p> 
+    <INPUT TYPE="submit" VALUE="Send File">
+  </p>
+</FORM>
+<SCRIPT>
+function seleciona() {
+  a = document.form.letra.value + 'DTM\CLIENTES.TXT';
+  document.form.outerTEXT = a;
+}
+</SCRIPT>
+</body>
+</html>

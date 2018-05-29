@@ -1,0 +1,156 @@
+Comparando os arquivos inicio.php e inicio2.php
+****** inicio.php
+     1:  <?
+     2:   mysql_connect(localhost, root, marcia);
+****** inicio2.php
+     1:  <?
+     2:  
+     3:   mysql_connect(localhost, root, marcia);
+******
+
+****** inicio.php
+     7:  
+     8:      require("scripts/conn.php");                
+****** inicio2.php
+     8:  
+     9:  
+    10:      require("scripts/conn.php");                
+******
+
+****** inicio.php
+    37:  <script src="relatorios/coolbuttons.js"></script>
+    38:  
+    39:  <table width="100%" border="0" cellspacing="1" cellpadding="1" class="coolBar">
+****** inicio2.php
+    39:  <script src="relatorios/coolbuttons.js"></script>
+    40:  <table width="100%" border="0" cellspacing="1" cellpadding="1" class="coolBar">
+******
+
+****** inicio.php
+    77:            <tr> 
+    78:              <td width="60%"> 
+    79:                          <font size="2"> <b> 
+    80:                <? 
+****** inicio2.php
+    78:            <tr> 
+    79:              <td width="60%"> <font size="1"> <br>
+    80:                <? 
+******
+
+****** inicio.php
+    87:                                  }
+    88:                            ?>                      
+    89:                </b></font> 
+    90:              <BR>
+    91:                          <a href="/a/versao/">
+    92:                          
+    93:                          <?  $i_msg = "Liberação de Release ";
+    94:                              if ($i_conta < 1) { echo "<font color=#ff0000 >$i_msg : Existem " . -$i_conta .  " releases em anda
+    95:  mento</font>"; } else {echo $i_msg;}  
+    96:                                  
+    97:                              if($i_conta > 0) {?>
+    98:                                    <font color = #ff0000 size = 2>: Você tem <?=$i_conta?> tarefa(s)</font>
+    99:                           <? } ?>
+   100:                                   </a>                     <br>
+   101:                <? if($manut) {   ?>
+   102:                <a href="manut/index.php">Manuten&ccedil;&atilde;o de tabelas</a><br>
+****** inicio2.php
+    87:                                  }
+    88:                            ?>
+    89:      </font> <a href="/a/versao/">Liberação de Release 
+    90:                <? if($i_conta) {?>
+    91:                : Você tem 
+    92:                <?=$i_conta?>
+    93:                tarefa(s) 
+    94:                <? } ?>
+    95:                </a> 
+    96:                <? if($manut) {   ?>
+    97:                <br>
+    98:                <a href="manut/index.php">Manuten&ccedil;&atilde;o de tabelas</a><br>
+******
+
+****** inicio.php
+   109:                <?echo $sugestoes?>
+   110:                mensagens)</font> </font> <br>
+   111:                <br>
+   112:                <?} ?>
+   113:                Clique na descri&ccedil;&atilde;o para obter detalhes do chamado 
+****** inicio2.php
+   105:                <?echo $sugestoes?>
+   106:                mensagens)</font> </font><br>
+   107:                <?} ?>
+   108:                <? 
+   109:                              if (receptor($ok)) {
+   110:                                    if ($xx = temChamado()) {
+   111:                      echo "<a href=\"clientes.php\"><img src=\"figuras/cliente.gif\" width=\"20\" height=\"20\" align=\"absmiddl
+   112:  e\" border=\"0\">existe(m) 
+   113:                  $xx novo(s) chamado(s) aberto(s) por cliente</a>";
+   114:                                    }
+   115:                                  }
+   116:                            ?>
+   117:                <br>
+   118:                Clique na descri&ccedil;&atilde;o para obter detalhes do chamado 
+******
+
+****** inicio.php
+   143:          <?=$total_pendentes?>
+   144:          <br><span id=msgnova></span>
+   145:          <br>
+   146:          <table width="100%" border="0" cellspacing="1" cellpadding="1" bgcolor="#CCCCCC">
+****** inicio2.php
+   148:          <?=$total_pendentes?>
+   149:          <br>
+   150:          <span id=msgnova></span> <br>
+   151:          <table width="100%" border="0" cellspacing="1" cellpadding="1" bgcolor="#CCCCCC">
+******
+
+****** inicio.php
+   200:            <tr bgcolor="#FCE9BC" valign="bottom"> 
+   201:              <td width="13%" align="center" valign="middle">
+   202:                <? if(!$lido) { echo '<img src=figuras/idea01.gif  align=absmiddle> '; $msgnova++; } ?>
+****** inicio2.php
+   205:            <tr bgcolor="#FCE9BC" valign="bottom"> 
+   206:              <td width="13%" align="center" valign="middle"> 
+   207:                <? if(!$lido) { echo '<img src=figuras/idea01.gif  align=absmiddle> '; $msgnova++; } ?>
+******
+
+****** inicio.php
+   208:              <td width="15%" valign="middle" align="center"> <font face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
+   209:                          <A HREF="javascript:location.href = 'historicochamado.php?&id_chamado=<?=$chamado?>';" onMouseOver="ret
+   210:  urn overlib('<?=$msg?>', WIDTH, 400, HEIGHT, 50, ABOVE)" onMouseOut="nd();">
+   211:                <?
+****** inicio2.php
+   213:              <td width="15%" valign="middle" align="center"> <font face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
+   214:                <A HREF="javascript:location.href = 'historicochamado.php?&id_chamado=<?=$chamado?>';" onMouseOver="return overli
+   215:  b('<?=$msg?>', WIDTH, 400, HEIGHT, 50, ABOVE)" onMouseOut="nd();"> 
+   216:                <?
+******
+
+****** inicio.php
+   216:                                   ?>
+   217:                                   </a>
+   218:                </font></td>
+   219:              <td width="65%" valign="middle" bgcolor="#FCE9BC"> <font face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
+****** inicio2.php
+   221:                                   ?>
+   222:                </a> </font></td>
+   223:              <td width="65%" valign="middle" bgcolor="#FCE9BC"> <font face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
+******
+
+****** inicio.php
+   372:  </p>
+   373:  </body>
+****** inicio2.php
+   376:  </p>
+   377:  <DIV STYLE='float:left;filter:shadow(color=black,direction:135,strength=3)'><IMG SRC='http://ads.uol.com.br/abril/calhau_lojinh
+   378:  a_4_1.gif'  hspace=5 vspace=5> 
+   379:  </div>
+   380:  </body>
+******
+
+****** inicio.php
+****** inicio2.php
+   382:  
+******
+
+

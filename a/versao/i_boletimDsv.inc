@@ -1,0 +1,3 @@
+<?
+  $texto = $linha->texto;
+?>

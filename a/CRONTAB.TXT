@@ -1,0 +1,1 @@
+22 20 * * * /usr/bin/php /dados/ftp/sites/sad/htdocs/a/cron.php

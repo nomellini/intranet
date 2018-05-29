@@ -1,0 +1,257 @@
+MOSTRA TEMPO TODAL DE CADA CHAMADO. SOMENTE TELEFONICOS
+-------------------------------------------------------
+
+ SELECT 
+   usuario.nome,
+   chamado.dataa,
+   status.status,
+   categoria.categoria,
+   motivo.motivo,
+   id_cliente,
+   chamado_id, 
+   cliente,
+   count(id_contato) AS contatos, 
+   SEC_TO_TIME( SUM( TIME_TO_SEC(contato.horae) - TIME_TO_SEC( contato.horaa) ) ) AS tempo,
+   SUM( TIME_TO_SEC(contato.horae) - TIME_TO_SEC( contato.horaa) )  AS temposeg
+ FROM 
+  contato,
+  motivo,
+  usuario,
+  categoria,
+  cliente,
+  status,
+  chamado
+ WHERE (
+       ( contato.chamado_id = chamado.id_chamado )
+   AND ( contato.origem_id = 1 )
+   AND ( chamado.motivo_id = motivo.id_motivo)
+   AND ( chamado.status = status.id_status)
+   AND ( chamado.categoria_id = categoria.id_categoria)
+   AND ( chamado.cliente_id = cliente.id_cliente )
+   AND ( chamado.consultor_id = usuario.id_usuario)
+   AND ( usuario.atendimento = 1)
+ ) 
+ GROUP BY chamado_id 
+ ORDER BY tempo desc;
+
+
+MOSTRA TEMPO TODAL DE CADA CHAMADO. TODOS OS TIPOS
+--------------------------------------------------
+ SELECT 
+   chamado_id, 
+   cliente,
+   count(id_contato) AS contatos, 
+   SEC_TO_TIME( SUM( TIME_TO_SEC(contato.horae) - TIME_TO_SEC( contato.horaa) ) ) AS tempo,
+   SUM( TIME_TO_SEC(contato.horae) - TIME_TO_SEC( contato.horaa) )  AS temposeg
+ FROM 
+  contato,
+  cliente,
+  chamado
+ WHERE (
+       ( contato.chamado_id = chamado.id_chamado )
+   AND ( chamado.cliente_id = cliente.id_cliente )
+ ) 
+ GROUP BY chamado_id 
+ ORDER BY dif desc
+ LIMIT 100;
+
+
+MOSTRA POR EMPRESA QUANTOS CONTATOS E O TEMPO TOTAL. SOMENTE CONTATOS TELEFONICOS
+---------------------------------------------------------------------------------
+ SELECT 
+  count(id_contato) as contatos, 
+  cliente, 
+  SEC_TO_TIME(sum( TIME_TO_SEC(contato.horae) -TIME_TO_SEC(contato.horaa) ) ) AS tempo 
+ FROM 
+  cliente, contato, chamado 
+ WHERE (
+       (chamado.cliente_id=cliente.id_cliente) 
+   AND (contato.chamado_id = chamado.id_chamado)
+   AND (contato.origem_id = 1) 
+ )
+ GROUP BY 
+  cliente 
+ ORDER BY 
+  tempo DESC;
+
+
+MOSTRA POR EMPRESA QUANTOS CONTATOS E O TEMPO TOTAL. TODOS OS CONTATOS
+----------------------------------------------------------------------
+ SELECT 
+  chamado.dataa,
+  count(id_contato) as contatos, 
+  id_cliente,
+  cliente, 
+  SEC_TO_TIME(sum( TIME_TO_SEC(contato.horae) -TIME_TO_SEC(contato.horaa) ) ) AS tempo,
+  sum( TIME_TO_SEC(contato.horae) -TIME_TO_SEC(contato.horaa) ) as temposeg
+
+ FROM 
+  cliente, contato, chamado 
+ WHERE (
+      (chamado.cliente_id=cliente.id_cliente)    
+  AND (contato.chamado_id = chamado.id_chamado)
+  AND (contato.origem_id = 1)
+ )
+ GROUP BY 
+  cliente 
+ ORDER BY 
+  dataa;
+
+MOSTRA QUANTIDADE DE CHAMADOS POR CLIENTE:
+------------------------------------------
+
+SELECT 
+  id_cliente,
+  cliente, 
+  count(id_chamado) chamados 
+FROM 
+  chamado, 
+  cliente 
+WHERE (
+  (cliente.id_cliente=chamado.cliente_id)
+)
+GROUP BY cliente_id
+ORDER BY chamados desc, cliente;
+
+
+
+select 
+  substr(MIN(concat(rpad(id_contato,6,' '),horaa)),7) from contato group by chamado_id order by id_contato;
+
+
+
+
+
+
+
+
+
+
+
+
+
+ SELECT 
+   sistema.sistema,
+   categoria.categoria,
+   categoria.id_categoria,
+   count(*) AS chamados
+ FROM 
+  sistema,
+  categoria,
+  chamado
+ WHERE (
+       ( chamado.categoria_id = categoria.id_categoria)
+   and ( chamado.sistema_id = sistema.id_sistema)
+ ) 
+ GROUP BY categoria.id_categoria
+ ORDER BY sistema, chamados desc;
+
+
+
+
+
+
+ SELECT 
+   motivo.motivo,
+   count(id_chamado) AS chamado
+ FROM 
+  motivo,
+  usuario,
+  categoria,
+  cliente,
+  status,
+  chamado
+ WHERE (
+       ( chamado.motivo_id = motivo.id_motivo)
+   AND ( chamado.status = status.id_status)
+   AND ( chamado.categoria_id = categoria.id_categoria)
+   AND ( chamado.cliente_id = cliente.id_cliente )
+   AND ( chamado.consultor_id = usuario.id_usuario)
+   AND ( usuario.atendimento = 1)
+ ) 
+ GROUP BY motivo
+ ORDER BY motivo;
+
+
+
+select id_cliente, cliente, count(contato.id_contato) as contatos from cliente, contato, chamado Where
+(contato.chamado_id = chamado.id_chamado)
+and (chamado.cliente_id = cliente.id_cliente)
+group by cliente
+order by contatos ;
+
+select id_cliente, cliente, count(chamado.id_chamado) as chamados from cliente, chamado Where
+(chamado.cliente_id = cliente.id_cliente)
+group by cliente
+order by chamados;
+
+
+
+
+
+
+
+ SELECT 
+  id_cliente,
+  cliente, 
+  count(id_contato) as contatos
+ FROM 
+  cliente, contato, chamado 
+ WHERE (
+      (chamado.cliente_id=cliente.id_cliente)    
+  AND (contato.chamado_id = chamado.id_chamado)
+ )
+ GROUP BY 
+  cliente ;
+
+
+
+AGRUPADO POR CATEGORIA E MOTIVO
+------------------------------
+select 
+  categoria.categoria,
+  categoria.id_categoria,
+  motivo.motivo,
+  motivo.id_motivo,
+  sistema.sistema,
+  count(id_chamado) as chamados
+FROM
+  chamado,
+  motivo,
+  sistema,
+  categoria
+WHERE (
+    (motivo.id_motivo = chamado.motivo_id)
+AND (categoria.id_categoria = chamado.categoria_id)
+AND (categoria.sistema_id = sistema.id_sistema)
+)
+GROUP BY
+  categoria.categoria,
+  motivo.motivo
+ORDER BY
+  categoria, motivo;
+
+$sql = "select ";
+$sql .= "categoria.categoria, ";
+$sql .= "categoria.id_categoria, ";
+$sql .= "motivo.motivo, ";
+$sql .= "motivo.id_motivo, ";
+$sql .= "sistema.sistema, ";
+$sql .= "count(id_chamado) as chamados ";
+$sql .= "FROM "
+$sql .= "chamado, ";
+$sql .= "motivo, ";
+$sql .= "sistema, ";
+$sql .= "categoria ";
+$sql .= "WHERE ( ";
+$sql .= "(motivo.id_motivo = chamado.motivo_id) ";
+$sql .= "AND (categoria.id_categoria = chamado.categoria_id) ";
+$sql .= "AND (categoria.sistema_id = sistema.id_sistema) ";
+$sql .= ") ";
+$sql .= "GROUP BY ";
+$sql .= "categoria.categoria, ";
+$sql .= "motivo.motivo ";
+$sql .= "ORDER BY ";
+$sql .= "categoria, motivo; ";
+
+

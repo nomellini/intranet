@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+	<title>Menu tree</title>
+
+
+</head>
+
+<body>
+
+<div class="dtree">
+
+	<script type="text/javascript">
+		<!--
+		d = new dTree('d');
+		d.add(0,-1,' Pastas do SAD  <img src="http://intranet.datamace.com.br/interdevice/img/icone_menu_principal.gif"> <br>');
+		d.add(1,0,'&nbsp;<a onmousemove=mouseover('1'); onMouseOut=mouseout();> Chamado  <img src="http://intranet.datamace.com.br/interdevice/img/icone_menu_chamado.gif"> </a>');
+		d.add(4,1,'Abrir Chamado');
+		d.add(2,0,'Abrir Chamado','#');
+		d.add(3,1,'Acompanhar Chamado ','#');
+		d.add(5,3,'Chamados Encerrados ','#');
+		d.add(6,0,'Enviar Arquivo <img src="http://intranet.datamace.com.br/interdevice/img/icone_menu_enviararquivo.gif">');
+		d.add(7,0,'Usuários Treinados <img src="http://intranet.datamace.com.br/interdevice/img/icone_menu_usuarioscadastrados.gif">');
+		d.add(8,0,'Calendário <img src="http://intranet.datamace.com.br/interdevice/img/icone_menu_calendario.gif">');
+		d.add(9,0,'Estatística SLA <img src="http://intranet.datamace.com.br/interdevice/img/icone_menu_estatisticasla.gif">');
+		
+			d.draw();
+		//-->
+	</script>
+
+</div>
+
+</body>
+
+</html>

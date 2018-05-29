@@ -1,0 +1,15 @@
+tr {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px}
+a {  color: #0000FF; text-decoration: none}
+a:hover {  color: #FF0000; text-decoration: underline}
+.unnamed1 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #0000FF}
+body {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px}
+.unnamed2 {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #0000FF}
+.bordaTexto {border-width : 1px;border-style : solid;border-color : black;font-family : Verdana; font-size : 10px;color: #0000FF;}
+.RiscoEmbaixo {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #990000;
+}
+TABLE.Mtable TD {border-bottom:solid #93BEE2 1px}

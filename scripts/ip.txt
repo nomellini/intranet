@@ -1,0 +1,10 @@
+966865012|193.158.173.225|pC19EADE1.dip0.t-ipconnect.de
+966865090|62.104.217.85|lpz2-t3-2.atm-bb.de
+966865357|213.200.0.12|apollo12-1.balcab.ch
+966865382|195.114.226.243|hanm.multiweb.net
+966865440|195.96.98.222|cache-dh1.casema.net
+966865557|195.226.76.162|wormhole.arsnet.de
+966865612|165.154.145.53|ts1-c1-053.tort.ca.ziplink.net
+966865840|195.117.4.25|pc1-reaktor.ext.ids.pl
+966866057|62.54.226.50|brln-3e36e232.pool.mediaWays.net
+966866957|62.224.206.150|p3EE0CE96.dip0.t-ipconnect.de

@@ -1,0 +1,208 @@
+.Menu
+{
+	text-align: right;
+	margin: 0 0 1px 0;
+	background: #DFEBFF;
+	border: 1px solid #00CCFF;
+}
+
+.Menu a {
+	color: #006699;
+	text-decoration: none;
+}
+
+.Menu a:hover {
+	background-color:#FFFF00;
+	color:#FF0000;
+}
+
+
+.Usuario
+{
+	margin: 0 0 1px 0;
+}
+
+.User
+{
+	color:#FF0000;
+}
+
+/* navigation */
+
+
+
+.rodape p
+{
+	border-top: 1px solid #069;
+}
+
+html {min-height: 100%;}
+
+a {
+	color: #0000FF;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #FF0000;
+}
+
+.ListaInLine
+{
+	list-style:none;
+	margin: 0;
+}
+
+.header {
+	background: #FFFFFF url('a/figuras/topo_sad_e_900.jpg') no-repeat;
+	height: 79px;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.Logotipo {
+	background: #222 url('figuras/topo_sad_e_900.jpg') no-repeat
+}
+
+.header .title {
+	color: #0066CC
+	padding-top: 5px;
+}
+
+.header .title .sitename a {
+	border-bottom: 1px dashed #657382;
+	color: #0066CC;
+	font: normal 1.5em sans-serif;
+	padding-bottom: 2px;
+	text-decoration: none;
+}
+.header .title a:hover {border-color: #F60;}
+
+.header .title .slogan {
+	font: normal 0.8em Verdana,sans-serif;
+	padding-top: 6px;
+}
+
+Body 
+{
+	background: #E7E7E2;
+	color: #444;
+	font-family: Calibri;		
+	font-size:10px;	
+	padding-top: 10px;
+}
+
+.inner-content
+{
+	border: 2px solid #D7D7D2;
+	background: #FFF;
+	font-size: 1.2em;
+	margin: 0 auto;
+	padding: 10px;
+	width: 92%;
+}
+
+.outer-container {
+	background: url('a/figuras/topo_sad_e_900.jpg') repeat center bottom;
+	padding-bottom: 64px;
+}
+
+.ListaChamados
+{
+	padding: 1px;	border:1px solid #CCCCCC;
+}
+
+.CabecalhoChamadoInner
+{
+	margin: 5px;
+	padding: 1px;
+	border: 1px solid #CCCCCC;
+	color:#FFFFFF;
+	background: #0099FF;
+}
+
+.ChamadoNormal {
+	background: #CCFFFF;
+	padding: 5px;
+	border: 1px dashed #999999;
+	margin: 5px;
+}
+
+.ChamadoQualidade {
+	padding: 5px;
+	border: 1px solid #999999;
+	margin: 5px;
+	background:#FFFFCC;	
+}
+
+.ChamadosOrdenacao
+{
+	padding: 5px;
+}
+
+.ChamadoColuna1
+{
+	width: 10%;
+	vertical-align:top;
+}
+
+.ChamadoColuna2
+{
+	width: 10%;
+	vertical-align:top;	
+}
+
+.ChamadoColuna3
+{
+	width: 10%;
+	vertical-align:top;	
+}
+
+
+.ChamadoColuna4
+{
+	float:left;
+	width:70%;
+	vertical-align:top;	
+}
+
+.ChamadoTabela
+{
+	width:100%;
+	border: none;
+	vertical-align:top;
+}
+
+.ChamadoDescricao
+{
+	color:#006699;
+	font-weight:bold;	
+}
+
+.ChamadoRodape
+{
+	color:#FF0000;
+	font-weight:bold;	
+}
+
+.ChamadoClienteID
+{
+	color:#000000;
+}
+
+
+.ListaChamados
+{
+	overflow:auto;
+	height: 480px;	
+}
+
+.FieldSetChamados
+{
+	height: 500px;
+}
+
+.FieldSetChamados Legend
+{
+	font-size: 12px;
+}

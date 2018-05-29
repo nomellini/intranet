@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Backup</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../stilos.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<?
+
+  $hoje = date("Y-m-d");
+  mysql_connect(localhost, root, marcia);
+  mysql_select_db(teste); 
+
+  $sql = "delete from chamado where ((descricao='' or descricao is null) and (dataa < '$hoje'));";
+  mysql_query($sql);
+  
+  $sql = "delete from contato where ((historico='' or historico is null) and (dataa < '$hoje'));";
+  mysql_query($sql);
+
+  // Importação dos textos
+  $teste= `mysql -uroot -pmarcia teste < /var/www/default/backup/c.txt`;
+
+  $arq = fopen("/var/www/default/backup/suporte.txt", "w");
+  $teste=`mysqldump suporte  -uroot -pmarcia --add-drop-table`;
+  fputs( $arq, $teste );
+  fclose( $arq );
+  
+  $arq = fopen("/var/www/default/backup/sympoll.txt", "w");
+  $teste=`mysqldump sympoll -uroot -pmarcia --add-drop-table`;
+  fputs( $arq, $teste );
+  fclose( $arq );
+
+  $arq = fopen("/var/www/default/backup/phorum.txt", "w");
+  $teste=`mysqldump phorum -uroot -pmarcia --add-drop-table`;
+  fputs( $arq, $teste );
+  fclose( $arq );
+
+  $arq = fopen("/var/www/default/backup/hardware.txt", "w");
+  $teste=`mysqldump hardware -uroot -pmarcia --add-drop-table`;
+  fputs( $arq, $teste );
+  fclose( $arq );
+
+  $arq = fopen("/var/www/default/backup/datamace.txt", "w");
+  $teste=`mysqldump datamace -uroot -pmarcia --add-drop-table`;
+  fputs( $arq, $teste );
+  fclose( $arq );
+
+
+  $arq = fopen("/var/www/default/backup/atendimento.txt", "w");
+  $teste=`mysqldump teste  -uroot -pmarcia --add-drop-table`;
+  fputs( $arq, $teste );
+  fclose( $arq );
+  
+  $teste = `zip /var/www/default/backup/atendimento.zip /var/www/default/backup/atendimento.txt /var/www/default/backup/datamace.txt /var/www/default/backup/hardware.txt /var/www/default/backup/phorum.txt /var/www/default/backup/suporte.txt /var/www/default/backup/sympoll.txt`;
+  $teste = `rm /var/www/default/backup/atendimento.txt -f`;
+  $teste = `rm /var/www/default/backup/datamace.txt -f`;
+  $teste = `rm /var/www/default/backup/hardware.txt -f`;
+  $teste = `rm /var/www/default/backup/phorum.txt -f`;
+  $teste = `rm /var/www/default/backup/suporte.txt -f`;
+  $teste = `rm /var/www/default/backup/sympoll.txt  -f`;
+
+?>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">O Arquivo do sistema 
+  de atendimento esta no servidor.<br>
+  Para pega-los. clique no nome com o bot&atilde;o direito do mouse e selecione 
+  'salvar destino como...'</font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="../../backup/atendimento.zip">Clique 
+  aqui com o bot&atilde;o direito</a></font></p>
+<p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">[<a href="../inicio.php">voltar 
+  ao sistema de atendimento</a>]<br>
+  [<a href="index.php">voltar a manuten&ccedil;&atilde;o dos arquivos</a>]</font></p>
+<p>&nbsp;</p>
+</body>
+</html>

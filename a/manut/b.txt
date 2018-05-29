@@ -1,0 +1,2 @@
+cd /home/httpd/html/mysql/
+./backup

@@ -1,0 +1,236 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>SAD - Sistema de Atendimento Datamace</title>
+ <link rel="stylesheet" href="include/css.css">
+ <script type="text/javascript" src="include/tree.js"></script>
+
+<script>
+if (document.all){}
+else document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove=mouse;
+
+function mouse(e)
+{
+if (navigator.appName == 'Netscape'){
+xcurs = e.pageX;
+ycurs = e.pageY;
+} else {
+xcurs = event.clientX;
+ycurs = event.clientY;
+}
+//document.getElementById('position').style.display = 'block';
+document.getElementById('menuover').style.left = (xcurs+35)+'px';
+document.getElementById('menuover').style.top = (ycurs-15)+'px';
+}
+
+function mouseover(x)
+{
+
+if (x == 1) {
+var resp = "Aqui você abre um chamado para reportar um erro<br>ou acompanha um chamado.";
+}
+
+else if (x == 2) {
+var resp = "Aqui você envia um arquivo para<br>um chamado existente.";
+}
+
+else if (x == 3) {
+var resp = "Aqui você visualiza os<br>usuários cadastrados.";
+}
+
+else if (x == 4) {
+var resp = "Aqui você acompanha o calendário.";
+}
+
+else if (x == 5) {
+var resp = "Aqui você visualiza a estatística.";
+}
+
+else if (x == 6) {
+var resp = "Aqui você abre um chamado.";
+}
+
+else if (x == 7) {
+var resp = "Aqui você acompanha um chamado.";
+}
+
+else if (x == 8) {
+var resp = "Aqui você acompanha os chamados encerrados.";
+}
+
+else {
+var resp = x;
+}
+
+
+texto.innerHTML = resp;
+document.getElementById('menuover').style.left = (xcurs+35)+'px';
+document.getElementById('menuover').style.top = (ycurs-15)+'px';
+document.getElementById('menuover').style.display = 'block';
+
+}
+
+function mouseout()
+{
+document.getElementById('menuover').style.left = 0;
+document.getElementById('menuover').style.top = 0;
+document.getElementById('menuover').style.display = 'none';
+}
+</script>
+
+
+
+<script type="text/javascript">
+
+function change(id,muda){
+ 
+if(muda.src == "http://intranet.datamace.com.br/interdevice/img/mais.gif"){
+	muda.src = "img/menos.gif";
+}
+else{
+muda.src = "img/mais.gif"
+}
+
+
+  ID = document.getElementById(id);   
+     
+     if(ID.style.display == "") 
+          ID.style.display = "none"; 
+     else 
+          ID.style.display = ""; 
+		  
+
+		  
+      }
+</script>
+
+<script type="text/javascript">
+<!--
+/*startlist = function() {
+if (document.all&&document.getElementById) {
+    navRoot = document.getElementById("pmenu");
+        for (i=0; i<navRoot.childNodes.length; i++) {
+            node = navRoot.childNodes[i];
+                if (node.nodeName=="LI") {
+                    node.onmouseover=function() {
+                    this.className+="over";
+                    }
+                    node.onmouseout=function() {
+                    this.className=this.className.replace("over", "");
+                    }
+                }
+        }
+    }
+}
+window.onload=startlist;*/
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+
+</head>
+
+<body onLoad="mouse();MM_preloadImages('img/bt_salvar_over.gif')">
+
+
+<div id="menuover"> 
+<!--  <div> -->
+
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+   <td height="25" valign="top" background="img/over_bg_esq.png" ><img src="img/over_seta1.png" alt="" width="14" height="13" vspace="10" border="0"></td>
+   <td rowspan="2" bgcolor="#FFFFFF" style="border-bottom:2px solid #004C92; border-top:2px solid #004C92; border-right:2px solid #004C92; padding-bottom:3px; padding-top:3px; padding-left:5px; padding-right:5px; font-size:10px;">  <p id="texto"></p> </td>
+   <td rowspan="2" valign="top" background="img/over_sombra_dir.png">&nbsp;</td>
+  </tr>
+  
+  <tr>
+   <td valign="top" style="border-right:2px solid #004C92;">&nbsp;</td>
+   </tr>
+  
+  <tr>
+   <td><img src="img/spacer.gif" width="1" height="1" border="0" alt=""></td>
+   <td background="img/over_bg_baixo.png" ><img src="img/spacer.gif" width="115" height="1" border="0" alt=""></td>
+   <td><img src="img/over_dir_baixo2.png" alt="" width="6" height="5" border="0"></td>
+   </tr>
+</table>
+
+</div>
+
+<script type="text/javascript">
+
+		<!--
+		var Tree = new Array;
+		// nodeId | parentNodeId | nodeName | nodeUrl
+		Tree[0]  = "1|0|Pastas do SAD <img src='img/icone_menu_principal.gif'/>|# ";
+		Tree[1]	 = "2|1|&nbsp;<a onmousemove=mouseover('1'); onMouseOut=mouseout();>Chamado <img src='img/icone_menu_chamado.gif'/></a>|#";
+		Tree[2]  = "3|2|<a onmousemove=mouseover('6'); onMouseOut=mouseout(); href='abertura.php'> Abrir Chamado </a>| #";
+		Tree[3]  = "4|2|&nbsp;<a onmousemove=mouseover('7'); onMouseOut=mouseout(); href='acompanhar_chamado.php?pagina=1&pag=1'>Acompanhar Chamado </a>|#";
+		Tree[4]  = "5|4|&nbsp;<a onmousemove=mouseover('8'); onMouseOut=mouseout(); href='acompanhar_encerrados.php?pagina=1&pag=2'>Chamados Encerrados </a>|#";
+		Tree[5]  = "6|1|<a onmousemove=mouseover('2'); onMouseOut=mouseout(); href='enviar_arquivo.php'> Enviar Arquivo <img src='img/icone_menu_enviararquivo.gif' /> </a>|#";
+		Tree[6]  = "7|1|<a onmousemove=mouseover('3'); onMouseOut=mouseout(); href='usuarios_treinados.php'> Usuários Treinados <img src='img/icone_menu_usuarioscadastrados.gif' /></a>|#";
+		Tree[7]  = "8|1|<a onmousemove=mouseover('4'); onMouseOut=mouseout(); href='acompanhar_calendario.php?data=<?echo date('d/m/Y');?>&evento=1'> Calendário <img src='img/icone_menu_calendario.gif' /> </a>|#";
+		Tree[8]  = "9|1|&nbsp;<a onmousemove=mouseover('5'); onMouseOut=mouseout(); href='estatisticas_sla.php'>Estatística SLA <img src='img/icone_menu_estatisticasla.gif' /> </a>|#";
+
+		//-->
+	</script>
+
+<div class="tree">
+<script type="text/javascript">
+
+	createTree(Tree,1);  // start the tree at node nr. 1
+
+</script>
+</div>
+
+<!--  <ul id="pmenu"> 
+
+
+		 <li onclick="change('submenu',document.muda);" onMouseOver="mouseover('Aqui você abre um chamado para reportar um erro<br>ou acompanha um chamado.');" onMouseOut="mouseout(); "> <a href="#"><img src="img/mais.gif" name="muda" id="muda" hspace="8" border="0">Chamado <img src="img/icone_menu_chamado.gif" width="15" height="15" hspace="5" vspace="1" border="0" align="absmiddle">
+		 	
+			
+	 <div id="submenu" style="display:none">
+    <table>
+	<tr> <td> 
+	<a href="abertura.php">Abrir Chamado</a>
+	<a href="acompanhar_chamado.php?pagina=1&pag=1">Acompanhar Chamado</a>
+	</td></tr></table>
+  </div>
+  
+   </a>
+		 
+ </li>
+		 
+		 <li onMouseOver="mouseover('Aqui você envia um arquivo para<br>um chamado existente.');" onMouseOut="mouseout();"> <a href="enviar_arquivo.php"><img src="img/circulo.gif" width="6" height="8" hspace="8" border="0">Enviar Arquivo  <img src="img/icone_menu_enviararquivo.gif" width="28" height="15" hspace="5" vspace="1" border="0" align="absmiddle"></a></li>
+		 <li onMouseOver="mouseover('Aqui você visualiza os<br>usuários cadastrados.');" onMouseOut="mouseout();"> <a href="usuarios_treinados.php"><img src="img/circulo.gif" width="6" height="8" hspace="8" border="0">Usu&aacute;rios Cadastrados  <img src="img/icone_menu_usuarioscadastrados.gif" width="20" height="15" hspace="3" vspace="1" border="0" align="absmiddle"></a></li>
+		 <li onMouseOver="mouseover('Aqui você acompanha o calendário.');" onMouseOut="mouseout();"> <a href="acompanhar_calendario.php"><img src="img/circulo.gif" width="6" height="8" hspace="8" border="0">Calend&aacute;rio  <img src="img/icone_menu_calendario.gif" width="20" height="15" hspace="3" vspace="1" border="0" align="absmiddle"></a></li>
+		 <li onMouseOver="mouseover('Aqui você visualiza a estatística');" onMouseOut="mouseout();"> <a href="#"><img src="img/circulo.gif" width="6" height="8" hspace="8" border="0">Estat&iacute;stica SLA   <img src="img/icone_menu_estatisticasla.gif" width="20" height="15" hspace="3" vspace="1" border="0" align="absmiddle"></a></li>
+ 
+		 
+</ul> -->
+
+</body>
+</html>

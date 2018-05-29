@@ -1,0 +1,58 @@
+.highlightRow
+{
+   background-color:#FFFFCC;
+}
+
+.normalRow
+{
+   background-color:#FFFFFF;
+}
+
+.off {
+background: #CCCCCC;
+}
+
+.on {
+background: #999999;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center;
+}
+
+tbody td {
+	text-decoration: none;
+}
+a {
+	color: #0066FF;
+	text-decoration: none;
+}
+
+.subprojeto {
+	background-color:#EBB9BA
+}
+
+.meter-wrap{
+    position: relative;
+}
+
+.meter-wrap, .meter-value, .meter-text {
+    /* The width and height of your image */
+    width: 155px; height: 30px;
+}
+
+.meter-wrap, .meter-value {
+    background: #bdbdbd url(meter-outline.png) top left no-repeat;
+}
+
+.meter-text {
+    position: absolute;
+    top:0; left:0;
+    padding-top: 5px;
+    color: #00;
+    text-align: center;
+	font-weight:bold;
+    width: 100%;
+}

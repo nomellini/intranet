@@ -1,0 +1,14 @@
+select
+ data, 
+ sec_to_time(
+   avg(
+     time_to_sec(hora_fim) - 
+     time_to_sec(hora_inicio) 
+   )
+ ) as t
+ 
+from
+  satligacao
+where 
+  id_satstatus = 3
+group by data;

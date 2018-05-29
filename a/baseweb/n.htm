@@ -1,0 +1,1051 @@
+<html>
+<script src="coolbuttons.js"></script>
+<head>
+<title>Novo chamado</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="scripts/stilos.css" type="text/css">
+<link rel="stylesheet" href="stilos.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="1" topmargin="1" marginwidth="1" marginheight="1">
+<table width="100%" border="0" cellspacing="1" cellpadding="1" class="coolBar">
+  <tr align="center"> 
+    <td width="61" class="coolButton" valign="middle" align="center"><a href="javascript:history.go(-1)"><img src="figuras/voltar.gif" width="20" height="20" align="absmiddle" border="0">voltar</a></td>
+    <td width="69" class="coolButton"><a href="index.php?novologin=true"><img src="figuras/logout.gif" width="20" height="20" align="absmiddle" border="0">Logout</a></td>
+    <td width="82" class="coolButton"><a href="/a/relatorios/"><img src="figuras/relat.gif" width="20" height="20" align="absmiddle" border="0">relat&oacute;rios</a></td>
+    <td width="115" class="coolButton"><img src="figuras/senha.gif" width="20" height="20" align="absmiddle"><a href="trocasenha.php">Alterar 
+      Senha</a> </td>
+    <td width="129" class="coolButton"><a href="inicio.php"><img src="figuras/home.gif" width="20" height="20" align="absmiddle" border="0">voltar 
+      ao in&iacute;cio</a></td>
+    <td width="259" class="coolButton">&nbsp;</td>
+  </tr>
+</table>
+<hr size="1" noshade>
+
+  <table width="98%" border="0" align="center" bgcolor="#FFFFFF" cellpadding="1" cellspacing="1">
+    <tr bgcolor="#FFFFFF"> 
+      <td width="26%"> 
+        <div align="left"><font size="2">N&uacute;mero do Chamado</font></div>
+      </td>
+      <td width="53%"><font size="2"><b> 
+        7256        </b></font></td>
+      <td width="21%"> 
+        <div align="left"><font size="2">Data : 
+          26/10/2001          </font></div>
+      </td>
+    </tr>
+    <tr bgcolor="#FFFFFF"> 
+      <td width="26%" height="2"> 
+        <div align="left"><font size="2">Cliente </font></div>
+      </td>
+      <td width="53%" height="2"><font size="2"><b>
+        DATAMACE INFORMATICA LTDA.		</b></font>
+   </td>
+      <td width="21%" height="2"> 
+        <div align="left"><font size="2">Hora : 
+          16:40:11          </font></div>
+      </td>
+    </tr>
+  </table>
+
+<form name="form" method="post" action="gravachamado.php" onSubmit="return false;">
+  <table width="98%" border="0" bgcolor="#CCCCCC" cellpadding="1" cellspacing="1" align="center">
+    <tr> 
+      <td bgcolor="#FFFFFF"> 
+        <table width="98%" border="0" align="center">
+          <tr valign="top"> 
+            <td width="19%" height="2">Sistema</td>
+            <td width="28%" height="2">Prioridade</td>
+            <td width="53%" height="2">Tipo de Contato<br>
+            </td>
+          </tr>
+          <tr align="left" valign="middle"> 
+            <td width="19%"> 
+              <select name="sistema" class="unnamed1" onClick="alteraCombo();">
+                <option value=0></option>
+                <option value=1>GIP - 8.12B</option>
+                <option value=2>Contabilidade DOS - 4.01</option>
+                <option value=3>Ativo Fixo DOS - 4.01</option>
+                <option value=4>Ponto Eletrônico - 4.03A</option>
+                <option value=5>Livros Fiscais DOS - 3.00E</option>
+                <option value=6>RH Gerencial - 3.00</option>
+                <option value=12>S.A.D.</option>
+                <option value=17>Site</option>
+              </select>
+            </td>
+            <td width="28%"> 
+              <select name="prioridade" class="unnamed1" >
+                <option value=1>Normal</option>
+                <option value=2>Urgente</option>
+                <option value=3>Urgentíssimo</option>
+                <option value=4>Aguardando Cliente</option>
+              </select>
+            </td>
+            <td width="53%"> 
+              <select name="origem" class="unnamed1">
+                <option value=12 >Aberto pelo cliente</option>
+                <option value=10 >Carta</option>
+                <option value=7 >Encaminhamento Interno</option>
+                <option value=11 >Outros</option>
+                <option value=8 >Pessoal na Datamace (Desenv.)</option>
+                <option value=4 >Pessoal na Datamace (Suporte)</option>
+                <option value=9 >Pessoal na Datamace (Treinamento)</option>
+                <option value=6 >Pessoal na Intersystem</option>
+                <option value=5 >Pessoal no Cliente</option>
+                <option value=1 selected>Telefônico</option>
+                <option value=2 >Via e-mail</option>
+                <option value=3 >Via Fax</option>
+                <option value=13 >Via ICQ ou semelhante</option>
+              </select>
+            </td>
+          </tr>
+          <tr align="left" valign="middle"> 
+            <td height="2" valign="top" colspan="2">Treinados em <span id='s'></span></td>
+            <td width="53%" height="2" valign="top">Pessoa Contatada</td>
+          </tr>
+          <tr align="left" valign="middle"> 
+            <td colspan="2"> <span id="tre"></span> </td>
+            <td width="53%"> 
+              <input type="text" name="pessoacontatada" class="unnamed1" size="40" maxlength="100" onKeyPress="teclado();">
+            </td>
+          </tr>
+          <tr> 
+            <td colspan="2" height="10"><span id=cat>Seleção de categoria</span></td>
+            <td width="53%" height="10">Motivo<br>
+              <select name="motivo" class="unnamed1" >
+                <option value=0></option>
+                <option value=18></option>
+                <option value=16>Administração</option>
+                <option value=17>Alteração</option>
+                <option value=15>Alteração legal</option>
+                <option value=7>Dúvida na Legislação</option>
+                <option value=1>Dúvida na Operação</option>
+                <option value=12>Erro de programa - Necessidade de atualização</option>
+                <option value=8>Fundamenção teórica do sistema</option>
+                <option value=13>Mensagem de Erro - Sistema de Terceiros</option>
+                <option value=2>Mensagem de Erro do Sistema Datamace</option>
+                <option value=10>Mensagem de Erro do Sistema Operacional/Rede</option>
+                <option value=9>Não obtém resultado/efeito esperado</option>
+                <option value=11>Programa QG</option>
+                <option value=14>Solicitação de Serviços</option>
+                <option value=3>Sugestão</option>
+              </select>
+            </td>
+          </tr>
+          <tr> 
+            <td colspan="3"><br>
+              Descri&ccedil;&atilde;o do Problema<br>
+              <textarea name="descricao" cols="100" rows="4" class="unnamed1"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3"><font size="1">procurar por uma palavra (chamados 
+              anteriores e base conhecimento WEB)</font> 
+              <input type="text" name="palavra"  class="unnamed1" onKeyPress="teclado2();">
+              <script>
+  function teclado2() {
+  var ch=String.fromCharCode(window.event.keyCode);
+  var t = 0;
+  var re=ch.charCodeAt(0);
+  if (re==13) {
+    teste  = "/a/baseweb/index.php?palavra=" + document.form.palavra.value;	
+    window.open(teste, "Base", "width=640, hight=300, toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,maximized=no,minimized=no");
+	return;
+  }
+  }
+</script>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table width="98%" border="0" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC" align="center">
+    <tr> 
+      <td bgcolor="#FFFFFF"> 
+        <table width="98%" border="0" align="center">
+          <tr> 
+            <td colspan="3"> Descri&ccedil;&atilde;o da Solu&ccedil;&atilde;o 
+              ou Encaminhamento <br>
+              <textarea name="historico" cols="100" rows="4" class="unnamed1"></textarea>
+            </td>
+          </tr>
+          <tr> 
+            <td colspan="2"> 
+              <p><br>
+                <input type="button" name="Button" value="Encerrar" class="unnamed1" onClick="document.form.action.value='encerrar';vai();">
+                <input type="button" name="Submit2" value="Manter Pendente" class="unnamed1" onClick="document.form.action.value='manter';vai();">
+              </p>
+            </td>
+            <td width="53%"> 
+              <input type="button" name="Submit3" value="Encaminhar p/" class="unnamed1" onClick="document.form.action.value='encaminhar';vai();">
+              <select name="destinatario">
+                <option value="0"></option>
+                <option value=2>Marcelo</option><option value=9>Cristiano</option><option value=1>Edson</option><option value=8>Elisangela</option><option value=7>Ricardo Hudson</option><option value=41>Sandra</option><option value=18>Nilza</option><option value=19>adm</option>
+                <option value="39">Rog&eacute;rio</option>
+                <option value=27>Ronaldo Atendimento</option><option value=31>Neide</option><option value=30>Nilzete</option><option value=22>Ricardo Garcia</option>              
+              </select>
+            </td>
+          </tr>
+        </table>
+        <br>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <input type="hidden" name="id_chamado" value="7256">
+  <input type="hidden" name="id_contato" value="14198">
+  <input type="hidden" name="action">
+</form><script>
+  function alteraCombo() {
+    
+     id_sistema = new Array(242);
+     id_categoria = new Array(242);	 	 
+	 categoria = new Array(242);
+	 var strAux;
+id_sistema[1] = 10;
+id_categoria[1] = 197;
+categoria[1] = 'Bloqueio - Desbloqueio';
+id_sistema[2] = 10;
+id_categoria[2] = 196;
+categoria[2] = 'Cancelamento - Motivo';
+id_sistema[3] = 10;
+id_categoria[3] = 239;
+categoria[3] = 'Cobrança';
+id_sistema[4] = 10;
+id_categoria[4] = 174;
+categoria[4] = 'Geral';
+id_sistema[5] = 10;
+id_categoria[5] = 195;
+categoria[5] = 'Jurídico';
+id_sistema[6] = 10;
+id_categoria[6] = 193;
+categoria[6] = 'Negociação - Atraso de Pagamento';
+id_sistema[7] = 10;
+id_categoria[7] = 194;
+categoria[7] = 'Negociação - Valores';
+id_sistema[8] = 10;
+id_categoria[8] = 240;
+categoria[8] = 'Notificação Extra Judicial';
+id_sistema[9] = 10;
+id_categoria[9] = 192;
+categoria[9] = 'Pós-Venda';
+id_sistema[10] = 10;
+id_categoria[10] = 238;
+categoria[10] = 'Prorrogação de vencimento';
+id_sistema[11] = 10;
+id_categoria[11] = 198;
+categoria[11] = 'Renovação de Contrato';
+id_sistema[12] = 10;
+id_categoria[12] = 191;
+categoria[12] = 'Treinamento';
+id_sistema[13] = 10;
+id_categoria[13] = 225;
+categoria[13] = 'Vendas';
+id_sistema[14] = 3;
+id_categoria[14] = 227;
+categoria[14] = 'cadastro de bens';
+id_sistema[15] = 3;
+id_categoria[15] = 153;
+categoria[15] = 'Dúvidas com backup';
+id_sistema[16] = 3;
+id_categoria[16] = 165;
+categoria[16] = 'Implantação do Sistema';
+id_sistema[17] = 3;
+id_categoria[17] = 230;
+categoria[17] = 'Processamento';
+id_sistema[18] = 3;
+id_categoria[18] = 231;
+categoria[18] = 'Relatórios';
+id_sistema[19] = 3;
+id_categoria[19] = 229;
+categoria[19] = 'Tabelas';
+id_sistema[20] = 3;
+id_categoria[20] = 233;
+categoria[20] = 'Utilitários';
+id_sistema[21] = 3;
+id_categoria[21] = 209;
+categoria[21] = 'Vírus';
+id_sistema[22] = 2;
+id_categoria[22] = 189;
+categoria[22] = 'Ativo Fixo';
+id_sistema[23] = 2;
+id_categoria[23] = 184;
+categoria[23] = 'Cadastro';
+id_sistema[24] = 2;
+id_categoria[24] = 152;
+categoria[24] = 'Dúvidas com backup';
+id_sistema[25] = 2;
+id_categoria[25] = 164;
+categoria[25] = 'Implantação do Sistema';
+id_sistema[26] = 2;
+id_categoria[26] = 187;
+categoria[26] = 'Orçamento';
+id_sistema[27] = 2;
+id_categoria[27] = 185;
+categoria[27] = 'Processos';
+id_sistema[28] = 2;
+id_categoria[28] = 188;
+categoria[28] = 'Utilitários';
+id_sistema[29] = 2;
+id_categoria[29] = 208;
+categoria[29] = 'Vírus';
+id_sistema[30] = 9;
+id_categoria[30] = 216;
+categoria[30] = 'Geral';
+id_sistema[31] = 9;
+id_categoria[31] = 168;
+categoria[31] = 'Implantação do Sistema';
+id_sistema[32] = 1;
+id_categoria[32] = 29;
+categoria[32] = '13o. Salário';
+id_sistema[33] = 1;
+id_categoria[33] = 220;
+categoria[33] = 'Acesso ao sistema';
+id_sistema[34] = 1;
+id_categoria[34] = 5;
+categoria[34] = 'Adiantamento';
+id_sistema[35] = 1;
+id_categoria[35] = 250;
+categoria[35] = 'Adicionais - Pericul / Insalubr';
+id_sistema[36] = 1;
+id_categoria[36] = 201;
+categoria[36] = 'Afastamentos';
+id_sistema[37] = 1;
+id_categoria[37] = 6;
+categoria[37] = 'Alocação de Mão de Obra';
+id_sistema[38] = 1;
+id_categoria[38] = 159;
+categoria[38] = 'Arquivos danificados (sujeira)';
+id_sistema[39] = 1;
+id_categoria[39] = 7;
+categoria[39] = 'Atualização de Versão - Correio';
+id_sistema[40] = 1;
+id_categoria[40] = 222;
+categoria[40] = 'Atualização de versão - dúvidas';
+id_sistema[41] = 1;
+id_categoria[41] = 9;
+categoria[41] = 'Atualização de Versão - Senha';
+id_sistema[42] = 1;
+id_categoria[42] = 8;
+categoria[42] = 'Atualização Versão - Internet';
+id_sistema[43] = 1;
+id_categoria[43] = 10;
+categoria[43] = 'Auditoria';
+id_sistema[44] = 1;
+id_categoria[44] = 11;
+categoria[44] = 'Autônomos';
+id_sistema[45] = 1;
+id_categoria[45] = 12;
+categoria[45] = 'Banco de Dados (compatibilidade com)';
+id_sistema[46] = 1;
+id_categoria[46] = 13;
+categoria[46] = 'Banco de Horas';
+id_sistema[47] = 1;
+id_categoria[47] = 14;
+categoria[47] = 'Bancos (layout, ab.contas etc)';
+id_sistema[48] = 1;
+id_categoria[48] = 15;
+categoria[48] = 'Benefícios';
+id_sistema[49] = 1;
+id_categoria[49] = 16;
+categoria[49] = 'Boletim (de versão, On Site)';
+id_sistema[50] = 1;
+id_categoria[50] = 18;
+categoria[50] = 'Cadastro de Dependentes';
+id_sistema[51] = 1;
+id_categoria[51] = 19;
+categoria[51] = 'Cadastro de Empresas';
+id_sistema[52] = 1;
+id_categoria[52] = 17;
+categoria[52] = 'Cadastro de Funcionários';
+id_sistema[53] = 1;
+id_categoria[53] = 20;
+categoria[53] = 'Cadastro de Usuários e Senhas';
+id_sistema[54] = 1;
+id_categoria[54] = 21;
+categoria[54] = 'CAGED';
+id_sistema[55] = 1;
+id_categoria[55] = 22;
+categoria[55] = 'Cargos e Salários';
+id_sistema[56] = 1;
+id_categoria[56] = 23;
+categoria[56] = 'Condicionado';
+id_sistema[57] = 1;
+id_categoria[57] = 24;
+categoria[57] = 'Consolidação de Dados';
+id_sistema[58] = 1;
+id_categoria[58] = 25;
+categoria[58] = 'Contabilidade';
+id_sistema[59] = 1;
+id_categoria[59] = 26;
+categoria[59] = 'Conversão de Dados';
+id_sistema[60] = 1;
+id_categoria[60] = 224;
+categoria[60] = 'Conversão para nova versão';
+id_sistema[61] = 1;
+id_categoria[61] = 202;
+categoria[61] = 'Cooperativa de Crédito';
+id_sistema[62] = 1;
+id_categoria[62] = 203;
+categoria[62] = 'Cooperativa de Crédito';
+id_sistema[63] = 1;
+id_categoria[63] = 27;
+categoria[63] = 'DARF';
+id_sistema[64] = 1;
+id_categoria[64] = 30;
+categoria[64] = 'Diretores (Pró-Labore)';
+id_sistema[65] = 1;
+id_categoria[65] = 28;
+categoria[65] = 'DIRF';
+id_sistema[66] = 1;
+id_categoria[66] = 151;
+categoria[66] = 'Dúvidas com backup';
+id_sistema[67] = 1;
+id_categoria[67] = 31;
+categoria[67] = 'Editor de Textos';
+id_sistema[68] = 1;
+id_categoria[68] = 206;
+categoria[68] = 'Emissão de Recibos';
+id_sistema[69] = 1;
+id_categoria[69] = 147;
+categoria[69] = 'Erro Sistema Operacional/Rede';
+id_sistema[70] = 1;
+id_categoria[70] = 32;
+categoria[70] = 'Estatísticas';
+id_sistema[71] = 1;
+id_categoria[71] = 33;
+categoria[71] = 'Estoque de Benefícios';
+id_sistema[72] = 1;
+id_categoria[72] = 34;
+categoria[72] = 'Eventos Automáticos';
+id_sistema[73] = 1;
+id_categoria[73] = 35;
+categoria[73] = 'Exportadores';
+id_sistema[74] = 1;
+id_categoria[74] = 36;
+categoria[74] = 'Extrato de FGTS';
+id_sistema[75] = 1;
+id_categoria[75] = 247;
+categoria[75] = 'Fator';
+id_sistema[76] = 1;
+id_categoria[76] = 37;
+categoria[76] = 'Fechamento Mensal';
+id_sistema[77] = 1;
+id_categoria[77] = 38;
+categoria[77] = 'Férias';
+id_sistema[78] = 1;
+id_categoria[78] = 40;
+categoria[78] = 'Ficha de Registro';
+id_sistema[79] = 1;
+id_categoria[79] = 39;
+categoria[79] = 'Ficha Financeira';
+id_sistema[80] = 1;
+id_categoria[80] = 218;
+categoria[80] = 'Fusão / Cisão de empresas';
+id_sistema[81] = 1;
+id_categoria[81] = 41;
+categoria[81] = 'Gerador de Arqs. e Relatórios';
+id_sistema[82] = 1;
+id_categoria[82] = 42;
+categoria[82] = 'Gerador de Modelos';
+id_sistema[83] = 1;
+id_categoria[83] = 43;
+categoria[83] = 'GFIP/SEFIP';
+id_sistema[84] = 1;
+id_categoria[84] = 44;
+categoria[84] = 'GPS';
+id_sistema[85] = 1;
+id_categoria[85] = 248;
+categoria[85] = 'GRFC';
+id_sistema[86] = 1;
+id_categoria[86] = 146;
+categoria[86] = 'GRFP';
+id_sistema[87] = 1;
+id_categoria[87] = 45;
+categoria[87] = 'Help On Line';
+id_sistema[88] = 1;
+id_categoria[88] = 161;
+categoria[88] = 'Implantação do Sistema';
+id_sistema[89] = 1;
+id_categoria[89] = 46;
+categoria[89] = 'Importação';
+id_sistema[90] = 1;
+id_categoria[90] = 47;
+categoria[90] = 'Imposto de Renda';
+id_sistema[91] = 1;
+id_categoria[91] = 48;
+categoria[91] = 'Informe de Rendimentos';
+id_sistema[92] = 1;
+id_categoria[92] = 49;
+categoria[92] = 'Instalação do Sistema';
+id_sistema[93] = 1;
+id_categoria[93] = 50;
+categoria[93] = 'Instrução 068/95';
+id_sistema[94] = 1;
+id_categoria[94] = 51;
+categoria[94] = 'Interfaces';
+id_sistema[95] = 1;
+id_categoria[95] = 205;
+categoria[95] = 'LOG';
+id_sistema[96] = 1;
+id_categoria[96] = 53;
+categoria[96] = 'Manual do Sistema';
+id_sistema[97] = 1;
+id_categoria[97] = 54;
+categoria[97] = 'Mastersaf';
+id_sistema[98] = 1;
+id_categoria[98] = 145;
+categoria[98] = 'Pagamento';
+id_sistema[99] = 1;
+id_categoria[99] = 55;
+categoria[99] = 'PAT';
+id_sistema[100] = 1;
+id_categoria[100] = 56;
+categoria[100] = 'Pensão Alimentícia';
+id_sistema[101] = 1;
+id_categoria[101] = 57;
+categoria[101] = 'PIS';
+id_sistema[102] = 1;
+id_categoria[102] = 58;
+categoria[102] = 'Polícia Federal';
+id_sistema[103] = 1;
+id_categoria[103] = 176;
+categoria[103] = 'Previdência';
+id_sistema[104] = 1;
+id_categoria[104] = 204;
+categoria[104] = 'Previdência Privada';
+id_sistema[105] = 1;
+id_categoria[105] = 59;
+categoria[105] = 'Programas Especiais';
+id_sistema[106] = 1;
+id_categoria[106] = 235;
+categoria[106] = 'Provisão 13o. e Férias';
+id_sistema[107] = 1;
+id_categoria[107] = 60;
+categoria[107] = 'RAIS';
+id_sistema[108] = 1;
+id_categoria[108] = 237;
+categoria[108] = 'Recibos';
+id_sistema[109] = 1;
+id_categoria[109] = 61;
+categoria[109] = 'Relações Sindicais';
+id_sistema[110] = 1;
+id_categoria[110] = 102;
+categoria[110] = 'Relatórios';
+id_sistema[111] = 1;
+id_categoria[111] = 62;
+categoria[111] = 'Rescisão';
+id_sistema[112] = 1;
+id_categoria[112] = 63;
+categoria[112] = 'Retroativo';
+id_sistema[113] = 1;
+id_categoria[113] = 241;
+categoria[113] = 'Seguro desemprego';
+id_sistema[114] = 1;
+id_categoria[114] = 169;
+categoria[114] = 'Solicitação de Candidato';
+id_sistema[115] = 1;
+id_categoria[115] = 71;
+categoria[115] = 'Solicitação outros serviços';
+id_sistema[116] = 1;
+id_categoria[116] = 64;
+categoria[116] = 'Tabelas';
+id_sistema[117] = 1;
+id_categoria[117] = 172;
+categoria[117] = 'Todos os Módulos do Sistema';
+id_sistema[118] = 1;
+id_categoria[118] = 65;
+categoria[118] = 'Transferências';
+id_sistema[119] = 1;
+id_categoria[119] = 66;
+categoria[119] = 'Utilitários';
+id_sistema[120] = 1;
+id_categoria[120] = 68;
+categoria[120] = 'Vale Benefícios';
+id_sistema[121] = 1;
+id_categoria[121] = 67;
+categoria[121] = 'Vale Transporte';
+id_sistema[122] = 1;
+id_categoria[122] = 69;
+categoria[122] = 'Verbas Fixas';
+id_sistema[123] = 1;
+id_categoria[123] = 70;
+categoria[123] = 'Versão Windows';
+id_sistema[124] = 1;
+id_categoria[124] = 207;
+categoria[124] = 'Vírus';
+id_sistema[125] = 16;
+id_categoria[125] = 243;
+categoria[125] = 'Benefícios';
+id_sistema[126] = 16;
+id_categoria[126] = 242;
+categoria[126] = 'Pessoais e Financeiros';
+id_sistema[127] = 5;
+id_categoria[127] = 183;
+categoria[127] = 'Backup';
+id_sistema[128] = 5;
+id_categoria[128] = 179;
+categoria[128] = 'Documentos';
+id_sistema[129] = 5;
+id_categoria[129] = 155;
+categoria[129] = 'Dúvidas com backup';
+id_sistema[130] = 5;
+id_categoria[130] = 182;
+categoria[130] = 'Geradores';
+id_sistema[131] = 5;
+id_categoria[131] = 232;
+categoria[131] = 'Geradores';
+id_sistema[132] = 5;
+id_categoria[132] = 166;
+categoria[132] = 'Implantação do Sistema';
+id_sistema[133] = 5;
+id_categoria[133] = 177;
+categoria[133] = 'Manutenção de Arquivos';
+id_sistema[134] = 5;
+id_categoria[134] = 180;
+categoria[134] = 'Processos';
+id_sistema[135] = 5;
+id_categoria[135] = 178;
+categoria[135] = 'Relatórios';
+id_sistema[136] = 5;
+id_categoria[136] = 150;
+categoria[136] = 'Relatórios Mensais';
+id_sistema[137] = 5;
+id_categoria[137] = 228;
+categoria[137] = 'transações';
+id_sistema[138] = 5;
+id_categoria[138] = 181;
+categoria[138] = 'Utilitários';
+id_sistema[139] = 5;
+id_categoria[139] = 211;
+categoria[139] = 'Vírus';
+id_sistema[140] = 8;
+id_categoria[140] = 158;
+categoria[140] = 'Dúvidas com backup';
+id_sistema[141] = 8;
+id_categoria[141] = 214;
+categoria[141] = 'Vírus';
+id_sistema[142] = 4;
+id_categoria[142] = 109;
+categoria[142] = 'Abonos';
+id_sistema[143] = 4;
+id_categoria[143] = 110;
+categoria[143] = 'Acertos de Marcações';
+id_sistema[144] = 4;
+id_categoria[144] = 221;
+categoria[144] = 'Acesso ao sistema';
+id_sistema[145] = 4;
+id_categoria[145] = 111;
+categoria[145] = 'Adicional Noturno';
+id_sistema[146] = 4;
+id_categoria[146] = 226;
+categoria[146] = 'Alterações Globais';
+id_sistema[147] = 4;
+id_categoria[147] = 112;
+categoria[147] = 'Apontamento';
+id_sistema[148] = 4;
+id_categoria[148] = 113;
+categoria[148] = 'Arquivo de Marcação';
+id_sistema[149] = 4;
+id_categoria[149] = 160;
+categoria[149] = 'Arquivos danificados (sujeira)';
+id_sistema[150] = 4;
+id_categoria[150] = 114;
+categoria[150] = 'Atualização de Versão - Correio';
+id_sistema[151] = 4;
+id_categoria[151] = 223;
+categoria[151] = 'Atualização de versão - dúvidas';
+id_sistema[152] = 4;
+id_categoria[152] = 115;
+categoria[152] = 'Atualização de Versão - Internet';
+id_sistema[153] = 4;
+id_categoria[153] = 116;
+categoria[153] = 'Atualização de Versão - Senhas';
+id_sistema[154] = 4;
+id_categoria[154] = 217;
+categoria[154] = 'Backup';
+id_sistema[155] = 4;
+id_categoria[155] = 117;
+categoria[155] = 'Banco de Horas';
+id_sistema[156] = 4;
+id_categoria[156] = 118;
+categoria[156] = 'Boletim (de Versão - On Site)';
+id_sistema[157] = 4;
+id_categoria[157] = 215;
+categoria[157] = 'Cadastro de Controle';
+id_sistema[158] = 4;
+id_categoria[158] = 249;
+categoria[158] = 'Cadastro de crachás';
+id_sistema[159] = 4;
+id_categoria[159] = 119;
+categoria[159] = 'Cadastro de Usuários e Senhas';
+id_sistema[160] = 4;
+id_categoria[160] = 120;
+categoria[160] = 'Classificação';
+id_sistema[161] = 4;
+id_categoria[161] = 121;
+categoria[161] = 'Consolidação';
+id_sistema[162] = 4;
+id_categoria[162] = 154;
+categoria[162] = 'Dúvidas com backup';
+id_sistema[163] = 4;
+id_categoria[163] = 122;
+categoria[163] = 'Erro de Sincronismo';
+id_sistema[164] = 4;
+id_categoria[164] = 148;
+categoria[164] = 'Erro Sistema Operacional/Rede';
+id_sistema[165] = 4;
+id_categoria[165] = 123;
+categoria[165] = 'Escala de Revezamento';
+id_sistema[166] = 4;
+id_categoria[166] = 124;
+categoria[166] = 'Espelho do Cartão de Ponto';
+id_sistema[167] = 4;
+id_categoria[167] = 125;
+categoria[167] = 'Estatísticas';
+id_sistema[168] = 4;
+id_categoria[168] = 126;
+categoria[168] = 'Estatísticas';
+id_sistema[169] = 4;
+id_categoria[169] = 127;
+categoria[169] = 'Fechamento Mensal';
+id_sistema[170] = 4;
+id_categoria[170] = 219;
+categoria[170] = 'Fusão / Cisão de empresas';
+id_sistema[171] = 4;
+id_categoria[171] = 128;
+categoria[171] = 'Gerador de Arqs. e Relatórios';
+id_sistema[172] = 4;
+id_categoria[172] = 129;
+categoria[172] = 'Gerador de Modelos';
+id_sistema[173] = 4;
+id_categoria[173] = 133;
+categoria[173] = 'Help On Line';
+id_sistema[174] = 4;
+id_categoria[174] = 130;
+categoria[174] = 'Horas Extras';
+id_sistema[175] = 4;
+id_categoria[175] = 162;
+categoria[175] = 'Implantação do Sistema';
+id_sistema[176] = 4;
+id_categoria[176] = 131;
+categoria[176] = 'Instalação do Sistema';
+id_sistema[177] = 4;
+id_categoria[177] = 132;
+categoria[177] = 'Interface com o GIP';
+id_sistema[178] = 4;
+id_categoria[178] = 134;
+categoria[178] = 'Lay Out Arquivo Relogio';
+id_sistema[179] = 4;
+id_categoria[179] = 135;
+categoria[179] = 'Licença de Uso';
+id_sistema[180] = 4;
+id_categoria[180] = 136;
+categoria[180] = 'Manual do Sistema';
+id_sistema[181] = 4;
+id_categoria[181] = 137;
+categoria[181] = 'PEHORA';
+id_sistema[182] = 4;
+id_categoria[182] = 138;
+categoria[182] = 'Programas Especiais';
+id_sistema[183] = 4;
+id_categoria[183] = 139;
+categoria[183] = 'Relatórios';
+id_sistema[184] = 4;
+id_categoria[184] = 140;
+categoria[184] = 'Relógio de Ponto';
+id_sistema[185] = 4;
+id_categoria[185] = 171;
+categoria[185] = 'Solicitação de Candidato';
+id_sistema[186] = 4;
+id_categoria[186] = 144;
+categoria[186] = 'Solicitação outros serviços';
+id_sistema[187] = 4;
+id_categoria[187] = 141;
+categoria[187] = 'Tabelas';
+id_sistema[188] = 4;
+id_categoria[188] = 244;
+categoria[188] = 'Troca de número de crachá';
+id_sistema[189] = 4;
+id_categoria[189] = 142;
+categoria[189] = 'Utilitários';
+id_sistema[190] = 4;
+id_categoria[190] = 143;
+categoria[190] = 'Versão Windows';
+id_sistema[191] = 4;
+id_categoria[191] = 210;
+categoria[191] = 'Vírus';
+id_sistema[192] = 7;
+id_categoria[192] = 157;
+categoria[192] = 'Dúvidas com backup';
+id_sistema[193] = 7;
+id_categoria[193] = 167;
+categoria[193] = 'Implantação do Sistema';
+id_sistema[194] = 7;
+id_categoria[194] = 246;
+categoria[194] = 'Relatório de apontamento';
+id_sistema[195] = 7;
+id_categoria[195] = 213;
+categoria[195] = 'Vírus';
+id_sistema[196] = 6;
+id_categoria[196] = 73;
+categoria[196] = 'Atualização de Versão - Correio';
+id_sistema[197] = 6;
+id_categoria[197] = 74;
+categoria[197] = 'Atualização de Versão - Internet';
+id_sistema[198] = 6;
+id_categoria[198] = 75;
+categoria[198] = 'Atualização de Versão - Senhas';
+id_sistema[199] = 6;
+id_categoria[199] = 72;
+categoria[199] = 'Avaliação de Desempenho';
+id_sistema[200] = 6;
+id_categoria[200] = 76;
+categoria[200] = 'Banco de Candidatos';
+id_sistema[201] = 6;
+id_categoria[201] = 77;
+categoria[201] = 'Boletim (de versão, On Site)';
+id_sistema[202] = 6;
+id_categoria[202] = 78;
+categoria[202] = 'Cadastro de Usuários e Senhas';
+id_sistema[203] = 6;
+id_categoria[203] = 79;
+categoria[203] = 'Cargos e Salários';
+id_sistema[204] = 6;
+id_categoria[204] = 80;
+categoria[204] = 'Conversão de Dados';
+id_sistema[205] = 6;
+id_categoria[205] = 81;
+categoria[205] = 'Descrição de Cargos';
+id_sistema[206] = 6;
+id_categoria[206] = 156;
+categoria[206] = 'Dúvidas com backup';
+id_sistema[207] = 6;
+id_categoria[207] = 82;
+categoria[207] = 'Editor de Textos';
+id_sistema[208] = 6;
+id_categoria[208] = 149;
+categoria[208] = 'Erro Sistema Operacional/Rede';
+id_sistema[209] = 6;
+id_categoria[209] = 83;
+categoria[209] = 'Estatísticas';
+id_sistema[210] = 6;
+id_categoria[210] = 84;
+categoria[210] = 'Gerador de Arqs. e Relatórios';
+id_sistema[211] = 6;
+id_categoria[211] = 85;
+categoria[211] = 'Gerador de Modelos';
+id_sistema[212] = 6;
+id_categoria[212] = 87;
+categoria[212] = 'Help On Line';
+id_sistema[213] = 6;
+id_categoria[213] = 163;
+categoria[213] = 'Implantação do Sistema';
+id_sistema[214] = 6;
+id_categoria[214] = 86;
+categoria[214] = 'Instalação do Sistema';
+id_sistema[215] = 6;
+id_categoria[215] = 88;
+categoria[215] = 'Manual de Cargos';
+id_sistema[216] = 6;
+id_categoria[216] = 89;
+categoria[216] = 'Manual do Sistema';
+id_sistema[217] = 6;
+id_categoria[217] = 90;
+categoria[217] = 'Medicina Ocupacional';
+id_sistema[218] = 6;
+id_categoria[218] = 91;
+categoria[218] = 'Pesquisa Salarial';
+id_sistema[219] = 6;
+id_categoria[219] = 92;
+categoria[219] = 'Pré-Admissão';
+id_sistema[220] = 6;
+id_categoria[220] = 93;
+categoria[220] = 'Processos Trabalhistas';
+id_sistema[221] = 6;
+id_categoria[221] = 94;
+categoria[221] = 'Programas Especiais';
+id_sistema[222] = 6;
+id_categoria[222] = 95;
+categoria[222] = 'Quadro de Pessoal';
+id_sistema[223] = 6;
+id_categoria[223] = 99;
+categoria[223] = 'Recrutamento e Seleção';
+id_sistema[224] = 6;
+id_categoria[224] = 98;
+categoria[224] = 'Recrutamento Externo';
+id_sistema[225] = 6;
+id_categoria[225] = 97;
+categoria[225] = 'Recrutamento Interno';
+id_sistema[226] = 6;
+id_categoria[226] = 101;
+categoria[226] = 'Relatórios';
+id_sistema[227] = 6;
+id_categoria[227] = 96;
+categoria[227] = 'Requisição de Pessoal';
+id_sistema[228] = 6;
+id_categoria[228] = 100;
+categoria[228] = 'Segurança do Trabalho';
+id_sistema[229] = 6;
+id_categoria[229] = 103;
+categoria[229] = 'Segurança do Trabalho';
+id_sistema[230] = 6;
+id_categoria[230] = 170;
+categoria[230] = 'Solicitação de Candidato';
+id_sistema[231] = 6;
+id_categoria[231] = 108;
+categoria[231] = 'Solicitação de Outros Serviços';
+id_sistema[232] = 6;
+id_categoria[232] = 104;
+categoria[232] = 'Tabelas';
+id_sistema[233] = 6;
+id_categoria[233] = 105;
+categoria[233] = 'Treinamento';
+id_sistema[234] = 6;
+id_categoria[234] = 106;
+categoria[234] = 'Utilitários';
+id_sistema[235] = 6;
+id_categoria[235] = 107;
+categoria[235] = 'Versão Windows';
+id_sistema[236] = 6;
+id_categoria[236] = 212;
+categoria[236] = 'Vírus';
+id_sistema[237] = 12;
+id_categoria[237] = 173;
+categoria[237] = 'Geral';
+id_sistema[238] = 17;
+id_categoria[238] = 245;
+categoria[238] = 'Geral';
+id_sistema[239] = 13;
+id_categoria[239] = 190;
+categoria[239] = 'Geral';
+id_sistema[240] = 13;
+id_categoria[240] = 199;
+categoria[240] = 'Informações';
+id_sistema[241] = 13;
+id_categoria[241] = 200;
+categoria[241] = 'Inscrição';
+id_sistema[242] = 11;
+id_categoria[242] = 175;
+categoria[242] = 'Geral';
+   
+   sistema  = document.form.sistema.value;
+   strAux = 'Categoria<br><select name="categoria" class="unnamed1">\n';
+   strAux +=  '<option value=0></optiont>\n';
+   for(laco=1; laco <= 242; laco++) {
+     if ( id_sistema[laco] == sistema) {
+       strAux = strAux +  '<option value = ' + id_categoria[laco] + '>' + categoria[laco]+'</option>\n';
+     }	   
+   }
+   strAux += '</select>';
+	 
+   cat.innerHTML = strAux;	 
+   alteraTreinados();
+   document.form.pessoacontatada.value = '';
+  }
+
+
+  function alteraTreinados() {
+    
+     id_sistema1 = new Array(5);
+     nome = new Array(5);	 	 
+	 var strAux;
+id_sistema1[1] = 1;
+nome[1] = 'CRISTIANO DE FAVARI';
+id_sistema1[2] = 1;
+nome[2] = 'HUMBERTO R. SANDMANN';
+id_sistema1[3] = 1;
+nome[3] = 'RICARDO HUDSON';
+id_sistema1[4] = 1;
+nome[4] = 'ROGERIO MONTEIRO PIRES';
+id_sistema1[5] = 1;
+nome[5] = 'ROSANA HUDSON';
+   
+   var qtre = 0;
+   sistema1 = document.form.sistema.value;
+   s.innerHTML = document.form.sistema.options[ document.form.sistema.selectedIndex ].text;
+   strAux = '<select name="treinados" class="unnamed1" onClick="t();">\n';
+   strAux +=  '<option value=0></optiont>\n';
+   for(laco=1; laco <= 5; laco++) {
+     if ( id_sistema1[laco] == sistema1) {
+       qtre++;
+       strAux = strAux +  '<option value = ' + nome[laco] + '>' + nome[laco]+'</option>\n';
+     }	   
+   }
+   strAux += '</select>'; 
+   if (qtre==0) {
+     tre.innerHTML = "<i>Nenhum treinado nesse sistema</i>";
+   } else {
+     tre.innerHTML = strAux;	 
+   }
+  }
+
+  function t() {
+     document.form.pessoacontatada.value = document.form.treinados.options[ document.form.treinados.selectedIndex ].text;
+  }
+  
+  function vai() {
+
+    if (document.form.sistema.value==0) {
+	  window.alert( 'Selecione um sistema');
+	  document.form.sistema.focus();
+	  return false;
+	}
+
+    if (document.form.categoria.value==0) {
+	  window.alert( 'Selecione uma categoria');
+	  document.form.categoria.focus();
+	  return false;
+	}
+	
+
+
+    if (document.form.motivo.value==0) {
+	  window.alert( 'Selecione um motivo');
+	  document.form.motivo.focus();
+	  return  false;
+	}
+
+	
+	
+    if (document.form.descricao.value=='') {
+	  window.alert( 'Digite a descrição do problema');
+	  document.form.descricao.focus();
+	  return false;
+	}
+	
+    if (document.form.historico.value=='') {
+	  window.alert( 'Digite a descrição da solução ou encaminhamento');
+	  document.form.historico.focus();
+	  return false;
+	}
+	
+	if (document.form.action.value == "encaminhar") {
+		if (document.form.destinatario.value==0) {
+		  window.alert( 'Selecione para quem será encaminhado o contato');
+		  document.form.destinatario.focus();
+		  return false;
+		}
+	}
+
+    document.form.descricao.value = document.form.descricao.value + '<br>' + document.form.sistema.options[ document.form.sistema.selectedIndex ].text;
+  	document.form.submit();
+	
+  }
+  
+  alteraCombo();
+  
+  function teclado() {
+  var ch=String.fromCharCode(window.event.keyCode);
+  var t = 0;
+  var re=ch.charCodeAt(0);
+  if (re==13) {
+    vai();
+	return false;
+  }
+  }
+  
+</script>
+</body>
+</html>

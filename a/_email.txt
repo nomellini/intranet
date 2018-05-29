@@ -1,0 +1,11 @@
+Atenção: Registro de contato com usuário não treinado<br><br>
+
+Cliente  : [id_cliente]<br>
+Telefone : [telefone] <br>
+Usuário  : [nome]<br>
+Email    : [email]<br>
+Sistema  : [sistema]<br>
+Consultor: [consultor]<br>
+Chamado de origem: [chamado]<br>
+Contato: [contato]<br>
+<br><br><br>

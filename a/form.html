@@ -1,0 +1,56 @@
+ <html>  
+         <head> 
+                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+                 <title>jQuery Dynamic Form Demo</title> 
+                 <style type="text/css"> 
+                         form p > label{ 
+                                 display: block; 
+                                 width: 150px; 
+                                 float: left; 
+                                 clear:left; 
+                         } 
+                         form p > span, fieldset > fieldset{ 
+                                 display: block; 
+                                 float: left; 
+                                 clear:left; 
+                         } 
+                         form p > input{ 
+                                 float: left; 
+                         } 
+                         form p > textarea{ 
+                                 float: left; 
+                         } 
+                         span.inline{ 
+                                 display:inline; 
+                                 clear:none; 
+                         } 
+                          
+                 </style> 
+				 
+				 
+				 
+<script src="../scripts/jquery-1.4.2.min.js"></script>		
+<script type="text/javascript" charset="utf-8">
+	$(function() {
+		$("#addFieldButton").click(function() {
+			$("#additionalEmails").append("<input type='file' name='userfile[]' class="borda_fina" size='50'><br />" );
+		});
+	});
+</script>						 
+				 
+         </head> 
+ <body> 
+<form action="form.php" method="post" enctype="multipart/form-data" name="form1" id="form1">				 
+
+	
+								 					</td> 
+				   <div id="additionalEmails">
+				   </div><br>				   
+                   <input type="button"  value="+ Arquivo" id="addFieldButton" ><br>
+                   <label>
+                   
+                   </label>				   
+				   <input type="submit">
+ </form>
+ </body> 
+ </html>  

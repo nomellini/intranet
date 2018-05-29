@@ -1,0 +1,27 @@
+
+<table width="90%" border="0" cellspacing="1" cellpadding="1" align="right" bgcolor="#CCCCCC">
+  <tr bgcolor="$cor"> 
+    <td width="20%">Descri&ccedil;&atilde;o</td>
+    <td width="80%">$descricao</td>
+  </tr>
+  <tr bgcolor="$cor"> 
+    <td width="20%">Caminho</td>
+    <td width="80%">$caminho</td>
+  </tr>
+  <tr bgcolor="$cor"> 
+    <td width="20%">Arquivo (pdf ou doc)</td>
+    <td width="80%">$nome</td>
+  </tr>
+  <tr bgcolor="$cor"> 
+    <td width="20%">Data de previs&atilde;o</td>
+    <td width="80%">$previsao</td>
+  </tr>
+  <tr bgcolor="$cor"> 
+    <td width="20%">Data do OK</td>
+    <td width="80%">$data[2]/$data[1]/$data[0] - $hora</td>
+  </tr>
+  <tr bgcolor="$cor"> 
+    <td width="20%">Responsável</td>
+    <td width="80%">$quem</td>
+  </tr>
+</table>

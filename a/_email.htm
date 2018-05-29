@@ -1,0 +1,32 @@
+<br>
+<input name="enviaemail" type="checkbox" id="enviaemail" onClick="alterna_email(sp_email)" value="1">
+Solicitação de Treinamento para o cliente contatado
+<span id=sp_email style="Display: none"> 
+<table width="99%" border="0" cellspacing="1" cellpadding="1" bgcolor="#CCCCCC">
+  <tr> 
+    <td bgcolor="#FFFFFF">Ao selecionar esta op&ccedil;&atilde;o, uma solicita&ccedil;&atilde;o de contato ser&aacute; enviada para o departamento de Treinamento da Datamace, 
+      afim de convidar a Pessoa Contatada a participar do treinamento do sistema.
+      <table width="95%" border="0" cellspacing="1" cellpadding="1">
+        <tr> 
+          <td width="18%">Nome do cliente </td>
+          <td width="82%"> <input name="NomeTreinando" type="text" class="unnamed1" id="NomeTreinando" size="60">          </td>
+        </tr>
+        <tr>
+          <td height="34">Email do cliente </td>
+          <td><input name="emailpadrao" type="text" class="unnamed1" id="emailpadrao" size="60" />
+          </td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</span> 
+<script>
+function alterna_email(item){
+ if (item.style.display=='none'){
+   item.style.display='';
+ } else {
+   item.style.display='none'
+ }
+ document.form.NomeTreinando.value = document.form.pessoacontatada.value;
+}  
+</script><br>

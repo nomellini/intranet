@@ -1,0 +1,9 @@
+ <font face="Arial" size=2>
+<p>Response object</font> <font face="Arial" size=2>error 'ASP 0100 : 8007000e'</font>
+<p>
+<font face="Arial" size=2>Out of memory</font>
+<p>
+<font face="Arial" size=2>/new/Download.asp</font><font face="Arial" size=2>, line 88</font>
+<p>
+<font face="Arial" size=2>Unable to allocate required memory.
+</font> 

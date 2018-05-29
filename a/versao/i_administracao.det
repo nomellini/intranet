@@ -12,8 +12,4 @@
     <td width="30%">Responsável</td>
     <td width="70%">$quem</td>
   </tr>
-  <tr bgcolor="$cor">
-    <td width="30%">Data de postagem correio</td>
-    <td width="70%">$datap[2]/$datap[1]/$datap[0]</td>
-  </tr>
 </table>

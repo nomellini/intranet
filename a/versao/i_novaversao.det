@@ -8,10 +8,6 @@
     <td width="80%">$impacto</td>
   </tr>
   <tr bgcolor="$cor"> 
-    <td width="20%">Observa&ccedil;&otilde;es</td>
-    <td width="80%">$texto</td>
-  </tr>
-  <tr bgcolor="$cor"> 
     <td width="20%">Data</td>
     <td width="80%">$data[2]/$data[1]/$data[0] - $hora</td>
   </tr>

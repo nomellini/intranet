@@ -24,8 +24,8 @@
   <table width="90%" border="0" cellspacing="1" cellpadding="1">
     <tr> 
       <td> 
-        <input type="checkbox" name="existe" value="checkbox" onClick = "mostra(t_versao)" <?=$existe?> >
-        Existe e-mail para esse lote ? (selecione se tiver)</td>
+			Tarefa de envio de Email
+       </td>
     </tr>
     <tr> 
       <td><span id=t_versao style="DISPLAY: <?=$disp?>"> 

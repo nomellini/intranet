@@ -64,15 +64,7 @@
         OK( <font color="#FF0000">ATEN&Ccedil;&Atilde;O </font>Quando der o OK. 
         o conjunto todo ser&aacute; dado como OK ! )</td>
     </tr>
-    <tr>
-      <td>Data de postagem : 
-        <input type="text" name="diapostagem" size="2" maxlength="2" class="unnamed1" value="<?=$datap[2]?>" >
-        /
-        <input type="text" name="mespostagem" size="2" maxlength="2" class="unnamed1" value="<?=$datap[1]?>">
-        /
-        <input type="text" name="anopostagem" size="4" maxlength="4" class="unnamed1" value="<?=$datap[0]?>">
-      </td>
-    </tr>
+    
     <tr> 
       <td> 
         <input type="button" name="Button" value="Enviar" onClick = "testa()";>

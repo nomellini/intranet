@@ -40,7 +40,7 @@ $classificacao =  $result_c->c1;
 
 $email = mysql_real_escape_string ($email);	
 $assunto = mysql_real_escape_string ($assunto);
-$descricao = mysql_real_escape_string ($descricao);
+$descricao = nl2br($descricao);
 $classificacao = mysql_real_escape_string ($classificacao);
 $versao = mysql_real_escape_string ($versao);
 $produto = mysql_real_escape_string ($produto);
@@ -48,6 +48,7 @@ $versao = mysql_real_escape_string ($versao);
 $nome = mysql_real_escape_string ($nome);
 $assunto = mysql_real_escape_string ($assunto);
 $modulo = mysql_real_escape_string ($modulo);
+
 
 
 //"\nDescrição: $descricao"
@@ -147,7 +148,8 @@ window.location='acompanhar_chamado.php?pagina=1&pag=1';
 		$objContato->datae = $datae;
 		$objContato->horae = $horae;				
     	$objContato->Ic_Atencao = 0;		
-		$objContato->historico = "$texto";			
+		$objContato->historico = $texto;	
+		$objContato->publicar = 1;
 		$objContato->gravaContato();			  
 
   }

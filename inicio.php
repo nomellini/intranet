@@ -1,4 +1,4 @@
-<?
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><?
   session_start();
   require("cabeca.php");	  
   if ( $v_id_usuario ) {
@@ -156,16 +156,16 @@
       var diasemana = new Array;
       var mesescrito = new Array;   
       diasemana[1] = "Segunda-feira";
-      diasemana[2] = "Terça-feira";
+      diasemana[2] = "TerÃ§a-feira";
       diasemana[3] = "Quarta-feira";
       diasemana[4] = "Quinta-feira";
       diasemana[5] = "Sexta-feira";
-      diasemana[6] = "Sábado";
+      diasemana[6] = "SÃ¡bado";
       diasemana[0] = "Domingo";
      
       mesescrito[0] = "Janeiro";
       mesescrito[1] = "Fevereiro";
-      mesescrito[2] = "Março";
+      mesescrito[2] = "MarÃ§o";
       mesescrito[3] = "Abril";
       mesescrito[4] = "Maio";
       mesescrito[5] = "Junho";
@@ -438,7 +438,7 @@ face="Verdana, Arial, Helvetica, sans-serif">(usu&aacute;rio 1 e senha 1234 - fa
                             de ramais para impress&atilde;o</a></font></li>
                             <li><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="/ver_arquivo1.php">Lista 
                             de programas</a></font></li>
-                            <li><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="/servicosgerais/solicitacao.php">Solicitação de manutenção / Suporte Interno 
+                            <li><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="/servicosgerais/solicitacao.php">SolicitaÃ§Ã£o de manutenÃ§Ã£o / Suporte Interno 
                             </a></font><img src="imagens/novo.gif" width="45" height="15"></li>
                         </ul>                        </td>
                       </tr>

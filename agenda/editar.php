@@ -74,7 +74,7 @@
 		
     $nomeusuario=peganomeusuario($ok);	
     $cal = new MyCalendar;
-    $BRMonths = array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");
+    $BRMonths = array("Janeiro", "Fevereiro", "MarÃ§o", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");
     $BRDays = array ("D", "S", "T", "Q", "Q", "S", "S");
     $BRDays2 = array ("Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab");	
     $cal->setMonthNames($BRMonths);
@@ -89,7 +89,7 @@
 <html>
 <head>
 <title>Novo Compromisso</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="../a/stilos.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -375,7 +375,7 @@ function atualiza() {
          }
         }
   if (linha == "") {
-    window.alert("Você deve selecionar pelo menos um nome");
+    window.alert("VocÃª deve selecionar pelo menos um nome");
 	linha = "<font color=#ff0000>Selecione pelo menos um nome</font>";
   }
   nomes.innerHTML = linha;		
@@ -394,7 +394,7 @@ function listasalas(ADia, AMes, AAno) {
  AAno = '<?=$ano?>';
  Ahi = document.form1.hora.value;
  Ahf = document.form1.horafim.value;
-  window.open('listasalasdisponiveis.php?dia='+ADia+'&mes='+AMes+'&ano='+AAno+'&hi='+Ahi+'&hf='+Ahf, "Seleção", "scrollbars=yes, height=488, width=600");
+  window.open('listasalasdisponiveis.php?dia='+ADia+'&mes='+AMes+'&ano='+AAno+'&hi='+Ahi+'&hf='+Ahf, "SeleÃ§Ã£o", "scrollbars=yes, height=488, width=600");
 }
 
 

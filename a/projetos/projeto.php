@@ -128,7 +128,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <script type="text/jscript" src="../../scripts/jquery-1.4.2.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Projeto</title>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
@@ -159,7 +159,7 @@
       </strong></span></td>
   </tr>
   <tr>
-    <td class="normalRow style1">Situação</td>
+    <td class="normalRow style1">SituaÃ§Ã£o</td>
     <td class="normalRow"><span class="style1"><strong>
       <?= pegaStatus($projeto->status);?>
       </strong></span></td>
@@ -234,7 +234,7 @@ do {
   <input name="chamado_pai_motivo" type="hidden" value="P" />
   <input name="acao" type="hidden" value="Inserir" />
 </form>
-<p>[<a href="../relatorios/r_037.php?id_chamado=<?=$id_chamado?>">ver estatísticas</a>]
+<p>[<a href="../relatorios/r_037.php?id_chamado=<?=$id_chamado?>">ver estatÃ­sticas</a>]
   [<a href="ChamadosProjeto.php?id_projeto=<?=$id_chamado?>">ver destinatarios</a>]</p>
 <p>
 </p>

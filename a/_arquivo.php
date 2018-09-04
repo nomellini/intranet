@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Untitled Document</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="cdc/stilos.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -10,7 +10,7 @@
 <?
 
   if(  !$fileEmail=fopen('_email.txt', "r") ) {
-    echo "Não foi possível abrir o arquivo";
+    echo "NÃ£o foi possÃ­vel abrir o arquivo";
   } else {
     $textEmail = fread( $fileEmail, 10000);
   }
@@ -18,7 +18,7 @@
   if (($action) == "gravar") {
     $fileEmail=fopen('_email.txt', "w");
     $textEmail = $email;
-	fputs($fileEmail, $textEmail, 10000);	
+	fputs($fileEmail, $textEmail, 10000);
   }
 
 ?>

@@ -1,0 +1,40 @@
+DROP TABLE cliente;
+
+CREATE TABLE cliente (
+  id_cliente char(15) NOT NULL,
+  senha char(6),
+  cliente char(40),
+  endereco char(35),
+  bairro char(20),
+  cidade char(20),
+  uf char(2),
+  cep char(8),
+  telefone char(20),
+  fax char(20),
+  contato1 char(15),
+  contato2 char(15),
+  contato3 char(15),
+  funcionarios char(5),
+  bloqueio bool,  
+  tipoatualiz char(1),
+  inadimplente tinyint(1) default '0',
+  atendimento tinyint(1) default '0',
+  PRIMARY KEY (id_cliente));
+
+LOAD DATA LOCAL INFILE '/dados/ftp/sites/sad/htdocs/backup/DTM-CLI.TXT' REPLACE INTO TABLE cliente fields terminated by ',' enclosed by '"' LINES TERMINATED BY ' \r\n';
+
+
+
+drop table clisis;
+
+CREATE TABLE clisis (
+  cliente char(15),
+  sistema int(11),
+  ativo bool,
+  32bit bool default '0',
+  versao char(5)
+ );
+
+LOAD DATA LOCAL INFILE '/dados/ftp/sites/sad/htdocs/backup/DTM-SIS.TXT' REPLACE INTO TABLE clisis fields terminated by ',' enclosed by '"' LINES TERMINATED BY ' \r\n';
+
+

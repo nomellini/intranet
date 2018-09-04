@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <script type="text/jscript" src="../../scripts/jquery-1.4.2.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Destinat&aacute;rios do projeto</title>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
@@ -199,7 +199,7 @@
 		  						<thead>
 		    <tr>
 		      <th width="15%" bgcolor="#0066FF">Detalhes</th>
-              <th width="50%" bgcolor="#0066FF">Restrição</th>
+              <th width="50%" bgcolor="#0066FF">RestriÃ§Ã£o</th>
 		      <th width="14%" bgcolor="#0066FF">Chamados em aberto</th>
             </tr>
 						<thead/>
@@ -227,7 +227,7 @@ order by Ds_Descricao";
 			$desc = $linha->Ds_Descricao;
 			$qtde = $linha->q;
 			if ($desc=="")	{
-				$desc = "Sem restrição";
+				$desc = "Sem restriÃ§Ã£o";
 			}
 			$class = "normalRow";
 			if ($Id == $Id_Restricao)
@@ -253,7 +253,7 @@ order by Ds_Descricao";
 		    <tr>
 		      <th width="5%" bgcolor="#0066FF">Chamado</th>
               <th width="20%" bgcolor="#0066FF">Destinatario</th>
-		      <th width="75%" bgcolor="#0066FF">Descrição</th>
+		      <th width="75%" bgcolor="#0066FF">DescriÃ§Ã£o</th>
             </tr>
 						<thead/>
 			<tbody>		  

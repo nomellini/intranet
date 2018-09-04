@@ -58,7 +58,7 @@
 		
     $nomeusuario=peganomeusuario($ok);	
     $cal = new MyCalendar;
-    $BRMonths = array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");
+    $BRMonths = array("Janeiro", "Fevereiro", "MarÃ§o", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");
     $BRDays = array ("D", "S", "T", "Q", "Q", "S", "S");
     $BRDays2 = array ("Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab");	
     $cal->setMonthNames($BRMonths);
@@ -75,7 +75,7 @@
 <html>
 <head>
 <title>Novo Compromisso</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="../a/stilos.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -115,7 +115,7 @@ function atualiza() {
          }
         }
   if (linha == "") {
-    window.alert("Você deve selecionar pelo menos um nome");
+    window.alert("VocÃª deve selecionar pelo menos um nome");
 	linha = "<font color=#ff0000>Selecione pelo menos um nome</font>";
   }
 
@@ -240,7 +240,7 @@ function ajax_get (url, el) {
       <td valign="top">&nbsp;</td>
       <td><input name="RepeatEvent" type="checkbox"  id="RepeatEvent" value="1" onClick="AlternaDataFinal()">
         Repetir este compromisso <div id="divRepeat" style="display: none"> at&eacute; o dia 
-        <input name="rdia" type="text" class="borda_fina" id="rdia" value="<?=$dia?>" size="3" maxlength="2" alt="Repetir até este dia">
+        <input name="rdia" type="text" class="borda_fina" id="rdia" value="<?=$dia?>" size="3" maxlength="2" alt="Repetir atÃ© este dia">
         /
         <input name="rmes" type="text" class="borda_fina" id="rmes" value="<?=$mes?>" size="3" maxlength="2">
         /
@@ -457,7 +457,7 @@ function listasalas(ADia, AMes, AAno) {
  AAno = '<?=$ano?>';
  Ahi = document.form1.hora.value;
  Ahf = document.form1.horafim.value;
-  window.open('listasalasdisponiveis.php?dia='+ADia+'&mes='+AMes+'&ano='+AAno+'&hi='+Ahi+'&hf='+Ahf, "Seleção", "scrollbars=yes, height=488, width=600");
+  window.open('listasalasdisponiveis.php?dia='+ADia+'&mes='+AMes+'&ano='+AAno+'&hi='+Ahi+'&hf='+Ahf, "SeleÃ§Ã£o", "scrollbars=yes, height=488, width=600");
 }
 
 </script>

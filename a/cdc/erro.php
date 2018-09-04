@@ -1,45 +1,45 @@
 
 <?
   if ($erro==1) {
-    $msg = "Você não está autorizado a usar o sistema da atendimento (ATM)";
+    $msg = "Vocï¿½ nï¿½o estï¿½ autorizado a usar o sistema da atendimento (ATM)";
   }
   if ($erro==2 or !$erro) {
-    $msg = "Senha Incorreta, ou usuário não cadastrado";
+    $msg = "Senha Incorreta, ou usuï¿½rio nï¿½o cadastrado";
   }
   if ($erro==3) {
     $msg = "Todos os campos devem ser preenchidos";
   }
   if ($erro==4) {
-    $msg = "Você não está autorizado a usar o sistema da atendimento (BLQ)";
+    $msg = "Vocï¿½ nï¿½o estï¿½ autorizado a usar o sistema da atendimento (BLQ)";
   }
-  
+
 ?>
 <html>
 <head>
 <title>SAD :: Mensagem de Erro</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 </head>
 <body bgcolor="#FFFFFF" text="#000000">
 <table width="100%" border="0" cellspacing="1" cellpadding="1">
-  <tr> 
+  <tr>
     <td width="50%"><img src="../../imagens/logotipo%20datamace.gif" width="155" height="41"></td>
-    <td width="50%" valign="bottom" align="right"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+    <td width="50%" valign="bottom" align="right"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
       <script language="JavaScript">
       var diasemana = new Array;
       var mesescrito = new Array;
-    
+
       diasemana[1] = "Segunda-feira";
-      diasemana[2] = "Terça-feira";
+      diasemana[2] = "Terï¿½a-feira";
       diasemana[3] = "Quarta-feira";
       diasemana[4] = "Quinta-feira";
       diasemana[5] = "Sexta-feira";
-      diasemana[6] = "Sábado";
+      diasemana[6] = "Sï¿½bado";
       diasemana[7] = "Domingo";
-     
+
       mesescrito[0] = "Janeiro";
       mesescrito[1] = "Fevereiro";
-      mesescrito[2] = "Março";
+      mesescrito[2] = "Marï¿½o";
       mesescrito[3] = "Abril";
       mesescrito[4] = "Maio";
       mesescrito[5] = "Junho";
@@ -59,7 +59,7 @@
       dia = datahoje.getDate();
       mes = datahoje.getMonth();
       ano = datahoje.getYear();
-      diaindex = datahoje.getDay();   
+      diaindex = datahoje.getDay();
 
      document.write (diasemana[diaindex] + '<br>' + dia + ' de ' + mesescrito[mes] + ' de ' + ano);
 </script>
@@ -67,14 +67,14 @@
   </tr>
 </table>
 <hr size="1" noshade>
-<div align="center"> 
+<div align="center">
   <p>Canal do Cliente</p>
   <p align="left"><font color="#FF0000"><b>Mensagem de Erro:</b></font></p>
-  <p align="left"> 
+  <p align="left">
     <?=$msg?>
   </p>
   <hr size="1" noshade>
-  <div align="left">[<a href="javascript:history.go(-1);">Tentar novamente</a>] 
+  <div align="left">[<a href="javascript:history.go(-1);">Tentar novamente</a>]
   </div>
 </div>
 </body>

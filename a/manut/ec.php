@@ -267,7 +267,7 @@ $totalRows_rsContatosEmAndamento = mysql_num_rows($rsContatosEmAndamento);
 		$totalRows_rsCat = mysql_num_rows($rsCat);  		 	  
 		  
 	} else {
-		$descricao = "Chamado não $id existe";
+		$descricao = "Chamado nÃ£o $id existe";
 	}
 }
 	
@@ -275,7 +275,7 @@ $totalRows_rsContatosEmAndamento = mysql_num_rows($rsContatosEmAndamento);
 ?><html>
 <head>
 <title>usuarios</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../stilos.css" type="text/css">
 </head>
 
@@ -298,7 +298,7 @@ $totalRows_rsContatosEmAndamento = mysql_num_rows($rsContatosEmAndamento);
     <tr>
       <td width="663" valign="top">
 	  <FieldSet>
-	  <Legend>Resumo do Chamado para manutenção</Legend>
+	  <Legend>Resumo do Chamado para manutenÃ§Ã£o</Legend>
 	  	<div class="oListaContatos">
 	  <table width="100%" border="0" cellspacing="1" cellpadding="1">
         <tr valign="top">
@@ -443,7 +443,7 @@ do {
         <tr valign="top">
           <td>Diagn&oacute;stico</td>
           <td><select name="id_diagnostico" class="borda_fina" id="id_diagnostico">
-            <option value="0" <?php if (!(strcmp(0, $row_rsChamado['diagnostico_id']))) {echo "selected=\"selected\"";} ?>>Não cadastrado</option>
+            <option value="0" <?php if (!(strcmp(0, $row_rsChamado['diagnostico_id']))) {echo "selected=\"selected\"";} ?>>NÃ£o cadastrado</option>
             <?php
 do {  
 ?>
@@ -634,7 +634,7 @@ mysql_free_result($rsContatosEmAndamento);
 ?>
 <script>
   function vai() {
-    if ( window.confirm('Confirma gravação das alterações ?') ) {
+    if ( window.confirm('Confirma gravaÃ§Ã£o das alteraÃ§Ãµes ?') ) {
 	  document.form1.submit();
 	}
   }

@@ -114,12 +114,12 @@ Filtrar:
 <table width="100%" border="0"  cellpadding="1" cellspacing="1" bgcolor="#999999" id="sf">
   <tr>
     <td bgcolor="#006699"><span class="style3">Chamado</span></td>
+    <td bgcolor="#006699"><span class="style3">De</span></td>
+    <td bgcolor="#006699"><span class="style3">Para</span></td>
     <td bgcolor="#006699" class="style3">Status</td>    
     <td bgcolor="#006699" class="style3">Sistema</td>
     <td bgcolor="#006699" class="style3">Cliente</td>
     <td bgcolor="#006699"><span class="style3">Data Hora </span></td>
-    <td bgcolor="#006699"><span class="style3">De</span></td>
-    <td bgcolor="#006699"><span class="style3">Para</span></td>
   </tr>
   <?
   while ($linha = mysql_fetch_object($query))
@@ -153,12 +153,12 @@ Filtrar:
   <tr 	title="<?= htmlentities( $linha->descricao)?>" class="<?=$ClasseEhMeu?>" >
     <td bgcolor="#FFFFFF"><?=$linha->id_chamado?>    
     </td>
+    <td bgcolor="#FFFFFF"><?=$nome?></td>
+    <td bgcolor="#FFFFFF"><?=$acao?></td>    
     <td bgcolor="#FFFFFF"><?=$linha->status?>    </td>    
     <td bgcolor="#FFFFFF"><?=$linha->sistema?></td>
     <td bgcolor="#FFFFFF"><?=$linha->Cliente?></td>
     <td bgcolor="#FFFFFF"><?=$data?></td>
-    <td bgcolor="#FFFFFF"><?=$nome?></td>
-    <td bgcolor="#FFFFFF"><?=$acao?></td>
   </tr>
 
   <?

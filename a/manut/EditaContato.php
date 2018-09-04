@@ -1,4 +1,4 @@
-<?php require_once('../../Connections/sad.php'); ?>
+<?php require_once('../cabeca.php'); ?>
 <?
 	mysql_select_db("sad");
 	$quem = $_GET["id"]; 
@@ -78,7 +78,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {	
-  $updateSQL = sprintf("UPDATE contato SET chamado_id=%s, pessoacontatada=%s, origem_id=%s, historico=%s, consultor_id=%s, destinatario_id=%s, dataa=%s, horaa=%s, horae=%s, publicar=%s, rnc=%s, tipo_rnc=%s, horae_original=%s WHERE id_contato=%s",
+  $updateSQL = sprintf("UPDATE contato SET chamado_id=%s, pessoacontatada=%s, origem_id=%s, historico=%s, consultor_id=%s, destinatario_id=%s, dataa=%s, horaa=%s, datae=%s, horae=%s, publicar=%s, rnc=%s, tipo_rnc=%s, horae_original=%s WHERE id_contato=%s",
                        GetSQLValueString($_POST['chamado_id'], "int"),
                        GetSQLValueString($_POST['pessoacontatada'], "text"),
                        GetSQLValueString($_POST['origem'], "int"),
@@ -87,15 +87,14 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['destinatario_id'], "int"),
                        GetSQLValueString($_POST['dataa'], "date"),
                        GetSQLValueString($_POST['horaa'], "date"),
+                       GetSQLValueString($_POST['dataa'], "date"),					   
                        GetSQLValueString($_POST['horae'], "date"),
                        GetSQLValueString(isset($_POST['publicar']) ? "true" : "", "defined","1","0"),
                        GetSQLValueString($_POST['rnc'], "int"),
                        GetSQLValueString($_POST['tipo_rnc'], "int"),
                        GetSQLValueString($_POST['horae_original'], "date"),
-                       GetSQLValueString($_POST['id_contato'], "int"));
-
-  mysql_select_db($database_sad, $sad);
-  $Result1 = mysql_query($updateSQL, $sad) or die(mysql_error());
+                       GetSQLValueString($_POST['id_contato'], "int"));	
+  $Result1 = mysql_query($updateSQL) or die(mysql_error());
 }
 
 $colname_rsContato = "-1";
@@ -106,33 +105,34 @@ $colname_rsContato = "-1";
 if (isset($_GET['id_contato'])) {
   $colname_rsContato = (get_magic_quotes_gpc()) ? $_GET['id_contato'] : addslashes($_GET['id_contato']);
 }
-mysql_select_db($database_sad, $sad);
+
+
 $query_rsContato = sprintf("SELECT * FROM contato WHERE id_contato = %s", $colname_rsContato);
-$rsContato = mysql_query($query_rsContato, $sad) or die(mysql_error());
+$rsContato = mysql_query($query_rsContato) or die(mysql_error());
 $row_rsContato = mysql_fetch_assoc($rsContato);
 $totalRows_rsContato = mysql_num_rows($rsContato);
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsOrigem = "SELECT * FROM origem";
-$rsOrigem = mysql_query($query_rsOrigem, $sad) or die(mysql_error());
+$rsOrigem = mysql_query($query_rsOrigem) or die(mysql_error());
 $row_rsOrigem = mysql_fetch_assoc($rsOrigem);
 $totalRows_rsOrigem = mysql_num_rows($rsOrigem);
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsDestinatarios = "SELECT id_usuario, nome FROM usuario ORDER BY nome ASC";
-$rsDestinatarios = mysql_query($query_rsDestinatarios, $sad) or die(mysql_error());
+$rsDestinatarios = mysql_query($query_rsDestinatarios) or die(mysql_error());
 $row_rsDestinatarios = mysql_fetch_assoc($rsDestinatarios);
 $totalRows_rsDestinatarios = mysql_num_rows($rsDestinatarios);
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsConsultor = "SELECT id_usuario, nome FROM usuario ORDER BY nome ASC";
-$rsConsultor = mysql_query($query_rsConsultor, $sad) or die(mysql_error());
+$rsConsultor = mysql_query($query_rsConsultor) or die(mysql_error());
 $row_rsConsultor = mysql_fetch_assoc($rsConsultor);
 $totalRows_rsConsultor = mysql_num_rows($rsConsultor);
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsStatus = "SELECT * FROM status";
-$rsStatus = mysql_query($query_rsStatus, $sad) or die(mysql_error());
+$rsStatus = mysql_query($query_rsStatus) or die(mysql_error());
 $row_rsStatus = mysql_fetch_assoc($rsStatus);
 $totalRows_rsStatus = mysql_num_rows($rsStatus);
 ?>

@@ -137,21 +137,23 @@ function FuncoesObterDescricaoChamado( $id_chamado )
 
 
 function FuncoesObterDescricaoChamadoPai( $id_chamado )
-{
-	
-	$sql = "select id_chamado, concat(id_chamado, ' - ', left(descricao,100)) descricao from chamado where id_chamado = (select chamado_pai_id from chamado where id_chamado = $id_chamado and chamado_pai_motivo <> '' )";
+{	
+	$sql = "select id_chamado,CONVERT( concat(id_chamado, ' - ', left(descricao,100)) USING utf8) descricao from chamado where id_chamado = (select chamado_pai_id from chamado where id_chamado = $id_chamado and chamado_pai_motivo <> '' )";
 
+	$sql = "select id_chamado, left(descricao,100) descricao from chamado where id_chamado = (select chamado_pai_id from chamado where id_chamado = $id_chamado and chamado_pai_motivo <> '' )";
+
+	
 	$result = mysql_query($sql);	
+	
 	$return = "";
 	if ($linha = mysql_fetch_object($result))
 	{
 		$id = $linha->id_chamado;
-		$descricao = "<br><br><i>Projeto: <a target=_blank href=/a/projetos/projeto.php?id_chamado=$id>" . $linha->descricao . "...</a></i>";
+		$descricao = "<br><br><i>Projeto: <a target=_blank href=/a/projetos/projeto.php?id_chamado=$id>" . "$linha->id_chamado : $linha->descricao" . "...</a></i>";
 		if ($id != 0)
 			$return = $descricao;
 	}
-	return $return;
-		
+	return $return;		
 }
 
 function FuncoesObterListaDeProjetosParaDropdownList()

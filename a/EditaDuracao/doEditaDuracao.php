@@ -1,10 +1,10 @@
 <?
-  require("../scripts/conn.php");		  
+  require("../scripts/conn.php");
   require("../scripts/funcoes.php");
 
 	$sql = "update contato set horae_original = horae where (id_contato = $id_contato) and (horae_original is null)";
 	mysql_query($sql);
-	
+
   $segundos = '00';
 
   $sql = "
@@ -17,7 +17,7 @@
 <html>
 <head>
 <title>Dura&ccedil;&atilde;o</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../stilos.css" type="text/css">
 </head>
 
@@ -31,10 +31,10 @@
 <p>&nbsp;</p>
 </body>
 </html>
-  <script>  
-  
+  <script>
+
   function vai() {
-	opener.document.form2.submit();   
+	opener.document.form2.submit();
 	window.close();
   }
 </script>

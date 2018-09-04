@@ -1,32 +1,32 @@
 <?
-    require("scripts/conn.php");		
-    require("scripts/cores.php");				
+    require("scripts/conn.php");
+    require("scripts/cores.php");
 	if (!$v_id_usuario) {
     	if ( isset($id_usuario) ) {
-    		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );	  
+    		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );
 	    	if ($ok<>$id_usuario) { header("Location: index.php"); }
-		    setcookie("loginok");  
+		    setcookie("loginok");
 	    } else {
 		    header("Location: index.php");
 	    }
 	} else {
 	    $ok = $v_id_usuario;
 	}
-	
-	
+
+
 	$sql = "select count(*) as quantidade from mydesktop where id_usuario=$ok";
 	$result = mysql_query($sql) or die(mysql_error());
 	$linha = mysql_fetch_object($result);
 	if ($linha->quantidade == 0) {
-	$sql = "insert into mydesktop (id_usuario, tradicional, prioridade, pastas, novo) value ($ok, 1, 1, 1, 1)"; 
+	$sql = "insert into mydesktop (id_usuario, tradicional, prioridade, pastas, novo) value ($ok, 1, 1, 1, 1)";
 		mysql_query($sql)  or die(mysql_error());
 	}
 
 	$sql = "select * from mydesktop where id_usuario=$ok";
 	$result = mysql_query($sql) or die(mysql_error());
-	$mydesktop = mysql_fetch_object($result);	
-	
-	
+	$mydesktop = mysql_fetch_object($result);
+
+
 	loga_online($ok, $REMOTE_ADDR, 'Desktop');
 
 	$area = pegaArea($ok);
@@ -34,23 +34,23 @@
 	if ($area == CONSULTORIA)  {
 	    $minhasLigacoes = true;
 	}
-	
+
     $sql = "SELECT count(*) as qtde from sigame where id_usuario = $ok;";
 	$result = mysql_query($sql);
 	$linha = mysql_fetch_object($result);
-	$DesktopSigame = $linha->qtde;	
-		
-    $nomeusuario=peganomeusuario($ok);	
+	$DesktopSigame = $linha->qtde;
+
+    $nomeusuario=peganomeusuario($ok);
 	$manut = pegaManut($ok);
-	$marketing = pegaMarketing($ok);	
+	$marketing = pegaMarketing($ok);
 	$msgnova = 0;
 	$lembretenovo = 0;
 	$i_conta = i_contaTarefas($ok);
-	
+
     $agoraTimeStamp=date("Y-m-d H:i:s");
     $agora=strtotime($agoraTimeStamp);
-	
-	$nowTime = date("G:i:s"); // Hora do servidor com 24hr	
+
+	$nowTime = date("G:i:s"); // Hora do servidor com 24hr
 	$sql =  "select count(*) as qtde from compromisso, compromissousuario where ";
 	$sql .= "compromisso.data = '" . date("Y-m-d") . "' and ";
 	$sql .= "compromisso.id = compromissousuario.id_compromisso and compromisso.horafim>'$nowTime' and ";
@@ -63,29 +63,29 @@
     $hoje = date("Y-m-d");
 
     if ($acao=="mudaestado") {
-    	$status = $status + 1; 
-        if ($status==10) { 
+    	$status = $status + 1;
+        if ($status==10) {
 		  $status=3;
 		} else {
-			if ($status>=3) { 
+			if ($status>=3) {
 			  $status=1;
 			}
 		}
 		$sql = "update usuario set estado = $status, estado_hora = '$agoraTimeStamp' where id_usuario = $ok";
-		$result = mysql_query($sql);		
-	}    
+		$result = mysql_query($sql);
+	}
     if ($acao=="mudaestadoconsultor") {
-    	$status = $status + 1; if ($status==4) { $status=1;}	
+    	$status = $status + 1; if ($status==4) { $status=1;}
 		$sql = "update usuario set estado = $status, estado_hora = '$agoraTimeStamp' where id_usuario = $id_consultor";
 		//die($sql);
-		$result = mysql_query($sql);		
-	}    
-	
+		$result = mysql_query($sql);
+	}
+
 	$sql = "select gerente, area, estado, fl_sat from usuario where id_usuario = $ok";
 	$result = mysql_query($sql);
 	$linha = mysql_fetch_object($result);
-	$status = $linha->estado;	
-	$consultor = ($linha->area == 1); 
+	$status = $linha->estado;
+	$consultor = ($linha->area == 1);
 	$gerente = ($linha->gerente == 1);
 	$fl_sat = $linha->fl_sat;
 
@@ -96,7 +96,7 @@
 	$sql .= "from ";
 	$sql .= " satligacao ";
 	$sql .= "where  ";
-	$sql .= " FL_ATIVO and ";	
+	$sql .= " FL_ATIVO and ";
 	$sql .= " data = '$hoje' and  ";
 	$sql .= " ((id_satstatus = 1) or (id_satstatus = 2)) ";
 	$sql .= "order by ";
@@ -109,28 +109,28 @@
 	  $tempominutos = "00:00:00";
 	} else {
       $tempomaximo = $linha->espera;
-	  $tempominutos = $linha->minutos; 
+	  $tempominutos = $linha->minutos;
 	}
-		
-	
+
+
 	$lampada = "<img src=imagens/farolverde.jpg width=100 height=40 border=0><br>Normal - ";
 	if (  ($tempomaximo>=10) and ($tempomaximo<20)  ) {
-	  $lampada = '<img src=imagens/farolamarelo.jpg width=100 height=40 border=0><br>Atenção - ';
+	  $lampada = '<img src=imagens/farolamarelo.jpg width=100 height=40 border=0><br>Atenï¿½ï¿½o - ';
 	} else if ($tempomaximo>=20) {
-	  $lampada = "<img src=imagens/farolvermelho.jpg width=100 height=40 border=0><br>Crítica - ";	
+	  $lampada = "<img src=imagens/farolvermelho.jpg width=100 height=40 border=0><br>Crï¿½tica - ";
 	}
 	$lampada .= "$tempominutos - $linha->id_cliente";
 
 
-	// Caso de algum problema e o estado fique maior do que o permitido, volto para 
-	// Disponível;
+	// Caso de algum problema e o estado fique maior do que o permitido, volto para
+	// Disponï¿½vel;
 	$sql = "update usuario set estado = 1 where id_usuario = $ok and estado > 4";
 	mysql_query($sql);
-	
-	
+
+
 	$EditaDataPrevista = (($ok == 1) or ($ok==8) or ($ok==12) or ($ok==7) or ($ok==12));
 	// Elis, Edson e Ricardo Apenas
-	
+
 ?>
 
 <html>
@@ -144,12 +144,12 @@
 </style>
 <head>
 <title>Inicio</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 <!-- Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/ -->
 <STYLE>
-.subbarfont { 
-	font-weight: none; font-size: 13px; color: #cc0000; font-family: arial, verdana, helvetica, sans-serif 
+.subbarfont {
+	font-weight: none; font-size: 13px; color: #cc0000; font-family: arial, verdana, helvetica, sans-serif
 }
 a.subbar {
 	font-weight: none; color: black; font-size: 12px; width: 128px; font-family: arial, verdana, helvetica, sans-serif; text-decoration: none
@@ -182,70 +182,70 @@ a.subbar {
 				// Construct URL
 				url = 'handle_form.php?acao='+AAcao+'&id=' + AId+'&id_usuario=' + <?= $ok?>;
 				teste =  document.getElementById('chamados_lista');
-				teste.innerHTML = '<br>Aguarde... <br><br><img src="figuras/loading1.gif" alt="l" width="16" height="16">';				
+				teste.innerHTML = '<br>Aguarde... <br><br><img src="figuras/loading1.gif" alt="l" width="16" height="16">';
 				ajax_get (url, 'chamados_lista');
 		}
-		
+
 		function abre_chamado(AId) {
 				// Construct URL
 				url = 'historicochamado.php?&id_chamado=' + AId+'&ok=' + <?= $ok?>;
 				teste =  document.getElementById('chamados_lista');
-				teste.innerHTML = '<br>Aguarde... <br><br><img src="figuras/loading1.gif" alt="l" width="16" height="16">';				
+				teste.innerHTML = '<br>Aguarde... <br><br><img src="figuras/loading1.gif" alt="l" width="16" height="16">';
 				ajax_get (url, 'chamados_lista');
 		}
-		
-		
+
+
 	</script>
 
 
 <font size="3"><img src="figuras/topo_sad_e_900.jpg" width="900" height="79" ></font>
 <table width="100%" border="0" cellspacing="1" cellpadding="1" align="center">
-    
-    <tr> 
+
+    <tr>
       <td valign="top"><table width="100%" border="0" cellspacing="1" cellpadding="1" class="coolBar">
-          <tr align="center"> 
+          <tr align="center">
             <td width="72" class="coolButton" valign="middle" align="center"><a href="javascript:history.go(-1)"><img src="figuras/voltar.gif" width="20" height="20" align="absmiddle" border="0">voltar</a></td>
             <td width="87" class="coolButton"><a href="index.php?novologin=true"><img src="figuras/logout.gif" width="20" height="20" align="absmiddle" border="0">Logout</a></td>
             <td width="101" class="coolButton"><a href="/a/relatorios/"><img src="figuras/relat.gif" width="20" height="20" align="absmiddle" border="0">relat&oacute;rios</a></td>
-            <td width="111" class="coolButton"><img src="figuras/senha.gif" width="20" height="20" align="absmiddle"><a href="trocasenha.php">Alterar 
+            <td width="111" class="coolButton"><img src="figuras/senha.gif" width="20" height="20" align="absmiddle"><a href="trocasenha.php">Alterar
               Senha</a> </td>
-            <td width="118" class="coolButton" align="center" valign="middle"> 
+            <td width="118" class="coolButton" align="center" valign="middle">
               <a href="../index.php">Intranet</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td width="204" class="coolButton"><a href="/agenda/" target="_blank">Agenda 
+            <td width="204" class="coolButton"><a href="/agenda/" target="_blank">Agenda
               Corporativa</a></td>
           </tr>
         </table>
-        <font size="1">Usu&aacute;rio <font color="#FF0000">:<b> 
+        <font size="1">Usu&aacute;rio <font color="#FF0000">:<b>
         <?=$nomeusuario?>
         </b></font></font></td>
     </tr>
-    <tr> 
+    <tr>
       <td valign="top"> <table width="100%" border="0" cellspacing="1" cellpadding="1">
         </table>
         <table width="100%" border="0" bgcolor="#CCCCCC" cellpadding="3" cellspacing="1">
-          <tr bgcolor="#FFFFFF"> 
+          <tr bgcolor="#FFFFFF">
             <td><table width="100%" border="0" cellspacing="1" cellpadding="1">
-                <tr> 
+                <tr>
                   <td width="65%"><table width="100%" border="0" cellpadding="1" cellspacing="1">
-                      <tr bgcolor="#FFFFFF"> 
+                      <tr bgcolor="#FFFFFF">
                         <form name="form" method="post" action="historico.php" >
-                          <td align="left" valign="top"><font size="2"><a href="javascript:seleciona();">C&oacute;digo 
-                            do cliente</a><b>&nbsp;</b></font><font color="#0000FF"><b> 
+                          <td align="left" valign="top"><font size="2"><a href="javascript:seleciona();">C&oacute;digo
+                            do cliente</a><b>&nbsp;</b></font><font color="#0000FF"><b>
                             <input type="hidden" name="action">
-                            </b></font><font size="2">&nbsp;</font><font color="#0000FF"><b> 
+                            </b></font><font size="2">&nbsp;</font><font color="#0000FF"><b>
                             <input type="text" name="id_cliente" class="bordaTexto">
-                            </b> 
+                            </b>
                             <input type="submit" name="Submit" value="Ver hist&oacute;rico" class="bordaTexto" >
-                            &nbsp;[<a href="javascript:seleciona(); ">pesquisa</a> 
+                            &nbsp;[<a href="javascript:seleciona(); ">pesquisa</a>
                             clientes]</font> </td>
                         </form>
                       </tr>
                     </table></td>
                   <td width="35%"> <table width="100%" border="0"  cellpadding="1" cellspacing="1">
-                      <tr bgcolor="#FFFFFF"> 
+                      <tr bgcolor="#FFFFFF">
                         <form name="form1" method="post" action="relatorios/relat2.php">
-                          <td align="right" valign="top"> [<img src="figuras/lupa.gif" width="20" height="20" align="absbottom">busca 
-                            por palavra 
+                          <td align="right" valign="top"> [<img src="figuras/lupa.gif" width="20" height="20" align="absbottom">busca
+                            por palavra
                             <input type="text" name="palavra" class="bordaTexto">
                             ] </td>
                         </form>
@@ -256,70 +256,70 @@ a.subbar {
           </tr>
         </table>
         <table border="0" cellspacing="0" cellpadding="0">
-          <tr> 
+          <tr>
             <td><img src="imagens/nulo.gif" width="1" height="1"></td>
           </tr>
         </table>
         <table border="0" cellspacing="0" cellpadding="0">
-          <tr> 
+          <tr>
             <td><img src="imagens/nulo.gif" width="1" height="1"></td>
           </tr>
         </table>
         <table width="100%" border="0" bgcolor="#CCCCCC" cellpadding="3" cellspacing="1">
-          <tr bgcolor="#FFFFFF"> 
+          <tr bgcolor="#FFFFFF">
             <td><table width="100%" border="0" cellspacing="1" cellpadding="1">
-                <tr valign="top"> 
-                  <td width="33%"> <p><a href="/a/versao/"> 
-                      <?  $i_msg = "Liberação de Release ";
-			    if ($i_conta < 0) { echo "<font color=#ff0000 >$i_msg : Existe " . -$i_conta .  " releases em andamento</font>"; } else {echo $i_msg;}  
-				
+                <tr valign="top">
+                  <td width="33%"> <p><a href="/a/versao/">
+                      <?  $i_msg = "Liberaï¿½ï¿½o de Release ";
+			    if ($i_conta < 0) { echo "<font color=#ff0000 >$i_msg : Existe " . -$i_conta .  " releases em andamento</font>"; } else {echo $i_msg;}
+
 			    if($i_conta > 0) {?>
-                      <font color = #ff0000 size = 2>: Você tem
+                      <font color = #ff0000 size = 2>: Vocï¿½ tem
                       <?=$i_conta?>
-                      tarefa(s)</font> 
+                      tarefa(s)</font>
                       <? } ?>
-                      </a> <br> 
+                      </a> <br>
                     <? if($manut) {	?>
-                    <a href="manut/index.php">Manuten&ccedil;&atilde;o de tabelas</a><br> 
+                    <a href="manut/index.php">Manuten&ccedil;&atilde;o de tabelas</a><br>
                     <?}
              if($marketing) {	?>
-                    <a href="manut/marketing.php">Manuten&ccedil;&atilde;o de 
-                      tabelas de marketing</a><br> 
+                    <a href="manut/marketing.php">Manuten&ccedil;&atilde;o de
+                      tabelas de marketing</a><br>
                     <?} ?>
-                    <? 
+                    <?
 			    if (receptor($ok)) {
 				  if ($xx = temChamado()) {
                     echo "<a href=\"clientes.php\"><img src=\"figuras/cliente.gif\" width=\"20\" height=\"20\" align=\"absmiddle\" border=\"0\">$xx chamado(s) aberto(s) por cliente</a><br>";
 				  }
 				}
-					
+
 			  ?>
 
 
 
-					
+
 					<?
 					  if ($consultor) {
 					?>
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         <td align="center">&nbsp;</td>
-                      </tr>					
+                      </tr>
                       <tr>
                         <td align="center" background="#estados"><a href="?acao=mudaestado&status=<?=$status?>"><img src="imagens/estado<?=$status?>.jpg" width="120" height="20" border="0"></a> <a href="#estados"><br>
                         (<strong>verifique</strong> os outros consultores <br>
                         antes de alterar o seu Estado) </a></td>
                       </tr>
-                    </table>					
+                    </table>
 					<?
 					}
 					?>
 </td>
-                <td width="33%" align="center"> <a href="rnc/relatorios/index.php"><strong>Desktop 
-                  Qualidade</strong></a> 
+                <td width="33%" align="center"> <a href="rnc/relatorios/index.php"><strong>Desktop
+                  Qualidade</strong></a>
                   <? if ($gerente) {?>
                   <br>
-                  [<a href="rnc/rnc.php?action=novo&tipo=<?=SAD_NAOCONFORMIDADE?>">não conformidade</a>] - [<a href="rnc/rnc.php?action=novo&tipo=<?=SAD_ACAOPREVENTIVA?>">Ação Preventiva</a>] - [<a href="rnc/rnc.php?action=novo&tipo=<?=SAD_ACAOMELHORIA?>">Ação Melhoria</a>]
+                  [<a href="rnc/rnc.php?action=novo&tipo=<?=SAD_NAOCONFORMIDADE?>">nï¿½o conformidade</a>] - [<a href="rnc/rnc.php?action=novo&tipo=<?=SAD_ACAOPREVENTIVA?>">Aï¿½ï¿½o Preventiva</a>] - [<a href="rnc/rnc.php?action=novo&tipo=<?=SAD_ACAOMELHORIA?>">Aï¿½ï¿½o Melhoria</a>]
 				  <?
 				   if (($ok == 12) or ($ok==1)) {
 				  ?>
@@ -328,24 +328,24 @@ a.subbar {
 				  <?
 				    }
 				  ?>
-				  <br> 
+				  <br>
                     <? }?>
                     <? if ($compromissos) {?>
-                    <font size="2"><a href="../agenda/" target="_blank" class="fundoclaro">Agenda 
-                    : <strong> 
+                    <font size="2"><a href="../agenda/" target="_blank" class="fundoclaro">Agenda
+                    : <strong>
                     <?=$compromissos?>
-                    </strong>Compromisso(s)</a></font> 
+                    </strong>Compromisso(s)</a></font>
                     <? } ?>
 					<?
 					  if ($minhasLigacoes) {
 					?>
-                    <br><a href="espera/consultor.php" class="style1">Minhas ligações</a> 
+                    <br><a href="espera/consultor.php" class="style1">Minhas ligaï¿½ï¿½es</a>
 					<?
 					 }
 					  if ($DesktopSigame<>0) {
-					?>					
+					?>
 					<br><a href="sigame/index.php">Desktop SIGA-ME (<? echo $DesktopSigame ?>)</a>
-					<? 
+					<?
 					}
 					?>
                     <br>
@@ -356,10 +356,10 @@ a.subbar {
 					?>
                     <br>
                   </td>
-                <td width="33%" align="right"> <a href="/a/relatorios/relatbaseweb.php"><font size="1">Base 
-                  de conhecimento web</font></a> <br> <a href="/suporte/index.php"><font size="1">Base 
+                <td width="33%" align="right"> <a href="/a/relatorios/relatbaseweb.php"><font size="1">Base
+                  de conhecimento web</font></a> <br> <a href="/suporte/index.php"><font size="1">Base
                     de Solu&ccedil;&otilde;es</font></a> <br>
-                  <a href="javascript:online();">Quem está On Line</a>
+                  <a href="javascript:online();">Quem estï¿½ On Line</a>
                   <br>
                   <br>
                   <br>
@@ -369,7 +369,7 @@ a.subbar {
           </tr>
         </table>
         <table border="0" cellspacing="0" cellpadding="0">
-          <tr> 
+          <tr>
             <td><img src="imagens/nulo.gif" width="1" height="1"></td>
           </tr>
         </table>
@@ -383,38 +383,38 @@ Chamados Pendentes para  <?=$nomeusuario?>     :     	<span id="contapendentes">
         <br>
         Chamados Encaminhados por
         <?=$nomeusuario?>
-        : 
+        :
 		<span id="contaencaminhados"></span>
-		
-</span> 
+
+</span>
         <?
 		    $chamadosemaberto = pegaChamadoPendenteUsuario($ok);
 			$total_pendentes = count($chamadosemaberto);
-						
+
 	    ?>
 
 <span id=msgnova></span><span id=lembretenovo></span> <br>
 <a href="javascript:alterna(todos_chamados, txtTodosChamados, '+', '-');">Alternar entre mostrar ou esconder lista de chamados tradicional <span id=txtTodosChamados> - </span> </a><span id="todos_chamados" style="display: ">
         <table border="0" cellspacing="0" cellpadding="0">
-          <tr> 
+          <tr>
             <td><img src="imagens/nulo.gif" width="1" height="1"></td>
           </tr>
         </table>
 <table width="100%" border="0" cellspacing="1" cellpadding="1" bgcolor="#CCCCCC">
-          <tr bgcolor="#003366"> 
+          <tr bgcolor="#003366">
             <td width="13%" align="center" valign="middle"> <strong><font size="1" color="#FFFFFF">Chamado</font></strong></td>
             <td width="7%" align="center" valign="middle"> <strong><font size="1" color="#FFFFFF">Data</font></strong></td>
-            <td width="15%" align="center" valign="middle"> <strong><font size="1" color="#FFFFFF">C&oacute;digo 
+            <td width="15%" align="center" valign="middle"> <strong><font size="1" color="#FFFFFF">C&oacute;digo
               do cliente</font></strong></td>
             <td width="65%"><strong><font size="1" color="#FFFFFF">Cliente + Descri&ccedil;&atilde;o</font></strong></td>
           </tr>
-      </table>				
+      </table>
         <?
 					   $contapendentes = 0;
 					   $contaencaminhados =0;
-					  					   
+
 		  while ( list($tmp1, $tmp) = each($chamadosemaberto) ) {
-		  
+
 		   	   $prioridade = $tmp["prioridade"];
 			   $prioridadev = $tmp["prioridadev"];
 			   if ($prioridadev  <= 100) {
@@ -425,62 +425,62 @@ Chamados Pendentes para  <?=$nomeusuario?>     :     	<span id="contapendentes">
 			     $cor = "#009966";
 			   }
 			   $prioridade = "<b><font color=$cor>$prioridade</font></b>";
-			   		  
+
 			   $id = $tmp["id_cliente"];
 			   $status_chamado = $tmp["status"];
-			   $statusStr = ""; 
+			   $statusStr = "";
 			   if($status_chamado>3) {
 			    $statusStr = "<br>".pegaStatus($status_chamado);
 			   }
 			   $cliente = $tmp["cliente"];
 			   $senha = $tmp["senha"];
-			   $chamado = $tmp["chamado"];			
+			   $chamado = $tmp["chamado"];
 			   $dataAbertura = $tmp["dataa"] . "<br>" . $tmp["horaa"];
 			   $descricao = $tmp["descricao"];
 			   $destinatarioId = $tmp["destinatario_id"];
 			   $usuarioId = $tmp["usuario_id"];
-			   $remetenteId = $tmp["remetente_id"];			
-			   $pendente = $tmp["pendente"];   
+			   $remetenteId = $tmp["remetente_id"];
+			   $pendente = $tmp["pendente"];
 			   $encaminhado = $tmp["encaminhado"];
 			   $fone=$tmp["telefone"];
 			   $bl = $tmp["bloqueio"];
-			   
+
 			   $cor_fundo = CORES_DEFAULT;
-			   
-			   
+
+
                $cor_borda = BORDA_DEFAULT;
-			   $largura_borda = 1;			   
-			   
+			   $largura_borda = 1;
+
 			   if ($tmp["externo"]) {
                  $cor_fundo = CORES_EXTERNO;
 			   }
-			   
+
 			   if ($tmp["id_sistema"]==24) {
                  $cor_fundo = CORES_QUALIDADE;
 			   }
    			   $rncTipo = '';
 			   if ($tmp["rnc"]==1) {
-			     $rncTipo = "<strong>Não conformidade</strong>";
+			     $rncTipo = "<strong>Nï¿½o conformidade</strong>";
 			     if (!$teste) {
     				 $cor_fundo = "#cccccc";
 				 } else {
                    $cor_fundo = "#$teste";
 				 }
 			   }
-			   
+
    			   if ($tmp["rnc"]==3) {
-			     $rncTipo = "<strong>Ação de Melhoria</strong>";
+			     $rncTipo = "<strong>Aï¿½ï¿½o de Melhoria</strong>";
 			   }
    			   if ($tmp["rnc"]==2) {
-			     $rncTipo = "<strong>Ação Preventiva</strong>";
+			     $rncTipo = "<strong>Aï¿½ï¿½o Preventiva</strong>";
 			   }
-			   
+
 			   if ($tmp["rnc"]==4) {
-			     $rncTipo = "<strong>Abertura de projeto</strong>";			   
+			     $rncTipo = "<strong>Abertura de projeto</strong>";
 			     if (!$teste) {
     				 $cor_fundo = "#caaccc";
 					 $largura_borda = 2;
-					 $cor_borda = BORDA_ACAOMELHORIA;					 
+					 $cor_borda = BORDA_ACAOMELHORIA;
 				 } else {
                    $cor_fundo = "#$teste";
 				 }
@@ -489,89 +489,89 @@ Chamados Pendentes para  <?=$nomeusuario?>     :     	<span id="contapendentes">
 				if ($tmp["rnc"]!=0) {
 					$rncResponsavel =  $tmp["rncDeptoResponsavel"];
 					$rncPrazo = $tmp["rncPrazo"];
-					$rncMensagem = "<br>--> ".$rncTipo."<br>Departamento responsável: <strong>$rncResponsavel</strong>. Prazo: <strong>$rncPrazo</strong>";
+					$rncMensagem = "<br>--> ".$rncTipo."<br>Departamento responsï¿½vel: <strong>$rncResponsavel</strong>. Prazo: <strong>$rncPrazo</strong>";
 				}
 
-			   
+
 			   if ( $tmp["categoria_id"] == CATEGORIA_ACAOMELHORIA) {
                  $cor_fundo = CORES_ACAOMELHORIA;
 				 $cor_borda = BORDA_ACAOMELHORIA;
 				 $largura_borda = 3;
 			   }
 
-			   
+
 			   $lido = 1;                          // So vai ver msg nova
 			   if ($destinatarioId == $ok) {       // se o chamado tiver novidades e
                  $lido = $tmp["lido"];             // se o destinatario do contato = consultor atual
 			   }
 			   if ($usuarioId == $ok) {       // se o chamado tiver novidades e
                  $lido = $tmp["lidodono"];             // se o destinatario do contato = consultor atual
-			   }	
-			   
+			   }
+
 			   $dataprevista = $tmp["dataprevista"];
-			   
-			   
+
+
 			   $sql = "select * from lembrete where id_destinatario = $ok and id_chamado = $chamado and not lido";
 		   	   $temLembrete = 0;
-			   $result = mysql_query($sql); 
+			   $result = mysql_query($sql);
 			   while ( $linha = mysql_fetch_object($result) ) {
 			     $id_lembrete = $linha->id;
 			     if (($linha->periodo) == "M" ) {
 			       $horario = "08:00:00";
 			     } else {
-			       $horario = "13:00:00";			   
+			       $horario = "13:00:00";
 			     }
-			     $date1=strtotime( $linha->data . ' ' . $horario);				 
+			     $date1=strtotime( $linha->data . ' ' . $horario);
 				 if ($agora > $date1) {
-				   $temLembrete = 1;				   
+				   $temLembrete = 1;
 				   break;
 				 }
 			   }
 
-			   
-			  
-			   if ( ($tmp["externo"]) or (!$encaminhado) or ($encaminhado and ($id_usuario == $destinatarioId)) ) {	
+
+
+			   if ( ($tmp["externo"]) or (!$encaminhado) or ($encaminhado and ($id_usuario == $destinatarioId)) ) {
   			   $contapendentes++;
 			   $contaencaminhados = ($total_pendentes - $contapendentes);
-			   
+
 
 			?>
-			
-		
 
-        <table width="100%" border="0" cellpadding="1" cellspacing="<?=$largura_borda ?>" bgcolor="<?=$cor_borda?>" class="bordagrafite02">			
-          <tr> 
+
+
+        <table width="100%" border="0" cellpadding="1" cellspacing="<?=$largura_borda ?>" bgcolor="<?=$cor_borda?>" class="bordagrafite02">
+          <tr>
             <td bgcolor="<?=$cor_fundo?>"> <table width="100%" border="0" cellspacing="1" cellpadding="1">
-                <tr valign="bottom"> 
-                  <td width="12%" align="center" valign="middle"> 
-                    <? 
-				   if ($temLembrete) { 
+                <tr valign="bottom">
+                  <td width="12%" align="center" valign="middle">
+                    <?
+				   if ($temLembrete) {
                     echo "<a href=\"lembrete/mostralembrete.php?id=$id_lembrete\"><img src=\"figuras/lembrete.jpg\"  width=\"20\" height=\"20\" align=\"absmiddle\" border=\"0\"></a>";
-                    $lembretenovo++;					
+                    $lembretenovo++;
 
       				}
 				?>
                     <? if(!$lido) { echo '<img src=figuras/idea01.gif  align=absmiddle> '; $msgnova++; } ?>
                     <?="$chamado<br>$prioridade $statusStr"?>
-                    <br> 
-                    <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="javascript:novolembrete(<?=$chamado?>, <?=$ok?>);">Incluir 
+                    <br>
+                    <font face="Verdana, Arial, Helvetica, sans-serif" size="1"><a href="javascript:novolembrete(<?=$chamado?>, <?=$ok?>);">Incluir
                     Lembrete</a></font></td>
-                  <td width="8%" align="center" valign="middle"> 
- 
+                  <td width="8%" align="center" valign="middle">
+
                    Abertura: <?=$dataAbertura?><br>
-<?php			 
+<?php
 
 	if ($EditaDataPrevista) {
 	  echo "<a href=\"javascript:dataprevista($chamado, $ok);\">Data prevista</a>";
 	} else {
 	  echo "Data prevista";
 	}
-if ($dataprevista <> '00/00/0000') {	
-	 echo "<br>$dataprevista"; 
+if ($dataprevista <> '00/00/0000') {
+	 echo "<br>$dataprevista";
 }
 ?>
                   </td>
-                  <td width="15%" align="center" valign="middle"> <font face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
+                  <td width="15%" align="center" valign="middle"> <font face="Verdana, Arial, Helvetica, sans-serif" size="1">
                     <?
 				 $msg = $id;
                  if ($bl) { $msg="<b><font color=#ff0000>$cliente</font></b>" ;}
@@ -579,24 +579,24 @@ if ($dataprevista <> '00/00/0000') {
                  echo $msg;
 				 ?>
                     </font></td>
-                  <td width="65%" valign="middle" > <font face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
+                  <td width="65%" valign="middle" > <font face="Verdana, Arial, Helvetica, sans-serif" size="1">
                     <?="<b>$cliente ($senha)</b><br><b><a href=historicochamado.php?&id_chamado=$chamado>$descricao...</a></b>"?>
-                    <? 
-              $figura = "";			  			  
+                    <?
+              $figura = "";
 			  if (
-                       ($encaminhado and ($id_usuario != $remetenteId) and ($destinatarioId != $id_usuario) ) or				
-                       ($encaminhado and ($id_usuario == $remetenteId) and ($destinatarioId != $id_usuario) ) or 
-                       ($encaminhado and ($id_usuario != $remetenteId) and ($destinatarioId == $id_usuario) )					   
+                       ($encaminhado and ($id_usuario != $remetenteId) and ($destinatarioId != $id_usuario) ) or
+                       ($encaminhado and ($id_usuario == $remetenteId) and ($destinatarioId != $id_usuario) ) or
+                       ($encaminhado and ($id_usuario != $remetenteId) and ($destinatarioId == $id_usuario) )
 					   )
 				   {
 				      if ($id_usuario != $destinatarioId) {
 					    $msg = " para " . peganomeusuario($destinatarioId);
 						$seta = "encaminhado.gif";
 					  } else {
-					    $msg = " à você por " . peganomeusuario($remetenteId);						
+					    $msg = " ï¿½ vocï¿½ por " . peganomeusuario($remetenteId);
 						$seta = "recebido.gif";
 					  }
-                      $figura = "<img src=\"figuras/$seta\" align=\"absmiddle\" border=0>";					  
+                      $figura = "<img src=\"figuras/$seta\" align=\"absmiddle\" border=0>";
                       echo " <br><font color=#FF0000>Encaminhado " . $msg . "</font> $figura";
 					}
 					if ($usuarioId != $id_usuario) {
@@ -609,20 +609,20 @@ if ($dataprevista <> '00/00/0000') {
               </table></td>
           </tr>
         </table>
-		
 
-		
+
+
         <table border="0" cellspacing="0" cellpadding="0">
-          <tr> 
+          <tr>
             <td><img src="imagens/nulo.gif" width="1" height="1"></td>
           </tr>
         </table>
         <?}}
 			?>
-         <br>        
-		 
+         <br>
+
 		 </span>
-		 
+
 		 <?
 		  } // if mydesktop->tradicional
 		 ?>
@@ -630,17 +630,17 @@ if ($dataprevista <> '00/00/0000') {
 		<?
 		 if ($mydesktop->novo==1) {
 		?>
-		 
+
 		 <table width="100%" border="0" cellpadding="1" cellspacing="1">
           <tr>
             <td width="24%" valign="top"><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC">
                 <tr>
                   <td bgcolor="#FFFFFF"><table width="100%" border="0" cellpadding="2" cellspacing="0">
-				  
-<? 
+
+<?
   if($mydesktop->prioridade==1) {
 ?>
-				  
+
                     <tr>
                       <td bgcolor="#F9FDFF"><span class="style5 style7">Chamados comigo </span></td>
                     </tr>
@@ -666,7 +666,7 @@ if ($dataprevista <> '00/00/0000') {
 		$cor = "#009966";
 		}
 		$prioridade = "<b><font color=$cor>$linha->prioridade</font></b>";
-	
+
 ?>
                     <tr>
                       <td bgcolor="#F9FDFF" onMouseDown="this.className='subbarselected'; abrirlista('prioridade',<?=$linha->prioridade_id?> );" onMouseOver="this.className='subbarhover'" onMouseOut="this.className='subbarnotselone'"><span class="style5 style7">
@@ -710,7 +710,7 @@ if ($dataprevista <> '00/00/0000') {
 ?>
 
 <td>
-<hr size="1px" color="#6699FF">	
+<hr size="1px" color="#6699FF">
 </td>
 </tr>
 
@@ -725,8 +725,8 @@ if ($dataprevista <> '00/00/0000') {
 ?>
                     <tr>
                       <td bgcolor="#F9FDFF" onMouseDown="this.className='subbarselected'; abrirlista('encaminhados', 0);" onMouseOver="this.className='subbarhover'" onMouseOut="this.className='subbarnotselone'">
-				  
-					  
+
+
                         <strong>Encaminhados </strong>(<?=$linha->quantidade?>) </span> </td>
                     </tr>
                     <?
@@ -745,11 +745,11 @@ if ($dataprevista <> '00/00/0000') {
 	$sql = "Select pasta.id_pasta, descricao, (select count(*) from chamado_pasta where ";
 	$sql .= "chamado_pasta.id_pasta = pasta.id_pasta) as quantidade from  pasta where ";
 	$sql .= "id_usuario = $ok order by descricao ";
-	
+
 	$result = mysql_query($sql) or die (mysql_error());
 	while ( $linha = mysql_fetch_object($result) ) {
 	  $id_pasta = $linha->id_pasta;
-	
+
 ?>
                     <tr>
                       <td bgcolor="#F9FDFF" onMouseDown="this.className='subbarselected'; abrirlista('pasta',<?=$linha->id_pasta?> );" onMouseOver="this.className='subbarhover'" onMouseOut="this.className='subbarnotselone'"><span class="style9"><strong>[<a href="pastas/excluipasta.php?id_pasta=<?=$linha->id_pasta?>">ex</a>]
@@ -760,12 +760,12 @@ if ($dataprevista <> '00/00/0000') {
                     </tr>
                     <?
 	}
-	
+
 ?>
                     <tr>
                       <td bgcolor="#F9FDFF" onMouseDown="this.className='subbarselected' " onMouseOver="this.className='subbarhover'" onMouseOut="this.className='subbarnotselone'"><a href="pastas/criarpasta.php?id_usuario=<?=$ok?>"><span class="style9"><img src="figuras/NovaPasta.jpg" alt="NovaPasta" width="25" height="25" border="0" align="absmiddle">Criar Pasta </span></a></td>
                     </tr>
-					
+
 <?
 }
 ?>
@@ -776,7 +776,7 @@ if ($dataprevista <> '00/00/0000') {
                 <tr>
                   <td height="100%" bgcolor="#FFFFFF">
                     <span id="chamados_lista"><br>
- <blockquote>Para ver a lista de chamados por prioridade ou por pasta, clique na prioridade ou na pasta desejada ao lado. Você pode criar quantas pastas desejar e incluir um chamado em qualquer pasta.</blockquote> </span>
+ <blockquote>Para ver a lista de chamados por prioridade ou por pasta, clique na prioridade ou na pasta desejada ao lado. Vocï¿½ pode criar quantas pastas desejar e incluir um chamado em qualquer pasta.</blockquote> </span>
                   </td>
               </tr>
 
@@ -784,33 +784,33 @@ if ($dataprevista <> '00/00/0000') {
             </table></td>
           </tr>
         </table>
-		
+
 <?
-  } 
-?>		
+  }
+?>
 <br>
 <a href="preferencias.php?ok=<?=$ok?>">Personalizar meu desktop<br>
 </a><br>
-		
-		
-		<a href="encaminhados.php">
-        <font size="2">Ver Chamados Encaminhados e Pendências</font></a><br>
 
-        <br> 
-		
+
+		<a href="encaminhados.php">
+        <font size="2">Ver Chamados Encaminhados e Pendï¿½ncias</font></a><br>
+
+        <br>
+
 <?
 //		  $sub = pegaSubordinados($id_usuario);
 //		  if (count($sub)) {
 //		    require("scripts/pendencias.php");
-//		  }		  
-?>	<a name="estados"></a>        
+//		  }
+?>	<a name="estados"></a>
 
         <?
-		
+
 		  if ( $consultor or $fl_sat ) {
-		  
+
 		 ?>
-		  
+
          <table width="45%"  border="0" cellpadding="1" cellspacing="1" bgcolor="#333333">
           <tr bgcolor="#333333">
             <td width="17%"><strong><font color="#FFFF00">Nome</font></strong></td>
@@ -818,22 +818,22 @@ if ($dataprevista <> '00/00/0000') {
             <td width="26%" align="center"><strong><font color="#FFFF00">Cliente</font></strong></td>
             <td width="32%" align="center"><strong><font color="#FFFF00">Tempo</font></strong></td>
           </tr>
-		  
+
 		  <?
-		  
+
                //$sql = "select id_usuario, nome, estado from usuario where superior = $ok and ativo";
  				$sql = "select sat_idcliente, id_usuario, nome, estado, sec_to_time(  time_to_sec(curtime()) - time_to_sec(estado_hora)  ) as minutos from usuario where area = 1 and ativo";
 				$result = mysql_query($sql) or die ($sql);
 				while($linha = mysql_fetch_object($result)) {
-				  $sat_idcliente = "&nbsp;";  
+				  $sat_idcliente = "&nbsp;";
 				  if (  ($linha->estado==4) and ($linha->sat_idcliente)) {
 					$sat_idcliente = $linha->sat_idcliente;
 				  } else {
 					$sat_idcliente = "&nbsp;";
 				  }
-				
+
 		?>
-		  
+
           <tr bgcolor="#FFFFFF">
             <td><strong>
             <?=$linha->nome?>
@@ -842,11 +842,11 @@ if ($dataprevista <> '00/00/0000') {
 			  <strong>
 			    <? if ($gerente or ($linha->id_usuario == $ok)) { ?>
 			    <a href="?acao=mudaestadoconsultor&id_consultor=<?=$linha->id_usuario?>&status=<?=$linha->estado?>">
-			    <? } ?>				
+			    <? } ?>
 				  <img src="imagens/estado<?=$linha->estado?>.jpg" width="120" height="20" border="0">
-			    <? if ($gerente) { ?>				  
+			    <? if ($gerente) { ?>
 				</a>
-			    <? } ?>				
+			    <? } ?>
 			 </strong>
 			</td>
             <td align="center" valign="middle"><?=$sat_idcliente?></td>
@@ -854,10 +854,10 @@ if ($dataprevista <> '00/00/0000') {
             <?=$linha->minutos?></strong></td>
           </tr>
 		  <?
-				}	    
-		  }		  
+				}
+		  }
 		  ?>
-        </table>		  
+        </table>
       </td>
     </tr>
     <tr>
@@ -880,13 +880,13 @@ function janelaFarol(){
 function seleciona() {
   window.name = "pai";
   value = document.form.id_cliente.value;
-  window.open('selecionacliente.php?id_cliente='+value, "Seleção", "scrollbars=yes, height=488, width=600");
+  window.open('selecionacliente.php?id_cliente='+value, "Seleï¿½ï¿½o", "scrollbars=yes, height=488, width=600");
 }
 
 
  if( ('-<?=$pesquisa?>'!='-') ) {
   document.form.id_cliente.value='<?=$pesquisa?>';
-  seleciona();  
+  seleciona();
  } else {
   document.form.id_cliente.focus();
  }
@@ -894,22 +894,22 @@ function seleciona() {
 
 function novolembrete(chamado, usuario) {
   var newWindow;
-  window.name = "pai";  
+  window.name = "pai";
   newWindow = window.open( 'lembrete/novolembrete.php?inicio=1&id_chamado='+chamado+'&id_usuario='+usuario, '', 'width=500, height=300');
-}  
+}
 
 
 function dataprevista(chamado, usuario) {
   var newWindow;
-  window.name = "pai";  
+  window.name = "pai";
   newWindow = window.open( 'lembrete/EditaDataPrevistaLiberacao.php?inicio=1&id_chamado='+chamado+'&id_usuario='+usuario, '', 'width=500, height=300');
-}  
+}
 
 
 function online() {
    window.open( 'online.php', '', 'scrollbars=yes, width=600, height=400');
    document.form2.submit();
-}  
+}
 document.form.id_cliente.focus();
 
 
@@ -921,11 +921,11 @@ contaencaminhados.innerHTML = '<?=$contaencaminhados?>';
 
 
  if( <?=$msgnova?> ) {
-   msgnova.innerHTML = "<br>Existe <?=$msgnova?> chamado(s) com mensagens não lidas (<img src=figuras/idea01.gif  align=absmiddle>)";
+   msgnova.innerHTML = "<br>Existe <?=$msgnova?> chamado(s) com mensagens nï¿½o lidas (<img src=figuras/idea01.gif  align=absmiddle>)";
  }
- 
+
  if( <?=$lembretenovo?> ) {
-   lembretenovo.innerHTML = "<br>Extiste(m) <?=$lembretenovo?> chamado(s) com lembretes não lidos (<img src=figuras/lembrete.jpg  align=absmiddle>)<br>";
+   lembretenovo.innerHTML = "<br>Extiste(m) <?=$lembretenovo?> chamado(s) com lembretes nï¿½o lidos (<img src=figuras/lembrete.jpg  align=absmiddle>)<br>";
  }
 
 
@@ -947,7 +947,7 @@ function alterna(item, sp, i1, i2){
    item.style.display='none'
    sp.innerHTML  = i1;
  }
-}  
+}
 
 
 </script>

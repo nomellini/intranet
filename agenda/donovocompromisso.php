@@ -1,4 +1,3 @@
-t
 <?
 	require("../a/scripts/conn.php");		
 	
@@ -27,10 +26,7 @@ t
 		$repetir = true;
 		$dataFinal = mktime(0,0,0,$rmes,$rdia,$rano);
 	}
-	
-	
-	
-	
+
 	// peganomeusuario($id) -> Pega o nome de um usuario do sad pelo seu ID
 	// Está em conn.php
 	$nomeusuario=peganomeusuario($id_usuario);	
@@ -44,6 +40,12 @@ t
 	while ( $data_i <= $dataFinal)  {
 //	if (true) {
 		$dataEvento = date("Y-m-d", $data_i);	$diasamais++;		
+
+	
+	$resumo = mysql_real_escape_string ($resumo);
+	$descricao = mysql_real_escape_string ($descricao);	
+	$local = mysql_real_escape_string ($local);	
+
 	
 
 	

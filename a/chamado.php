@@ -1,3 +1,4 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="../scripts/jquery-1.4.2.min.js"></script>		
 <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 <script language="JavaScript" type="text/javascript" src="../scripts/formataData.js"></script>
@@ -56,7 +57,7 @@
 	$horaa = $objChamado->horaa;	
 	
 	
-	// Estas duas vari·veis ser„o passadas via hidden field.
+	// Estas duas vari√°veis ser√£o passadas via hidden field.
 	$dataAbertura = $dataa;
 	$horaAbertura = $horaa;
 	
@@ -79,7 +80,6 @@
 <script src="coolbuttons.js"></script>
 <head>
 <title>Novo chamado</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="scripts/stilos.css" type="text/css">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 
@@ -177,7 +177,7 @@
 	  echo "<option value='$id'>$si</option>";
 	}
 	if (!$qtde) {
-      echo "<option value=-1>Sistema n„o cadastrado:: $ok :: $id_cliente</option>";	  
+      echo "<option value=-1>Sistema n√£o cadastrado:: $ok :: $id_cliente</option>";	  
 	}
 ?>
     </OPTGROUP>
@@ -191,7 +191,7 @@
 	  echo "<option value=$id>$si</option>";	  
 	}
 	if (!$qtde) {
-      echo "<option value=-1>Sistema n„o cadastrado</option>";	  
+      echo "<option value=-1>Sistema n√£o cadastrado</option>";	  
 	}
 	
 	
@@ -228,7 +228,7 @@
             <td width="53%" valign="top"> 
               <p>
   <select name="origem" class="unnamed1" onBlur="selecionapessoa('<?=$id_cliente?>')">
-    <option value=0>Selecione uma opÁ„o</option>
+    <option value=0>Selecione uma op√ß√£o</option>
     <?
     $s = 0;
 	if ($ok == 1) { $s=7; }
@@ -259,7 +259,7 @@
             </label></td>
           </tr>
           <tr> 
-            <td colspan="2" height="10"><span id=cat>SeleÁ„o de categoria</span></td>
+            <td colspan="2" height="10"><span id=cat>Sele√ß√£o de categoria</span></td>
             <td width="53%" height="10">Motivo<br>
               <select name="motivo" class="unnamed1" >
                 <option value=0></option>
@@ -286,7 +286,7 @@
                 	<label>Projeto </label>                    
                     <select name="id_projeto_pai" class="unnamed1" id="id_projeto_pai">
                     
-                        <option value="0" selected>Selecione apenas se este chamado far· parte de um projeto</option>
+                        <option value="0" selected>Selecione apenas se este chamado far√° parte de um projeto</option>
                         <?                
                             while ( list($id, $linha) = each ( $ListaDeProjetos ) )
                             {
@@ -405,7 +405,7 @@
 ?>
                 <?
     /*
-	  Este cÛdigo È repetido em novocontato.php
+	  Este c√≥digo √© repetido em novocontato.php
 	*/
     require("_email.htm"); 	
 				
@@ -414,7 +414,7 @@
 ?>
                 <br>
                 <input type="checkbox" name="base" value="1" onClick="alterna(sp_base)">
-                BASE DE CONHECIMENTO (Selecione esta opÁ„o se este contato deve 
+                BASE DE CONHECIMENTO (Selecione esta op√ß√£o se este contato deve 
                 constar na base de conhecimento)<br>
                 <br>
               </p>
@@ -463,7 +463,7 @@
               <select name="diagnostico" class="unnamed1">
                 <?
     if( !$objChamado->diagnostico_id ) {
-	  echo "<option value=0 selected>N„o colocar diagnÛstico</option>";
+	  echo "<option value=0 selected>N√£o colocar diagn√≥stico</option>";
 	}				  
 	$sistema = pegaDiagnosticos();
 	while ( list($tmp1, $tmp) = each($sistema) ) {
@@ -505,7 +505,17 @@
 	}
 	
   ?>
-                          </select>                        </td>
+                          </select>
+                          
+<?                          
+	if (receptor($ok)) {                          
+?>              
+		<input type="checkbox" name="cbTornarDono" value="1" >Tornar destinat√°rio dono do chamado !
+<?
+	}
+?>                          
+                          
+                                                  </td>
                       </tr>
                       <tr>
                         <td>&nbsp;</td>
@@ -530,6 +540,11 @@
   <input type="hidden" name="dataAbertura" value="<?=$dataAbertura?>">
   <input type="hidden" name="horaAbertura" value="<?=$horaAbertura?>">
   <input type="hidden" name="cliente_id" value="<?=$id_cliente?>">
+  <input type="hidden" name="ic_dono">  
+
+
+  
+  
 </form>
 <script>
   function alteraCombo() {
@@ -635,10 +650,12 @@
   }
   
   function vai() {
+	  
+	  
   
   	if (document.form.action.value == 'cancelar')
 	{
-		var confirma = confirm("CANCELAR a abertura deste chamado ?\nIsto ir· apagar todo o registro feito atÈ o momento");	
+		var confirma = confirm("CANCELAR a abertura deste chamado ?\nIsto ir√° apagar todo o registro feito at√© o momento");	
 		if (!confirma) {
 			return false;			
 		} else {
@@ -652,12 +669,12 @@
     if('-<?=$pode?>'=='-1') {   
 	  if (document.form.base.checked) {	   
 	    if (document.form.base_desc.value=='') {
-	      window.alert( 'Digite a descriÁ„o para BASE DE CONHECIMENTO');
+	      window.alert( 'Digite a descri√ß√£o para BASE DE CONHECIMENTO');
 		  document.form.base_desc.focus();
 		  return;
 		}	   
 		if (document.form.diagnostico.value==0) {
-		  window.alert( 'Entre com o diagnÛstico' );
+		  window.alert( 'Entre com o diagn√≥stico' );
 		  document.form.diagnostico.focus();
 		  return;
 		}  
@@ -676,7 +693,7 @@
 		if (true) {	
 	?>	
 	if (document.form.Ds_Versao.value=='') {
-		window.alert( 'Favor fornecer o n˙mero da vers„o');
+		window.alert( 'Favor fornecer o n√∫mero da vers√£o');
 		document.form.Ds_Versao.focus();
 		return false;
 	}	
@@ -705,7 +722,7 @@
        	
 	
 	if (document.form.origem.value == 39) {
-		var confirma = confirm("O relatÛrio de visita j· est· anexado ?");	
+		var confirma = confirm("O relat√≥rio de visita j√° est√° anexado ?");	
 		if (!confirma) {
 			return false;			
 		}
@@ -715,7 +732,7 @@
 	
 	// Implementado em 29/09/2003 - Fernando Nomellini	
     if (document.form.pessoacontatada.value=='') {
-	  window.alert( 'campo "Pessoa contatada" obrigatÛrio. Vide chamado # 42180');
+	  window.alert( 'campo "Pessoa contatada" obrigat√≥rio. Vide chamado # 42180');
 	  document.form.pessoacontatada.focus();
 	  return false;
 	}
@@ -735,7 +752,7 @@
 	}
 	
     if (document.form.descricao.value=='') {
-	  window.alert( 'Digite a descriÁ„o do problema');
+	  window.alert( 'Digite a descri√ß√£o do problema');
 	  document.form.descricao.focus();
 	  return false;
 	}
@@ -743,14 +760,14 @@
 
     var editor_data = CKEDITOR.instances.historico.getData();		
     if (editor_data == '') {
-		window.alert( 'Digite a descriÁ„o da soluÁ„o ou encaminhamento');
+		window.alert( 'Digite a descri√ß√£o da solu√ß√£o ou encaminhamento');
 		document.form.historico.focus();
 		return false;
 	}
 
 	/*	
 	if (document.form.historico.value=='') {
-		window.alert( 'Digite a descriÁ„o da soluÁ„o ou encaminhamento');
+		window.alert( 'Digite a descri√ß√£o da solu√ß√£o ou encaminhamento');
 		document.form.historico.focus();
 		return false;
 	}
@@ -758,7 +775,7 @@
 	
 	if (document.form.action.value == "encaminhar") {
 		if (document.form.destinatario.value==0) {
-		  window.alert( 'Selecione para quem ser· encaminhado o contato');
+		  window.alert( 'Selecione para quem ser√° encaminhado o contato');
 		  document.form.destinatario.focus();
 		  return false;
 		}
@@ -766,7 +783,7 @@
 	
 	
 		/*
-		  Atendendo ao pedido do Edson por telefone (n„o documentado)
+		  Atendendo ao pedido do Edson por telefone (n√£o documentado)
 		  no dia 01/08/2004
 		*/
 	if (document.form.action.value == "encerrar") {		
@@ -781,14 +798,24 @@
 	{
 		if (!validateEmail(document.form.emailcontatado.value))
 		{
-			window.alert( 'Email inv·lido');
+			window.alert( 'Email inv√°lido');
 			document.form.emailcontatado.focus();
 			return false;			
 		}		
 	}
+	
+	document.form.ic_dono.value = 0;
+	if (document.form.cbTornarDono) {
+		if (document.form.cbTornarDono.checked) {
+			document.form.ic_dono.value = 1;
+		}
+	}
+			
+	
 
     document.form.descricao.value = document.form.descricao.value + '<br>' + document.form.sistema.options[ document.form.sistema.selectedIndex ].text;
     botoes.innerHTML = "<font size=5>AGUARDE...</font>";
+	
   	document.form.submit();	
   }
   
@@ -840,7 +867,7 @@ function testaemail() {
 
 				return false;
 	} else  if (!validaEmail()) {
-		alert('AtenÁ„o. Email inv·lido');	
+		alert('Aten√ß√£o. Email inv√°lido');	
 		return false;
 	  }
 }
@@ -940,7 +967,7 @@ function procura(ChamadoId) {
 
 	CKEDITOR.replace( 'historico',
 		{
-			extraPlugins: 'colorbutton,justify,smiley,horizontalrule,autogrow',			
+			extraPlugins: 'justify,smiley,horizontalrule,autogrow',			
 			on: { 'instanceReady': function(evt) {
 				CKEDITOR.instances.historico.focus();			
 			   }

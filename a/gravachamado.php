@@ -235,6 +235,11 @@ Caso você queira interagir no chamado ou&nbsp;saber&nbsp;sobre o andamento, aces
 		if ($SlackUser != "")	
 			slack_publish($SlackUser, $id_chamado, $objChamado->descricao, $objChamado->cliente_id);			  
 		$objChamado->lido = 0;	  
+		
+		if($ic_dono) {
+			$objChamado->consultor_id = $destinatario;
+		}
+			
 	  
 	} else {
       $objContato->destinatario_id = $id_usuario;
@@ -250,10 +255,11 @@ Caso você queira interagir no chamado ou&nbsp;saber&nbsp;sobre o andamento, aces
 	  $historico = "$historico<br><b>-></b><font color=#666666>Diagnóstico : \"<b>" . pegaDiagnostico($diagnostico)."</b>\".</font>";
 	}
 
-	if($rnc) {
+	if($rnc) {				
 	  $objContato->rnc = 1;
 	  $objChamado->rnc = 1;	  
 	}	
+		
 	
 	$objContato->Ic_Atencao = 0;
 		

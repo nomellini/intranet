@@ -90,7 +90,7 @@ from
     inner join usuario us on us.id_usuario = co.consultor_id
 where
   co.dataa >= '$di' and co.dataa <= '$df'  
-  and co.consultor_id in (173, 175, 8)  
+  and co.consultor_id in (173, 175, 8, 225)  
 group by us.id_usuario, us.nome, ch.id_chamado) as chamados 
 
 group by nome

@@ -1,4 +1,4 @@
-<?
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><?
 	require("../scripts/conn.php");	
 	require("../scripts/stats.php");	
 	require("../scripts/classes.php");	
@@ -60,7 +60,7 @@
 </table>
 <hr color=#ff0000 noshade size="1">
 <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><font size="1"> 
-<?echo "Ol·, $nomeusuario, hoje È ";?>
+<?echo "Ol√°, $nomeusuario, hoje √© ";?>
 </font><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
 <script language="JavaScript">
 
@@ -71,7 +71,7 @@ function limpa() {
   function seleciona() {
     window.name = "pai";
     value = document.form.id_cliente.value;
-    window.open('selecionacliente.php?id_cliente='+value, "SeleÁ„o", "scrollbars=yes, height=488, width=600");
+    window.open('selecionacliente.php?id_cliente='+value, "Sele√ß√£o", "scrollbars=yes, height=488, width=600");
   }
 
 function fdata(src) {
@@ -82,16 +82,16 @@ function fdata(src) {
       var mesescrito = new Array;
     
       diasemana[1] = "segunda-feira";
-      diasemana[2] = "terÁa-feira";
+      diasemana[2] = "ter√ßa-feira";
       diasemana[3] = "quarta-feira";
       diasemana[4] = "quinta-feira";
       diasemana[5] = "sexta-feira";
-      diasemana[6] = "s·bado";
+      diasemana[6] = "s√°bado";
       diasemana[7] = "domingo";
      
       mesescrito[0] = "Janeiro";
       mesescrito[1] = "Fevereiro";
-      mesescrito[2] = "MarÁo";
+      mesescrito[2] = "Mar√ßo";
       mesescrito[3] = "Abril";
       mesescrito[4] = "Maio";
       mesescrito[5] = "Junho";

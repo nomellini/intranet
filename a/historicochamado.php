@@ -194,7 +194,7 @@
 	$ClienteIntersystem = '';	
 	$sql = "select Ic_Intersystem, Ic_Datacenter, Ic_SLA, Qt_SLA, Ic_PosVenda from clienteplus where id_cliente = '$id_cliente'";	
 	$result = mysql_query($sql); $linha=mysql_fetch_object($result);
-	$ClienteIntersystem = $linha->Ic_Intersystem ? "<BR/><BR/><B><FONT COLOR=ff0000>INTERSYSTEM SERVIÇOS</font></b><BR/>" : "" ;	
+	$ClienteIntersystem = $linha->Ic_Intersystem ? "<BR/><BR/><B><FONT COLOR=ff0000>INTERSYSTEM SERVIÃ‡OS</font></b><BR/>" : "" ;	
 	$ClienteDatacenter = $linha->Ic_Datacenter ? "<BR/><B><FONT COLOR=ff0000>---> USA DATACENTER <---</font></b><BR/>" : "" ;
 	$inter = $linha->Ic_Intersystem == 1;	
 	
@@ -203,7 +203,7 @@
 	$ClienteSLAMsg = $linha->Ic_SLA ? "cliente com SLA diferenciado : $Qt_SLA" : '';	
 	$ClienteSLA = $linha->Ic_SLA ? "<BR/><B><FONT COLOR=ff00000>---> cliente com SLA diferenciado  : $Qt_SLA : 348640 <---</font></b><BR/>" : "" ;
 	$ClientePosVenda = '';
-	$ClientePosVenda = $linha->Ic_PosVenda ? "<BR/><BR/><B><FONT COLOR=ff00000>---> ! PÓS VENDA ! <---</font></b><BR/>" : "" ;
+	$ClientePosVenda = $linha->Ic_PosVenda ? "<BR/><BR/><B><FONT COLOR=ff00000>---> ! PÃ“S VENDA ! <---</font></b><BR/>" : "" ;
 	
 	
 		
@@ -215,7 +215,7 @@
 	$grau = "[" . AcertaGrau($tmp["grau"]). "]";
 
 	/*
-	   Qualquer alteração aqui deve ser feita em Historico.PHP, pois o código  é o mesmo
+	   Qualquer alteraÃ§Ã£o aqui deve ser feita em Historico.PHP, pois o cÃ³digo  Ã© o mesmo
 	*/
 	$EditaChamadoBloqueado = connPodeEditarChamadoBloqueado($ok);		
     if ( $EditaChamadoBloqueado ) {
@@ -234,7 +234,7 @@
 	}
 
 	
-    // Aqui devo colocar uma opção que vai ordenar os contatos por data ou data desc
+    // Aqui devo colocar uma opÃ§Ã£o que vai ordenar os contatos por data ou data desc
     
 	
 	
@@ -281,7 +281,7 @@
 	$isPosVenda = $objChamado->pos_venda;
 	$pos_venda = "";				
 	if ($isPosVenda) {
-		$pos_venda = "<b>PÓS-VENDA<br/></b>";
+		$pos_venda = "<b>PÃ“S-VENDA<br/></b>";
 		$categoria_desc =  "<h1>$categoria_desc</h1>";
 	}
 	
@@ -323,13 +323,13 @@
   function seleciona() {
     window.name = "pai";
     value = document.form.clientecodigo.value;
-    window.open('selecionacliente.php?id_cliente='+value, "Seleção", "scrollbars=yes, height=488, width=600");
+    window.open('selecionacliente.php?id_cliente='+value, "SeleÃ§Ã£o", "scrollbars=yes, height=488, width=600");
   }
 </script>
 <html>
 <head>
 <title><?=$id_chamado?> - <?=$objChamado->descricao?> : Hist&oacute;rico</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 <link href="sgq/attendere.css" rel="stylesheet" type="text/css">
 <style type="text/css">
@@ -532,7 +532,7 @@
                 <?
 				if ($objChamado->lido) {
 				?>
-                <input type="checkbox" checked="checked" disabled="disabled">Lido pelo destinatário<br><br>
+                <input type="checkbox" checked="checked" disabled="disabled">Lido pelo destinatÃ¡rio<br><br>
                 <?
 				}
 				?>
@@ -547,7 +547,7 @@
 <?
 			   if ($Rascunho) {
               ?>
-                <strong>Atenção</strong>, Existe rascunho seu neste chamado - Para excluir entre em novo contato e em seguida "Cancelar Contato"<br><blockquote>
+                <strong>AtenÃ§Ã£o</strong>, Existe rascunho seu neste chamado - Para excluir entre em novo contato e em seguida "Cancelar Contato"<br><blockquote>
 				<?=$Rascunho?>
                 </blockquote>
 			  <?
@@ -614,7 +614,7 @@
 ?>            
 <br>
 <br>
-<a href="javascript:alterna(divRestricoes);">&nbsp;&nbsp;&nbsp; +Restrições</a>
+<a href="javascript:alterna(divRestricoes);">&nbsp;&nbsp;&nbsp; +RestriÃ§Ãµes</a>
 <div id="divRestricoes" style="display:none">
 <table border="0" cellspacing="1" cellpadding="1" >
   <tr>
@@ -665,22 +665,22 @@
 	}
 ?>
 <br>p: <?=($ordemUsuario+1)?> 
-<a href="javascript:novaOrdem(<?=$id_chamado?>, <?=$ordemMax?>)"><img src="imagens/SadTopo.png" width="10" height="15" border="0" align="absbottom" title="Prioridade Máxima"></a><a href="javascript:novaOrdem(<?=$id_chamado?>, <?=$ordemCima?>)"><img src="imagens/Sad_Cima_Ordem.png" border="0" height="15" width="10" align="absbottom" title="Aumentar Prioridade"></a><a href="javascript:novaOrdem(<?=$id_chamado?>, <?=$ordemBaixo?>)"><img src="imagens/Sad_Baixo_Ordem.png" border="0" height="15" width="10" align="absbottom" title="Diminuir Prioridade"></a><a href="javascript:novaOrdem(<?=$id_chamado?>, 0)"><img src="imagens/SadBotton.png" width="10" height="15"  border="0" align="absbottom" title="Prioridade Mínima"></a>
+<a href="javascript:novaOrdem(<?=$id_chamado?>, <?=$ordemMax?>)"><img src="imagens/SadTopo.png" width="10" height="15" border="0" align="absbottom" title="Prioridade MÃ¡xima"></a><a href="javascript:novaOrdem(<?=$id_chamado?>, <?=$ordemCima?>)"><img src="imagens/Sad_Cima_Ordem.png" border="0" height="15" width="10" align="absbottom" title="Aumentar Prioridade"></a><a href="javascript:novaOrdem(<?=$id_chamado?>, <?=$ordemBaixo?>)"><img src="imagens/Sad_Baixo_Ordem.png" border="0" height="15" width="10" align="absbottom" title="Diminuir Prioridade"></a><a href="javascript:novaOrdem(<?=$id_chamado?>, 0)"><img src="imagens/SadBotton.png" width="10" height="15"  border="0" align="absbottom" title="Prioridade MÃ­nima"></a>
 <? } ?>
 </form>
 
 <?
-   /* opção para marcar como não lido - Inicio  */
+   /* opÃ§Ã£o para marcar como nÃ£o lido - Inicio  */
 	if ( ($ok == $destinatario_id) )
 	{
 ?>	
-<form name="ligaLampada"><input type="hidden" value="1" name="ligarLampada"><input type="hidden" value="<?=$id_chamado?>" name="id_chamado"><a href="javascript:document.ligaLampada.submit();">Marcar como não lido</a><br>
+<form name="ligaLampada"><input type="hidden" value="1" name="ligarLampada"><input type="hidden" value="<?=$id_chamado?>" name="id_chamado"><a href="javascript:document.ligaLampada.submit();">Marcar como nÃ£o lido</a><br>
   <br>
 
 </form>                
 <?
    }
-   /* opção para marcar como não lido - fim */
+   /* opÃ§Ã£o para marcar como nÃ£o lido - fim */
 ?>	
 
 <?
@@ -691,10 +691,10 @@
   <tr>
     <td bordercolor="#FFFFFF" bgcolor="#0066FF"><span class="style8">Programa</span></td>
     <td bordercolor="#FFFFFF" bgcolor="#0066FF"><span class="style8">Comitado </span></td>
-    <td bordercolor="#FFFFFF" bgcolor="#0066FF"><span class="style8">Responsável </span></td>	
+    <td bordercolor="#FFFFFF" bgcolor="#0066FF"><span class="style8">ResponsÃ¡vel </span></td>	
 	    <td bordercolor="#FFFFFF" bgcolor="#0066FF"><span class="style8">Pacote</span></td>		
 	<? if ($developer) {?>		
-	    <td bordercolor="#FFFFFF" bgcolor="#0066FF"><span class="style8">Ação</span></td>	
+	    <td bordercolor="#FFFFFF" bgcolor="#0066FF"><span class="style8">AÃ§Ã£o</span></td>	
 	<? }?>				
   </tr>
   
@@ -761,7 +761,7 @@
 	</form>
 <? } ?>
 
-		<input type="button" name="button2" id="button2" value="DOCUMENTAÇÃO" onClick="Documentacao()">	        
+		<input type="button" name="button2" id="button2" value="DOCUMENTAÃ‡ÃƒO" onClick="Documentacao()">	        
 
 
 <?
@@ -789,11 +789,11 @@
       <td valign="middle" align="center"><div align="center"> <font size="1"> [ <a href="<?=$linkOrdem?>"> Inverter ordem </a> ]
           <? if($rnc) {?>
           ::
-          [ <a href="javascript:rnc();"> Imprime Relatório RNC </a> ] :: 
+          [ <a href="javascript:rnc();"> Imprime RelatÃ³rio RNC </a> ] :: 
           [ <a href="rnc/rnc.php?id_chamado=<?=$id_chamado?>"> Editar </a> ] 
           <script>
   function rnc() {
-     window.open('historicochamadornc.php?id_chamado='+<?=$id_chamado?>  , "Seleção", "scrollbars=yes, height=600, width=700");
+     window.open('historicochamadornc.php?id_chamado='+<?=$id_chamado?>  , "SeleÃ§Ã£o", "scrollbars=yes, height=600, width=700");
   }
             </script>
           <? } ?>
@@ -846,7 +846,7 @@
 </div>
 
 <!-- 
-	Em 03.05.2011 - Fernando Nomellini. Troquei todo o conteúdo da tabela de histórico
+	Em 03.05.2011 - Fernando Nomellini. Troquei todo o conteÃºdo da tabela de histÃ³rico
     para um include. Assim posso usar o mesmo no novo contato.
 
 	INICIO
@@ -986,7 +986,7 @@
 
 
 
-	contatos.innerHTML = '<?php echo "$UltimoContato contato$ss consumindo $dd - duração : " . segTohora($segundos) . " - $media Hrs/Dia";?>';
+	contatos.innerHTML = '<?php echo "$UltimoContato contato$ss consumindo $dd - duraÃ§Ã£o : " . segTohora($segundos) . " - $media Hrs/Dia";?>';
   
 </script> 
   <script>
@@ -1043,7 +1043,7 @@
 
 function abreLog()
 {
-    window.open('historicochamadolog.php?id_chamado=<?=$id_chamado?>', "Seleção", "scrollbars=yes, height=488, width=600");	
+    window.open('historicochamadolog.php?id_chamado=<?=$id_chamado?>', "SeleÃ§Ã£o", "scrollbars=yes, height=488, width=600");	
 }
 	
 function selecionapessoa(AClienteId) {
@@ -1076,11 +1076,11 @@ where
 order by hora ";
 	  
 
-	  $msg = "Usuários trabalhando neste chamado\\n\\n";
+	  $msg = "UsuÃ¡rios trabalhando neste chamado\\n\\n";
 	  $result = mysql_query($sql) or die (mysql_error() . " - " . $sql);
 	  while ($linha = mysql_fetch_object($result)) {
 		$temMsg = true;
-	  	$msg .= "$linha->nome, desde às $linha->hora\\n";
+	  	$msg .= "$linha->nome, desde Ã s $linha->hora\\n";
 	  }
 	  
 	  mysql_free_result($result);  
@@ -1098,7 +1098,7 @@ order by hora ";
 <script>
 function Documentacao()
 {
-    window.open('documentacao.php?id_chamado=<?=$id_chamado?>', "Seleção", "scrollbars=yes, height=600, width=800");	
+    window.open('documentacao.php?id_chamado=<?=$id_chamado?>', "SeleÃ§Ã£o", "scrollbars=yes, height=600, width=800");	
 }
 
 <? if ($_ReadyOnlyStatus) { ?>

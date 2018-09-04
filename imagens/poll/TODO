@@ -1,0 +1,16 @@
+These are my main objectives for the 0.1.x releases.
+Once this list becomes blank it will be released as 1.0.0,
+which I will consider to be the first "stable" release.
+
+Other major changes will be introduced as I move into 1.1.x,
+which will be the next set of development releases.
+
+
+TODO in 0.1.x:
+o Code cleanup!
+o Any bug fixes
+o Cosmetics improvements on the error messages in admin
+
+TODO in 1.1.x:
+o Easy customization of most text messages (language modules)
+o Possibly a comment system?

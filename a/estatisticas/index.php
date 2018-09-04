@@ -6,8 +6,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
+
+<title>Estatísticas</title>
 </head>
 
 <body>
@@ -43,7 +43,6 @@ Coordenador
 <select name="id_coordenador" id="id_coordenador">
   <option value="7" selected="selected">Ricardo Hudson</option>
   <option value="12">Fernando Nomellini</option>
-  <option value="98">Daniel Lopes</option>
 </select>
 <br />
 <input type="submit" name="Submit" value="Submit" />

@@ -17,7 +17,7 @@
 ?><html>
 <head>
 <title>usuarios</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../stilos.css" type="text/css">
 </head>
 
@@ -27,13 +27,13 @@
 
  function incluir() {
    if (document.form.hierarquia.selectedIndex == 0 ) {
-     window.alert("Hierarquia é obrigatótio na inclusão");
+     window.alert("Hierarquia Ã© obrigatÃ³tio na inclusÃ£o");
      document.form.hierarquia.focus();
 	 return;
    } 
 
    if (document.form.superior.selectedIndex == 0 ) {
-     window.alert("Superior é obrigatótio na inclusão");
+     window.alert("Superior Ã© obrigatÃ³tio na inclusÃ£o");
      document.form.superior.focus();
 	 return;
    } 
@@ -494,7 +494,7 @@
       <td width="84%"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
         <select name="superior" class="unnamed1">
           <option value="0">Selecione</option>
-          <option value="-1">Não tem</option>
+          <option value="-1">NÃ£o tem</option>
           <? $sql1="Select id_usuario, nome from usuario, hierarquia Where ( usuario.hierarquia=hierarquia.id_hierarquia ) and ( hierarquia.hierarquia like '%gerente%') order by nome;"; 
 		    $result = mysql_query($sql1);
             while($linha = mysql_fetch_object($result)) {
@@ -645,7 +645,7 @@ Ativar/Desativar</td>
                 <tr> 
                   <td width="7%" bgcolor="<?=$cor?>"> <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1">
 				  
-				  <!-- Não permito mais deletar usuário
+				  <!-- NÃ£o permito mais deletar usuÃ¡rio
 				  <?
 				   if ($ok==12) {
 				  ?>
@@ -670,7 +670,7 @@ Ativar/Desativar</td>
                   </td>
                   <td width="37%" bgcolor="<?=$cor?>">&nbsp;<a href="mailto:<?=$email?>">login 
                     : <b><? echo $login ?></b><br>
-                    <? if($emailsn) {echo "&nbsp;Recebe - ";} else {echo "&nbsp;<B>Não recebe</b> - ";}  echo $email;?>
+                    <? if($emailsn) {echo "&nbsp;Recebe - ";} else {echo "&nbsp;<B>NÃ£o recebe</b> - ";}  echo $email;?>
                     </a> </td>
                 </tr>
               </table></td>

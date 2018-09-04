@@ -80,6 +80,7 @@ function getSqlDiagnosticos_com($de, $ate, $id)
 	$sql .= "AND contato.consultor_id <> 39 ";
 	$sql .= "AND contato.consultor_id <> 85 ";
 	$sql .= "AND contato.consultor_id <> 14 ";
+	$sql .= "AND contato.consultor_id <> 215 ";	
 	$sql .= "AND contato.consultor_id <> 90 ";
 	$sql .= "AND contato.consultor_id <> 98 ";
 	$sql .= "AND contato.consultor_id <> 172 ";
@@ -158,7 +159,7 @@ function getSqlGraficoContatosSistema($sistema_id, $de, $ate, $id)
 	$sql .= "SELECT Month(contato.dataa) mes, Year(contato.Dataa) ano, count(  *  )  AS soma ";
 	$sql .= "FROM contato, chamado, sistema ";
 	$sql .= "WHERE contato.destinatario_id = $id and chamado.visible = 1 ";
-	$sql .= "AND contato.consultor_id not in (39, 85, 14, 90, 98, 172, 173, 12, 43, 169) ";
+	$sql .= "AND contato.consultor_id not in (39, 85, 14, 215, 90, 98, 172, 173, 12, 43, 169) ";
 	$sql .= "AND contato.consultor_id not in (170, 171, 178, 08) ";
 	$sql .= "AND contato.chamado_id = chamado.id_chamado ";
 	$sql .= "AND sistema.id_sistema = chamado.sistema_id ";
@@ -201,7 +202,7 @@ function getSqlContatosPorPessoaQualidade($de, $ate, $id)
 	$sql = "";
 	$sql .= "SELECT nome, count(  *  )  AS soma ";
 	$sql .= "FROM contato, usuario ";
-	$sql .= "WHERE destinatario_id = 14 ";
+	$sql .= "WHERE destinatario_id in (14, 215) ";	
 	$sql .= "AND usuario.id_usuario = consultor_id  ";
 	$sql .= "AND dataa >=  '$de' AND dataa <=  '$ate' ";
 	$sql .= "GROUP  BY consultor_id ";
@@ -214,7 +215,7 @@ function getSqlContatosPorSistemaQualidade($de, $ate, $id)
 	$sql = " ";
 	$sql .= "SELECT sistema, count(  *  )  AS soma ";
 	$sql .= "FROM contato, chamado, sistema ";
-	$sql .= "WHERE contato.destinatario_id =14 ";  
+	$sql .= "WHERE contato.destinatario_id in (14, 215) ";  
 	$sql .= "AND contato.chamado_id = chamado.id_chamado  ";
 	$sql .= "AND sistema.id_sistema = chamado.sistema_id  ";
 	$sql .= "AND contato.dataa >=  '$de'  ";
@@ -229,7 +230,7 @@ function getSqlChamadosPorSistemaQualidade($de, $ate, $id)
 	$sql = "create temporary table tmpQuery ";
 	$sql .= "SELECT contato.chamado_id, sistema,  count(  *  )  AS soma ";
 	$sql .= "FROM contato, chamado, sistema  ";
-	$sql .= "WHERE contato.destinatario_id =14  and chamado.visible = 1  ";
+	$sql .= "WHERE contato.destinatario_id in (14, 215)  and chamado.visible = 1  ";
 	$sql .= "AND contato.chamado_id = chamado.id_chamado  ";
 	$sql .= "AND sistema.id_sistema = chamado.sistema_id  ";
 	$sql .= "AND contato.dataa >=  '$de'  ";

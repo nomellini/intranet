@@ -1,12 +1,12 @@
 <html>
 <head>
 <title>teste</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
 <body bgcolor="#FFFFFF" text="#000000">
 
-  pesquisa 
+  pesquisa
   <input type="text" name="palavra" onKeyPress="teclado();">
 
 <script>
@@ -15,7 +15,7 @@
   var t = 0;
   var re=ch.charCodeAt(0);
   if (re==13) {
-    teste  = "/a/baseweb/index.php?palavra=" + palavra.value;	
+    teste  = "/a/baseweb/index.php?palavra=" + palavra.value;
     window.open(teste, "Base", "width=640, hight=300, toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,maximized=no,minimized=no");
 	return;
   }

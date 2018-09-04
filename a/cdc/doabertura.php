@@ -10,21 +10,21 @@
     $horaa = date("H:i:s");
 	$consultor_origem = 141; // Marcelo
 	$destinatario = 141;     // Marcelo Nunes // TODO: Parametrizar
-	$motivo_id = 28; 
+	$motivo_id = 28;
 	$remetente_id = 56; //Cliente
 	$sistema_id = 1024; // Qualidade
 	$sql  = "INSERT INTO chamado (consultor_id, email, status, cliente_id, descricao, sistema_id, dataa, horaa, ";
 	$sql .= "destinatario_id, externo, nomecliente, categoria_id, prioridade_id, motivo_id, remetente_id, lido, lidodono, datauc, horauc) VALUES ";
 	$sql .= "($consultor_origem, '$email', 2, '$v_id_cliente', '$descricao', $sistema_id, '$dataa', '$horaa', ";
 	$sql .= "$destinatario, 0, '$nome', $categoria_id, 1, $motivo_id , $remetente_id, 0, 0, '$dataa', '$horaa');";
-	mysql_query($sql) or $msg = " não pode ser aberto, tente novamente.";
+	mysql_query($sql) or $msg = " nï¿½o pode ser aberto, tente novamente.";
 	if(!$msg) {
 		$sql = "select max(id_chamado) as novo from chamado where motivo_id=$motivo_id and cliente_id = '$v_id_cliente'";
 		mysql_query($sql);
 		$result = mysql_query($sql);
 		$linha=mysql_fetch_object($result);
 	    $chamado = $linha->novo;
-		$msg = " foi aberto com sucesso, com o número $chamado.";
+		$msg = " foi aberto com sucesso, com o nï¿½mero $chamado.";
 	}
 
 	$sql = "";
@@ -56,7 +56,7 @@
 <html>
 <head>
 <title>Confirma&ccedil;ao:</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 </head>
 
@@ -76,16 +76,16 @@
       var mesescrito = new Array;
 
       diasemana[1] = "Segunda-feira";
-      diasemana[2] = "Terça-feira";
+      diasemana[2] = "Terï¿½a-feira";
       diasemana[3] = "Quarta-feira";
       diasemana[4] = "Quinta-feira";
       diasemana[5] = "Sexta-feira";
-      diasemana[6] = "Sábado";
+      diasemana[6] = "Sï¿½bado";
       diasemana[7] = "Domingo";
 
       mesescrito[0] = "Janeiro";
       mesescrito[1] = "Fevereiro";
-      mesescrito[2] = "Março";
+      mesescrito[2] = "Marï¿½o";
       mesescrito[3] = "Abril";
       mesescrito[4] = "Maio";
       mesescrito[5] = "Junho";

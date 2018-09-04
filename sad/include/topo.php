@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>SAD - Sistema de Atendimento Datamace</title>
@@ -16,7 +16,7 @@
 
 <td rowspan="3" align="right"><img src="img/spacer.gif" width="20"></td> 
    <td width="3" rowspan="2" align="right" valign="top"><img  src="img/borda_menu_topo_esq.jpg" border="0" height="29" width="13"></td>
-   <td align="center" background="img/bg_menu_topo.jpg" style="background-repeat: repeat-x; background-attachment: fixed;" ><?$msg=$_SESSION['msg']; if($msg==""){ echo "<a href='index.php' class='menuTopo'>"; ?><?} else { echo "<a href='http://www.datamace.com.br/PortalCliente/' class='menuTopo'>";}?>Home</a> | <?$msg=$_SESSION['msg']; if($msg==""){ echo '<a href="guia_de_suporte.pdf" target="_blank" class="menuTopo">'; } else {echo "<a href='http://www.datamace.com.br/PortalCliente/' class='menuTopo'>";}?>Guia de Suporte</a> |  <?$msg=$_SESSION['msg']; if($msg==""){ echo '<a href="guia_de_suporte.pdf" target="_blank" class="menuTopo">'; } else {echo "<a href='http://www.datamace.com.br/PortalCliente/' class='menuTopo'>";}?><a href="http://www.datamace.com.br/PortalCliente/" class="menuTopo">Sair</a></td>
+   <td align="center" background="img/bg_menu_topo.jpg" style="background-repeat: repeat-x; background-attachment: fixed;" ><?$msg=$_SESSION['msg']; if($msg==""){ echo "<a href='index.php' class='menuTopo'>"; ?><?} else { echo "<a href='https://www.datamace.com.br/PortalCliente/' class='menuTopo'>";}?>Home</a> | <?$msg=$_SESSION['msg']; if($msg==""){ echo '<a href="guia_de_suporte.pdf" target="_blank" class="menuTopo">'; } else {echo "<a href='https://www.datamace.com.br/PortalCliente/' class='menuTopo'>";}?>Guia de Suporte</a> |  <?$msg=$_SESSION['msg']; if($msg==""){ echo '<a href="guia_de_suporte.pdf" target="_blank" class="menuTopo">'; } else {echo "<a href='https://www.datamace.com.br/PortalCliente/' class='menuTopo'>";}?><a href="https://www.datamace.com.br/PortalCliente/" class="menuTopo">Sair</a></td>
    <td rowspan="2" valign="top"><img  src="img/borda_menu_topo_dir.jpg" border="0" height="29" width="13"></td> 
     <td rowspan="3" align="left"><img  src="img/spacer.gif" width="10"></td>
      <td width="33%" rowspan="3" align="right" valign="bottom" style="color:#FFFFFF; font-size:11px;"><img src="img/pessoas_chat_topo.jpg" border="0" height="104" width="255"><br />

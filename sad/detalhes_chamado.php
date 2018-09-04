@@ -1,13 +1,13 @@
-<?  
+<?
 require("scripts/conn.php");
-  session_start();  
-     
+  session_start();
+
 $msg=$_SESSION['msg'];
 if($msg==""){
 
 }else{
 header("Location: doindex.php");
-}  
+}
 
 if ($v_id_cliente=="") {
 header("Location: doindex.php");
@@ -114,7 +114,7 @@ document.detalhes.submit();
 
 
 <div id="topo">
-  <? include("include/topo.php");?> 
+  <? include("include/topo.php");?>
 </div>
 
 <div id="data">
@@ -128,7 +128,7 @@ document.detalhes.submit();
 			<link rel="StyleSheet" href="include/dtree.css" type="text/css" />
 	<script type="text/javascript" src="include/dtree.js"></script>
 
-		  <? include("include/menu.php");?>		  
+		  <? include("include/menu.php");?>
       </div></td>
       <td width="100%" align="right" valign="top">
 	  <table width="99%" height="68" border="0" cellpadding="0" cellspacing="0">
@@ -139,30 +139,30 @@ document.detalhes.submit();
                 <tbody>
                   <tr>
                     <td align="left" width="80%">
-					
-					
+
+
 							<?
-					
+
 					$sql20=mysql_query("select * from chamado where id_chamado=". $_GET['id_chamado']);
-					
-						
+
+
 					while($reg20=mysql_fetch_assoc($sql20)){
 					$status=$reg20['status'];
-						
-					
+
+
 					if($status=="2"){
 					?>
-					<img src="img/titulo_acompanharchamado.gif" width="172" height="33"> 
+					<img src="img/titulo_acompanharchamado.gif" width="172" height="33">
 					<?} else {
 					?>
-					<img src="img/titulo_acompanharencerrado.gif" width="172" height="33"> 
-				
+					<img src="img/titulo_acompanharencerrado.gif" width="172" height="33">
+
 				<?
 					}}?>
-					
-					
-					
-					
+
+
+
+
 					</td>
                     <td align="right" width="20%"><img src="img/grafismo_titulo.gif" width="103" height="33"> </td>
                   </tr>
@@ -181,31 +181,31 @@ document.detalhes.submit();
                   <tr>
                     <td height="22" align="left" nowrap class="bgAberto3" style="padding-left:3px; padding-right:3px;">Chamado N&ordm; <?echo $_GET['id_chamado'];?></td>
                     <td width="913" align="right" bgcolor="#FFFFFF">
-					
+
 					</td>
                     </tr>
                   <tr>
                     <td height="2" colspan="2" align="left" nowrap style="padding-left:3px; padding-right:3px;"><img src="img/spacer.gif" width="50" height="2"></td>
 </tr>
                 </table>
-				
+
 				                  <?
 				  $sql=mysql_query("select * from chamado where id_chamado=" . $_GET['id_chamado']);
 				  while ($reg= mysql_fetch_assoc($sql)){
 				  $produto=$reg['sistema_id'];
 				  $criado=$reg['dataa'];
 				  $email=$reg['email'];
-				  
+
 				  $assunto=$reg['assunto'] . "<br>Descrição: " . $reg['descricao'];
-				  
-				  
-				  if ($assunto=="") { $assunto = $reg['descricao']; } 
-				  
+
+
+				  if ($assunto=="") { $assunto = $reg['descricao']; }
+
 				  $horaa=$reg['horaa'];
 				  }
 				  ?>
-				  
-				  
+
+
 
 
 
@@ -223,41 +223,41 @@ document.detalhes.submit();
 <table border="0" cellpadding="0" cellspacing="0" width="99%" style="border-top:1px; border-right:0px; border-bottom:1px; border-left: 0px;  border-style:solid; border-color:#133481; ">
                     <tr>
                       <td width="50%" align="left" style="padding-left:4px;">
-				<!-- Tabela Esquerda -->	  
+				<!-- Tabela Esquerda -->
 						<table width="100%" cellpadding="0" cellspacing="0">
 						<tr>
 						<td align="left" width="30%" class="detalhesDados">Criado em:</td>
 						<td align="left" class="detalhesDados"><?
-					  
+
 					  $ano=substr("$criado",2, 2);
 	                  $mes=substr("$criado",5, 2);
 	                  $dia=substr("$criado",8, 2);
-	                  echo $dia . "-". $mes . "-". $ano . " / " . $horaa; 
-					 
+	                  echo $dia . "-". $mes . "-". $ano . " / " . $horaa;
+
 					?> </td>
 						</tr>
-						
+
 												<tr>
 						<td align="left" width="30%" class="detalhesDados">Atualizado em:</td>
 						<td align="left" class="detalhesDados"><?
-					  
+
 					  $sqlatu=mysql_query("select max(dataa) as dataa, max(horaa) as horaa from contato where chamado_id=" . $_GET['id_chamado'] . "");
 
 				      while($reg=mysql_fetch_assoc($sqlatu)){
 					  $dataa=$reg['dataa'];
 					  $horaa=$reg['horaa'];
-					  
+
 					  }
 					  $ano=substr("$dataa",2, 2);
 	                  $mes=substr("$dataa",5, 2);
 	                  $dia=substr("$dataa",8, 2);
-					 
-	                  echo $dia . "-". $mes . "-". $ano ." / ". $horaa; 
-					  
-					  
+
+	                  echo $dia . "-". $mes . "-". $ano ." / ". $horaa;
+
+
 					  ?></td>
 						</tr>
-						
+
 												<tr>
 						<td align="left" width="30%" class="detalhesDados">Produto:</td>
 						<td align="left" class="detalhesDados"><?$sql= mysql_query("select * from sistema where id_sistema=" . $produto);
@@ -267,7 +267,7 @@ document.detalhes.submit();
 					  echo $sistema;
 					  ?></td>
 						</tr>
-						
+
 												<tr>
 						<td align="left" width="30%" class="detalhesDados">Classifica&ccedil;&atilde;o:  </td>
 						<td align="left" class="detalhesDados"><?
@@ -279,11 +279,11 @@ document.detalhes.submit();
 					 $sql8=mysql_query("select * from classificacao where id=" . $classificacao);
 				     while($reg3= mysql_fetch_assoc($sql8)){
 					 $classificacao2=$reg3['descricao'];
-					 
-					 
+
+
 					}
 					 echo  $classificacao2;
-					 
+
 					 if($classificacao2=="Crítico"){
 						 echo "&nbsp;&nbsp;<img src='img/icone_critico.gif' align='absmiddle'>";
 					 }
@@ -301,20 +301,20 @@ document.detalhes.submit();
 					 }
 					?></td>
 						</tr>
-						
+
 												<tr>
-						<td align="left" width="30%" class="detalhesDados">Status: 
-						
+						<td align="left" width="30%" class="detalhesDados">Status:
+
 						</td>
 						<td align="left" class="detalhesDados">
-<? 
+<?
 	$strSql = "select status from chamado where id_chamado=". $_GET['id_chamado'] ." limit 1";
 	$sqlstatus=mysql_query($strSql);
 						while($regstatus=mysql_fetch_assoc($sqlstatus)){
 						$status=$regstatus['status'];
-			
+
 						if($status==1){
-						
+
 						echo "Fechado";
 						} else{
 						echo "Aberto";
@@ -323,25 +323,25 @@ document.detalhes.submit();
 				         ?></td>
 						</tr>
 					</table>
-					
-			<!-- Tabela Direita -->	
-				
-		<td width="50%" valign="top" align="left" style="padding-left:4px;">		  
-			  
-			  
+
+			<!-- Tabela Direita -->
+
+		<td width="50%" valign="top" align="left" style="padding-left:4px;">
+
+
 				<table width="98%%" height="63" cellpadding="0" cellspacing="0">
-				
+
 						<tr>
 						<td width="20%" height="25" align="left" valign="bottom" class="detalhesDados">Assunto</td>
 						<td width="80%" align="right" class="detalhesDados"><?
-					
+
 					$sql20=mysql_query("select status from chamado where id_chamado=". $_GET['id_chamado']);
-					
-						
+
+
 					while($reg20=mysql_fetch_assoc($sql20)){
 					$status=$reg20['status'];
-						
-					
+
+
 					if($status=="2"){
 					?>
                           <a href="enviar_arquivo.php?select5=<?echo $_GET['id_chamado'];?>"><img src="img/icone_detalhes_enviar.gif" width="25" height="25" hspace="0" vspace="1" border="0" style="cursor: help"  onmouseover="mouseover2('Enviar Arquivo');" onMouseOut="mouseout();" /></a>
@@ -349,43 +349,43 @@ document.detalhes.submit();
 			?>
                           <?	}}?>
                           <!--	<a href="#" style="cursor: help" onMouseOver="mouseover('Inscri&ccedil;&atilde;o Online');" onMouseOut="mouseout();"><img src="img/icone_usuario_inscricaoonline.gif" width="20" height="14" hspace="3" vspace="1" border="0"></a>-->
-                          <!--	<a href="javascript:void(0)" onclick="document.detalhes.textarea.focus(); location.href='#ancora'" 
+                          <!--	<a href="javascript:void(0)" onclick="document.detalhes.textarea.focus(); location.href='#ancora'"
 href="javascript:void(0)"> -->
                           <a href="#ancora"><img src="img/icone_detalhes_inserir.gif" width="25" height="25" hspace="8" vspace="1" border="0"  style="cursor: help" onMouseOver="mouseover2('Inserir Coment&aacute;rio');" onMouseOut="mouseout();" /></a>
                           <?
-										
+
 	  			  $sqlassunto = mysql_query("select status, assunto, descricao from chamado where id_chamado=" . $_GET['id_chamado']);
-				  $regassunto = mysql_fetch_assoc($sqlassunto);			  
-						
+				  $regassunto = mysql_fetch_assoc($sqlassunto);
+
 
 					$status=$regassunto['status'];
-						
-					
+
+
 					if($status=="2"){
-					
+
 					?>
 <!--                          <img src="img/icone_detalhes_encerrar.gif" width="25" height="25" hspace="0" vspace="1" border="0"  style="cursor: help" onMouseOver="mouseover2('Encerrar Chamado');" onMouseOut="mouseout();" onClick="upload2(this.form);" /> -->
                           <?} else {
 			?>
                           <?	}?></td>
 						</tr>
-						
+
 						<tr>
 						<td width="98%" height="15" colspan="2" align="left" class="detalhesDados" style="border:1px solid #E4E8EF; padding:4px;"><?
- 
-                  //$assunto2 = $regassunto['assunto'];  				  
+
+                  //$assunto2 = $regassunto['assunto'];
 				  $assunto2 =  nl2br($regassunto['descricao']);
-				  //if ($assunto2 == "") { $assunto2 = nl2br($regassunto['descricao']);} 
+				  //if ($assunto2 == "") { $assunto2 = nl2br($regassunto['descricao']);}
 
 					  echo $assunto2;?>
 		  </table>
-					  
-					  
-					  
-					  
+
+
+
+
 					  </td>
-				      </tr>      
-                   
+				      </tr>
+
 				  </table>
 
 
@@ -399,75 +399,75 @@ href="javascript:void(0)"> -->
 
 
 
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  
-				  				  
+
+
+
+
+
+
+
+
+
+
 				  </td>
-				  
+
               </tr>
               <tr>
                 <td height="12" align="center"><img src="img/spacer.gif" width="50" height="12"></td>
                 </tr>
               <tr>
                 <td height="5" align="center">
-				
+
 				<table border="0" cellpadding="0" cellspacing="0" width="99%" >
                   <tr><td align="left">
   <!--                  <td colspan="3" align="center" class="tituloAcompanharChamado"  style="padding-left:2px;">Coment&aacute;rios</td> -->
 					<table width="120"><tr><td height="22" width="120" align="left" nowrap class="bgAberto3" style="padding-left:3px; padding-right:3px;">
 					<?
-                  
+
 				  $sql = mysql_query("select count(chamado_id) as chamado_id from contato where publicar=1 and  chamado_id=".$_GET['id_chamado']);
-				  
+
 				   while($reg=mysql_fetch_assoc($sql)){
 				   $total=$reg['chamado_id'];
 //				   $total=$total-1;
-				
-				  if ($total == ""){			 
+
+				  if ($total == ""){
 				    ECHO "";
 				   }
-				
-				   if ($total <= 1 && $total!=""){			 
+
+				   if ($total <= 1 && $total!=""){
 				   echo "1";
 				   echo " Interação";
 				   }
-				 
-				   
+
+
 				   else{
 				   echo $total;
 				   echo " Interações";
 				   }}
-					?> 
-					
-					
+					?>
+
+
 					 </td></tr></table>
 
-					
+
                     </tr>
-					<?if($_GET['ident']==""){	
+					<?if($_GET['ident']==""){
 					$sql2=mysql_query("select count(chamado_id) as total from contato where  publicar=1 and  chamado_id=" . $_GET['id_chamado']);
 					while($reg= mysql_fetch_assoc($sql2)){
 					$numerocount = $reg['total'];
 					}
 					//$numerocount=$numerocount-1;
 
-					
+
 			   	   $sql=mysql_query("select * from contato where  publicar=1 and  chamado_id=" . $_GET['id_chamado'] . " order by dataa desc, horaa desc limit 1");
 				   $tr=0;
-				 
+
 				   while($reg= mysql_fetch_assoc($sql)){
-				   $dataa=$reg['dataa']; 
-				   $horaa=$reg['horaa']; 
+				   $dataa=$reg['dataa'];
+				   $horaa=$reg['horaa'];
 				   $historico=$reg['historico'];
 				   $pessoacontatada=$reg['pessoacontatada'];
-			  
+
                    if ($v_id_cliente) {
                    $historico = historicoChamado($id_chamado, $v_id_cliente);
                    $contatos = count($historico);
@@ -478,55 +478,55 @@ href="javascript:void(0)"> -->
 				  ?>
      <tr>
      <td width="25%" align="left" valign="middle" class="<?if ($tr%2==0){?>conteudoAcompanharChamado3<?} else {?>conteudoAcompanharChamado4<?}?>">
-	 
+
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
      <tr>
      <td width="5%"><strong class="tabelaContato">Contato:</strong></td>
      <td width="2%" align="left" class="tabelaContato">&nbsp;<?echo $numerocount; $numerocount=$numerocount-1;?></td>
-	 
+
      <td width="27%" align="center" class="tabelaContato"> <?=$tmp["dataa"]?> / <?=$tmp["horaa"]; ?></td>
 
      <td width="5%"><strong class="tabelaContato">Autor:</strong></td>
      <td width="25%" align="left" class="tabelaContato">&nbsp;<?	echo peganomeusuario($tmp["consultor"]);?></td>
 
-     <td width="5%"><strong class="tabelaContato">Status: </strong> 
+     <td width="5%"><strong class="tabelaContato">Status: </strong>
 
-	
-	 
-	 
+
+
+
 	 </td>
-     <td width="25%" align="left" class="tabelaContato"> 
-	 					&nbsp;<? 
+     <td width="25%" align="left" class="tabelaContato">
+	 					&nbsp;<?
 						$sqlstatus=mysql_query("select * from contato where chamado_id=". $_GET['id_chamado'] ." limit 1");
 						while($regstatus=mysql_fetch_assoc($sqlstatus)){
 						$status=$regstatus['status_id'];
-			
+
 						if($status==1){
-						
+
 						echo "Fechado";
 						} else{
 						echo "Aberto";
 						}
 						}
 				         ?></td>
-	 
+
 	 </tr>
 	 <tr>
 	 <td colspan="7" style="padding-top:10px; padding-bottom:10px; font-size:10px;">
-	 <?=$tmp["historico"];?> 
+	 <?=$tmp["historico"];?>
 	 </td>
-	 
+
 	 </tr>
 
      </table>
-	 
-	 
-	 
+
+
+
 	 </td>
      <!-- ALTERADO AQUI -->
 <?$tr=$tr+1;
  }}}}
- 
+
  else {
 
 
@@ -534,15 +534,15 @@ $sql2=mysql_query("SELECT count( chamado_id ) AS total FROM contato WHERE chamad
 					while($reg2= mysql_fetch_assoc($sql2)){
 					$numerocount=$reg2['total'];
 					}
-					
+
 
 $sqlresult= mysql_query("select * from contato where chamado_id=". $_GET['id_chamado']." and publicar=1 order by dataa desc, horaa desc");
 
 while($reg=mysql_fetch_assoc($sqlresult)){
 $id=$reg['chamado_id'];
 $historico=$reg['historico'];
-$dataa2=$reg['dataa']; 
-$horaa=$reg['horaa']; 
+$dataa2=$reg['dataa'];
+$horaa=$reg['horaa'];
 $consultor_id=$reg['consultor_id'];
 $status=$reg['status_id'];
 ?>
@@ -559,7 +559,7 @@ $status=$reg['status_id'];
 	 $recuperausuario=mysql_query("select * from usuario where id_usuario=".$consultor_id);
 	 while($reg=mysql_fetch_assoc($recuperausuario)){
 	 $usuario=$reg['nome'];
-	echo $usuario; 
+	echo $usuario;
 	 }?>&nbsp;</td>
      </tr>
      <tr>
@@ -579,8 +579,8 @@ $status=$reg['status_id'];
 	    $dia=substr("$dataa2",8, 2);
 	    echo $dia . "-". $mes . "-". $ano;?><br>
      <?echo $horaa;?>
-	 
-	 
+
+
 	 </td>
      <td width="65%" class="<?if ($tr%2==0){?>conteudoAcompanharChamado3<?} else {?>conteudoAcompanharChamado4<?}?>"><?echo $historico;?></td>
      </tr>
@@ -590,62 +590,62 @@ $status=$reg['status_id'];
 ?>
 <!-- AQUI ACABA -->
 
-				  
+
                 </table></td>
               </tr>
-              
-              
+
+
               <tr>
                 <td height="12" align="center" style="	border-left: 0px;
 	border-right: 0px;
 	border-top: 1px;
-	border-bottom:0px; 
+	border-bottom:0px;
 	border-style: solid;
 	border-color: #9EAAC7;"><img src="img/spacer.gif" width="50" height="12"></td>
               </tr>
               <tr>
                 <td height="5" align="center">
-				
-				
+
+
 				<table border="0" cellpadding="4" cellspacing="0" width="99%" >
                   <tr>
                     <td rowspan="2" align="right" valign="top" class="fundoForms">Comentário: </td>
-					
+
                     <td width="25%" colspan="2" align="right" class="fundoForms" >
 					<label>
 	   			    <form name="detalhes" action="" method="post">
                     <textarea name="textarea" cols="100" rows="16" class="longtextField" id="textComentario"></textarea>
 					<input type="hidden" name="numero" value="<?echo $_GET['id_chamado'];?>">
 					<input type="hidden" name="usuario" value="<?echo $pessoacontatada;?>"></label>
-					
+
 					</td>
-                    
+
 					<td width="35%" rowspan="2" align="left" valign="top" class="fundoForms"></td>
                   </tr>
                   <tr>
                     <td align="left" class="fundoForms" valign="top">
-					
+
 				 	<?
-					
+
 					$sql20=mysql_query("select status from chamado where id_chamado=". $_GET['id_chamado']);
-					
-						
+
+
 					while($reg20=mysql_fetch_assoc($sql20)){
 					$status=$reg20['status'];
-						
-					
+
+
 					if($status=="2"){
 					?>
 					<a href="http://intranet.datamace.com.br/sad/acompanhar_chamado.php?pagina=1&pag=1" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('bt_voltar','','img/bt_cancelar_over.gif',1)"><img src="img/bt_cancelar.gif" name="bt_voltar" width="59" height="18" border="0"></a>
 					                   <?} else {
-			?>		
+			?>
 			        <a href="javascript:history.go(-1)" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('bt_voltar','','img/bt_cancelar_over.gif',1)"><img src="img/bt_cancelar.gif" name="bt_voltar" width="59" height="18" border="0"></a></td>
 
-			
+
 				<?	}}?>
-					
-					
-					
+
+
+
 										</td>
                     <td align="right" class="fundoForms" id="ancora"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('enviar','','img/bt_enviar_over.gif',1)"><img src="img/bt_enviar.gif" alt="Enviar" name="enviar" width="55" height="18" border="0" onClick="upload(this.form);"></a></td>
                   </tr>
@@ -654,9 +654,9 @@ $status=$reg['status_id'];
               <tr>
                 <td height="5" align="center"><img src="img/spacer.gif" width="50" height="12"></td>
               </tr>
-              
 
-              
+
+
             </table>
               </td>
             <td width="4"></td>

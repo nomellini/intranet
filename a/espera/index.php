@@ -458,7 +458,8 @@
   $sql .= "(time_to_sec(curtime()) - time_to_sec(hora_inicio)) / 60 as minutosTotal,";    
   $sql .= "sistema.sistema as produto, satligacao.motivo, linha from satligacao, cliente, sistema where ";
   $sql .= "data = '$hoje' and satligacao.id_cliente = cliente.id_cliente and satligacao.id_produto = sistema.id_sistema and ";
-  $sql .= "id_satstatus = 1 order by satligacao.grau, espera desc";
+    $sql .= "id_satstatus = 1 order by esperaTotal desc";
+//  $sql .= "id_satstatus = 1 order by satligacao.grau, espera desc";
 //  die($sql);
   $result = mysql_query($sql);
   while ($linha = mysql_fetch_object($result)) {

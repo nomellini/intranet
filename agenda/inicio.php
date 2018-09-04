@@ -45,7 +45,7 @@ $row_rsUsuarios = mysql_fetch_assoc($rsUsuarios);
 $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 ?><?
 /*
-   Este é o calendário da datamace.
+   Este Ã© o calendÃ¡rio da datamace.
    Autor : Fernando Nomellini
    Data  : 04/2003
    #C7E1EB
@@ -114,10 +114,10 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 //    loga_online($ok, $REMOTE_ADDR, 'Agenda : ' .$nomeusuario );	
 
     $cal = new MyCalendar;
-    $BRMonths = array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");
+    $BRMonths = array("Janeiro", "Fevereiro", "MarÃ§o", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");
     $BRDays = array ("D", "S", "T", "Q", "Q", "S", "S");
     $BRDays2 = array ("DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SAB");	
-    $BRDays3 = array ("Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado");		
+    $BRDays3 = array ("Domingo", "Segunda-feira", "TerÃ§a-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "SÃ¡bado");		
     $cal->setMonthNames($BRMonths);
     $cal->setDayNames($BRDays);
 
@@ -147,7 +147,7 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 		
 </script>
 <title>Inicio</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../a/stilos.css" type="text/css">
 <meta http-equiv="refresh" content=300">
 </head>
@@ -200,7 +200,7 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
               </tr>
             </table></td>
           <td width="50%" align="right"><a href="inicio.php?<?=$hoje?>"> 
-            <?="Hoje é $dataAtual"?>
+            <?="Hoje Ã© $dataAtual"?>
             </a> <br> <a href="#Semana">Ver a semana</a></td>
         </tr>
         <tr> 
@@ -361,7 +361,7 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
   </tr>
 </table>
 <img src="../imagens/novo.gif">
-<a href="javascript:alterna(salas, txtsalas, '&nbsp;&nbsp;Programação das salas: (clique para ver)', '&nbsp;&nbsp;Programação das salas: (clique para esconder)');"> <span id=txtsalas> &nbsp;&nbsp;Programação das salas: (clique para ver) </span> </a>
+<a href="javascript:alterna(salas, txtsalas, '&nbsp;&nbsp;ProgramaÃ§Ã£o das salas: (clique para ver)', '&nbsp;&nbsp;ProgramaÃ§Ã£o das salas: (clique para esconder)');"> <span id=txtsalas> &nbsp;&nbsp;ProgramaÃ§Ã£o das salas: (clique para ver) </span> </a>
 <span id="salas" style="display:none">
 
 <table width="99%" border="0" align="center" cellpadding="1" cellspacing="1">	
@@ -547,6 +547,6 @@ function janela(id) {
   newWindow = window.open( 'detalhe.php?ed=1&ok=<?=$ok?>&id_compromisso='+id, '', 'top=100, left=100, width=700, height=300');
 }
 
-vc.innerHTML = "Você tem <?=$qtdecomp?> compromisso(s)";
+vc.innerHTML = "VocÃª tem <?=$qtdecomp?> compromisso(s)";
 
 </script>

@@ -1,0 +1,7 @@
+CREATE TABLE sympoll_auth (
+  id INT NOT NULL AUTO_INCREMENT,
+  user VARCHAR(16) DEFAULT '' NOT NULL,
+  pass VARCHAR(16) DEFAULT '' NOT NULL,
+  secret VARCHAR(32),
+  PRIMARY KEY (id)
+);

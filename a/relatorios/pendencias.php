@@ -65,12 +65,47 @@
 		  }
 		  ?>
         </select>
-      </td>
+      </td>      
     </tr>
+
     <tr> 
-      <td> 
-        <input type="submit" name="Submit" value="Submit" class="unnamed1">
-      </td>
+      <td>Selecione a prioridade 
+        <select name="f_id_prioridade" class="unnamed1">   
+        		    echo "<option value="0" >Todos</option>\n";
+   <?
+   
+  $sql = "
+select 
+	p.valor,
+	p.prioridade, 
+	p.id_prioridade,
+	count(1) qtde
+from 
+	chamado c
+		inner join prioridade p on p.id_prioridade = c.prioridade_id
+		inner join usuario dono on dono.id_usuario = c.consultor_id
+		inner join usuario destinatario on destinatario.id_usuario = c.destinatario_id
+		left join chamado e on e.id_chamado = c.Id_chamado_espera
+		left join status s on s.id_status = e.status		
+where 
+	(c.visible=1) and 
+	(c.status > 1 and c.status < 4) and 
+	c.destinatario_id = $f_id_usuario and c.descricao is not null
+group by p.valor, p.prioridade, p.id_prioridade";  
+		  $result = mysql_query($sql) or die ("Erro no SQL <br> $sql");
+		  while ( $linha = mysql_fetch_object($result)) {
+            $se = "";
+		    if ($linha->id_prioridade == $f_id_prioridade) { $se = "selected"; $nome=$linha->prioridade; }
+		    echo "<option value=" . $linha->id_prioridade ." $se>" . $linha->prioridade . " - " . $linha->qtde . "</option>\n";
+		  }
+		  ?>
+        </select>
+      </td>      
+    </tr>
+    
+    
+    <tr>
+      <td><input type="submit" name="Submit" value="Submit" class="unnamed1"></td>
     </tr>
   </table>
   <br>
@@ -78,12 +113,14 @@
 
 <br><span id=bloqueados></span>
 <br><?
-  $sql = "select Id_chamado_espera, cliente_id, id_chamado, descricao, dataa, dono.nome as dono, destinatario.nome as destinatario from chamado, usuario dono, usuario destinatario where (chamado.visible=1) and (destinatario.id_usuario=destinatario_id) and (dono.id_usuario=consultor_id) and  (status > 1 and status < 4) " ;
-  $sql .= "and destinatario_id = $f_id_usuario and descricao is not null;";
+//  $sql = "select p.prioridade, Id_chamado_espera, cliente_id, id_chamado, descricao, dataa, dono.nome as dono, destinatario.nome as destinatario from chamado, usuario dono, usuario destinatario where (chamado.visible=1) and (destinatario.id_usuario=destinatario_id) and (dono.id_usuario=consultor_id) and  (status > 1 and status < 4) " ;
+  //$sql .= "and destinatario_id = $f_id_usuario and descricao is not null;";
   
   
   $sql = "
 select 
+	p.prioridade, 
+	p.id_prioridade,
 	c.Id_chamado_espera, 
 	c.cliente_id, 
 	c.id_chamado, 
@@ -95,15 +132,22 @@ select
 	s.status
 from 
 	chamado c
+		inner join prioridade p on p.id_prioridade = c.prioridade_id
 		inner join usuario dono on dono.id_usuario = c.consultor_id
 		inner join usuario destinatario on destinatario.id_usuario = c.destinatario_id
 		left join chamado e on e.id_chamado = c.Id_chamado_espera
 		left join status s on s.id_status = e.status		
-where 
+where ";
+
+if ($f_id_prioridade) {
+	 $sql .= "(p.id_prioridade = $f_id_prioridade) and ";
+}
+
+ $sql .= "
 	(c.visible=1) and 
 	(c.status > 1 and c.status < 4) and 
 	c.destinatario_id = $f_id_usuario and c.descricao is not null
-order by data_ultimo_contato;";  
+order by p.valor, data_ultimo_contato;";  
 // die($sql);
 
   if ($sql) {
@@ -129,6 +173,14 @@ order by data_ultimo_contato;";
 				$cor = "ChamadoAguardando";
 			}
 	
+			if (		$linha->id_prioridade > 3 )
+			{
+				$linha->id_prioridade = 1 ;
+				
+			}
+				
+			$cor = "prioridade_" . $linha->id_prioridade;
+	
 ?>
 <table width="100%" border="0" cellspacing="1" cellpadding="1">
   <tr>
@@ -136,7 +188,7 @@ order by data_ultimo_contato;";
     <tr>
       <td><table width="100%" border="0" cellspacing="1" cellpadding="1">
   <tr>
-    <td class="<?=$cor?>">Chamado # <a href="../historicochamado.php?id_chamado=<?=$linha->id_chamado?>" target="_blank"> <?=$linha->id_chamado?> </a> <?= $esperando?><br>
+    <td class="<?=$cor?>">Chamado # <a href="../historicochamado.php?id_chamado=<?=$linha->id_chamado?>" target="_blank"> <?=$linha->id_chamado?> </a>  - <?=$linha->prioridade?><?= $esperando?><br>
     <?    
         $today=date("Y-m-d 00:00"); 
 		$datausuario =  $linha->data_ultimo_contato; // ultimoDataChamado($linha->id_chamado);

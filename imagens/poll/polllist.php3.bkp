@@ -1,0 +1,85 @@
+<?php
+
+REQUIRE 'includes/config.php3';
+REQUIRE 'classes/plist.php3';
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+// DISPLAYS LIST OF POLLS
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+function display_pollList() {
+
+ GLOBAL $symp_table_tx, $symp_table_bg, $symp_table_border;
+ GLOBAL $urlpath, $mypollid, $HTTP_HOST, $DOCUMENT_ROOT;
+
+ $l = new PList();
+
+
+  $urlpath;
+  if(empty($urlpath)) {
+    $urlpath = trim(dirname(str_replace($DOCUMENT_ROOT, "", __FILE__)));
+    if(ereg("^[^/]", $urlpath))
+      $urlpath = "/".$urlpath;
+    $urlpath = "http://${HTTP_HOST}${urlpath}";
+  }
+  if(ereg("[^/]$", $urlpath))
+    $urlpath = $urlpath.'/';
+
+ $title = "Pesquisas atuais";
+ REQUIRE 'includes/header.php3';
+ ECHO "
+  <TABLE BORDER=\"0\" CELLSPACING=\"15\" CELLPADDING=\"0\" WIDTH=\"85%\" ALIGN=\"center\">
+  <TR><TD VALIGN=\"top\">
+
+  <TABLE BORDER=\"0\" CELLSPACING=\"15\" CELLPADDING=\"0\" WIDTH=\"100%\">
+  <TR><TD>
+  
+  <TABLE BORDER=\"0\" CELLSPACING=\"0\" CELLPADDING=\"2\" BGCOLOR=\"$symp_table_border\" WIDTH=\"100%\">
+  <TR><TD>
+  <TABLE BORDER=\"0\" CELLPADDING=\"5\" CELLSPACING=\"0\" BGCOLOR=\"$symp_table_bg\" WIDTH=\"100%\">
+  <TR><TD>
+  <FONT COLOR=\"$symp_table_tx\"><B>&nbsp;Pesquisas atuais:</B></FONT>
+  </TD></TR></TABLE>
+  </TD></TR></TABLE>
+
+  </TD></TR><TR><TD>
+
+  <TABLE BORDER=\"0\" CELLSPACING=\"0\" CELLPADDING=\"2\" BGCOLOR=\"$symp_table_border\" WIDTH=\"100%\">
+  <TR><TD>
+  <TABLE BORDER=\"0\" CELLPADDING=\"2\" CELLSPACING=\"0\" BGCOLOR=\"$symp_table_bg\" WIDTH=\"100%\">
+  <TR><TD VALIGN=\"top\">\n";
+ //END_ECHO
+ if ($l->numpolls == 0)
+  ECHO "Não existe nenhuma pesquisa disponível.";
+ else {
+  ECHO "<FONT FACE=\"Georgia\" SIZE=\"2\"><BR>";
+  while(sizeof($l->question) != 0 && list($k,$v) = each($l->question)) {
+   ECHO "&nbsp;&nbsp;&nbsp;&nbsp; o &nbsp;";
+   PRINTF("<A HREF=\"${urlpath}polllist.php3?mypollid=%d\">%s</A>", $k, $v);
+   ECHO "<BR>\n";
+  }
+  reset($l->question);
+  ECHO "</FONT><BR>";
+ }
+ ECHO "
+  </TD></TR></TABLE>
+  </TD></TR></TABLE>
+  </TD></TR></TABLE>
+
+  </TD><TD VALIGN=\"top\">\n\n";
+ //END_ECHO
+
+ if(isset($mypollid) && intval($mypollid)>0) {
+  INCLUDE dirname(__FILE__).'/booth.php3';
+  display_booth($mypollid);
+ }
+
+ ECHO "</TD></TR></TABLE>\n\n";
+ REQUIRE 'includes/footer.php3';
+
+}
+
+display_pollList();
+
+?>

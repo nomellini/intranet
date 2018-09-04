@@ -1,18 +1,18 @@
 <?
-  require("../scripts/conn.php");		  
+  require("../scripts/conn.php");
   require("../scripts/funcoes.php");
-  
+
   $sql = "select historico from  contato where id_contato = " . $id_contato;
 
   $result = mysql_query($sql) or die (mysql_error());
   $linha = mysql_fetch_object($result);
 
-	$Historico = $linha->historico;  
+	$Historico = $linha->historico;
 ?>
 <html>
 <head>
 <title>Data Prevista</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../stilos.css" type="text/css">
 </head>
 

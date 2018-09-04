@@ -58,7 +58,7 @@
   <li><font size="3" color="#FF0000"><font color="#003366"><font size="2">Devido 
     &agrave; politica de seguran&ccedil;a, a sua senha deve ser trocada periodicamente;</font></font></font></li>
   <li><font size="3" color="#FF0000"><font color="#003366"><font size="2">Deve 
-    ter no m&iacute;nimo 6 e no m&aacute;ximo 12 caracteres;</font></font></font></li>
+    ter no m&iacute;nimo 6 e no m&aacute;ximo 32 caracteres;</font></font></font></li>
   <li><font size="3" color="#FF0000"><font color="#003366"><font size="2">Deve 
     conter letras e n&uacute;meros;</font></font></font></li>
   <li><font size="3" color="#FF0000"><font color="#003366"><font size="2">A nova 
@@ -73,20 +73,20 @@
     <tr> 
       <td width="14%">Senha Atual</td>
       <td width="86%">
-        <input name="senhaatual" type="password" class="unnamed1"  size="15" maxlength="12">
-        Min 6, max 12 caracteres</td>
+        <input name="senhaatual" type="password" class="unnamed1"  size="15" maxlength="32">
+        Min 6, max 32 caracteres</td>
     </tr>
     <tr> 
       <td width="14%">Nova Senha</td>
       <td width="86%">
-        <input type="password" name="novasenha" class="unnamed1" size="15" maxlength="12">
-        Min 6, max 12 caracteres</td>
+        <input type="password" name="novasenha" class="unnamed1" size="15" maxlength="32">
+        Min 6, max 32 caracteres</td>
     </tr>
     <tr> 
       <td width="14%">Confirma Senha</td>
       <td width="86%">
-        <input type="password" name="confirma" class="unnamed1" size="15" maxlength="12">
-        Min 6, max 12 caracteres</td>
+        <input type="password" name="confirma" class="unnamed1" size="15" maxlength="32">
+        Min 6, max 32 caracteres</td>
     </tr>
     <tr> 
       <td colspan="2">

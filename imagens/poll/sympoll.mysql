@@ -1,0 +1,23 @@
+CREATE TABLE sympoll_data (
+   pollID INT NOT NULL,
+   choiceID INT NOT NULL,
+   choice VARCHAR(250) NOT NULL,
+   votes INT DEFAULT '0' NOT NULL
+);
+
+CREATE TABLE sympoll_list (
+   pollID INT NOT NULL AUTO_INCREMENT,
+   identifier VARCHAR(50) NOT NULL,
+   question VARCHAR(250) NOT NULL,
+   timeStamp INT NOT NULL,
+   status INT DEFAULT '0' NOT NULL,
+   PRIMARY KEY (pollID)
+);
+
+CREATE TABLE sympoll_auth (
+  id INT NOT NULL AUTO_INCREMENT,
+  user VARCHAR(16) DEFAULT '' NOT NULL,
+  pass VARCHAR(16) DEFAULT '' NOT NULL,
+  secret VARCHAR(32),
+  PRIMARY KEY (id)
+);

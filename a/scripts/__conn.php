@@ -11,24 +11,24 @@
 	*/
     define('PARAM_USUARIO_ADMINISTRADOR', 1);
 	define('PARAM_DISPARA_EMAIL', 2);
-	
+
 
 
 	global $SITEROOT;
 	$SITEROOT = "http://192.168.0.14";
-	
-	
+
+
 	$Data_Atual = date("Y-m-d");
-	$Hora_Atual = date("H:i:s"); 
-    $Ontem = date("Y-m-d", time()-( 86400*1 ) );  
-    $Anteontem = date("Y-m-d", time()-( 86400*2 ) );  		
+	$Hora_Atual = date("H:i:s");
+    $Ontem = date("Y-m-d", time()-( 86400*1 ) );
+    $Anteontem = date("Y-m-d", time()-( 86400*2 ) );
 
 	if (!isset($host)) $host = "localhost";
 	if (!isset($v_id_usuario)) $v_id_usuario = "";
 	if (!isset($ipremoto)) $ipremoto  = "";
 	if (!isset($REMOTE_ADDR)) $REMOTE_ADDR = "";
 	if (!isset($PAGINA )) $PAGINA  = "";
-				
+
 	$user = "sad";
 	$pwd = "data1371";
 	$base = "sad";
@@ -38,25 +38,25 @@
 	if ($v_id_usuario) $USRNOME = peganomeusuario($v_id_usuario);
 	if (!$ipremoto) $ipremoto = '';//$_SERVER["SERVER_ADDR"];
 	if (!$PAGINA) $PAGINA = substr($_SERVER["PHP_SELF"],strrpos($_SERVER["PHP_SELF"],'/')+1);
-	
+
 	include("Mail.php");
 
 	/*
 		CONSTANTES GLOBAIS
 	*/
-	define('LOG_ATIVO_LEITURA', true);	
-	define('LOG_ATIVO', true);	
+	define('LOG_ATIVO_LEITURA', true);
+	define('LOG_ATIVO', true);
 	define('ENVIA_EMAIL', params_obter(PARAM_DISPARA_EMAIL));
 	define('USUARIO_ADMIN', params_obter(PARAM_USUARIO_ADMINISTRADOR));
-	
+
 
 function obterLinkGrhNetTeste($Sistema)
 {
 	$GRHNET_BASE_TESTE_LINK = "";
 	if (strpos($Sistema,'GRHNET') !== false) {
 		$GRHNET_BASE_TESTE_NOME = "CLIQUE AQUI PARA ENTRAR NO GRHNET BD5 :: (admin/datamace) ";
-		$GRHNET_BASE_TESTE_LINK = "<h3><a href=http://dtmweb/grhnetbd5/ target=_blank>$GRHNET_BASE_TESTE_NOME</a></h3>";	
-	}	
+		$GRHNET_BASE_TESTE_LINK = "<h3><a href=http://dtmweb/grhnetbd5/ target=_blank>$GRHNET_BASE_TESTE_NOME</a></h3>";
+	}
 	return 	$GRHNET_BASE_TESTE_LINK;
 }
 
@@ -64,16 +64,16 @@ function conn_temDocumentacao($chamado_id)
 {
 	/***********************************************************************************************************
 	*	Chamado 405595
-	*		
-	*	Fernando o Edson conversou comigo e pediu para alterar o SAD para que ao encerrar um chamado que tenha 
-	*	dados preenchidos em DOCUMENTAÇÂO o mesmo seja inserido na base de conhecimento automaticamente marcado 
-	*	como DOCUMENTACAO INTERNET 	
-	*		
+	*
+	*	Fernando o Edson conversou comigo e pediu para alterar o SAD para que ao encerrar um chamado que tenha
+	*	dados preenchidos em DOCUMENTAï¿½ï¿½O o mesmo seja inserido na base de conhecimento automaticamente marcado
+	*	como DOCUMENTACAO INTERNET
+	*
 	************************************************************************************************************/
-	
+
 	$sql = "select count(1) as q from chamado where id_chamado = $chamado_id and documentacao is not null";
 	$tem_documentacao = conn_ExecuteScalar($sql) != 0;
-	return $tem_documentacao;	
+	return $tem_documentacao;
 }
 
 function conn_Ordenacao_ApagarDoChamado($id_chamado)
@@ -83,7 +83,7 @@ function conn_Ordenacao_ApagarDoChamado($id_chamado)
 }
 
 function conn_ApagaChamadosSemContato()
-{ 
+{
 	  $hoje = date("Y-m-d");
 	  $sql = "delete from chamado where ((descricao='' or descricao is null) and (dataa < '$hoje'));";
 	  mysql_query($sql);
@@ -94,14 +94,14 @@ function conn_ApagaChamadosSemContato()
 function conn_EncerraChamadoAutomatico()
 {
 	$datae = date("Y-m-d");
-	$horae = date("H:i:s");						
+	$horae = date("H:i:s");
 	$sql = "select id_chamado from chamado where prioridade_id = 4 and Dt_EncerramentoAutomatico <= '$datae' and fl_PodeEncerrar = 1";
 	$result = mysql_query($sql);
 	while ($linha  = mysql_fetch_object($result))
 	{
-		$id_chamado = $linha->id_chamado;		
+		$id_chamado = $linha->id_chamado;
 		$objChamado = new chamado();
-		$objContato = new contato();		
+		$objContato = new contato();
 		$objChamado->lerChamado($id_chamado);
 		$objChamado->prioridade_id = 1;
 		$objContato->status_id = 1;	  // 1= encerrado
@@ -113,23 +113,23 @@ function conn_EncerraChamadoAutomatico()
 		$objContato->datae = $datae;
 		$objContato->horae = $horae;
     	$objContato->Ic_Atencao = 0;
-		$objContato->historico = "Chamado encerrado automaticamente pelo sistema";			
+		$objContato->historico = "Chamado encerrado automaticamente pelo sistema";
 
 		$msg = "Prezado Cliente,
- 
-Conforme contato anterior, não temos retorno, sendo assim, estamos encerrando este chamado, lembrando que o mesmo pode ser reaberto a partir de um novo contato.
- 
+
+Conforme contato anterior, nï¿½o temos retorno, sendo assim, estamos encerrando este chamado, lembrando que o mesmo pode ser reaberto a partir de um novo contato.
+
 Atenciosamente,
- 
+
 Consultoria Datamace";
 
 		$email_destinatario = PegaEmailUsuario($id_destinatario);
-		mail2($email_destinatario, "SAD: Encerramento Automático: $id_chamado ", $msg, "SAD");
+		mail2($email_destinatario, "SAD: Encerramento Automï¿½tico: $id_chamado ", $msg, "SAD");
 
 		$email_destinatario = $objChamado->email;
-		mail2($email_destinatario, "SAD: Encerramento Automático: $id_chamado ", $msg, "SAD");
+		mail2($email_destinatario, "SAD: Encerramento Automï¿½tico: $id_chamado ", $msg, "SAD");
 
-		$objContato->gravaContato();	
+		$objContato->gravaContato();
 		$objChamado->gravaChamado();
 	}
 
@@ -138,50 +138,50 @@ Consultoria Datamace";
 
 
 
-	function conn_projetos_obterRnc($id_chamado)	
+	function conn_projetos_obterRnc($id_chamado)
 	{
 		return conn_ExecuteScalar("select rnc from chamado where id_chamado = $id_chamado");
 	}
 
-	function conn_projetos_VerificaSeEhSubProjeto($id_chamado)		
+	function conn_projetos_VerificaSeEhSubProjeto($id_chamado)
 	{
 		if (conn_projetos_EhProjetoOuSubProjeto($id_chamado)) {
 			conn_ExecuteNonQuery("update chamado set rnc = 5 where id_chamado = $id_chamado");
 		}
 	}
-		
+
 	function conn_projetos_EhProjetoOuSubProjeto($id_chamado)
 	{
 		$rnc = conn_projetos_obterRnc($id_chamado);
 		return (($rnc == 4) || ($rnc == 5));
 	}
-	
+
 	function conn_projetos_EhProjeto($id_chamado)
 	{
 		return conn_projetos_obterRnc($id_chamado) == 4;
 	}
-	
+
 	function conn_projetos_EhSubProjeto($id_chamado)
 	{
 		return conn_projetos_obterRnd($id_chamado) == 5;
 	}
-		
+
 
 
 	function conn_projetos_EmailReaberto($id_chamado_filho, $id_chamado_pai, $ok)
 	{
 		$nome = peganomeusuario($ok);
-		
+
 		$e = conn_obterEmailsProjeto($id_chamado_pai);
-		
+
 		if ($e == "0") {
 			return;
 		}
 
-		
-		$msg = "Chamado $id_chamado_filho foi RE-ABERTO por <b>$nome</b>, e faz parte do projeto $id_chamado_pai<br><br>";		
+
+		$msg = "Chamado $id_chamado_filho foi RE-ABERTO por <b>$nome</b>, e faz parte do projeto $id_chamado_pai<br><br>";
 		$msg .= conn_projetos_obterEstatisticas($id_chamado_pai);
-		
+
 		$emails = split(",", $e);
 		if (count($emails) == 0)
 			$emails = split(";", $e);
@@ -189,7 +189,7 @@ Consultoria Datamace";
 			mail2($email, "Chamado REABERTO do projeto $id_chamado_pai", $msg, "Projetos");
 		}
 	}
-	
+
 
 	function conn_projetos_EmailEncerramento($id_chamado_filho, $id_chamado_pai, $ok)
 	{
@@ -198,19 +198,19 @@ Consultoria Datamace";
 		if ($e == "0") {
 			return;
 		}
-		
+
 		$linkFilho = conn_linkChamado($id_chamado_filho);
-		$linkPai = conn_linkChamado($id_chamado_pai);		
-		
+		$linkPai = conn_linkChamado($id_chamado_pai);
+
 		$descricao = conn_obterDescricao($id_chamado_pai);
 
-		
+
 		$msg = "-- ENCERRADO -- <BR><BR>";
 		$msg .= "Chamado: $linkFilho - " . conn_obterDescricao($id_chamado_filho) . "<BR><BR>";
 		$msg .= "Projeto: $linkPai - $descricao<br><br>";
-		
+
 		$msg .= conn_projetos_obterEstatisticas($id_chamado_pai);
-		
+
 		$emails = split(",", $e);
 		if (count($emails) == 0)
 			$emails = split(";", $e);
@@ -218,31 +218,31 @@ Consultoria Datamace";
 			mail2($email, "Chamado encerrado do projeto $id_chamado_pai", $msg, "Projetos");
 		}
 	}
-	
-	
+
+
 	function conn_obterSuperior($id_usuario)
 	{
 		$sql = "select superior from usuario where id_usuario = $id_usuario";
 		return conn_ExecuteScalar($sql);
-	}	
-	
+	}
+
 	function conn_obterUltimoContato($id_usuario, $id_chamado)
 	{
 		$sql = "select left(historico, 250) from contato where chamado_id = $id_chamado and consultor_id = $id_usuario order by id_contato desc limit 1";
 		return conn_ExecuteScalar($sql);
 	}
-	
+
 	function conn_obterDescricao($id_chamado)
 	{
 		$sql = "select left(descricao, 100) from chamado where id_chamado = $id_chamado";
 		return conn_ExecuteScalar($sql);
 	}
-	
+
 	function conn_ExecuteNonQuery($sql)
 	{
 		mysql_query($sql) or die(mysql_error().$sql);
 	}
-	
+
 	function conn_ExecuteScalar($sql, $def="")
 	{
 		$rs = mysql_query($sql) or die(mysql_error().$sql);
@@ -251,44 +251,44 @@ Consultoria Datamace";
 			mysql_free_result($rs);
 			return $r[0];
 		}
-		return $def;	
+		return $def;
 	}
-	
+
 	function conn_linkChamado($id_chamado)
 	{
-	
+
 		global $SITEROOT;// = "http://192.168.0.14";
 		return "<a href=\"$SITEROOT/a/historicochamado.php?id_chamado=$id_chamado\">$id_chamado</a>";
 	}
-	
+
 
 	// Enviar email dizendo que OK inseriu $id_chamado_filho no chamado $id_chamado
 	function conn_projetos_EmailInclusao($id_chamado_filho, $id_chamado_pai, $ok)
 	{
 		$e = conn_obterEmailsProjeto($id_chamado_pai);
-		
+
 
 
 		if ($e == "0") {
 			return;
 		}
-		
-		$nome = peganomeusuario($ok);	
-						
-		$msg = "O chamado $id_chamado_filho foi incluído no projeto $id_chamado_pai por <b>$nome</b><br><br>";		
+
+		$nome = peganomeusuario($ok);
+
+		$msg = "O chamado $id_chamado_filho foi incluï¿½do no projeto $id_chamado_pai por <b>$nome</b><br><br>";
 		$msg .= conn_projetos_obterEstatisticas($id_chamado_pai);
-		
+
 		$emails = split(",", $e);
 		if (count($emails) == 0)
 			$emails = split(";", $e);
 		foreach( $emails as $email ){
-			mail2($email, "Projeto $id_chamado_pai - Chamado incluído: $id_chamado_filho", $msg, "Projetos");
+			mail2($email, "Projeto $id_chamado_pai - Chamado incluï¿½do: $id_chamado_filho", $msg, "Projetos");
 		}
 	}
-	
+
 	function conn_obterEmailsProjeto($id_chamado_pai)
 	{
-		if ($id_chamado_pai == "") return "0";		
+		if ($id_chamado_pai == "") return "0";
 		$sql = "select email from chamado where id_chamado = $id_chamado_pai";
 		$result = mysql_query($sql) or die ($sql);
 		$linha = mysql_fetch_array($result);
@@ -296,7 +296,7 @@ Consultoria Datamace";
 		return $e;
 	}
 
-	
+
 	function conn_projetos_EmailExclusao($id_chamado_filho, $id_chamado_pai, $ok)
 	{
 
@@ -306,101 +306,101 @@ Consultoria Datamace";
 			return;
 		}
 
-		$nome = peganomeusuario($ok);	
-		$msg = "O chamado $id_chamado_filho foi excluído do projeto $id_chamado_pai por <b>$nome</b><br><br>";				
+		$nome = peganomeusuario($ok);
+		$msg = "O chamado $id_chamado_filho foi excluï¿½do do projeto $id_chamado_pai por <b>$nome</b><br><br>";
 		$msg .= conn_projetos_obterEstatisticas($id_chamado_pai);
-		
+
 		$emails = split(",", $e);
 		if (count($emails) == 0)
 			$emails = split(";", $e);
 		foreach( $emails as $email ){
-			mail2($email, "Projeto $id_chamado_pai - Chamado excluído: $id_chamado_filho", $msg, "Projetos");
+			mail2($email, "Projeto $id_chamado_pai - Chamado excluï¿½do: $id_chamado_filho", $msg, "Projetos");
 		}
-		
+
 	}
-	
+
 	function conn_projetos_obterEstatisticas($id_chamado_pai)
-	{		
+	{
 		$sql = "select id_chamado, dataa, descricao,  ";
 		$sql .= "(select count(1) from chamado c1 where chamado_pai_id = chamado.id_chamado and (status = 2 or status = 3)) as abertos, ";
 		$sql .= "(select count(1) from chamado c1 where chamado_pai_id = chamado.id_chamado and not (status = 2 or status = 3)) as encerrados ";
-		$sql .= "from chamado where id_chamado = $id_chamado_pai ";		
+		$sql .= "from chamado where id_chamado = $id_chamado_pai ";
 		$result = mysql_query($sql);
-		$linha = mysql_fetch_object($result);			
+		$linha = mysql_fetch_object($result);
 		$abertos = $linha->abertos;
 		$fechados = $linha->encerrados;
-		$total = $abertos + $fechados;			
-		if ($total != 0) 			
+		$total = $abertos + $fechados;
+		if ($total != 0)
 		{
 			$Completo = 100 * ($fechados / $total);
 		} else {
 			$Completo = 0;
-		}			
+		}
 		$Completo = number_format( $Completo, 2 );
 		return "Abertos: $abertos.  Fechados: $fechados.  Total: $total";
 	}
 
-	function AcertaGrau($grau) 
-	{				
+	function AcertaGrau($grau)
+	{
 		$result = $grau;
-		
-		if (  ($result == "ZZ") || ($result == "  ") || ($result=="") ) 
+
+		if (  ($result == "ZZ") || ($result == "  ") || ($result=="") )
 			$result = "G4";
-			
-		return $result ; 
+
+		return $result ;
 	}
-	
-	function connPodeEditarChamado($id) 
-	{		
+
+	function connPodeEditarChamado($id)
+	{
 		$result = false;
 		if(($id<>0)and($id<> "-")) {
 			$sql = "select EditaChamado from usuario where (id_usuario = $id);";
 			$result = mysql_query($sql);
 			$linha=mysql_fetch_object($result);
-			if ($linha) {			
+			if ($linha) {
 				$result = ($linha->EditaChamado == 1);
 			}
 		}
 		return $result;
 	}
 
-	function connPodeEditarChamadoBloqueado($id) 
-	{		
+	function connPodeEditarChamadoBloqueado($id)
+	{
 		$result = false;
 		if(($id<>0)and($id<> "-")) {
 			$sql = "select fl_edita_chamado_bloqueado c1 from usuario where (id_usuario = $id);";
 			$result = mysql_query($sql);
 			$linha=mysql_fetch_object($result);
-			if ($linha) {			
+			if ($linha) {
 				$result = ($linha->c1 == 1);
 			}
 		}
 		return $result;
 	}
-	
+
 	function Conn_Hoje() {
 		return date("Y-m-d");
 	}
-	
-	function DiaDaSemana($data) 
+
+	function DiaDaSemana($data)
 	{
 
-		$lPos = strpos($data, '-');		
-		
+		$lPos = strpos($data, '-');
+
 		if ($lPos > 0) {
 			$data = dataOk($data);
-		}		
-		
+		}
+
 		$dias[1] = "Segunda-feira";
-		$dias[2] = "Terça-feira";
+		$dias[2] = "Terï¿½a-feira";
 		$dias[3] = "Quarta-feira";
 		$dias[4] = "Quinta-feira";
 		$dias[5] = "Sexta-feira";
-		$dias[6] = "Sábado";
+		$dias[6] = "Sï¿½bado";
 		$dias[7] = "Domingo";
-		
-		$lData = explode("/", $data);		
-				
+
+		$lData = explode("/", $data);
+
 		$lData = mktime(0, 0, 0, $lData[1], $lData[0], $lData[2]);
 
 		return $dias[ Date("N", $lData) ];
@@ -437,11 +437,11 @@ Consultoria Datamace";
  function timeDiff($h1, $h2) {
    $s1 = horaToSeg($h1);
    $s2 = horaToSeg($h2);
-   
+
    if ($s1 > $s2) {
 	   return ( 0 );
    }
-   
+
    return ( segTohora($s2-$s1) );
  }
 
@@ -454,10 +454,10 @@ Consultoria Datamace";
          $nome_usuario=$linha->nome;
          return $nome_usuario;
      } else {
-       return "Usuario não cadastrado ($id)";
+       return "Usuario nï¿½o cadastrado ($id)";
      }
    } else {
-     return "Não cadastrado";
+     return "Nï¿½o cadastrado";
    }
  }
 
@@ -481,7 +481,7 @@ Consultoria Datamace";
 	 $sql = "select concat(sistema, ' - ', categoria) sistema from categoria c inner join sistema s on s.id_sistema = c.sistema_id where id_categoria = $CategoriaId";
      $result = mysql_query($sql) or die( mysql_error());
      $linha=mysql_fetch_object($result);
-	 return $linha->sistema;	 
+	 return $linha->sistema;
  }
 
 
@@ -494,10 +494,10 @@ Consultoria Datamace";
          $nome_usuario=$linha->cliente;
          return $nome_usuario;
      } else {
-       return "cliente não cadastrado ($id)";
+       return "cliente nï¿½o cadastrado ($id)";
      }
    } else {
-     return "Não cadastrado ($sql)";
+     return "Nï¿½o cadastrado ($sql)";
    }
  }
 
@@ -518,10 +518,10 @@ function pegarnc($_chamado, $_oque) {
      if ($linha) {
          return $linha->descricao;
      } else {
-       return "Área não cadastrada ($id)";
+       return "ï¿½rea nï¿½o cadastrada ($id)";
      }
    } else {
-     return "Não cadastrado";
+     return "Nï¿½o cadastrado";
    }
  }
 
@@ -536,10 +536,10 @@ function pegarnc($_chamado, $_oque) {
          $result=$linha->email;
          return $result;
      } else {
-       return "Usuario não cadastrado ($id)";
+       return "Usuario nï¿½o cadastrado ($id)";
      }
    } else {
-     return "Não cadastrado";
+     return "Nï¿½o cadastrado";
    }
  }
 
@@ -551,7 +551,7 @@ function pegaDiagnostico($id) {
      if ($linha) {
          return $linha->diagnostico;
      } else {
-       return "Diagnóstico não cadastrado ($id)";
+       return "Diagnï¿½stico nï¿½o cadastrado ($id)";
      }
  }
 
@@ -578,7 +578,7 @@ function pegaGerente($id) { // Fefe
      }
  }
 
-function pegaGestor($id) { 
+function pegaGestor($id) {
      $sql = "select gestor from usuario where (id_usuario = $id);";
      $result = mysql_query($sql);
      $linha=mysql_fetch_object($result);
@@ -632,7 +632,7 @@ function pegaMarketing($id) {
      if ($linha) {
          return $linha->sistema;
      } else {
-       return "Sistema não cadastrado";
+       return "Sistema nï¿½o cadastrado";
      }
  }
 
@@ -640,13 +640,13 @@ function pegaMotivo($id) {
      $sql = "select motivo from motivo where (id_motivo = $id);";
      $result = mysql_query($sql);
      $linha=mysql_fetch_object($result);
-	 
+
      if ($linha) {
 		$motivo = $linha->motivo;
      } else {
-		$motivo = "Motivo Não Cadastrado";
+		$motivo = "Motivo Nï¿½o Cadastrado";
      }
-	 if ($id==57) { // Motivo = IMPROCEDENTE 
+	 if ($id==57) { // Motivo = IMPROCEDENTE
 	   $motivo = "<strong><font color=\"#FF0000\">$motivo</font></strong>";
 	 }
 	 return $motivo;
@@ -659,14 +659,14 @@ function pegaCategoria($id) {
      if ($linha) {
          return $linha->categoria;
      } else {
-       return "Categoria Não Cadastrado";
+       return "Categoria Nï¿½o Cadastrado";
      }
  }
 
 
 function verificasenha($l, $s) {
 
- $sql = "select id_usuario, expirado, senha from usuario where (ativo=1) and login = '$l';"; 
+ $sql = "select id_usuario, expirado, senha from usuario where (ativo=1) and login = '$l';";
 
  $result = mysql_query($sql) or  die( mysql_error() . " - $sql");
  $linha= mysql_fetch_object($result);
@@ -733,7 +733,7 @@ if (isset($status)) {
   return $idtemp;
 }
 
-function conn_TemChamadosAguardando($chamado) 
+function conn_TemChamadosAguardando($chamado)
 {
 	$lSql = "select count(1) qtde from chamado where id_chamado_espera = $chamado";
 	$r = mysql_query($lSql) or Die($lSql);
@@ -742,37 +742,37 @@ function conn_TemChamadosAguardando($chamado)
 }
 
 function conn_PegaAguardandoChamado($pChamado)
-{	
+{
 	global $SITEROOT;
 	$lSql = "select Id_chamado_espera from chamado where id_chamado = $pChamado";
 	$r = mysql_query($lSql) or Die($lSql);
 	$l = mysql_fetch_object($r);
 	$espero = $l->Id_chamado_espera;
 	if ($espero) {
-		
-		$esperoStatus = pegaStatusDoChamado($espero);	
-		
-		$result = "<p style=\"text-align:center; padding:0; margin:0; border:1px solid #cccccc;\">Este chamado depende do chamado <a href=historicochamado.php?id_chamado=".$espero." target=\"_blank\">".number_format($espero,0,',','.')." ($esperoStatus)</a> para ser concluído<br></p>";
+
+		$esperoStatus = pegaStatusDoChamado($espero);
+
+		$result = "<p style=\"text-align:center; padding:0; margin:0; border:1px solid #cccccc;\">Este chamado depende do chamado <a href=historicochamado.php?id_chamado=".$espero." target=\"_blank\">".number_format($espero,0,',','.')." ($esperoStatus)</a> para ser concluï¿½do<br></p>";
 	} else {
 		$result = "";
 	}
 	return $result;
 }
 
-function conn_PegaChamadosAguardando($chamado) 
+function conn_PegaChamadosAguardando($chamado)
 {
 	global $SITEROOT;
 	$ok = false;
 	$result = "";
 	$lSql = "select id_chamado from chamado where Id_chamado_espera = $chamado";
 	$r = mysql_query($lSql) or Die($lSql);
-	while ($l = mysql_fetch_object($r)) 
+	while ($l = mysql_fetch_object($r))
 	{
 		if (!$ok) {
 		$result = "<p style=\"text-align:center; padding:0; margin:0; border:1px solid #cccccc;\">Chamados que dependem deste |";
 		$ok = true;
 	}
-	$id = $l->id_chamado;		
+	$id = $l->id_chamado;
 	$result .= "<a href=historicochamado.php?&id_chamado=".$id."  target=\"_blank\">".$id."</a> |";
 	}
 		if ($ok) {
@@ -801,7 +801,7 @@ function pegaChamadoCliente($atendimento, $cliente, $status, $limite) {
  $sql .= "LEFT(c.descricao, 120) as descricao, cl.id_cliente, cl.cliente ";
  $sql .= "FROM chamado c, cliente cl, prioridade p, usuario u, sistema s, usuario destinatario ";
  $sql .= "WHERE ";
- $sql .= "(c.visible = 1) "; 
+ $sql .= "(c.visible = 1) ";
  $sql .= "AND (c.cliente_id = cl.id_cliente) ";
  $sql .= "AND (c.consultor_id = u.id_usuario) ";
  $sql .= "AND (c.destinatario_id =  destinatario.id_usuario) ";
@@ -828,8 +828,8 @@ function pegaChamadoCliente($atendimento, $cliente, $status, $limite) {
      $tmp["status"] = $linha->status;
 	 $tmp["sistema"] = $linha->sistema;
      $tmp["externo"] = $linha->externo;
-     $tmp["destinatario"] = $linha->destinatario;	 
-	  
+     $tmp["destinatario"] = $linha->destinatario;
+
      $saida[$conta++] = $tmp;
    }
 
@@ -952,19 +952,19 @@ function historicoChamadoFiltro($chamado, $id_consultor, $ordem) {
   $sql .= "AND   ( co.fl_ativo = 1)";
   $sql .= "AND   ( co.destinatario_id = u2.id_usuario ) ";
   $sql .= "AND   ( co.origem_id = o.id_origem ) ";
-  $sql .= "AND   ( co.consultor_id = $id_consultor ) ";  
+  $sql .= "AND   ( co.consultor_id = $id_consultor ) ";
   $sql .= "AND   ( co.status_id = s.id_status ) ";
   $sql .= "AND   ( co.chamado_id = $chamado ) ) ";
 //  $sql .= "ORDER BY co.id_contato $ordem;";
-  $sql .= "ORDER BY co.dataa $ordem, co.horaa $ordem;";  
- 
-  return contatosPorSQL($sql);	
+  $sql .= "ORDER BY co.dataa $ordem, co.horaa $ordem;";
+
+  return contatosPorSQL($sql);
 }
 
 function historicoChamado($chamado, $ordem) {
 
-  
-  
+
+
   $sql = "";
   $sql .= "SELECT co.consultor_id, co.id_contato, u1.superior,  ";
   $sql .= "datediff(now(), co.dataa) diasContato, ";
@@ -982,7 +982,7 @@ function historicoChamado($chamado, $ordem) {
   $sql .= "AND   ( co.status_id = s.id_status ) ";
   $sql .= "AND   ( co.chamado_id = $chamado ) ) ";
   $sql .= "ORDER BY id_contato $ordem, co.dataa $ordem, co.horaa $ordem;";
- 
+
   return contatosPorSQL($sql);
 
 
@@ -990,16 +990,16 @@ function historicoChamado($chamado, $ordem) {
 
 function contatosPorSQL($sql)
 {
-	
-  $saida = array();	
- 
+
+  $saida = array();
+
   $result = mysql_query($sql) or die ($sql);
 
   $conta=0;
-  
+
    while ($linha = mysql_fetch_object( $result ) ) {
-   
-   
+
+
    	 $dias = $linha->diasContato;
 	 $m = "";
 	 if ($dias == 0) {
@@ -1009,22 +1009,22 @@ function contatosPorSQL($sql)
 	 } else if ($dias == 2) {
 	 	$m = "Anteontem";
 	 } else if ($dias < 365) {
-	 	$m = "há $dias dias";
+	 	$m = "hÃ¡ $dias dias";
 	 } else {
-	 	$m = "há " . dateDiff(DataOk($linha->dataa));
+	 	$m = "hï¿½ " . dateDiff(DataOk($linha->dataa));
 	 }
-		   
+
    	 $tmp["dias"] = $m;
      $tmp["contato_id"] = $linha->id_contato;
      $tmp["pessoacontatada"] = $linha->pessoacontatada;
      $tmp["historico"] = $linha->historico;
      $tmp["publicar"] = $linha->publicar;
      $tmp["consultor"] = $linha->consultor;
-	 
+
 	 if ($linha->ramal) {
 		 $tmp["ramal"] = "($linha->ramal)";
 	 }
-	 
+
      $tmp["consultor_id"] = $linha->consultor_id;
 	 $tmp["idconsultor"] = $linha->consultor_id;
      $tmp["superior_id"] = $linha->superior;
@@ -1033,7 +1033,7 @@ function contatosPorSQL($sql)
      $tmp["status_id"] = $linha->id_status;
      $tmp["origem"] = $linha->origem;
 	 $tmp["DataContato"] = $linha->dataa;
-     $quando = explode("-", $linha->dataa);	 
+     $quando = explode("-", $linha->dataa);
      $tmp["dataa"] = "$quando[2]/$quando[1]/$quando[0]";
      $tmp["horaa"] = $linha->horaa;
      $quando = explode("-", $linha->datae);
@@ -1041,8 +1041,8 @@ function contatosPorSQL($sql)
      $tmp["horae"] = $linha->horae;
      $tmp["tempo"] = $linha->tempo;
 	 $tmp["temposec"] = $linha->temposec;
-	 $tmp["Ic_Atencao"] = $linha->Ic_Atencao;	 
-	 
+	 $tmp["Ic_Atencao"] = $linha->Ic_Atencao;
+
 
      if ($tmp["consultor"] == $tmp["destinatario"])  {
        $tmp["encaminhado"] = 0;
@@ -1059,35 +1059,35 @@ function contatosPorSQL($sql)
 function pegaChamadoPendenteUsuario($usuario) {
 
 	$saida = array();
- 
-	$sql .= "SELECT c.rnc_acao_responsavel,"; 
-	$sql .= "  c.rnc_depto_responsavel, c.rnc_prazo, dataprevistaliberacao, liberado, id_chamado_espera, "; 
-	$sql .= "  c.sistema_id, c.externo, c.rnc, c.id_chamado, c.lido, c.lidodono, c.dataa,c.horaa, c.status, "; 
-	$sql .= "  destinatario_id, consultor_id, remetente_id, cat.pos_venda, "; 
-	$sql .= "  LEFT(c.descricao, 150) as descricao, cl.id_cliente, cl.cliente, cl.telefone, "; 
-	$sql .= "  cl.senha as senhacliente, p.prioridade, p.valor "; 
-	$sql .= "  , (select count(1) from chamado c2 where (c2.id_chamado_espera = c.id_chamado)) as qtde "; 
-	$sql .= "FROM "; 
-	$sql .= "  chamado c "; 
-	$sql .= "    inner join cliente cl on c.cliente_id = cl.id_cliente "; 
-	$sql .= "    inner join prioridade p on c.prioridade_id = p.id_prioridade "; 
-	$sql .= "    inner join categoria cat on c.categoria_id = cat.id_categoria "; 
-	$sql .= "WHERE visible = 1 and "; 
-	$sql .= "( "; 	
-	$sql .= "  ( (c.descricao is not null) AND (c.descricao <> '') ) "; 
-	$sql .= "  AND ( (c.destinatario_id = $usuario) or (c.consultor_id = $usuario) ) "; 
-	$sql .= "  AND (c.status <> 1) "; 
-	$sql .= ") "; 		
-	$sql .= "ORDER BY "; 
-	$sql .= "  p.valor, dataa desc, horaa desc "; 
+
+	$sql .= "SELECT c.rnc_acao_responsavel,";
+	$sql .= "  c.rnc_depto_responsavel, c.rnc_prazo, dataprevistaliberacao, liberado, id_chamado_espera, ";
+	$sql .= "  c.sistema_id, c.externo, c.rnc, c.id_chamado, c.lido, c.lidodono, c.dataa,c.horaa, c.status, ";
+	$sql .= "  destinatario_id, consultor_id, remetente_id, cat.pos_venda, ";
+	$sql .= "  LEFT(c.descricao, 150) as descricao, cl.id_cliente, cl.cliente, cl.telefone, ";
+	$sql .= "  cl.senha as senhacliente, p.prioridade, p.valor ";
+	$sql .= "  , (select count(1) from chamado c2 where (c2.id_chamado_espera = c.id_chamado)) as qtde ";
+	$sql .= "FROM ";
+	$sql .= "  chamado c ";
+	$sql .= "    inner join cliente cl on c.cliente_id = cl.id_cliente ";
+	$sql .= "    inner join prioridade p on c.prioridade_id = p.id_prioridade ";
+	$sql .= "    inner join categoria cat on c.categoria_id = cat.id_categoria ";
+	$sql .= "WHERE visible = 1 and ";
+	$sql .= "( ";
+	$sql .= "  ( (c.descricao is not null) AND (c.descricao <> '') ) ";
+	$sql .= "  AND ( (c.destinatario_id = $usuario) or (c.consultor_id = $usuario) ) ";
+	$sql .= "  AND (c.status <> 1) ";
+	$sql .= ") ";
+	$sql .= "ORDER BY ";
+	$sql .= "  p.valor, dataa desc, horaa desc ";
 
 
 	$result = mysql_query($sql) or die (mysql_error());
 	$conta=0;
 	while ($linha = mysql_fetch_object( $result ) ) {
-	
+
 		$quando = explode("-", $linha->dataa);
-		
+
 		$tmp["externo"] = $linha->externo;
 		$tmp["lido"] = $linha->lido;
 		$tmp["lidodono"] = $linha->lidodono;
@@ -1096,26 +1096,26 @@ function pegaChamadoPendenteUsuario($usuario) {
 		$tmp["remetente_id"] = $linha->remetente_id;
 		$tmp["categoria_id"] = $linha->categoria_id;
 		$tmp["pos_venda"] = $linha->pos_venda;
-		
+
 		// Quantos chamados dependem deste para encerrar ?
 		$tmp["qtde"] = $linha->qtde;
-		
+
 		//Qual o chamado que eu aguardo ?
 		$tmp["espero"] = $linha->id_chamado_espera;
-		
-		
-		$tmp["encaminhado"] =  (		
+
+
+		$tmp["encaminhado"] =  (
 			($tmp["destinatario_id"] != $tmp["remetente_id"]) or
 			($tmp["destinatario_id"] != $tmp["usuario_id"])
 		) ;
-		
-		
-		
+
+
+
 		$tmp["rnc_acao_responsavel"] = $linha->rnc_acao_responsavel;
 		$tmp["id_cliente"] = $linha->id_cliente;
 		$tmp["senha"] = $linha->senhacliente;
 		$tmp["cliente"] = $linha->cliente;
-		
+
 		$tmp["chamado"] = $linha->id_chamado;
 		$tmp["descricao"] = $linha->descricao;
 		$tmp["dataa"] = "$quando[2]/$quando[1]/$quando[0]";
@@ -1126,19 +1126,19 @@ function pegaChamadoPendenteUsuario($usuario) {
 		$tmp["prioridadev"] = $linha->valor;
 		$tmp["id_sistema"] = $linha->sistema_id;
 		$tmp["rnc"] = $linha->rnc;
-		
-		$quando = explode("-", $linha->rnc_prazo);	 
+
+		$quando = explode("-", $linha->rnc_prazo);
 		$tmp["rncPrazo"] = "$quando[2]/$quando[1]/$quando[0]";
-		$quando = explode("-", $linha->rnc_prazo);	 
+		$quando = explode("-", $linha->rnc_prazo);
 		$tmp["rncPrazo"] = "$quando[2]/$quando[1]/$quando[0]";
 		$tmp["rncDeptoResponsavel"] = $linha->rnc_depto_responsavel;
-		
-		$quando = explode("-", $linha->dataprevistaliberacao);	 	 
+
+		$quando = explode("-", $linha->dataprevistaliberacao);
 		$tmp["dataprevista"] = "$quando[2]/$quando[1]/$quando[0]";
-		
+
 		$saida[$conta++] = $tmp;
 	}
-	
+
 	return $saida;
 }
 
@@ -1154,17 +1154,17 @@ function limpaChamados($usuario) {
 
 function conn_ContaQuantidadeClientes($codigo)
 {
-	$sql = "SELECT count(1) as qtde from cliente   
-where 
+	$sql = "SELECT count(1) as qtde from cliente
+where
       id_cliente like '%$codigo%'
 or    senha like '%$codigo%'
 or    cliente like '%$codigo%';";
 
 	$result = mysql_query($sql);
 	$linha = mysql_fetch_array($result);
-				
+
 	return $linha[0];
-	
+
 }
 function conn_GetCodigoClienteExato($codigo)
 {
@@ -1172,9 +1172,9 @@ function conn_GetCodigoClienteExato($codigo)
 or    cliente like '%$codigo%';";
 
 	$result = mysql_query($sql) or die (mysql_error() . " - $sql");
-	
+
 	$linha = mysql_fetch_array($result);
-		
+
 	return $linha[0];
 }
 
@@ -1182,13 +1182,13 @@ function pegaClientePorCodigoOrdem($codigo, $ordem) {
 
 	global $ok;
 
-	/*	
+	/*
 	$qry = "select count(1) as conta from usuario_empresa where id_usuario = $ok";
 	$result = mysql_query($qry) or die(mysql_error() . '<br>' . $qry) ;
-	$linha = mysql_fetch_object($result); 
-	$qtde = $linha->conta;	
+	$linha = mysql_fetch_object($result);
+	$qtde = $linha->conta;
 	*/
-	
+
 	$sql = "Select c.id_cliente, c.ddd, c.cliente, c.senha, c.telefone, ";
 	$sql .= "c.endereco, c.bairro, c.cidade, c.fax, c.funcionarios, c.bloqueio, c.grau ";
 	if ($qtde == 0) {
@@ -1198,7 +1198,7 @@ function pegaClientePorCodigoOrdem($codigo, $ordem) {
 		$sql .= " on ue.id_cliente = c.id_cliente ";
 		$sql .= " where ue.id_usuario = " . $ok;
 	}
-	
+
 	//die($sql);
 
   $result = mysql_query($sql);
@@ -1210,12 +1210,12 @@ function pegaClientePorCodigoOrdem($codigo, $ordem) {
         $tmp["id_cliente"] = $linha->id_cliente;
         $tmp["cliente"] = $linha->cliente;
         $tmp["senha"] = $linha->senha;
-        
+
 		$tmp["telefone"] = "(" . $linha->ddd . ") " . $linha->telefone;
-		
+
         $tmp["endereco"] = $linha->endereco;
         if (!$tmp["endereco"]) {
-          $tmp["endereco"] = "Endereço não cadastrado.";
+          $tmp["endereco"] = "Endereï¿½o nï¿½o cadastrado.";
         }
         $tmp["bairro"] = $linha->bairro;
         $tmp["cidade"] = $linha->cidade;
@@ -1224,9 +1224,9 @@ function pegaClientePorCodigoOrdem($codigo, $ordem) {
         $tmp["funcionarios"] = $linha->funcionarios;
 
         $tmp["bloqueio"] = $linha->bloqueio;
-		
+
 		$tmp["grau"] = AcertaGrau($linha->grau);
-		
+
         $saida[$conta++] = $tmp;
      }
 
@@ -1238,9 +1238,9 @@ function pegaClientePorCodigoUnico($codigo) {
 
   $saida = array();
   $sql = "Select * from cliente where senha <> '' and senha = '$codigo' or id_cliente = '$codigo' ;";
-    
+
   //echo $sql;
-   
+
   $result = mysql_query($sql);
 
   $conta=0;
@@ -1251,11 +1251,11 @@ function pegaClientePorCodigoUnico($codigo) {
         $tmp["telefone"] = $linha->telefone;
         $tmp["ddd"] = $linha->ddd;
         $tmp["fax"] = $linha->fax;
-        $tmp["grau"] = $linha->grau;		
+        $tmp["grau"] = $linha->grau;
         $tmp["funcionarios"] = $linha->funcionarios;
         $tmp["endereco"] = $linha->endereco;
         if (!$tmp["endereco"]) {
-          $tmp["endereco"] = "Endereço não cadastrado.";
+          $tmp["endereco"] = "Endereï¿½o nï¿½o cadastrado.";
         }
         $tmp["bairro"] = $linha->bairro;
         $tmp["cidade"] = $linha->cidade;
@@ -1326,16 +1326,16 @@ function pegaChamado($id_chamado) {
      $tmp["rnc"] = $linha->rnc;
      $tmp["categoria"] = $linha->categoria_id;
 	 $tmp["fl_DocumentacaoInternet"] = $linha->fl_DocumentacaoInternet;
-	 
-     $tmp["rnc_depto_responsavel"] = $linha->rnc_depto_responsavel; 
+
+     $tmp["rnc_depto_responsavel"] = $linha->rnc_depto_responsavel;
 	 $tmp["rnc_prazo"] = $linha->rnc_prazo;
 	 $tmp["rnc_data"] = $linha->rnc_data;
-	 $tmp["rnc_acao_responsavel"] = $linha->rnc_acao_responsavel;	
+	 $tmp["rnc_acao_responsavel"] = $linha->rnc_acao_responsavel;
 	 $tmp["rnc_acao_data"] = $linha->rnc_acao_data;
-	 $tmp["rnc_verif_responsavel"] = $linha->rnc_verif_responsavel;	
+	 $tmp["rnc_verif_responsavel"] = $linha->rnc_verif_responsavel;
 	 $tmp["rnc_verif_data"] = $linha->rnc_verif_data;
 
-	 
+
      $tmp["encaminhado"] =  (
 
           ($tmp["destinatario_id"] != $tmp["remetente_id"]) or
@@ -1358,11 +1358,11 @@ function pegaSubordinados($usuario) {
  } else {
    $sql = "select id_usuario, nome from usuario where ativo and superior = $usuario;";
  }
- 
+
  if ($usuario == 98 or $usuario==12) {
 	 $sql = "select id_usuario, nome from usuario where ativo and (area = 11 or area = (select area from usuario where id_usuario = $usuario))";
  }
- 
+
  $result = mysql_query($sql);
  $conta=0;
    while ($linha = mysql_fetch_object( $result ) ) {
@@ -1406,7 +1406,7 @@ function pegaUsuario($usuario) {
      $tmp["email"] = $linha->email;
      $tmp["emailsn"] = $linha->emailsn;
      $tmp["atendimento"] =$linha->atendimento;
-     $tmp["god"] = $linha->Ic_god == 1;	 
+     $tmp["god"] = $linha->Ic_god == 1;
      $saida[$conta++] = $tmp;
    }
   return $saida;
@@ -1414,7 +1414,7 @@ function pegaUsuario($usuario) {
 
 
 function connPegaDonoDoChamado($id_chamado)
-{	
+{
 
 	$hoje = date("Y-m-d");
 	$sql = "select
@@ -1422,26 +1422,26 @@ function connPegaDonoDoChamado($id_chamado)
         u.nome,
 		(select count(cu.fl_ferias) f from  compromisso c
 		  inner join compromissousuario cu on cu.id_compromisso = c.id
-		where 
+		where
 		  c.excluido = 0 and
-		  cu.fl_ferias = 1 and 
-		  c.data = '$hoje' and 
-		  cu.id_usuario = u.id_usuario) as Ferias      
+		  cu.fl_ferias = 1 and
+		  c.data = '$hoje' and
+		  cu.id_usuario = u.id_usuario) as Ferias
 	from
-		chamado c       
+		chamado c
 		  inner join usuario u on u.id_usuario = c.consultor_id
-	where 
+	where
 		c.id_chamado = $id_chamado";
-		
+
 	$query = mysql_query($sql);
 	while ($linha = mysql_fetch_object( $query ) ) {
 		$result["Id_Usuario_Dono"] = $linha->id_usuario;
 		$result["Nome"] = $linha->nome;
 		$result["Ferias"] = $linha->Ferias;
-	}	
-	
+	}
+
 	return $result;
-		
+
 }
 
 /******************************************
@@ -1478,58 +1478,58 @@ function pegaEncaminhaPara($chamado, $id_usuario) {
   }
 
  $saida = array();
- 
+
  /*
  FERNANDO - FERIAS
  */
  $hoje = date("Y-m-d");
- 
+
  $sql = " SELECT user.id_usuario, user.nome, user.superior, h.hierarquia ,
 (select count(cu.fl_ferias) f from  compromisso c
   inner join compromissousuario cu on cu.id_compromisso = c.id
-where 
-  cu.fl_ferias = 1 and 
-  c.data = '$hoje' and 
-  cu.id_usuario = user.id_usuario  
+where
+  cu.fl_ferias = 1 and
+  c.data = '$hoje' and
+  cu.id_usuario = user.id_usuario
 ) as ferias
-FROM usuario user, hierarquia h 
-WHERE 
-      user.fl_humano = 1 and 
-      user.ativo=1 and ( (h.id_hierarquia=user.hierarquia) and (user.atendimento = 1)) 
-order by 
+FROM usuario user, hierarquia h
+WHERE
+      user.fl_humano = 1 and
+      user.ativo=1 and ( (h.id_hierarquia=user.hierarquia) and (user.atendimento = 1))
+order by
       ferias desc, nome ";
-	  
+
 
  $sql = "";
  $sql .= "SELECT id_usuario, nome, superior, h.hierarquia ";
  $sql .= "FROM usuario, hierarquia h ";
  $sql .= "WHERE fl_humano = 1 and ativo=1 and ( (h.id_hierarquia=usuario.hierarquia) and (atendimento = $atendimento)) order by nome;"; // h.id_hierarquia, nome;";
- 
 
 
 
- $sql = " SELECT user.id_usuario, user.nome, user.superior, h.hierarquia , user.ramal, 
+
+ $sql = " SELECT user.id_usuario, user.nome, user.superior, h.hierarquia , user.ramal,
 (select count(cu.fl_ferias) f from  compromisso c
   inner join compromissousuario cu on cu.id_compromisso = c.id
-where 
+where
   c.excluido = 0 and
-  cu.fl_ferias = 1 and 
-  c.data = '$hoje' and 
-  cu.id_usuario = user.id_usuario  
+  cu.fl_ferias = 1 and
+  c.data = '$hoje' and
+  cu.id_usuario = user.id_usuario
 ) as ferias
-FROM usuario user, hierarquia h 
-WHERE 
-      user.fl_humano = 1 and 
-      user.ativo=1 and ( (h.id_hierarquia=user.hierarquia) and (user.atendimento = $atendimento)) 
-order by 
+FROM usuario user, hierarquia h
+WHERE
+      user.fl_humano = 1 and
+      user.ativo=1 and ( (h.id_hierarquia=user.hierarquia) and (user.atendimento = $atendimento))
+order by
       ferias desc, nome ";
- 
+
  $result = mysql_query($sql);
  $conta=0;
    while ($linha = mysql_fetch_object( $result ) ) {
      $id       = $linha->id_usuario;
 	 $ferias   = $linha->ferias;
-     $nome     = $linha->nome;	 
+     $nome     = $linha->nome;
 	 if ($linha->ramal) {
 		 $nome .= " - r." . $linha->ramal ;
 	 }
@@ -1548,7 +1548,7 @@ order by
        $gerente = 0;
      }
 
-      // é gerente $gerente = 1
+      // ï¿½ gerente $gerente = 1
       //
       // Para encaminhar um contato:
       //   Eu sou o dono do contato ? (destinatario)
@@ -1556,17 +1556,17 @@ order by
       //         $dono = 1, $euGerente = 0;
       //   Sim e sou gerente : Posso encaminhas para gerentes e meus subordinados
       //         $dono = 1; $euGerente = 1;
-      //   Não : Somente encaminho para o destinatario
+      //   Nï¿½o : Somente encaminho para o destinatario
       //         $dono = 0;
-      //   Não, mas sou gerente do destinatario : Ver caso sim e sou gerente.
+      //   Nï¿½o, mas sou gerente do destinatario : Ver caso sim e sou gerente.
       //        $gerenteDestinatario = 1;
 
 	$ok = 0;
-	
+
 	if ( conn_IsGod($id_usuario)) {
 	  $ok = 1;
 	}
-	
+
 	else if ( $id_usuario != $id ) {
 		if ( $dono ) {       // Sou dono e...
 			if ($euGerente) {  // ...sou gerente
@@ -1578,7 +1578,7 @@ order by
 					$ok = 1;       // encaminho p/meu geren. e colegas.
 				}
 			}
-		} else {                           // NÃO sou dono e...
+		} else {                           // Nï¿½O sou dono e...
 			if ($gerenteDestinatario) {     // ..sou gerente do destinatario
 				if ( $gerente or ($superior == $id_usuario) ) {
 					$ok = 1;                    // Entao posso encaminhar p/ gerentes e meus sub.
@@ -1589,13 +1589,13 @@ order by
 				}
 			}
 		}
-	}	
-	
+	}
+
 	if ($ok){
 		$tmp["id_usuario"] = $id;
 		$tmp["nome"] = $nome;
 		$tmp["f"] = $ferias;
-		
+
 		// $tmp["ferias"] = $ferias;
 		$saida[$conta++] = $tmp;
 	}
@@ -1670,7 +1670,7 @@ function pegaPrioridades() {
 	$sql = "SELECT * from prioridade order by valor ;";
 	$result = mysql_query($sql);
 	$conta=0;
-	while ($linha = mysql_fetch_object( $result ) ) {	
+	while ($linha = mysql_fetch_object( $result ) ) {
 		$tmp["id_prioridade"] = $linha->id_prioridade;
 		$tmp["prioridade"] = $linha->prioridade;
 		$saida[$conta++] = $tmp;
@@ -1683,7 +1683,7 @@ function pegaPrioridades_g($gestor) {
 	$sql = "SELECT * from prioridade;";
 	$result = mysql_query($sql);
 	$conta=0;
-	while ($linha = mysql_fetch_object( $result ) ) {	
+	while ($linha = mysql_fetch_object( $result ) ) {
 		$id_prioridade = $linha->id_prioridade;
 		if ((!$gestor) and (($id_prioridade==2)|($id_prioridade==3)) ) {
 			continue ;
@@ -1754,7 +1754,7 @@ function pegaMotivos() {
 }
 
 function pegaTreinados($cliente) {
-	
+
 	if (file_exists("../../../treinamento/scripts/classesDB.php")){
 		include_once("../../../treinamento/scripts/classesDB.php");
 	}elseif (file_exists("../../treinamento/scripts/classesDB.php")){
@@ -1968,13 +1968,13 @@ function listaClientesPlus() {
 
  function pegaChamadosAbertosPorCliente() {
      $saida=array();
-     $sql = "select 
-       chamado.*, 
-       sistema.sistema 
-from 
+     $sql = "select
+       chamado.*,
+       sistema.sistema
+from
      chamado
       left join sistema on sistema.id_sistema = chamado.sistema_id
-     
+
      where  externo=1 and motivo_id=0 order by dataa, horaa;";
      $result = mysql_query($sql);
 //   print $sql;
@@ -2017,9 +2017,9 @@ function i_contaTarefas($ok) {
   $result = mysql_query($txtSQL);
   $count = 0;
   while ( $linha = mysql_fetch_object($result) ) {
-	  
-	
-	  
+
+
+
     $txtSQL2 = "select id_conjunto from $linha->tabela WHERE NOT ok and id_conjunto in (select id from i_conjunto where not ok)";
     $result2 = mysql_query($txtSQL2);
     $count += mysql_affected_rows();
@@ -2039,7 +2039,7 @@ function pegaOrigem($id) {
      if ($linha) {
          return $linha->origem;
      } else {
-       return "Origem não cadastrado ($id)";
+       return "Origem nï¿½o cadastrado ($id)";
      }
  }
 
@@ -2079,48 +2079,48 @@ function conn_ObterListaAnexosContato($id_contato)
 {
 	global $SITEROOT;
 	$saida = array();
-	
-	$sql = "select 
+
+	$sql = "select
   nome,
   nome_original
 from saduploads
 where id_contato = $id_contato";
 	$result = mysql_query($sql);
 	$conta=0;
-	while ($linha = mysql_fetch_object( $result ) ) 
-	{		
-		$link = " <a href=\"$SITEROOT/public_html/uploads/$linha->nome\" target=\"_blank\">$linha->nome_original</a>"; 		
-		$tmp["link"] = $link;				
+	while ($linha = mysql_fetch_object( $result ) )
+	{
+		$link = " <a href=\"$SITEROOT/public_html/uploads/$linha->nome\" target=\"_blank\">$linha->nome_original</a>";
+		$tmp["link"] = $link;
 		$tmp["nome"] = $linha->nome;
-		$saida[$conta++] = $tmp;						
+		$saida[$conta++] = $tmp;
 	}
 
-	return $saida;	
+	return $saida;
 }
 
 
 function conn_ObterEmailsPorTipoDeContato($id_contato)
 {
 	$saida = array();
-	$sql = "select 
+	$sql = "select
        u.nome, u.email, o.origem
 from
-    AssOrigem ao 
-              inner join usuario u on u.id_usuario = ao.Id_Usuario              
+    AssOrigem ao
+              inner join usuario u on u.id_usuario = ao.Id_Usuario
               inner join origem o on o.id_origem = ao.Id_Origem
 where ao.Id_Origem = $id_contato
 ";
 	$result = mysql_query($sql);
 	$conta=0;
-	while ($linha = mysql_fetch_object( $result ) ) 
+	while ($linha = mysql_fetch_object( $result ) )
 	{
-		$tmp["nome"] = $linha->nome;		
+		$tmp["nome"] = $linha->nome;
 		$tmp["email"] = $linha->email;
 		$tmp["origem"] = $linha->origem;
 		$saida[$conta++] = $tmp;
 	}
 
-	return $saida;	
+	return $saida;
 }
 
 function pegaGerentes() {
@@ -2159,11 +2159,11 @@ define('LOG_LOGIN', 15);
 define('LOG_OUTROS', 127);
 
 function loga_login($id_usuario) {
-	loga_online_plus($id_usuario, 'Login', LOG_LOGIN, 0 ); 
+	loga_online_plus($id_usuario, 'Login', LOG_LOGIN, 0 );
 }
 
 
-function loga_integracao($id_usuario) {	 
+function loga_integracao($id_usuario) {
   if (!isset($id_usuario)) {
 	  $id_usuario = 0;
   }
@@ -2171,57 +2171,57 @@ function loga_integracao($id_usuario) {
 }
 
 function loga_novoContato($id_usuario, $id_chamado) {
-	loga_online_plus($id_usuario, '', LOG_INICIOU_CONTATO, $id_chamado ); 		
+	loga_online_plus($id_usuario, '', LOG_INICIOU_CONTATO, $id_chamado );
 }
 
 function loga_cancelaContato($id_usuario, $id_chamado) {
-	loga_online_plus($id_usuario, '', LOG_CANCELOU_CONTATO, $id_chamado ); 
+	loga_online_plus($id_usuario, '', LOG_CANCELOU_CONTATO, $id_chamado );
 }
 
 function loga_novoComplemento($id_usuario, $id_chamado) {
-   loga_online_plus($id_usuario, '', LOG_INSERIU_COMPLEMENTO, $id_chamado );	 
+   loga_online_plus($id_usuario, '', LOG_INSERIU_COMPLEMENTO, $id_chamado );
 }
 
 function loga_reabrirChamado($id_usuario, $id_chamado) {
-   loga_online_plus($id_usuario, '', LOG_REABRIU_CHAMADO, $id_chamado );	 
+   loga_online_plus($id_usuario, '', LOG_REABRIU_CHAMADO, $id_chamado );
 }
 
 function loga_encaminhouChamado($id_usuario, $id_chamado, $id_contato, $id_destinatario) {
-	$acao = LOG_ENCAMINHOU_CHAMADO; 
-	if ($id_usuario == $id_destinatario) {	
-		$acao = LOG_MANTEVE_PENDENTE; 
-	}	
-	$id = loga_online_plus($id_usuario, '', $acao, $id_chamado );	
+	$acao = LOG_ENCAMINHOU_CHAMADO;
+	if ($id_usuario == $id_destinatario) {
+		$acao = LOG_MANTEVE_PENDENTE;
+	}
+	$id = loga_online_plus($id_usuario, '', $acao, $id_chamado );
 	//rastreabilidade_novoContato($id_chamado);
 	atualizaLog($id, $id_contato, $id_destinatario);
-	loga_email_NovoContatoSigame($id_usuario, $id_chamado);	
+	loga_email_NovoContatoSigame($id_usuario, $id_chamado);
 }
 
 
 function loga_novoChamado($id_usuario, $id_chamado) {
-   loga_online_plus($id_usuario, '', LOG_NOVO_CHAMADO, $id_chamado );	 
-   //rastreabilidade_novoChamado($id_chamado);   
+   loga_online_plus($id_usuario, '', LOG_NOVO_CHAMADO, $id_chamado );
+   //rastreabilidade_novoChamado($id_chamado);
 }
 
 function loga_encerrouChamado($id_usuario, $id_chamado) {
-   loga_online_plus($id_usuario, '', LOG_ENCERROU_CHAMADO, $id_chamado );	 
-   loga_email_EncerraChamadoSigame($id_usuario, $id_chamado);   
+   loga_online_plus($id_usuario, '', LOG_ENCERROU_CHAMADO, $id_chamado );
+   loga_email_EncerraChamadoSigame($id_usuario, $id_chamado);
 }
 
 function loga_viuChamado($id_usuario, $id_chamado) {
 	if ($id_usuario ==  USUARIO_ADMIN) { return ; }
 	if (LOG_ATIVO_LEITURA) {
 		loga_online_plus($id_usuario, '', LOG_LEU_CHAMADO, $id_chamado );
-		loga_email_viuChamadoSigame($id_usuario, $id_chamado);   
+		loga_email_viuChamadoSigame($id_usuario, $id_chamado);
 	}
 }
 
 function loga_seguirChamado($id_usuario, $id_chamado) {
-   loga_online_plus($id_usuario, '', LOG_SEGUIU_CHAMADO, $id_chamado );	 
+   loga_online_plus($id_usuario, '', LOG_SEGUIU_CHAMADO, $id_chamado );
 }
 
 function loga_deixarDeSeguirChamado($id_usuario, $id_chamado) {
-   loga_online_plus($id_usuario, '', LOG_DEIXOU_DE_SEGUIR_CHAMADO, $id_chamado );	 
+   loga_online_plus($id_usuario, '', LOG_DEIXOU_DE_SEGUIR_CHAMADO, $id_chamado );
 }
 
 function atualizaLog($id, $id_contato, $id_destinatario)
@@ -2232,20 +2232,20 @@ function atualizaLog($id, $id_contato, $id_destinatario)
 
 function loga_online_plus($id_usuario, $pagina, $acao, $id_chamado ) {
 
-	if (LOG_ATIVO) {	
+	if (LOG_ATIVO) {
 		$data = date("Y-m-d");
 		$hora = date("H:i:s");
 		$ip = $_SERVER['REMOTE_ADDR'];
 		$sql = "INSERT INTO log ( pagina, ip, id_usuario, data, hora, acao, id_chamado ) ";
-		$sql .= " VALUES ( '$pagina', '$ip', $id_usuario, '$data', '$hora', $acao, $id_chamado);";  
+		$sql .= " VALUES ( '$pagina', '$ip', $id_usuario, '$data', '$hora', $acao, $id_chamado);";
 		mysql_query($sql) or die ($sql);
-		
-	
-		
+
+
+
 		$sql = "select max(id) id from log where id_usuario = $id_usuario and id_chamado = $id_chamado";
 		$result = mysql_query($sql) or die ($sql);
 		$linha = mysql_fetch_object($result);
-			
+
 		return $linha->id;
 	}
 }
@@ -2256,12 +2256,12 @@ function loga_email_PalavraChave($id_usuario, $id_chamado, $mensagem, $contato)
 	$Destinatarios = obterDestinatariosPorPalavraChave($contato);
 	$nome = peganomeusuario($id_usuario);
 	$email = "";
-	foreach( $Destinatarios as $email ) {						
-	    $SlackUser = $email["slackUser"];	
-		$palavra = $email["palavra"];	
-		$mensagem_email = $mensagem . "<br><hr/>" . $email["mensagem"];	
-						
-		if ($SlackUser != "")	   
+	foreach( $Destinatarios as $email ) {
+	    $SlackUser = $email["slackUser"];
+		$palavra = $email["palavra"];
+		$mensagem_email = $mensagem . "<br><hr/>" . $email["mensagem"];
+
+		if ($SlackUser != "")
 		{
 			slack($SlackUser, $id_chamado, "Contato com a palavra chave *" . $palavra . "*", "SAD", "Palavra : " . $palavra);
 		}
@@ -2269,8 +2269,8 @@ function loga_email_PalavraChave($id_usuario, $id_chamado, $mensagem, $contato)
 		{
 			mail2($email["email"], '[SAD] Palavra Chave', $mensagem_email, 'SAD');
 		}
-		
-	}	
+
+	}
 }
 
 function loga_email_Sigame($id_usuario, $id_chamado, $mensagem, $assunto, $flag)
@@ -2281,54 +2281,54 @@ function loga_email_Sigame($id_usuario, $id_chamado, $mensagem, $assunto, $flag)
 	$nome = peganomeusuario($id_usuario);
 	$mensagem .= "<br>";
 	$mensagem .= $DadosDoChamado;
-	$mensagem .= "<br><a target=_blank href=$SITEROOT/a/sigame/index.php>Ir para o Desktop Siga-me</a>";		
-	foreach( $Destinatarios as $email ) {		
-	
-		if ( $flag == LOG_LEU_CHAMADO ) 
+	$mensagem .= "<br><a target=_blank href=$SITEROOT/a/sigame/index.php>Ir para o Desktop Siga-me</a>";
+	foreach( $Destinatarios as $email ) {
+
+		if ( $flag == LOG_LEU_CHAMADO )
 		{
 			if ( ($email["id_usuario"] != 12) && ($email["id_usuario"] != 141))  {
 			  return;
 			}
-		    if ( $email["id_usuario"] == $id_usuario ) 
+		    if ( $email["id_usuario"] == $id_usuario )
 			{
 			  return;
-			}			
+			}
 		}
 		mail2($email["email"], $assunto, $mensagem, '');
-	}	
+	}
 }
 
 function loga_email_EncerraChamadoSigame($id_usuario, $id_chamado)
 {
 	global $SITEROOT;
-	$nome = peganomeusuario($id_usuario);	
-	$mensagem = "$nome encerrou o chamado <a target=_blank href=$SITEROOT/a/historicochamado.php?id_chamado=$id_chamado>$id_chamado</a>";	
+	$nome = peganomeusuario($id_usuario);
+	$mensagem = "$nome encerrou o chamado <a target=_blank href=$SITEROOT/a/historicochamado.php?id_chamado=$id_chamado>$id_chamado</a>";
 	$assunto = "Siga-me - Chamado encerrado";
-    loga_email_Sigame($id_usuario, $id_chamado, $mensagem, $assunto, 1);		
-	
-	$contato = conn_obterUltimoContato($id_usuario, $id_chamado);	
-	$mensagem = "$nome encerrou um chamado:<br><a target=_blank href=$SITEROOT/a/historicochamado.php?id_chamado=$id_chamado>$id_chamado</a> - $descricao<br><br>Contém uma um mais palavra chave cadastrada";	
-	loga_email_PalavraChave($id_usuario, $id_chamado, $mensagem, $contato);	
+    loga_email_Sigame($id_usuario, $id_chamado, $mensagem, $assunto, 1);
+
+	$contato = conn_obterUltimoContato($id_usuario, $id_chamado);
+	$mensagem = "$nome encerrou um chamado:<br><a target=_blank href=$SITEROOT/a/historicochamado.php?id_chamado=$id_chamado>$id_chamado</a> - $descricao<br><br>Contï¿½m uma um mais palavra chave cadastrada";
+	loga_email_PalavraChave($id_usuario, $id_chamado, $mensagem, $contato);
 }
 
 function loga_email_NovoContatoSigame($id_usuario, $id_chamado)
 {
 	global $SITEROOT;
-	$nome = peganomeusuario($id_usuario);	
-	$descricao = conn_obterDescricao($id_chamado);	
+	$nome = peganomeusuario($id_usuario);
+	$descricao = conn_obterDescricao($id_chamado);
 	$contato = conn_obterUltimoContato($id_usuario, $id_chamado);
 	$mensagem = "$nome inseriu um contato no chamado:<br><a target=_blank href=$SITEROOT/a/historicochamado.php?id_chamado=$id_chamado>$id_chamado</a> - $descricao<br><br>Contato:<br>$contato";
 	$assunto = "Siga-me - Novo contato";
     loga_email_Sigame($id_usuario, $id_chamado, $mensagem, $assunto, 2);
 
-	$mensagem = "$nome inseriu um contato no chamado:<br><a target=_blank href=$SITEROOT/a/historicochamado.php?id_chamado=$id_chamado>$id_chamado</a> - $descricao<br><br>Contém uma um mais palavra chave cadastrada";	
+	$mensagem = "$nome inseriu um contato no chamado:<br><a target=_blank href=$SITEROOT/a/historicochamado.php?id_chamado=$id_chamado>$id_chamado</a> - $descricao<br><br>Contï¿½m uma um mais palavra chave cadastrada";
 	loga_email_PalavraChave($id_usuario, $id_chamado, $mensagem, $contato);
 }
 
 function loga_email_viuChamadoSigame($id_usuario, $id_chamado)
 {
 	global $SITEROOT;
-	$nome = peganomeusuario($id_usuario);		
+	$nome = peganomeusuario($id_usuario);
 	$mensagem = "$nome leu o chamado <a target=_blank href=$SITEROOT/a/historicochamado.php?id_chamado=$id_chamado>$id_chamado</a>";
 	$assunto = "Siga-me - Leitura de chamado";
 	loga_email_Sigame($id_usuario, $id_chamado, $mensagem, $assunto, 3);
@@ -2337,46 +2337,46 @@ function loga_email_viuChamadoSigame($id_usuario, $id_chamado)
 function obterDestinatariosPorPalavraChave($mensagem)
 {
 	$mensagem_down = strtolower($mensagem);
-	$saida = array();				
-	$c = 0;	
-	$sql_1 = "select distinct u.slackUser, u.id_usuario, u.email from AssPalavraChave p inner join usuario u on u.id_usuario = p.id_usuario";	
-	$result_1 = mysql_query($sql_1);	
+	$saida = array();
+	$c = 0;
+	$sql_1 = "select distinct u.slackUser, u.id_usuario, u.email from AssPalavraChave p inner join usuario u on u.id_usuario = p.id_usuario";
+	$result_1 = mysql_query($sql_1);
 	while ($linha_1 = mysql_fetch_object($result_1))
-	{	
+	{
 		$sql_2 = "select palavra from AssPalavraChave where id_usuario = " . $linha_1->id_usuario;
-		$result_2 = mysql_query($sql_2);	
+		$result_2 = mysql_query($sql_2);
 		$mensagemSaida = $mensagem;
 		$encontrou = false;
 		while ($linha_2 = mysql_fetch_object($result_2))
 		{
 			$palavra = strtolower($linha_2->palavra);
-			if (strpos($mensagem_down, $palavra) !== false) {		
+			if (strpos($mensagem_down, $palavra) !== false) {
 				$mensagemSaida = eregi_replace($palavra, "<b><font  color=#FF0000>$palavra</font></b>", $mensagemSaida);
 				$encontrou = true;
 				$palavraEncontrada = $palavra;
-			}			
-		}		
+			}
+		}
 		if ($encontrou)
 		{
 			$saida[$c]["palavra"] = $palavraEncontrada;
 			$saida[$c]["email"] = $linha_1->email;
 			$saida[$c]["slackUser"] = $linha_1->slackUser;
-			$saida[$c++]["mensagem"] = $mensagemSaida;		
+			$saida[$c++]["mensagem"] = $mensagemSaida;
 		}
-	}	
+	}
 	return $saida;
 }
 
 function obterDestinatariosQueSeguemEsteChamado($id_chamado)
 {
-	$saida = array();	
-	$c = 0;	
+	$saida = array();
+	$c = 0;
 	$sql = "select u.id_usuario, u.email from sigame s inner join usuario u on u.id_usuario = s.id_usuario where id_chamado = $id_chamado";
 	$result = mysql_query($sql);
 	while ($linha = mysql_fetch_object($result))
 	{
 	    $saida[$c]["id_usuario"] = $linha->id_usuario;
-		$saida[$c++]["email"] = $linha->email;		
+		$saida[$c++]["email"] = $linha->email;
 	}
 	return $saida;
 }
@@ -2384,9 +2384,9 @@ function obterDestinatariosQueSeguemEsteChamado($id_chamado)
 /*function loga_online($id_usuario, $ip, $pagina ) {
   $data = date("Y-m-d");
   $hora = date("H:i:s");
-  
-  if ( ($id_usuario != 12) )  { 
-    $sql = "INSERT INTO log ( pagina, ip, id_usuario, data, hora ) VALUES ( '$pagina', '$ip', $id_usuario, '$data', '$hora');";  
+
+  if ( ($id_usuario != 12) )  {
+    $sql = "INSERT INTO log ( pagina, ip, id_usuario, data, hora ) VALUES ( '$pagina', '$ip', $id_usuario, '$data', '$hora');";
     if ($pagina) {mysql_query($sql);}
   }
 }*/
@@ -2462,7 +2462,7 @@ function pegaChamadosRNC() {
  $sql .= ")  ";
  $sql .= "ORDER BY  ";
  $sql .= "  rnc, p.valor, dataa desc, horaa desc";
- 
+
 // die($sql);
 
  $result = mysql_query($sql) or die ($sql);
@@ -2528,11 +2528,11 @@ function pegaArea($id) {
 function dateDiff($dia1) {
 // This is a simple script to calculate the difference between two dates
 // and express it in years, months and days
-// 
+//
 // use as in: "my daughter is 4 years, 2 month and 17 days old" ... :-)
 //
 // Feel free to use this script for whatever you want
-// 
+//
 // version 0.1 / 2002-10-3
 //
 // please send comments and feedback to webmaster@lotekk.net
@@ -2606,13 +2606,13 @@ $days = "dias";
 $meses = "meses";
 if ($yr_diff == "1") $years = "ano";
 if ($day_diff == "1") $days = "dia";
-if ($mon_diff=="1") $meses = "mês";
+if ($mon_diff=="1") $meses = "mï¿½s";
 
 	// here we go
 	$m = $d = "";
 	if ($mon_diff > 0) {
 		if ($day_diff > 0) {
-			$m = ", $mon_diff $meses";		
+			$m = ", $mon_diff $meses";
 		} else {
 			$m = " e $mon_diff $meses";
 		}
@@ -2643,17 +2643,17 @@ function conn_VerificaNovoChamado($Id_Usuario, $id_cliente)
   $sql = "select * from chamado_temp where id_usuario = $Id_Usuario and id_cliente = '$id_cliente'";
   $result = mysql_query($sql) or die (mysql_error() . "<br> $sql");
   $linha = mysql_fetch_object($result);
-  if ($linha)  {	
-	$saida = array();	
-	$saida["status"] = 1; // Existente 0 = não inseriu
+  if ($linha)  {
+	$saida = array();
+	$saida["status"] = 1; // Existente 0 = nï¿½o inseriu
 	$saida["data"] = $linha->data;
 	$saida["hora"] = $linha->hora;
 
-	$contato = str_replace(array("\n", "\r"), array('\n', '\r'), $linha->contato ); 		
-	$contato = str_replace("\"", "'", $contato);			
+	$contato = str_replace(array("\n", "\r"), array('\n', '\r'), $linha->contato );
+	$contato = str_replace("\"", "'", $contato);
 	$saida["contato"] = $contato;
 
-	$saida["chamado"] = $linha->chamado;    
+	$saida["chamado"] = $linha->chamado;
 	$saida["id_chamado"] = $linha->id_chamado;
   }
   return $saida;
@@ -2661,14 +2661,14 @@ function conn_VerificaNovoChamado($Id_Usuario, $id_cliente)
 
 
 function conn_InsereNovoChamado($Id_Usuario, $id_cliente, $chamado, $Data_Novo_Contato, $Hora_Novo_Contato)
-{	
+{
 	$sql = "insert into chamado_temp (id_chamado, id_cliente, id_usuario, data, hora) values (";
-	$sql .= $chamado . ", '" 
+	$sql .= $chamado . ", '"
 		. $id_cliente . "', "
-		. $Id_Usuario . ", '" 
+		. $Id_Usuario . ", '"
 		. $Data_Novo_Contato . "', '"
 		. $Hora_Novo_Contato . "' )";
-	mysql_query($sql) or die (mysql_error() . "<br> $sql");		
+	mysql_query($sql) or die (mysql_error() . "<br> $sql");
 	return;
 }
 
@@ -2677,16 +2677,16 @@ function conn_obterListaRestricoes($ok, $chamado)
 {
 	$saida = array();
 	if (!$chamado) {
-		$sql = "select Id id, Ds_Descricao descricao from restricoes 
-		where Id in (SELECT distinct id_restricao FROM rl_restricao_manut r where id_usuario = $ok)	
+		$sql = "select Id id, Ds_Descricao descricao from restricoes
+		where Id in (SELECT distinct id_restricao FROM rl_restricao_manut r where id_usuario = $ok)
 		order by Ds_Descricao";
 	} else {
-		$sql = "	
-select Id id, Ds_Descricao descricao from restricoes 
+		$sql = "
+select Id id, Ds_Descricao descricao from restricoes
 where Id in (
     SELECT distinct id_restricao FROM rl_restricao_manut r where id_usuario = $ok and
       id_restricao not in (select Id_Restricao from rl_restricao_chamado where Id_Chamado = $chamado)
-    )	
+    )
 order by Ds_Descricao";
 
 	}
@@ -2706,39 +2706,39 @@ function conn_InsereControleNovoContato($id_chamado, $Id_Usuario, $Data_Novo_Con
 	$sql = "select * from contato_temp where id_chamado = $id_chamado and id_usuario = $Id_Usuario";
 	$result = mysql_query($sql) or die (mysql_error() . "<br> $sql");
 	$linha = mysql_fetch_object($result);
-	if ($linha) 
+	if ($linha)
 	{
-		$saida["status"] = 0; // Existente 0 = não inseriu
+		$saida["status"] = 0; // Existente 0 = nï¿½o inseriu
 		$saida["data"] = $linha->data;
-		$saida["hora"] = $linha->hora;				
-		$contato = str_replace(array("\n", "\r"), array('\n', '\r'), $linha->contato ); 		
-		$contato = str_replace("\"", "'", $contato);		
+		$saida["hora"] = $linha->hora;
+		$contato = str_replace(array("\n", "\r"), array('\n', '\r'), $linha->contato );
+		$contato = str_replace("\"", "'", $contato);
 		$saida["contato"] = $contato;
-	} else 
+	} else
 	{
-		
+
 		$sql = "insert into contato_temp (id_chamado, id_usuario, data, hora) values (";
 		$sql .= $id_chamado . ", " . $Id_Usuario . ", '" . $Data_Novo_Contato . "', '". $Hora_Novo_Contato ."' )";
-		mysql_query($sql) or die (mysql_error() . "<br> $sql");		
-		$saida["status"] = 1; // 1 = inseriu		
+		mysql_query($sql) or die (mysql_error() . "<br> $sql");
+		$saida["status"] = 1; // 1 = inseriu
 		$saida["data"] = $Data_Novo_Contato;
 		$saida["hora"] = $Hora_Novo_Contato;
 	}
 	return $saida;
 }
 
-function sec_to_time($segundos) 
+function sec_to_time($segundos)
 {
 
 	$horas =   (int)($segundos / 3600);
-	
+
 	$segundos = $segundos % 3600;
-	
+
 	$minutos = (int)($segundos / 60);
 	$segundos = $segundos % 60;
-  
-  $time = sprintf("%02d", $horas) . ":" . 
-	      sprintf("%02d", $minutos) . ":" . 
+
+  $time = sprintf("%02d", $horas) . ":" .
+	      sprintf("%02d", $minutos) . ":" .
 		  sprintf("%02d", $segundos);
   return $time;
 }
@@ -2746,16 +2746,16 @@ function sec_to_time($segundos)
 
 function obterCorPorGrau($Grau)
 {
-	$cor = "#FFFFFF";			
-	if ($Grau == "G1") 
+	$cor = "#FFFFFF";
+	if ($Grau == "G1")
 	{
 		$cor = "#C1FB9F";
 	}
-	if ($Grau == "G2") 
+	if ($Grau == "G2")
 	{
 		$cor = "#FBF175";
 	}
-	if ($Grau == "G3") 
+	if ($Grau == "G3")
 	{
 		$cor = "#BDE6FB";
 	}
@@ -2772,7 +2772,7 @@ function obterCorPorGrau($Grau)
 |  7 | marketing              |
 |  8 | outra                  |
 |  9 | nenhuma                |
-| 10 | jurídico               |
+| 10 | jurï¿½dico               |
 | 11 | Qualidade de software  |
 | 12 | TI                     |
 */
@@ -2801,34 +2801,34 @@ function Log_Email($_recipient, $_subject, $_msg, $_headers, $_ReplyMail, $_Repl
 
 	$sql = "insert into Emails (";
 		$sql .= "Dt_Cadastro, ";
-		$sql .= "Nm_De, ";		
-		$sql .= "Nm_Email_De, ";	
+		$sql .= "Nm_De, ";
+		$sql .= "Nm_Email_De, ";
 		$sql .= "Nm_Email_Para, ";
-		$sql .= "Ds_Assunto, ";	
-		$sql .= "Tx_Mensagem ";		
-	$sql .= ") ";	
-	
+		$sql .= "Ds_Assunto, ";
+		$sql .= "Tx_Mensagem ";
+	$sql .= ") ";
+
 	$sql .= " values ";
-		
-	$sql .= "(";	
-		$sql .= "'$Hoje', ";		
-		$sql .= "'$_ReplyName', ";			
-		$sql .= "'$_ReplyMail', ";		
-		$sql .= "'$_recipient', ";	
-		$sql .= "'$_subject', ";	
+
+	$sql .= "(";
+		$sql .= "'$Hoje', ";
+		$sql .= "'$_ReplyName', ";
+		$sql .= "'$_ReplyMail', ";
+		$sql .= "'$_recipient', ";
+		$sql .= "'$_subject', ";
 		$sql .= "'$_msg'";
-	$sql .= ") ";	
-	
+	$sql .= ") ";
+
 	mysql_query($sql) ;
-	
+
 /*
   $sql = "select max(Id) as ID from Emails where chamado_id  = $chamado;";
   $result = mysql_query($sql);
   $linha = mysql_fetch_object( $result );
   $max = $linha->ID;
   */
-	
-	return mysql_insert_id();	
+
+	return mysql_insert_id();
 }
 
 
@@ -2837,50 +2837,50 @@ function conn_EnviaEmailsPendentes()
 	$sql_emails = "select * from Emails where Cd_Situacao = 1 order by Id limit 10";
 	$query_email = mysql_query($sql_emails);
 	while ($linha_email = mysql_fetch_object($query_email))
-	{	
-		$retorno = conn_EnviaEmail($linha_email);		
-		conn_AtualizaStatusEmail($linha_email->Id, $retorno);	
+	{
+		$retorno = conn_EnviaEmail($linha_email);
+		conn_AtualizaStatusEmail($linha_email->Id, $retorno);
 	}
 }
 
 function conn_EnviaEmail($linha)
 {
 	global $site;  // se for dentro de funcao
-	
 
-	$site['from_email'] = "suporte@datamace.com.br"; 
-	$site['smtp_mode'] = "enabled"; 
+
+	$site['from_email'] = "suporte@datamace.com.br";
+	$site['smtp_mode'] = "enabled";
 	$site['smtp_host'] = "pop.datamace.com.br";
-	$site['smtp_port'] = "587"; 
+	$site['smtp_port'] = "587";
 	$site['smtp_username'] = "sad@datamace.com.br";
-	$site['smtp_password'] = "data0915";	
+	$site['smtp_password'] = "data0915";
 	// procurar mail2
-	
-	require_once('mailclass.inc.php'); 	
+
+	require_once('mailclass.inc.php');
 
 	$retorno = '';
-	
-	$mailer = new FreakMailer(); 
-	
-	$mailer->IsHTML(true); 
+
+	$mailer = new FreakMailer();
+
+	$mailer->IsHTML(true);
 	$mailer->SetLanguage('br','../a/scripts/language/');
-	$mailer->Subject = $linha->Ds_Assunto; 
+	$mailer->Subject = $linha->Ds_Assunto;
 	$mensagem = $linha->Tx_Mensagem;
-	$mailer->Body = $mensagem; 	
-	$mensagem_txt = strip_tags($mensagem);	
-	
+	$mailer->Body = $mensagem;
+	$mensagem_txt = strip_tags($mensagem);
+
 	$Email_Para = $linha->Nm_Email_Para;
 //	$Email_Para = "fernando.nomellini@datamace.com.br";
-	$mailer->AddAddress("$Email_Para", "$Email_Para"); 	
+	$mailer->AddAddress("$Email_Para", "$Email_Para");
 
-	if (!$mailer->Send()) { 
+	if (!$mailer->Send()) {
 		$retorno .= 'Problemas no envio do email para: '. $linha->Nm_Email_Para . ' \n';
 		$retorno .= '\tErro: '. $mailer->ErrorInfo .'\n';
-	} 
+	}
 
-	$mailer->ClearAddresses(); 
-	$mailer->ClearAttachments();   
-	
+	$mailer->ClearAddresses();
+	$mailer->ClearAttachments();
+
 	return $retorno;
 }
 
@@ -2889,7 +2889,7 @@ function conn_AtualizaStatusEmail($Id, $retorno)
 	$Cd_Situacao = 2;
 	if ($retorno)
 	{
-		$Cd_Situacao = 3;	
+		$Cd_Situacao = 3;
 	}
 	$Hoje = date("Y-m-d H:i:s");
 	$sql = "update Emails set Dt_Envio = '$Hoje', Cd_Situacao = $Cd_Situacao, Tx_Mensagem_Erro = '$retorno' where id = $Id";
@@ -2898,26 +2898,26 @@ function conn_AtualizaStatusEmail($Id, $retorno)
 }
 
 function mail2($_recipient, $_subject, $_msg, $_headers) {
-	
+
 	if (!ENVIA_EMAIL)
 		return;
-	
+
 	$recipients = $_recipient;
-	
+
 	$_ReplyName = "";
 	$_ReplyMail = "";
 
-	$_split = explode("+",$_headers);  			
+	$_split = explode("+",$_headers);
 	if ( count($_split) > 1 ) {
 		$_reply = explode( ":", $_split[1] );
 		$_ReplyMail = $_reply[0];
 		$_ReplyName = $_reply[1];
 		$_headers = $_split[0];
-	} 
+	}
 
-		
+
 	$headers["Content-type"] = "text/html; charset=iso-8859-1";
-	
+
 	if (!$_headers) {
 		$headers["From"]    = "suporte@datamace.com.br";
 		$headers["To"]      = "SAD";
@@ -2925,7 +2925,7 @@ function mail2($_recipient, $_subject, $_msg, $_headers) {
 		$headers["From"]    = $_headers;
 		$headers["To"]      = "";
 	}
-	
+
 	$headers["Subject"] = $_subject;
 	$body = $_msg;
 	$params["host"] = "pop.datamace.com.br";
@@ -2934,29 +2934,29 @@ function mail2($_recipient, $_subject, $_msg, $_headers) {
 	$params["username"] = "sad@datamace.com.br";
 	$params["password"] = "data0915";
 	// procurar conn_EnviaEmail
-	
-	
-	global $site;  // se for dentro de funcao	
-	
+
+
+	global $site;  // se for dentro de funcao
+
 	$_smtp_host = "pop.datamace.com.br";
 	$_smtp_port = '587';
 	$_smtp_autentica = 'enabled';
 	$_smtp_usuario = $params["username"];
 	$_smtp_senha = $params["password"];
 	$_confirma_recebimento = 'S';
-	
 
-	if (!$_headers) {	
-		$site['from_name'] = "SAD"; 
+
+	if (!$_headers) {
+		$site['from_name'] = "SAD";
 	} else {
-		$site['from_name'] = $_headers; 
+		$site['from_name'] = $_headers;
 	}
 
-	
-	$site['from_email'] = "suporte@datamace.com.br"; 
-	$site['smtp_mode'] = "$_smtp_autentica"; // enabled or disabled 
-	$site['smtp_host'] = "$_smtp_host"; 
-	$site['smtp_port'] = $_smtp_port; 
+
+	$site['from_email'] = "suporte@datamace.com.br";
+	$site['smtp_mode'] = "$_smtp_autentica"; // enabled or disabled
+	$site['smtp_host'] = "$_smtp_host";
+	$site['smtp_port'] = $_smtp_port;
 	$site['smtp_username'] = "$_smtp_usuario";
 	$site['smtp_password'] = "$_smtp_senha";
 
@@ -2965,100 +2965,100 @@ function mail2($_recipient, $_subject, $_msg, $_headers) {
 	if ($_ReplyMail != "")
 	{
 		$site['from_email'] = $_ReplyMail;
-		$site['from_name'] = $_ReplyName; 		
+		$site['from_name'] = $_ReplyName;
 	}
 
 
-	
-	
-	require_once('mailclass.inc.php'); 	
+
+
+	require_once('mailclass.inc.php');
 	$cc_email = '';
 	$cc_nome = '';
 	$retorno = '';
-	$mailer = new FreakMailer(); 
-	$mailer->IsHTML(true); 
+	$mailer = new FreakMailer();
+	$mailer->IsHTML(true);
 	$mailer->SetLanguage('br','../a/scripts/language/');
-	$mailer->Subject = $_subject; 
+	$mailer->Subject = $_subject;
 	$mensagem = $_msg;
-	$mailer->Body = $mensagem; 
+	$mailer->Body = $mensagem;
 	$mensagem_txt = strip_tags($mensagem);
-	
-	$mailer->AddAddress("$_recipient", "$_recipient"); 
-	
+
+	$mailer->AddAddress("$_recipient", "$_recipient");
+
 	if ($_ReplyName) {
 		$mailer->AddReplyTo($_ReplyMail,$_ReplyName);
-	}	
+	}
 	if (trim($cc_email)) {
-		$mailer->AddCC("$cc_email", "$cc_nome"); 
-	} 	
-	
-	$LastId = Log_Email($_recipient, $_subject, $_msg, $_headers, $_ReplyMail, $_ReplyName);				
+		$mailer->AddCC("$cc_email", "$cc_nome");
+	}
+
+	$LastId = Log_Email($_recipient, $_subject, $_msg, $_headers, $_ReplyMail, $_ReplyName);
 
 
 
 
-	if (!$mailer->Send()) { 		
+	if (!$mailer->Send()) {
 		$retorno .= 'Problemas no envio do email para: '. $_recipient . ' \n';
 		$retorno .= '\tErro : '. $mailer->ErrorInfo .'\n';
-		$ok = 'n';				
-		conn_AtualizaStatusEmail($LastId, $retorno);		
-	} else { 
+		$ok = 'n';
+		conn_AtualizaStatusEmail($LastId, $retorno);
+	} else {
 		$ok = 's';
 		conn_AtualizaStatusEmail($LastId, "");
 	}
 
 
-		
-	$mailer->ClearAddresses(); 
-	$mailer->ClearAttachments();   		
+
+	$mailer->ClearAddresses();
+	$mailer->ClearAttachments();
 }
 
 
 function AdicionarPrograma($programa, $obs, $ok, $id_chamado)
-{		
+{
 	$Data_Atual = date("Y-m-d") . " " . date("H:i:s");
 	$sql = "insert into chamado_programas (id_chamado, id_usuario, dt_DataCriacao, nm_nome, ic_commit, ds_obs) ";
 	$sql .= "values ($id_chamado, $ok, '$Data_Atual', '$programa', 0, '$obs')";
 	mysql_query($sql);
 	$LOCAL = $_SERVER["SCRIPT_NAME"] . "?id_chamado=$id_chamado";
-	header("Location: $LOCAL");	
+	header("Location: $LOCAL");
 }
 
 function CommitPrograma($ok, $id_programa, $id_chamado)
-{	
+{
 	$Data_Atual = date("Y-m-d") . " " . date("H:i:s");
 	$sql = "update chamado_programas set ic_commit = 1, dt_commit = '$Data_Atual', id_usuario_commit = $ok where Id = $id_programa";
 	mysql_query($sql) or die (mysql_error() . ' - ' . $sql);
 	$LOCAL = $_SERVER["SCRIPT_NAME"] . "?id_chamado=$id_chamado";
-	header("Location: $LOCAL");	
+	header("Location: $LOCAL");
 }
 
 function TirarCommitPrograma($ok, $id_programa, $id_chamado)
-{	
+{
 	$Data_Atual = date("Y-m-d") . " " . date("H:i:s");
 	$sql = "update chamado_programas set ic_commit = 0, dt_commit = '$Data_Atual', id_usuario_commit = $ok, ds_obs = 'Commit retirado' where Id = $id_programa;";
 //	die($sql);
 	mysql_query($sql) or die (mysql_error() . ' - ' . $sql);
 	$LOCAL = $_SERVER["SCRIPT_NAME"] . "?id_chamado=$id_chamado";
-	header("Location: $LOCAL");	
+	header("Location: $LOCAL");
 }
 
 function ExcluirPrograma($ok, $id_programa, $id_chamado)
-{	
+{
 	$Data_Atual = date("Y-m-d") . " " . date("H:i:s");
 	$sql = "update chamado_programas set ic_ativo = 0, ic_commit = 0, dt_commit = '$Data_Atual', id_usuario_commit = $ok, ds_obs = 'Progrma Excluido' where Id = $id_programa;";
 //	die($sql);
 	mysql_query($sql) or die (mysql_error() . ' - ' . $sql);
 	$LOCAL = $_SERVER["SCRIPT_NAME"] . "?id_chamado=$id_chamado";
-	header("Location: $LOCAL");	
+	header("Location: $LOCAL");
 }
 
 function podeAcessarNosHorarios($horaEntrada, $horaSaida)
 {
 	$horaEntrada = $horaEntrada * 60;
 	$horaSaida = $horaSaida * 60;
-	$minutoAtual = date("H") * 60 + date("i");	
-	if ( ($minutoAtual >= $horaEntrada) && ($minutoAtual <= $horaSaida)  )  
+	$minutoAtual = date("H") * 60 + date("i");
+	if ( ($minutoAtual >= $horaEntrada) && ($minutoAtual <= $horaSaida)  )
 	{
 		return true;
 	} else 	{
@@ -3069,19 +3069,19 @@ function podeAcessarNosHorarios($horaEntrada, $horaSaida)
 
 function obterProgramasVersao($id_chamado)
 {
-  
+
 }
 
 function obterDadosDoChamado($id_chamado)
 {
-	$sql = "select 
-  c.id_chamado, 
+	$sql = "select
+  c.id_chamado,
   c.dataa DtAbertura,
   concat(cliente.id_cliente, ' - ',  cliente.cliente) cliente,
   left(c.descricao, 100) descricao,
-  dono.nome dono, 
-  destinatario.nome destinatario, 
-  status.status 
+  dono.nome dono,
+  destinatario.nome destinatario,
+  status.status
 from chamado c
   inner join usuario dono on dono.id_usuario = c.consultor_id
   inner join usuario destinatario on destinatario.id_usuario = c.destinatario_id
@@ -3094,8 +3094,8 @@ where id_chamado = " . $id_chamado;
 	$Texto = "";
 	$Texto .= "<br>Cliente    : " . $linha->cliente;
 	$Texto .= "<br>Aberto em  : " . amd2dma($linha->DtAbertura);
-	$Texto .= "<br>Aberto por : " . $linha->dono;		
-	$Texto .= "<br>Esta com   : " . $linha->destinatario;	
+	$Texto .= "<br>Aberto por : " . $linha->dono;
+	$Texto .= "<br>Esta com   : " . $linha->destinatario;
 	$Texto .= "<br>Descricao  : " . $linha->descricao;
 
 	return $Texto;
@@ -3111,8 +3111,8 @@ function rastreabilidade_novoChamado($id_chamado)
 }
 
 function rastreabilidade_novoContato($id_chamado)
-{	
-	$AreaOrigem = conn_ExecuteScalar("select id_area_destino from rastreabilidade where id_chamado=$id_chamado order by Id desc limit 1");	
+{
+	$AreaOrigem = conn_ExecuteScalar("select id_area_destino from rastreabilidade where id_chamado=$id_chamado order by Id desc limit 1");
 	if ($AreaOrigem == "")
 	{
 		$AreaOrigem = -1;
@@ -3126,7 +3126,7 @@ function rastreabilidade_inserir($id_chamado, $AreaOrigem, $AreaDestino)
 	if (  ($AreaOrigem == $AreaDestino) || ($AreaOrigem == 0)  )
 	{
 		rastreabilidade_Atualizar($id_chamado);
-	} else 
+	} else
 	{
 		$Ic_Acao = 1; // Interacao
 		if ($AreaDestino == 0)
@@ -3139,7 +3139,7 @@ function rastreabilidade_inserir($id_chamado, $AreaOrigem, $AreaDestino)
 		$hora = date("H:i:s");
 		$sql = "insert into rastreabilidade (id_chamado,   data,    hora, id_area_origem, id_area_destino, qt_interacoes, dt_ultima_interacao, ic_acao)
   		                            values( $id_chamado, '$data', '$hora',   $AreaOrigem,    $AreaDestino,             1, '$data',            $Ic_Acao)";
-		conn_ExecuteNonQuery($sql);						  
+		conn_ExecuteNonQuery($sql);
 	}
 }
 
@@ -3152,7 +3152,7 @@ function rastreabilidade_Atualizar($id_chamado)
 
 function rastreabilidade_Criar($id_chamado)
 {
-	$sql = "select u.area, dataa from contato inner join usuario u on contato.destinatario_id =  u.id_usuario where chamado_id = $id_chamado";	
+	$sql = "select u.area, dataa from contato inner join usuario u on contato.destinatario_id =  u.id_usuario where chamado_id = $id_chamado";
 }
 
 
@@ -3162,7 +3162,7 @@ function rastreabilidade_Criar($id_chamado)
 		$sql = "select vl_valor from parametros where id_parametro = $id_parametro";
 		return conn_ExecuteScalar($sql);
 	}
-	
+
 	function params_gravar($id_parametro, $valor)
 	{
 		$sql = "update parametros set vl_valor = $valor where id_parametro = $id_parametro";
@@ -3192,7 +3192,7 @@ function connSetRestricao($IdChamado, $IdRestricao)
 function connResetRestricao($IdChamado, $IdRestricao)
 {
 	connDeleteRestricao($IdChamado, $IdRestricao);
-	connGravaRestricao($IdChamado, $IdRestricao, "0");	
+	connGravaRestricao($IdChamado, $IdRestricao, "0");
 }
 
 
@@ -3203,9 +3203,9 @@ function connAlterarRestricao($IdChamado, $IdUsuario, $IdRestricao, $IcStatus)
 	*/
 	$sql = "update rl_restricao_chamado set Ic_Implementado = not Ic_Implementado where Id_Restricao = $IdRestricao and Id_Chamado = $IdChamado";
 	mysql_query($sql);
-	
+
 	/*
-		2. Inserir o histórico das alterações
+		2. Inserir o histï¿½rico das alteraï¿½ï¿½es
 	*/
 	$DataHoraAtual = date("Y-m-d H:i:s");
 	$sql = "insert into restricao_historico (Id_Chamado, Id_Restricao, Id_Usuario, Dt_Data, Ic_Status)

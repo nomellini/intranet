@@ -26,7 +26,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Estat&iacute;sticas</title>
 <style type="text/css">
 <!--
@@ -236,12 +236,12 @@ Diagn&oacute;stico de todos os chamados enviados &agrave; sistemas com programad
     </table></td>
   </tr>
 </table>
-<p>Maiores intera&ccedil;&otilde;es com a consultoria (Centralizado no Éder) </p>
+<p>Maiores intera&ccedil;&otilde;es com a consultoria (Centralizado no Ã‰der) </p>
 <table border="1" cellpadding="0" cellspacing="0">
       <tr>
         <td  valign="top" bgcolor="silver">Chamado</td>
         <td  valign="top" bgcolor="silver">Sistema</td>
-        <td  valign="top" bgcolor="silver">Diagnóstico</td>
+        <td  valign="top" bgcolor="silver">DiagnÃ³stico</td>
         <td align="center"  valign="middle" bgcolor="silver">Quantidade</td>						
       </tr>
       <?
@@ -273,7 +273,7 @@ Diagn&oacute;stico de todos os chamados enviados &agrave; sistemas com programad
       </tr>
 </table>
 <p>Maiores intera&ccedil;&otilde;es com a consultoria <br />
-ultimos 12 meses, de <?=$deUltimos12?> até <?=$ate?>  (Centralizado no Éder) </p>
+ultimos 12 meses, de <?=$deUltimos12?> atÃ© <?=$ate?>  (Centralizado no Ã‰der) </p>
 <table border="1" cellpadding="0" cellspacing="0">
   <tr>
     <td  valign="top" bgcolor="silver">Chamado</td>
@@ -311,7 +311,7 @@ ultimos 12 meses, de <?=$deUltimos12?> até <?=$ate?>  (Centralizado no Éder) </p
     <td align="center"  valign="middle"><?=$soma?></td>
   </tr>
 </table>
-<p>Contatos por pessoa Qualidade (Eneas) </p>
+<p>Contatos por pessoa Qualidade (Eneas/Diogo) </p>
 <table border="1" cellpadding="0" cellspacing="0">
   <tr>
     <td width="249"  valign="top" bgcolor="silver">Nome</td>
@@ -341,7 +341,7 @@ ultimos 12 meses, de <?=$deUltimos12?> até <?=$ate?>  (Centralizado no Éder) </p
 </table>
 
 
-<p>Contatos por Sistema Qualidade (Eneas) </p>
+<p>Contatos por Sistema Qualidade (Eneas/Diogo) </p>
 <table border="1" cellpadding="0" cellspacing="0">
   <tr>
     <td width="249"  valign="top" bgcolor="silver">Nome</td>
@@ -402,7 +402,7 @@ ultimos 12 meses, de <?=$deUltimos12?> até <?=$ate?>  (Centralizado no Éder) </p
 </table>
 <p>&nbsp;</p>
 
-Chamados com diagnóstico de "ERRO DE PROGRAMA: Cliente ou Interno", alterado entre <?=dataOk($de)?> e <?=dataOk($ate)?>
+Chamados com diagnÃ³stico de "ERRO DE PROGRAMA: Cliente ou Interno", alterado entre <?=dataOk($de)?> e <?=dataOk($ate)?>
 
 <table border="1" cellpadding="0" cellspacing="0">
   <tr>

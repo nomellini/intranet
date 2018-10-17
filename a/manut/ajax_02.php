@@ -1,4 +1,4 @@
-<?php require_once('../../Connections/sad.php'); ?>
+<?php require_once('../scripts/conn.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
@@ -33,9 +33,9 @@ $colname_rcCliente = "-1";
 if (isset($_GET['id_cliente'])) {
   $colname_rcCliente = (get_magic_quotes_gpc()) ? $_GET['id_cliente'] : addslashes($_GET['id_cliente']);
 }
-mysql_select_db($database_sad, $sad);
+
 $query_rcCliente = sprintf("SELECT cliente_id as cliente FROM chamado WHERE cliente_id = %s limit 1", GetSQLValueString($colname_rcCliente, "text"));
-$rcCliente = mysql_query($query_rcCliente, $sad) or die(mysql_error());
+$rcCliente = mysql_query($query_rcCliente) or die(mysql_error());
 $row_rcCliente = mysql_fetch_assoc($rcCliente);
 $totalRows_rcCliente = mysql_num_rows($rcCliente);
 
@@ -43,14 +43,14 @@ $colname_rsChamados = "-1";
 if (isset($_GET['id_cliente'])) {
   $colname_rsChamados = (get_magic_quotes_gpc()) ? $_GET['id_cliente'] : addslashes($_GET['id_cliente']);
 }
-mysql_select_db($database_sad, $sad);
+
 $query_rsChamados = sprintf("SELECT count(*) as qtde FROM chamado WHERE cliente_id = %s", GetSQLValueString($colname_rsChamados, "text"));
-$rsChamados = mysql_query($query_rsChamados, $sad) or die(mysql_error());
+$rsChamados = mysql_query($query_rsChamados) or die(mysql_error());
 $row_rsChamados = mysql_fetch_assoc($rsChamados);
 $totalRows_rsChamados = mysql_num_rows($rsChamados);
 
 if ($totalRows_rcCliente==0) {
-  $html = $id_cliente . ' não encontrado ';
+  $html = $id_cliente . ' nÃ£o encontrado ';
 } else  {
   $html = $row_rcCliente['cliente'] . ' - ' . $row_rsChamados['qtde'] . ' chamados';
 } 

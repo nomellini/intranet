@@ -43,7 +43,7 @@
 	
 	mysql_query($sql) or die (mysql_error());
 	
-	slack_publish("@fnomellini", $id_chamado, $Chamado, "Datamace [Express]");
+	slack_publish("@fnomellini", $id_chamado, $Chamado, "Datamace");
 	
 	
 	// Mandar email:	

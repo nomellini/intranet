@@ -210,10 +210,10 @@ Atenciosamente,
 Consultoria Datamace";
 
 		$email_destinatario = PegaEmailUsuario($id_destinatario);
-		mail2($email_destinatario, "SAD: Encerramento Autom�tico: $id_chamado ", $msg, "SAD");
+		mail2($email_destinatario, "SAD: Encerramento Automático: $id_chamado ", $msg, "SAD");
 
 		$email_destinatario = $objChamado->email;
-		mail2($email_destinatario, "SAD: Encerramento Autom�tico: $id_chamado ", $msg, "SAD");
+		mail2($email_destinatario, "SAD: Encerramento Automático: $id_chamado ", $msg, "SAD");
 
 		$objContato->gravaContato();
 		$objChamado->gravaChamado();
@@ -848,7 +848,7 @@ function conn_PegaAguardandoChamado($pChamado)
 
 		$esperoStatus = pegaStatusDoChamado($espero);
 
-		$result = "<p style=\"text-align:center; padding:0; margin:0; border:1px solid #cccccc;\">Este chamado depende do chamado <a href=historicochamado.php?id_chamado=".$espero." target=\"_blank\">".number_format($espero,0,',','.')." ($esperoStatus)</a> para ser conclu�do<br></p>";
+		$result = "<p style=\"text-align:center; padding:0; margin:0; border:1px solid #cccccc;\">Este chamado depende do chamado <a href=historicochamado.php?id_chamado=".$espero." target=\"_blank\">".number_format($espero,0,',','.')." ($esperoStatus)</a> para ser concluído<br></p>";
 	} else {
 		$result = "";
 	}
@@ -3030,7 +3030,6 @@ function mail2($_recipient, $_subject, $_msg, $_headers) {
 	}
 
 
-	$headers["Content-type"] = "text/html; charset=utf-8";
 
 	if (!$_headers) {
 		$headers["From"]    = "suporte@datamace.com.br";
@@ -3083,13 +3082,14 @@ function mail2($_recipient, $_subject, $_msg, $_headers) {
 	}
 
 
-
+	$_headers["Content-type"] = "text/html; charset=utf-8";
 
 	require_once('mailclass.inc.php');
 	$cc_email = '';
 	$cc_nome = '';
 	$retorno = '';
 	$mailer = new FreakMailer();
+	$mailer->CharSet = "utf-8";
 	$mailer->IsHTML(true);
 	$mailer->SetLanguage('br','../a/scripts/language/');
 	$mailer->Subject = $_subject;
@@ -3099,12 +3099,15 @@ function mail2($_recipient, $_subject, $_msg, $_headers) {
 
 	$mailer->AddAddress("$_recipient", "$_recipient");
 
+
 	if ($_ReplyName) {
 		$mailer->AddReplyTo($_ReplyMail,$_ReplyName);
 	}
 	if (trim($cc_email)) {
 		$mailer->AddCC("$cc_email", "$cc_nome");
 	}
+
+
 
 	$LastId = Log_Email($_recipient, $_subject, $_msg, $_headers, $_ReplyMail, $_ReplyName);
 
@@ -3120,8 +3123,6 @@ function mail2($_recipient, $_subject, $_msg, $_headers) {
 		$ok = 's';
 		conn_AtualizaStatusEmail($LastId, "");
 	}
-
-
 
 	$mailer->ClearAddresses();
 	$mailer->ClearAttachments();

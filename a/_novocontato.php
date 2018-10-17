@@ -325,8 +325,8 @@
 <?
     $s = 0;
 	/*
-	  Aten��o � linha abaixo.
-	  Quando o usu�rio foi 1 (Edson) SEMPRE ser� Origem = 7 (Encaminhamento Interno)
+	  Atenção linha abaixo.
+	  Quando o usuúrio foi 1 (Edson) SEMPRE será Origem = 7 (Encaminhamento Interno)
 	*/
 	if ($ok == 1) { $s=7; }
 	$sistema = pegaOrigens();
@@ -543,7 +543,7 @@
                   <td>
 <?
 
-						// Nem sempre o dono do chamado faz parte da lista de contatos do usu�rio atual....
+						// Nem sempre o dono do chamado faz parte da lista de contatos do usuário atual....
 						$BloquearDiretoParaDono = "";
 						$DonoDoChamado = connPegaDonoDoChamado($id_chamado);
 				  		$DonoEmFerias = $DonoDoChamado["Ferias"];

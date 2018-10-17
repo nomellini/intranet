@@ -2,64 +2,64 @@
 /*
   Arquivo      : /a/adm/index.php
   Autor        : Fernando Nomellini
-  Data Criaï¿½ï¿½o : 29/01/2005
-
+  Data Criação : 29/01/2005
+  
   Data das
-  Alteraï¿½ï¿½es   : 08/02/2005
+  Alterações   : 08/02/2005
+  
+  Obs :  
+  Deverá ser criada uma tabela para indicar o status do cliente, 
+  se ele está em pós-venda ou não. Não devo criar um campo na tabela de clientes, 
+  pois a tabela de clientes é recriada constantemente pelo DIP e com isso qualquer 
+  informação que o sad alterar nesta tabela seria sobreposta. 
+  
+  Não é possível analisar o status do pós-venda somente olhando se tem um chamado 
+  pós-venda, pois, se eu não permitir abrir um novo chamado com cliente em pós-venda, 
+  e se esta verificação é feita vendo se tem um chamado de pós-venda, então, 
+  o cliente nunca sairá do pós-venda, pois nunca iria se conseguir abrir um novo 
+  chamado para sair do pós-venda. 
 
-  Obs :
-  Deverï¿½ ser criada uma tabela para indicar o status do cliente,
-  se ele estï¿½ em pï¿½s-venda ou nï¿½o. Nï¿½o devo criar um campo na tabela de clientes,
-  pois a tabela de clientes ï¿½ recriada constantemente pelo DIP e com isso qualquer
-  informaï¿½ï¿½o que o sad alterar nesta tabela seria sobreposta.
-
-  Nï¿½o ï¿½ possï¿½vel analisar o status do pï¿½s-venda somente olhando se tem um chamado
-  pï¿½s-venda, pois, se eu nï¿½o permitir abrir um novo chamado com cliente em pï¿½s-venda,
-  e se esta verificaï¿½ï¿½o ï¿½ feita vendo se tem um chamado de pï¿½s-venda, entï¿½o,
-  o cliente nunca sairï¿½ do pï¿½s-venda, pois nunca iria se conseguir abrir um novo
-  chamado para sair do pï¿½s-venda.
-
-  Deve-se portanto, se criar uma tela em que seja possï¿½vel alterar o status
-  do cliente para indicar se o mesmo estï¿½ ou nï¿½o em Pï¿½s-venda. Caso o cliente
-  estiver em pï¿½s-venda, sï¿½ serï¿½ possï¿½vel abrir chamado pela administraï¿½ï¿½o
-
-  Quando o cliente for definido como fora do pï¿½s-venda, os chamados serï¿½o liberados para
+  Deve-se portanto, se criar uma tela em que seja possível alterar o status 
+  do cliente para indicar se o mesmo está ou não em Pós-venda. Caso o cliente 
+  estiver em pós-venda, só será possível abrir chamado pela administração 
+  
+  Quando o cliente for definido como fora do pós-venda, os chamados serão liberados para 
   abertura.
-
-  A Tabela ClientePlus contï¿½m um campo chamado fl_posvenda boolean
-
+  
+  A Tabela ClientePlus contém um campo chamado fl_posvenda boolean
+  
   Todo registro da tabela cliente deve ter um correspondente na tabela ClientePlus.
-  Um bom lugar para verificar isso ï¿½ em /a/manut/backup.php, logo apï¿½s a importaï¿½ï¿½o dos clientes.
-
+  Um bom lugar para verificar isso é em /a/manut/backup.php, logo após a importação dos clientes.
+  
   clisis:
-
+  
   fl_posvenda - Indica se o cliente esta em pos vend aou nao
   ------------
   10 - Cliente Novo
-  0 - Fora de pï¿½s venda.
-  1 - Cliente em pï¿½s venda
-
-  data_inicio = Data em que o cliente foi incluï¿½do no sistema
-  data_inicioposvenda - Data em que o cliente foi inclupido no pï¿½s venda
-  data_fimposvenda - Data em que o cliente foi retirado do pï¿½s venda
-
+  0 - Fora de pós venda.
+  1 - Cliente em pós venda
+  
+  data_inicio = Data em que o cliente foi incluído no sistema
+  data_inicioposvenda - Data em que o cliente foi inclupido no pós venda
+  data_fimposvenda - Data em que o cliente foi retirado do pós venda
+     
 */
 	require("../scripts/conn.php");
-	require("../scripts/classes.php");
+	require("../scripts/classes.php");	
 	if ( isset($id_usuario) ) {
-		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );
+		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );	  
 		if ($ok<>$id_usuario) { header("Location: index.php"); }
-		$nomeusuario=peganomeusuario($ok);
-		setcookie("loginok");
+		$nomeusuario=peganomeusuario($ok);	
+		setcookie("loginok");  
 	} else {
 		header("Location: index.php");
 	}
+	
 
 
-
-
+  
   function insereClientePlus($AId_cliente, $ACliente) {
-    $datae = date("Y-m-d");
+    $datae = date("Y-m-d");  
     $CST_NOVOCLIENTE=10;
     $lStr = "insert into clienteplus (id_cliente, cliente, fl_posvenda, data_inicio) values ";
 	$lStr .= "('$AId_cliente', '$ACliente', $CST_NOVOCLIENTE, '$datae') ";
@@ -72,21 +72,21 @@
     $id_cliente = $linhaCliente->id_cliente;
 	$cliente = $linhaCliente->cliente;
     $clientePlus = mysql_query("select id_cliente from clienteplus where id_cliente = '$id_cliente'");
-    if (!$linhaPlus = mysql_fetch_object($clientePlus) ) {
+    if (!$linhaPlus = mysql_fetch_object($clientePlus) ) {      
 	  insereClientePlus($id_cliente, $cliente);
      }
   }
 
 
-$datae = date("Y-m-d");
+$datae = date("Y-m-d");  
 
 if ($acao == 'novos') {
  $lQtdeClientes = count($frm_id_NovoCliente);
  for ($i=0; $i < $lQtdeClientes; $i++) {
    $lIdCliente = $frm_id_NovoCliente[$i];
    $lSql = "update clienteplus set fl_posvenda = 1, data_inicioposvenda='$datae' where id_cliente = '$lIdCliente'";
-   mysql_query($lSql);
- }
+   mysql_query($lSql);   
+ } 
 }
 
 if ($acao == 'tirarposvenda') {
@@ -94,23 +94,23 @@ if ($acao == 'tirarposvenda') {
  for ($i=0; $i < $lQtdeClientes; $i++) {
    $lIdCliente = $frm_Id_ClientePosVenda[$i];
    $lSql = "update clienteplus set fl_posvenda = 0, data_fimposvenda='$datae'  where id_cliente = '$lIdCliente'";
-   mysql_query($lSql);
- }
+   mysql_query($lSql);   
+ } 
 } else if ($acao == 'colocarposvenda') {
  $lQtdeClientes = count($frm_Id_NovoClientePosVenda);
  for ($i=0; $i < $lQtdeClientes; $i++) {
    $lIdCliente = $frm_Id_NovoClientePosVenda[$i];
    $lSql = "update clienteplus set fl_posvenda = 1, data_inicioposvenda='$datae'  where id_cliente = '$lIdCliente'";
-   mysql_query($lSql);
- }
+   mysql_query($lSql);   
+ } 
 }
 
 ?>
 <html>
 <head>
 <script src="../coolbuttons.js"></script>
-<title>Administraï¿½ï¿½o SAD</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Administração SAD</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="../scripts/stilos.css" type="text/css">
 <link rel="stylesheet" href="../stilos.css" type="text/css">
 <style type="text/css">
@@ -129,15 +129,15 @@ if ($acao == 'tirarposvenda') {
 <img src="../figuras/topo_sad_e_900.jpg" width="900" height="79" >
 
 <table width="100%" border="0" cellspacing="1" cellpadding="1" class="coolBar">
-  <tr align="center">
+  <tr align="center"> 
     <td width="61" class="coolButton" valign="middle" align="center"><a href="javascript:history.go(-1)"><img src="../figuras/voltar.gif" width="20" height="20" align="absmiddle" border="0">voltar</a></td>
     <td width="69" class="coolButton"><a href="../index.php?novologin=true"><img src="../figuras/logout.gif" width="20" height="20" align="absmiddle" border="0">Logout</a></td>
     <td width="82" class="coolButton"><a href="/a/relatorios/"><img src="../figuras/relat.gif" width="20" height="20" align="absmiddle" border="0">relat&oacute;rios</a></td>
-    <td width="115" class="coolButton"><img src="../figuras/senha.gif" width="20" height="20" align="absmiddle"><a href="../trocasenha.php">Alterar
+    <td width="115" class="coolButton"><img src="../figuras/senha.gif" width="20" height="20" align="absmiddle"><a href="../trocasenha.php">Alterar 
       Senha</a> </td>
-    <td width="129" class="coolButton"><a href="../inicio.php"><img src="../figuras/home.gif" width="20" height="20" align="absmiddle" border="0">voltar
+    <td width="129" class="coolButton"><a href="../inicio.php"><img src="../figuras/home.gif" width="20" height="20" align="absmiddle" border="0">voltar 
       ao in&iacute;cio</a></td>
-    <td width="259" class="coolButton"><a href="/agenda/" target="_blank">Agenda
+    <td width="259" class="coolButton"><a href="/agenda/" target="_blank">Agenda 
       Corporativa Datamace</a></td>
   </tr>
 </table>
@@ -172,10 +172,10 @@ if ($acao == 'tirarposvenda') {
     <?
   $lSql = "select id_cliente, cliente from ";
   $lSql .= "clienteplus ";
-  $lSql .= "where (id_cliente like '$txtPesquisa*') or (cliente like '%$txtPesquisa%');";
+  $lSql .= "where (id_cliente like '$txtPesquisa*') or (cliente like '%$txtPesquisa%');"; 
 
   $clientes = mysql_query($lSql) or Die ($lSql);
-
+  
   while ( $linhaCliente = mysql_fetch_object($clientes) ) {
     $id_cliente = $linhaCliente->id_cliente;
 	$cliente = $linhaCliente->cliente;
@@ -195,12 +195,12 @@ if ($acao == 'tirarposvenda') {
       *Selecione os clientes resultantes da pesquisa e clique em OK para coloca-los em p&oacute;s venda. </td>
     </tr>
   </table>
-
+ 
   <br>
   <?
 }
   ?>
-
+  
   <table width="80%"  border="0" cellpadding="1" cellspacing="1" bgcolor="#000000" id="tblClientes" summary="Tabela que mostra quais clientes s&atilde;o novos. Pede para determinar quais deles ser&atilde;o p&oacute;s-venda e quais n&atilde;o ser&atilde;o.">
   <caption>
   Clientes em P&oacute;s-Venda.
@@ -213,17 +213,17 @@ if ($acao == 'tirarposvenda') {
   <?
   $lSql = "select id_cliente, cliente, data_inicioposvenda  from ";
   $lSql .= "clienteplus ";
-  $lSql .= "where (clienteplus.fl_posvenda = 1);";
+  $lSql .= "where (clienteplus.fl_posvenda = 1);"; 
 
   $clientes = mysql_query($lSql) or Die ($lSql);
-
+  
   while ( $linhaCliente = mysql_fetch_object($clientes) ) {
     $id_cliente = $linhaCliente->id_cliente;
 	$cliente = $linhaCliente->cliente;
 	$data = $linhaCliente->data_inicioposvenda;
 	$data = explode('-', $data);
 	$datainicio = "$data[2]/$data[1]/$data[0]"
-
+	
 ?>
   <tr bgcolor="#FFFFFF">
     <td width="120" align="center" valign="middle">
@@ -240,7 +240,7 @@ if ($acao == 'tirarposvenda') {
   </tr>
 </table>
 <br>
-<table width="80%"  border="0" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC" id="tblClientes" summary="Tabela que mostra quais clientes sï¿½o novos. Pede para determinar quais deles serï¿½o pï¿½s-venda e quais nï¿½o serï¿½o.">
+<table width="80%"  border="0" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC" id="tblClientes" summary="Tabela que mostra quais clientes são novos. Pede para determinar quais deles serão pós-venda e quais não serão.">
   <caption>
   Novos clientes.
   </caption>
@@ -248,29 +248,29 @@ if ($acao == 'tirarposvenda') {
     <td width="120" align="center" valign="middle"><span class="style4">P&oacute;s venda </span></td>
     <td><span class="style4">Cliente [Data cadastro do cliente no sistema] </span></td>
   </tr>
-
+  
 <?
   $lSql = "select id_cliente, cliente, data_inicio from ";
   $lSql .= "clienteplus ";
   $lSql .= "where (clienteplus.fl_posvenda = 10);";
-
+  
 
   $clientes = mysql_query($lSql) or Die ($lSql);
-
+  
   while ( $linhaCliente = mysql_fetch_object($clientes) ) {
     $id_cliente = $linhaCliente->id_cliente;
 	$cliente = $linhaCliente->cliente;
 	$data = $linhaCliente->data_inicio;
 	$data = explode('-', $data);
 	$datainicio = "$data[2]/$data[1]/$data[0]"
-?>
-
+?>  
+  
   <tr bgcolor="#FFFFFF">
     <td width="120" align="center" valign="middle">
       <input name="frm_id_NovoCliente[]" type="checkbox" id="frm_id_NovoCliente[]" value="<?=$id_cliente?>">    </td>
     <td><?="$cliente ('$id_cliente')  [$datainicio]" ?></td>
   </tr>
-
+  
 <?
 }
 ?>

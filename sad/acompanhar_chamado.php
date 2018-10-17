@@ -14,7 +14,7 @@
 <html>
 <head>
 
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>SAD - Sistema de Atendimento Datamace</title>
 
 
@@ -188,7 +188,7 @@ $xdata = date("Y-m-d",$xdata);
 <td width="59" align="left" style="padding-left: 20px;">   
 				<select name="select3" class="textField" onChange="location.href('acompanhar_chamado.php?pagina=<?echo $_GET['pagina'];?>&pag=<?echo $_GET['pag'];?>&select='+this.options[this.selectedIndex].value)">
 				<option value="<?echo $_GET['select'];?>"> <?$select=$_GET['select']; if($select==""){ echo "Selecione!"; } else { echo $select;}?> </option>
-				<option value="numero"> Número </option>
+				<option value="numero"> N&uacute;mero </option>
 				<option value="Criado em"> Criado em </option>
 				<option value="Atualizado em"> Atualizado em  </option>
 				<option value="Assunto"> Assunto  </option>
@@ -470,10 +470,9 @@ echo $descricao;?></td>
 	
 	$strSql = "select * from chamado where  visible = 1 and sistema_id != 1024 and cliente_id='$v_id_cliente' and status=2  and dataa >= '$xdata' order by dataa desc, horaa desc";
 //	$strSql = "select * from chamado where cliente_id='$v_id_cliente' and externo=1 and status=2  and dataa >= '$xdata' order by dataa desc, horaa desc";
+
   
-	$sql = mysql_query($strSql);
-
-
+$sql = mysql_query($strSql);
 while($reg7= mysql_fetch_assoc($sql)){
 $numero=$reg7['id_chamado'];
 $data=$reg7['dataa'];

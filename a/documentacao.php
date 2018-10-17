@@ -1,41 +1,41 @@
 <?
 	require("cabeca.php");
-
+	
 
 	if ($_POST["action"] == "gravar")
 	{
-		$Text_Atual = $_POST["documentacao"];
-
+		$Text_Atual = $_POST["documentacao"];		
+		
 		$Text_Atual = mysql_escape_string ($Text_Atual);
-
-
+		
+		
 		$sql = "insert into chamado_documentacao (id_chamado, documentacao, DataHora, id_usuario) values ($id_chamado, '$Text_Atual', '$Data_Atual $Hora_Atual', $ok)";
         conn_ExecuteNonQuery($sql);
-		$sql = "update chamado set documentacao = '$Text_Atual' where id_chamado = $id_chamado";
+		$sql = "update chamado set documentacao = '$Text_Atual' where id_chamado = $id_chamado";				
 		conn_ExecuteNonQuery($sql);
 	}
-
+	
 	$Area = pegaArea($ok);
-	$PodeEditar = ($Area == 2) || ($Area == 3) ||($Area == 11) ;
-	$descricao_chamado = conn_ExecuteScalar("select left(descricao, 100) des from chamado where id_chamado = $id_chamado");
+	$PodeEditar = ($Area == 2) || ($Area == 3) ||($Area == 11) ;	
+	$descricao_chamado = conn_ExecuteScalar("select left(descricao, 100) des from chamado where id_chamado = $id_chamado");		
 	$sql = "select documentacao from chamado where id_chamado = $id_chamado";
+			
+	$text = conn_ExecuteScalar($sql);	
 
-	$text = conn_ExecuteScalar($sql);
-
-	$Label = "Criar documenta��o";
+	$Label = "Criar documentação";
 	if ($text != "")
 	{
-		$Label = "Editar documenta��o";
+		$Label = "Editar documentação";
 		$descricao = preg_replace('/\s\s+/', ' ', $text);
-		$descricao = preg_replace("/(\[)([0-9]{0,3})([.])?([0-9]{0,3})(\])/", '<a href="historicochamado.php?id_chamado=$2$4" target="_blank">$2$3$4</a>', $descricao);
-		$text = str_replace(array("\n", "\r"), array('\n', '\r'), $descricao );
+		$descricao = preg_replace("/(\[)([0-9]{0,3})([.])?([0-9]{0,3})(\])/", '<a href="historicochamado.php?id_chamado=$2$4" target="_blank">$2$3$4</a>', $descricao);						
+		$text = str_replace(array("\n", "\r"), array('\n', '\r'), $descricao ); 		
 		$text = str_replace("\"", "'", $text);
-		$text = str_replace("\\", "\\\\", $text);
-	} else {
-		$descricao = "Chamado sem documenta��o<br><br>";
+		$text = str_replace("\\", "\\\\", $text);		
+	} else {	
+		$descricao = "Chamado sem documentação<br><br>";
 		if ($PodeEditar)
 		{
-			$descricao .= "Clique em <b>Criar documenta��o</b> para come�ar";
+			$descricao .= "Clique em <b>Criar documentação</b> para começar";
 		}
 	}
 
@@ -44,7 +44,7 @@
 <!doctype html>
 <html>
 <head>
-<script src="../scripts/jquery-1.4.2.js"></script>
+<script src="../scripts/jquery-1.4.2.js"></script>		
 <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Documenta&ccedil;&atilde;o para o chamado <?=$id_chamado?></title>
@@ -56,23 +56,23 @@
 <?= $descricao_chamado?>
 <hr size=1px>
 <div id="ver" style="display:">
-  <strong>Documenta��o</strong>:<br><br>
+  <strong>Documentação</strong>:<br><br>
   <div id="text" >
     <?=$descricao?>
   </div>
-
+  
 <?
 		if ($PodeEditar)
 		{
-?>
+?>			
 	<hr size=1px>
   <input type="button" value="<?=$Label?>" onClick="startEdit()">
 
 <?
 		}
 ?>
-
-
+  
+  
 </div>
 
 
@@ -83,7 +83,7 @@
     <textarea name="documentacao" cols="120" rows="20" style="width:100%"><?=$texto?>
     </textarea> <br>
     <input type="submit" name="gravar" value="gravar" id="Gravar">
-    <input type="hidden" name="horaa" value="00:00:00">
+    <input type="hidden" name="horaa" value="00:00:00">    
     <input type="hidden" name="action" value="gravar">
      <input type="hidden" name="id_chamado" value="<?=$id_chamado?>">
   </form>
@@ -98,59 +98,59 @@
 
 	$("#ver").children("p").select();
 
-	var CKEDITOR_T = '';
+	var CKEDITOR_T = ''; 
 	var CKEDITOR_H = '';
 
     function startEdit() {
 
-		$("#ver").hide();
-		$("#editar").show();
+		$("#ver").hide();	
+		$("#editar").show();	
 
 		CKEDITOR.replace( 'documentacao',
 			{
-				extraPlugins: 'colorbutton,justify,smiley,horizontalrule,autogrow',
+				extraPlugins: 'colorbutton,justify,smiley,horizontalrule,autogrow',			
 				on: { 'instanceReady': function(evt) {
-					CKEDITOR.instances.documentacao.focus();
+					CKEDITOR.instances.documentacao.focus();			
 				   }
 				},
 				language: 'pt-br',
-				setFocusOnStartup : true,
-				enterMode		: 2,
-				toolbar :
-				[
+				setFocusOnStartup : true,			
+				enterMode		: 2,            
+				toolbar : 
+				[	
 					{ name: 'clipboard', items: ['Cut', 'Copy', 'Paste'] },
 					{ name: 'text', items: ['Bold', 'Italic', 'Underline' ]} ,
-					{ name: 'colors', items: ['TextColor','BGColor']} ,
-
-					[ 'Table', '-',
+					{ name: 'colors', items: ['TextColor','BGColor']} ,				
+	
+					[ 'Table', '-', 
 					  'JustifyLeft','JustifyCenter','JustifyRight', 'HorizontalRule', '-',
-					  'Smiley', '-',
-					  'NumberedList', 'BulletedList', '-',
+					  'Smiley', '-', 
+					  'NumberedList', 'BulletedList', '-', 
 					  'Link', 'Unlink']
 				]
-
+	
 			});
-
+			
 		editor_data = "<?=$text?>";
 		CKEDITOR.instances.documentacao.setData(editor_data);
-
+			
 		setInterval(saveDraft, 1000);
 	}
-
+		
 function saveDraft() {
-
-
+		
+		
 		if (CKEDITOR.instances.documentacao.getData() != "") {
-
-			if ( (document.form1.horaa.value != CKEDITOR_H) ||
+			
+			if ( (document.form1.horaa.value != CKEDITOR_H) || 
 				 (CKEDITOR.instances.documentacao.getData() != CKEDITOR_T)){
-
+			
 				CKEDITOR_T = CKEDITOR.instances.documentacao.getData();
 				CKEDITOR_H = document.form1.horaa.value;
-
-				$("#gravando").show();
+	
+				$("#gravando").show();		
 				$("#gravando").text("Gravando...");
-
+				
 				$.ajax({
 					type: "POST",
 					url: "SaveDraft_documentacao.php",
@@ -167,8 +167,8 @@ function saveDraft() {
 				});
 			}
 		}
-
-	}
+		
+	}			
 
 
 

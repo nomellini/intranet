@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>SAD - Sistema de Atendimento Datamace</title>
  <link rel="stylesheet" href="include/css.css">
  <script type="text/javascript" language="javascript" src="include/tree.js"></script>
@@ -161,9 +161,9 @@ MM_preloadImages('img/bt_salvar_over.gif');
 		d.add(3,2,'<a onmousemove=mouseover("7"); onMouseOut=mouseout(); href="acompanhar_chamado.php?pagina=1&pag=1"> Acompanhar Chamado </a>');
 		d.add(5,3,'<a onmousemove=mouseover("8"); onMouseOut=mouseout(); href="acompanhar_encerrados.php?pagina=1&pag=2"> Chamados Encerrados </a>');
 		d.add(6,1,'<a onmousemove=mouseover("2"); onMouseOut=mouseout(); href="enviar_arquivo.php"> Enviar Arquivo <img src="img/icone_menu_enviararquivo.gif"/></a>');
-		d.add(7,1,'<a onmousemove=mouseover("3"); onMouseOut=mouseout(); href="usuarios_treinados.php"> Usuários Treinados <img src="img/icone_menu_usuarioscadastrados.gif"/></a>');
-		d.add(8,1,'<a onmousemove=mouseover("4"); onMouseOut=mouseout(); href="acompanhar_calendario.php?data=<?echo date('d/m/Y');?>&evento=1"> Calendário <img src="img/icone_menu_calendario.gif"/> </a>');
-		d.add(9,1,'<a onmousemove=mouseover("5"); onMouseOut=mouseout(); href="estatisticas_sla.php"> Estatística SLA <img src="img/icone_menu_estatisticasla.gif"/></a>');
+		d.add(7,1,'<a onmousemove=mouseover("3"); onMouseOut=mouseout(); href="usuarios_treinados.php"> UsuÃ¡rios Treinados <img src="img/icone_menu_usuarioscadastrados.gif"/></a>');
+		d.add(8,1,'<a onmousemove=mouseover("4"); onMouseOut=mouseout(); href="acompanhar_calendario.php?data=<?echo date('d/m/Y');?>&evento=1"> CalendÃ¡rio <img src="img/icone_menu_calendario.gif"/> </a>');
+		d.add(9,1,'<a onmousemove=mouseover("5"); onMouseOut=mouseout(); href="estatisticas_sla.php"> EstatÃ­stica SLA <img src="img/icone_menu_estatisticasla.gif"/></a>');
 
 			document.write(d);
 		//-->
@@ -261,14 +261,14 @@ function mouseover(x)
 
 		*/
 
-		if (x == 1) {var resp = "Aqui você abre um chamado para reportar um erro<br>ou acompanha um chamado.";}
-		else if (x == 2) {var resp = "Aqui você envia um arquivo para<br>um chamado existente.";}
-		else if (x == 3) {var resp = "Aqui você visualiza os<br>usuários cadastrados.";}
-		else if (x == 4) {var resp = "Aqui você acompanha o calendário.";}
-		else if (x == 5) {var resp = "Aqui você visualiza a estatística.";}
-		else if (x == 6) {var resp = "Aqui você abre um chamado.";}
-		else if (x == 7) {var resp = "Aqui você acompanha um chamado.";}
-		else if (x == 8) {var resp = "Aqui você acompanha os chamados encerrados.";}
+		if (x == 1) {var resp = "Aqui vocÃª abre um chamado para reportar um erro<br>ou acompanha um chamado.";}
+		else if (x == 2) {var resp = "Aqui vocÃª envia um arquivo para<br>um chamado existente.";}
+		else if (x == 3) {var resp = "Aqui vocÃª visualiza os<br>usuÃ¡rios cadastrados.";}
+		else if (x == 4) {var resp = "Aqui vocÃª acompanha o calendÃ¡rio.";}
+		else if (x == 5) {var resp = "Aqui vocÃª visualiza a estatÃ­stica.";}
+		else if (x == 6) {var resp = "Aqui vocÃª abre um chamado.";}
+		else if (x == 7) {var resp = "Aqui vocÃª acompanha um chamado.";}
+		else if (x == 8) {var resp = "Aqui vocÃª acompanha os chamados encerrados.";}
 		else {var resp = x;}
 
 

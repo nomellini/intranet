@@ -1,4 +1,4 @@
- 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 <link rel="stylesheet" href="/a/stilos.css" type="text/css">
 <?
     require("../scripts/conn.php");	
@@ -14,7 +14,7 @@
     $atendimento = $tmp["atendimento"];	
 
     if(!$datai) {
-       $datai = date("d/m/Y", time()-( 86400*365 ) );  // 86400 = numero de segundos em um dia, 365 = 1 ano atrás
+       $datai = date("d/m/Y", time()-( 86400*365 ) );  // 86400 = numero de segundos em um dia, 365 = 1 ano atrÃ¡s
 	}
 	
 	$hoje = date("d/m/Y");	
@@ -38,7 +38,7 @@
 	  $limite * 3,                    // Limite
 	  $palavra,
 	  $sistema,
-	  $diagnostico, '', 0);	
+	  $diagnostico, '', 0, 0, 0, 0);	
 
 	$chamados = statChamados( $o, 
 	  $consultor, 
@@ -53,28 +53,15 @@
 	  $limite,
 	  $enc,
 	  $palavra,
-	  $sistema, 0, 0, 0, 0 , 0);	
+	  $sistema, 0, 0, 0, 0 , 0, 0, 0);	
 	
 ?>
 <title>base</title>
 <link href="../stilos.css" rel="stylesheet" type="text/css" />
 <div align="center"> 
   <p><b><font color="#0000FF">S.A.D.</font></b> <br>
+
   
-  
-  <div id="lista">
-  
-    <font size="1"> (&uacute;ltimos 
-    <select name="qtde" class="borda_fina"  onchange="vai()" >
-      <option value="10" <?php if (!(strcmp(10, $limite))) {echo "selected=\"selected\"";} ?>>10</option>
-      <option value="20" <?php if (!(strcmp(20, $limite))) {echo "selected=\"selected\"";} ?>>20</option>
-      <option value="30" <?php if (!(strcmp(30, $limite))) {echo "selected=\"selected\"";} ?>>30</option>
-      <option value="40" <?php if (!(strcmp(40, $limite))) {echo "selected=\"selected\"";} ?>>40</option>
-      <option value="50" <?php if (!(strcmp(50, $limite))) {echo "selected=\"selected\"";} ?>>50</option>
-      <option value="0" <?php if (!(strcmp(0, $limite))) {echo "selected=\"selected\"";} ?>>Todos</option>
-    </select> 
-    chamados)</font>
-	</div>
 	</p>
 </div>
 <table width="100%" border="0" cellspacing="1" cellpadding="1" class="tabelaBorda">

@@ -2,7 +2,7 @@
 //Autor: Lucas Oliveira Silva
 //Data: 02/10/09
 //Local: Datamace
-//Função: inicializa variáveis, carrega funções, verifica usuário...
+//Funçao: inicializa variáveis, carrega funçoes, verifica usuário...
 
 error_reporting (E_ALL ^ E_NOTICE ) ;
 
@@ -10,11 +10,12 @@ session_start();
 
 require_once("../a/scripts/conn.php");
 
+
 mysql_select_db(sad);
 if ($v_id_usuario) $USRNOME = peganomeusuario($v_id_usuario);
 mysql_select_db(treinamento);
 
-$USER_EXTERNAL = ""; //No caso de usuário externo, não consigo pegar o IP de cada máquina sempre. As vezes vem somente o IP do servidor. isto depende da estrutura do servidor.
+$USER_EXTERNAL = ""; //No caso de usuário externo, nao consigo pegar o IP de cada máquina sempre. As vezes vem somente o IP do servidor. isto depende da estrutura do servidor.
 if ($_SERVER['SERVER_NAME'] == "intranet.datamace.com.br")
 {
 	if ($ExternoPermitido != "S")
@@ -74,14 +75,14 @@ $aConceitoAval['1'] = 'ÓTIMO';
 $aConceitoAval['2'] = 'BOM';
 $aConceitoAval['3'] = 'REGULAR';
 $aConceitoAval['4'] = 'RUIM';
-$aConceitoAval['5'] = 'NÃO SE APLICA';
+$aConceitoAval['5'] = 'NAO SE APLICA';
 
 $Provanro['1'] = 'Primeira';
 $Provanro['2'] = 'Segunda';
 
 $aSN		= array();
 $aSN['S']	= 'Sim';
-$aSN['N']	= 'Não';
+$aSN['N']	= 'Nao';
 
 $aConceito		= array();
 $aConceito[0]	= 'Reprovado';
@@ -90,15 +91,15 @@ $aConceito[2]	= 'Operador';
 $aConceito[3]	= 'Adm';
 
 $aConceitoDesc		= array();
-$aConceitoDesc[0]	= 'Não pode operar o sistema';
-$aConceitoDesc[1]	= 'Conhecimentos básicos para operação do sistema';
+$aConceitoDesc[0]	= 'Nao pode operar o sistema';
+$aConceitoDesc[1]	= 'Conhecimentos básicos para operaçao do sistema';
 $aConceitoDesc[2]	= 'Operador do sistema';
 $aConceitoDesc[3]	= 'Administrador do sistema';
 
 $aLinDes = array();
 $aLinDes['a1'] = "POSTURA";
 $aLinDes['b1'] = "DOMÍNIO DO ASSUNTO";;
-$aLinDes['c1'] = "CLAREZA NA EXPOSIÇÃO";;
+$aLinDes['c1'] = "CLAREZA NA EXPOSIÇAO";;
 $aLinDes['d1'] = "ESCLARECIMENTO DE DÚVIDAS";;
 $aLinDes['a2'] = "MATERIAL DIDÁTICO";;
 $aLinDes['a3'] = "SALA";;
@@ -110,7 +111,7 @@ $aStatusTreino		= array();
 $aStatusTreino['']	= "";
 $aStatusTreino['1']	= "APROVADO";
 $aStatusTreino['2']	= "REPROVADO";
-$aStatusTreino['3']	= "NÃO SE APLICA";
+$aStatusTreino['3']	= "NAO SE APLICA";
 
 $aSiglaEstado = array();
 $aSiglaEstado['AC'] = "AC";
@@ -141,9 +142,6 @@ $aSiglaEstado['SE'] = "SE";
 $aSiglaEstado['SP'] = "SP";
 $aSiglaEstado['TO'] = "TO";
 
-$aTipoIp = array();
-$aTipoIp["A"] = "Avaliação do treinamento";
-$aTipoIp["P"] = "Prova (Avaliação de eficácia)";
 
 $aTreinoTipo		= array();
 $aTreinoTipo[0]		= 'Todos';
@@ -196,83 +194,83 @@ function fun_autocomplete($opcao){
 function ver_ereg($texto){
 	echo "O texto :<BR>";
 	echo (ereg("a", $texto) ? "tem ao menos uma letra a minúscula" :
-	"não tem nenhuma letra a minúscula") . "<BR>";
-	echo (ereg("^a", $texto) ? "" : "não ") . "inicia com a letra a <BR>";
-	echo (ereg("a$", $texto) ? "" : "não ") . "termina com a letra a<BR>";
-	echo (eregi("php", $texto) ? "" : "não ") .
+	"nao tem nenhuma letra a minúscula") . "<BR>";
+	echo (ereg("^a", $texto) ? "" : "nao ") . "inicia com a letra a <BR>";
+	echo (ereg("a$", $texto) ? "" : "nao ") . "termina com a letra a<BR>";
+	echo (eregi("php", $texto) ? "" : "nao ") .
 	"inicia com as letras php, maiúsculas ou minúsculas<BR>";
-	echo (eregi("^php", $texto) ? "" : "não ") .
+	echo (eregi("^php", $texto) ? "" : "nao ") .
 	"inicia com as letras php, maiúsculas ou minúsculas<BR>";
-	echo (ereg("^[0-9]", $texto) ? "" : "não ") . " inicia com um número <BR>";
-	echo (ereg("^[a-g]", $texto) ? "" : "não ") .
+	echo (ereg("^[0-9]", $texto) ? "" : "nao ") . " inicia com um número <BR>";
+	echo (ereg("^[a-g]", $texto) ? "" : "nao ") .
 	" inicia com uma letra entre 'a' e 'g' minúscula<BR>";
-	echo (eregi("^[a-g]", $texto) ? "" : "não ") .
+	echo (eregi("^[a-g]", $texto) ? "" : "nao ") .
 	" inicia com uma letra entre 'a' e 'g' , maiúscula ou minúscula<BR>";
-	echo (ereg("^[a-gA-G]", $texto) ? "" : "não ") .
+	echo (ereg("^[a-gA-G]", $texto) ? "" : "nao ") .
 	" inicia com uma letra entre 'a' e 'g' , maiúscula ou minúscula<BR>";
-	echo (ereg("^[0-9]$", $texto) ? "" : "não ") .
+	echo (ereg("^[0-9]$", $texto) ? "" : "nao ") .
 	" é um número de 1 dígito apenas<BR>";
-	echo (ereg("^[0-9][0-9]$", $texto) ? "" : "não ") .
+	echo (ereg("^[0-9][0-9]$", $texto) ? "" : "nao ") .
 	" é um número de 2 dígitos apenas<BR>";
-	echo (ereg("^[0-9]+$", $texto) ? "" : "não ") .
+	echo (ereg("^[0-9]+$", $texto) ? "" : "nao ") .
 	" é um número com pelo menos 1 dígito<BR>";
-	echo (ereg("^[0-9]{4}$", $texto) ? "" : "não ") .
+	echo (ereg("^[0-9]{4}$", $texto) ? "" : "nao ") .
 	" é um número com exatamente 4 dígitos<BR>";
-	echo (ereg("^[0-9a-zA-Z]{6}$", $texto) ? "" : "não ") .
-	" se compõe de exatamente 6 números e letras (não se aceitam símbolos ou
-	pontuações)<BR>";
+	echo (ereg("^[0-9a-zA-Z]{6}$", $texto) ? "" : "nao ") .
+	" se compoe de exatamente 6 números e letras (nao se aceitam símbolos ou
+	pontuaçoes)<BR>";
 
 	echo "<BR><BR>O texto :<BR>";
-	echo (ereg("a+b+", $texto) ? "" : "não ")
+	echo (ereg("a+b+", $texto) ? "" : "nao ")
 	. "tem um ou mais 'a' seguido por um ou mais 'b'<BR>";
-	echo (ereg("a+b*c+", $texto) ? "" : "não ")
+	echo (ereg("a+b*c+", $texto) ? "" : "nao ")
 	. "tem um ou mais 'a' seguido por zero ou mais 'b' seguido por um ou mais 'c'<BR>";
-	echo (ereg("a+b?c+", $texto) ? "" : "não ")
+	echo (ereg("a+b?c+", $texto) ? "" : "nao ")
 	. "tem um ou mais 'a' seguido por zero ou um 'b' seguido por um ou mais 'c'<BR>";
-	echo (ereg("^a+b?c+", $texto) ? "" : "não ")
+	echo (ereg("^a+b?c+", $texto) ? "" : "nao ")
 	. "inicia com um ou mais 'a' seguido por zero ou um 'b' seguido por um ou mais 'c'<BR>";
-	echo (ereg("a+b{3}c+$", $texto) ? "" : "não ")
-	. "finaliza com um ou mais 'a' seguido por exatamente três 'b' seguido por um ou mais 'c'<BR>";
-	echo (ereg("^a+b{4,6}c+", $texto) ? "" : "não ")
+	echo (ereg("a+b{3}c+$", $texto) ? "" : "nao ")
+	. "finaliza com um ou mais 'a' seguido por exatamente tres 'b' seguido por um ou mais 'c'<BR>";
+	echo (ereg("^a+b{4,6}c+", $texto) ? "" : "nao ")
 	. "inicia com um ou mais 'a' seguido por quatro a seis 'b' seguido por um ou mais 'c'<BR>";
-	echo (ereg("^a+b{3,}c+", $texto) ? "" : "não ")
-	. "inicia com um ou mais 'a' seguido por três ou mais 'b' seguido por um ou mais 'c'<BR>";
-	echo (ereg("^a+(php){3,}c+", $texto) ? "" : "não ")
-	. "inicia com um ou mais 'a' seguido por três ou mais 'php' seguido por um ou mais 'c'<BR>";
-	echo (eregi("^[a-z0-9]+@[a-z0-9]*$", $texto) ? "" : "não ")
+	echo (ereg("^a+b{3,}c+", $texto) ? "" : "nao ")
+	. "inicia com um ou mais 'a' seguido por tres ou mais 'b' seguido por um ou mais 'c'<BR>";
+	echo (ereg("^a+(php){3,}c+", $texto) ? "" : "nao ")
+	. "inicia com um ou mais 'a' seguido por tres ou mais 'php' seguido por um ou mais 'c'<BR>";
+	echo (eregi("^[a-z0-9]+@[a-z0-9]*$", $texto) ? "" : "nao ")
 	. "inicia com um ou mais caracteres seguido por um '@' seguido por zero ou mais caracteres<BR>";
-	echo (eregi("^[a-z0-9]+@(php|perl)$", $texto) ? "" : "não ")
+	echo (eregi("^[a-z0-9]+@(php|perl)$", $texto) ? "" : "nao ")
 	. "inicia com um ou mais caracteres seguido por um '@' seguido por 'php' ou 'perl'<BR>";
-	echo (eregi("f.w", $texto) ? "" : "não ")
+	echo (eregi("f.w", $texto) ? "" : "nao ")
 	. "tem um 'f' seguido por um caracter qualquer seguido por um 'w'<BR>";
 
 
 	echo "<BR><BR>O texto :<BR>";
-	echo (ereg("^[0-9]+$", $texto) ? "" : "não ")
+	echo (ereg("^[0-9]+$", $texto) ? "" : "nao ")
 	. "é um número sem casas decimais<BR>";
-	echo (ereg("^[0-9]+,[0-9]{2}$", $texto) ? "" : "não ")
+	echo (ereg("^[0-9]+,[0-9]{2}$", $texto) ? "" : "nao ")
 	. "é um número com duas casas decimais (separadas por vírgula)<BR>";
-	echo (ereg("^[0-9]+(,[0-9]+)?$", $texto) ? "" : "não ")
+	echo (ereg("^[0-9]+(,[0-9]+)?$", $texto) ? "" : "nao ")
 	. "é um número com ou sem casas decimais (separadas por vírgula)<BR>";
-	echo (ereg("^[0-9]{1,3}\.[0-9]{3}(,[0-9]+)?$", $texto) ? "" : "não ")
+	echo (ereg("^[0-9]{1,3}\.[0-9]{3}(,[0-9]+)?$", $texto) ? "" : "nao ")
 	. "é um número maior ou igual a 1.000 e menor que 999.999 com separador de milhares (ponto) com ou sem casas decimais (separadas por vírgula)<BR>";
-	echo (ereg("^[0-9]{1,3}(\.[0-9]{3})*(,[0-9]+)?$", $texto) ? "" : "não ")
+	echo (ereg("^[0-9]{1,3}(\.[0-9]{3})*(,[0-9]+)?$", $texto) ? "" : "nao ")
 	. "é um número qualquer com separador de milhares (ponto) caso seja maior ou igual a 1000 com ou sem casas decimais (separadas por vírgula)<BR>";
-	echo (ereg("^[0-9]{1,3}(\.?[0-9]{3})*(,[0-9]+)?$", $texto) ? "" : "não ")
+	echo (ereg("^[0-9]{1,3}(\.?[0-9]{3})*(,[0-9]+)?$", $texto) ? "" : "nao ")
 	. "é um número qualquer com ou sem separador de milhares (ponto) caso seja maior ou igual a 1000 com ou sem casas decimais (separadas por vírgula)<BR>";
-	echo (eregi("^[_\-\.0-9a-z]+@[_\-\.0-9a-z]+$", $texto) ? "" : "não ")
+	echo (eregi("^[_\-\.0-9a-z]+@[_\-\.0-9a-z]+$", $texto) ? "" : "nao ")
 	. "é um e-mail válido (aceita letras, números, '_', '-' e '\.'<BR>";
-	echo (ereg("^[0-9]{2}\.[0-9]{3}\.[0-9]{3}/[0-9]{4}\-[0-9]{2}$", $texto) ? "" : "não ")
-	. "é um CNPJ válido (exemplo: 12.345.678/0001-95 (dígito verificador não calculado)<BR>";
-	echo (ereg("^([0-9]{3}\.){2}[0-9]{3}-[0-9]{2}$", $texto) ? "" : "não ")
-	. "é um CPF válido (exemplo: 123.456.789-09 (dígito verificador não calculado)<BR>";
+	echo (ereg("^[0-9]{2}\.[0-9]{3}\.[0-9]{3}/[0-9]{4}\-[0-9]{2}$", $texto) ? "" : "nao ")
+	. "é um CNPJ válido (exemplo: 12.345.678/0001-95 (dígito verificador nao calculado)<BR>";
+	echo (ereg("^([0-9]{3}\.){2}[0-9]{3}-[0-9]{2}$", $texto) ? "" : "nao ")
+	. "é um CPF válido (exemplo: 123.456.789-09 (dígito verificador nao calculado)<BR>";
 
 	echo "<br><br>O texto :<br>";
-	echo (ereg("^[0-9]{2}/[0-9]{2}/[0-9]{4}", $texto, $regs) ? "" : "não ")
+	echo (ereg("^[0-9]{2}/[0-9]{2}/[0-9]{4}", $texto, $regs) ? "" : "nao ")
 	. "é uma data no formato DD-MM-AAAA<br>";
 	var_dump($regs);
 	echo "<br>";
-	echo (ereg("^([0-9]{2})/([0-9]{2})/([0-9]{4})", $texto, $regs) ? "" : "não ")
+	echo (ereg("^([0-9]{2})/([0-9]{2})/([0-9]{4})", $texto, $regs) ? "" : "nao ")
 	. "é uma data no formato DD-MM-AAAA<br>";
 	var_dump($regs);
 	echo "<br>";
@@ -281,7 +279,7 @@ function ver_ereg($texto){
 	echo "este é o texto acima com os pontos substituídos por vírgulas:<br>";
 	echo ereg_replace("\." , "," , $texto) . "<br>";
 	echo "este é o texto acima com os pontos substituídos por vírgulas e vice versa:";
-	echo "(isto é útil para converter números em formato 'inglês' para 'latino'<br>";
+	echo "(isto é útil para converter números em formato 'ingles' para 'latino'<br>";
 	echo ereg_replace("@@p@@", "," , ereg_replace("," , "." , ereg_replace("\." , "@@p@@" , $texto))) . "<br>";
 	echo "Se o que foi digitado acima tratar-se de um diretório (dividido por /), ele é dividido assim:<br>";
 	$regs = split ("/", $texto);
@@ -351,10 +349,10 @@ function Strip($value){
 }
 
 function fun_select($valores_array,$valor_atual,$nome,$apresenta_cod="",$selecione="",$parametros="",$bloqueio_array=''){
-	// Esta função também é utilizada na classe DB
+	// Esta funçao também é utilizada na classe DB
 	// Autor : Lucas Oliveira Silva
 	// Data  : 27-10-2009
-	// Funcao: Passando uma array de valores, ele retorna um select na tela, assim, facilita a programação e centraliza as informações
+	// Funcao: Passando uma array de valores, ele retorna um select na tela, assim, facilita a programaçao e centraliza as informaçoes
 	if (!$valores_array) return false;
 	$valores_array = array_map('trim', $valores_array);
 
@@ -400,7 +398,7 @@ function fun_CriaHidden($L_var,$L_val=''){
 function fun_checkbox($valores_array,$valor_atual,$nome,$sufixo,$apresenta_cod="",$qtd_col="0",$valor_bloqueio,$parametros=""){
 	// Autor : Lucas Oliveira Silva
 	// Data   : 17-06-2010
-	// Funcao : Passando uma array de valores, ele retorna inputs tipo check na tela, assim, facilita a programação e centraliza as informações
+	// Funcao : Passando uma array de valores, ele retorna inputs tipo check na tela, assim, facilita a programaçao e centraliza as informaçoes
 	if (!$valores_array) return false;
 
 	if (!$valor_atual) $valor_atual = array('');
@@ -438,9 +436,9 @@ class treinamento {
 	// Autor: Lucas Oliveira Silva
 	// Data: 14/04/2010
 	// Local: Datamace
-	// Função: verifica a pontuação na prova e outras "questões"
+	// Funçao: verifica a pontuaçao na prova e outras "questoes"
 
-	// utilização:
+	// utilizaçao:
 	// $prova = new treinamento("");
 	// echo '<br>Nota: ' . $prova->verifica_nota(3177);
 
@@ -460,7 +458,7 @@ class treinamento {
 	// echo '<br>Perguntas 1: ' . $prova->perguntas1;
 	// echo '<br>Perguntas 2: ' . $prova->perguntas2;
 
-	// pega a referência atual para consulta de prova ou data
+	// pega a referencia atual para consulta de prova ou data
 	// RefAtual()
 
 	// $prova = new treinamento("");
@@ -488,26 +486,26 @@ class treinamento {
 	var $mes					= 0; // mes para consulta de data
 	var $ano					= 0; // ano para consulta de data
 	var $dataAnoComp			= true; // ano com 4 casas?
-	var $data1					= 0; // 1º data
-	var $data2					= 0; // 2º data
+	var $data1					= 0; // 1o data
+	var $data2					= 0; // 2o data
 
-	var $prova_desc				= ''; // descição / título da prova
-	var $perguntas1				= array(); // 1º´s pergunta's
-	var $perguntas2				= array(); // 2º´s pergunta's
+	var $prova_desc				= ''; // desciçao / título da prova
+	var $perguntas1				= array(); // 1o´s pergunta's
+	var $perguntas2				= array(); // 2o´s pergunta's
 
-	var $data1_f				= 0; // 1º data formatada
-	var $data2_f				= 0; // 2º data formatada
-	var $qtd_acertos_1			= 0; // Resultado da 1º prova
-	var $qtd_acertos_2			= 0; // Resultado da 2º prova
-	var $con_prova_1			= 0; // conceito da 1º prova
-	var $con_prova_2			= 0; // conceito da 2º prova
+	var $data1_f				= 0; // 1o data formatada
+	var $data2_f				= 0; // 2o data formatada
+	var $qtd_acertos_1			= 0; // Resultado da 1o prova
+	var $qtd_acertos_2			= 0; // Resultado da 2o prova
+	var $con_prova_1			= 0; // conceito da 1o prova
+	var $con_prova_2			= 0; // conceito da 2o prova
 	var $con_geral				= 0; // conceito geral
 	var $id_prova_1				= 0; // identificador da prova
 	var $id_prova_2				= 0; // identificador da prova
 	var $aproveitamento1		= 0; // aproveitamento real 1
 	var $aproveitamento2		= 0; // aproveitamento real 1
-	var $obs					= '&nbsp;'; //Observação
-	var $obsNull				= '&nbsp;'; //Observação
+	var $obs					= '&nbsp;'; //Observaçao
+	var $obsNull				= '&nbsp;'; //Observaçao
 
 	var $nome					= ''; // nome da pessoa que realizou a prova
 	var $rg						= 0; // rg da pessoa que realizou a prova
@@ -525,7 +523,7 @@ class treinamento {
 
 	var $IsAdm				= false;
 
-	function treinamento($IsAdm){ // tem que ser o mesmo nome para ser carregada na criação da classe
+	function treinamento($IsAdm){ // tem que ser o mesmo nome para ser carregada na criaçao da classe
 
 		$this->IsAdm = (($IsAdm == "S") ? true : false);
 		$this->db = new DB();
@@ -549,7 +547,7 @@ class treinamento {
 		if (!$pCodProva) return 0;
 
 		$sql = "select rg, perg, resp from respostas where id = ".$pCodProva;
-		$result			= mysql_query($sql, $this->db->conexao);
+		$result			= mysql_query($sql /*, $this->db->conexao*/);
 		if ($linha		= mysql_fetch_object($result)){
 			$perguntas	= explode('#',$linha->perg);
 			$respostas	= explode('#',$linha->resp);
@@ -577,7 +575,7 @@ class treinamento {
 	function ver_nota_ult_rg($rg){
 
 		$sql = "select id from respostas where rg = '$rg' ".$this->verWhereTipo("and")." order by id desc limit 1";
-		if ($result	= mysql_query($sql,$this->db->conexao)){
+		if ($result	= mysql_query($sql) /*,$this->db->conexao) */ ){
 			if ($linha	= mysql_fetch_object($result)){
 				return $this->verifica_nota($linha->id);
 			}
@@ -619,7 +617,7 @@ class treinamento {
 	function ver_conceito_ult_rg($rg){
 
 		$sql = "select id from respostas where rg = '$rg' ".$this->verWhereTipo("and")." order by id desc limit 1";
-		if ($result	= mysql_query($sql,$this->db->conexao)){
+		if ($result	= mysql_query($sql /*,$this->db->conexao*/)){
 			if ($linha	= mysql_fetch_object($result)){
 				$this->verifica_nota($linha->id);
 				return $this->verifica_conceitoValor($linha->id, $this->aproveitamentoReal);
@@ -631,7 +629,7 @@ class treinamento {
 	function ver_resp($cod_pergunta){
 
 		$sql		= "select resp from perguntas where id = ".$cod_pergunta;
-		if ($result	= mysql_query($sql,$this->db->conexao)){
+		if ($result	= mysql_query($sql /*,$this->db->conexao*/)){
 			if ($linha	= mysql_fetch_object($result)){
 				return $linha->resp;
 			}
@@ -642,7 +640,7 @@ class treinamento {
 	function ver_treinando($rg){
 
 		$sql		= "select rg, nome from cadastrotreinamento where rg = ".$rg;
-		if ($result	= mysql_query($sql,$this->db->conexao)){
+		if ($result	= mysql_query($sql /*,$this->db->conexao*/)){
 			if ($linha	= mysql_fetch_object($result)){
 				$this->rg	= $linha->rg;
 				$this->nome	= $linha->nome;
@@ -756,7 +754,7 @@ class treinamento {
 		$sSQL .= $this->verWhereTipo("and");
 		$sSQL .= "              order by dataprova desc ";
 		$sSQL .= "              limit 1) as ID2";
-		$result	= mysql_query($sSQL,$this->db->conexao);
+		$result	= mysql_query($sSQL /*,$this->db->conexao*/);
 		$Datas	= mysql_fetch_object($result);
 
 		$this->id_prova_1		= $Datas->ID1;
@@ -771,7 +769,7 @@ class treinamento {
 
 		$this->con_geral = ($this->con_prova_1 + $this->con_prova_2) / 2;
 
-		if (!$this->qtd_acertos_1 || !$this->qtd_acertos_2) $this->obs = "Prova(s) não realizada(s): ";
+		if (!$this->qtd_acertos_1 || !$this->qtd_acertos_2) $this->obs = "Prova(s) nao realizada(s): ";
 		if (!$this->qtd_acertos_1) $this->obs .= "1";
 		if (!$this->qtd_acertos_1 && !$this->qtd_acertos_2) $this->obs .= ", ";
 		if (!$this->qtd_acertos_2) $this->obs .= "2";
@@ -799,12 +797,12 @@ class treinamento {
 		$sSQL .= "              limit 1) as #VAR2#";
 
 		$sSQL = str_replace(array('#COL#', '#VAR1#', '#VAR2#'), array($pCol, $pVar1, $pVar2), $sSQL);
-		$return = mysql_query($sSQL,$this->db->conexao);
+		$return = mysql_query($sSQL /*,$this->db->conexao*/);
 
 		return mysql_fetch_object($return);
 	}
 
-	function sqlProva($vTipoPesquisa, $pTipo = ""){ //P -> Provas, T -> Liberação do Treinamento
+	function sqlProva($vTipoPesquisa, $pTipo = ""){ //P -> Provas, T -> Liberaçao do Treinamento
 		return "select DISTINCTROW provas.id as id, provas.descricao as descricao, conf_tipo " .
 				($vTipoPesquisa == 'P' ? ", config.conf_provanro as provanro " : " ") .
 				" from provas " .
@@ -817,12 +815,12 @@ class treinamento {
 
 	function resultProvaDisponivel($pTipo = ""){
 		$SQL = $this->sqlProva('P', $pTipo);
-		return mysql_query($SQL,$this->db->conexao);
+		return mysql_query($SQL /*,$this->db->conexao*/);
 	}
 
 	function provaDisponivelDoTreinamento($pTipo = ""){
 		$SQL = $this->sqlProva('T', $pTipo) . " and conf_libera_aval_tre = 1";
-		$result = mysql_query($SQL,$this->db->conexao);
+		$result = mysql_query($SQL /*,$this->db->conexao*/);
 		if (mysql_num_rows($result) > 0){
 			return true;
 		}else{
@@ -836,7 +834,7 @@ class treinamento {
 				" and date_format(NOW(),'%H%i') < conf_hora_final " .
 				" and conf_tipo = $pTipo ".
 				($pCRC ? " and conf_crc = '$pCRC'" : "");
-		$result = mysql_query($SQL,$this->db->conexao);
+		$result = mysql_query($SQL /*,$this->db->conexao*/);
 		$linha	= mysql_fetch_object($result);
 		return $linha->hora;
 	}
@@ -847,14 +845,14 @@ class treinamento {
 		$WH		= " where date_format(conf_data,'%Y-%m-%d') = date_format(NOW(),'%Y-%m-%d') " .
 				" and conf_libera_aval_tre = 1" .
 				($pTipo ? " and conf_tipo = " . $pTipo : "");
-		$result = mysql_query($SQL.$WH,$this->db->conexao);
+		$result = mysql_query($SQL.$WH /*,$this->db->conexao*/);
 		$linha	= mysql_fetch_object($result);
 		if ($linha->total > 0){
 			$this->avaliacaoLiberada = true;
 		}else{
 			$this->avaliacaoLiberada = false;
 		}
-		$result = mysql_query($SQL2.$WH,$this->db->conexao);
+		$result = mysql_query($SQL2.$WH /*,$this->db->conexao*/);
 		$linha	= mysql_fetch_object($result);
 		$this->avaliacaoTipo		= $linha->conf_tipo;
 		$this->avaliacaoTipoEvento	= $linha->conf_tipo_padrao;
@@ -865,6 +863,8 @@ class treinamento {
 }
 
 class REL_PDF_QTD_TREINAMENTO extends REL_PDF_DTM{
+	
+
 
 	var	$db				= 0;
 	var $pdf			= 0;
@@ -882,10 +882,11 @@ class REL_PDF_QTD_TREINAMENTO extends REL_PDF_DTM{
 	var $vColDesc		= array('ÓTIMO','BOM','REGULAR','RUIM','NDA*');
 
 	var $vColDet		= array('observacao','sugestao','reclamacao','elogio', 'complemento');
-	var $vColDetDescP	= array('Observações','Sugestões','Reclamações','Elogios', 'Complemento');
-	var $vColDetDesc	= array('Observação','Sugestão','Reclamação','Elogio', 'Registros complementares, se necessário (Para Palestrante/Instrutor):');
+	var $vColDetDescP	= array('Observaçoes','Sugestoes','Reclamaçoes','Elogios', 'Complemento');
+	var $vColDetDesc	= array('Observaçao','Sugestao','Reclamaçao','Elogio', 'Registros complementares, se necessário (Para Palestrante/Instrutor):');
 
 	function REL_PDF_QTD_TREINAMENTO($flagTipo, $evento, $ano, $mes, $IsModulo){
+
 
 		global $USRNOME;
 		global $v_id_usuario;
@@ -897,7 +898,7 @@ class REL_PDF_QTD_TREINAMENTO extends REL_PDF_DTM{
 		$this->fun_Vlin($this->Vlin_ini);
 
 		$this->fun_Vsistema('Treinamento');
-		$this->fun_Vtitulo('Relatório de Quantidade de Avaliações do Treinamento');
+		$this->fun_Vtitulo('Relatório de Quantidade de Avaliaçoes do Treinamento');
 		$this->fun_Vusuario($USRNOME);
 		$this->fun_Vprogrel($PAGINA);
 		$this->fun_cabecalho();
@@ -908,7 +909,7 @@ class REL_PDF_QTD_TREINAMENTO extends REL_PDF_DTM{
 		$this->flagTipo	= $flagTipo;
 		$this->IsModulo	= $IsModulo;
 
-		$this->db = new DB();
+		$this->db = new DB();		
 	}
 
 	private function montaSQL($pCol, $pCondicao, $pLeftJoin="", $pGroupBy=""){
@@ -936,8 +937,14 @@ class REL_PDF_QTD_TREINAMENTO extends REL_PDF_DTM{
 		global $mesescrito;
 		global $aTreinoTipo;
 
+
+		global $link;
+		mysql_set_charset("latin1", $link);
+
+
 		$SQL		= "select descricao from ".(($this->IsModulo) ? "modulos" : "sistemas" )." where id ='".$this->evento."' ";
-		$result 	= mysql_query($SQL, $this->db->conexao);
+		$result 	= mysql_query($SQL /*, $this->db->conexao*/);
+
 		$linhaSis	= mysql_fetch_object($result);
 
 		$vResultados = array();
@@ -969,7 +976,7 @@ class REL_PDF_QTD_TREINAMENTO extends REL_PDF_DTM{
 		$this->SetFont('Arial','B',9);
 
 		$this->SetXY(6,$this->Vlin);
-		$this->MultiCell(198, $this->Vlin_alt,"AVALIAÇÃO - $linhaSis->descricao - ".strtoupper($mesescrito[$this->mes])." $this->ano (".(($this->IsModulo) ? "MÓDULOS" : "SISTEMAS" ).")", 0, "C", 0);
+		$this->MultiCell(198, $this->Vlin_alt,"AVALIAÇAO - $linhaSis->descricao - ".strtoupper($mesescrito[$this->mes])." $this->ano (".(($this->IsModulo) ? "MÓDULOS" : "SISTEMAS" ).")", 0, "C", 0);
 		$this->fun_ADD_Vlin($this->Vlin_alt);
 
 		$this->SetXY(6,$this->Vlin);
@@ -995,9 +1002,9 @@ class REL_PDF_QTD_TREINAMENTO extends REL_PDF_DTM{
 		}
 
 		if ($vTot > 0){
-			$this->MultiCell(198, $this->Vlin_alt,"Percentual de Aprovação do Treinamento = $vTot"."%", 0, "L", 0);
+			$this->MultiCell(198, $this->Vlin_alt,"Percentual de Aprovaçao do Treinamento = $vTot"."%", 0, "L", 0);
 		}else{
-			$this->MultiCell(198, $this->Vlin_alt,"Não há avaliação em " . $mesescrito[$this->mes], 0, "L", 0);
+			$this->MultiCell(198, $this->Vlin_alt,"Nao há avaliaçao em " . $mesescrito[$this->mes], 0, "L", 0);
 		}
 		$this->fun_ADD_Vlin($this->Vlin_alt);
 
@@ -1005,7 +1012,7 @@ class REL_PDF_QTD_TREINAMENTO extends REL_PDF_DTM{
 		$this->SetFont('Arial','',7);
 
 		$this->SetXY(6,$this->Vlin);
-		$this->MultiCell(198, $this->Vlin_alt,"* A opção (Não desejo avaliar) não será considerada nos resultados dos indicadores.", 0, "L", 0);
+		$this->MultiCell(198, $this->Vlin_alt,"* A opçao (Nao desejo avaliar) nao será considerada nos resultados dos indicadores.", 0, "L", 0);
 		$this->fun_ADD_Vlin($this->Vlin_alt*2);
 
 		// QUantidade por instrutor
@@ -1104,7 +1111,7 @@ class REL_PDF_QTD_TREINAMENTO extends REL_PDF_DTM{
 			$this->fun_ADD_Vlin($this->Vlin_alt*2);
 			$this->SetXY(13,$this->Vlin);
 			$this->fun_ADD_Vlin($this->Vlin_alt);
-			$this->MultiCell(198, $this->Vlin_alt, "Quantidade de avaliações", 0, "L", 0);
+			$this->MultiCell(198, $this->Vlin_alt, "Quantidade de avaliaçoes", 0, "L", 0);
 
 			$this->impLinha('Instrutor(a)', array('Qtd. Alunos'), true, false, 0);
 			foreach ($vTotTres as $key => $val){
@@ -1118,6 +1125,10 @@ class REL_PDF_QTD_TREINAMENTO extends REL_PDF_DTM{
 		$this->linkRel = "<script>AbreRelatorio('".$this->Vtitulo."');</script><a href='#' onclick='AbreRelatorio(\"".$this->Vtitulo."\")'>Clique aqui para abrir o relatório</a>";
 		$this->Output($this->arquivo_pdf,"F");
 		$this->close();
+		
+
+		mysql_set_charset("utf8", $link);
+		
 
 	}
 
@@ -1175,7 +1186,7 @@ class REL_PDF_NOTAS_TREINADOS extends REL_PDF_DTM{
 		$this->fun_Vlin($this->Vlin_ini);
 
 		$this->fun_Vsistema('Treinamento');
-		$this->fun_Vtitulo('Relatório de Notas/Assimilação dos Treinandos');
+		$this->fun_Vtitulo('Relatório de Notas/Assimilaçao dos Treinandos');
 		$this->fun_Vusuario($USRNOME);
 		$this->fun_Vprogrel($PAGINA);
 		$this->fun_cabecalho();
@@ -1209,7 +1220,7 @@ class REL_PDF_NOTAS_TREINADOS extends REL_PDF_DTM{
 				(($this->flagTipo) ? " and flagTipo = '".$this->flagTipo."'" : "").
 				" order by R.rg";
 
-		$result = mysql_query($SQL, $this->db->conexao);
+		$result = mysql_query($SQL /*, $this->db->conexao*/);
 		while ($linha = mysql_fetch_object($result))
 		{
 
@@ -1220,7 +1231,9 @@ class REL_PDF_NOTAS_TREINADOS extends REL_PDF_DTM{
 			$PTO->ano = $this->ano;
 			$PTO->ver_resultados();
 			$vNota = $PTO->verifica_nota($linha->id);
-			$this->impLinha($linha->nome." " .$vNota, array($vNota), "", false, false);
+
+
+			$this->impLinha($linha->nome, array($vNota), true, false, false);
 
 		}
 
@@ -1250,7 +1263,7 @@ class REL_PDF_NOTAS_TREINADOS extends REL_PDF_DTM{
 			if ($pLinhaComun){
 				$this->MultiCell($vTamColG, $this->Vlin_alt,$pCols[$cCol], 1, "C", 0);
 			}else{
-				$this->MultiCell($vTamColG, $this->Vlin_alt,$pCols[$this->vCol[$cCol]], 1, "C", 0);
+				$this->MultiCell($vTamColG, $this->Vlin_alt, $pCols[$this->vCol[$cCol]], 1, "C", 0);
 			}
 			$col+=$vTamColG;
 		}

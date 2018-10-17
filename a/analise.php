@@ -3,7 +3,7 @@
  *  Fernando Nomellini
  * 17/05/2010
  * -------------------
- * Envia Email lembrando dos chamados a cada XXX dias do �ltimo contato,
+ * Envia Email lembrando dos chamados a cada XXX dias do último contato,
  * sendo XXX configur�vel atrav�s do campo lembrete_dias na tabela usuario.
  *
  * O Pr�prio envio do lembrete � configur�vel atrav�s do flag lembrete_ativo.

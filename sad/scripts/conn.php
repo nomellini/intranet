@@ -1,7 +1,10 @@
 <?
 
- mysql_connect(localhost, sad, data1371);
- mysql_select_db(sad); 
+$sad =  mysql_connect(localhost, sad, data1371);
+mysql_set_charset("utf8", $sad);
+mysql_select_db(sad); 
+ 
+ 
  $host = "intranet.datamace.com.br";
  
 require("../a/scripts/EnvioEmail.php");  
@@ -112,8 +115,7 @@ function pegaChamadosPorCliente($id_cliente, $status) {
  $sql .= "dataa desc, horaa desc;";
  
 // die($sql);
-  
- $result = mysql_query($sql);
+ $result = mysql_query($sql) ;//or echo (mysql_error());
  $conta=0;
    while ($linha = mysql_fetch_object( $result ) ) {
      
@@ -127,6 +129,7 @@ function pegaChamadosPorCliente($id_cliente, $status) {
      $saida[$conta++] = $tmp;
    }
    
+
   return $saida;
 } 
 

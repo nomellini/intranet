@@ -48,11 +48,11 @@
 <div class="Body">
 		<div Class="Titulo">
 		  <div align="center"><?= FuncoesObterDescricaoChamado($id_projeto) ?>
-		    <p><br />		    </p>		   
+		    <p><br />		    </p>
 
           </div>
 		</div>
-        
+
         <table width="95%" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC" summary="Lista os projetos da Datamace">
 		      <tr>
 		        <th width="15%" bgcolor="#0066FF">Detalhes</th>
@@ -72,32 +72,32 @@
 	$sql .= "(select count(1) from chamado c1 where chamado_pai_id = chamado.id_chamado and (status = 2 or status = 3)  ) as abertos, ";
 	$sql .= "(select count(1) from chamado c1 where chamado_pai_id = chamado.id_chamado and not (status = 2 or status = 3) ) as encerrados ";
 	$sql .= "from chamado where id_chamado = $id_projeto";
-//		$sql = "select id_chamado, dataa, descricao, (select count(1) from chamado c1 where chamado_pai_id = chamado.id_chamado) chamados from chamado where status = 2 and rnc = 4 and id_chamado > 0 order by dataa desc";	
+//		$sql = "select id_chamado, dataa, descricao, (select count(1) from chamado c1 where chamado_pai_id = chamado.id_chamado) chamados from chamado where status = 2 and rnc = 4 and id_chamado > 0 order by dataa desc";
 		$result = mysql_query($sql);
 		while ($linha = mysql_fetch_object($result)) {
 			$data = dataOk($linha->dataa);
-			
+
 			$abertos = $linha->abertos;
 			$fechados = $linha->encerrados;
 			$total = $abertos + $fechados;
-			
 
-			
-			if ($total != 0) 
+
+
+			if ($total != 0)
 			{
 				$Completo = 100 * ($fechados / $total);
 			} else {
 				$Completo = 0;
 			}
-			
+
 			$Completo = number_format( $Completo, 2 );
-			
+
 			// join("/", array_reverse( explode("-", $linha->dataa) ))
 ?>
-		        <!--            
-				<tr onclick="vai('<?= $linha->id_chamado?>')" 
-				class="normalRow" 
-				onmouseover="this.className='highlightRow'" 
+		        <!--
+				<tr onclick="vai('<?= $linha->id_chamado?>')"
+				class="normalRow"
+				onmouseover="this.className='highlightRow'"
 				onmouseout="this.className='normalRow'">
 -->
 		        <tr class="normalRow" >
@@ -123,16 +123,16 @@
 	        </table>
             <br />
 			<br />
-        
-        
-        
-        
+
+
+
+
         <div align="center">        		    <p>Chamados de : <strong><?=$nome?></strong></p></div>
 		<div Class="Lista" id="Lista">
 		  <table width="99%" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC" summary="Lista os projetos da Datamace">
 		    <tr>
 		      <th width="13%" bgcolor="#0066FF">Chamado</th>
-              <th width="70%" bgcolor="#0066FF">Descrição</th>
+              <th width="70%" bgcolor="#0066FF">Descriï¿½ï¿½o</th>
               <th bgcolor="#0066FF">Tempo usu&aacute;rio</th>
               <th bgcolor="#0066FF">Tempo  chamado</th>
 
@@ -147,41 +147,41 @@
 		$result = mysql_query($sql);
 		while ($linha = mysql_fetch_object($result)) {
 			$conta++;
-			
+
 			if (   (strpos($linha->d, "GPZ") > 0) || (strpos($linha->d, "PEX") > 0)  )
 			{
 				$contaGpz++;
 			}
 
-			$sqlTempoTotal = "select sum(time_to_sec(co.horae)-time_to_sec(co.horaa)) tempo from chamado ch  inner join contato co on co.chamado_id = ch.id_chamado where co.consultor_id = $id_destinatario and ch.id_chamado = $linha->id_chamado" ; 
-			$result1 = mysql_query($sqlTempoTotal) or die($sqlTempoTotal); 
+			$sqlTempoTotal = "select sum(time_to_sec(co.horae)-time_to_sec(co.horaa)) tempo from chamado ch  inner join contato co on co.chamado_id = ch.id_chamado where co.consultor_id = $id_destinatario and ch.id_chamado = $linha->id_chamado" ;
+			$result1 = mysql_query($sqlTempoTotal) or die($sqlTempoTotal);
 			$linha1=mysql_fetch_object($result1);
 			$TempoTotalUser = $linha1->tempo;
-			$somaTempoUser += $TempoTotalUser;	
-			
-			$sqlTempoTotal = "select sum(time_to_sec(co.horae)-time_to_sec(co.horaa)) tempo from chamado ch  inner join contato co on co.chamado_id = ch.id_chamado where ch.id_chamado = $linha->id_chamado" ; 
-			$result1 = mysql_query($sqlTempoTotal) or die($sqlTempoTotal); 
+			$somaTempoUser += $TempoTotalUser;
+
+			$sqlTempoTotal = "select sum(time_to_sec(co.horae)-time_to_sec(co.horaa)) tempo from chamado ch  inner join contato co on co.chamado_id = ch.id_chamado where ch.id_chamado = $linha->id_chamado" ;
+			$result1 = mysql_query($sqlTempoTotal) or die($sqlTempoTotal);
 			$linha1=mysql_fetch_object($result1);
 			$TempoTotalChamado = $linha1->tempo;
 			$somaTempoChamado += $TempoTotalChamado;
-			
 
-			$Negrito = ($linha->prioridade_id == 7);				
-			
+
+			$Negrito = ($linha->prioridade_id == 7);
+
 			$restricoes = funcoesObterStatusRestricao($linha->id_chamado);
-			
-			
-			
-?>			
+
+
+
+?>
 
               <tr class="normalRow" >
               <td align="center"><a href="../historicochamado.php?id_chamado=<?=$linha->id_chamado?>" target="_blank"><?=$linha->id_chamado?></a></td>
               <td align="left">
 		        <?if($Negrito==1) { echo "<b>"; }?>
 				  <?= str_replace("<br>", " - ", $linha->d )?>
-			    <?if($Negrito==1) { echo "</b>"; }?>			  	
+			    <?if($Negrito==1) { echo "</b>"; }?>
 				<div>
-					<?=$restricoes["display"];?>				
+					<?=$restricoes["display"];?>
 				</div>
 			  </td>
               <td align="center"><?=sec_to_time($TempoTotalUser)?></td>
@@ -191,7 +191,7 @@
 <?
 
 		}
-?>		
+?>
               <tr class="normalRow" >
                 <td align="center">Total </td>
                 <td > &nbsp;&nbsp;<?=$conta?>  Chamados.....   (<?=$contaGpz?>) Especiais</td>
@@ -200,14 +200,14 @@
               </tr>
 		   </tbody>
           </table>
-          
+
           <p><br />
-            
+
           </p>
-          
+
           <table width="65%" border="0" align="center" cellpadding="1" cellspacing="1">
             <tr>
-              <td>Chamados que o usuário <?=$nome?> está trabalhando <b>hoje</b>: </td>
+              <td>Chamados que o usuÃ¡rio <?=$nome?> estÃ¡ trabalhando <b>hoje</b>: </td>
             </tr>
           </table>
 
@@ -217,28 +217,28 @@
 	$sql = "select id_chamado, hora from contato_temp where data = '$Data_Atual' and id_usuario = $id_destinatario order by hora";
 	$result = mysql_query($sql);
 	while ($linha = mysql_fetch_array($result)) {
-?>            
+?>
             <tr>
               <td>
 <?
-		echo "<a href=\"../historicochamado.php?id_chamado=" 
-		  . $linha["id_chamado"] 
-		  . "\" target=\"_blank\"><?=$linha->id_chamado?>" 
-		  . $linha["id_chamado"] 
-		  . " </a> - Hora Inicio: " 
+		echo "<a href=\"../historicochamado.php?id_chamado="
+		  . $linha["id_chamado"]
+		  . "\" target=\"_blank\"><?=$linha->id_chamado?>"
+		  . $linha["id_chamado"]
+		  . " </a> - Hora Inicio: "
 		  . $linha["hora"];
 
-?>              
+?>
               </td>
-            </tr>              
+            </tr>
 <?
 	}
-?>              
+?>
           </table>
 
 
-<!--  Ainda não estou mostrando os chamados encerrados.
-	  
+<!--  Ainda nï¿½o estou mostrando os chamados encerrados.
+
 		<div Class="Titulo">
 		  <div align="center"><br />
 	      Projetos encerrados</div>
@@ -250,13 +250,13 @@
 		      <th width="22%" bgcolor="#FFFFFF">Data</th>
 	        </tr>
 
-<?	
-		$sql = "select id_chamado, dataa, descricao, status from chamado where status = 1 and rnc = 4 and id_chamado > 0 order by dataa desc";	
+<?
+		$sql = "select id_chamado, dataa, descricao, status from chamado where status = 1 and rnc = 4 and id_chamado > 0 order by dataa desc";
 		$result = mysql_query($sql);
 		while ($linha = mysql_fetch_object($result)) {
 			$data = dataOk($linha->dataa);
 			// join("/", array_reverse( explode("-", $linha->dataa) ))
-?>			
+?>
             <tr onclick="vai('<?= $linha->id_chamado?>')">
               <td align="center" bgcolor="#FFFFFF"><?= $linha->id_chamado?></td>
               <td bgcolor="#FFFFFF"><?= $linha->descricao?></td>
@@ -264,10 +264,10 @@
             </tr>
 <?
 		}
-?>			
+?>
           </table>
 		  -->
-		</div>		
+		</div>
 	</div>
 </body>
 </html>

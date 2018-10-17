@@ -1,6 +1,6 @@
 <?  
 require("scripts/conn.php");
-  session_start();  
+session_start();  
 $msg=$_SESSION['msg'];
 if($msg==""){
 
@@ -16,7 +16,7 @@ header("Location: doindex.php");
 <html>
 <head>
 
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>SAD - Sistema de Atendimento Datamace</title>
 
 
@@ -193,7 +193,7 @@ $xdata = date("Y-m-d",$xdata);
    
 				<select name="select3" class="textField" onChange="location.href('acompanhar_encerrados.php?pagina=1&pag=<?echo $_GET['pag'];?>&select='+this.options[this.selectedIndex].value)">
 				<option value="<?echo $_GET['select'];?>"> <?$select=$_GET['select']; if($select==""){ echo "Selecione!"; } else { echo $select;}?> </option>
-				<option value="Número"> Número </option>
+				<option value="NÃºmero"> NÃºmero </option>
 				<option value="Criado em"> Criado em </option>
 				<option value="Atualizado em"> Atualizado em  </option>
 				<option value="Assunto"> Assunto  </option>
@@ -270,7 +270,7 @@ echo "";
 <?
 $select3=$_GET['select3'];
 $textfield=$_GET['textfield'];
-if ($select3=="Número"){
+if ($select3=="NÃºmero"){
 
 $sqlnumero = mysql_query("select * from chamado where publicar = '1' and id_chamado=".$textfield." and cliente_id='" . $v_id_cliente . "'");
 
@@ -460,7 +460,7 @@ echo $descricao;?>&nbsp;</td>
 <? $pag=$_GET['pag']; if ($pag=="2" && $textfield==""){
 
 
-/* [ Dados para paginação ] */
+/* [ Dados para paginaÃ§Ã£o ] */
 
 $tr1=1;
 $total_reg = "20"; 
@@ -473,7 +473,7 @@ $inicio = $inicio*$total_reg;
 /* [ Pega todos os chamados fechados ] */
 
 $condSQL="where cliente_id='" . $v_id_cliente . "' and  publicar = '1' and  status=1 and dataa >= '$xdata' order by dataa desc";
-$sql = mysql_query("select * from chamado ".$condSQL);
+$sql = mysql_query("select * from chamado ".$condSQL) or die (mysql_error());
 $tr = mysql_num_rows($sql);
 
 

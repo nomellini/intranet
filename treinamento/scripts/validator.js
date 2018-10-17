@@ -13,17 +13,17 @@ function limpa_string(CNPJ){
 }
 
 /*	'title': {
-		'l': 'Title',  // Nome do Retono (Lucas: Implementado para se n„o tiver, pegar o valor do t_title)
+		'l': 'Title',  // Nome do Retono (Lucas: Implementado para se n√£o tiver, pegar o valor do t_title)
 		'r': false,    // requerido ou nao
-		'f': 'alpha',  // formataÁao, fixa no validator.js
-		't': 't_title',// span oi id que ser· mudado
+		'f': 'alpha',  // formata√ßao, fixa no validator.js
+		't': 't_title',// span oi id que ser√° mudado
 		
 		'm': null,     // Pode ser nulo ou nao!?
 		'mn': 2,       // minimo de caracter
-		'mx': 10       // m·ximo de caracter
+		'mx': 10       // m√°ximo de caracter
 	},            <-- so ira utilizar virgula se houver mais campos a serem verificados, o ultimo nao precisa*/
 
-// FormataÁoes abaixo
+// Formata√ßoes abaixo
 var re_dt = /^(\d{2})\/(\d{2})\/(\d{4})$/,
     re_mes_ano = /^(\d{2})\/(\d{4})$/,
     re_tm = /^(\d{1,2})\:(\d{1,2})\:(\d{1,2})$/,
@@ -34,7 +34,7 @@ a_formats = {
 	'cep'     : /^(\d{5})\-(\d{3})$/,
 	'mes_ano' : /^(\d{2})\-(\d{4})$/,
 	'alpha'   : /^[a-zA-Z\.\-\ ]+$/,
-	'alphabeto_acento' : /^[a-zA-Z\.\-\·\È\Ì\˙\Û\‡\Ë\Ï\Ú\˘\„\ı\,\.\ ]+$/,
+	'alphabeto_acento' : /^[a-zA-Z\.\-\√°\√©\√≠\√∫\√≥\√†\√®\√¨\√≤\√π\√£\√µ\,\.\ ]+$/,
     'alphanum': /^\w+$/,
 	'unsigned': /^\d+$/,
 	'integer' : /^[\+\-]?\d*$/,
@@ -145,10 +145,10 @@ a_messages = [
 	'Can not find form field "%n%" in the form "%form%"',
 	'Can not find label tag (id="%t%")',
 	'Can not verify match. Field "%m%" was not found',
-	'"%l%", Preenchimento ObrigatÛrio',
+	'"%l%", Preenchimento Obrigat√≥rio',
 	'Valor "%l%" deve conter no minimo %mn% caracteres',
-	'Valor "%l%" deve conter no m·ximo %mx% caracteres',
-	'"%v%" n„o È um valor v·lido para "%l%"',
+	'Valor "%l%" deve conter no m√°ximo %mx% caracteres',
+	'"%v%" n√£o √© um valor v√°lido para "%l%"',
 	'"%l%" must match "%ml%"'
 ]
 
@@ -259,7 +259,7 @@ function validator_exec(){
 		// reset previous error if any
 		this.a_fields[n_key].n_error = null;
 
-		if (this.a_fields[n_key]['f'] == 'real'){ // implementado por lucas para n˙meros reais
+		if (this.a_fields[n_key]['f'] == 'real'){ // implementado por lucas para n√∫meros reais
 			this.a_fields[n_key]['v'] = fun_real(this.a_fields[n_key]['v']);
 		}
 

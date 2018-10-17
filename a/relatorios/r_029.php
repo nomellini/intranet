@@ -1,22 +1,22 @@
-<?	require("../scripts/conn.php");	
-	require("../scripts/stats.php");	
-	require("../scripts/classes.php");	
-	
+<?	require("../scripts/conn.php");
+	require("../scripts/stats.php");
+	require("../scripts/classes.php");
+
     if(!$datai) {
        $datai = date("d/m/Y", time()-( 86400*2 ) );  // 86400 = numero de segundos em um dia, 90 = 2 meses atras
 	}
-	
-	$hoje = date("d/m/Y");	
+
+	$hoje = date("d/m/Y");
 	if(!$dataf) {
       $dataf = $hoje;
 	}
-	
+
 	if (!isset($orderby)) {
 		$orderby = " id_chamado desc";
 	}
-	
-	$orderby .= ", id_chamado";	
-		
+
+	$orderby .= ", id_chamado";
+
 ?>
 <html>
 <head>
@@ -26,7 +26,7 @@ function fdata(src) {
 }
 </script>
 <title>Relat&oacute;rio S.A.D.</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 <style type="text/css">
 <!--
@@ -45,11 +45,11 @@ function fdata(src) {
     <table width="619" border="1">
       <tr>
         <td width="139">Per&iacute;odo de consulta </td>
-        <td width="464">De 
+        <td width="464">De
           <label>
           <input name="datai" type="text" class="bordaTexto" id="datai" onKeyPress="fdata(this)" value="<?=$datai?>">
-		  
-        at&eacute; 
+
+        at&eacute;
         <input name="dataf" type="text" class="bordaTexto" id="dataf" onKeyPress="fdata(this)" value="<?=$dataf?>">
         </label></td>
       </tr>
@@ -63,7 +63,7 @@ function fdata(src) {
     </table>
   </form>
 <div align="left">
-<?php	
+<?php
 
   if ($action == "pesquisar")  {
 
@@ -84,7 +84,7 @@ function fdata(src) {
 
 $sql = "
 select
-	ch.dataa, 	
+	ch.dataa,
 	ch.email emailchamado,
 	st.status,
 	cl.cliente,
@@ -102,7 +102,7 @@ from
 		inner join sistema si on si.id_sistema = ch.sistema_id
 		inner join status st on st.id_status = ch.status
 where
-  ce.tipo = 'T' and 
+  ce.tipo = 'T' and
   ch.dataa >= '$_datai' and dataa <= '$_dataf'
 order by
   $orderby
@@ -113,13 +113,13 @@ order by
     <tr>
           <td bgcolor="#FFFFFF" ><a href="r_029.php?action=pesquisar&datai=<?=$datai?>&dataf=<?=$dataf?>&orderby=cliente_id">Cliente</a></td>
           <td bgcolor="#FFFFFF" ><a href="r_029.php?action=pesquisar&datai=<?=$datai?>&dataf=<?=$dataf?>&orderby=dataa">Abertura</a></td>
-          <td bgcolor="#FFFFFF" ><a href="r_029.php?action=pesquisar&datai=<?=$datai?>&dataf=<?=$dataf?>&orderby=usuario">Usuário</a></td>
+          <td bgcolor="#FFFFFF" ><a href="r_029.php?action=pesquisar&datai=<?=$datai?>&dataf=<?=$dataf?>&orderby=usuario">UsuÃ¡rio</a></td>
           <td bgcolor="#FFFFFF" >E-mail</td>
-          <td bgcolor="#FFFFFF" ><a href="r_029.php?action=pesquisar&datai=<?=$datai?>&dataf=<?=$dataf?>&orderby=id_chamado">Chamado</a></td>	  
+          <td bgcolor="#FFFFFF" ><a href="r_029.php?action=pesquisar&datai=<?=$datai?>&dataf=<?=$dataf?>&orderby=id_chamado">Chamado</a></td>
           <td bgcolor="#FFFFFF" ><a href="r_029.php?action=pesquisar&datai=<?=$datai?>&dataf=<?=$dataf?>&orderby=sistema,categoria">Sistema</a></td>
           <td bgcolor="#FFFFFF" ><a href="r_029.php?action=pesquisar&datai=<?=$datai?>&dataf=<?=$dataf?>&orderby=categoria,sistema">Categoria</a></td>
     </tr>
-  
+
 <?
   $resultA = mysql_query($sql) or die (mysql_error());
   while ($linhaA = mysql_fetch_object($resultA)) {
@@ -137,7 +137,7 @@ order by
           <td bgcolor="#FFFFFF" ><?=$dataa;?></td>
           <td bgcolor="#FFFFFF" ><?=$linhaA->usuario;?></td>
           <td bgcolor="#FFFFFF" ><a href="mailto:<?=$email;?>"><?=$email;?></a>&nbsp;</td>
-          <td bgcolor="#FFFFFF" ><a href="/a/historicochamado.php?&id_chamado=<?=$linhaA->id_chamado;?>" target="_blank"><?=$linhaA->id_chamado;?></a></td>	  
+          <td bgcolor="#FFFFFF" ><a href="/a/historicochamado.php?&id_chamado=<?=$linhaA->id_chamado;?>" target="_blank"><?=$linhaA->id_chamado;?></a></td>
           <td bgcolor="#FFFFFF" ><?=$linhaA->sistema;?></td>
           <td bgcolor="#FFFFFF" ><?=$linhaA->categoria;?></td>
     </tr>

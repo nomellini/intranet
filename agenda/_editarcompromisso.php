@@ -1,14 +1,13 @@
 <?
- mysql_connect(localhost, sad, data1371);
- mysql_select_db(datamace);
- require("../a/scripts/conn.php");		
+
+ require("../a/scripts/conn.php");
 
  if ($particular) {
    $p='1';
  } else {
    $p='0';
  }
- 
+
  $sql = "select obs, id_usuario from compromisso where id = $id_compromisso";
  $result = mysql_query($sql) or die(mysql_error());
  $linha = mysql_fetch_object($result) ;
@@ -19,12 +18,12 @@
  $data = "$ano-$mes-$dia";
  if ($acao != 'excluir') {
    if ($acao != 'copiar') {
-   
-	$nomeusuario=peganomeusuario($id_usuario);	
+
+	$nomeusuario=peganomeusuario($id_usuario);
 	$dataHumana = date("d/m/Y h:i");
 	$obs .= "Editado em $dataHumana por $nomeusuario<br>";
 
-   
+
 	 $sql = "delete from compromissousuario where id_compromisso=$id_compromisso";
 	 mysql_query($sql);
 	 $sql = "delete from compromisso where id = $id_compromisso";
@@ -37,12 +36,12 @@
 	 $result = mysql_query($sql);
 	 $linha = mysql_fetch_object($result);
 	 $id_compromisso = $linha->id;
-	 
+
 	 $pvt = 0;
 	 if ($particular) {
 	   $pvt =  1;
 	 }
-	 
+
 	 for ($i=0; $i<$usuarios; $i++) {
 	   $lido = 1;
 	   $usuario = $usuario_id[$i];
@@ -54,7 +53,7 @@
       	if ($acao == "copiar") {
 		  $textEmail = "Novo compromisso (copia)<br> ";
 		} else {
-		  $textEmail = "Alteração de compromisso<br>$obs";
+		  $textEmail = "AlteraÃ§Ã£o de compromisso<br>$obs";
 		}
         $textEmail .= "
 <br>
@@ -82,19 +81,19 @@
     <td colspan=\"2\"><font face=\"Verdana, Arial, Helvetica, sans-serif\">[descricao]</font></td>
   </tr>
 </table>
-<p><font face=\"Verdana, Arial, Helvetica, sans-serif\"><HR size=\"1\">      
+<p><font face=\"Verdana, Arial, Helvetica, sans-serif\"><HR size=\"1\">
   <font color=\"#CCCCCC\">Datamace 2005</font><br>
-	    
+
 </font>
-</p>	
+</p>
 		";
-        EmailAgenda($id_usuario, $usuario, $data, $hora, $horafim, $resumo, $local, $descricao, $textEmail );   	   
+        EmailAgenda($id_usuario, $usuario, $data, $hora, $horafim, $resumo, $local, $descricao, $textEmail );
   	 }
  } else {
 	$log = "Excluido por " . peganomeusuario($id_usuario);
-	$sql = "update compromisso set excluido = 1, resumo_ant='$log' where id = $id_compromisso"; 
+	$sql = "update compromisso set excluido = 1, resumo_ant='$log' where id = $id_compromisso";
     mysql_query($sql) ;
-//	die($sql);	
+//	die($sql);
 	$textEmail = "
 <font face=\"Verdana, Arial, Helvetica, sans-serif\"><strong>Compromisso Excluido</strong></font><br>
 <br>
@@ -122,17 +121,17 @@
     <td colspan=\"2\"><font face=\"Verdana, Arial, Helvetica, sans-serif\">[descricao]</font></td>
   </tr>
 </table>
-<p><font face=\"Verdana, Arial, Helvetica, sans-serif\"><HR size=\"1\">      
+<p><font face=\"Verdana, Arial, Helvetica, sans-serif\"><HR size=\"1\">
   <font color=\"#CCCCCC\">Datamace 2005</font><br>
-	    
+
 </font>
-</p>	
+</p>
 	";
     for ($i=0; $i<$usuarios; $i++) {
      $usuario = $usuario_id[$i];
-     EmailAgenda($id_usuario, $usuario, $data, $hora, $horafim, $resumo, $local, $descricao, $textEmail );   	   
+     EmailAgenda($id_usuario, $usuario, $data, $hora, $horafim, $resumo, $local, $descricao, $textEmail );
     }
-	 
+
  }
- header("Location: /agenda/inicio.php"); 
+ header("Location: /agenda/inicio.php");
 ?>

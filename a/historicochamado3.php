@@ -1099,13 +1099,5 @@ function Documentacao()
             return true;
         }
 
-        function OnDragStart3 (event) {
-			http://192.168.0.14/a/historicochamado.php?id_chamado=111111#c_111
-			id_chamado = document.drag1.id_chamado.value;			
-			id_contato = document.drag1.id_contato.value;
-			link = "Chamado [" + id_chamado + ", " + id_contato + "] - http://192.168.0.14/a/historicochamado3.php?id_chamado=" + id_chamado+"#"+id_contato;
-            event.dataTransfer.setData ("text/plain", link);
-            return true;
-        }
 		
     </script> 

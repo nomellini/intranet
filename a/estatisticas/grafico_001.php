@@ -1,4 +1,5 @@
 <?php 
+header('Content-type: text/html; charset=utf-8');
 require("../scripts/conn.php");	
 require("sql.php");	
 require ("../../jgraph/src/jpgraph.php"); 
@@ -11,7 +12,7 @@ $graph->SetShadow();
 $graph->title-> Set( "Contatos por sistema"); 
 
 	$sql = getSql_002($de, $ate, $id);
-	
+	mysql_set_charset("latin1", $link);
 	$result = mysql_query($sql) or die (mysql_error());	
 	$soma = 0; $i=0;
 	while ($linha = mysql_fetch_object($result)) {

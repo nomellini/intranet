@@ -1,5 +1,9 @@
-<?php require_once('../Connections/sad.php'); ?>
-<?php
+<?php 
+
+	require_once('./scripts/conn.php'); 
+	require("scripts/classes.php");
+	
+
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
@@ -29,14 +33,13 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_sad, $sad);
 $query_rsUsuarios = "SELECT id_usuario, nome FROM usuario WHERE (hierarquia = 2 and ativo = 1) or (id_usuario=281) or (id_usuario=12) ORDER BY nome";
-$rsUsuarios = mysql_query($query_rsUsuarios, $sad) or die(mysql_error());
+$rsUsuarios = mysql_query($query_rsUsuarios) or die(mysql_error());
 $row_rsUsuarios = mysql_fetch_assoc($rsUsuarios);
 $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 ?><?
-	require("scripts/conn.php");
-	require("scripts/classes.php");
+
+
 	if ( isset($id_usuario) ) {
 		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );
 		if ($ok<>$id_usuario) { header("Location: index.php"); }
@@ -88,8 +91,11 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 
 	$dataa = $objChamado->dataaf;
 
-	$contatos = historicoChamado($chamado, "");
 
+	global $link;
+	mysql_set_charset("latin1", $link);
+	$contatos = historicoChamado($chamado, "");
+	mysql_set_charset("utf8", $link);
 
 ?>
 <html>
@@ -197,7 +203,7 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 
 
   ?>
-              </select>            </td>
+            </select>            </td>
             <td width="28%">
               <select name="prioridade" class="unnamed1" >
                 <?
@@ -213,7 +219,7 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 	}
 
   ?>
-              </select>            </td>
+            </select>            </td>
             <td width="53%">
               <select name="origem" class="unnamed1">
                 <?
@@ -229,7 +235,7 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 	}
 
   ?>
-              </select>            </td>
+            </select>            </td>
           </tr>
           <tr align="left" valign="middle">
             <td height="2" valign="top" colspan="2">Treinados em <span id='s'></span></td>
@@ -241,11 +247,12 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
               <input type="text" name="pessoacontatada" class="unnamed1" size="40" maxlength="100" onKeyPress="teclado();" >            </td>
           </tr>
           <tr>
-            <td colspan="2" height="10"><span id=cat>Sele��o de categoria</span></td>
+            <td colspan="2" height="10"><span id=cat>Seleção de categoria</span></td>
             <td width="53%" height="10">Motivo<br>
               <select name="motivo" class="unnamed1" >
                 <option value=0></option>
-                <?
+<?
+
 	$sistema = pegaMotivos();
 	while ( list($tmp1, $tmp) = each($sistema) ) {
 	  $id = $tmp["id_motivo"];
@@ -259,7 +266,7 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 			document.form.motivo.value = 9;
     </script>
 
-              </select>            </td>
+            </select>            </td>
           </tr>
           <tr>
             <td colspan="3">&nbsp;</td>
@@ -279,11 +286,11 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 <div style="with=50%">
   <table width="98%" border="0" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC" align="center">
     <tr>
-      <td bgcolor="#FFFFFF"> <h3>Descri��o do problema</h3>
-<h4>Texto abaixo inserido pelo cliente est� no contato n�mero 1</h4>
+      <td bgcolor="#FFFFFF"> <h3>Descrição do problema</h3>
+<h4>Texto abaixo inserido pelo cliente está no contato número 1</h4>
 <?
     foreach ($contatos as $contato) {
-		echo( $contato["historico"]);
+		echo( ($contato["historico"]) );
 	}?></td>
 </tr>
 </table>
@@ -296,7 +303,7 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
           <tr>
             <td colspan="3"> Descri&ccedil;&atilde;o da Solu&ccedil;&atilde;o
               ou Encaminhamento <br>
-              <textarea name="historico" cols="100" rows="15" class="unnamed1">Em an�lise</textarea>
+              <textarea name="historico" cols="100" rows="15" class="unnamed1">Em análise</textarea>
               <br>
               <font size="1">procurar por uma palavra (chamados anteriores e base
               conhecimento WEB)</font>

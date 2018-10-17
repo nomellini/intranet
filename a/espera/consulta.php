@@ -23,25 +23,25 @@
 
 
 	
-	/* Ligações de hoje	*/
+	/* LigaÃ§Ãµes de hoje	*/
     $sql = "select count(*) as ligTotal from satligacao where FL_ATIVO and data = '$hoje'";	
 	$result = mysql_query($sql);
 	$linha = mysql_fetch_object($result);
 	$ligHoje = $linha->ligTotal;
 	
-	/* Ligações de hoje	em espera*/
+	/* LigaÃ§Ãµes de hoje	em espera*/
     $sql = "select count(*) as ligTotal from satligacao where FL_ATIVO and data = '$hoje' and id_satstatus=1";	
 	$result = mysql_query($sql);
 	$linha = mysql_fetch_object($result);
 	$ligEspera = $linha->ligTotal;
 
-	/* Ligações de hoje	transferidas*/
+	/* LigaÃ§Ãµes de hoje	transferidas*/
     $sql = "select count(*) as ligTotal from satligacao where FL_ATIVO and data = '$hoje' and id_satstatus=2";	
 	$result = mysql_query($sql);
 	$linha = mysql_fetch_object($result);
 	$ligTransf = $linha->ligTotal;
 
-	/* Ligações de não atendidas*/
+	/* LigaÃ§Ãµes de nÃ£o atendidas*/
     $sql = "select count(*) as ligTotal from satligacao where FL_ATIVO and data = '$hoje' and id_satstatus=4";	
 	$result = mysql_query($sql);
 	$linha = mysql_fetch_object($result);
@@ -71,7 +71,7 @@
 <html>
 <head>
 <title>espera</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../todo/stilos.css" type="text/css">
 <link href="../stilos.css" rel="stylesheet" type="text/css">
 <meta http-equiv="refresh" content="120">

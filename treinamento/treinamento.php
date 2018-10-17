@@ -63,16 +63,16 @@ $sugestoes = $linha->soma;
       var diasemana = new Array;
       var mesescrito = new Array;
       diasemana[1] = "Segunda-feira";
-      diasemana[2] = "Ter�a-feira";
+      diasemana[2] = "Terça-feira";
       diasemana[3] = "Quarta-feira";
       diasemana[4] = "Quinta-feira";
       diasemana[5] = "Sexta-feira";
-      diasemana[6] = "S�bado";
+      diasemana[6] = "Sábado";
       diasemana[0] = "Domingo";
 
       mesescrito[0] = "Janeiro";
       mesescrito[1] = "Fevereiro";
-      mesescrito[2] = "Mar�o";
+      mesescrito[2] = "Março";
       mesescrito[3] = "Abril";
       mesescrito[4] = "Maio";
       mesescrito[5] = "Junho";
@@ -476,6 +476,5 @@ $sugestoes = $linha->soma;
     </tr>
   </table>
 </div>
-<p align="center">&nbsp;</p>
 </body>
 <!-- #EndTemplate --></html>

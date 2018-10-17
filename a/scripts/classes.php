@@ -1,5 +1,7 @@
 <?php
+
 require_once("funcoes.php");
+
 class chamado {
 
 	 var $id_chamado;

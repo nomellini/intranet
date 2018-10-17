@@ -37,7 +37,7 @@ function obterTempo($id_usuario)
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset=iso-8859-1>
+    <meta charset=utf-8>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -75,7 +75,7 @@ function obterTempo($id_usuario)
 							Chamado
 						</th>
 						<th>
-							Descrição
+							DescriÃ§Ã£o
 						</th>
 						<th>
 							Tempo Hoje
@@ -131,7 +131,7 @@ where u.area in (2, 3, 11) and u.ativo = 1 and (c.data >= '$DataReferencia') ord
 								echo $linha->nome;
 								if ($linha->id_usuario == $ok)
 								{
-									echo " <span class=\"label label-warning\">você</span>";
+									echo " <span class=\"label label-warning\">vocÃª</span>";
 								}
 							?>
 						</td>

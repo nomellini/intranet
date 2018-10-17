@@ -4,7 +4,7 @@
 
 	
 	$Chamado = mysql_real_escape_string ($Chamado);
-	$Contato = mysql_real_escape_string ($Contato);	
+	$Contato = nl2br(mysql_real_escape_string ($Contato));	
     $datae = date("Y-m-d");
     $horae = date("H:i:s");	
 	
@@ -19,7 +19,7 @@
 	$sql .= " destinatario_id, remetente_id, diagnostico_id, email, lido, ";
 	$sql .= " lidodono, nomecliente, datauc, horauc, visible ) ";	
 	$sql .= " values ( ";
-	$sql .= " $De, 'DATAMACE', 4, $Categoria, ";
+	$sql .= " $De, 'DATAMACE', 33, $Categoria, ";
 	$sql .= " 1, 73, '$Chamado', '$datae', 2, '$horae', ";
 	$sql .= " $Destinatario, $De, 13, '$Email', 0, ";
 	$sql .= " 1, '$NomeCliente', '$datae', '$horae', 1 )";
@@ -48,7 +48,7 @@
 	
 	
 	// Mandar email:	
-	$subject = "Mais um chamado de Ponto !";
+	$subject = "Mais um chamado de Controle de Acesso !";
 	$headers = "Lucas Oliveira Silva+lucas.silva@datamace.com.br:Lucas";		
 	$msg = "<a href='http://192.168.0.14/a/historicochamado.php?id_chamado=$id_chamado'>Link direto [Chamado $id_chamado] </a><BR><BR>$Chamado";
 	mail2($Email, $subject, $msg, $headers);	

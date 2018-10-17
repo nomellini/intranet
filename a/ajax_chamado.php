@@ -1,30 +1,30 @@
 <?
-	header('Content-type: text/html; charset=iso-8859-1');	
+	header('Content-type: text/html; charset=utf-8');
 	require('scripts/conn.php');
 	$Status = 0;
 	$Mensagem = "";
 	if (!is_numeric($id_chamado))
 	{
 		$Status = -1;
-		$Mensagem = "Digite um numero de chamado v·lido";
-	} 
-	else 
+		$Mensagem = "Digite um numero de chamado v√°lido";
+	}
+	else
 	{
 		$temChamado = conn_ExecuteScalar("select count(1) from chamado where id_chamado = '$id_chamado'");
 		if ($temChamado == 0) {
 			$Status = -1;
-			$Mensagem = "O chamado '$id_chamado' n„o existe";			
+			$Mensagem = "O chamado '$id_chamado' n√£o existe";
 		} else {
 			$sql = "select status, left(descricao, 100) descricao from chamado where id_chamado = $id_chamado;";
 			$Query = mysql_query($sql);
 			$linha = mysql_fetch_object($Query);
 			$Status = $linha->status;
-			$Mensagem = $linha->descricao;            
+			$Mensagem = $linha->descricao;
 			if ($Status == 1)
 			{
-				$Mensagem = "O Chamado '$id_chamado' est· encerrado";
+				$Mensagem = "O Chamado '$id_chamado' est√° encerrado";
 			} else {
-				$Mensagem = mysql_real_escape_string ($Mensagem);					
+				$Mensagem = mysql_real_escape_string ($Mensagem);
 			}
 		}
 	}

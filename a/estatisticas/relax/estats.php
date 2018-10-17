@@ -1,7 +1,7 @@
 <?
-	require("../../scripts/conn.php");	
+	require("../../scripts/conn.php");
 
-    function pad($s, $n){    
+    function pad($s, $n){
 	   $r = $s;
        while (strlen($r) < $n) {
 	     $r = "0".$r;
@@ -10,35 +10,35 @@
 	}
 
 
-	if ($TipoReferencia == "MES") {	
+	if ($TipoReferencia == "MES") {
 		$ano = $_POST["ano"];
-		$mes = $_POST["mes"]; 
+		$mes = $_POST["mes"];
 		$DataInicio = mktime(0,0,0, $mes, 1, $ano);
-		$last_day = date("t", $DataInicio);  		
-		$DataFim =  mktime(0,0,0, $mes, $last_day, $ano);		
+		$last_day = date("t", $DataInicio);
+		$DataFim =  mktime(0,0,0, $mes, $last_day, $ano);
 		$de = date("Y-m-d", $DataInicio);
 		$ate = date("Y-m-d", $DataFim);
-	} else {	
-		
+	} else {
+
 		$Data = explode('/', $de);
-		$DataInicio = mktime(0,0,0, $Data[1], $Data[0], $Data[2]);			
-		$de = "$Data[2]-$Data[1]-$Data[0]"; 	
+		$DataInicio = mktime(0,0,0, $Data[1], $Data[0], $Data[2]);
+		$de = "$Data[2]-$Data[1]-$Data[0]";
 
 		$Data = explode('/', $ate);
-		$DataFim = mktime(0,0,0, $Data[1], $Data[0], $Data[2]);			
-		$ate = "$Data[2]-$Data[1]-$Data[0]"; 			
+		$DataFim = mktime(0,0,0, $Data[1], $Data[0], $Data[2]);
+		$ate = "$Data[2]-$Data[1]-$Data[0]";
 	}
 
-	
+
 	if ( isset($id_usuario) ) {
-    	$ok = verificasenha2($cookieEmailUsuario, $cookieSenhamd5 );	  
+    	$ok = verificasenha2($cookieEmailUsuario, $cookieSenhamd5 );
 	   	if ($ok<>$id_usuario) { header("Location: index.php?erro=1"); }
-	    setcookie("loginok");  
-	} else { 
+	    setcookie("loginok");
+	} else {
       header("Location: index.php");
     }
-		
-    $nomeusuario=peganomeusuario($ok);	
+
+    $nomeusuario=peganomeusuario($ok);
 ?>
 <html>
 <head>
@@ -91,18 +91,18 @@ body {
 </head>
 <body>
 
-<div align="center"><font color="#003366" size="3"> Estat&iacute;sticas da Agenda 
+<div align="center"><font color="#003366" size="3"> Estat&iacute;sticas da Agenda
   Relax</font><br>
-<?=date("d/m/Y", $DataInicio);?> até <?=date("d/m/Y", $DataFim); ?></div>
+<?=date("d/m/Y", $DataInicio);?> atï¿½ <?=date("d/m/Y", $DataFim); ?></div>
 <font size="1"></font>
 <p>
 <?
-	$dias = array( '', 'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado' );
+	$dias = array( '', 'Domingo', 'Segunda', 'Terï¿½a', 'Quarta', 'Quinta', 'Sexta', 'Sabado' );
 	$sql = "select count(1) qtde from relax r where (r.data >= '$de') and (r.data <= '$ate') ";
 
 	$result = mysql_query($sql);
 	$linha = mysql_fetch_object($result);
-	$total = $linha->qtde;	
+	$total = $linha->qtde;
 
 	$sql = "SELECT
   DayOfWeek(Data) dia,
@@ -115,19 +115,19 @@ Group By DayOfWeek(Data);";
 	$result = mysql_query($sql);
 ?>
 <table width="541" border="1">
-<caption><?= $total?> Agendamentos no período</caption>
+<caption><?= $total?> Agendamentos no perï¿½odo</caption>
   <tr>
     <td width="33%"><div align="center">Dia da semana </div></td>
     <td width="27%"><div align="center">% (qtde)</div></td>
-    <td width="21%"><div align="center">Manhã</div></td>
-    <td width="19%"><div align="center">Tarde</div></td>		
+    <td width="21%"><div align="center">Manhï¿½</div></td>
+    <td width="19%"><div align="center">Tarde</div></td>
   </tr>
-<?	
+<?
 	$m = 0; $t = 0; $d = 0;
 	while ($linha = mysql_fetch_object($result))
 	{
 		$TotalDoDia = $linha->qtde;
-		$d += $TotalDoDia;		
+		$d += $TotalDoDia;
 		if ($total != 0) {
 			$Percentual = ($linha->qtde / $total) * 100;
 		} else {
@@ -140,23 +140,23 @@ Group By DayOfWeek(Data);";
 		$t += $Tarde;
 		if ($TotalDoDia != 0) {
 			$ManhaPercentual = number_format( 100* ($Manha/$TotalDoDia), 1, ',', '.') . " %";
-			$TardePercentual = number_format( 100*($Tarde/$TotalDoDia), 1, ',', '.') . " %";					
+			$TardePercentual = number_format( 100*($Tarde/$TotalDoDia), 1, ',', '.') . " %";
 		} else {
 			$ManhaPercentual = 0;
 			$TardePercentual = 0;
 		}
-		
+
 ?>
   <tr>
     <td width="33%"><div align="center"><?=$dias[$linha->dia]?></div></td>
     <td width="27%"><div align="center"><?="$Percentual ($TotalDoDia)" ?></div></td>
     <td width="21%"><div align="center"><?="$ManhaPercentual ($Manha)"?></div></td>
-    <td width="19%"><div align="center"><?="$TardePercentual ($Tarde)"?></div></td>		
+    <td width="19%"><div align="center"><?="$TardePercentual ($Tarde)"?></div></td>
   </tr>
-<?		
-	}	
+<?
+	}
 	if ($d!=0) {
-		$mp = number_format( 100*($m/$d), 1, ',', '.') . " %";	
+		$mp = number_format( 100*($m/$d), 1, ',', '.') . " %";
 		$tp = number_format( 100*($t/$d), 1, ',', '.') . " %";
 	} else {
 		$mp = 0;
@@ -173,7 +173,7 @@ Group By DayOfWeek(Data);";
     </strong></div></td>
     <td width="19%"><div align="center"><strong>
       <?="$tp ($t)" ?>
-    </strong></div></td>		
+    </strong></div></td>
   </tr>
 </table>
 
@@ -190,20 +190,20 @@ Group By DayOfWeek(Data);";
 from
   relax r
     inner join usuario u on u.id_usuario = r.id_usuario
-WHERE (r.data >= '$de') and (r.data <= '$ate') 	
+WHERE (r.data >= '$de') and (r.data <= '$ate')
 group by u.nome
 order by c desc, nome";
 	$result = mysql_query($sql) or die (mysql_error());
 ?>
 <table width="542" border="1">
-<caption>Usuários</caption>
+<caption>UsuÃ¡rios</caption>
   <tr>
-    <td width="32%"><div align="left">Usuário</div></td>
+    <td width="32%"><div align="left">UsuÃ¡rio</div></td>
     <td width="21%"><div align="center">Compareceu</div></td>
-    <td width="32%"><div align="center">Faltou</div></td>	
-    <td width="15%"><div align="center">Total</div></td>		
+    <td width="32%"><div align="center">Faltou</div></td>
+    <td width="15%"><div align="center">Total</div></td>
   </tr>
-<?	
+<?
 	$c1 = 0; $c2 = 0; $c3 = 0;
 	while ($linha = mysql_fetch_object($result))
 	{
@@ -211,8 +211,8 @@ order by c desc, nome";
 		//$Percentual = number_format($Percentual, 2, ',', '.') . "%";
 		$c1 += $linha->c ;
 		$c2 += $linha->f ;
-		$c3 += $linha->t ;		
-		
+		$c3 += $linha->t ;
+
 ?>
   <tr>
     <td width="32%"><div align="left">
@@ -220,13 +220,13 @@ order by c desc, nome";
     </div></td>
     <td width="21%"><div align="center"><?=$linha->c ?></div></td>
     <td width="32%"><div align="center"><?=$linha->f ?></div></td>
-    <td width="15%"><div align="center"><?=$linha->t ?></div></td>	
+    <td width="15%"><div align="center"><?=$linha->t ?></div></td>
   </tr>
-<?		
-	}	
+<?
+	}
 	if ($c3 != 0) {
-		$cp = number_format( 100*($c1/$c3), 2, ',', '.') . " %";	
-		$fp = number_format( 100*($c2/$c3), 2, ',', '.') . " %";	
+		$cp = number_format( 100*($c1/$c3), 2, ',', '.') . " %";
+		$fp = number_format( 100*($c2/$c3), 2, ',', '.') . " %";
 	} else {
 		$cp = 0;
 		$fp = 0;
@@ -242,7 +242,7 @@ order by c desc, nome";
     </strong></div></td>
     <td width="15%"><div align="center"><strong>
       <?="$c3"?>
-    </strong></div></td>	
+    </strong></div></td>
   </tr>
 </table>
 </p>

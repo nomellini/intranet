@@ -88,7 +88,7 @@ $totalRows_rsClientes = mysql_num_rows($rsClientes);
 <html>
 <head>
 <title>Liga&ccedil;&otilde;es de hoje</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../../todo/stilos.css" type="text/css">
 <link href="../../stilos.css" rel="stylesheet" type="text/css">
 <meta http-equiv="refresh" content="1120">
@@ -423,7 +423,7 @@ do {
           <td>Total</td>
           <td height="16"><span class="style1">
             <?=$contador?>
-          ligações</span></td>
+          ligaÃ§Ãµes</span></td>
           <td>&nbsp;</td>
           <td align="center" valign="middle">&nbsp;</td>
           <td align="center" valign="middle">&nbsp;</td>
@@ -448,7 +448,7 @@ do {
             <? if ($atendidas> 0) { ?>            
           (
           <?= number_format($atendidas/$contador*100, 2,',','.')  ?>
-%) </span> ... ( + <?=$inativos?> ligações finalizadas)</td>
+%) </span> ... ( + <?=$inativos?> ligaÃ§Ãµes finalizadas)</td>
         </tr>
         <tr>
           <td>&nbsp;</td>

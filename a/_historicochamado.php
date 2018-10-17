@@ -959,11 +959,11 @@ where
 order by hora ";
 
 
-	  $msg = "Usu�rios trabalhando neste chamado\\n\\n";
+	  $msg = "Usuários trabalhando neste chamado\\n\\n";
 	  $result = mysql_query($sql) or die (mysql_error() . " - " . $sql);
 	  while ($linha = mysql_fetch_object($result)) {
 		$temMsg = true;
-	  	$msg .= "$linha->nome, desde �s $linha->hora\\n";
+	  	$msg .= "$linha->nome, desde às $linha->hora\\n";
 	  }
 
 	  mysql_free_result($result);

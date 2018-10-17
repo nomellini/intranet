@@ -34,7 +34,7 @@ function display_pollList() {
 
   <TABLE BORDER=\"0\" CELLSPACING=\"15\" CELLPADDING=\"0\" WIDTH=\"100%\">
   <TR><TD>
-  
+
   <TABLE BORDER=\"0\" CELLSPACING=\"0\" CELLPADDING=\"2\" BGCOLOR=\"$symp_table_border\" WIDTH=\"100%\">
   <TR><TD>
   <TABLE BORDER=\"0\" CELLPADDING=\"5\" CELLSPACING=\"0\" BGCOLOR=\"$symp_table_bg\" WIDTH=\"100%\">
@@ -51,7 +51,7 @@ function display_pollList() {
   <TR><TD VALIGN=\"top\">\n";
  //END_ECHO
  if ($l->numpolls == 0)
-  ECHO "Não existe nenhuma pesquisa disponível.";
+  ECHO "nÃ£o existe nenhuma pesquisa disponï¿½vel.";
  else {
   ECHO "<FONT FACE=\"Georgia\" SIZE=\"2\"><BR>";
   while(sizeof($l->question) != 0 && list($k,$v) = each($l->question)) {

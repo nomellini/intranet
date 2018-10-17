@@ -1,0 +1,1 @@
+<img src="fig1.php" border=0 align =center width=300 height= 200> 

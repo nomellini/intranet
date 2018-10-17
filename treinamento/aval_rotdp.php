@@ -19,7 +19,7 @@ if ($id) {
 	if ($rg){
 		$result = mysql_query("select * from cadastrotreinamento where rg = $rg");
 		if (!$linha = mysql_fetch_object($result)){
-			$msg = "<script>alert('RG: $rg, não encontrado, se correto realize seu cadastro, senão clique em voltar e digite o RG correto. \\n Em caso de dúvidas, chame seu instrutor!');</script>";
+			$msg = "<script>alert('RG: $rg, nÃ£o encontrado, se correto realize seu cadastro, senÃ£o clique em voltar e digite o RG correto. \\n Em caso de dÃºvidas, chame seu instrutor!');</script>";
 			$link_prova = "aval_rotdp.php";
 			include_once("cadtre.php");
 			die();
@@ -50,7 +50,7 @@ $hoje = date("d/m/Y");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
    <head>
-   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
    <title>Datamace Inform&aacute;tica Ltda.</title>
    <link rel="stylesheet" href="/Templates/stilo.css" type="text/css">
    <script language="JavaScript" src="newpopcalendar.js" type="text/javascript"></script>
@@ -72,14 +72,14 @@ function confirma() {
 			}
 			if (qtd == qtdtot){
 			 	this.location = "#campo" + x;
-				alert ("Verifique a questão: "  + x + " \n Preenchimento Obrigatório!");
+				alert ("Verifique a questÃ£o: "  + x + " \n Preenchimento ObrigatÃ³rio!");
 				return false;
 			}
 		}
 	}
 	
 	if (!document.getElementById('rg').value){
-		alert ("Rg: Preenchimento Obrigatório! ");
+		alert ("Rg: Preenchimento ObrigatÃ³rio! ");
 		document.getElementById('rg').focus();
 		return false;
 	}
@@ -149,7 +149,7 @@ function fun_focus(){
 		</tr>
 		<tr>
 			<td>Tipo de Prova:</td>
-			<td colspan="2"><?= ($tipo == 1 ? 'Avaliação Interna' : ($tipo == 2 ?  'Avaliação Externa' : 'Avaliação Externa - Cliente')); ?></td>
+			<td colspan="2"><?= ($tipo == 1 ? 'AvaliaÃ§Ã£o Interna' : ($tipo == 2 ?  'AvaliaÃ§Ã£o Externa' : 'AvaliaÃ§Ã£o Externa - Cliente')); ?></td>
 		</tr>
 	</table>
 	<br />

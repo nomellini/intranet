@@ -18,7 +18,7 @@ if ($v_id_cliente) {
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-  	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  	<meta http-equiv="content-type" content="text/html; charset=utf-8">
   	<title>SAD - Sistema de Atendimento Datamace</title>
   	<link rel="stylesheet" href="include/css.css">
 	<script language="JavaScript" type="text/javascript" src="include/jquery.js"></script>
@@ -116,14 +116,14 @@ enviar = false;
 }
 
 if (document.form.select4.value=="" && enviar==true){
-alert("* Preencha o campo classificação !");
-document.form.select4.focus();
-enviar = false;
+	alert("* Preencha o campo classificaÃ§Ã£o !");
+	document.form.select4.focus();
+	enviar = false;
 }
 
 
 if (document.form.select.value=="" && enviar==true){
-	alert("* Selecione o módulo!");
+	alert("* Selecione o mÃ³dulo!");
 	document.form.select.focus();
 	enviar = false;
 }
@@ -135,7 +135,7 @@ if (document.form.textarea.value=="" && enviar==true){
 }
 
 if (document.form.textarea2.value=="" && enviar==true){
-	alert("* Preencha o campo Descrição!");
+	alert("* Preencha o campo DescriÃ§Ã£o!");
 	document.form.textarea2.focus();
 	enviar = false;
 }
@@ -256,16 +256,12 @@ document.form.submit();
               <tr>
                 <td height="25" align="right" class="fundoForms">Classifica&ccedil;&atilde;o:</td>
                 <td colspan="2" align="left" class="fundoForms"><select name="select4" class="textField" style="width:222px;">
-                  <option>Selecione</option>
-                  <?
-				$sql=mysql_query("SELECT * FROM classificacao ");
-				while($reg=mysql_fetch_assoc($sql)){
-				$classifica=$reg['descricao'];
-				$id=$reg['id'];
-				echo "<option value='$id'> $classifica </option>";
-				}
-				?>
-                </select>
+                  <option value="">Selecione</option>
+	<option value="1"> CrÃ­tico </option>
+<option value="2"> Urgente </option>
+<option value="3"> Normal </option>
+<option value="4"> Baixo </option>                
+</select>
                   <a href="#" style="cursor: help" onMouseOver="mouseover('Classifica&ccedil;&atilde;o do Chamado');" onMouseOut="mouseout();"><img src="img/interrogacao.gif" border="0" align="absmiddle"></a></td>
                </tr>
               <tr>
@@ -329,7 +325,7 @@ document.form.submit();
 
 	function testa_sistema() {
 		if (document.form.select2.value == 0) {
-			window.alert("Escolha um sistema antes de digitar a descrição\nPois a descrição é apagada na seleção de um sistema");
+			window.alert("Escolha um sistema antes de digitar a descriÃ§Ã£o\nPois a descriÃ§Ã£o Ã© apagada na seleÃ§Ã£o de um sistema");
 			document.form.select2.focus();
 		}
 	}

@@ -9,18 +9,23 @@
 	}
 	
 
-	$qry = "select count(1) as conta from usuario_empresa where id_usuario = $ok";
+	$qry = "select count(1) as conta from usuario_empresa where id_usuario = %s";
+	$qry = sprintf($qry, mysql_real_escape_string($ok));
 	$result = mysql_query($qry) or die(mysql_error() . '<br>' . $qry) ;
-	$linha = mysql_fetch_object($result); 
-	$qtde = $linha->conta;		
+	$linha = mysql_fetch_object($result);
+	$qtde = $linha->conta;
 	if ($qtde>0) {
-		$qry = "select count(1) as conta from usuario_empresa where id_cliente = '$id_cliente'";
+
+		$qry = "select count(1) as conta from usuario_empresa where id_cliente = '%s'";
+		$qry = sprintf($qry, mysql_real_escape_string($id_cliente));
+
 		$result = mysql_query($qry) or die(mysql_error() . '<br>' . $qry) ;
-		$linha = mysql_fetch_object($result); 		
+		$linha = mysql_fetch_object($result);
 		if ($qtde==0) {
 			die ("sem direito");
 		}
-	}	
+	}
+
 
 	$id_cliente = str_replace(",", "", $id_cliente);
 	$semPontoNemEspaco = str_replace(".", "", $id_cliente);

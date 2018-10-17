@@ -38,7 +38,7 @@
 //	$mesfim = $_POST["mesfim"]; 
 	
 	/*
-	Preciso do dia 1 do mes ano inicio até ultimo dia mes/ano fim
+	Preciso do dia 1 do mes ano inicio atÃ© ultimo dia mes/ano fim
 	*/
 
 
@@ -63,7 +63,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Estat&iacute;sticas</title>
 <style type="text/css">
 <!--
@@ -146,7 +146,7 @@ order by count(1) desc"	;
 </ol>
 
 <ul>
-	<li><? Echo ( "De $datai até $dataf - Data atual :" . date("d/m/Y h:m") ); ?></li>    
+	<li><? Echo ( "De $datai atÃ© $dataf - Data atual :" . date("d/m/Y h:m") ); ?></li>    
 	<li><? Echo ("Total: $ch chamados / $co contatos"); ?></li>
 </ul>
 

@@ -21,7 +21,7 @@ header("Location: doindex.php");
 <html>
 <head>
 
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>SAD - Sistema de Atendimento Datamace</title>
 
 
@@ -281,8 +281,8 @@ echo "";
                   </tr>
                   <tr>
                     <td colspan="2" bgcolor="#999999" style="padding-left:4px; color:#FFFFFF">
-                    Tabela Exclusiva Para Participação Nos Lucros Ou Resultados (Plr) - Vigência De 01.01 A 31.12.2014
-                    Tabela Aplicável Exclusivamente para Participação nos Resultados  (MP 597/2012, convertida na Lei 12.832/2013) e Instrução Normativa RFB 1.433/2013
+                    Tabela Exclusiva Para ParticipaÃ§Ã£o Nos Lucros Ou Resultados (Plr) - VigÃªncia De 01.01 A 31.12.2014
+                    Tabela AplicÃ¡vel Exclusivamente para ParticipaÃ§Ã£o nos Resultados  (MP 597/2012, convertida na Lei 12.832/2013) e InstruÃ§Ã£o Normativa RFB 1.433/2013
                      </td>
                   </tr>
                 </table>
@@ -334,7 +334,7 @@ echo "";
                     </tr>
                     <tr>
                       <td colspan="6" align="left" class="conteudoAcompanharCalendario2">
-                      Nota: Consoante disposto no §6º do art. 3 da Lei 10.101/2000 (incluído pela Lei 12.832/2013), para o cálculo do IRF sobre a PLR não haverá dedução de dependentes e nem de qualquer outra despesa (saúde, educação, previdência privada e etc.), salvo a importância paga a título de pensão alimentícia incidente sobre a PLR (decorrente de determinação judicial), conforme § 10 do mesmo dispositivo legal.
+                      Nota: Consoante disposto no Â§6Âº do art. 3 da Lei 10.101/2000 (incluÃ­do pela Lei 12.832/2013), para o cÃ¡lculo do IRF sobre a PLR nÃ£o haverÃ¡ deduÃ§Ã£o de dependentes e nem de qualquer outra despesa (saÃºde, educaÃ§Ã£o, previdÃªncia privada e etc.), salvo a importÃ¢ncia paga a tÃ­tulo de pensÃ£o alimentÃ­cia incidente sobre a PLR (decorrente de determinaÃ§Ã£o judicial), conforme Â§ 10 do mesmo dispositivo legal.
                       </td>
                     </tr>
                   </table>                  

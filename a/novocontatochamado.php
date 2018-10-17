@@ -356,11 +356,12 @@ if ($action=="contato") {
 		// -------------------------------------------------------------------
 
 
-
+			/*
 		if(isset($pendente)) {
 		  $objContato->status_id = $pendente;
 		  $objChamado->status = $pendente;
 		}
+		*/
 
 
 
@@ -378,11 +379,12 @@ if ($action=="contato") {
 
 
 
-
+/*
 		if(isset($pendente)) {
 		  $objContato->status_id = $pendente;
 		  $objChamado->status = $pendente;
 		}
+		*/
 
 
       }
@@ -507,7 +509,10 @@ if ($action=="contato") {
 			$SlackUser = funcoes_slackUser($objChamado->destinatario_id);
 			if ($SlackUser != "")	   {
 				slack_publish($SlackUser, $chamado_id, $objChamado->descricao, $objChamado->cliente_id);
-			}
+			} 
+//			else {
+//				slack_publish("@fnomellini", $chamado_id, $objChamado->descricao, $objChamado->cliente_id);
+//			}
 	   }
 
 
@@ -652,7 +657,7 @@ if ($action=="contato") {
 		}
 	}
 
-    require("scripts/email.php");
+	    require("scripts/email.php");
 
 		conn_ExcluiControleNovoContato($chamado_id, $ok);
 

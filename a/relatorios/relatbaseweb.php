@@ -80,7 +80,7 @@ Sent: Tuesday, January 22, 2008 9:47 AM
 Subject: Re: Base de conhecimento
 
 
-Eu acho que depois de inserido o registro no base de conhecimento, só eu(8), vc(12), Ricardo (7) e Edson(1) poderíamos Editar/Excluir registros
+Eu acho que depois de inserido o registro no base de conhecimento, sÃ³ eu(8), vc(12), Ricardo (7) e Edson(1) poderÃ­amos Editar/Excluir registros
 
 	Troquei :
 	if (  ($area == COBOL) || ( $area == DELPHI ) || ($area == QUALIDADE) ) {
@@ -97,7 +97,7 @@ Eu acho que depois de inserido o registro no base de conhecimento, só eu(8), vc(
 <html>
 <head>
 <title>Relat&oacute;rio S.A.D.</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 <link rel="stylesheet" href="/a/stilos.css" type="text/css">
 </head> <body bgcolor="#FFFFFF" text="#000000"> 
@@ -128,7 +128,7 @@ src.bgColor = clrIn;
 </table>
 <hr color=#ff0000 noshade size="1">
 <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><font size="1"> 
-<?echo "Olá, $nomeusuario, hoje é ";?>
+<?echo "OlÃ¡, $nomeusuario, hoje Ã© ";?>
 </font><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
 <script language="JavaScript">
 
@@ -148,7 +148,7 @@ function limpa() {
   function seleciona() {
     window.name = "pai";
     value = document.form.id_cliente.value;
-    window.open('../selecionacliente.php?id_cliente='+value, "Seleção", "scrollbars=yes, height=488, width=600");
+    window.open('../selecionacliente.php?id_cliente='+value, "SeleÃ§Ã£o", "scrollbars=yes, height=488, width=600");
   }
 
 function fdata(src) {
@@ -159,16 +159,16 @@ function fdata(src) {
       var mesescrito = new Array;
     
       diasemana[1] = "segunda-feira";
-      diasemana[2] = "terça-feira";
+      diasemana[2] = "terÃ§a-feira";
       diasemana[3] = "quarta-feira";
       diasemana[4] = "quinta-feira";
       diasemana[5] = "sexta-feira";
-      diasemana[6] = "sábado";
+      diasemana[6] = "sÃ¡bado";
       diasemana[7] = "domingo";
      
       mesescrito[0] = "Janeiro";
       mesescrito[1] = "Fevereiro";
-      mesescrito[2] = "Março";
+      mesescrito[2] = "MarÃ§o";
       mesescrito[3] = "Abril";
       mesescrito[4] = "Maio";
       mesescrito[5] = "Junho";
@@ -368,9 +368,9 @@ Selecione aqui para incluir chamados j&aacute; registrados</td>
 		  $msgDocumentado = "<br><br>";
 		  $jaDocumentado = $tmp["jaDocumentado"];
 		  if ($jaDocumentado) {
-			$msgDocumentado .= "Item <strong>JÁ</strong> documentado ";
+			$msgDocumentado .= "Item <strong>JÃ</strong> documentado ";
 		  } else {
-			$msgDocumentado .= "Item <strong>AINDA NÃO</strong> documentado ";
+			$msgDocumentado .= "Item <strong>AINDA NÃƒO</strong> documentado ";
 		  }
 		  $msgDocumentado  .= " (clique para alternar) <br><br>";
 		  
@@ -390,7 +390,7 @@ Selecione aqui para incluir chamados j&aacute; registrados</td>
 	$msg = eregi_replace("\"", "`", $msg);	
 		
 
-	if (  ($ok == 63) || ($ok==187)) { // Débora ou Janaina Queiroga
+	if (  ($ok == 63) || ($ok==187)) { // DÃ©bora ou Janaina Queiroga
 		$somenteDesenvolvimento = true;
 		$podeVer = true;
 		//$podeEditar = true;		
@@ -403,7 +403,7 @@ Selecione aqui para incluir chamados j&aacute; registrados</td>
 	if ( $podeVer || !$somenteDesenvolvimento) {
 	   $msgAutorizado = "";
 	   if ($somenteDesenvolvimento) {
-         $msgAutorizado = "<strong>Este item é visível somente ao pessoal autorizado</strong><br>";    }
+         $msgAutorizado = "<strong>Este item Ã© visÃ­vel somente ao pessoal autorizado</strong><br>";    }
 
 ?>
   <tr bgcolor="#FFFFFF"> 

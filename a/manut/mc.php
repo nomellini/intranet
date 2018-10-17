@@ -36,9 +36,9 @@
 	  if ($linha = mysql_fetch_object($result)) {
 		  $dataa = $linha->dataa;
 		  $horaa = $linha->horaa;
-		  $descricao = "ID:$id<br> Descrição:$linha->descricao<br>Dataa:$dataa<br>Horaa:$horaa";
+		  $descricao = "ID:$id<br> DescriÃ§Ã£o:$linha->descricao<br>Dataa:$dataa<br>Horaa:$horaa";
 	  } else {
-  		  $descricao = "Chamado não $id existe";
+  		  $descricao = "Chamado nÃ£o $id existe";
 	  }
 	}
 	
@@ -46,7 +46,7 @@
 ?><html>
 <head>
 <title>usuarios</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../stilos.css" type="text/css">
 </head>
 

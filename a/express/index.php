@@ -1,4 +1,5 @@
-<?php require_once('../../Connections/sad.php'); ?>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<?php require_once('../scripts/conn.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
@@ -29,9 +30,9 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsUsuarios = "SELECT id_usuario, concat(nome, ' - ',            (select count(1) from chamado where destinatario_id  = id_usuario and status = 2 and visible = 1)) nome FROM usuario WHERE ativo = 1 and (area=2 or id_usuario=98 or id_usuario=14 or id_usuario = 85 or id_usuario = 208) ORDER BY nome ASC";
-$rsUsuarios = mysql_query($query_rsUsuarios, $sad) or die(mysql_error());
+$rsUsuarios = mysql_query($query_rsUsuarios) or die(mysql_error());
 $row_rsUsuarios = mysql_fetch_assoc($rsUsuarios);
 $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 ?><form name="form1" method="post" action="abreChamado.php">

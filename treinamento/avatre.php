@@ -46,7 +46,7 @@ if ($id_opc == '2') {
 			" '$sugestao', '$reclamacao', '$nome', '$ipremoto', '$elogio', '$complemento');"; 
    
 	if(!mysql_query($sSQL)) {
-		$acao = "NÃO foi enviado!";
+		$acao = "NÃƒO foi enviado!";
 	}else {
 		$acao = "foi enviado com sucesso!";
 		$db = new DB();
@@ -62,7 +62,7 @@ $check_conf_tipo_padrao[$prova->avaliacaoTipoEvento] = 'checked';
 <!-- DW6 -->
 <head>
 <title>Datamace Inform&aacute;tica Ltda.</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.8.9.custom.css">
 <link rel="stylesheet" href="/Templates/stilo.css" type="text/css">
 <link rel="stylesheet" href="../scripts/jquery.autocomplete.css" type="text/css">
@@ -77,24 +77,24 @@ $check_conf_tipo_padrao[$prova->avaliacaoTipoEvento] = 'checked';
 
 	var a_fields = {
 		<? if ($flagTipo != 3){ ?>
-		'tipo':{'r':true,'l':'Treinamento / Palestra / Workshop / Seminário'},
+		'tipo':{'r':true,'l':'Treinamento / Palestra / Workshop / SeminÃ¡rio'},
 		<? } ?>
 		'evento':{'r':true},
 		'ava_ins_id':{'r':true},
 		'local':{'r':true},
 		'data':{'r':true,'f':'date'},
 		'a1':{'r':true},
-		'b1':{'r':true,'l':'Avaliação do Consultor / Instrutor / Palestrante'},
+		'b1':{'r':true,'l':'AvaliaÃ§Ã£o do Consultor / Instrutor / Palestrante'},
 		'c1':{'r':true},
 		'd1':{'r':true},
-		'a2':{'r':true,'l':'Avaliação da qualidade do material didático utilizado'},
+		'a2':{'r':true,'l':'AvaliaÃ§Ã£o da qualidade do material didÃ¡tico utilizado'},
 		<? if ($flagTipo != 3){ ?>
-		'a3':{'r':true,'l':'Avaliação da organização do evento'},
-		'b3':{'r':true,'l':'Avaliação da organização do evento'},
-		'c3':{'r':true,'l':'Avaliação da organização do evento'},
+		'a3':{'r':true,'l':'AvaliaÃ§Ã£o da organizaÃ§Ã£o do evento'},
+		'b3':{'r':true,'l':'AvaliaÃ§Ã£o da organizaÃ§Ã£o do evento'},
+		'c3':{'r':true,'l':'AvaliaÃ§Ã£o da organizaÃ§Ã£o do evento'},
 		<? } ?>
-		'a4':{'r':true,'l':'Avaliação geral do evento'},
-		'observacao':{'r':false,'l':'Quando avaliação for Regular ou Ruim OBSERVAÇÂO'}
+		'a4':{'r':true,'l':'AvaliaÃ§Ã£o geral do evento'},
+		'observacao':{'r':false,'l':'Quando avaliaÃ§Ã£o for Regular ou Ruim OBSERVAÃ‡Ã‚O'}
 	},
 	o_config = {
 		'to_disable' : ['BTNGravar', 'BTNVoltar', 'BTNExcluir'],
@@ -194,7 +194,7 @@ body, td, th {
                 <br>
                 <b>
                 <center>
-                    <? echo "Formulário $acao" ?>
+                    <? echo "FormulÃ¡rio $acao" ?>
                 </center>
                 </b> <br>
                 <br>
@@ -206,7 +206,7 @@ body, td, th {
         </tr>
         <? }else{ ?>
         <tr>
-            <td class="TituloTreino" align="center">Avaliação
+            <td class="TituloTreino" align="center">AvaliaÃ§Ã£o
                 <?=(($flagTipo == 1) ? "Interna do Treinamento" : "do Treinando") ?></td>
         </tr>
         <tr>
@@ -225,7 +225,7 @@ body, td, th {
                             Palestra
                             <input type="radio" id="tipo" name="tipo" value="WORKSHOP"  <?=$check_conf_tipo_padrao["WORKSHOP"] ?>/>
                             Workshop
-                            <input type="radio" id="tipo" name="tipo" value="SEMIN&Aacute;RIO"  <?=$check_conf_tipo_padrao["SEMINÁRIO"] ?>/>
+                            <input type="radio" id="tipo" name="tipo" value="SEMIN&Aacute;RIO"  <?=$check_conf_tipo_padrao["SEMINÃRIO"] ?>/>
                             Semin&aacute;rio
                             <input type="radio" id="tipo" name="tipo" value="OUTROS"  <?=$check_conf_tipo_padrao["OUTROS"] ?>/>
                             Outros </td>
@@ -266,7 +266,7 @@ body, td, th {
                         <td width="10%" class="thTreinamento">Regular</td>
                         <td width="10%" class="thTreinamento">Ruim</td>
                         <? if ($linkPagina == "treinamento.php" && $flagTipo != 1){ ?>
-                        <td width="10%" class="thTreinamento">Não desejo
+                        <td width="10%" class="thTreinamento">NÃ£o desejo
                             avaliar *</td>
                         <? } ?>
                     </tr>
@@ -457,9 +457,9 @@ body, td, th {
                     </tr>
                     <tr>
                         <td colspan="6" class="thTreinamento" id="e_observacao" style="text-align:justify"><em><strong>Observa&ccedil;&atilde;o</strong></em>: <br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se você utilizou os conceitos Regular ou Ruim para avaliar os itens acima mencionados, informe o motivo
-                            pelo qual sua expectativa não foi atendida. Pretendemos com isto aprimorar cada vez mais nossos serviços,
-                            para melhor atendê-lo.</td>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se vocÃª utilizou os conceitos Regular ou Ruim para avaliar os itens acima mencionados, informe o motivo
+                            pelo qual sua expectativa nÃ£o foi atendida. Pretendemos com isto aprimorar cada vez mais nossos serviÃ§os,
+                            para melhor atendÃª-lo.</td>
                     </tr>
                     <tr>
                         <td colspan="6"><label>
@@ -497,7 +497,7 @@ body, td, th {
                     <? if($adm=="S"){ ?>
                     <tr>
                         <td colspan="6" class="thTreinamento" style="text-align:left"><?=++$Numeracao ?>
-                            . Registros complementares, se necessário (Para Palestrante/Instrutor):</td>
+                            . Registros complementares, se necessÃ¡rio (Para Palestrante/Instrutor):</td>
                     </tr>
                     <tr>
                         <td colspan="6"><textarea name="complemento" cols="95" rows="3" id="complemento"></textarea></td>
@@ -505,7 +505,7 @@ body, td, th {
                     <? } ?>
                     <? if ($linkPagina == "treinamento.php" && $flagTipo != 1){ ?>
                     <tr>
-                        <td colspan="6" class="thTreinamento">* Obs.: A opção “Não desejo avaliar” não será considerada nos resultados dos indicadores.</td>
+                        <td colspan="6" class="thTreinamento">* Obs.: A opÃ§Ã£o â€œNÃ£o desejo avaliarâ€ nÃ£o serÃ¡ considerada nos resultados dos indicadores.</td>
                     </tr>
                     <? } ?>
                     <tr>

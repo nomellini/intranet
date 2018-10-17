@@ -66,7 +66,7 @@ function conn_temDocumentacao($chamado_id)
 	*	Chamado 405595
 	*
 	*	Fernando o Edson conversou comigo e pediu para alterar o SAD para que ao encerrar um chamado que tenha
-	*	dados preenchidos em DOCUMENTA��O o mesmo seja inserido na base de conhecimento automaticamente marcado
+	*	dados preenchidos em DOCUMENTação o mesmo seja inserido na base de conhecimento automaticamente marcado
 	*	como DOCUMENTACAO INTERNET
 	*
 	************************************************************************************************************/
@@ -117,7 +117,7 @@ function conn_EncerraChamadoAutomatico()
 
 		$msg = "Prezado Cliente,
 
-Conforme contato anterior, n�o temos retorno, sendo assim, estamos encerrando este chamado, lembrando que o mesmo pode ser reaberto a partir de um novo contato.
+Conforme contato anterior, não temos retorno, sendo assim, estamos encerrando este chamado, lembrando que o mesmo pode ser reaberto a partir de um novo contato.
 
 Atenciosamente,
 
@@ -454,10 +454,10 @@ Consultoria Datamace";
          $nome_usuario=$linha->nome;
          return $nome_usuario;
      } else {
-       return "Usuario n�o cadastrado ($id)";
+       return "Usuario não cadastrado ($id)";
      }
    } else {
-     return "N�o cadastrado";
+     return "não cadastrado";
    }
  }
 
@@ -494,10 +494,10 @@ Consultoria Datamace";
          $nome_usuario=$linha->cliente;
          return $nome_usuario;
      } else {
-       return "cliente n�o cadastrado ($id)";
+       return "cliente não cadastrado ($id)";
      }
    } else {
-     return "N�o cadastrado ($sql)";
+     return "não cadastrado ($sql)";
    }
  }
 
@@ -518,10 +518,10 @@ function pegarnc($_chamado, $_oque) {
      if ($linha) {
          return $linha->descricao;
      } else {
-       return "�rea n�o cadastrada ($id)";
+       return "�rea não cadastrada ($id)";
      }
    } else {
-     return "N�o cadastrado";
+     return "não cadastrado";
    }
  }
 
@@ -536,10 +536,10 @@ function pegarnc($_chamado, $_oque) {
          $result=$linha->email;
          return $result;
      } else {
-       return "Usuario n�o cadastrado ($id)";
+       return "Usuario não cadastrado ($id)";
      }
    } else {
-     return "N�o cadastrado";
+     return "não cadastrado";
    }
  }
 
@@ -551,7 +551,7 @@ function pegaDiagnostico($id) {
      if ($linha) {
          return $linha->diagnostico;
      } else {
-       return "Diagn�stico n�o cadastrado ($id)";
+       return "Diagn�stico não cadastrado ($id)";
      }
  }
 
@@ -632,7 +632,7 @@ function pegaMarketing($id) {
      if ($linha) {
          return $linha->sistema;
      } else {
-       return "Sistema n�o cadastrado";
+       return "Sistema não cadastrado";
      }
  }
 
@@ -644,7 +644,7 @@ function pegaMotivo($id) {
      if ($linha) {
 		$motivo = $linha->motivo;
      } else {
-		$motivo = "Motivo N�o Cadastrado";
+		$motivo = "Motivo não Cadastrado";
      }
 	 if ($id==57) { // Motivo = IMPROCEDENTE
 	   $motivo = "<strong><font color=\"#FF0000\">$motivo</font></strong>";
@@ -659,7 +659,7 @@ function pegaCategoria($id) {
      if ($linha) {
          return $linha->categoria;
      } else {
-       return "Categoria N�o Cadastrado";
+       return "Categoria não Cadastrado";
      }
  }
 
@@ -1215,7 +1215,7 @@ function pegaClientePorCodigoOrdem($codigo, $ordem) {
 
         $tmp["endereco"] = $linha->endereco;
         if (!$tmp["endereco"]) {
-          $tmp["endereco"] = "Endere�o n�o cadastrado.";
+          $tmp["endereco"] = "Endere�o não cadastrado.";
         }
         $tmp["bairro"] = $linha->bairro;
         $tmp["cidade"] = $linha->cidade;
@@ -1255,7 +1255,7 @@ function pegaClientePorCodigoUnico($codigo) {
         $tmp["funcionarios"] = $linha->funcionarios;
         $tmp["endereco"] = $linha->endereco;
         if (!$tmp["endereco"]) {
-          $tmp["endereco"] = "Endere�o n�o cadastrado.";
+          $tmp["endereco"] = "Endere�o não cadastrado.";
         }
         $tmp["bairro"] = $linha->bairro;
         $tmp["cidade"] = $linha->cidade;
@@ -1556,9 +1556,9 @@ order by
       //         $dono = 1, $euGerente = 0;
       //   Sim e sou gerente : Posso encaminhas para gerentes e meus subordinados
       //         $dono = 1; $euGerente = 1;
-      //   N�o : Somente encaminho para o destinatario
+      //   não : Somente encaminho para o destinatario
       //         $dono = 0;
-      //   N�o, mas sou gerente do destinatario : Ver caso sim e sou gerente.
+      //   não, mas sou gerente do destinatario : Ver caso sim e sou gerente.
       //        $gerenteDestinatario = 1;
 
 	$ok = 0;
@@ -1578,7 +1578,7 @@ order by
 					$ok = 1;       // encaminho p/meu geren. e colegas.
 				}
 			}
-		} else {                           // N�O sou dono e...
+		} else {                           // não sou dono e...
 			if ($gerenteDestinatario) {     // ..sou gerente do destinatario
 				if ( $gerente or ($superior == $id_usuario) ) {
 					$ok = 1;                    // Entao posso encaminhar p/ gerentes e meus sub.
@@ -2039,7 +2039,7 @@ function pegaOrigem($id) {
      if ($linha) {
          return $linha->origem;
      } else {
-       return "Origem n�o cadastrado ($id)";
+       return "Origem não cadastrado ($id)";
      }
  }
 
@@ -2514,7 +2514,7 @@ function pegaChamadosRNC() {
 
 
 function pegaArea($id) {
-     $sql = "select area from sad.usuario where (id_usuario = $id);";
+     $sql = "select area from usuario where (id_usuario = $id);";
      $result = mysql_query($sql) or die (mysql_error() . ' - ' . $sql);
      $linha=mysql_fetch_object($result);
      if ($linha) {
@@ -2645,7 +2645,7 @@ function conn_VerificaNovoChamado($Id_Usuario, $id_cliente)
   $linha = mysql_fetch_object($result);
   if ($linha)  {
 	$saida = array();
-	$saida["status"] = 1; // Existente 0 = n�o inseriu
+	$saida["status"] = 1; // Existente 0 = não inseriu
 	$saida["data"] = $linha->data;
 	$saida["hora"] = $linha->hora;
 
@@ -2708,7 +2708,7 @@ function conn_InsereControleNovoContato($id_chamado, $Id_Usuario, $Data_Novo_Con
 	$linha = mysql_fetch_object($result);
 	if ($linha)
 	{
-		$saida["status"] = 0; // Existente 0 = n�o inseriu
+		$saida["status"] = 0; // Existente 0 = não inseriu
 		$saida["data"] = $linha->data;
 		$saida["hora"] = $linha->hora;
 		$contato = str_replace(array("\n", "\r"), array('\n', '\r'), $linha->contato );

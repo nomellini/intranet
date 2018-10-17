@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>Selecione Cliente</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 </head> <body bgcolor="#FFFFFF" text="#000000"> 
 <DIV ID="overDiv" STYLE="position:absolute; visibility:hide; z-index: 1;"></DIV>
@@ -93,7 +93,7 @@
       <?=$senha?>
 	  </a>    </td>
     <td width="57%"> <font face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
-      <A HREF="javascript:vai('<?=$id?>');" onMouseOver="return overlib('<?="$endereco<br>$bairro<br>$cidade<br>$telefone"?>', CAPTION, 'Endereço', WIDTH, 300)" onMouseOut="nd();">
+      <A HREF="javascript:vai('<?=$id?>');" onMouseOver="return overlib('<?="$endereco<br>$bairro<br>$cidade<br>$telefone"?>', CAPTION, 'EndereÃ§o', WIDTH, 300)" onMouseOut="nd();">
       <?
 	  $msg = "$cliente";
 	  if ($bl) { $msg="<b><font color=#ff0000>$cliente</font></b>" ;}

@@ -1,16 +1,16 @@
 
 <?
   if ($erro==1) {
-    $msg = "Voc� n�o est� autorizado a usar o sistema da atendimento (ATM)";
+    $msg = "Você não está autorizado a usar o sistema da atendimento";
   }
   if ($erro==2 or !$erro) {
-    $msg = "Senha Incorreta, ou usu�rio n�o cadastrado";
+    $msg = "Senha Incorreta, ou usuário não cadastrado";
   }
   if ($erro==3) {
     $msg = "Todos os campos devem ser preenchidos";
   }
   if ($erro==4) {
-    $msg = "Voc� n�o est� autorizado a usar o sistema da atendimento (BLQ)";
+    $msg = "Você não está autorizado a usar o sistema da atendimento (BLQ)";
   }
 
 ?>

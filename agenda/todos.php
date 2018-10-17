@@ -36,12 +36,12 @@ $row_rsUsuarios = mysql_fetch_assoc($rsUsuarios);
 $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 ?><?
  require("../a/scripts/conn.php");		
- $BRDays3 = array ("Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado");		 
+ $BRDays3 = array ("Domingo", "Segunda-feira", "TerÃ§a-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "SÃ¡bado");		 
 ?>
 <html>
 <head>
 <title>Detalhe</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="../a/stilos.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -117,7 +117,7 @@ do {
 		$color = "cccccc";
 	}	
 	$DataContato = DiaDaSemana($linha2->data);	
-	$Confidencial = $linha2->confidencial ? "Confidencial" : "Público";	
+	$Confidencial = $linha2->confidencial ? "Confidencial" : "PÃºblico";	
 	$data = "$data[2]/$data[1]/$data[0]";
 ?>
 		

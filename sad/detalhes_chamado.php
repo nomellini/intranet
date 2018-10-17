@@ -20,7 +20,7 @@ header("Location: doindex.php");
 <html>
 <head>
 
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>SAD - Sistema de Atendimento Datamace</title>
 
 
@@ -88,7 +88,7 @@ document.write("<div id='layout' align='center' style='width:"+largura_show+";'>
 function upload(name_form){
 var enviar = true;
 if (document.detalhes.textarea.value=="" && enviar==true){
-alert("Preencha o campo Comentário.");
+alert("Preencha o campo ComentÃ¡rio.");
 document.detalhes.textarea.focus();
 enviar = false;
 }
@@ -196,7 +196,7 @@ document.detalhes.submit();
 				  $criado=$reg['dataa'];
 				  $email=$reg['email'];
 
-				  $assunto=$reg['assunto'] . "<br>Descrição: " . $reg['descricao'];
+				  $assunto=$reg['assunto'] . "<br>DescriÃ§Ã£o: " . $reg['descricao'];
 
 
 				  if ($assunto=="") { $assunto = $reg['descricao']; }
@@ -284,7 +284,7 @@ document.detalhes.submit();
 					}
 					 echo  $classificacao2;
 
-					 if($classificacao2=="Crítico"){
+					 if($classificacao2=="CrÃ­tico"){
 						 echo "&nbsp;&nbsp;<img src='img/icone_critico.gif' align='absmiddle'>";
 					 }
 					  if($classificacao2=="Urgente"){
@@ -436,13 +436,13 @@ href="javascript:void(0)"> -->
 
 				   if ($total <= 1 && $total!=""){
 				   echo "1";
-				   echo " Interação";
+				   echo " InteraÃ§Ã£o";
 				   }
 
 
 				   else{
 				   echo $total;
-				   echo " Interações";
+				   echo " InteraÃ§Ãµes";
 				   }}
 					?>
 
@@ -609,7 +609,7 @@ $status=$reg['status_id'];
 
 				<table border="0" cellpadding="4" cellspacing="0" width="99%" >
                   <tr>
-                    <td rowspan="2" align="right" valign="top" class="fundoForms">Comentário: </td>
+                    <td rowspan="2" align="right" valign="top" class="fundoForms">Coment&aacute;rio: </td>
 
                     <td width="25%" colspan="2" align="right" class="fundoForms" >
 					<label>

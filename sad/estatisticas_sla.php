@@ -17,7 +17,7 @@ header("Location: doindex.php");
 <html>
 <head>
 
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>SAD - Sistema de Atendimento Datamace</title>
 
 

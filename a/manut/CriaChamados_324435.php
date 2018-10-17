@@ -18,39 +18,13 @@ $temp = array();
 /*
 $temp[$c++] = "CONVERSAO FUJITSU - GIP - GPRAFA.CBL";
 */
-
-/*
-$temp[$c++] = "Criar log da tabela PETABPAE.CPY (Escala de Revezamento) e PETABPBJ.CPY e (Escala de revezamento detalhes)";
-$temp[$c++] = "Criar log da tabela PETABPAX.CPY (HE Di".utf8_decode("á")."ria) e PETABPBI.CPY (2º Coluna)";
-$temp[$c++] = "Criar log da tabela PETABPAA.CPY (HE Peri".utf8_decode("ó")."dica)";
-$temp[$c++] = "Criar log da tabela PETABPAC.CPY (Contas Para o GIP)";
-$temp[$c++] = "Criar log da tabela PETABPAD.CPY (Contas Externas)";
-$temp[$c++] = "Criar log da tabela PETABPAB.CPY (Programa".utf8_decode("ç")."".utf8_decode("ã")."o de abonos)";
-$temp[$c++] = "Criar log da tabela PETABPAN.CPY (Tabela de compensa".utf8_decode("ç")."".utf8_decode("ã")."o)";
-$temp[$c++] = "Criar log da tabela PETABPAF.CPY (Tabela de Feriados)";
-$temp[$c++] = "Criar log da tabela PETABPAM.CPY (Tabela de Motivo)";
-$temp[$c++] = "Criar log da tabela PETABPAQ.CPY (Tabela de Aloca".utf8_decode("ç")."".utf8_decode("ã")."o de M".utf8_decode("ã")."o de Obra)";
-$temp[$c++] = "Criar log da tabela PETABPAR.CPY (Tabela de Refei".utf8_decode("ç")."".utf8_decode("õ")."es)";
-$temp[$c++] = "Criar log da tabela PETABPAG.CPY (Tabela de Refei".utf8_decode("ç")."".utf8_decode("õ")."es externas)";
-$temp[$c++] = "Criar log da tabela PETABPBG.CPY (Cadastro de Locais)";
-$temp[$c++] = "Criar log da tabela PETABPAW.CPY (Configura".utf8_decode("ç")."".utf8_decode("ã")."o da manuten".utf8_decode("ç")."".utf8_decode("ã")."o)";
-$temp[$c++] = "Criar log da tabela PETABPAT.CPY (Tabela de terminais)";
-$temp[$c++] = "Criar log da tabela PETABPAZ.CPY (Par".utf8_decode("â")."metros da classifica".utf8_decode("ç")."".utf8_decode("ã")."o autom".utf8_decode("á")."tica)";
-$temp[$c++] = "Criar log da tabela PETABPAU.CPY (Par".utf8_decode("â")."metros da coleta e classifica".utf8_decode("ç")."".utf8_decode("ã")."o autom".utf8_decode("á")."tica de REPs)";
-$temp[$c++] = "Criar log da tabela PETABPAY.CPY (Par".utf8_decode("â")."metros do FTP)";
-$temp[$c++] = "Criar log da tabela PETABPBA.CPY (Regra de coleta de equipamentos) e PETABPBH.CPY (Equipamentos da regra de coleta)";
-$temp[$c++] = "Criar log da tabela PETABPAS.CPY (Tabela de mensagens da classifica".utf8_decode("ç")."".utf8_decode("ã")."o) e PETABPAO.CPY (Mensagens)";
-$temp[$c++] = "Criar log da tabela PETABPAK.CPY (Ocorr".utf8_decode("ê")."ncias do apontamento)";
-$temp[$c++] = "Criar log da tabela PETABPBB.CPY (Ocorr".utf8_decode("ê")."ncias da classifica".utf8_decode("ç")."".utf8_decode("ã")."o)";
-$temp[$c++] = "Criar log da tabela PETABPAJ.CPY (Exporta".utf8_decode("ç")."".utf8_decode("ã")."o da Folha)";
-$temp[$c++] = "Criar log da tabela PETABPBF.CPY (Configura".utf8_decode("ç")."".utf8_decode("ã")."o do Controle de acesso)";
-$temp[$c++] = "Criar log da tabela PETABPCA.CPY (Envio de e-mail a visitados)";
-$temp[$c++] = "Criar log da tabela PETABPBC.CPY (Regra de coleta - Alertas)";
-$temp[$c++] = "Criar log da tabela PETABPAL.CPY (Tabela de Linha de ".utf8_decode("Ô")."nibus)";
-$temp[$c++] = "Criar log da tabela PETABPBD.CPY (Cadastro Nextel)";
-$temp[$c++] = "Criar log da tabela PETABPBE.CPY (Agendamento Nextel)";*/
+/*$temp[$c++] = "Remover o Par".utf8_decode("á")."grafo de criar diar e utilizar o PES051 - CA_B_Menu\CAB03A.CBL";
+$temp[$c++] = "Remover o Par".utf8_decode("á")."grafo de criar diar e utilizar o PES051 - CA_B_Menu\CAB03B.CBL";
+$temp[$c++] = "Remover o Par".utf8_decode("á")."grafo de criar diar e utilizar o PES051 - PE_B_Menu\PEB07Y.CBL";
+*/
 
 $Consultor = 175; // Lucas
+//$Consultor = 173; // José Roberto
 
 $Destinatario = 7; //Ricardo
 //$Destinatario = 225; //Felipe
@@ -68,7 +42,8 @@ $Destinatario = 7; //Ricardo
 //$CategoriaId = 1355; //outros
 
 $SistemaId = 4;  //PE
-$CategoriaId = 872; //PE
+$CategoriaId = 272; //TODOS MÓDULOS DO SISTEMA
+//$CategoriaId = 872; //LOG
 
 //$SistemaId = 6;  //RH
 //$CategoriaId = 927; //RH
@@ -89,17 +64,16 @@ $CategoriaId = 872; //PE
 $Email = PegaEmailUsuario($Destinatario);
 $NomeCliente = peganomeusuario($Destinatario);
 $MotivoId = 47;
-$ChamadoPaiId = 0;
-//$ChamadoPaiMotivo = "P";
-$ChamadoPai = 380739;
+$ChamadoPaiId = 444539;
+$ChamadoPaiMotivo = "P";
+$ChamadoPai = 444539;
 
 $c--;
 for ($i = 1; $i <= $c; $i++)
 {
-
 	$Chamado = $temp[$i];
-	$Contato = "Conforme chamado de origem [$ChamadoPai]";
-	
+	$Contato = "Nova estrutura de horas extras do Ponto - PEPTOHE.CPY.<br>Chamado de origem [468866]";
+
 	$Chamado = mysql_real_escape_string ($Chamado);
 	$Contato = mysql_real_escape_string ($Contato);	
     $datae = date("Y-m-d");

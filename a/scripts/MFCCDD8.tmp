@@ -7,7 +7,7 @@
 	if (!isset($ipremoto)) $ipremoto  = "";
 	if (!isset($REMOTE_ADDR)) $REMOTE_ADDR = "";
 	if (!isset($PAGINA )) $PAGINA  = "";
-				
+
 	$user = "sad";
 	$pwd = "data1371";
 	$base = "sad";
@@ -20,67 +20,67 @@
 
 	include("Mail.php");
 
-	function AcertaGrau($grau) 
-	{				
+	function AcertaGrau($grau)
+	{
 		$result = $grau;
-		
-		if (  ($result == "ZZ") || ($result == "  ") || ($result=="") ) 
+
+		if (  ($result == "ZZ") || ($result == "  ") || ($result=="") )
 			$result = "G4";
-			
-		return $result ; 
+
+		return $result ;
 	}
-	
-	function connPodeEditarChamado($id) 
-	{		
+
+	function connPodeEditarChamado($id)
+	{
 		$result = false;
 		if(($id<>0)and($id<> "-")) {
 			$sql = "select EditaChamado from usuario where (id_usuario = $id);";
 			$result = mysql_query($sql);
 			$linha=mysql_fetch_object($result);
-			if ($linha) {			
+			if ($linha) {
 				$result = ($linha->EditaChamado == 1);
 			}
 		}
 		return $result;
 	}
 
-	function connPodeEditarChamadoBloqueado($id) 
-	{		
+	function connPodeEditarChamadoBloqueado($id)
+	{
 		$result = false;
 		if(($id<>0)and($id<> "-")) {
 			$sql = "select fl_edita_chamado_bloqueado c1 from usuario where (id_usuario = $id);";
 			$result = mysql_query($sql);
 			$linha=mysql_fetch_object($result);
-			if ($linha) {			
+			if ($linha) {
 				$result = ($linha->c1 == 1);
 			}
 		}
 		return $result;
 	}
-	
+
 	function Conn_Hoje() {
 		return date("Y-m-d");
 	}
-	
-	function DiaDaSemana($data) 
+
+	function DiaDaSemana($data)
 	{
 
-		$lPos = strpos($data, '-');		
-		
+		$lPos = strpos($data, '-');
+
 		if ($lPos > 0) {
 			$data = dataOk($data);
-		}		
-		
+		}
+
 		$dias[1] = "Segunda-feira";
-		$dias[2] = "Terça-feira";
+		$dias[2] = "Terï¿½a-feira";
 		$dias[3] = "Quarta-feira";
 		$dias[4] = "Quinta-feira";
 		$dias[5] = "Sexta-feira";
-		$dias[6] = "Sábado";
+		$dias[6] = "Sï¿½bado";
 		$dias[7] = "Domingo";
-		
-		$lData = explode("/", $data);		
-				
+
+		$lData = explode("/", $data);
+
 		$lData = mktime(0, 0, 0, $lData[1], $lData[0], $lData[2]);
 
 		return $dias[ Date("N", $lData) ];
@@ -97,25 +97,25 @@
 	}
 
 	function mail2($_recipient, $_subject, $_msg, $_headers) {
-	
-	//return -1; // Retirar comentário no início desta linha para não mandar email
-	
+
+	//return -1; // Retirar comentï¿½rio no inï¿½cio desta linha para nÃ£o mandar email
+
 	$recipients = $_recipient;
-	
+
 	$_ReplyName = "";
 	$_ReplyMail = "";
 
-	$_split = explode("+",$_headers);  			
+	$_split = explode("+",$_headers);
 	if ( count($_split) > 1 ) {
 		$_reply = explode( ":", $_split[1] );
 		$_ReplyMail = $_reply[0];
 		$_ReplyName = $_reply[1];
 		$_headers = $_split[0];
-	} 
+	}
 
-		
+
 	$headers["Content-type"] = "text/html; charset=iso-8859-1";
-	
+
 	if (!$_headers) {
 		$headers["From"]    = "suporte@datamace.com.br";
 		$headers["To"]      = "SAD";
@@ -123,7 +123,7 @@
 		$headers["From"]    = $_headers;
 		$headers["To"]      = "";
 	}
-	
+
 	$headers["Subject"] = $_subject;
 	$body = $_msg;
 	$params["host"] = "10.98.0.3";
@@ -131,31 +131,31 @@
 	$params["auth"] = true;
 	$params["username"] = "sad";
 	$params["password"] = "datamace";
-	
-	
-	
+
+
+
 	global $site;  // se for dentro de funcao
-	
-	
+
+
 	$_smtp_host = "10.98.0.3";
 	$_smtp_port = '25';
 	$_smtp_autentica = 'enabled';
 	$_smtp_usuario = "sad";
-	$_smtp_senha = "datamace";	
+	$_smtp_senha = "datamace";
 	$_confirma_recebimento = 'S';
-	
 
-	if (!$_headers) {	
-		$site['from_name'] = "SAD"; 
+
+	if (!$_headers) {
+		$site['from_name'] = "SAD";
 	} else {
-		$site['from_name'] = $_headers; 
+		$site['from_name'] = $_headers;
 	}
 
-	
-	$site['from_email'] = "suporte@datamace.com.br"; 
-	$site['smtp_mode'] = "$_smtp_autentica"; // enabled or disabled 
-	$site['smtp_host'] = "$_smtp_host"; 
-	$site['smtp_port'] = $_smtp_port; 
+
+	$site['from_email'] = "suporte@datamace.com.br";
+	$site['smtp_mode'] = "$_smtp_autentica"; // enabled or disabled
+	$site['smtp_host'] = "$_smtp_host";
+	$site['smtp_port'] = $_smtp_port;
 	$site['smtp_username'] = "$_smtp_usuario";
 	$site['smtp_password'] = "$_smtp_senha";
 
@@ -164,57 +164,57 @@
 	if ($_ReplyMail != "")
 	{
 		$site['from_email'] = $_ReplyMail;
-		$site['from_name'] = $_ReplyName; 		
+		$site['from_name'] = $_ReplyName;
 	}
 
 
-	
-	
-	require_once('mailclass.inc.php'); 
-	
+
+
+	require_once('mailclass.inc.php');
+
 	$cc_email = '';
 	$cc_nome = '';
 	$retorno = '';
-	$mailer = new FreakMailer(); 
-	$mailer->IsHTML(true); 
+	$mailer = new FreakMailer();
+	$mailer->IsHTML(true);
 	$mailer->SetLanguage('br','../a/scripts/language/');
-	$mailer->Subject = $_subject; 
+	$mailer->Subject = $_subject;
 	$mensagem = $_msg;
 	//$mensagem = rteSafe($_msg);
-	$mailer->Body = $mensagem; 
+	$mailer->Body = $mensagem;
 	$mensagem_txt = strip_tags($mensagem);
-	//$mailer->AltBody = unhtmlentities($mensagem_txt); 
-	
-	$mailer->AddAddress("$_recipient", "$_recipient"); 
-	
+	//$mailer->AltBody = unhtmlentities($mensagem_txt);
+
+	$mailer->AddAddress("$_recipient", "$_recipient");
+
 	if ($_ReplyName) {
 		$mailer->AddReplyTo($_ReplyMail,$_ReplyName);
 	}
-	
+
 	//$mailer->AddAttachment("$diretorio_documentos/$arquivo", "$arquivo");  // para anexar documentos no email
 	//$mailer->AddAttachment("$diretorio_documentos/$arquivo", "$arquivo");  // para anexar documentos no email
-	
+
 	if (trim($cc_email)) {
-		$mailer->AddCC("$cc_email", "$cc_nome"); 
-	} 
-	if (!$mailer->Send()) { 
+		$mailer->AddCC("$cc_email", "$cc_nome");
+	}
+	if (!$mailer->Send()) {
 		$retorno .= 'Problemas no envio do email para: '. $_recipient . ' \n';
 		$retorno .= '\tErro: '. $mailer->ErrorInfo .'\n';
 		$ok = 'n';
-	} else { 
+	} else {
 		$ok = 's';
 	}
-	
+
 	/*
-	$mailer->ClearAddresses(); 	
-	$mailer->AddAddress("fernando@datamace.com.br", "fernando@datamace.com.br"); 	 
+	$mailer->ClearAddresses();
+	$mailer->AddAddress("fernando@datamace.com.br", "fernando@datamace.com.br");
 	$mailer->Send();
 	*/
-	
-	$mailer->ClearAddresses(); 
-	$mailer->ClearAttachments();   
-	
-	
+
+	$mailer->ClearAddresses();
+	$mailer->ClearAttachments();
+
+
 	}
 
  function horaToSeg($hora) {
@@ -250,10 +250,10 @@
          $nome_usuario=$linha->nome;
          return $nome_usuario;
      } else {
-       return "Usuario não cadastrado ($id)";
+       return "Usuario nÃ£o cadastrado ($id)";
      }
    } else {
-     return "Não cadastrado";
+     return "nÃ£o cadastrado";
    }
  }
 
@@ -283,10 +283,10 @@
          $nome_usuario=$linha->cliente;
          return $nome_usuario;
      } else {
-       return "cliente não cadastrado ($id)";
+       return "cliente nÃ£o cadastrado ($id)";
      }
    } else {
-     return "Não cadastrado ($sql)";
+     return "nÃ£o cadastrado ($sql)";
    }
  }
 
@@ -299,10 +299,10 @@
      if ($linha) {
          return $linha->descricao;
      } else {
-       return "Área não cadastrada ($id)";
+       return "ï¿½rea nÃ£o cadastrada ($id)";
      }
    } else {
-     return "Não cadastrado";
+     return "nÃ£o cadastrado";
    }
  }
 
@@ -317,10 +317,10 @@
          $result=$linha->email;
          return $result;
      } else {
-       return "Usuario não cadastrado ($id)";
+       return "Usuario nÃ£o cadastrado ($id)";
      }
    } else {
-     return "Não cadastrado";
+     return "nÃ£o cadastrado";
    }
  }
 
@@ -332,7 +332,7 @@ function pegaDiagnostico($id) {
      if ($linha) {
          return $linha->diagnostico;
      } else {
-       return "Diagnóstico não cadastrado ($id)";
+       return "Diagnï¿½stico nÃ£o cadastrado ($id)";
      }
  }
 
@@ -359,7 +359,7 @@ function pegaGerente($id) { // Fefe
      }
  }
 
-function pegaGestor($id) { 
+function pegaGestor($id) {
      $sql = "select gestor from usuario where (id_usuario = $id);";
      $result = mysql_query($sql);
      $linha=mysql_fetch_object($result);
@@ -413,7 +413,7 @@ function pegaMarketing($id) {
      if ($linha) {
          return $linha->sistema;
      } else {
-       return "Sistema não cadastrado";
+       return "Sistema nÃ£o cadastrado";
      }
  }
 
@@ -421,13 +421,13 @@ function pegaMotivo($id) {
      $sql = "select motivo from motivo where (id_motivo = $id);";
      $result = mysql_query($sql);
      $linha=mysql_fetch_object($result);
-	 
+
      if ($linha) {
 		$motivo = $linha->motivo;
      } else {
-		$motivo = "Motivo Não Cadastrado";
+		$motivo = "Motivo nÃ£o Cadastrado";
      }
-	 if ($id==57) { // Motivo = IMPROCEDENTE 
+	 if ($id==57) { // Motivo = IMPROCEDENTE
 	   $motivo = "<strong><font color=\"#FF0000\">$motivo</font></strong>";
 	 }
 	 return $motivo;
@@ -440,13 +440,13 @@ function pegaCategoria($id) {
      if ($linha) {
          return $linha->categoria;
      } else {
-       return "Categoria Não Cadastrado";
+       return "Categoria nÃ£o Cadastrado";
      }
  }
 
 
 function verificasenha($l, $s) {
- $sql = "select id_usuario, expirado, senha from usuario where (ativo=1) and login = '$l';"; 
+ $sql = "select id_usuario, expirado, senha from usuario where (ativo=1) and login = '$l';";
  $result = mysql_query($sql) or  die( mysql_error() . " - $sql");
  $linha= mysql_fetch_object($result);
  $id    = $linha->id_usuario;
@@ -511,7 +511,7 @@ function pegaStatus($status) {
   return $idtemp;
 }
 
-function conn_TemChamadosAguardando($chamado) 
+function conn_TemChamadosAguardando($chamado)
 {
 	$lSql = "select count(1) qtde from chamado where id_chamado_espera = $chamado";
 	$r = mysql_query($lSql) or Die($lSql);
@@ -520,35 +520,35 @@ function conn_TemChamadosAguardando($chamado)
 }
 
 function conn_PegaAguardandoChamado($pChamado)
-{	
+{
 	$lSql = "select Id_chamado_espera from chamado where id_chamado = $pChamado";
 	$r = mysql_query($lSql) or Die($lSql);
 	$l = mysql_fetch_object($r);
 	$espero = $l->Id_chamado_espera;
 	if ($espero) {
-		
-		$esperoStatus = pegaStatusDoChamado($espero);	
-		
-		$result = "<p style=\"text-align:center; padding:0; margin:0; border:1px solid #cccccc;\">Este chamado depende do chamado <a href=http://10.98.0.5/a/historicochamado.php?&id_chamado=".$espero." target=\"_blank\">".number_format($espero,0,',','.')." ($esperoStatus)</a> para ser concluído<br></p>";
+
+		$esperoStatus = pegaStatusDoChamado($espero);
+
+		$result = "<p style=\"text-align:center; padding:0; margin:0; border:1px solid #cccccc;\">Este chamado depende do chamado <a href=http://10.98.0.5/a/historicochamado.php?&id_chamado=".$espero." target=\"_blank\">".number_format($espero,0,',','.')." ($esperoStatus)</a> para ser concluï¿½do<br></p>";
 	} else {
 		$result = "";
 	}
 	return $result;
 }
 
-function conn_PegaChamadosAguardando($chamado) 
+function conn_PegaChamadosAguardando($chamado)
 {
 	$ok = false;
 	$result = "";
 	$lSql = "select id_chamado from chamado where Id_chamado_espera = $chamado";
 	$r = mysql_query($lSql) or Die($lSql);
-	while ($l = mysql_fetch_object($r)) 
+	while ($l = mysql_fetch_object($r))
 	{
 		if (!$ok) {
 		$result = "<p style=\"text-align:center; padding:0; margin:0; border:1px solid #cccccc;\">Chamados que dependem deste |";
 		$ok = true;
 	}
-	$id = $l->id_chamado;		
+	$id = $l->id_chamado;
 	$result .= "<a href=http://10.98.0.5/a/historicochamado.php?&id_chamado=".$id."  target=\"_blank\">".$id."</a>|";
 	}
 		if ($ok) {
@@ -577,7 +577,7 @@ function pegaChamadoCliente($atendimento, $cliente, $status, $limite) {
  $sql .= "LEFT(c.descricao, 120) as descricao, cl.id_cliente, cl.cliente ";
  $sql .= "FROM chamado c, cliente cl, prioridade p, usuario u, sistema s ";
  $sql .= "WHERE ";
- $sql .= "(c.visible = 1) "; 
+ $sql .= "(c.visible = 1) ";
  $sql .= "AND (c.cliente_id = cl.id_cliente) ";
  $sql .= "AND (c.consultor_id = u.id_usuario) ";
  $sql .= "AND (u.atendimento = $atendimento) ";
@@ -736,8 +736,8 @@ function historicoChamado($chamado, $ordem) {
 
   $conta=0;
    while ($linha = mysql_fetch_object( $result ) ) {
-   
-   
+
+
    	 $dias = $linha->diasContato;
 	 $m = "";
 	 if ($dias == 0) {
@@ -747,11 +747,11 @@ function historicoChamado($chamado, $ordem) {
 	 } else if ($dias == 2) {
 	 	$m = "Anteontem";
 	 } else if ($dias < 365) {
-	 	$m = "há $dias dias";
+	 	$m = "hï¿½ $dias dias";
 	 } else {
-	 	$m = "há " . dateDiff(DataOk($linha->dataa));
+	 	$m = "hï¿½ " . dateDiff(DataOk($linha->dataa));
 	 }
-		   
+
    	 $tmp["dias"] = $m;
      $tmp["contato_id"] = $linha->id_contato;
      $tmp["pessoacontatada"] = $linha->pessoacontatada;
@@ -765,7 +765,7 @@ function historicoChamado($chamado, $ordem) {
      $tmp["status_id"] = $linha->id_status;
      $tmp["origem"] = $linha->origem;
 	 $tmp["DataContato"] = $linha->dataa;
-     $quando = explode("-", $linha->dataa);	 
+     $quando = explode("-", $linha->dataa);
      $tmp["dataa"] = "$quando[2]/$quando[1]/$quando[0]";
      $tmp["horaa"] = $linha->horaa;
      $quando = explode("-", $linha->datae);
@@ -773,7 +773,7 @@ function historicoChamado($chamado, $ordem) {
      $tmp["horae"] = $linha->horae;
      $tmp["tempo"] = $linha->tempo;
 	 $tmp["temposec"] = $linha->temposec;
-	 
+
 
      if ($tmp["consultor"] == $tmp["destinatario"])  {
        $tmp["encaminhado"] = 0;
@@ -791,35 +791,35 @@ function historicoChamado($chamado, $ordem) {
 function pegaChamadoPendenteUsuario($usuario) {
 
 	$saida = array();
- 
-	$sql .= "SELECT c.rnc_acao_responsavel,"; 
-	$sql .= "  c.rnc_depto_responsavel, c.rnc_prazo, dataprevistaliberacao, liberado, id_chamado_espera, "; 
-	$sql .= "  c.sistema_id, c.externo, c.rnc, c.id_chamado, c.lido, c.lidodono, c.dataa,c.horaa, c.status, "; 
-	$sql .= "  destinatario_id, consultor_id, remetente_id, cat.pos_venda, "; 
-	$sql .= "  LEFT(c.descricao, 150) as descricao, cl.id_cliente, cl.cliente, cl.telefone, "; 
-	$sql .= "  cl.senha as senhacliente, p.prioridade, p.valor "; 
-	$sql .= "  , (select count(1) from chamado c2 where (c2.id_chamado_espera = c.id_chamado)) as qtde "; 
-	$sql .= "FROM "; 
-	$sql .= "  chamado c "; 
-	$sql .= "    inner join cliente cl on c.cliente_id = cl.id_cliente "; 
-	$sql .= "    inner join prioridade p on c.prioridade_id = p.id_prioridade "; 
-	$sql .= "    inner join categoria cat on c.categoria_id = cat.id_categoria "; 
-	$sql .= "WHERE visible = 1 and "; 
-	$sql .= "( "; 	
-	$sql .= "  ( (c.descricao is not null) AND (c.descricao <> '') ) "; 
-	$sql .= "  AND ( (c.destinatario_id = $usuario) or (c.consultor_id = $usuario) ) "; 
-	$sql .= "  AND (c.status <> 1) "; 
-	$sql .= ") "; 		
-	$sql .= "ORDER BY "; 
-	$sql .= "  p.valor, dataa desc, horaa desc "; 
+
+	$sql .= "SELECT c.rnc_acao_responsavel,";
+	$sql .= "  c.rnc_depto_responsavel, c.rnc_prazo, dataprevistaliberacao, liberado, id_chamado_espera, ";
+	$sql .= "  c.sistema_id, c.externo, c.rnc, c.id_chamado, c.lido, c.lidodono, c.dataa,c.horaa, c.status, ";
+	$sql .= "  destinatario_id, consultor_id, remetente_id, cat.pos_venda, ";
+	$sql .= "  LEFT(c.descricao, 150) as descricao, cl.id_cliente, cl.cliente, cl.telefone, ";
+	$sql .= "  cl.senha as senhacliente, p.prioridade, p.valor ";
+	$sql .= "  , (select count(1) from chamado c2 where (c2.id_chamado_espera = c.id_chamado)) as qtde ";
+	$sql .= "FROM ";
+	$sql .= "  chamado c ";
+	$sql .= "    inner join cliente cl on c.cliente_id = cl.id_cliente ";
+	$sql .= "    inner join prioridade p on c.prioridade_id = p.id_prioridade ";
+	$sql .= "    inner join categoria cat on c.categoria_id = cat.id_categoria ";
+	$sql .= "WHERE visible = 1 and ";
+	$sql .= "( ";
+	$sql .= "  ( (c.descricao is not null) AND (c.descricao <> '') ) ";
+	$sql .= "  AND ( (c.destinatario_id = $usuario) or (c.consultor_id = $usuario) ) ";
+	$sql .= "  AND (c.status <> 1) ";
+	$sql .= ") ";
+	$sql .= "ORDER BY ";
+	$sql .= "  p.valor, dataa desc, horaa desc ";
 
 
 	$result = mysql_query($sql) or die (mysql_error());
 	$conta=0;
 	while ($linha = mysql_fetch_object( $result ) ) {
-	
+
 		$quando = explode("-", $linha->dataa);
-		
+
 		$tmp["externo"] = $linha->externo;
 		$tmp["lido"] = $linha->lido;
 		$tmp["lidodono"] = $linha->lidodono;
@@ -828,26 +828,26 @@ function pegaChamadoPendenteUsuario($usuario) {
 		$tmp["remetente_id"] = $linha->remetente_id;
 		$tmp["categoria_id"] = $linha->categoria_id;
 		$tmp["pos_venda"] = $linha->pos_venda;
-		
+
 		// Quantos chamados dependem deste para encerrar ?
 		$tmp["qtde"] = $linha->qtde;
-		
+
 		//Qual o chamado que eu aguardo ?
 		$tmp["espero"] = $linha->id_chamado_espera;
-		
-		
-		$tmp["encaminhado"] =  (		
+
+
+		$tmp["encaminhado"] =  (
 			($tmp["destinatario_id"] != $tmp["remetente_id"]) or
 			($tmp["destinatario_id"] != $tmp["usuario_id"])
 		) ;
-		
-		
-		
+
+
+
 		$tmp["rnc_acao_responsavel"] = $linha->rnc_acao_responsavel;
 		$tmp["id_cliente"] = $linha->id_cliente;
 		$tmp["senha"] = $linha->senhacliente;
 		$tmp["cliente"] = $linha->cliente;
-		
+
 		$tmp["chamado"] = $linha->id_chamado;
 		$tmp["descricao"] = $linha->descricao;
 		$tmp["dataa"] = "$quando[2]/$quando[1]/$quando[0]";
@@ -858,19 +858,19 @@ function pegaChamadoPendenteUsuario($usuario) {
 		$tmp["prioridadev"] = $linha->valor;
 		$tmp["id_sistema"] = $linha->sistema_id;
 		$tmp["rnc"] = $linha->rnc;
-		
-		$quando = explode("-", $linha->rnc_prazo);	 
+
+		$quando = explode("-", $linha->rnc_prazo);
 		$tmp["rncPrazo"] = "$quando[2]/$quando[1]/$quando[0]";
-		$quando = explode("-", $linha->rnc_prazo);	 
+		$quando = explode("-", $linha->rnc_prazo);
 		$tmp["rncPrazo"] = "$quando[2]/$quando[1]/$quando[0]";
 		$tmp["rncDeptoResponsavel"] = $linha->rnc_depto_responsavel;
-		
-		$quando = explode("-", $linha->dataprevistaliberacao);	 	 
+
+		$quando = explode("-", $linha->dataprevistaliberacao);
 		$tmp["dataprevista"] = "$quando[2]/$quando[1]/$quando[0]";
-		
+
 		$saida[$conta++] = $tmp;
 	}
-	
+
 	return $saida;
 }
 
@@ -888,13 +888,13 @@ function pegaClientePorCodigoOrdem($codigo, $ordem) {
 
 	global $ok;
 
-	/*	
+	/*
 	$qry = "select count(1) as conta from usuario_empresa where id_usuario = $ok";
 	$result = mysql_query($qry) or die(mysql_error() . '<br>' . $qry) ;
-	$linha = mysql_fetch_object($result); 
-	$qtde = $linha->conta;	
+	$linha = mysql_fetch_object($result);
+	$qtde = $linha->conta;
 	*/
-	
+
 	$sql = "Select c.id_cliente, c.cliente, c.senha, c.telefone, ";
 	$sql .= "c.endereco, c.bairro, c.cidade, c.fax, c.funcionarios, c.bloqueio, c.grau ";
 	if ($qtde == 0) {
@@ -917,7 +917,7 @@ function pegaClientePorCodigoOrdem($codigo, $ordem) {
         $tmp["telefone"] = $linha->telefone;
         $tmp["endereco"] = $linha->endereco;
         if (!$tmp["endereco"]) {
-          $tmp["endereco"] = "Endereço não cadastrado.";
+          $tmp["endereco"] = "Endereï¿½o nÃ£o cadastrado.";
         }
         $tmp["bairro"] = $linha->bairro;
         $tmp["cidade"] = $linha->cidade;
@@ -926,9 +926,9 @@ function pegaClientePorCodigoOrdem($codigo, $ordem) {
         $tmp["funcionarios"] = $linha->funcionarios;
 
         $tmp["bloqueio"] = $linha->bloqueio;
-		
+
 		$tmp["grau"] = AcertaGrau($linha->grau);
-		
+
         $saida[$conta++] = $tmp;
      }
 
@@ -940,9 +940,9 @@ function pegaClientePorCodigoUnico($codigo) {
 
   $saida = array();
   $sql = "Select * from cliente where senha <> '' and senha = '$codigo' or id_cliente = '$codigo' ;";
-    
+
   //echo $sql;
-   
+
   $result = mysql_query($sql);
 
   $conta=0;
@@ -952,11 +952,11 @@ function pegaClientePorCodigoUnico($codigo) {
         $tmp["senha"] = $linha->senha;
         $tmp["telefone"] = $linha->telefone;
         $tmp["fax"] = $linha->fax;
-        $tmp["grau"] = $linha->grau;		
+        $tmp["grau"] = $linha->grau;
         $tmp["funcionarios"] = $linha->funcionarios;
         $tmp["endereco"] = $linha->endereco;
         if (!$tmp["endereco"]) {
-          $tmp["endereco"] = "Endereço não cadastrado.";
+          $tmp["endereco"] = "Endereï¿½o nÃ£o cadastrado.";
         }
         $tmp["bairro"] = $linha->bairro;
         $tmp["cidade"] = $linha->cidade;
@@ -1026,16 +1026,16 @@ function pegaChamado($id_chamado) {
      $tmp["sistema_id"] = $linha->sistema_id;
      $tmp["rnc"] = $linha->rnc;
      $tmp["categoria"] = $linha->categoria_id;
-	 
-     $tmp["rnc_depto_responsavel"] = $linha->rnc_depto_responsavel; 
+
+     $tmp["rnc_depto_responsavel"] = $linha->rnc_depto_responsavel;
 	 $tmp["rnc_prazo"] = $linha->rnc_prazo;
 	 $tmp["rnc_data"] = $linha->rnc_data;
-	 $tmp["rnc_acao_responsavel"] = $linha->rnc_acao_responsavel;	
+	 $tmp["rnc_acao_responsavel"] = $linha->rnc_acao_responsavel;
 	 $tmp["rnc_acao_data"] = $linha->rnc_acao_data;
-	 $tmp["rnc_verif_responsavel"] = $linha->rnc_verif_responsavel;	
+	 $tmp["rnc_verif_responsavel"] = $linha->rnc_verif_responsavel;
 	 $tmp["rnc_verif_data"] = $linha->rnc_verif_data;
 
-	 
+
      $tmp["encaminhado"] =  (
 
           ($tmp["destinatario_id"] != $tmp["remetente_id"]) or
@@ -1138,33 +1138,33 @@ function pegaEncaminhaPara($chamado, $id_usuario) {
   }
 
  $saida = array();
- 
+
  /*
  FERNANDO - FERIAS
  */
 $hoje = date("Y-m-d");
- 
+
  $sql = " SELECT user.id_usuario, user.nome, user.superior, h.hierarquia ,
 (select count(cu.fl_ferias) f from  compromisso c
   inner join compromissousuario cu on cu.id_compromisso = c.id
-where 
-  cu.fl_ferias = 1 and 
-  c.data = $hoje and 
-  cu.id_usuario = user.id_usuario  
+where
+  cu.fl_ferias = 1 and
+  c.data = $hoje and
+  cu.id_usuario = user.id_usuario
 ) as ferias
-FROM usuario user, hierarquia h 
-WHERE 
-      user.fl_humano = 1 and 
-      user.ativo=1 and ( (h.id_hierarquia=user.hierarquia) and (user.atendimento = 1)) 
-order by 
+FROM usuario user, hierarquia h
+WHERE
+      user.fl_humano = 1 and
+      user.ativo=1 and ( (h.id_hierarquia=user.hierarquia) and (user.atendimento = 1))
+order by
       ferias desc, nome ";
-	  
+
 
  $sql = "";
  $sql .= "SELECT id_usuario, nome, superior, h.hierarquia ";
  $sql .= "FROM usuario, hierarquia h ";
  $sql .= "WHERE fl_humano = 1 and ativo=1 and ( (h.id_hierarquia=usuario.hierarquia) and (atendimento = $atendimento)) order by nome;"; // h.id_hierarquia, nome;";
- 
+
 
 
 /*
@@ -1172,29 +1172,29 @@ order by
  $sql = " SELECT user.id_usuario, user.nome, user.superior, h.hierarquia ,
 (select count(cu.fl_ferias) f from  compromisso c
   inner join compromissousuario cu on cu.id_compromisso = c.id
-where 
-  cu.fl_ferias = 1 and 
-  c.data = $hoje and 
-  cu.id_usuario = user.id_usuario  
+where
+  cu.fl_ferias = 1 and
+  c.data = $hoje and
+  cu.id_usuario = user.id_usuario
 ) as ferias
-FROM usuario user, hierarquia h 
-WHERE 
-      user.fl_humano = 1 and 
-      user.ativo=1 and ( (h.id_hierarquia=user.hierarquia) and (user.atendimento = 1)) 
-order by 
+FROM usuario user, hierarquia h
+WHERE
+      user.fl_humano = 1 and
+      user.ativo=1 and ( (h.id_hierarquia=user.hierarquia) and (user.atendimento = 1))
+order by
       ferias desc, nome ";
-	  
-*/
-	  
 
- 
+*/
+
+
+
  $result = mysql_query($sql);
  $conta=0;
    while ($linha = mysql_fetch_object( $result ) ) {
      $id       = $linha->id_usuario;
      $nome     = $linha->nome;
 	 //$ferias   = $linha->f;
-/*      
+/*
 	   $sql2 = "select online from online where id_usuario=$id";
        $resu = mysql_query($sql2);
        $lin = mysql_fetch_object($resu);
@@ -1207,7 +1207,7 @@ order by
        } else {
          $nome = "off : $nome";
        }
-*/     
+*/
 	 $superior = $linha->superior;
      $hierarquia = $linha->hierarquia;
 
@@ -1217,7 +1217,7 @@ order by
        $gerente = 0;
      }
 
-      // é gerente $gerente = 1
+      // ï¿½ gerente $gerente = 1
       //
       // Para encaminhar um contato:
       //   Eu sou o dono do contato ? (destinatario)
@@ -1225,9 +1225,9 @@ order by
       //         $dono = 1, $euGerente = 0;
       //   Sim e sou gerente : Posso encaminhas para gerentes e meus subordinados
       //         $dono = 1; $euGerente = 1;
-      //   Não : Somente encaminho para o destinatario
+      //   nÃ£o : Somente encaminho para o destinatario
       //         $dono = 0;
-      //   Não, mas sou gerente do destinatario : Ver caso sim e sou gerente.
+      //   nÃ£o, mas sou gerente do destinatario : Ver caso sim e sou gerente.
       //        $gerenteDestinatario = 1;
 
      $ok = 0;
@@ -1243,7 +1243,7 @@ order by
                    $ok = 1;       // encaminho p/meu geren. e colegas.
                  }
                }
-             } else {                           // NÃO sou dono e...
+             } else {                           // nÃ£o sou dono e...
                 if ($gerenteDestinatario) {     // ..sou gerente do destinatario
                  if ( $gerente or ($superior == $id_usuario) ) {
                    $ok = 1;                    // Entao posso encaminhar p/ gerentes e meus sub.
@@ -1256,8 +1256,8 @@ order by
              }
       }
 
-    
-	
+
+
 	if ( ($id_usuario==1) || ($id_usuario==12)  ) {
 	  $ok = 1;
 	}
@@ -1341,7 +1341,7 @@ function pegaPrioridades() {
 	$sql = "SELECT * from prioridade;";
 	$result = mysql_query($sql);
 	$conta=0;
-	while ($linha = mysql_fetch_object( $result ) ) {	
+	while ($linha = mysql_fetch_object( $result ) ) {
 		$tmp["id_prioridade"] = $linha->id_prioridade;
 		$tmp["prioridade"] = $linha->prioridade;
 		$saida[$conta++] = $tmp;
@@ -1354,7 +1354,7 @@ function pegaPrioridades_g($gestor) {
 	$sql = "SELECT * from prioridade;";
 	$result = mysql_query($sql);
 	$conta=0;
-	while ($linha = mysql_fetch_object( $result ) ) {	
+	while ($linha = mysql_fetch_object( $result ) ) {
 		$id_prioridade = $linha->id_prioridade;
 		if ((!$gestor) and (($id_prioridade==2)|($id_prioridade==3)) ) {
 			continue ;
@@ -1673,7 +1673,7 @@ function pegaOrigem($id) {
      if ($linha) {
          return $linha->origem;
      } else {
-       return "Origem não cadastrado ($id)";
+       return "Origem nÃ£o cadastrado ($id)";
      }
  }
 
@@ -1803,7 +1803,7 @@ function pegaChamadosRNC() {
  $sql .= ")  ";
  $sql .= "ORDER BY  ";
  $sql .= "  rnc, p.valor, dataa desc, horaa desc";
- 
+
 // die($sql);
 
  $result = mysql_query($sql) or die ($sql);
@@ -1870,11 +1870,11 @@ function pegaArea($id) {
 function dateDiff($dia1) {
 // This is a simple script to calculate the difference between two dates
 // and express it in years, months and days
-// 
+//
 // use as in: "my daughter is 4 years, 2 month and 17 days old" ... :-)
 //
 // Feel free to use this script for whatever you want
-// 
+//
 // version 0.1 / 2002-10-3
 //
 // please send comments and feedback to webmaster@lotekk.net
@@ -1948,13 +1948,13 @@ $days = "dias";
 $meses = "meses";
 if ($yr_diff == "1") $years = "ano";
 if ($day_diff == "1") $days = "dia";
-if ($mon_diff=="1") $meses = "mês";
+if ($mon_diff=="1") $meses = "mï¿½s";
 
 	// here we go
 	$m = $d = "";
 	if ($mon_diff > 0) {
 		if ($day_diff > 0) {
-			$m = ", $mon_diff $meses";		
+			$m = ", $mon_diff $meses";
 		} else {
 			$m = " e $mon_diff $meses";
 		}
@@ -1979,7 +1979,7 @@ if ($mon_diff=="1") $meses = "mês";
 |  7 | marketing              |
 |  8 | outra                  |
 |  9 | nenhuma                |
-| 10 | jurídico               |
+| 10 | jurï¿½dico               |
 | 11 | Qualidade de software  |
 | 12 | TI                     |
 */

@@ -160,7 +160,7 @@ function FuncoesObterListaDeProjetosParaDropdownList()
 {
 	$saida = array();
 	$sql = "select id_chamado as c, Concat(id_chamado, ' - ' , Left(descricao, 100)) as d from chamado where status = 2 and rnc = 4 and id_chamado > 0 order by dataa desc";
-	
+
 	$result = mysql_query($sql) or die ( mysql_error() );
 		
 	$conta=0;
@@ -177,7 +177,9 @@ function FuncoesPegaChamadoPendenteUsuario_ordem($usuario, $Campo) {
 	
 	$saida = array();	
 
-	$sql .= "SELECT coalesce(s.id_usuario,0) sigame, coalesce(uco.Ic_Ordem,0) ordem, c.rnc_acao_responsavel, sis.sistema, c.datauc, c.horauc, c.Ds_Versao, c.Dt_Release, cat.categoria, data_limite_1, data_limite_2, data_limite_3, data_limite_4, "; 
+	$sql = "SELECT ";
+	$sql .= "coalesce(s.id_usuario,0) sigame,  ";
+	$sql .= "coalesce(uco.Ic_Ordem,0) ordem, c.rnc_acao_responsavel, sis.sistema, c.datauc, c.horauc, c.Ds_Versao, c.Dt_Release, cat.categoria, data_limite_1, data_limite_2, data_limite_3, data_limite_4, "; 
 	$sql .= "ct.id_usuario as Editando_Id, ue.nome as Editando_Nome, cat.pos_venda pos_venda_ca, cp.Ic_PosVenda pos_venda_cp,";
 	$sql .= " datediff(now(), dataa) diasAbertura, datediff(now(), datauc) diasUltimoContato, ";
 	$sql .= "  c.rnc_depto_responsavel, c.rnc_prazo, dataprevistaliberacao, liberado, id_chamado_espera, "; 
@@ -201,7 +203,8 @@ function FuncoesPegaChamadoPendenteUsuario_ordem($usuario, $Campo) {
 	$sql .= "WHERE visible = 1 and "; 
 	$sql .= "( "; 	
 	$sql .= "  ( (c.descricao is not null) AND (c.descricao <> '') ) "; 
-	$sql .= "  AND ( (c.destinatario_id = $usuario) or (c.consultor_id = $usuario) or (s.id_usuario = $usuario) ) "; 
+//	$sql .= "  AND ( (c.destinatario_id = $usuario) or (c.consultor_id = $usuario) or (s.id_usuario = $usuario) ) "; 
+	$sql .= "  AND ( (c.destinatario_id = $usuario) or (c.consultor_id = $usuario) ) "; 
 	$sql .= "  AND (c.status <> 1) "; 
 	$sql .= ") "; 		
 	$sql .= "ORDER BY   coalesce(uco.Ic_Ordem,0) desc, "; 

@@ -126,7 +126,7 @@ function fun_msg(VTipo,VMsg){
 			alert(VMsg);
 			break;
 		case 'R':
-			alert('Relat'+String.fromCharCode(243)+'rio Gerado com exito!');
+			alert('Relatório Gerado com exito!');
 			break;
 	}
 }

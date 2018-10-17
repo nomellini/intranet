@@ -14,7 +14,7 @@
 		session_register(v_id_usuario);
 	}
 
-	require("a/scripts/conn.php");	
+	require("a/scripts/conn.php");
 	if ($novologin)
 	{
 		setcookie("cookieEmailUsuario");
@@ -26,19 +26,19 @@
 		unset($novologin);
 		unset($lembralogin);
 	}
-	
+
 	if (isset($lembralogin))
 	{
 		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );
 		if ($ok==$id_usuario){
-			header("Location: index.php"); 
-		} 
+			header("Location: index.php");
+		}
 	}
-	
-	$msg= ""; 
+
+	$msg= "";
 	if ($acao == "login")
 	{
-		session_register(v_id_usuario);	
+		session_register(v_id_usuario);
 		$ok = verificasenha($email, md5($senha));
 		if ($ok)
 		{
@@ -66,7 +66,7 @@
 		else
 		{
 			//$msg = "Dados incorretos - $ok - $email - $senha";
-			$msg = "Dados incorretos.<br>Verifique seu usuário e sua senha!";
+			$msg = "Dados incorretos.<br>Verifique seu usuÃ¡rio e sua senha!";
 		}
 	}
 	if (!isset($pageRequested))
@@ -119,18 +119,18 @@
                   <div class="form-main">
                     <div class="form-group">
                       <input name="pageRequested" type="hidden" id="pageRequested" value="<?=$pageRequested?>">
-                      <input type="text" 
-													name="email" 
-													id="un_1" 
-													class="form-control" 
-													placeholder="Usuário" 
-													required="required" 
+                      <input type="text"
+													name="email"
+													id="un_1"
+													class="form-control"
+													placeholder="usuÃ¡rio"
+													required="required"
 													value="<?=$cookieEmailUsuario?>">
-                      <input type="password" 
-											 		name="senha" 
-													id="pw_1" 
-													class="form-control" 
-													placeholder="Senha" 
+                      <input type="password"
+											 		name="senha"
+													id="pw_1"
+													class="form-control"
+													placeholder="Senha"
 													required="required">
                       <input type="hidden" name="acao" value="login">
                     </div>
@@ -141,7 +141,7 @@
                       <div class="col-xs-12"> <i class="fa fa-check"></i> <a href="../../index.php" id="signup_from_1">Intranet</a> </div>
                     </div>
                   </div>
-                  
+
                   <!--										<div class="form-footer">
 											<div class="row">
 												<div class="col-xs-7">
@@ -153,7 +153,7 @@
 													<a href="#signup_window" id="signup_from_1">Sign Up</a>
 												</div>
 											</div>
-										</div>		
+										</div>
 --> </div>
               </div>
             </div>
@@ -164,30 +164,30 @@
   </section>
 </form>
 
-<!-- js library --> 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> 
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script> 
-<script src="../a/js/bootstrap.min.js"></script> 
-<script src="../a/js/jquery.icheck.min.js"></script> 
-<script src="../a/js/waypoints.min.js"></script> 
-<!-- authenty js --> 
-<script src="../a/js/authenty.js"></script> 
-<!-- preview scripts --> 
-<script src="../a/js/preview/jquery.malihu.PageScroll2id.js"></script> 
-<script src="../a/js/preview/jquery.address-1.6.min.js"></script> 
-<script src="../a/js/preview/scrollTo.min.js"></script> 
-<script src="../a/js/preview/init.js"></script> 
-<!-- preview scripts --> 
+<!-- js library -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+<script src="../a/js/bootstrap.min.js"></script>
+<script src="../a/js/jquery.icheck.min.js"></script>
+<script src="../a/js/waypoints.min.js"></script>
+<!-- authenty js -->
+<script src="../a/js/authenty.js"></script>
+<!-- preview scripts -->
+<script src="../a/js/preview/jquery.malihu.PageScroll2id.js"></script>
+<script src="../a/js/preview/jquery.address-1.6.min.js"></script>
+<script src="../a/js/preview/scrollTo.min.js"></script>
+<script src="../a/js/preview/init.js"></script>
+<!-- preview scripts -->
 <script>
 			(function($) {
-				
+
 				// get full window size
 				$(window).on('load resize', function(){
 				    var w = $(window).width();
 				    var h = $(window).height();
 
 				    $('section').height(h);
-				});		
+				});
 
 				// scrollTo plugin
 				$('#signup_from_1').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
@@ -195,14 +195,14 @@
 				$('#signup_from_2').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
 				$('#forgot_from_2').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
 				$('#forgot_from_3').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
-				
-				
+
+
 				// set focus on input
-				var firstInput = $('section').find('input[type=text], input[type=password]').filter(':visible:first');        
+				var firstInput = $('section').find('input[type=text], input[type=password]').filter(':visible:first');
 				if (firstInput != null) {
 		            firstInput.focus();
         		}
-				
+
 				$('section').waypoint(function (direction) {
 					var target = $(this).find('input[type=text], input[type=password]').filter(':visible:first');
 					target.focus();
@@ -214,8 +214,8 @@
 	      }, {
 	          offset: -400
 	      });
-				
-				
+
+
 				// animation handler
 				$('[data-animation-delay]').each(function () {
 	          var animationDelay = $(this).data("animation-delay");
@@ -227,7 +227,7 @@
 	              "animation-delay": animationDelay
 	          });
 	      });
-				
+
 	      $('[data-animation]').waypoint(function (direction) {
 	          if (direction == "down") {
 	              $(this).addClass("animated " + $(this).data("animation"));
@@ -241,7 +241,7 @@
 	      }, {
 	          offset: '100%'
 	      });
-			
+
 			})(jQuery);
 		</script>
 </body>
@@ -263,7 +263,7 @@ die();
 		session_register(v_id_usuario);
 	}
 
-	require("a/scripts/conn.php");	
+	require("a/scripts/conn.php");
 	if ($novologin)
 	{
 		setcookie("cookieEmailUsuario");
@@ -275,19 +275,19 @@ die();
 		unset($novologin);
 		unset($lembralogin);
 	}
-	
+
 	if (isset($lembralogin))
 	{
 		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );
 		if ($ok==$id_usuario){
-			header("Location: index.php"); 
-		} 
+			header("Location: index.php");
+		}
 	}
-	
-	$msg= ""; 
+
+	$msg= "";
 	if ($acao == "login")
 	{
-		session_register(v_id_usuario);	
+		session_register(v_id_usuario);
 		$ok = verificasenha($email, md5($senha));
 		if ($ok)
 		{
@@ -315,7 +315,7 @@ die();
 		else
 		{
 			//$msg = "Dados incorretos - $ok - $email - $senha";
-			$msg = "Dados incorretos.<br>Verifique seu usuário e sua senha!";
+			$msg = "Dados incorretos.<br>Verifique seu usuÃ¡rio e sua senha!";
 		}
 	}
 	if (!isset($pageRequested))
@@ -337,22 +337,22 @@ die();
     <td valign="top" ><table width="100%" border="0" cellspacing="1" cellpadding="1">
         <tr>
           <td width="50%"><img src="imagens/logotipo%20datamace.gif" width="155" height="41"></td>
-          <td width="50%" valign="bottom" align="right"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <td width="50%" valign="bottom" align="right"><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
             <script language="JavaScript">
       var diasemana = new Array;
       var mesescrito = new Array;
-    
+
       diasemana[1] = "Segunda-feira";
-      diasemana[2] = "Terça-feira";
+      diasemana[2] = "Terï¿½a-feira";
       diasemana[3] = "Quarta-feira";
       diasemana[4] = "Quinta-feira";
       diasemana[5] = "Sexta-feira";
-      diasemana[6] = "Sábado";
+      diasemana[6] = "Sï¿½bado";
       diasemana[7] = "Domingo";
-     
+
       mesescrito[0] = "Janeiro";
       mesescrito[1] = "Fevereiro";
-      mesescrito[2] = "Março";
+      mesescrito[2] = "Marï¿½o";
       mesescrito[3] = "Abril";
       mesescrito[4] = "Maio";
       mesescrito[5] = "Junho";
@@ -372,10 +372,10 @@ die();
       dia = datahoje.getDate();
       mes = datahoje.getMonth();
       ano = datahoje.getYear();
-      diaindex = datahoje.getDay();   
+      diaindex = datahoje.getDay();
 
      document.write (diasemana[diaindex] + '<br>' + dia + ' de ' + mesescrito[mes] + ' de ' + ano);
-</script> 
+</script>
             </font></td>
         </tr>
       </table>
@@ -417,19 +417,19 @@ die();
       </div></td>
   </tr>
 </table>
-<div align="center"> 
+<div align="center">
   <script>
-  document.form.email.focus();  
+  document.form.email.focus();
   function teclado() {
   var ch=String.fromCharCode(window.event.keyCode);
   var t = 0;
   var re=ch.charCodeAt(0);
   if (re==13) {
-    document.form.submit();   
+    document.form.submit();
   }
   }
-  
- </script> 
+
+ </script>
 </div>
 <script type="text/javascript">
 <!--

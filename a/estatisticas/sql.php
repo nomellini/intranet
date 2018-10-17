@@ -8,7 +8,7 @@ function getSql_001($de, $ate, $id)
 	$sql_001 .= "AND contato.dataa >=  '$de' AND contato.dataa <=  '$ate' ";
 	$sql_001 .= "GROUP  BY contato.consultor_id ";
 	$sql_001 .= "ORDER  BY soma DESC, nome ";
-	
+
 	return $sql_001;
 }
 
@@ -17,7 +17,7 @@ function getSql_002($de, $ate, $id)
 {
 	$sql_002 = "SELECT id_sistema, sistema, count(  *  )  AS soma ";
 	$sql_002 .= "FROM contato, chamado, sistema ";
-	$sql_002 .= "WHERE contato.destinatario_id = $id "; 
+	$sql_002 .= "WHERE contato.destinatario_id = $id ";
 	/*
 	$sql_002 .= "AND contato.consultor_id <> 39 ";
 	$sql_002 .= "AND contato.consultor_id <> 85 ";
@@ -40,7 +40,7 @@ function getSql_002($de, $ate, $id)
 	$sql_002 .= "AND contato.dataa <=  '$ate' ";
 	$sql_002 .= "GROUP  BY sistema.sistema ";
 	$sql_002 .= "ORDER  BY soma DESC, sistema.sistema ";
-	
+
 	return $sql_002;
 }
 
@@ -56,10 +56,10 @@ function getSqlContatosPorSistema($de, $ate, $id)
 	$sql_003 .= "AND contato.dataa >=  '$de'  ";
 	$sql_003 .= "AND contato.dataa <=  '$ate' ";
 	$sql_003 .= "GROUP  BY contato.chamado_id ";
-	$sql_003 .= "ORDER  BY sistema, contato.chamado_id";	
-	mysql_query("DROP TABLE IF EXISTS tmpContatosPorSistema;");	
-    mysql_query($sql_003);	
-	$sql_003 = "select sistema, count(1) as soma from tmpContatosPorSistema group by sistema order by count(1) desc";	
+	$sql_003 .= "ORDER  BY sistema, contato.chamado_id";
+	mysql_query("DROP TABLE IF EXISTS tmpContatosPorSistema;");
+    mysql_query($sql_003);
+	$sql_003 = "select sistema, count(1) as soma from tmpContatosPorSistema group by sistema order by count(1) desc";
 	return $sql_003;
 }
 
@@ -68,7 +68,7 @@ function getSqlDiagnosticos_com($de, $ate, $id)
 
 	$sql = "create temporary table tmpDiagnostico ";
 	$sql .= "SELECT contato.chamado_id, sistema,  ";
-	$sql .= "coalesce(diagnostico.diagnostico, 'Em análise') diagnostico, count(  *  )  AS soma ";
+	$sql .= "coalesce(diagnostico.diagnostico, 'Em anÃ¡lise') diagnostico, count(  *  )  AS soma ";
 	$sql .= "FROM ";
 	$sql .= "	contato ";
 	$sql .= "	inner join chamado on contato.chamado_id = chamado.id_chamado ";
@@ -80,7 +80,7 @@ function getSqlDiagnosticos_com($de, $ate, $id)
 	$sql .= "AND contato.consultor_id <> 39 ";
 	$sql .= "AND contato.consultor_id <> 85 ";
 	$sql .= "AND contato.consultor_id <> 14 ";
-	$sql .= "AND contato.consultor_id <> 215 ";	
+	$sql .= "AND contato.consultor_id <> 215 ";
 	$sql .= "AND contato.consultor_id <> 90 ";
 	$sql .= "AND contato.consultor_id <> 98 ";
 	$sql .= "AND contato.consultor_id <> 172 ";
@@ -96,14 +96,13 @@ function getSqlDiagnosticos_com($de, $ate, $id)
 	$sql .= "AND contato.dataa >=  '$de'  ";
 	$sql .= "AND contato.dataa <=  '$ate' ";
 	$sql .= "GROUP  BY sistema, contato.chamado_id ";
-	
 
-	mysql_query("DROP TABLE IF EXISTS tmpDiagnostico;");	
-    mysql_query($sql);	
-	
-	$sql = "select diagnostico descricao, count(1) as soma from tmpDiagnostico group by diagnostico order by count(1) desc";	
+	mysql_query("DROP TABLE IF EXISTS tmpDiagnostico;");
+    mysql_query($sql);
+
+	$sql = "select diagnostico descricao, count(1) as soma from tmpDiagnostico group by diagnostico order by count(1) desc";
 	return $sql;
-	
+
 
 }
 
@@ -113,7 +112,7 @@ function getSqlDiagnosticos($de, $ate, $id)
 
 	$sql = "create temporary table tmpDiagnostico ";
 	$sql .= "SELECT contato.chamado_id, sistema,  ";
-	$sql .= "coalesce(diagnostico.diagnostico, 'Em análise') diagnostico, count(  *  )  AS soma ";
+	$sql .= "coalesce(diagnostico.diagnostico, 'Em analise') diagnostico, count(  *  )  AS soma ";
 	$sql .= "FROM ";
 	$sql .= "	contato ";
 	$sql .= "	inner join chamado on contato.chamado_id = chamado.id_chamado ";
@@ -140,15 +139,15 @@ function getSqlDiagnosticos($de, $ate, $id)
 	$sql .= "AND contato.dataa >=  '$de'  ";
 	$sql .= "AND contato.dataa <=  '$ate' ";
 	$sql .= "GROUP  BY sistema, contato.chamado_id ";
-	
-//	echo($sql);
 
-	mysql_query("DROP TABLE IF EXISTS tmpDiagnostico;");	
-    mysql_query($sql);	
-	
-	$sql = "select diagnostico descricao, count(1) as soma from tmpDiagnostico group by diagnostico order by count(1) desc";	
+	//echo($sql);
+
+	mysql_query("DROP TABLE IF EXISTS tmpDiagnostico;");
+    mysql_query($sql);
+
+	$sql = "select diagnostico descricao, count(1) as soma from tmpDiagnostico group by diagnostico order by count(1) desc";
 	return $sql;
-	
+
 
 }
 
@@ -191,8 +190,8 @@ function getSqlMaioresInteracoesConsultoria($de, $ate, $id)
 	$sql .= "AND contato.dataa <=  '$ate' ";
 	$sql .= "GROUP  BY contato.chamado_id ";
 	$sql .= "ORDER  BY soma desc, contato.chamado_id ";
-	$sql .= "LIMIT 30 ";	
-	return $sql;	
+	$sql .= "LIMIT 30 ";
+	return $sql;
 }
 
 
@@ -202,12 +201,12 @@ function getSqlContatosPorPessoaQualidade($de, $ate, $id)
 	$sql = "";
 	$sql .= "SELECT nome, count(  *  )  AS soma ";
 	$sql .= "FROM contato, usuario ";
-	$sql .= "WHERE destinatario_id in (14, 215) ";	
+	$sql .= "WHERE destinatario_id in (14, 215) ";
 	$sql .= "AND usuario.id_usuario = consultor_id  ";
 	$sql .= "AND dataa >=  '$de' AND dataa <=  '$ate' ";
 	$sql .= "GROUP  BY consultor_id ";
 	$sql .= "ORDER  BY soma DESC, nome ";
-	return $sql;	
+	return $sql;
 }
 
 function getSqlContatosPorSistemaQualidade($de, $ate, $id)
@@ -215,14 +214,14 @@ function getSqlContatosPorSistemaQualidade($de, $ate, $id)
 	$sql = " ";
 	$sql .= "SELECT sistema, count(  *  )  AS soma ";
 	$sql .= "FROM contato, chamado, sistema ";
-	$sql .= "WHERE contato.destinatario_id in (14, 215) ";  
+	$sql .= "WHERE contato.destinatario_id in (14, 215) ";
 	$sql .= "AND contato.chamado_id = chamado.id_chamado  ";
 	$sql .= "AND sistema.id_sistema = chamado.sistema_id  ";
 	$sql .= "AND contato.dataa >=  '$de'  ";
 	$sql .= "AND contato.dataa <=  '$ate' ";
 	$sql .= "GROUP  BY sistema.sistema ";
 	$sql .= "ORDER  BY soma DESC, sistema.sistema ";
-	return $sql;	
+	return $sql;
 }
 
 function getSqlChamadosPorSistemaQualidade($de, $ate, $id)
@@ -236,9 +235,9 @@ function getSqlChamadosPorSistemaQualidade($de, $ate, $id)
 	$sql .= "AND contato.dataa >=  '$de'  ";
 	$sql .= "AND contato.dataa <=  '$ate' ";
 	$sql .= "GROUP  BY contato.chamado_id ";
-	mysql_query("DROP TABLE IF EXISTS tmpQuery;");	
-    mysql_query($sql);	
-	$sql = "select sistema, count(1) as soma from tmpQuery group by sistema order by count(1) desc";	
+	mysql_query("DROP TABLE IF EXISTS tmpQuery;");
+    mysql_query($sql);
+	$sql = "select sistema, count(1) as soma from tmpQuery group by sistema order by count(1) desc";
 	return $sql;
 }
 ?>

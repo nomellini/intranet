@@ -17,7 +17,7 @@ header("Location: doindex.php");
 <html>
 <head>
 
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>SAD - Sistema de Atendimento Datamace</title>
 
 
@@ -85,7 +85,7 @@ document.write("<div id='layout' align='center' style='width:"+largura_show+";'>
 function upload(name_form){
 var enviar = true;
 if (document.detalhes.textarea.value=="" && enviar==true){
-alert("Preencha o campo Comentário.");
+alert("Preencha o campo ComentÃ¡rio.");
 document.detalhes.textarea.focus();
 enviar = false;
 }
@@ -183,7 +183,7 @@ document.detalhes.submit();
 		<td align="right" width="71%">&nbsp;</td>
 		
 		
-		<td align="center" width="10%" class="tituloAcompanharChamado">Ações</td>
+		<td align="center" width="10%" class="tituloAcompanharChamado">AÃ§Ãµes</td>
 		<td align="center" width="24%" class="conteudoAcompanharChamado3" style="border-top:1; border-style:solid; border-color:#9EAAC7;">
               
 			  <?
@@ -207,7 +207,7 @@ document.detalhes.submit();
 			    
 				
 				
-				<!--	<a href="#" style="cursor: help" onMouseOver="mouseover('Inscrição Online');" onMouseOut="mouseout();"><img src="img/icone_usuario_inscricaoonline.gif" width="20" height="14" hspace="3" vspace="1" border="0"></a>-->
+				<!--	<a href="#" style="cursor: help" onMouseOver="mouseover('InscriÃ§Ã£o Online');" onMouseOut="mouseout();"><img src="img/icone_usuario_inscricaoonline.gif" width="20" height="14" hspace="3" vspace="1" border="0"></a>-->
 				
 				
 						<a href="#ancora"><img src="img/icone_detalhes_inserir.gif" width="24" height="16" hspace="0" vspace="1" border="0"  style="cursor: help" onMouseOver="mouseover2('Enviar Mensagem');" onMouseOut="mouseout();"></a>		

@@ -1,75 +1,75 @@
 <?
 /*
   Arquivo      : rnc.php
-  Descri��o    : Utilizado pelos gerentes, esta p�gina cria e d� manuten��o em chamados
-                 especiais, os RNC. cada chamado rnc � composto de 5 contatos fixos, identificados
-				 pelo campo PessoaContatada  
+  Descriï¿½ï¿½o    : Utilizado pelos gerentes, esta pï¿½gina cria e dï¿½ manutenï¿½ï¿½o em chamados
+                 especiais, os RNC. cada chamado rnc ï¿½ composto de 5 contatos fixos, identificados
+				 pelo campo PessoaContatada
   Autor        : Fernando Nomellini
-  Data Cria��o : 02/06/2003
-  Atualiza��es : 07/06/2003  
+  Data Criaï¿½ï¿½o : 02/06/2003
+  Atualizaï¿½ï¿½es : 07/06/2003
 */
 	require("../scripts/conn.php");
-	require("../scripts/funcoes.php");		
-	require("funcoes.php");	
-	require("../scripts/classes.php");	
+	require("../scripts/funcoes.php");
+	require("funcoes.php");
+	require("../scripts/classes.php");
 	if ( isset($id_usuario) ) {
-		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );	  
-        $gerente = pegaGerente($ok);		  		
+		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );
+        $gerente = pegaGerente($ok);
 //		$gerente = 1;
 		if (  $ok<>$id_usuario || !$gerente) { header("Location: index.php"); }
-		$nomeusuario=peganomeusuario($ok);	
-		setcookie("loginok");  
+		$nomeusuario=peganomeusuario($ok);
+		setcookie("loginok");
 	} else {
 		header("Location: index.php");
 	}
- 
+
 	function TemHistorico($pCampo, $chamado)
 	{
 		$sql = "select count(1) qtde from rnc_memory where id_chamado = $chamado and campo = '$pCampo'";
 		$result = mysql_query($sql);
-		$linha = mysql_fetch_object($result);		
+		$linha = mysql_fetch_object($result);
 		if ($linha->qtde > 0)
 		{
 			echo "<a href=historico.php?Campo=$pCampo&Chamado=$chamado target='_new'>";
-			echo "Abrir hist�rico";
-			echo "</a>";			
+			echo "Abrir histï¿½rico";
+			echo "</a>";
 		}
 	}
-	
+
 
     $disabled = "";
-	
+
 	/*
-		Quem pode editar os dados de prazos e departamentos respons�veis.
+		Quem pode editar os dados de prazos e departamentos responsï¿½veis.
 	*/
     $podeEditar =  (
 		($ok==12)   or    // Fernando
 		($ok==3)   or    // Helio
-		($ok==1)   or    // Edson	
+		($ok==1)   or    // Edson
 		($ok==73)   or    // Edson Adm
-		($ok == 63) or    // D�bora
-		($ok == 143)      // Fl�via
+		($ok == 63) or    // Dï¿½bora
+		($ok == 143)      // Flï¿½via
 		or ($ok == 13 )     // Leandro
 		or ($ok == 141)      // Marcelo Nunes
-	); 
-	
+	);
+
 	$mensagem = "";
-	
+
 	//$podeEditar = false; // Testes
 	if (!$podeEditar) {
 		$disabled = 'disabled="true"';
-		$podeEditar = "NAO";		
-		$mensagem = "<br><b>Usu�rio sem permiss�o para alterar dados de respons�veis, altera��es destas informa��es n�o ser�o gravadas.</b>";		
+		$podeEditar = "NAO";
+		$mensagem = "<br><b>UsuÃ¡rio sem permissÃ£o para alterar dados de responsÃ¡veis, alteraÃ§Ãµes destas informaÃ§Ãµes nÃ£o serÃ£o gravadas.</b>";
 	} else {
-		$podeEditar = "SIM";		
+		$podeEditar = "SIM";
 	}
- 
-	if ( ($tipo<>SAD_NAOCONFORMIDADE) and 
-	     ($tipo<>SAD_ACAOPREVENTIVA) and 
+
+	if ( ($tipo<>SAD_NAOCONFORMIDADE) and
+	     ($tipo<>SAD_ACAOPREVENTIVA) and
 		 ($tipo<>SAD_ACAOMELHORIA) and
 		 ($tipo<>SAD_ABERTURAPROJETO))
 	  $tipo = SAD_NAOCONFORMIDADE;
-	
+
 	/*
 	  Dentro do chamado eu pego os contatos identificados pelo campo pessoacontatada
 	*/
@@ -80,26 +80,26 @@
 	  $linha = mysql_fetch_object($result);
 	  return $linha->historico;
 	}
-	
-	
 
-    $objChamado = new chamado();	
-		
+
+
+    $objChamado = new chamado();
+
 	if ($action=="novo") {
  	    $novo = 1;
         $datae = date("Y-m-d");
-        $horae = date("H:i:s");	
-				
-		$objChamado = new chamado();	
+        $horae = date("H:i:s");
+
+		$objChamado = new chamado();
 		$objContato = new contato();
-		$chamado = $objChamado->novoChamado($ok, 'DATAMACE', $ok);		
-		$objChamado->lerChamado($chamado);			
+		$chamado = $objChamado->novoChamado($ok, 'DATAMACE', $ok);
+		$objChamado->lerChamado($chamado);
 		$objChamado->sistema_id = 1025;
 		$objChamado->categoria_id = 383;
 		$objChamado->prioridade_id = 1;
 		$objChamado->motivo_id = 30;
-		$objChamado->datauc = $datae;		
-		$objChamado->horauc = $horae;			
+		$objChamado->datauc = $datae;
+		$objChamado->horauc = $horae;
         $objChamado->diagnostico_id = 9;
 		$objChamado->externo = 0;
 		$objChamado->diagnostico_id = 9;
@@ -110,63 +110,63 @@
 		$objChamado->rnc = $tipo;
 		$objChamado->datauc = $datae;
 		$objChamado->horauc = $horae;
-	    $objChamado->gravaChamado();			
-		
-		$dataa = $objChamado->dataa;		
+	    $objChamado->gravaChamado();
+
+		$dataa = $objChamado->dataa;
 		$horaa = $objChamado->horaa;
-     	
-		$data = explode("-", $dataa);			
+
+		$data = explode("-", $dataa);
 		$rnc_acao_data = '';
 		$rnc_data = "$data[2]/$data[1]/$data[0]";
-	
-			
-		$contato = $objContato->novocontato($chamado, $ok, $ok, $dataa, $horaa);	
-		$dataa = $objChamado->dataaf;	
-		loga_online($ok, $REMOTE_ADDR, "Novo RNC : " . $chamado);		
+
+
+		$contato = $objContato->novocontato($chamado, $ok, $ok, $dataa, $horaa);
+		$dataa = $objChamado->dataaf;
+		loga_online($ok, $REMOTE_ADDR, "Novo RNC : " . $chamado);
 	} else {
 	    $novo = 0;
 	    $chamado = $id_chamado;
 		if ($chamado) {
-            $action="editar";			
+            $action="editar";
 			$objChamado->lerChamado($chamado);
 			$obs = $objChamado->obs;
-			$descricao = $objChamado->descricao;				
+			$descricao = $objChamado->descricao;
 			$disposicao = pegarnc($chamado, 'disposicao');
 			$causa = pegarnc($chamado, 'causa');
 			$acao = pegarnc($chamado, 'acao');
 //			$proposta = pegarnc($chamado, 'proposta');
-			$verificacao = pegarnc($chamado, 'verificacao');		
-			
+			$verificacao = pegarnc($chamado, 'verificacao');
+
 			$sql = "select rnc, rnc_depto_responsavel, rnc_data, rnc_prazo, ";
 			$sql .= "rnc_acao_responsavel, rnc_acao_data, ";
-			$sql .= "rnc_verif_responsavel, rnc_verif_data ";			
+			$sql .= "rnc_verif_responsavel, rnc_verif_data ";
 			$sql .= " from chamado where id_chamado = $chamado";
 		    $result = mysql_query($sql) or die($sql);
-            $linha = mysql_fetch_object($result) or die($sql);			
-			
+            $linha = mysql_fetch_object($result) or die($sql);
+
 			$tipo = $linha->rnc;
 			$rnc_depto = $linha->rnc_depto_responsavel;
-			$data = explode("-",$linha->rnc_prazo);			
+			$data = explode("-",$linha->rnc_prazo);
 			$rnc_prazo = "$data[2]/$data[1]/$data[0]";
 			$data = explode("-", $linha->rnc_data);
 			$rnc_data = "$data[2]/$data[1]/$data[0]";
-			$data = explode("-", $linha->rnc_acao_data);			
+			$data = explode("-", $linha->rnc_acao_data);
 			$rnc_acao_data = "$data[2]/$data[1]/$data[0]";
-			$data = explode("-", $linha->rnc_verif_data);						
+			$data = explode("-", $linha->rnc_verif_data);
 			$rnc_verif_data = "$data[2]/$data[1]/$data[0]";
 			$rnc_acao_responsavel = $linha->rnc_acao_responsavel;
-			$rnc_verif_responsavel = $linha->rnc_verif_responsavel;			
+			$rnc_verif_responsavel = $linha->rnc_verif_responsavel;
 			if ( ($tipo <> 1) and ($tipo<>2) and ($tipo<>3) and ($tipo<>4) )
 			  $tipo = 1;
-			
+
 		} else {
 		header("Location: index.php");
 		}
-	}	
-	
+	}
+
 	if ($tipo<>4) {
-      $ldisposicao = "A��o corretiva Imediata";
-	  $lverif = "Verifica��o Efic�cia";
+      $ldisposicao = "Aï¿½ï¿½o corretiva Imediata";
+	  $lverif = "Verificaï¿½ï¿½o Eficï¿½cia";
 	  $lshow = "";
 	} else {
       $ldisposicao = "Primeiro Contato";
@@ -178,7 +178,7 @@
 <script src="../coolbuttons.js"></script>
 <head>
 <title>Novo chamado RNC/RAP/ACM</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../scripts/stilos.css" type="text/css">
 <link rel="stylesheet" href="../stilos.css" type="text/css">
 <style type="text/css">
@@ -210,11 +210,11 @@
     <td width="61" class="coolButton" valign="middle" align="center"><a href="javascript:history.go(-1)"><img src="../figuras/voltar.gif" width="20" height="20" align="absmiddle" border="0">voltar</a></td>
     <td width="69" class="coolButton"><a href="index.php?novologin=true"><img src="../figuras/logout.gif" width="20" height="20" align="absmiddle" border="0">Logout</a></td>
     <td width="82" class="coolButton"><a href="/a/relatorios/"><img src="../figuras/relat.gif" width="20" height="20" align="absmiddle" border="0">relat&oacute;rios</a></td>
-    <td width="115" class="coolButton"><img src="../figuras/senha.gif" width="20" height="20" align="absmiddle"><a href="trocasenha.php">Alterar 
+    <td width="115" class="coolButton"><img src="../figuras/senha.gif" width="20" height="20" align="absmiddle"><a href="trocasenha.php">Alterar
       Senha</a></td>
-    <td width="129" class="coolButton"><a href="../inicio.php"><img src="../figuras/home.gif" width="20" height="20" align="absmiddle" border="0">voltar 
+    <td width="129" class="coolButton"><a href="../inicio.php"><img src="../figuras/home.gif" width="20" height="20" align="absmiddle" border="0">voltar
       ao in&iacute;cio</a></td>
-    <td width="259" class="coolButton"><a href="/agenda/" target="_blank">Agenda 
+    <td width="259" class="coolButton"><a href="/agenda/" target="_blank">Agenda
       Corporativa Datamace</a></td>
   </tr>
 </table>
@@ -298,7 +298,7 @@
         <td><span id= "corretiva" style="<?= $lshow?>">
           <table width="100%" border="0" cellspacing="1" cellpadding="1">
             <tr>
-              <td><textarea name="acao" cols="120" rows="8" class="bordafinaFonteMaior" id="acao"><?=$acao?></textarea><br>                
+              <td><textarea name="acao" cols="120" rows="8" class="bordafinaFonteMaior" id="acao"><?=$acao?></textarea><br>
                 Respons&aacute;vel pela a&ccedil;&atilde;o :
                 <input <?=$disabled?> name="rnc_acao_resp" type="text" class="bordaTexto" id="rnc_acao_resp" value="<?=$rnc_acao_responsavel?>" size="22" maxlength="20">
                 / Prazo para a implementa&ccedil;&atilde;o da a&ccedil;&atilde;o
@@ -315,11 +315,11 @@
           [          <?=$lverif?>          ]</a> <?	TemHistorico("verificacao", $chamado) ?></td>
       </tr>
       <tr>
-        <td><span id= "implantacao" style="<?= $lshow?>"> verifica��o
+        <td><span id= "implantacao" style="<?= $lshow?>"> verificaï¿½ï¿½o
           <table width="100%" border="0" cellspacing="1" cellpadding="1">
             <tr>
               <td>
-                  <textarea name="verificacao" cols="120" rows="8" class="bordafinaFonteMaior" id="verificacao"><?=$verificacao?></textarea>                  
+                  <textarea name="verificacao" cols="120" rows="8" class="bordafinaFonteMaior" id="verificacao"><?=$verificacao?></textarea>
                 </td>
             </tr>
             <tr>
@@ -355,12 +355,12 @@
 </div>
 </body>
 </html>
-<SCRIPT>  
+<SCRIPT>
 function alterna(item){
  if (item.style.display=='none'){
    item.style.display='';
  } else {
    item.style.display='none'
  }
-}  
+}
 </SCRIPT>

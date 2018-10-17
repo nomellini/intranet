@@ -12,124 +12,106 @@
 
 require("../scripts/conn.php");
 
-$Destinatario = 98;
-$Consultor = 98;
-
-	$Email = PegaEmailUsuario($Destinatario);
-	$NomeCliente = peganomeusuario($Destinatario);
-
-
 $c = 1;
 $temp = array();
 
+//$temp[$c++] = "CA_A_Menu\CAA09A.CBL";
+
+/*$temp[$c++] = "Device - Splash (Valida".utf8_decode("ç")."".utf8_decode("õ")."es iniciais)";
+$temp[$c++] = "Device - Registro QR-CODE";
+$temp[$c++] = "Device - Registro Manual";
+$temp[$c++] = "Device - Login Single";
+$temp[$c++] = "Device - Menu";
+$temp[$c++] = "Device - Histórico";
+$temp[$c++] = "Device - Logs";
+$temp[$c++] = "Device - Marcar Ponto";
+$temp[$c++] = "Device - Cadastro de senha";*/
+
 /*
-$temp[$c++] = "CONVERSAO FUJITSU - GIP - GPRAFA.CBL";
-*/
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - NETIMP.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012007.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012031.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012043.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012045.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012050.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012053.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012054.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012055.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012060.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012061.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012062.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012064.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012065.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012067.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012071.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012074.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012086.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012090.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012092.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012093.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012094.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012098.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012108.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN012111.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN013001.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN013005.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN013012.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN013016.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN013017.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN013018.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN013022.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN013023.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN013052.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN013063.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN013064.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN013065.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN018004.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN161010.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014100.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014101.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014102.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014103.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014105.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014106.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014107.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014109.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014110.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014111.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014112.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014113.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014115.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014117.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014118.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014119.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014124.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014125.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014126.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014127.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014128.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014130.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014131.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014133.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014134.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014135.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014136.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014137.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014138.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014141.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014142.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014143.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014144.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014145.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014151.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014152.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014153.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014154.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014155.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014157.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014158.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014159.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014160.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014163.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014164.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GN014167.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GNS021.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GNS041.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GNS042.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GNS045.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GNS070.CBL";
-$temp[$c++] = "CONVERSAO FUJITSU - Relatorios do GRHNET Novo - GNS076.CBL";
+$temp[$c++] = "Criar log da tabela PETABPAE.CPY (Escala de Revezamento) e PETABPBJ.CPY e (Escala de revezamento detalhes)";
+$temp[$c++] = "Criar log da tabela PETABPAX.CPY (HE Di".utf8_decode("á")."ria) e PETABPBI.CPY (2º Coluna)";
+$temp[$c++] = "Criar log da tabela PETABPAA.CPY (HE Peri".utf8_decode("ó")."dica)";
+$temp[$c++] = "Criar log da tabela PETABPAC.CPY (Contas Para o GIP)";
+$temp[$c++] = "Criar log da tabela PETABPAD.CPY (Contas Externas)";
+$temp[$c++] = "Criar log da tabela PETABPAB.CPY (Programa".utf8_decode("ç")."".utf8_decode("ã")."o de abonos)";
+$temp[$c++] = "Criar log da tabela PETABPAN.CPY (Tabela de compensa".utf8_decode("ç")."".utf8_decode("ã")."o)";
+$temp[$c++] = "Criar log da tabela PETABPAF.CPY (Tabela de Feriados)";
+$temp[$c++] = "Criar log da tabela PETABPAM.CPY (Tabela de Motivo)";
+$temp[$c++] = "Criar log da tabela PETABPAQ.CPY (Tabela de Aloca".utf8_decode("ç")."".utf8_decode("ã")."o de M".utf8_decode("ã")."o de Obra)";
+$temp[$c++] = "Criar log da tabela PETABPAR.CPY (Tabela de Refei".utf8_decode("ç")."".utf8_decode("õ")."es)";
+$temp[$c++] = "Criar log da tabela PETABPAG.CPY (Tabela de Refei".utf8_decode("ç")."".utf8_decode("õ")."es externas)";
+$temp[$c++] = "Criar log da tabela PETABPBG.CPY (Cadastro de Locais)";
+$temp[$c++] = "Criar log da tabela PETABPAW.CPY (Configura".utf8_decode("ç")."".utf8_decode("ã")."o da manuten".utf8_decode("ç")."".utf8_decode("ã")."o)";
+$temp[$c++] = "Criar log da tabela PETABPAT.CPY (Tabela de terminais)";
+$temp[$c++] = "Criar log da tabela PETABPAZ.CPY (Par".utf8_decode("â")."metros da classifica".utf8_decode("ç")."".utf8_decode("ã")."o autom".utf8_decode("á")."tica)";
+$temp[$c++] = "Criar log da tabela PETABPAU.CPY (Par".utf8_decode("â")."metros da coleta e classifica".utf8_decode("ç")."".utf8_decode("ã")."o autom".utf8_decode("á")."tica de REPs)";
+$temp[$c++] = "Criar log da tabela PETABPAY.CPY (Par".utf8_decode("â")."metros do FTP)";
+$temp[$c++] = "Criar log da tabela PETABPBA.CPY (Regra de coleta de equipamentos) e PETABPBH.CPY (Equipamentos da regra de coleta)";
+$temp[$c++] = "Criar log da tabela PETABPAS.CPY (Tabela de mensagens da classifica".utf8_decode("ç")."".utf8_decode("ã")."o) e PETABPAO.CPY (Mensagens)";
+$temp[$c++] = "Criar log da tabela PETABPAK.CPY (Ocorr".utf8_decode("ê")."ncias do apontamento)";
+$temp[$c++] = "Criar log da tabela PETABPBB.CPY (Ocorr".utf8_decode("ê")."ncias da classifica".utf8_decode("ç")."".utf8_decode("ã")."o)";
+$temp[$c++] = "Criar log da tabela PETABPAJ.CPY (Exporta".utf8_decode("ç")."".utf8_decode("ã")."o da Folha)";
+$temp[$c++] = "Criar log da tabela PETABPBF.CPY (Configura".utf8_decode("ç")."".utf8_decode("ã")."o do Controle de acesso)";
+$temp[$c++] = "Criar log da tabela PETABPCA.CPY (Envio de e-mail a visitados)";
+$temp[$c++] = "Criar log da tabela PETABPBC.CPY (Regra de coleta - Alertas)";
+$temp[$c++] = "Criar log da tabela PETABPAL.CPY (Tabela de Linha de ".utf8_decode("Ô")."nibus)";
+$temp[$c++] = "Criar log da tabela PETABPBD.CPY (Cadastro Nextel)";
+$temp[$c++] = "Criar log da tabela PETABPBE.CPY (Agendamento Nextel)";*/
 
+$Consultor = 175; // Lucas
 
-$SistemaId = 12; 
-$CategoriaId = 1286;
-$MotivoId = 47;
-$ChamadoPaiId = 300998;
-$ChamadoPaiMotivo = "P";
+$Destinatario = 7; //Ricardo
+//$Destinatario = 225; //Felipe
+//$Destinatario = 85; //Altenier
+//$Destinatario = 172; //Edilson
+//$Destinatario = 175; // Lucas
+
+//$SistemaId = 5;  //LF
+//$CategoriaId = 934; //LF
+
+//$SistemaId = 33;  //CA
+//$CategoriaId = 1002; //CA
+
+//$SistemaId = 9998;  //outros
+//$CategoriaId = 1355; //outros
+
+$SistemaId = 4;  //PE
+//$CategoriaId = 619; //PE - Integração
+$CategoriaId = 139; //PE - Relatórios
+
+//$SistemaId = 6;  //RH
+//$CategoriaId = 927; //RH
+
+//$SistemaId = 1;  //GP
+//$CategoriaId = 919; //GP
+
+//$SistemaId = 2;  //CT
+//$CategoriaId = 932; //CT
+
+//$SistemaId = 16;  //OP
+//$CategoriaId = 999; //OP
+
+//$SistemaId = 111;  //Mobile
+//$CategoriaId = 1431; //Mobile - Geral
+
+//$SistemaId = 103;  //GRHNET
+//$CategoriaId = 1238; //GRHNET - Customização
+
+// ----------- fixos
+$Email = PegaEmailUsuario($Destinatario);
+$NomeCliente = peganomeusuario($Destinatario);
+$MotivoId = 73;
+$ChamadoPaiId = 0;
+//$ChamadoPaiMotivo = "P";
+$ChamadoPai = 420907;
+$Observacao = "<br>Conforme PEFILTRO.cbl e PE_B_Menu/PEB06A.CBL de exemplo";
 
 $c--;
 for ($i = 1; $i <= $c; $i++)
 {
 
 	$Chamado = $temp[$i];
-	$Contato = "Chamado origem [$ChamadoPaiId]";
+	$Contato = "Conforme chamado de origem [$ChamadoPai]$Observacao";
 	
 	$Chamado = mysql_real_escape_string ($Chamado);
 	$Contato = mysql_real_escape_string ($Contato);	
@@ -159,7 +141,7 @@ for ($i = 1; $i <= $c; $i++)
 	$id_chamado = $linha->id_chamado;
 	
 
-	echo "[" . $id_chamado . "]<br>";
+	echo $temp[$i] . " [" . $id_chamado . "]<br>";
 	
 	
 	$sql = "insert into contato ( ";
@@ -168,7 +150,7 @@ for ($i = 1; $i <= $c; $i++)
 	$sql .= " dataa, datae, horaa, horae, idc, publicar, fl_ativo ) "; 	
 	$sql .= " values ( ";	
 	$sql .= " $id_chamado, '$NomeCliente', 8, "; 
-	$sql .= " '$Contato', 12, $Destinatario, 2, "; 
+	$sql .= " '$Contato', $Consultor, $Destinatario, 2, "; 
 	$sql .= " '$datae', '$datae', '$horae', '$horae', $id_chamado, 0, 1"; 
 	$sql .= " )";	
 	

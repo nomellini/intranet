@@ -20,6 +20,7 @@ app.controller('sadCtrl', function ($scope, $http) {
     // Executa a função na inicalização
     atualizaDados();
 
+    // Executa novamente a cada 60 segundos (60.000ms)
     // Altere o intervalo para o que achar mais adequado.
     setInterval(atualizaDados, 5000);
 });

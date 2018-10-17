@@ -1,16 +1,9 @@
 <?
- mysql_connect(localhost, sad, data1371);
- mysql_select_db(datamace);
+
+ require("scripts/conn.php");
 
 
- mysql_query("update chamado set diagnostico_id=9 where diagnostico_id=0;");
 
-
- $resp = mysql_query("select count(*) as soma from cxsug;");
- $linha = mysql_fetch_object($resp);
- $sugestoes = $linha->soma;
-
-    require("scripts/conn.php");
 	if (!$v_id_usuario) {
     	if ( isset($id_usuario) ) {
     		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );

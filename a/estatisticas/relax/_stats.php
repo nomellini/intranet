@@ -1,9 +1,9 @@
 <?
-	$dias = array( '', 'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado' );
+	$dias = array( '', 'Domingo', 'Segunda', 'Terï¿½a', 'Quarta', 'Quinta', 'Sexta', 'Sabado' );
 	$sql = "select count(1) qtde from relax";
 	$result = mysql_query($sql);
 	$linha = mysql_fetch_object($result);
-	$total = $linha->qtde;	
+	$total = $linha->qtde;
 
 	$sql = "SELECT
   DayOfWeek(Data) dia,
@@ -19,26 +19,26 @@ Group By DayOfWeek(Data);";
   <tr>
     <td width="33%"><div align="center">Dia da semana </div></td>
     <td width="27%"><div align="center">Percentual</div></td>
-    <td width="21%"><div align="center">Manhã</div></td>
-    <td width="19%"><div align="center">Tarde</div></td>		
+    <td width="21%"><div align="center">Manhï¿½</div></td>
+    <td width="19%"><div align="center">Tarde</div></td>
   </tr>
-<?	
+<?
 	while ($linha = mysql_fetch_object($result))
 	{
 		$TotalDoDia = $linha->qtde;
 		$Percentual = ($linha->qtde / $total) * 100;
 		$Percentual = number_format($Percentual, 1, ',', '.') . " %";
 		$Manha = number_format( 100*($linha->manha/$TotalDoDia), 1, ',', '.') . " %";
-		$Tarde = number_format( 100*($linha->tarde/$TotalDoDia), 1, ',', '.') . " %";		
+		$Tarde = number_format( 100*($linha->tarde/$TotalDoDia), 1, ',', '.') . " %";
 ?>
   <tr>
     <td width="33%"><div align="center"><?=$dias[$linha->dia]?></div></td>
     <td width="27%"><div align="center"><?=$Percentual ?></div></td>
     <td width="21%"><div align="center"><?=$Manha ?></div></td>
-    <td width="19%"><div align="center"><?=$Tarde ?></div></td>		
+    <td width="19%"><div align="center"><?=$Tarde ?></div></td>
   </tr>
-<?		
-	}	
+<?
+	}
 ?>
 </table>
 
@@ -61,28 +61,28 @@ limit 10";
 	$result = mysql_query($sql) or die (mysql_error());
 ?>
 <table width="427" border="1">
-<caption>Top 10 Usuários</caption>
+<caption>Top 10 UsuÃ¡rios</caption>
   <tr>
-    <td width="45%"><div align="center">Usuário</div></td>
+    <td width="45%"><div align="center">UsuÃ¡rio</div></td>
     <td width="20%"><div align="center">Compareceu</div></td>
-    <td width="20%"><div align="center">Faltou</div></td>	
-    <td width="15%"><div align="center">Total</div></td>		
+    <td width="20%"><div align="center">Faltou</div></td>
+    <td width="15%"><div align="center">Total</div></td>
   </tr>
-<?	
+<?
 	while ($linha = mysql_fetch_object($result))
 	{
 		//$Percentual = ($linha->qtde / $total) * 100;
 		//$Percentual = number_format($Percentual, 2, ',', '.') . "%";
-		
+
 ?>
   <tr>
     <td width="45%"><div align="center"><?=$linha->nome?></div></td>
     <td width="20%"><div align="center"><?=$linha->c ?></div></td>
     <td width="20%"><div align="center"><?=$linha->f ?></div></td>
-    <td width="15%"><div align="center"><?=$linha->t ?></div></td>	
+    <td width="15%"><div align="center"><?=$linha->t ?></div></td>
   </tr>
-<?		
-	}	
+<?
+	}
 }
 ?>
 </table>

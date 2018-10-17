@@ -38,6 +38,8 @@ $rsCategorias = mysql_query($query_rsCategorias, $sad) or die(mysql_error());
 
 
 ?>
+<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+
 <form name="form1" method="post" action="abreChamadoPonto.php">
   <p>Categoria
   <p>
@@ -74,6 +76,32 @@ while ($row_rsUsuarios = mysql_fetch_assoc($rsUsuarios))
     </label>
   </p>
 </form>
+  <script type="text/javascript">
+	CKEDITOR.replace( 'Contato',
+		{
+			extraPlugins: 'colorbutton,justify,smiley,horizontalrule,autogrow',			
+			on: { 'instanceReady': function(evt) {
+				CKEDITOR.instances.Contato.focus();			
+			   }
+			},
+			language: 'pt-br',
+			setFocusOnStartup : true,			
+			enterMode		: 2,            
+			toolbar : 
+			[	
+				{ name: 'clipboard', items: ['Cut', 'Copy', 'Paste'] },
+				{ name: 'text', items: ['Bold', 'Italic', 'Underline' ]} ,
+				{ name: 'colors', items: ['TextColor','BGColor']} ,				
+
+				[ 'Table', '-', 
+				  'JustifyLeft','JustifyCenter','JustifyRight', 'HorizontalRule', '-',
+				  'Smiley', '-', 
+				  'NumberedList', 'BulletedList', '-', 
+				  'Link', 'Unlink']
+			]
+
+		});
+  </script>
 <?php
 mysql_free_result($rsUsuarios);
 ?>

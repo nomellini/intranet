@@ -13,7 +13,7 @@ header("Location: doindex.php");
 <html>
 <head>
 
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>SAD - Sistema de Atendimento Datamace</title>
 
 
@@ -188,7 +188,7 @@ campoData.value = letra;
 			   
 			   <td class=" <?if ($tr%2==0){?>conteudoAcompanharChamado<?} else {?>conteudoAcompanharChamado2<?}?>" align="center">
 		<a href="http://intranet.datamace.com.br/sad/usuarios_treinados.php?nome=<?echo $nome;?>&ativa=1" style="cursor: help"  onMouseOver="mouseover('Atualizar Dados');" onMouseOut="mouseout();"><img src="img/icone_usuario_atualizardados.gif" width="20" height="14" hspace="3" vspace="1" border="0"></a>
-				<!--	<a href="#" style="cursor: help" onMouseOver="mouseover('Inscrição Online');" onMouseOut="mouseout();"><img src="img/icone_usuario_inscricaoonline.gif" width="20" height="14" hspace="3" vspace="1" border="0"></a>-->
+				<!--	<a href="#" style="cursor: help" onMouseOver="mouseover('InscriÃ§Ã£o Online');" onMouseOut="mouseout();"><img src="img/icone_usuario_inscricaoonline.gif" width="20" height="14" hspace="3" vspace="1" border="0"></a>-->
 					<a href="http://intranet.datamace.com.br/sad/excluir_treinado.php?id=<? echo $id;?>&textfield=<?echo $_GET['textfield'];?>&select2=<?echo $_GET['select2'];?>" style="cursor: help" onMouseOver="mouseover('Excluir');" onMouseOut="mouseout();"><img src="img/icone_usuario_excluir.gif" width="20" height="14" hspace="3" vspace="1" border="0"></a>					</td>
                   </tr>
 				   <?

@@ -1,5 +1,9 @@
 <?
-  require("../scripts/conn.php");
+
+  require("../cabeca.php");
+  
+  print_r($_POST);
+
   
   if (($idUsuario) and ($idRestricao) and ($action == 'ExcluirManut')) {
     $sql = "delete from rl_restricao_manut where id_usuario=$idUsuario and id_restricao=$idRestricao";
@@ -23,7 +27,6 @@
   }
 
 ?>
-<?php require_once('../../Connections/sad.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
@@ -118,33 +121,29 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_sad, $sad);
 $query_rsUsuario = "SELECT id_usuario, nome FROM usuario WHERE ativo = 1 ORDER BY nome ASC";
-$rsUsuario = mysql_query($query_rsUsuario, $sad) or die(mysql_error());
+$rsUsuario = mysql_query($query_rsUsuario) or die(mysql_error());
 $row_rsUsuario = mysql_fetch_assoc($rsUsuario);
 $totalRows_rsUsuario = mysql_num_rows($rsUsuario);
 
-mysql_select_db($database_sad, $sad);
 $query_rsListaRelManut = "SELECT distinct id_restricao, u.id_usuario, u.nome,  res.Ds_Descricao FROM rl_restricao_manut r inner join usuario u on u.id_usuario = r.Id_Usuario inner join restricoes res on res.Id = r.Id_Restricao ORDER BY u.nome, res.ds_descricao";
-$rsListaRelManut = mysql_query($query_rsListaRelManut, $sad) or die(mysql_error());
+$rsListaRelManut = mysql_query($query_rsListaRelManut) or die(mysql_error());
 $row_rsListaRelManut = mysql_fetch_assoc($rsListaRelManut);
 $totalRows_rsListaRelManut = mysql_num_rows($rsListaRelManut);
 
-mysql_select_db($database_sad, $sad);
 $query_rsRestricoes = "SELECT Id, Ds_Descricao FROM restricoes ORDER BY Ds_Descricao ASC";
-$rsRestricoes = mysql_query($query_rsRestricoes, $sad) or die(mysql_error());
+$rsRestricoes = mysql_query($query_rsRestricoes) or die(mysql_error());
 $row_rsRestricoes = mysql_fetch_assoc($rsRestricoes);
 $totalRows_rsRestricoes = mysql_num_rows($rsRestricoes);
 
-mysql_select_db($database_sad, $sad);
 $query_rsListaRelMarcar = "SELECT distinct id_Restricao, u.id_usuario, u.nome,  res.Ds_Descricao FROM rl_restricao_marcar r inner join usuario u on u.id_usuario = r.Id_Usuario inner join restricoes res on res.Id = r.Id_Restricao ORDER BY u.nome, res.ds_descricao";
-$rsListaRelMarcar = mysql_query($query_rsListaRelMarcar, $sad) or die(mysql_error());
+$rsListaRelMarcar = mysql_query($query_rsListaRelMarcar) or die(mysql_error());
 $row_rsListaRelMarcar = mysql_fetch_assoc($rsListaRelMarcar);
 $totalRows_rsListaRelMarcar = mysql_num_rows($rsListaRelMarcar);
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <link href="../attendere.css" rel="stylesheet" type="text/css" />
 </head>

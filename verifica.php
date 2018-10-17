@@ -1,11 +1,11 @@
-<? 
+<?
 if ( substr($REMOTE_ADDR,0,9) != "192.168.0") {
   header('Location: /index_externo.php');
 }
 
 
 /*
-  A idéia é barrar quem está de fora da datamace
+  A idï¿½ia ï¿½ barrar quem estÃ¡ de fora da datamace
 
 if ( (substr($REMOTE_ADDR,0,12) != "192.168.0.5") and
      (substr($REMOTE_ADDR,0,15) != "200.153.222.207")  ) {

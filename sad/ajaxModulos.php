@@ -1,5 +1,6 @@
 <?
 require("scripts/conn.php");
+mysql_set_charset("latin1", $sad);
 
 $sistema_id = $_POST['produto'];
 

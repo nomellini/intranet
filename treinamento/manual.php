@@ -3,7 +3,7 @@
 <html><!-- #BeginTemplate "/Templates/menu.dwt" --><!-- DW6 -->
 <head>
 <!-- #BeginEditable "doctitle" --> 
-<title>Datamace Informática</title>
+<title>Datamace InformÃ¡tica</title>
 <style type="text/css">
 <!--
 .style51 {color: #CCCCCC}
@@ -30,8 +30,8 @@
 .style60 {font-size: 7pt}
 -->
 </style>
-<!-- #EndEditable --> 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="/Templates/stilo.css" type="text/css">
 <style type="text/css">
 <!--
@@ -42,33 +42,33 @@
 </style>
 </head>
 <body bgcolor="#FFFFFF">
-<div align="center"> 
+<div align="center">
   <table width="100%" border="0">
-    <tr> 
+    <tr>
       <td>
         <table width="100%" border="0" bordercolorlight="#FFCC30" bordercolordark="#FFCC38" class="bgTabela" bordercolor="#FF0000">
-          <tr align="center" valign="middle"> 
+          <tr align="center" valign="middle">
             <td width="17%"> <div align="center" class="style1">
               <div align="left"><a href="http://www.datamace.com.br"><img src="../imagens/novologo.jpg" width="155" height="41" border="0">
                 </a></div>
             </div></td>
-            <td width="60%" valign="middle"> <p class="style1"><font face="Verdana, Arial, Helvetica, sans-serif" class="style2">Intranet 
+            <td width="60%" valign="middle"> <p class="style1"><font face="Verdana, Arial, Helvetica, sans-serif" class="style2">Intranet
             DATAMACE</font></p></td>
-            <td width="23%" valign="bottom" align="right"><span class="style1"><font size="1"> <font class="unnamed1"> 
+            <td width="23%" valign="bottom" align="right"><span class="style1"><font size="1"> <font class="unnamed1">
               <script language="JavaScript">
       var diasemana = new Array;
-      var mesescrito = new Array;   
+      var mesescrito = new Array;
       diasemana[1] = "Segunda-feira";
-      diasemana[2] = "Terça-feira";
+      diasemana[2] = "TerÃ§a-feira";
       diasemana[3] = "Quarta-feira";
       diasemana[4] = "Quinta-feira";
       diasemana[5] = "Sexta-feira";
-      diasemana[6] = "Sábado";
+      diasemana[6] = "SÃ¡bado";
       diasemana[0] = "Domingo";
-     
+
       mesescrito[0] = "Janeiro";
       mesescrito[1] = "Fevereiro";
-      mesescrito[2] = "Março";
+      mesescrito[2] = "MarÃ§o";
       mesescrito[3] = "Abril";
       mesescrito[4] = "Maio";
       mesescrito[5] = "Junho";
@@ -88,7 +88,7 @@
       dia = datahoje.getDate();
       mes = datahoje.getMonth();
       ano = datahoje.getYear();
-      diaindex = datahoje.getDay();   
+      diaindex = datahoje.getDay();
      document.write (diasemana[diaindex] + '<br>' + dia + ' de ' + mesescrito[mes] + ' de ' + ano);
 
               </script>
@@ -534,7 +534,7 @@ style='font-size:10.5pt;font-family:Verdana'><br>
       <br>
       <br>
       <br>
-      <strong><a href="#cima">Cadastro de Módulos</a></strong><a name=cadmod
+      <strong><a href="#cima">Cadastro de MÃ³dulos</a></strong><a name=cadmod
   id=cadmod></a><b><br>
           </b>Esta op&ccedil;&atilde;o &eacute; destinada ao cadastramento dos M&oacute;dulos dos  Sistemas.<br>
           Abaixo segue explica&ccedil;&atilde;o detalhada de cada campo: </p>
@@ -605,7 +605,7 @@ style='font-size:10.5pt;font-family:Verdana'><br>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
   column;mso-height-rule:exactly'><br>
-  <a href="#cima"><strong>Lista de <span class=SpellE>IP´s</span> </strong></a><a
+  <a href="#cima"><strong>Lista de <span class=SpellE>IPÂ´s</span> </strong></a><a
   name=listaip id=listaip></a><br>
   Esta op&ccedil;&atilde;o visualiza os IP&acute;s das m&aacute;quinas dos treinandos que  realizaram a avalia&ccedil;&atilde;o do treinamento.</p>
   <p>Toda vez que o treinando gravar a avalia&ccedil;&atilde;o, o IP da m&aacute;quina  respectiva ser&aacute; gravado em uma tabela.</p>
@@ -731,7 +731,7 @@ style='font-size:10.5pt;font-family:Verdana'><br>
   <br>
   <br>
   <br>
-  <a href="#cima"><strong>Avaliação individual do Treinamento</strong></a> <a
+  <a href="#cima"><strong>AvaliaÃ§Ã£o individual do Treinamento</strong></a> <a
   name=relcadpro id=relcadpro></a><br>
   Esta op&ccedil;&atilde;o visualiza a avalia&ccedil;&atilde;o do treinamento.<br>
   Abaixo segue explica&ccedil;&atilde;o detalhada: </p>
@@ -795,20 +795,20 @@ style='font-size:10.5pt;font-family:Verdana'><br>
   <br>
   <br>
   <br>
-  <a href="#cima"><strong>Avaliação do Treinando </strong></a><a
+  <a href="#cima"><strong>AvaliaÃ§Ã£o do Treinando </strong></a><a
   name=relcadtre id=relcadtre></a><br>
-  Esta opção visualiza a avaliação do treinamento.<br>
-  Abaixo segue explicação <span class=GramE>detalhada: </span></p>
+  Esta opÃ§Ã£o visualiza a avaliaÃ§Ã£o do treinamento.<br>
+  Abaixo segue explicaÃ§Ã£o <span class=GramE>detalhada: </span></p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
   column;mso-height-rule:exactly'><strong>Busca pelo m&ecirc;s e ano do evento </strong>(campos obrigat&oacute;rios) <br>
-Ao clicar em procurar, aparecerá uma tabela
+Ao clicar em procurar, aparecerÃ¡ uma tabela
   contendo o nome do evento, nome do instrutor e a data do evento.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
   column;mso-height-rule:exactly'>Clique no t&iacute;tulo em &quot;Nome do evento&quot;,
   &quot;Nome do instrutor&quot; ou em &quot;data&quot; para colocar em ordem
-  alfabética a forma de pesquisa desejada.</p>
+  alfabÃ©tica a forma de pesquisa desejada.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
   column;mso-height-rule:exactly'>Clique em um dos nomes ou data para mostrar a Avalia&ccedil;&atilde;o detalhada.</p>
@@ -874,20 +874,20 @@ Ao clicar em procurar, aparecerá uma tabela
     <br>
     <br>
     <br>
-    <strong><a href="#cima">Avaliação de Eficácia </a></strong><a
+    <strong><a href="#cima">AvaliaÃ§Ã£o de EficÃ¡cia </a></strong><a
   name=releficacia id=releficacia></a><b><br>
-      </b>Esta opção visualiza a avaliação da eficácia do treinamento.<br>
-    Abaixo segue explicação <span class=GramE>detalhada: </span></p>
+      </b>Esta opÃ§Ã£o visualiza a avaliaÃ§Ã£o da eficÃ¡cia do treinamento.<br>
+    Abaixo segue explicaÃ§Ã£o <span class=GramE>detalhada: </span></p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
   column;mso-height-rule:exactly'><strong>Busca pelo m&ecirc;s e ano </strong><strong></strong>(campos obrigat&oacute;rios)<br>
-    Ao clicar em procurar, aparecerá uma tabela
+    Ao clicar em procurar, aparecerÃ¡ uma tabela
   contendo o nome do treinamento, nome do treinando e a data.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
   column;mso-height-rule:exactly'>Clique no t&iacute;tulo em &quot;Nome do treinamento&quot;,
   &quot;Nome do treinando&quot; ou em &quot;data&quot; para colocar em ordem
-  alfabética a forma de pesquisa desejada.</p>
+  alfabÃ©tica a forma de pesquisa desejada.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
   column;mso-height-rule:exactly'>Clique em um dos nomes ou data para mostrar a Avalia&ccedil;&atilde;o detalhada. </p>
@@ -946,16 +946,16 @@ Ao clicar em procurar, aparecerá uma tabela
       <br>
       <strong>Lista de Perguntas</strong></a><a href="#cima"></a><a href="#cima"></a><a
   name=listcadper id=listcadper></a><br>
-    Esta opção visualiza o relatório de cadastro de perguntas.</p>
+    Esta opÃ§Ã£o visualiza o relatÃ³rio de cadastro de perguntas.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'>Clique em &quot;Código da pergunta<span
-  class=GramE> &quot;</span> ou em &quot;Descrição da pergunta&quot; para
-  colocar em ordem alfabética a forma de pesquisa desejada.</p>
+  column;mso-height-rule:exactly'>Clique em &quot;CÃ³digo da pergunta<span
+  class=GramE> &quot;</span> ou em &quot;DescriÃ§Ã£o da pergunta&quot; para
+  colocar em ordem alfabÃ©tica a forma de pesquisa desejada.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'>Clicando em uma das perguntas Código da
-  pergunta ou em Descrição da pergunta, abrirá o relatório com as informações
+  column;mso-height-rule:exactly'>Clicando em uma das perguntas CÃ³digo da
+  pergunta ou em DescriÃ§Ã£o da pergunta, abrirÃ¡ o relatÃ³rio com as informaÃ§Ãµes
   da pergunta escolhida. </p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
@@ -1009,30 +1009,30 @@ Ao clicar em procurar, aparecerá uma tabela
       <br>
       <strong><a href="#cima">Lista</a></strong><span class=style181><strong><a href="#cima">
         de Provas</a></strong></span><a name=listcadprov id=listcadprov></a><br>
-    Esta opção visualiza o relatório de cadastro de provas.</p>
+    Esta opÃ§Ã£o visualiza o relatÃ³rio de cadastro de provas.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'>Clique em &quot;Código da prova<span
-  class=GramE> &quot;</span> ou em &quot;Descrição da prova&quot; para colocar
-  em ordem alfabética a forma de pesquisa desejada.</p>
+  column;mso-height-rule:exactly'>Clique em &quot;CÃ³digo da prova<span
+  class=GramE> &quot;</span> ou em &quot;DescriÃ§Ã£o da prova&quot; para colocar
+  em ordem alfabÃ©tica a forma de pesquisa desejada.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'>Clicando em uma das perguntas Código da prova
-  ou em Descrição da prova, abrirá o relatório com as informações da prova
+  column;mso-height-rule:exactly'>Clicando em uma das perguntas CÃ³digo da prova
+  ou em DescriÃ§Ã£o da prova, abrirÃ¡ o relatÃ³rio com as informaÃ§Ãµes da prova
   escolhida. </p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'><strong>Código da prova</strong><b><br>
-  </b>Código seqüencial da prova.</p>
+  column;mso-height-rule:exactly'><strong>CÃ³digo da prova</strong><b><br>
+  </b>CÃ³digo seqÃ¼encial da prova.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'><strong>Descrição da prova</strong><b><br>
-  </b>Campo para auxiliar na identificação de qual sistema ou módulo a prova faz parte.</p>
+  column;mso-height-rule:exactly'><strong>DescriÃ§Ã£o da prova</strong><b><br>
+  </b>Campo para auxiliar na identificaÃ§Ã£o de qual sistema ou mÃ³dulo a prova faz parte.</p>
   <p align="justify" style='margin-bottom:12.0pt;mso-element:frame;mso-element-frame-hspace:
   2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-height-rule:exactly'><span
   class=GramE><strong>perguntas</strong></span><strong>:</strong><br>
-  São as perguntas que estão relacionadas a esta prova. </p>
+  SÃ£o as perguntas que estÃ£o relacionadas a esta prova. </p>
   <p align="justify" style='margin-bottom:12.0pt;mso-element:frame;mso-element-frame-hspace:
   2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-height-rule:exactly'><strong><a
@@ -1091,25 +1091,25 @@ Ao clicar em procurar, aparecerá uma tabela
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
   column;mso-height-rule:exactly'><a href="#cima"><strong>Lista de Treinamentos
   </strong></a><a name=listcadtre id=listcadtre></a><b><br>
-  </b>Esta opção visualiza o relatório de treinamentos .</p>
+  </b>Esta opÃ§Ã£o visualiza o relatÃ³rio de treinamentos .</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'>Clique em &quot;Código do treinamento<span
-  class=GramE> &quot;</span> ou em &quot;Descrição do treinamento&quot; para
-  colocar em ordem alfabética a forma de pesquisa desejada.</p>
+  column;mso-height-rule:exactly'>Clique em &quot;CÃ³digo do treinamento<span
+  class=GramE> &quot;</span> ou em &quot;DescriÃ§Ã£o do treinamento&quot; para
+  colocar em ordem alfabÃ©tica a forma de pesquisa desejada.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'>Clicando em uma das perguntas Código do
-  treinamento ou em Descrição do treinamento, abrirá o relatório com as
-  informações do <span class=GramE>treinamento escolhida</span>. </p>
+  column;mso-height-rule:exactly'>Clicando em uma das perguntas CÃ³digo do
+  treinamento ou em DescriÃ§Ã£o do treinamento, abrirÃ¡ o relatÃ³rio com as
+  informaÃ§Ãµes do <span class=GramE>treinamento escolhida</span>. </p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'><strong>Código do treinamento</strong><b><br>
-  </b>Código seqüencial do treinamento.</p>
+  column;mso-height-rule:exactly'><strong>CÃ³digo do treinamento</strong><b><br>
+  </b>CÃ³digo seqÃ¼encial do treinamento.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'><strong>Descrição do treinamento</strong><b><br>
-  </b>Campo para auxiliar a identificação na prova.</p>
+  column;mso-height-rule:exactly'><strong>DescriÃ§Ã£o do treinamento</strong><b><br>
+  </b>Campo para auxiliar a identificaÃ§Ã£o na prova.</p>
   <p align="justify" style='mso-element:frame; mso-element-frame-hspace:2.25pt; mso-element-wrap:
   around; mso-element-anchor-vertical:paragraph; mso-element-anchor-horizontal:
   column; mso-height-rule:exactly; margin-bottom: 12.0pt;'><strong><a
@@ -1175,28 +1175,28 @@ Ao clicar em procurar, aparecerá uma tabela
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
   column;mso-height-rule:exactly'><a href="#cima"><strong>Lista de Sistemas </strong></a><a
   name=listcadsis id=listcadsis></a><br>
-  Esta opção visualiza o relatório de sistemas .</p>
+  Esta opÃ§Ã£o visualiza o relatÃ³rio de sistemas .</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'>Clique em &quot;Código <span class=GramE>do
-  sistemas</span> &quot; ou em &quot;Descrição do sistemas&quot; para colocar
-  em ordem alfabética a forma de pesquisa desejada.</p>
+  column;mso-height-rule:exactly'>Clique em &quot;CÃ³digo <span class=GramE>do
+  sistemas</span> &quot; ou em &quot;DescriÃ§Ã£o do sistemas&quot; para colocar
+  em ordem alfabÃ©tica a forma de pesquisa desejada.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'>Clicando em uma das perguntas Código <span
-  class=GramE>do sistemas</span> ou em Descrição do sistemas, abrirá o
-  relatório com as informações do treinamento escolhida. </p>
+  column;mso-height-rule:exactly'>Clicando em uma das perguntas CÃ³digo <span
+  class=GramE>do sistemas</span> ou em DescriÃ§Ã£o do sistemas, abrirÃ¡ o
+  relatÃ³rio com as informaÃ§Ãµes do treinamento escolhida. </p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'><strong>Código <span class=GramE>do sistemas<br>
-  <span style='font-weight:normal'>Código</span></span></strong> seqüencial do
+  column;mso-height-rule:exactly'><strong>CÃ³digo <span class=GramE>do sistemas<br>
+  <span style='font-weight:normal'>CÃ³digo</span></span></strong> seqÃ¼encial do
   sistemas.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'><strong>Descrição <span class=GramE>do
+  column;mso-height-rule:exactly'><strong>DescriÃ§Ã£o <span class=GramE>do
   sistemas<br>
   <span style='font-weight:normal'>Campo</span></span></strong> para auxiliar
-  na identificação na prova.</p>
+  na identificaÃ§Ã£o na prova.</p>
   <p align="justify" style='margin-bottom:12.0pt;mso-element:frame;mso-element-frame-hspace:
   2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-height-rule:exactly'><strong><a
@@ -1255,29 +1255,29 @@ Ao clicar em procurar, aparecerá uma tabela
   </p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'><a href="#cima"><strong>Lista de Módulos</strong></a>
+  column;mso-height-rule:exactly'><a href="#cima"><strong>Lista de MÃ³dulos</strong></a>
   <a name=listcadmod id=listcadmod></a><br>
-  Esta opção visualiza o relatório de módulos .</p>
+  Esta opÃ§Ã£o visualiza o relatÃ³rio de mÃ³dulos .</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'>Clique em &quot;Código de módulos<span
-  class=GramE> &quot;</span> ou em &quot;Descrição de módulos&quot; para
-  colocar em ordem alfabética a forma de pesquisa desejada.</p>
+  column;mso-height-rule:exactly'>Clique em &quot;CÃ³digo de mÃ³dulos<span
+  class=GramE> &quot;</span> ou em &quot;DescriÃ§Ã£o de mÃ³dulos&quot; para
+  colocar em ordem alfabÃ©tica a forma de pesquisa desejada.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'>Clicando em uma das perguntas Código de
-  módulos ou em Descrição de módulos, abrirá o relatório com as informações do <span
+  column;mso-height-rule:exactly'>Clicando em uma das perguntas CÃ³digo de
+  mÃ³dulos ou em DescriÃ§Ã£o de mÃ³dulos, abrirÃ¡ o relatÃ³rio com as informaÃ§Ãµes do <span
   class=GramE>treinamento escolhida</span>. </p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'><strong>Código do módulos</strong><b><br>
-  </b>Código seqüencial <span class=GramE>do módulos</span>.</p>
+  column;mso-height-rule:exactly'><strong>CÃ³digo do mÃ³dulos</strong><b><br>
+  </b>CÃ³digo seqÃ¼encial <span class=GramE>do mÃ³dulos</span>.</p>
   <p align="justify" style='mso-element:frame;mso-element-frame-hspace:2.25pt;mso-element-wrap:
   around;mso-element-anchor-vertical:paragraph;mso-element-anchor-horizontal:
-  column;mso-height-rule:exactly'><strong>Descrição <span class=GramE>do
-  módulos<br>
+  column;mso-height-rule:exactly'><strong>DescriÃ§Ã£o <span class=GramE>do
+  mÃ³dulos<br>
   <span style='font-weight:normal'>Campo</span></span></strong> para auxiliar
-  na identificação na prova.</p>
+  na identificaÃ§Ã£o na prova.</p>
   <p align="justify" style='margin-bottom:12.0pt;mso-element:frame;mso-element-frame-hspace:
   2.25pt;mso-element-wrap:around;mso-element-anchor-vertical:paragraph;
   mso-element-anchor-horizontal:column;mso-height-rule:exactly'><strong><a href="#cima"><span class=GramE><span class=style201><span
@@ -2265,69 +2265,69 @@ style='font-size:10.5pt;font-family:Verdana'><br>
 </div>
 
 <!-- #EndEditable --></td>
-            <td align="right" width="23%" valign="top" > 
+            <td align="right" width="23%" valign="top" >
               <table width="100%" border="0" class="bgTabela">
-                <tr bgcolor="#FFCC33" valign="top"> 
-                  <td colspan="2" class="bgTabela"> 
+                <tr bgcolor="#FFCC33" valign="top">
+                  <td colspan="2" class="bgTabela">
                     <table width="90%" border="0" align="center">
-                      <tr valign="top"> 
-                        <td valign="top"> 
+                      <tr valign="top">
+                        <td valign="top">
                           <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
-                            <tr valign="top"> 
-                              <td valign="top"> 
+                            <tr valign="top">
+                              <td valign="top">
                                 <table width="100%" border="0" class="bgTabela">
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                    <td class="TabelaRotulo" height="12"><a href="/corporativo/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Corporativo</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                    <td class="TabelaPadrao"><a href="/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Home</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                    <td class="TabelaPadrao"><a href="/a/"><font face="Verdana, Arial, Helvetica, sans-serif">S.A.D</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
-                                   <td class="TabelaPadrao"><a href="../corporativo/mapadosite/mapasite.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Mapa 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../corporativo/mapadosite/mapasite.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Mapa
                                      do site</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                    <td class="TabelaPadrao"><a href="../ISO9001/Documentos/D04.PDF"><font face="Verdana, Arial, Helvetica, sans-serif">Organograma</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
-                                   <td class="TabelaPadrao"><a href="../assistencia/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Assist&ecirc;ncia 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../assistencia/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Assist&ecirc;ncia
                                      M&eacute;dica</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
-                                   <td class="TabelaPadrao"><a href="/corporativo/dadosdaempresa.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Dados 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="/corporativo/dadosdaempresa.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Dados
                                      da Empresa</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                    <td class="TabelaPadrao"><a href="/corporativo/aniversarios/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Anivers&aacute;rios</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
-                                   <td class="TabelaPadrao"><a href="../corporativo/feriados.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Pontes 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../corporativo/feriados.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Pontes
                                      e Feriados</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
-                                   <td class="TabelaPadrao"><a href="/corporativo/fome.htm"><font face="Verdana, Arial, Helvetica, sans-serif">T&ocirc; 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="/corporativo/fome.htm"><font face="Verdana, Arial, Helvetica, sans-serif">T&ocirc;
                                      com fome</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaPadrao"><a href="/servicosgerais/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Manuten&ccedil;&atilde;o</font></a>                                    </td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                    <td class="TabelaPadrao"><a href="../corporativo/escolaridade.php"><font face="Verdana, Arial, Helvetica, sans-serif">Escolaridade</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                    <td class="TabelaPadrao"><a href="../representantes/index.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Representantes</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                    <td class="TabelaPadrao"><a href="../suporte/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Suporte</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
-                                   <td class="TabelaPadrao"><a href="../corporativo/Inforvirus.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Informa&ccedil;&otilde;es 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../corporativo/Inforvirus.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Informa&ccedil;&otilde;es
                                      sobre v&iacute;rus</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                    <td class="TabelaPadrao"><a href="../colaboradores/index.htm">Colaboradores</a></td>
                                  </tr>
                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
@@ -2341,17 +2341,17 @@ style='font-size:10.5pt;font-family:Verdana'><br>
                             </tr>
                           </table>
                           <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
-                            <tr valign="top"> 
-                              <td> 
+                            <tr valign="top">
+                              <td>
                                 <table width="100%" border="0" class="bgTabela">
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td height="16" bgcolor="#CC9900" class="TabelaRotulo"><a href="../estrutura/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Estrutura</font></a></td>
                                   </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaPadrao" height="9"><a href="/estrutura/rede.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Rede</font></a></td>
                                   </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
-                                    <td class="TabelaPadrao"><a href="../estrutura/micros.php"><font face="Verdana, Arial, Helvetica, sans-serif">n&ordm; 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao"><a href="../estrutura/micros.php"><font face="Verdana, Arial, Helvetica, sans-serif">n&ordm;
                                       micros</font></a></td>
                                   </tr>
                                 </table>
@@ -2359,42 +2359,42 @@ style='font-size:10.5pt;font-family:Verdana'><br>
                             </tr>
                           </table>
                           <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
-                           <tr valign="top"> 
+                           <tr valign="top">
                              <td> <table width="100%" border="0" class="bgTabela">
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                    <td class="TabelaRotulo" valign="top"><a href="../Apoio/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Apoio</font></a></td>
                                  </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                    <td class="TabelaPadrao" valign="top"><a href="../Apoio/emails.php"><font face="Verdana, Arial, Helvetica, sans-serif">E-mails</font></a></td>
                                  </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaPadrao" valign="top"><a href="../Apoio/links.html"><font face="Verdana, Arial, Helvetica, sans-serif">Links</font></a></td>
                                   </tr>
                                   <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaPadrao" valign="top"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="/corporativo/ramais.php">Ramais</a></font></td>
                                   </tr>
                                   <tr bgcolor="#CC9900" bordercolor="#CC9900">
-                                    <td class="TabelaPadrao" valign="top"><a href="/corporativo/telefones2.php"><font face="Verdana, Arial, Helvetica, sans-serif">Telefones 
+                                    <td class="TabelaPadrao" valign="top"><a href="/corporativo/telefones2.php"><font face="Verdana, Arial, Helvetica, sans-serif">Telefones
                                     &uacute;teis</font></a></td>
                                   </tr>
                                 </table></td>
                             </tr>
-                            <tr valign="top"> 
+                            <tr valign="top">
                               <td><table width="100%" border="0" class="bgTabela">
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaRotulo"><a href="../entretenimento/index.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Entretenimento</font></a></td>
                                   </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaPadrao"><a href="../entretenimento/filmes/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Videoteca</font></a></td>
                                   </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaPadrao"><a href="../entretenimento/livros/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Biblioteca</font></a></td>
                                   </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaPadrao"><a href="/entretenimento/enquetes.php"><font face="Verdana, Arial, Helvetica, sans-serif">Enquetes</font></a></td>
                                   </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
-                                    <td class="TabelaPadrao"><a href="../entretenimento/mural.htm">Mural 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao"><a href="../entretenimento/mural.htm">Mural
                                       de an&uacute;ncios</a></td>
                                   </tr>
                                 </table>
@@ -2402,28 +2402,28 @@ style='font-size:10.5pt;font-family:Verdana'><br>
                                   <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaRotulo" valign="top"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="treinamento.php">Treinamento</a></font></td>
                                   </tr>
-                                  
+
                                   <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaPadrao" valign="top"><a href="../treinamento">Portal</a></td>
                                   </tr>
                                 </table></td>
                             </tr>
-                            <tr valign="top"> 
+                            <tr valign="top">
                               <td><table width="100%" border="0" class="bgTabela">
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaRotulo"><a href="../Intersystem/index.htm">Intersystem</a></td>
                                   </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaPadrao"><a href="../Intersystem/compromisso.htm">Compromisso</a></td>
                                   </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
-                                    <td class="TabelaPadrao"><a href="../Intersystem/dadosintersystem.htm">Dados 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao"><a href="../Intersystem/dadosintersystem.htm">Dados
                                       da empresa</a></td>
                                   </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaPadrao"><a href="../Intersystem/missao.htm">Miss&atilde;o</a></td>
                                   </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaPadrao"><a href="../Intersystem/servicosclientes.htm">Servi&ccedil;os</a></td>
                                   </tr>
                                 </table></td>
@@ -2439,16 +2439,15 @@ style='font-size:10.5pt;font-family:Verdana'><br>
           </tr>
         </table>
         <br>
-        <a href="javascript:history.go(-1)"><img src="/imagens/back_seta.jpg" width="13" height="21" border="0">voltar</a> 
+        <a href="javascript:history.go(-1)"><img src="/imagens/back_seta.jpg" width="13" height="21" border="0">voltar</a>
         <br>
         <hr align="center">
-        <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#999999"> 
+        <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#999999">
           Datamace Inform&aacute;tica LTDA - Todos os diretos reservados</font></p>
       </td>
     </tr>
   </table>
 </div>
-<p align="center">&nbsp;</p>
 </body>
 <!-- #EndTemplate --></html>
 

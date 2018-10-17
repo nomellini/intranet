@@ -1,6 +1,6 @@
-<?	
+<?
 	require("cabeca.php");
-    $UltimosDoisMeses = date("Y-m-d", time()-( 86400 * 0  ) );  	
+    $UltimosDoisMeses = date("Y-m-d", time()-( 86400 * 0  ) );
 ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="sadApp">
@@ -43,7 +43,7 @@ function filter2 (){
 	        }
 		table.rows[r].style.display = displayStyle;
 	}
-}  
+}
 
 
 var Exec = (function () {
@@ -79,7 +79,7 @@ var Exec = (function () {
 <div  ng-controller="sadCtrl" id="MainWrap">
 
 <div class="col-md-10">
-	<h2>MovimentaÁ„o do sad</h2>
+	<h2>Movimenta√ß√£o do sad</h2>
 </div>
 
 <div class="col-md-12">
@@ -91,27 +91,27 @@ var Exec = (function () {
 <table class="table table-condensed table-striped table-hover" id="sf">
 <thead>
    <tr>
-    <th >Chamado</th>  
+    <th >Chamado</th>
     <th >Data Hora</th>
-    <th >Usu·rio</th>
-    <th >AÁ„o</th>
-    <th >Cliente</th>	
-    <th >Sistema</th>		
+    <th >Usu√°rio</th>
+    <th >A√ß√£o</th>
+    <th >Cliente</th>
+    <th >Sistema</th>
   </tr>
-</thead>  
+</thead>
 <tbody>
   <tr ng-repeat="linha in linhas">
-    <td ><abbr title="{{linha.descricao}}"> <a href=historicochamado.php?id_chamado={{linha.chamado}}>{{linha.chamado}}</a> </abbr>  </td>  
+    <td ><abbr title="{{linha.descricao}}"> <a href=historicochamado.php?id_chamado={{linha.chamado}}>{{linha.chamado}}</a> </abbr>  </td>
     <td >{{linha.data}}</td>
     <td >{{linha.nome}}</td>
     <td ><a href=historicochamado.php?id_chamado={{linha.chamado}}#Id_{{linha.IdContato}}> {{linha.acao}} </a></td>
-    <td >{{linha.cliente}}</td>	
-    <td ><span class="label label-success">{{linha.sistema}}</span></td>	
+    <td >{{linha.cliente}}</td>
+    <td ><span class="label label-success">{{linha.sistema}}</span></td>
   </tr>
 </tbody>
 </table>
 </div>
-</div>	
+</div>
     <script src="js/angular.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

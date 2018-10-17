@@ -22,7 +22,8 @@
 <?
 	require("scripts/conn.php");
 	require("scripts/classes.php");
-	require_once("scripts/funcoes.php");
+  require_once("scripts/funcoes.php");
+
 	if ( isset($id_usuario) ) {
 		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );
 		if ($ok<>$id_usuario) { header("Location: index.php"); }
@@ -177,7 +178,7 @@
 	  echo "<option value='$id'>$si</option>";
 	}
 	if (!$qtde) {
-      echo "<option value=-1>Sistema n�o cadastrado:: $ok :: $id_cliente</option>";
+      echo "<option value=-1>Sistema não cadastrado:: $ok :: $id_cliente</option>";
 	}
 ?>
     </OPTGROUP>
@@ -191,7 +192,7 @@
 	  echo "<option value=$id>$si</option>";
 	}
 	if (!$qtde) {
-      echo "<option value=-1>Sistema n�o cadastrado</option>";
+      echo "<option value=-1>Sistema não cadastrado</option>";
 	}
 
 
@@ -447,7 +448,7 @@
               <select name="diagnostico" class="unnamed1">
                 <?
     if( !$objChamado->diagnostico_id ) {
-	  echo "<option value=0 selected>N�o colocar diagn�stico</option>";
+	  echo "<option value=0 selected>não colocar diagn�stico</option>";
 	}
 	$sistema = pegaDiagnosticos();
 	while ( list($tmp1, $tmp) = each($sistema) ) {
@@ -689,7 +690,7 @@
 
 
 	if (document.form.origem.value == 39) {
-		var confirma = confirm("O relat�rio de visita j� est� anexado ?");
+		var confirma = confirm("O relat�rio de visita j� está anexado ?");
 		if (!confirma) {
 			return false;
 		}
@@ -750,7 +751,7 @@
 
 
 		/*
-		  Atendendo ao pedido do Edson por telefone (n�o documentado)
+		  Atendendo ao pedido do Edson por telefone (não documentado)
 		  no dia 01/08/2004
 		*/
 	if (document.form.action.value == "encerrar") {
@@ -824,7 +825,7 @@ function testaemail() {
 
 				return false;
 	} else  if (!validaEmail()) {
-		alert('Aten��o. Email inv�lido');
+		alert('Atenção. Email inv�lido');
 		return false;
 	  }
 }

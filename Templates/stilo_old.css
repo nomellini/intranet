@@ -1,0 +1,36 @@
+.unnamed1 {  
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: 9px; 
+  color: #000000; 
+  font-weight: bold
+}
+
+.TabelaRotulo {  
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: xx-small; 
+  background-color: #999966; 
+  color: #FFFFFF; 
+  font-weight: bold
+}
+
+a {  
+  color: #000099; 
+  text-decoration: none
+}
+
+.TabelaPadrao {  
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: xx-small; color: #000000; 
+  background-color: #CCCC99
+}
+
+a:hover {  text-decoration: underline; color: #0000FF}
+
+.Titulo {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12pt; color: #666666}
+
+td {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt}
+
+.bgTabela {  background-color: #666633}
+
+.tituloIntranet {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; color: #FFFFFF; font-weight: normal}
+

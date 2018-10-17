@@ -19,7 +19,7 @@ $graph->SetShadow();
 $graph->title-> Set( "Contatos por sistema"); 
 
 	$sql = getSqlGraficoContatosSistema($sistema, $de, $ate, $id);
-	
+	mysql_set_charset("latin1", $link);
 	$result = mysql_query($sql) or die (mysql_error());	
 	$soma = 0; $i=0;
 	while ($linha = mysql_fetch_object($result)) {	
@@ -40,6 +40,6 @@ $graph->title-> Set( "Contatos por sistema");
 	$p1 = new BarPlot( $data); 
 	$p1->value ->Show();	
 
-	$graph->Add( $p1); 	
+	$graph->Add( $p1); 		
 	$graph->Stroke();
 ?>

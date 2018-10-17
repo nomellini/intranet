@@ -39,17 +39,17 @@ function dTree(objName)
 	this.useCookies		= true;
 
 
-// Funçoes
+// Funï¿½oes
 // ----------------------------------------------------------------------------
 
 
-	// adiciona um node novo à disposição do node
+	// adiciona um node novo ï¿½ disposiï¿½ï¿½o do node
 	this.add = function(id, pid, name, url, title, target, isopen, img)
 	{
 		this.arrNodes[this.arrNodes.length] = new Node(id, pid, name, url, title, target, isopen, img);
 	}
 
-	// Outputs a árvore à página 
+	// Outputs a ï¿½rvore ï¿½ pï¿½gina
 	this.draw = function()
 	{
 		if (document.getElementById)
@@ -80,7 +80,7 @@ function dTree(objName)
 // Confidencial
 // ----------------------------------------------------------------------------
 
-	// Imagens dePrealoads que são usadas na árvore
+	// Imagens dePrealoads que sï¿½o usadas na ï¿½rvore
 	this.preloadIcons = function()
 	{
 		if (this.hasLines)
@@ -111,7 +111,7 @@ function dTree(objName)
 		this.arrIcons[5].src = this.imgFolder + 'spacer.gif';
 	}
 
-	// Função Recursive de que cría a estrutura de árvore
+	// Funï¿½ï¿½o Recursive de que crï¿½a a estrutura de ï¿½rvore
 	this.addNode = function(pNode)
 	{
 		for (var n=0; n<this.arrNodes.length; n++)
@@ -132,17 +132,17 @@ function dTree(objName)
 				if (!this.folderLinks && cn._hc) cn.url = null;
 
 
-				// se o node atual não for a raiz 
+				// se o node atual nï¿½o for a raiz
 				if (this.rootNode != cn.pid)
 				{
-					// escreve para fora a linha & ícones vazios 
+					// escreve para fora a linha & ï¿½cones vazios
 					for (r=0; r<this.arrRecursed.length; r++)
 						this.strOutput += '<img src="' + this.imgFolder + ( (this.arrRecursed[r] == 1 && this.hasLines) ? 'line' : 'spacer' ) + '.gif" alt="" />';
 
-					// Linha & ícones vazios 
+					// Linha & ï¿½cones vazios
 					(cn._ls) ? this.arrRecursed.push(0) : this.arrRecursed.push(1);
 
-					// escreve junta para fora ícones 
+					// escreve junta para fora ï¿½cones
 					if (cn._hc)
 					{
 						this.strOutput += '<a href="javascript: ' + this.instanceName + '.o(' + n + ');">'
@@ -157,7 +157,7 @@ function dTree(objName)
 						this.strOutput += '<img src="' + this.imgFolder + ( (this.hasLines) ? ((cn._ls) ? 'joinbottom' : 'join' ) : 'spacer') + '.gif" alt="" />';
 				}
 
-				// Começo da ligação do node 
+				// Comeï¿½o da ligaï¿½ï¿½o do node
 				if (cn.url)
 				{
 					this.strOutput += '<a href="' + cn.url + '"';
@@ -165,7 +165,7 @@ function dTree(objName)
 					if (cn.target) this.strOutput += ' target="' + cn.target + '"';
 					if (this.target && !cn.target) this.strOutput += ' target="' + this.target + '"';
 
-					// se a ligação do hightlight for sobre 
+					// se a ligaï¿½ï¿½o do hightlight for sobre
 					if (this.clickSelect)
 					{
 						if (cn._hc)
@@ -186,12 +186,12 @@ function dTree(objName)
 					this.strOutput += '<a href="javascript: ' + this.instanceName + '.o(' + n + ');">';
 				}
 
-				// escreve para fora o dobrador & pagina ícones
+				// escreve para fora o dobrador & pagina ï¿½cones
 				this.strOutput += '<img id="i' + this.instanceName + n + '" src="' + this.imgFolder;
 				this.strOutput += (cn.img) ? cn.img : ((this.rootNode == cn.pid) ? 'page' : (cn._hc) ? ((cn._io) ? 'folderopen' : 'folder') : 'page') + '.gif';
 				this.strOutput += '" alt="" />';
 
-				// escreve para fora a extensão 
+				// escreve para fora a extensï¿½o
 				this.strOutput += '<span id="s' + this.instanceName + n + '" class="' + ((this.clickSelect) ? ((cn._is ? 'nodeSel' : 'node')) : 'node') + '">';
 
 
@@ -227,7 +227,7 @@ function dTree(objName)
 		return false;
 	}
 
-	// verifica se um node for o último sibling 
+	// verifica se um node for o Ãºltimo sibling
 	this.lastSibling = function(node)
 	{
 		var lastId;
@@ -237,7 +237,7 @@ function dTree(objName)
 		return false;
 	}
 
-	// verifica se uma identificação do node esta em um cookie 
+	// verifica se uma identificaï¿½ï¿½o do node esta em um cookie
 	this.isOpen = function(id)
 	{
 		openNodes = this.getCookie('co' + this.instanceName).split('.');
@@ -246,7 +246,7 @@ function dTree(objName)
 		return false;
 	}
 
-	// Verificações se um node esta selecionado
+	// Verificaï¿½ï¿½es se um node esta selecionado
 	this.isSelected = function(id)
 	{
 		selectedNode = this.getCookie('cs' + this.instanceName);
@@ -260,7 +260,7 @@ function dTree(objName)
 		}
 		return false;
 	}
-	// retorna o node selecionado 
+	// retorna o node selecionado
 	this.getSelected = function()
 	{
 		selectedNode = this.getCookie('cs' + this.instanceName);
@@ -268,7 +268,7 @@ function dTree(objName)
 		return null;
 	}
 
-	// destaca o node selecionado 
+	// destaca o node selecionado
 	this.s = function(id)
 	{
 		cn = this.arrNodes[id];
@@ -288,7 +288,7 @@ function dTree(objName)
 		}
 	}
 
-	// Toggle de aberto ou próximo 
+	// Toggle de aberto ou prï¿½ximo
 	this.o = function(id)
 	{
 		cn = this.arrNodes[id];
@@ -299,7 +299,7 @@ function dTree(objName)
 		if (this.useCookies) this.updateCookie();
 	}
 
-	// aberto ou próximo todos os nodes
+	// aberto ou prï¿½ximo todos os nodes
 	this.oAll = function(open)
 	{
 		for (n=0;n<this.arrNodes.length;n++)
@@ -362,7 +362,7 @@ function dTree(objName)
 			+ (secure ? '; secure' : '');
 	}
 
-	// começa um valor de um cookie
+	// comeï¿½a um valor de um cookie
 	this.getCookie = function(cookieName) {
 		var cookieValue = '';
 		var posName = document.cookie.indexOf(escape(cookieName) + '=');
@@ -378,7 +378,7 @@ function dTree(objName)
 		return (cookieValue);
 	}
 
-	// retorna ids de nós abertos como uma string 
+	// retorna ids de nï¿½s abertos como uma string
 	this.updateCookie = function()
 	{
 		sReturn = '';
@@ -397,7 +397,7 @@ function dTree(objName)
 }
 
 
-// As funções usadas pelo objeto do dTree mas não são realmente uma parte dela 
+// As funï¿½ï¿½es usadas pelo objeto do dTree mas nï¿½o sï¿½o realmente uma parte dela
 // ------------------------------------------------------------------------------------------------
 
 

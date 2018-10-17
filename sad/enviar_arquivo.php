@@ -13,7 +13,7 @@ header("Location: doindex.php");
 <html>
 <head>
 
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>SAD - Sistema de Atendimento Datamace</title>
 
 
@@ -244,7 +244,7 @@ $xdata = date("Y-m-d",$xdata);
                 <td colspan="3" align="left" class="fundoForms" style="font-size:10px">
  <p><input type="file" size="35" name="imagem" class="textField"  value=""/> 
 <br>          
-Arquivos até 2 MB</p>   </tr>
+Arquivos atÃ© 2 MB</p>   </tr>
  
               <tr>
                 <td height="5" colspan="4" align="center"><img src="img/spacer.gif" width="50" height="5"></td>

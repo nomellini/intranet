@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>SAD - Sistema de Atendimento Datamace</title>
  <link rel="stylesheet" href="include/css.css">
 </head>
@@ -47,7 +47,7 @@ else if(myday == 1)
 day = " Segunda-Feira, " 
 
 else if(myday == 2) 
-day = " Terça-Feira, " 
+day = " TerÃ§a-Feira, " 
 
 else if(myday == 3) 
 day = " Quarta-Feira, " 
@@ -59,7 +59,7 @@ else if(myday == 5)
 day = " Sexta-Feira, " 
 
 else if(myday == 6) 
-day = " Sábado, " 
+day = " SÃ¡bado, " 
 
 if(mymonth == 0) 
 month = " de Janeiro de " 
@@ -68,7 +68,7 @@ else if(mymonth ==1)
 month = " de Fevereiro de " 
 
 else if(mymonth ==2) 
-month = " de Março de " 
+month = " de MarÃ§o de " 
 
 else if(mymonth ==3) 
 month = " de April de " 

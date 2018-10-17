@@ -29,7 +29,7 @@
 <html>
 <head>
 
-  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>SAD - Sistema de Atendimento Datamace</title>
 
 
@@ -139,7 +139,7 @@
       <td><?=$abertura?></td>
     </tr>
     <tr>
-      <td align="center" valign="top" style="text-align: right"><strong>Descrição :</strong></td>
+      <td align="center" valign="top" style="text-align: right"><strong>DescriÃ§Ã£o :</strong></td>
       <td><?=$descricao?></td>
     </tr>
     <tr>
@@ -158,7 +158,7 @@
 <table width="100%" border="0" cellspacing="1" cellpadding="1" class="FundoCinza">
   <tbody>
     <tr class="FundoBrancoCor">
-      <td >Área</td>
+      <td >Ãrea</td>
       <td >Recebido em</td>
       <td >Encaminhado em</td>
       <td >Detalhe</td>
@@ -198,9 +198,9 @@
 			linha($Area, $DataAnterior, "<b>Abertura</b>", "-");
 		} 			
 		
-		$msgInteracao = "interação";
+		$msgInteracao = "interaÃ§Ã£o";
 		if ($qt > 1) 
-			$msgInteracao = "interações";		
+			$msgInteracao = "interaÃ§Ãµes";		
 		
 		if ($Area == $AreaAnterior)
 		{
@@ -222,9 +222,9 @@
 		//$DataRecebimentoFinal = $DataAnterior;
 	}
 	
-	$msgInteracao = "interação";
+	$msgInteracao = "interaÃ§Ã£o";
 	if ($qt > 1) 
-		$msgInteracao = "interações";		
+		$msgInteracao = "interaÃ§Ãµes";		
 	
 	if ($status == 1) {
 		if ($DataRecebimentoFinal=="")
@@ -232,11 +232,11 @@
 			$DataRecebimentoFinal = $DataRecebimento;
 			$qt--;
 		}
-		//echo "Chamado foi  pela área de <b>$Area</b>, após $qt $msgInteracao, sendo a ultima em $DataAnterior $Hora";
+		//echo "Chamado foi  pela Ã¡rea de <b>$Area</b>, apÃ³s $qt $msgInteracao, sendo a ultima em $DataAnterior $Hora";
 		linha($Area, $DataRecebimentoFinal, "<b>Encerrado</b> em $DataAnterior", "$qt $msgInteracao | $cliente de cliente" );		
 	} else 
 	{
-		linha($Area, $DataRecebimentoFinal, "<b>Em andamento</b>", "$qt $msgInteracao | $cliente de cliente:<br>última em $DataAnterior");
+		linha($Area, $DataRecebimentoFinal, "<b>Em andamento</b>", "$qt $msgInteracao | $cliente de cliente:<br>Ãºltima em $DataAnterior");
 	}
 ?>
     

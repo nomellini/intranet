@@ -1,0 +1,45 @@
+DROP TABLE IF EXISTS cliente;
+
+CREATE TABLE cliente (
+  id_cliente char(15) NOT NULL,
+  senha char(6) default NULL,
+  cliente char(50) default NULL,
+  endereco char(35) default NULL,
+  bairro char(20) default NULL,
+  cidade char(20) default NULL,
+  uf char(2) default NULL,
+  cep char(8) default NULL,
+  telefone char(20) default NULL,
+  fax char(20) default NULL,
+  contato1 char(15) default NULL,
+  contato2 char(15) default NULL,
+  contato3 char(15) default NULL,
+  funcionarios char(5) default NULL,
+  bloqueio tinyint(1) default NULL,
+  tipoatualiz char(1) default NULL,
+  inadimplente tinyint(1) default '0',
+  atendimento tinyint(1) default '0',
+  grau char(2) default '  ',
+  usa_banco bool,
+  cnpj varchar(20) default NULL,
+  ddd char(5) default NULL,
+  PRIMARY KEY  (`id_cliente`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+LOAD DATA LOCAL INFILE '/dados/ftp/sites/sad/htdocs/backup/DTM-CLI.TXT' REPLACE INTO TABLE cliente fields terminated by ',' enclosed by '"' LINES TERMINATED BY '\r\n';
+
+
+drop table clisis;
+
+CREATE TABLE clisis (
+  cliente char(15),
+  sistema int(11),
+  ativo bool,
+  32bit char(1) default '0',
+  versao char(5)
+ );
+
+LOAD DATA LOCAL INFILE '/dados/ftp/sites/sad/htdocs/backup/DTM-SIS.TXT' REPLACE INTO TABLE clisis fields terminated by ',' enclosed by '"' LINES TERMINATED BY ' \r\n';
+
+

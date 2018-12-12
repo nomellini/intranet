@@ -11,6 +11,13 @@
 	$Email = PegaEmailUsuario($Destinatario);
 	$NomeCliente = peganomeusuario($Destinatario);
 	
+	
+
+	if ($id_sistema == 0) {
+		$id_sistema = 103;
+	}
+
+	
 		
 	$sql = "insert into chamado ( ";
 	$sql .= " consultor_id, cliente_id, sistema_id, categoria_id, ";
@@ -18,7 +25,7 @@
 	$sql .= " destinatario_id, remetente_id, diagnostico_id, email, lido, ";
 	$sql .= " lidodono, nomecliente, datauc, horauc, visible ) ";	
 	$sql .= " values ( ";
-	$sql .= " 12, 'DATAMACE', 103, 925, ";
+	$sql .= " 12, 'DATAMACE', $id_sistema, 925, ";
 	$sql .= " 1, 73, '$Chamado', '$datae', 2, '$horae', ";
 	$sql .= " $Destinatario, 12, 13, '$Email', 0, ";
 	$sql .= " 1, '$NomeCliente', '$datae', '$horae', 1 )";
@@ -52,5 +59,6 @@
 	$msg = "<a href='http://192.168.0.14/a/historicochamado.php?id_chamado=$id_chamado'>Link direto [Chamado $id_chamado] </a><BR><BR>$Chamado";
 	mail2($Email, $subject, $msg, $headers);	
 	loga_novoChamado($ok, $id_chamado);		
-	header("location: /a/historicochamado.php?id_chamado=$id_chamado");	
+	//header("location: /a/historicochamado.php?id_chamado=$id_chamado");	
+	header("location: /a/manut/ec.php?userid=c20ad4d76fe97759aa27a0c99bff6710&acao=ver&id=$id_chamado");
 ?>

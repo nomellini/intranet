@@ -24,7 +24,7 @@
 <html>
 <head>
 <title>relat&oacute;rio de pendencias</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../stilos.css" type="text/css">
 <style type="text/css">
 <!--
@@ -153,7 +153,7 @@ order by p.valor, data_ultimo_contato;";
   if ($sql) {
     $result = mysql_query($sql) or die (mysql_error());
 	$total = mysql_affected_rows();
-	echo "Chamados que estão com $nome :  $total ";
+	echo "Chamados que estÃ£o com $nome :  $total ";
 ?><?
  	while ( $linha = mysql_fetch_object($result) ) {
 			$descricao = $linha->descricao;
@@ -246,7 +246,7 @@ O dono deste chamado &eacute;
   if ($sql) {
     $result = mysql_query($sql);
 	$total = mysql_affected_rows();
-	echo "Chamados que foram abertos por $nome e estão encaminhados :  $total ";
+	echo "Chamados que foram abertos por $nome e estÃ£o encaminhados :  $total ";
 ?>
 <table width="99%" border="0" cellspacing="1" cellpadding="1" bgcolor="#000066">
   <tr bgcolor="#0000FF"> 

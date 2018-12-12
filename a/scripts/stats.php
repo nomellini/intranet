@@ -1245,7 +1245,7 @@ function statContatosPorConsultor2($c, $o, $di, $df, $ordem)
   
     $saida = array();
 	
-//echo ($sql);
+  //echo ($sql);
 
     $result = mysql_query($sql) or die($sql);
     $conta=0;

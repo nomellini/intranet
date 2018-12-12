@@ -1,4 +1,5 @@
 <?
+
   require("cabeca.php");
 
   if ($ok) {
@@ -114,16 +115,16 @@
       var diasemana = new Array;
       var mesescrito = new Array;
       diasemana[1] = "Segunda-feira";
-      diasemana[2] = "Terça-feira";
+      diasemana[2] = "Ter�a-feira";
       diasemana[3] = "Quarta-feira";
       diasemana[4] = "Quinta-feira";
       diasemana[5] = "Sexta-feira";
-      diasemana[6] = "Sábado";
+      diasemana[6] = "S�bado";
       diasemana[0] = "Domingo";
 
       mesescrito[0] = "Janeiro";
       mesescrito[1] = "Fevereiro";
-      mesescrito[2] = "Março";
+      mesescrito[2] = "Mar�o";
       mesescrito[3] = "Abril";
       mesescrito[4] = "Maio";
       mesescrito[5] = "Junho";
@@ -153,7 +154,7 @@
         <table width="100%" border="0" bordercolorlight="#FFCC30" bordercolordark="#FFCC30" class="bgTabela">
           <tr>
             <td width="77%" align="left" valign="top" bgcolor="#FFFFFF"><!-- #BeginEditable "Centro" -->
-              <?php
+              <?
  mysql_connect(localhost, sad, data1371);
  mysql_select_db(datamace);
  $resp = mysql_query("select count(*) as soma from cxsug;");
@@ -164,7 +165,7 @@
                 <tr>
                   <td> <a href="corporativo/faq.htm"></a> <p align="center"><font color="#FF0033"><br>
                     Ol&aacute; </font>
-                      <?php
+                      <?
  mysql_connect(localhost, sad, data1371);
  mysql_select_db(datamace);
  $resp = mysql_query("select count(*) as soma from cxsug;");
@@ -172,13 +173,13 @@
  $sugestoes = $linha->soma;
 ?>
                       <font color="#FF0033">
-                      <?php if( $nomeusuario ) { print "$nomeusuario! ";}?>
+                      <? if( $nomeusuario ) { print "$nomeusuario! ";}?>
                       Seja bem vindo &agrave; Intranet Datamace.
-                      <?php if ($ok) { ?>
+                      <?if ($ok) { ?>
                       </font><br>
                       <br>
                       <font color="#FF0033"><a href="login.php?logout=true"><font size="2">(Efetuar logout)</font></a>
-                      <?php } ?>
+                      <?}?>
                   </font></p></td>
                 </tr>
               </table>
@@ -357,7 +358,7 @@ face="Verdana, Arial, Helvetica, sans-serif"> </font></a><font face="Verdana, Ar
                                                                 <li><a href="noticia/FTPDOS.htm"><font color="#000099" size="2" face="Verdana, Arial, Helvetica, sans-serif"> </font></a><font face="Verdana, Arial, Helvetica, sans-serif"><a href="quadrodechaves.php" class="style7">Quadro de chaves</a></font></li>
                                                                 <li><a href="numeroequip.php">N&uacute;mero dos Equipamentos</a></li>
 								<li><a href="isae3402.pdf" target="_blank"> Certificação ISAE 3402 - Locaweb</a></li>
-								<li><a href="servicosgerais/solicitacao.php" target="_blank"> Solicitação de Manuten��o</a></li>
+								<li><a href="servicosgerais/solicitacao.php" target="_blank"> Solicitação de Manutenção</a></li>
                                             </ul>
                                           </div>
                                                 </div></td>
@@ -469,7 +470,7 @@ face="Verdana, Arial, Helvetica, sans-serif"> </font></a><font face="Verdana, Ar
                     <table width="100%" border="0" align="center">
                       <tr valign="top" align="left">
                         <td colspan="2" height="25">
-                          <?php
+                          <?
 							 $agora = getdate(time());
 							 $diahoje = $agora["mday"];
 							 $mesatual = $agora["mon"];
@@ -485,24 +486,24 @@ face="Verdana, Arial, Helvetica, sans-serif"> </font></a><font face="Verdana, Ar
                                 <td width="73%" bgcolor="#2C91C7"><span class="style1"><strong>Nome</strong></span></td>
                                 <td width="27%" align="center"><span class="style1"><strong>Dia</strong></span></td>
                               </tr>
-                              <?php
+                              <?
                    while ($linha = mysql_fetch_object($result)) {
                    $nome = $linha->nome;
                    $dia = $linha->dia;
                 ?>
                               <tr class="TabelaPadrao">
                                 <td width="73%" bgcolor="#BDDEF0">
-                                  <?php
+                                  <?
 if ($diahoje == $dia) {
   echo "<img src=\"/imagens/aniv1.gif\"> - ";
 };
 
 ?>
-                                  <?phpecho $nome?>                                </td>
+                                  <?echo $nome?>                                </td>
                                 <td width="27%" align="center" bgcolor="#BDDEF0">
-                                  <strong><?phpecho $dia?></strong>                                </td>
+                                  <strong><?echo $dia?></strong>                                </td>
                               </tr>
-                              <?php
+                              <?
                      }
                  ?>
                             </table>
@@ -513,7 +514,7 @@ if ($diahoje == $dia) {
                 </tr>
               </table>
               </span>
-<?php
+<?
   mysql_close($link);
 ?>
               <script>
@@ -646,10 +647,6 @@ function aba1(x) {
                                    <td class="TabelaPadrao"><a href="/a/"><font face="Verdana, Arial, Helvetica, sans-serif">S.A.D</font></a></td>
                                  </tr>
                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
-                                   <td class="TabelaPadrao"><a href="corporativo/mapadosite/mapasite.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Mapa
-                                     do site</font></a></td>
-                                 </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                    <td class="TabelaPadrao"><a href="ISO9001/Documentos/D04.PDF"><font face="Verdana, Arial, Helvetica, sans-serif">Organograma</font></a></td>
                                  </tr>
                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
@@ -666,10 +663,6 @@ function aba1(x) {
                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                    <td class="TabelaPadrao"><a href="corporativo/feriados.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Pontes
                                      e Feriados</font></a></td>
-                                 </tr>
-                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
-                                   <td class="TabelaPadrao"><a href="/corporativo/fome.htm"><font face="Verdana, Arial, Helvetica, sans-serif">T&ocirc;
-                                     com fome</font></a></td>
                                  </tr>
                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaPadrao"><a href="/servicosgerais/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Manuten&ccedil;&atilde;o</font></a>                                    </td>
@@ -741,23 +734,7 @@ function aba1(x) {
                             </tr>
                             <tr valign="top">
                               <td><table width="100%" border="0" class="bgTabela">
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
-                                    <td class="TabelaRotulo"><a href="entretenimento/index.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Entretenimento</font></a></td>
-                                  </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
-                                    <td class="TabelaPadrao"><a href="entretenimento/filmes/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Videoteca</font></a></td>
-                                  </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
-                                    <td class="TabelaPadrao"><a href="entretenimento/livros/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Biblioteca</font></a></td>
-                                  </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
-                                    <td class="TabelaPadrao"><a href="/entretenimento/enquetes.php"><font face="Verdana, Arial, Helvetica, sans-serif">Enquetes</font></a></td>
-                                  </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
-                                    <td class="TabelaPadrao"><a href="entretenimento/mural.htm">Mural
-                                      de an&uacute;ncios</a></td>
-                                  </tr>
-                                </table>
+                                                                  </table>
                                 <table width="100%" border="0" class="bgTabela">
                                   <tr bgcolor="#CC9900" bordercolor="#CC9900">
                                     <td class="TabelaRotulo" valign="top"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="treinamento/treinamento.php">Treinamento</a></font></td>
@@ -770,22 +747,7 @@ function aba1(x) {
                             </tr>
                             <tr valign="top">
                               <td><table width="100%" border="0" class="bgTabela">
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
-                                    <td class="TabelaRotulo"><a href="Intersystem/index.htm">Intersystem</a></td>
-                                  </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
-                                    <td class="TabelaPadrao"><a href="Intersystem/compromisso.htm">Compromisso</a></td>
-                                  </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
-                                    <td class="TabelaPadrao"><a href="Intersystem/dadosintersystem.htm">Dados
-                                      da empresa</a></td>
-                                  </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
-                                    <td class="TabelaPadrao"><a href="Intersystem/missao.htm">Miss&atilde;o</a></td>
-                                  </tr>
-                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
-                                    <td class="TabelaPadrao"><a href="Intersystem/servicosclientes.htm">Servi&ccedil;os</a></td>
-                                  </tr>
+
                                 </table></td>
                             </tr>
                           </table></td>
@@ -808,6 +770,7 @@ function aba1(x) {
     </tr>
   </table>
 </div>
+<p align="center">&nbsp;</p>
 </body>
 <!-- #EndTemplate --></html>
 

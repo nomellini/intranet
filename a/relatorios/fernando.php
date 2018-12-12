@@ -23,7 +23,7 @@
 <html>
 <head>
 <title>Relat&oacute;rio S.A.D.</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 <style type="text/css">
 <!--
@@ -45,7 +45,7 @@
 
 $sql = "
 select 
-       concat('<a href=http://10.98.0.5/a/historicochamado.php?&id_chamado=', id_chamado, ' Target=_new >', id_chamado ,'</a>') link,
+       concat('<a href=http://192.168.0.14/a/historicochamado.php?&id_chamado=', id_chamado, ' Target=_new >', id_chamado ,'</a>') link,
        cliente_id, 
        right(descricao, 100) descricao, 
        datauc,       
@@ -69,7 +69,7 @@ order by
     <tr>
           <td bgcolor="#FFFFFF" ><a href="javascript:order('nome')">Link</a></td>
           <td bgcolor="#FFFFFF" ><a href="javascript:order('cliente_id')">Cliente</a></td>
-          <td bgcolor="#FFFFFF" >Descrição</td>
+          <td bgcolor="#FFFFFF" >DescriÃ§Ã£o</td>
           <td bgcolor="#FFFFFF" >Prioridade</td>
     </tr>
   

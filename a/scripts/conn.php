@@ -464,11 +464,11 @@ Consultoria Datamace";
 	{
 		$result = false;
 		if(($id<>0)and($id<> "-")) {
-			$sql = "select fl_edita_chamado_bloqueado c1 from usuario where (id_usuario = $id);";
+			$sql = "select area, fl_edita_chamado_bloqueado c1 from usuario where (id_usuario = $id);";
 			$result = mysql_query($sql);
 			$linha=mysql_fetch_object($result);
 			if ($linha) {
-				$result = ($linha->c1 == 1);
+				$result = ($linha->c1 == 1) || ($linha->area==2);
 			}
 		}
 		return $result;
@@ -2845,16 +2845,17 @@ function sec_to_time($segundos)
 {
 
 	$horas =   (int)($segundos / 3600);
-
 	$segundos = $segundos % 3600;
-
 	$minutos = (int)($segundos / 60);
 	$segundos = $segundos % 60;
+	
 
-  $time = sprintf("%02d", $horas) . ":" .
-	      sprintf("%02d", $minutos) . ":" .
-		  sprintf("%02d", $segundos);
-  return $time;
+	
+
+	  $time = 	number_format($horas, 0, ',', '.') . ":" .
+		      sprintf("%02d", $minutos) . ":" .
+			  sprintf("%02d", $segundos);
+	  return $time;
 }
 
 
@@ -3320,13 +3321,23 @@ function connAlterarRestricao($IdChamado, $IdUsuario, $IdRestricao, $IcStatus)
 	mysql_query($sql);
 
 	/*
-		2. Inserir o hist�rico das altera�oes
+		2. Inserir o histórico das alterações
 	*/
 	$DataHoraAtual = date("Y-m-d H:i:s");
 	$sql = "insert into restricao_historico (Id_Chamado, Id_Restricao, Id_Usuario, Dt_Data, Ic_Status)
 			values ($IdChamado, $IdRestricao, $IdUsuario, '$DataHoraAtual', $IcStatus)";
 	mysql_query($sql);
 
+}
+
+
+function hms($segundos)
+{
+	$horas = floor($segundos/3600);	
+	$restante = $segundos - ( $horas * 3600 );
+	$minutos = floor($restante/60);
+	$segundos = $restante - ($minutos*60);
+	return $horas . ':' . str_pad( $minutos, 2, '0', STR_PAD_LEFT) . ':' . str_pad( $segundos,2, '0', STR_PAD_LEFT);
 }
 
 

@@ -210,6 +210,9 @@
 	$bl = 0;
 	if (!$inter) {	
 	    $bl = $tmp["bloqueio"];
+		if ($bl) {
+			$bl = !connPodeEditarChamadoBloqueado($ok);
+		}
 	}
 
 	$grau = "[" . AcertaGrau($tmp["grau"]). "]";
@@ -217,10 +220,10 @@
 	/*
 	   Qualquer alteração aqui deve ser feita em Historico.PHP, pois o código  é o mesmo
 	*/
-	$EditaChamadoBloqueado = connPodeEditarChamadoBloqueado($ok);		
-    if ( $EditaChamadoBloqueado ) {
-	  $bl=0;
-	}  
+	//$EditaChamadoBloqueado = connPodeEditarChamadoBloqueado($ok);		
+    //if ( $EditaChamadoBloqueado ) {
+	//  $bl=0;
+	//}  
 		
 	$podeLiberar = 0;
 	if (
@@ -330,8 +333,14 @@
 <head>
 <title><?=$id_chamado?> - <?=$objChamado->descricao?> : Hist&oacute;rico</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+<script src="js/toastr.js"></script>
+<link href="css/toastr.css" rel="stylesheet"/>
+
 <link rel="stylesheet" href="stilos.css" type="text/css">
 <link href="sgq/attendere.css" rel="stylesheet" type="text/css">
+
 <style type="text/css">
 <!--
 		.dragTest {
@@ -949,22 +958,15 @@
   <script>
   function vai() {
     if ('-<?=$bl?>' == '-1') {
-	  window.alert('Consultoria Bloqueada');
+	  toastr.error('Consultoria Bloqueada');
 	  return;
-	}
-	
-	
-   if (  ( '-1' == '-<?=$atendimento?>') && ('<?=$id_cliente?>' != 'DATAMACE') && ('<?=$senha?>' == '00 000') ) {
-//	  window.alert('Cliente Inativo');
-//	  return;
 	}		
-
   
     document.form.submit();
   }
   
   if ('-<?=$sigame?>' != '-') {
-    window.alert('Chamado colocado na lista de SIGA-ME');
+	toastr.info('Chamado colocado na lista de SIGA-ME');
   }
   
 
@@ -1088,7 +1090,7 @@ order by hora ";
 	  if ($temMsg) {
 ?>
 <script>
-  window.alert( '<?=$msg?>' );	
+	toastr.info('<?=$msg?>');
 </script>
 <?	
 		}  // End if tem mensagem
@@ -1102,7 +1104,7 @@ function Documentacao()
 }
 
 <? if ($_ReadyOnlyStatus) { ?>
-	window.alert('<?=$_ReadyOnlyMessage ?>');
+	toastr.warning('<?=$_ReadyOnlyMessage ?>');
 <? } ?>
 </script>
 
@@ -1111,6 +1113,6 @@ function Documentacao()
 
 <script>
  if ('' != '<?=$ClienteSLA?>') { 
- 	window.alert("<?=$ClienteSLAMsg?>");
- } 
+	toastr.warning('<?=$ClienteSLAMsg?>');
+ }  
 </script>

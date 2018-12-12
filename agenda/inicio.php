@@ -508,8 +508,9 @@ function dataLink($teste) {
 }
 
 function somaDia($qtde, $dia, $mes, $ano) {
-   $today = mktime(0,0,0,$mes,$dia,$ano,1);
-   return  add( $today, 0,0,0,$qtde,0,0 );
+	$qtde++;	
+	$today = mktime(0,0,0,$mes,$dia,$ano,1);
+	return  add( $today, 0,0,0,$qtde,0,0 );
 }
 
 function cor($data) {

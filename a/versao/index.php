@@ -55,7 +55,7 @@
        $tarefa=0;	  
 	   $tarefaAux = "+" . $linha1->id;
 	   if (strpos( $tarefausuario, $tarefaAux) ) {
-	     $tarefa = 1;  // Essa tarefa é desse usuario;
+	     $tarefa = 1;  // Essa tarefa Ã© desse usuario;
 	   }
 	  
 	   
@@ -81,7 +81,7 @@
 		}
 		
 		//Echo ("Estou aqui");
-		//$tarefa indica se a tarefa é deste usuário.
+		//$tarefa indica se a tarefa Ã© deste usuÃ¡rio.
 	   if ($tarefa) {
 	     if( !$linha->ok ) {
            $tmp["tarefa"] = "<b><u>". $tmp["tarefa"] ."</u></b>";
@@ -167,7 +167,7 @@
 <html>
 <head>
 <title>Minhas Tarefas</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../stilos.css" type="text/css">
 <style type="text/css">
 <!--

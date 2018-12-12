@@ -84,8 +84,15 @@ $seltipotre[$tipotre]		= "selected";
 $selbasedados[$basedados]	= "selected";
 ?>
 <html>
+
 <head>
-<script type="text/javascript" src="../../scripts/jquery-1.3.2.min.js"> </script>
+
+	<!--Import jQuery before export.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
+
+
 <script type="text/javascript" src="../../scripts/jquery.fixedheader.js"> </script>
 <script>
 function fdata(src) {
@@ -94,7 +101,7 @@ function fdata(src) {
 
 function fun_submit(){
 	if (!document.getElementById('datai').value || !document.getElementById('dataf').value){
-		alert('Período: Preenchimento obrigatório')
+		alert('PerÃ­odo: Preenchimento obrigatÃ³rio')
 		return false;
 	}
 	document.form1.submit();
@@ -109,7 +116,7 @@ function fun_submit(){
 	})
 </script>
 <title>Relat&oacute;rio S.A.D.</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 <style type="text/css">
 <!--
@@ -144,8 +151,11 @@ function fun_submit(){
 <div align="center">Tempo total</div>
   <form name="form1" method="post" action="" >
   <fieldset>
-  <legend>Parâmetros de pesquisa</legend>
+  <legend>ParÃ¢metros de pesquisa</legend>
+
+
 <table width="619" border="0" cellpadding="1" cellspacing="1">
+
       <tr>
         <td width="139">Per&iacute;odo de consulta </td>
         <td width="464">De 
@@ -180,7 +190,7 @@ if ($action == "pesquisar")  {
 
 	//die($sql);
 	//$resultado	= mysql_query($sql) or die ( $sql);	
-	
+
 	$resultA = mysql_query($sql) or die (mysql_error());
 	
 	$c = mysql_affected_rows();
@@ -192,9 +202,9 @@ if ($action == "pesquisar")  {
  <thead>
     <tr>
           <th>Nome</th>
-          <th><div align="center">Segundos</div></th>
-          <th><div align="center">H:M:S</div></th>
-          <th><div align="center">Contatos</div></th>
+<!--          <th><div align="right">Segundos</div></th>  -->
+          <th><div align="right">H:M:S</div></th>
+          <th><div align="right">Contatos</div></th>
     </tr>
   </thead>
   <tbody>
@@ -205,7 +215,7 @@ if ($action == "pesquisar")  {
 		$nome = $linhaA->nome;	
 		$qtde = $linhaA->contatos;		
 		$segundos = $linhaA->segundos;				
-		$horas = $linhaA->horas;
+		$horas = sec_to_time($segundos);
 		
 		$secs += $segundos;
 		$conts += $qtde;
@@ -213,13 +223,14 @@ if ($action == "pesquisar")  {
 ?>
     <tr>
           <td><?=$nome;?></td>
-          <td><div align="center">
-            <?=$segundos;?>
-          </div></td>
-          <td><div align="center">
+          <!--
+          <td><div align="right">
+            <?= number_format($segundos, 0, ',', '.');?>
+          </div></td> -->
+          <td><div align="right">
             <?=$horas?>
           </div></td>          
-          <td><div align="center">
+          <td><div align="right">
             <?=$qtde;?>
           </div></td>
     </tr>
@@ -230,13 +241,13 @@ if ($action == "pesquisar")  {
  
      <tr>
           <td><strong>Totais</strong></td>
-          <td><div align="center"><strong>
-            <?=$secs;?>
-          </strong></div></td>
-          <td><div align="center"><strong>
+<!--          <td><div align="right"><strong>
+            <?=number_format($secs, 0, ',', '.')?> 
+          </strong></div></td> -->
+          <td><div align="right"><strong>
             <?=$tempoTotal;?>
           </strong></div></td>          
-          <td><div align="center"><strong>
+          <td><div align="right"><strong>
             <?=$conts;?>
           </strong></div></td>
     </tr>
@@ -290,6 +301,12 @@ $(function() {
 	$(this).removeClass('selectedRow');   
 	});   
 }); 
+
+
+	$(document).ready( function () {
+		$('#table_id').DataTable();
+	} );
+
   </script>  
 </p>
 

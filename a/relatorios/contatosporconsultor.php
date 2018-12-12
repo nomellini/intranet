@@ -49,6 +49,7 @@
 <link rel="stylesheet" href="../stilos.css" type="text/css">
 <script src="coolbuttons.js"></script>
 </head>
+    <meta charset=utf-8>
 <body bgcolor="#FFFFFF" text="#000000">
 <table width="43%" border="0" cellspacing="1" cellpadding="1" class="coolBar">
   <tr align="center"> 
@@ -70,7 +71,7 @@ function limpa() {
   function seleciona() {
     window.name = "pai";
     value = document.form.id_cliente.value;
-    window.open('selecionacliente.php?id_cliente='+value, "Seleção", "scrollbars=yes, height=488, width=600");
+    window.open('selecionacliente.php?id_cliente='+value, "SeleÃ§Ã£o", "scrollbars=yes, height=488, width=600");
   }
 
 </script>

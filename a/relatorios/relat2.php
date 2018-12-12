@@ -188,12 +188,12 @@ $totalRows_rsDiagnosticos = mysql_num_rows($rsDiagnosticos);
 */	
 //	reset($chamados);
 //	$tempoTotal = segToHora($somaTempo);
-    loga_online($ok, $REMOTE_ADDR, 'Relatório : 01');	
+    loga_online($ok, $REMOTE_ADDR, 'RelatÃ³rio : 01');	
 ?>
 <html>
 <head>
 <title>Relat&oacute;rio S.A.D.</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 </head>
 <body bgcolor="#FFFFFF" text="#000000">
@@ -241,7 +241,7 @@ function limpa() {
   function seleciona() {
     window.name = "pai";
     value = document.form.id_cliente.value;
-    window.open('../selecionacliente.php?id_cliente='+value, "Seleção", "scrollbars=yes, height=488, width=600");
+    window.open('../selecionacliente.php?id_cliente='+value, "SeleÃ§Ã£o", "scrollbars=yes, height=488, width=600");
   }
 
 </script>

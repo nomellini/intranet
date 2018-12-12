@@ -22,25 +22,8 @@
 		$linha = mysql_fetch_object($query);
 		$historico = $linha->historico;
 		$usuario = $linha->nome;
-		$historico =  html_entity_decode($historico, ENT_QUOTES, 'UTF-8');		
-	
-				
-		if ($UserId	!= "@fnomellini")
-		{
-			$context = stream_context_create(array(
-				'http' => array(
-					// http://www.php.net/manual/en/context.http.php
-					'method' => 'POST',
-					'header' => "Content-Type: application/json\r\n",
-					'content' => '{"channel":"@fnomellini","attachments": [{"fallback": "'. $Fallback .' : '.$Id_Chamado.'","color": "'.$cor.'","title": "Chamado '.$Id_Chamado.'","title_link": "'.$sad_link.'","text": "'.$Ds_Descricao.'", "fields":[ {"title":"Último contato de '.$usuario.':", "value":"'.$historico.'"}] },]}'
-					)
-				)
-			);
-			$response = file_get_contents('https://hooks.slack.com/services/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', FALSE, $context);			
-		}
+		$historico =  html_entity_decode($historico, ENT_QUOTES, 'UTF-8');
 		
-
-
 		$context = stream_context_create(array(
 			'http' => array(
 				// http://www.php.net/manual/en/context.http.php

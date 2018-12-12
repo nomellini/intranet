@@ -9,20 +9,22 @@ if (!isset($pageRequested))
 }
 
 $USRACESSO = array(
-	"Helio",
-	"Lucas",
-	"Debora",
-	"Flavia Cristina","flavia","Antônio","Edson","Janaina Queiroga","Leandro",
+	"HELIO",
+	"LUCAS",
+	"DEBORA",
+	"FLAVIA CRISTINA",
+	"FLAVIA",
+	"EDSON",
+	"JANAINA QUEIROGA",
 	 12, 240, 343, 334);
 
 mysql_select_db(sad);
 
 if($v_id_usuario){
 	if ($v_id_usuario){
-		if (!in_array($v_id_usuario,$USRACESSO))
+		if (!in_array(strtoupper($v_id_usuario),$USRACESSO))
 		{
-
-			if (!in_array($USRNOME,$USRACESSO)){
+			if (!in_array(strtoupper($USRNOME),$USRACESSO)){
 				require ('negado1.php');
 				die;
 			}

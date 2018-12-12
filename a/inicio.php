@@ -1,11 +1,10 @@
-<?php require_once('../Connections/sad.php'); ?>
 <?	
-
+	
 	require("cabeca.php");
 	require("scripts/cores.php");		
-
-define(ORDEM_MIN, -5);  
-define(ORDEM_MAX, 99999);  	
+	
+	define(ORDEM_MIN, -5);  
+	define(ORDEM_MAX, 99999);  	
 	
 if  ($action == "novaOrdem")
 {	
@@ -164,9 +163,8 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_sad, $sad);
 $query_rsStatusConsultor = "SELECT id, descricao FROM status_consultor where ativo";
-$rsStatusConsultor = mysql_query($query_rsStatusConsultor, $sad) or die(mysql_error());
+$rsStatusConsultor = mysql_query($query_rsStatusConsultor) or die(mysql_error());
 $row_rsStatusConsultor = mysql_fetch_assoc($rsStatusConsultor);
 $totalRows_rsStatusConsultor = mysql_num_rows($rsStatusConsultor);
 
@@ -174,15 +172,15 @@ $colname_rsUsuario = "-1";
 if (isset($_COOKIE['id_usuario'])) {
   $colname_rsUsuario = (get_magic_quotes_gpc()) ? $_COOKIE['id_usuario'] : addslashes($_COOKIE['id_usuario']);
 }
-mysql_select_db($database_sad, $sad);
+
 $query_rsUsuario = sprintf("SELECT * FROM usuario WHERE id_usuario = %s", GetSQLValueString($colname_rsUsuario, "int"));
-$rsUsuario = mysql_query($query_rsUsuario, $sad) or die(mysql_error());
+$rsUsuario = mysql_query($query_rsUsuario) or die(mysql_error());
 $row_rsUsuario = mysql_fetch_assoc($rsUsuario);
 $totalRows_rsUsuario = mysql_num_rows($rsUsuario);
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsEstadoConsulto = "SELECT * FROM status_consultor WHERE id = " . $row_rsUsuario['Estado'];
-$rsEstadoConsulto = mysql_query($query_rsEstadoConsulto, $sad) or die(mysql_error());
+$rsEstadoConsulto = mysql_query($query_rsEstadoConsulto) or die(mysql_error());
 $row_rsEstadoConsulto = mysql_fetch_assoc($rsEstadoConsulto);
 $totalRows_rsEstadoConsulto = mysql_num_rows($rsEstadoConsulto);
 ?><?
@@ -1764,7 +1762,13 @@ function mudaStatusParaDisponivel()
   }
 </script>
 <?php
-mysql_free_result($rsStatusConsultor);
-mysql_free_result($rsUsuario);
-mysql_free_result($rsEstadoConsulto);
+	mysql_free_result($rsStatusConsultor);
+	mysql_free_result($rsUsuario);
+	mysql_free_result($rsEstadoConsulto);
+?>
+
+
+<?
+ global $link;
+ mysql_close($link);
 ?>

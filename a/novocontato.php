@@ -304,6 +304,9 @@
 <html>
 <head>
 <title>Hist&oacute;rico</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+<script src="js/toastr.js"></script>
+<link href="css/toastr.css" rel="stylesheet"/>
 <link rel="stylesheet" href="stilos.css" type="text/css">
 <style type="text/css">
 <!--
@@ -1004,7 +1007,8 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 	{
 		if (!validateEmail(document.form.emailcontatado.value))
 		{
-			window.alert( 'Email inválido');
+			//window.alert( 'Email inválido');
+			toastr.info( 'Email inválido');
 			document.form.emailcontatado.focus();
 			return false;			
 		}		
@@ -1013,7 +1017,8 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 
 	if (document.form.prioridade.value==7) {				
 		if (document.form.idchamadodepende.value == "") {
-			window.alert( 'Digite o número do chamado o qual este chamado espera, ou altere a prioridade');
+			//window.alert( 'Digite o número do chamado o qual este chamado espera, ou altere a prioridade');
+			toastr.info( 'Digite o número do chamado o qual este chamado espera, ou altere a prioridade');			
 			document.form.idchamadodepende.focus();
 			return false;
 		}
@@ -1038,13 +1043,15 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 		
 		if ((pAnterior==2) | (pAnterior==3)) {
 			if ((pAtual!=4)&(pAtual!=2)&(pAtual!=3)&(pAtual!=9)) {
-					window.alert( 'Você não pode alterar uma prioridade que é Urgente ou Urgentissimo');
+					//window.alert( 'Você não pode alterar uma prioridade que é Urgente ou Urgentissimo');
+					toastr.error('Você não pode alterar uma prioridade que é Urgente ou Urgentissimo');
 					document.form.prioridade.value = pAnterior;
 					return false;
 			}
 		} else {		
 			if ((pAtual==2)|(pAtual==3)) {
-					window.alert( 'Você não pode alterar a prioridade para Urgente ou Urgentissimo');
+					//window.alert( 'Você não pode alterar a prioridade para Urgente ou Urgentissimo');
+					toastr.error('Você não pode alterar uma prioridade que é Urgente ou Urgentissimo');
 					document.form.prioridade.focus();
 					return false;
 			}
@@ -1099,13 +1106,15 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 		if (document.form.base.checked) {
 		
 			if (document.form.base_desc.value=='') {
-				window.alert( 'Digite a descrição para BASE DE CONHECIMENTO');
+				//window.alert( 'Digite a descrição para BASE DE CONHECIMENTO');
+				toastr.error('Digite a descrição para BASE DE CONHECIMENTO');
 				document.form.base_desc.focus();
 				return;
 			}
 						
 			if (document.form.diagnostico.value==0) {
-				window.alert( 'Entre com o diagnóstico' );
+				//window.alert( 'Entre com o diagnóstico' );
+				toastr.error('Entre com o diagnóstico');
 				document.form.diagnostico.focus();
 				return;
 			}  
@@ -1114,7 +1123,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
    
 	if ( document.form.action.value == 'manter' ) {		
 	  if ( '-<?=$chManter?>'=='-1' ) {
-	    window.alert('Você nao pode manter aberto um contato que foi aberto por <?=$AbertoPor?>\nVoce deve encaminhar'); 
+			toastr.error('Você nao pode manter aberto um contato que foi aberto por <?=$AbertoPor?>\nVoce deve encaminhar');
 		return;
 	  }
 	}

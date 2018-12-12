@@ -40,18 +40,34 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
     <textarea name="Chamado" cols="80" rows="5" id="Chamado"></textarea>
     </p>
   <p>Texto do Contato<br>
+    <br>
     <textarea name="Contato" cols="80" rows="5" id="Contato">Segue</textarea>
+  </p>
+  <p>Sistema<br>
+      <select name="id_sistema" id="id_sistema">
+        <option value="0">Selecione</option>  
+<?php
+	$result = mysql_query("select id_sistema, sistema from sistema order by sistema");
+	while ($linha = mysql_fetch_object($result)) 
+	{  
+?>
+        <option value="<?php echo $linha->id_sistema ?>"><?php echo $linha->sistema ?></option>
+<?php
+	} 
+?>
+      </select>
+  
     <br>
     <br>
-Destinat&aacute;ro<br>
-<label>
-  <select name="Destinatario" id="Destinatario">
-    <option value="0">Selecione</option>
-    <?php
+    Destinat&aacute;ro<br>
+
+      <select name="Destinatario" id="Destinatario">
+        <option value="0">Selecione</option>
+        <?php
 do {  
 ?>
-    <option value="<?php echo $row_rsUsuarios['id_usuario']?>"><?php echo $row_rsUsuarios['nome']?></option>
-    <?php
+        <option value="<?php echo $row_rsUsuarios['id_usuario']?>"><?php echo $row_rsUsuarios['nome']?></option>
+        <?php
 } while ($row_rsUsuarios = mysql_fetch_assoc($rsUsuarios));
   $rows = mysql_num_rows($rsUsuarios);
   if($rows > 0) {
@@ -59,11 +75,11 @@ do {
 	  $row_rsUsuarios = mysql_fetch_assoc($rsUsuarios);
   }
 ?>
-  </select>
-  </label>
-  <label>
-  <input type="submit" name="Submit" value="Submit">
-  </label>
+      </select>
+
+    <label>
+      <input type="submit" name="Submit" value="Submit">
+    </label>
   </p>
 </form>
 <?php

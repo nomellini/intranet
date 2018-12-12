@@ -98,7 +98,7 @@
 	   $result = mysql_query($sql);
 	   $linha = mysql_fetch_object($result);
 	   if ($linha->estado != 1) {
-	     $Mensagem = "Consultor $linha->nome N√O DESPONÕVEL, aguarde ou transfira para outro !";
+	     $Mensagem = "Consultor $linha->nome N√ÉO DESPON√çVEL, aguarde ou transfira para outro !";
 	     header("Location: index.php?msg=$Mensagem");
 	   } else {
   	     $sql = "update satligacao set motivo = '', id_satstatus = 2, id_usuario = $idconsultor, hora_transferencia='$hora' where id = $idligacao;";
@@ -179,7 +179,7 @@
 		if ($bloqueio) {
   			//$cliente .= " <b>BLOQUEADO</b>";
   			$cliente = " <font color='#ff0000'>[BLOQUEADO] $cliente [BLOQUEADO]</font>";						
-  			$cliente .= "<br> <font color='#ff0000'><b>AtenÁ„o, cliente com consultoria BLOQUEADA - Direcionar para administraÁ„o !</b></font>";
+  			$cliente .= "<br> <font color='#ff0000'><b>Aten√ß√£o, cliente com consultoria BLOQUEADA - Direcionar para administra√ß√£o !</b></font>";
 		}	
 		
 		$sql = "select fl_posvenda, data_inicioposvenda from clienteplus where id_cliente = '$id_cliente'";	
@@ -190,7 +190,7 @@
 		$datainicioposvenda = "$data[2]/$data[1]/$data[0]";
 
 		if ($fl_posvenda==1) {
-  			$cliente .= "<br> <font color='#ff0000'><b>AtenÁ„o, cliente em P”S-VENDA !</b></font><br>";
+  			$cliente .= "<br> <font color='#ff0000'><b>Aten√ß√£o, cliente em P√ìS-VENDA !</b></font><br>";
 		}	
 		
 
@@ -202,25 +202,25 @@
 	}
 
 
-	/* LigaÁıes de hoje	*/
+	/* Liga√ß√µes de hoje	*/
     $sql = "select count(*) as ligTotal from satligacao where data = '$hoje'";
 	$result = mysql_query($sql);
 	$linha = mysql_fetch_object($result);
 	$ligHoje = $linha->ligTotal;
 
-	/* LigaÁıes de hoje	em espera*/
+	/* Liga√ß√µes de hoje	em espera*/
     $sql = "select count(*) as ligTotal from satligacao where data = '$hoje' and id_satstatus=1";
 	$result = mysql_query($sql);
 	$linha = mysql_fetch_object($result);
 	$ligEspera = $linha->ligTotal;
 
-	/* LigaÁıes de hoje	transferidas*/
+	/* Liga√ß√µes de hoje	transferidas*/
     $sql = "select count(*) as ligTotal from satligacao where data = '$hoje' and id_satstatus=2";
 	$result = mysql_query($sql);
 	$linha = mysql_fetch_object($result);
 	$ligTransf = $linha->ligTotal;
 
-	/* LigaÁıes de n„o atendidas*/
+	/* Liga√ß√µes de n√£o atendidas*/
     $sql = "select count(*) as ligTotal from satligacao where data = '$hoje' and id_satstatus=4";
 	$result = mysql_query($sql);
 	$linha = mysql_fetch_object($result);
@@ -273,9 +273,9 @@
 
 	$lampada = "<img src=../imagens/farolverde.jpg width=100 height=40><br>Normal - ";
 	if (  ($tempomaximo > 8) and ($tempomaximo <= 15)  ) {
-	  $lampada = '<img src=../imagens/farolamarelo.jpg width=100 height=40><br>AtenÁ„o - ';
+	  $lampada = '<img src=../imagens/farolamarelo.jpg width=100 height=40><br>Aten√ß√£o - ';
 	} else if ($tempomaximo > 15) {
-	  $lampada = "<img src=../imagens/farolvermelho.jpg width=100 height=40><br>CrÌtica - ";
+	  $lampada = "<img src=../imagens/farolvermelho.jpg width=100 height=40><br>Cr√≠tica - ";
 	}
 	$lampada .= "$tempominutos - $linha->id_cliente";
 
@@ -292,7 +292,7 @@
 <html>
 <head>
 <title>espera</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../todo/stilos.css" type="text/css">
 <link href="../stilos.css" rel="stylesheet" type="text/css">
 <meta http-equiv="refresh" content="50">
@@ -460,7 +460,7 @@
   $sql .= "data = '$hoje' and satligacao.id_cliente = cliente.id_cliente and satligacao.id_produto = sistema.id_sistema and ";
     $sql .= "id_satstatus = 1 order by esperaTotal desc";
 //  $sql .= "id_satstatus = 1 order by satligacao.grau, espera desc";
-//  die($sql);
+ // die($sql);
   $result = mysql_query($sql);
   while ($linha = mysql_fetch_object($result)) {
     $idligacao = $linha->id;
@@ -754,18 +754,18 @@
 		('<?=$_FL_SP?>' == 'N') ||
 		('<?=$estado_cliente?>' != 'SP') 
 	 ) { 
-    alert('AtenÁ„o !\nCliente de outro estado (<?=$estado_cliente?>) ou DDD diferente de 11 !\nEste cliente tem atendimento diferenciado\nVerifique com o gerente do suporte');
+    alert('Aten√ß√£o !\nCliente de outro estado (<?=$estado_cliente?>) ou DDD diferente de 11 !\nEste cliente tem atendimento diferenciado\nVerifique com o gerente do suporte');
   }
   
   
   if ('1' == '<?=$fl_posvenda?>') {
-     alert('AtenÁ„o!\nCliente em P”S-VENDA\nEste cliente tem atendimento diferenciado\nVerifique com a Intersystem');
+     alert('Aten√ß√£o!\nCliente em P√ìS-VENDA\nEste cliente tem atendimento diferenciado\nVerifique com a Intersystem');
   }
   
   
   
   if ('1' == '<?=$bloqueio?>') {
-     alert('AtenÁ„o!\nCliente BLOQUEADO para consultoria. Favor direcionar para administraÁ„o');
+     alert('Aten√ß√£o!\nCliente BLOQUEADO para consultoria. Favor direcionar para administra√ß√£o');
   }
   
   
@@ -801,11 +801,11 @@ function consultor(Anome, Aid) {
 
 function transfere() {
   if (document.transf.idligacao.value == '') {
-    window.alert('VocÍ deve clicar no nome do cliente a ser transferido');
+    window.alert('Voc√™ deve clicar no nome do cliente a ser transferido');
 	return false;
   }
   if (document.transf.idconsultor.value == '') {
-    window.alert('VocÍ deve clicar no nome do consultor que receber· a ligaÁ„o ');
+    window.alert('Voc√™ deve clicar no nome do consultor que receber√° a liga√ß√£o ');
 	return false;
   }
   document.transf.acao.value = 'transferir';
@@ -827,7 +827,7 @@ function fnc_retomar(aId) {
 function seleciona() {
   window.name = "pai";
   value = document.form.id_cliente.value;
-  window.open('../selecionacliente.php?id_cliente='+value, "SeleÁ„o", "scrollbars=yes, height=488, width=600");
+  window.open('../selecionacliente.php?id_cliente='+value, "Sele√ß√£o", "scrollbars=yes, height=488, width=600");
 }
 
  if(
@@ -892,7 +892,7 @@ function alterna(item){
 <script>
 function fnc_transfereSemEspera() {
   if (document.espera.id_consultor.value == 0) {
-    window.alert("Primeiro vocÍ deve escolher um consultor");
+    window.alert("Primeiro voc√™ deve escolher um consultor");
 	document.espera.id_consultor.focus();
 	return false;
   }
@@ -903,7 +903,7 @@ function fnc_transfereSemEspera() {
 function fnc_espera() {
 
   if (document.espera.idcliente.value == "") {
-    window.alert("Primeiro vocÍ deve escolher um cliente nas ligaÁıes em espera");
+    window.alert("Primeiro voc√™ deve escolher um cliente nas liga√ß√µes em espera");
 //	document.form.id_cliente.focus();
 	return false;
   }
@@ -923,7 +923,7 @@ function fnc_espera() {
 }
 
 function fnc_cancela(aLigacao, aCliente) {
-  if (window.confirm('Cancelar ligaÁ„o do cliente ' + aCliente + ' ? ')) {
+  if (window.confirm('Cancelar liga√ß√£o do cliente ' + aCliente + ' ? ')) {
      document.transf.idligacao.value=aLigacao;
 	 document.transf.acao.value='cancelar';
 	 document.transf.submit();

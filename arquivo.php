@@ -1,4 +1,8 @@
 <?
+
+
+  require("../cabeca.php");	
+
   if ($id) {
     $action = "Alteração";
   } else {
@@ -6,14 +10,6 @@
   }
 
  if ($id) {
-   if (!mysql_connect(localhost, sad, data1371)) {
-      echo "<br><br>Problema na conexao com o banco de dados</b><br>";
-   };
-
-   if(!mysql_select_db(datamace)) {
-      echo "<br><br>Problema na seleção do banco de dados</b><br>";
-   };
-
    
    $sSQL = "select * from arquivos where id = $id;"; 
    if (!$result = mysql_query($sSQL)) {

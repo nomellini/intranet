@@ -254,7 +254,6 @@
 	$tem_documentacao = conn_temDocumentacao($id_chamado);	
 	$JaFoiParaBase = connChamadoJaEstaNaBaseWeb($id_chamado);
 ?><script src="../scripts/jquery-1.4.2.js"></script>		
-
 <script language="JavaScript" type="text/javascript" src="../scripts/formataData.js"></script>
 
 <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
@@ -458,9 +457,7 @@
         <div align="center"> 
           <p><a name="Contato"></a>Novo Contato [<a href="#Inicio">navegar para o inicio</a>]<br>
           </p>
-		  <p>
-		  <? 			echo $LinkGrhNet;		   ?>          
-		  </p>
+
         </div>
         <table width="98%" border="0" align="center">
           <tr valign="bottom">
@@ -599,7 +596,12 @@
                 </textarea> 
               </p>
 
-
+		  <p>
+		  <? if ($Usuario_Area == 1) { ?>    
+	          <input type="button" onClick="javascript:InserirNaRetaguarda()" value="Solicitar ajuda" />
+              <span id="solicitaajuda"></span> :: <a href="./retaguarda/index.php" target="new">Ver fila </a>
+<? } ?>              
+		  </p>
 <?
 	$restricoesUsuario = funcoesObterRestricaoChamadoUsuario($ok, $id_chamado);
 	if (count($restricoesUsuario)>0) {
@@ -1725,3 +1727,14 @@ order by hora ";
   
 </body>
 </html>
+<script>
+	function InserirNaRetaguarda() {
+		$.ajax({
+			url: "InsereFilaRetaguarda.php?IdConsultor=<?=$id_usuario?>&IdChamado=<?=$id_chamado?>",
+			context: document.body		
+		}).done(function() {
+			var elemento = document.getElementById('solicitaajuda');			
+			elemento.innerText = "Inserido na fila de ajuda";
+		});
+	}
+</script>

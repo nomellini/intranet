@@ -304,6 +304,12 @@ $totalRows_rsEstadoConsulto = mysql_num_rows($rsEstadoConsulto);
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Language" content="pt-br" />
 <link rel="stylesheet" href="stilos.css" type="text/css">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+<script src="js/toastr.js"></script>
+<link href="css/toastr.css" rel="stylesheet"/>
+
+
 <!-- Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/ -->
 <STYLE>
 .subbarfont { 
@@ -1760,6 +1766,22 @@ function mudaStatusParaDisponivel()
 	  document.form_novocontato.submit();
 	  
   }
+  
+
+
+		  <? if ($area == CONSULTORIA) { 
+		  			$qtde = conn_ExecuteScalar("select count(1) from retaguarda_fila where Ic_Status = 1");
+					if ($qtde > 0) {
+		   ?>    
+		
+		 toastr["error"]('<a href="./retaguarda/index.php" target="_blank"><?=$qtde?> pedido(s) de retaguarda!</a>')						 
+		  <? 		} 
+		  		}
+		  ?>              
+
+  
+    
+  
 </script>
 <?php
 	mysql_free_result($rsStatusConsultor);

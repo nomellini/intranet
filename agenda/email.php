@@ -1,5 +1,5 @@
 <?
-require("../a/scripts/conn.php");		
+require("../a/cabeca.php");		
 
 
 if ($codigo) {
@@ -51,14 +51,14 @@ $campo1<br>
 <i>$mensagem</i><br>
 -------------------------------------------------------------<br>
 Esta mensagem foi enviada pela Intranet DATAMACE, no link abaixo:<br>
-<a href=http://192.168.0.5/corporativo/qt/equipesincera/index.php?codigo=$codigo1>Para Responder este email, Clique aqui</a>
+<a href=http://192.168.0.14/corporativo/qt/equipesincera/index.php?codigo=$codigo1>Para Responder este email, Clique aqui</a>
 <br>
-<a href=http://192.168.0.5/corporativo/qt/equipesincera/index.php>Para enviar um email, clique aqui.</a>
+<a href=http://192.168.0.14/corporativo/qt/equipesincera/index.php>Para enviar um email, clique aqui.</a>
 <br>
 De: $de<br>
 Para: $para
 ";
 mail2($para, $assunto, $body, $de);
-mail2("fernando.nomellini@datamace.com.br", $assunto . " - $id - $codigo1", $body, $de);
+//mail2("fernando.nomellini@datamace.com.br", $assunto . " - $id - $codigo1", $body, $de);
 Header("Location: ../corporativo/qt/equipesincera/index.php?msg=OK");
 ?>

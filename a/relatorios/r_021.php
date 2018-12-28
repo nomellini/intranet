@@ -1,4 +1,7 @@
-<?php require_once('../../Connections/sad.php'); ?>
+<?php 
+
+  require("../cabeca.php");	
+?>
 <?php
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
@@ -29,21 +32,21 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsMotivo = "SELECT * FROM motivo WHERE motivo <> '' ORDER BY motivo ASC";
-$rsMotivo = mysql_query($query_rsMotivo, $sad) or die(mysql_error());
+$rsMotivo = mysql_query($query_rsMotivo) or die(mysql_error());
 $row_rsMotivo = mysql_fetch_assoc($rsMotivo);
 $totalRows_rsMotivo = mysql_num_rows($rsMotivo);
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsTipoContato = "SELECT * FROM origem WHERE origem <> '' ORDER BY origem ASC";
-$rsTipoContato = mysql_query($query_rsTipoContato, $sad) or die(mysql_error());
+$rsTipoContato = mysql_query($query_rsTipoContato) or die(mysql_error());
 $row_rsTipoContato = mysql_fetch_assoc($rsTipoContato);
 $totalRows_rsTipoContato = mysql_num_rows($rsTipoContato);
 ?><?
-	require("../scripts/conn.php");	
+
 	require("../scripts/stats.php");	
-	require("../scripts/classes.php");	
+
 	if ( isset($id_usuario) ) {
 		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );	  
 		if ($ok<>$id_usuario) { header("Location: index.php"); }
@@ -117,7 +120,7 @@ $totalRows_rsTipoContato = mysql_num_rows($rsTipoContato);
 <html>
 <head>
 <title>Relat&oacute;rio S.A.D.</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 <link rel="stylesheet" href="/stilos.css" type="text/css">
 </head> <body bgcolor="#FFFFFF" background="../../imagens/fundo.gif" text="#000000"> 
@@ -137,7 +140,7 @@ $totalRows_rsTipoContato = mysql_num_rows($rsTipoContato);
 </table>
 <hr color=#ff0000 noshade size="1">
 <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><font size="1"> 
-<?echo "Ol·, $nomeusuario, hoje È ";?>
+<?echo "Ol√°, $nomeusuario, hoje √© ";?>
 </font><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
 <script language="JavaScript">
 
@@ -157,7 +160,7 @@ function limpa() {
   function seleciona() {
     window.name = "pai";
     value = document.form.id_cliente.value;
-    window.open('../selecionacliente.php?id_cliente='+value, "SeleÁ„o", "scrollbars=yes, height=488, width=600");
+    window.open('../selecionacliente.php?id_cliente='+value, "Sele√ß√£o", "scrollbars=yes, height=488, width=600");
   }
 
 function fdata(src) {
@@ -168,16 +171,16 @@ function fdata(src) {
       var mesescrito = new Array;
     
       diasemana[1] = "segunda-feira";
-      diasemana[2] = "terÁa-feira";
+      diasemana[2] = "ter√ßa-feira";
       diasemana[3] = "quarta-feira";
       diasemana[4] = "quinta-feira";
       diasemana[5] = "sexta-feira";
-      diasemana[6] = "s·bado";
+      diasemana[6] = "s√°bado";
       diasemana[7] = "domingo";
      
       mesescrito[0] = "Janeiro";
       mesescrito[1] = "Fevereiro";
-      mesescrito[2] = "MarÁo";
+      mesescrito[2] = "Mar√ßo";
       mesescrito[3] = "Abril";
       mesescrito[4] = "Maio";
       mesescrito[5] = "Junho";
@@ -273,7 +276,7 @@ e
           </tr>
           <tr>
             <td>Categoria</td>
-            <td><span id=cat>SeleÁ„o de categoria</span></td>
+            <td><span id=cat>Sele√ß√£o de categoria</span></td>
           </tr>
           <tr>
             <td>cujo diagn&oacute;stico foi</td>

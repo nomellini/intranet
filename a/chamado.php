@@ -1,5 +1,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="../scripts/jquery-1.4.2.min.js"></script>		
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+
 <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 <script language="JavaScript" type="text/javascript" src="../scripts/formataData.js"></script>
 <script type="text/javascript" charset="utf-8">
@@ -374,6 +377,15 @@
                <input name="userfile[]" type="file"  multiple='multiple' class="borda_fina" size="50">
                <br>
 		      <div id="additionalEmails"></div>			  
+              
+		  <p>
+		  <? if ($Usuario_Area == 1) { ?>    
+	          <input type="button" onClick="javascript:InserirNaRetaguarda()" value="Solicitar ajuda" />
+              <span id="solicitaajuda"></span> :: <a href="./retaguarda/index.php" target="new">Ver fila </a>
+<? } ?>              
+		  </p>
+              
+              
               <input name="button" type="button" class="borda_fina" id="addFieldButton"  value="Anexar + Arquivo" >			  
               <input type="hidden" name="MAX_FILE_SIZE" value="99999999">
 			  <br>			  
@@ -1004,6 +1016,19 @@ function validateEmail(email) {
 } 
 
 
+</script>
+
+
+<script>
+	function InserirNaRetaguarda() {
+		$.ajax({
+			url: "InsereFilaRetaguarda.php?IdConsultor=<?=$id_usuario?>&IdChamado=<?=$chamado?>",
+			context: document.body		
+		}).done(function() {
+			var elemento = document.getElementById('solicitaajuda');			
+			elemento.innerText = "Inserido na fila de ajuda";
+		});
+	}
 </script>
 
 

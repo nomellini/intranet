@@ -3340,5 +3340,13 @@ function hms($segundos)
 	return $horas . ':' . str_pad( $minutos, 2, '0', STR_PAD_LEFT) . ':' . str_pad( $segundos,2, '0', STR_PAD_LEFT);
 }
 
+	function conn_InserirNaFilaRetaguarda($IdConsultor, $IdChamado)
+	{
+		$qtde = conn_ExecuteScalar("select count(1) from retaguarda_fila where Ic_Status = 1 and Id_Consultor = $IdConsultor and Id_Chamado = $IdChamado");
+		if ($qtde == 0)
+		{
+			conn_ExecuteNonQuery("insert into retaguarda_fila (Dt_Solicitacao, Id_Consultor, Id_Chamado) values (now(), $IdConsultor, $IdChamado);");
+		}
+	}
 
 ?>

@@ -1,5 +1,5 @@
 <?
-$ACESSO = 'S'; // Verifica se o acesso é permitido de acordo com o usuário
+$ACESSO = 'S'; // Verifica se o acesso Ã© permitido de acordo com o usuÃ¡rio
 include_once ('cabeca.inc.php');
 
 	 $sSQL = "SELECT count(evento) as tot_a1 from avaliatre as aval
@@ -75,158 +75,158 @@ include_once ('cabeca.inc.php');
 	 $tot_a12 = $linha->tot_a12;
 
      $sSQL = "SELECT count(evento) as tot_b1 from avaliatre as aval
-     where month(data) = '01' and year(data) = $ano and evento = 'PONTO ELETRÔNICO' and flagTipo = '2'  ";
+     where month(data) = '01' and year(data) = $ano and evento = 'PONTO ELETRÃ”NICO' and flagTipo = '2'  ";
 	 $result13 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result13);
 	 $tot_b1 = $linha->tot_b1;
 
      $sSQL = "SELECT count(evento) as tot_b2 from avaliatre as aval
-     where month(data) = '02' and year(data) = $ano and evento = 'PONTO ELETRÔNICO' and flagTipo = '2'  ";
+     where month(data) = '02' and year(data) = $ano and evento = 'PONTO ELETRÃ”NICO' and flagTipo = '2'  ";
 	 $result14 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result14);
 	 $tot_b2 = $linha->tot_b2;
 
      $sSQL = "SELECT count(evento) as tot_b3 from avaliatre as aval
-     where month(data) = '03' and year(data) = $ano and evento = 'PONTO ELETRÔNICO' and flagTipo = '2'  ";
+     where month(data) = '03' and year(data) = $ano and evento = 'PONTO ELETRÃ”NICO' and flagTipo = '2'  ";
 	 $result15 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result15);
 	 $tot_b3 = $linha->tot_b3;
 
 	 $sSQL = "SELECT count(evento) as tot_b4 from avaliatre as aval
-     where month(data) = '04' and year(data) = $ano and evento = 'PONTO ELETRÔNICO' and flagTipo = '2'  ";
+     where month(data) = '04' and year(data) = $ano and evento = 'PONTO ELETRÃ”NICO' and flagTipo = '2'  ";
 	 $result16 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result16);
 	 $tot_b4 = $linha->tot_b4;
 
 	 $sSQL = "SELECT count(evento) as tot_b5 from avaliatre as aval
-     where month(data) = '05' and year(data) = $ano and evento = 'PONTO ELETRÔNICO' and flagTipo = '2'  ";
+     where month(data) = '05' and year(data) = $ano and evento = 'PONTO ELETRÃ”NICO' and flagTipo = '2'  ";
 	 $result17 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result17);
 	 $tot_b5 = $linha->tot_b5;
 
 	 $sSQL = "SELECT count(evento) as tot_b6 from avaliatre as aval
-     where month(data) = '06' and year(data) = $ano and evento = 'PONTO ELETRÔNICO' and flagTipo = '2'  ";
+     where month(data) = '06' and year(data) = $ano and evento = 'PONTO ELETRÃ”NICO' and flagTipo = '2'  ";
 	 $result18 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result18);
 	 $tot_b6 = $linha->tot_b6;
 
 	 $sSQL = "SELECT count(evento) as tot_b7 from avaliatre as aval
-     where month(data) = '07' and year(data) = $ano and evento = 'PONTO ELETRÔNICO' and flagTipo = '2'  ";
+     where month(data) = '07' and year(data) = $ano and evento = 'PONTO ELETRÃ”NICO' and flagTipo = '2'  ";
 	 $result19 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result19);
 	 $tot_b7 = $linha->tot_b7;
 
 	 $sSQL = "SELECT count(evento) as tot_b8 from avaliatre as aval
-     where month(data) = '08' and year(data) = $ano and evento = 'PONTO ELETRÔNICO' and flagTipo = '2'  ";
+     where month(data) = '08' and year(data) = $ano and evento = 'PONTO ELETRÃ”NICO' and flagTipo = '2'  ";
 	 $result20 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result20);
 	 $tot_b8 = $linha->tot_b8;
 
 	 $sSQL = "SELECT count(evento) as tot_b9 from avaliatre as aval
-     where month(data) = '09' and year(data) = $ano and evento = 'PONTO ELETRÔNICO' and flagTipo = '2'  ";
+     where month(data) = '09' and year(data) = $ano and evento = 'PONTO ELETRÃ”NICO' and flagTipo = '2'  ";
 	 $result21 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result21);
 	 $tot_b9 = $linha->tot_b9;
 
 	 $sSQL = "SELECT count(evento) as tot_b10 from avaliatre as aval
-     where month(data) = '10' and year(data) = $ano and evento = 'PONTO ELETRÔNICO' and flagTipo = '2'  ";
+     where month(data) = '10' and year(data) = $ano and evento = 'PONTO ELETRÃ”NICO' and flagTipo = '2'  ";
 	 $result22 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result22);
 	 $tot_b10 = $linha->tot_b10;
 
 	 $sSQL = "SELECT count(evento) as tot_b11 from avaliatre as aval
-     where month(data) = '11' and year(data) = $ano and evento = 'PONTO ELETRÔNICO' and flagTipo = '2'  ";
+     where month(data) = '11' and year(data) = $ano and evento = 'PONTO ELETRÃ”NICO' and flagTipo = '2'  ";
 	 $result23 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result23);
 	 $tot_b11 = $linha->tot_b11;
 
 	 $sSQL = "SELECT count(evento) as tot_b12 from avaliatre as aval
-     where month(data) = '12' and year(data) = $ano and evento = 'PONTO ELETRÔNICO' and flagTipo = '2'  ";
+     where month(data) = '12' and year(data) = $ano and evento = 'PONTO ELETRÃ”NICO' and flagTipo = '2'  ";
 	 $result24 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result24);
 	 $tot_b12 = $linha->tot_b12;
 
 
      $sSQL = "SELECT count(evento) as tot_c1 from avaliatre as aval
-     where month(data) = '01' and year(data) = $ano and evento in ('CARGOS E SALÁRIOS' , 'RECRUTAMENTO E SELEÇÃO' , 'TREINAMENTO E     COMPETÊNCIA' , 'SEGURANÇA E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÇÃO E DESEMPENHO' , 'SERVIÇO SOCIAL' , 'RELAÇÕES       		
-	 TRABALHISTAS' , 'ORÇAMENTO PESSOAL' , 'COMPETÊNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2' ";
+     where month(data) = '01' and year(data) = $ano and evento in ('CARGOS E SALÃRIOS' , 'RECRUTAMENTO E SELEÃ‡ÃƒO' , 'TREINAMENTO E     COMPETÃŠNCIA' , 'SEGURANÃ‡A E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÃ‡ÃƒO E DESEMPENHO' , 'SERVIÃ‡O SOCIAL' , 'RELAÃ‡Ã•ES       		
+	 TRABALHISTAS' , 'ORÃ‡AMENTO PESSOAL' , 'COMPETÃŠNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2' ";
 	 $result25 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result25);
 	 $tot_c1 = $linha->tot_c1;
 
      $sSQL = "SELECT count(evento) as tot_c2 from avaliatre as aval
-     where month(data) = '02' and year(data) = $ano and evento in ('CARGOS E SALÁRIOS' , 'RECRUTAMENTO E SELEÇÃO' , 'TREINAMENTO E     COMPETÊNCIA' , 'SEGURANÇA E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÇÃO E DESEMPENHO' , 'SERVIÇO SOCIAL' , 'RELAÇÕES   
-	 TRABALHISTAS' , 'ORÇAMENTO PESSOAL' , 'COMPETÊNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
+     where month(data) = '02' and year(data) = $ano and evento in ('CARGOS E SALÃRIOS' , 'RECRUTAMENTO E SELEÃ‡ÃƒO' , 'TREINAMENTO E     COMPETÃŠNCIA' , 'SEGURANÃ‡A E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÃ‡ÃƒO E DESEMPENHO' , 'SERVIÃ‡O SOCIAL' , 'RELAÃ‡Ã•ES   
+	 TRABALHISTAS' , 'ORÃ‡AMENTO PESSOAL' , 'COMPETÃŠNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
 	 $result26 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result26);
 	 $tot_c2 = $linha->tot_c2;
 	 
      $sSQL = "SELECT count(evento) as tot_c3 from avaliatre as aval
-     where month(data) = '03' and year(data) = $ano and evento in ('CARGOS E SALÁRIOS' , 'RECRUTAMENTO E SELEÇÃO' , 'TREINAMENTO E     COMPETÊNCIA' , 'SEGURANÇA E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÇÃO E DESEMPENHO' , 'SERVIÇO SOCIAL' , 'RELAÇÕES   
-	 TRABALHISTAS' , 'ORÇAMENTO PESSOAL' , 'COMPETÊNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
+     where month(data) = '03' and year(data) = $ano and evento in ('CARGOS E SALÃRIOS' , 'RECRUTAMENTO E SELEÃ‡ÃƒO' , 'TREINAMENTO E     COMPETÃŠNCIA' , 'SEGURANÃ‡A E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÃ‡ÃƒO E DESEMPENHO' , 'SERVIÃ‡O SOCIAL' , 'RELAÃ‡Ã•ES   
+	 TRABALHISTAS' , 'ORÃ‡AMENTO PESSOAL' , 'COMPETÃŠNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
 	 $result27 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result27);
 	 $tot_c3 = $linha->tot_c3;
 
 	 $sSQL = "SELECT count(evento) as tot_c4 from avaliatre as aval
-     where month(data) = '04' and year(data) = $ano and evento in ('CARGOS E SALÁRIOS' , 'RECRUTAMENTO E SELEÇÃO' , 'TREINAMENTO E     COMPETÊNCIA' , 'SEGURANÇA E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÇÃO E DESEMPENHO' , 'SERVIÇO SOCIAL' , 'RELAÇÕES 
-	 TRABALHISTAS' , 'ORÇAMENTO PESSOAL' , 'COMPETÊNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
+     where month(data) = '04' and year(data) = $ano and evento in ('CARGOS E SALÃRIOS' , 'RECRUTAMENTO E SELEÃ‡ÃƒO' , 'TREINAMENTO E     COMPETÃŠNCIA' , 'SEGURANÃ‡A E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÃ‡ÃƒO E DESEMPENHO' , 'SERVIÃ‡O SOCIAL' , 'RELAÃ‡Ã•ES 
+	 TRABALHISTAS' , 'ORÃ‡AMENTO PESSOAL' , 'COMPETÃŠNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
 	 $result28 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result28);
 	 $tot_c4 = $linha->tot_c4;
 
 	 $sSQL = "SELECT count(evento) as tot_c5 from avaliatre as aval
-     where month(data) = '05' and year(data) = $ano and evento in ('CARGOS E SALÁRIOS' , 'RECRUTAMENTO E SELEÇÃO' , 'TREINAMENTO E     COMPETÊNCIA' , 'SEGURANÇA E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÇÃO E DESEMPENHO' , 'SERVIÇO SOCIAL' , 'RELAÇÕES 
-	 TRABALHISTAS' , 'ORÇAMENTO PESSOAL' , 'COMPETÊNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
+     where month(data) = '05' and year(data) = $ano and evento in ('CARGOS E SALÃRIOS' , 'RECRUTAMENTO E SELEÃ‡ÃƒO' , 'TREINAMENTO E     COMPETÃŠNCIA' , 'SEGURANÃ‡A E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÃ‡ÃƒO E DESEMPENHO' , 'SERVIÃ‡O SOCIAL' , 'RELAÃ‡Ã•ES 
+	 TRABALHISTAS' , 'ORÃ‡AMENTO PESSOAL' , 'COMPETÃŠNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
 	 $result29 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result29);
 	 $tot_c5 = $linha->tot_c5;
 
 	 $sSQL = "SELECT count(evento) as tot_c6 from avaliatre as aval
-     where month(data) = '06' and year(data) = $ano and evento in ('CARGOS E SALÁRIOS' , 'RECRUTAMENTO E SELEÇÃO' , 'TREINAMENTO E     COMPETÊNCIA' , 'SEGURANÇA E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÇÃO E DESEMPENHO' , 'SERVIÇO SOCIAL' , 'RELAÇÕES 
-	 TRABALHISTAS' , 'ORÇAMENTO PESSOAL' , 'COMPETÊNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
+     where month(data) = '06' and year(data) = $ano and evento in ('CARGOS E SALÃRIOS' , 'RECRUTAMENTO E SELEÃ‡ÃƒO' , 'TREINAMENTO E     COMPETÃŠNCIA' , 'SEGURANÃ‡A E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÃ‡ÃƒO E DESEMPENHO' , 'SERVIÃ‡O SOCIAL' , 'RELAÃ‡Ã•ES 
+	 TRABALHISTAS' , 'ORÃ‡AMENTO PESSOAL' , 'COMPETÃŠNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
 	 $result30 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result30);
 	 $tot_c6 = $linha->tot_c6;
 
 	 $sSQL = "SELECT count(evento) as tot_c7 from avaliatre as aval
-     where month(data) = '07' and year(data) = $ano and evento in ('CARGOS E SALÁRIOS' , 'RECRUTAMENTO E SELEÇÃO' , 'TREINAMENTO E     COMPETÊNCIA' , 'SEGURANÇA E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÇÃO E DESEMPENHO' , 'SERVIÇO SOCIAL' , 'RELAÇÕES 
-	 TRABALHISTAS' , 'ORÇAMENTO PESSOAL' , 'COMPETÊNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
+     where month(data) = '07' and year(data) = $ano and evento in ('CARGOS E SALÃRIOS' , 'RECRUTAMENTO E SELEÃ‡ÃƒO' , 'TREINAMENTO E     COMPETÃŠNCIA' , 'SEGURANÃ‡A E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÃ‡ÃƒO E DESEMPENHO' , 'SERVIÃ‡O SOCIAL' , 'RELAÃ‡Ã•ES 
+	 TRABALHISTAS' , 'ORÃ‡AMENTO PESSOAL' , 'COMPETÃŠNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
 	 $result31 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result31);
 	 $tot_c7 = $linha->tot_c7;
 
 	 $sSQL = "SELECT count(evento) as tot_c8 from avaliatre as aval
-     where month(data) = '08' and year(data) = $ano and evento in ('CARGOS E SALÁRIOS' , 'RECRUTAMENTO E SELEÇÃO' , 'TREINAMENTO E     COMPETÊNCIA' , 'SEGURANÇA E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÇÃO E DESEMPENHO' , 'SERVIÇO SOCIAL' , 'RELAÇÕES 
-	 TRABALHISTAS' , 'ORÇAMENTO PESSOAL' , 'COMPETÊNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
+     where month(data) = '08' and year(data) = $ano and evento in ('CARGOS E SALÃRIOS' , 'RECRUTAMENTO E SELEÃ‡ÃƒO' , 'TREINAMENTO E     COMPETÃŠNCIA' , 'SEGURANÃ‡A E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÃ‡ÃƒO E DESEMPENHO' , 'SERVIÃ‡O SOCIAL' , 'RELAÃ‡Ã•ES 
+	 TRABALHISTAS' , 'ORÃ‡AMENTO PESSOAL' , 'COMPETÃŠNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
 	 $result32 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result32);
 	 $tot_c8 = $linha->tot_c8;
 
 	 $sSQL = "SELECT count(evento) as tot_c9 from avaliatre as aval
-     where month(data) = '09' and year(data) = $ano and evento in ('CARGOS E SALÁRIOS' , 'RECRUTAMENTO E SELEÇÃO' , 'TREINAMENTO E     COMPETÊNCIA' , 'SEGURANÇA E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÇÃO E DESEMPENHO' , 'SERVIÇO SOCIAL' , 'RELAÇÕES 
-	 TRABALHISTAS' , 'ORÇAMENTO PESSOAL' , 'COMPETÊNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
+     where month(data) = '09' and year(data) = $ano and evento in ('CARGOS E SALÃRIOS' , 'RECRUTAMENTO E SELEÃ‡ÃƒO' , 'TREINAMENTO E     COMPETÃŠNCIA' , 'SEGURANÃ‡A E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÃ‡ÃƒO E DESEMPENHO' , 'SERVIÃ‡O SOCIAL' , 'RELAÃ‡Ã•ES 
+	 TRABALHISTAS' , 'ORÃ‡AMENTO PESSOAL' , 'COMPETÃŠNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
 	 $result33 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result33);
 	 $tot_c9 = $linha->tot_c9;
 
 	 $sSQL = "SELECT count(evento) as tot_c10 from avaliatre as aval
-     where month(data) = '10' and year(data) = $ano and evento in ('CARGOS E SALÁRIOS' , 'RECRUTAMENTO E SELEÇÃO' , 'TREINAMENTO E     COMPETÊNCIA' , 'SEGURANÇA E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÇÃO E DESEMPENHO' , 'SERVIÇO SOCIAL' , 'RELAÇÕES 
-	 TRABALHISTAS' , 'ORÇAMENTO PESSOAL' , 'COMPETÊNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
+     where month(data) = '10' and year(data) = $ano and evento in ('CARGOS E SALÃRIOS' , 'RECRUTAMENTO E SELEÃ‡ÃƒO' , 'TREINAMENTO E     COMPETÃŠNCIA' , 'SEGURANÃ‡A E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÃ‡ÃƒO E DESEMPENHO' , 'SERVIÃ‡O SOCIAL' , 'RELAÃ‡Ã•ES 
+	 TRABALHISTAS' , 'ORÃ‡AMENTO PESSOAL' , 'COMPETÃŠNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
 	 $result34 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result34);
 	 $tot_c10 = $linha->tot_c10;
 
 	 $sSQL = "SELECT count(evento) as tot_c11 from avaliatre as aval
-     where month(data) = '11' and year(data) = $ano and evento in ('CARGOS E SALÁRIOS' , 'RECRUTAMENTO E SELEÇÃO' , 'TREINAMENTO E     COMPETÊNCIA' , 'SEGURANÇA E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÇÃO E DESEMPENHO' , 'SERVIÇO SOCIAL' , 'RELAÇÕES 
-	 TRABALHISTAS' , 'ORÇAMENTO PESSOAL' , 'COMPETÊNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
+     where month(data) = '11' and year(data) = $ano and evento in ('CARGOS E SALÃRIOS' , 'RECRUTAMENTO E SELEÃ‡ÃƒO' , 'TREINAMENTO E     COMPETÃŠNCIA' , 'SEGURANÃ‡A E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÃ‡ÃƒO E DESEMPENHO' , 'SERVIÃ‡O SOCIAL' , 'RELAÃ‡Ã•ES 
+	 TRABALHISTAS' , 'ORÃ‡AMENTO PESSOAL' , 'COMPETÃŠNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
 	 $result35 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result35);
 	 $tot_c11 = $linha->tot_c11;
 
 	 $sSQL = "SELECT count(evento) as tot_c12 from avaliatre as aval
-     where month(data) = '12' and year(data) = $ano and evento in ('CARGOS E SALÁRIOS' , 'RECRUTAMENTO E SELEÇÃO' , 'TREINAMENTO E     COMPETÊNCIA' , 'SEGURANÇA E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÇÃO E DESEMPENHO' , 'SERVIÇO SOCIAL' , 'RELAÇÕES 
-	 TRABALHISTAS' , 'ORÇAMENTO PESSOAL' , 'COMPETÊNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
+     where month(data) = '12' and year(data) = $ano and evento in ('CARGOS E SALÃRIOS' , 'RECRUTAMENTO E SELEÃ‡ÃƒO' , 'TREINAMENTO E     COMPETÃŠNCIA' , 'SEGURANÃ‡A E TRABALHO' , 'MEDICINA OCUPACIONAL' , 'AVALIAÃ‡ÃƒO E DESEMPENHO' , 'SERVIÃ‡O SOCIAL' , 'RELAÃ‡Ã•ES 
+	 TRABALHISTAS' , 'ORÃ‡AMENTO PESSOAL' , 'COMPETÃŠNCIAS' , 'DESEMPENHO E CARREIRA') and flagTipo = '2'  ";
 	 $result36 = mysql_query($sSQL);
 	 $linha = mysql_fetch_object($result36);
 	 $tot_c12 = $linha->tot_c12;
@@ -241,7 +241,7 @@ include_once ('cabeca.inc.php');
 <style type="text/css">
 </style>
 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="/Templates/stilo.css" type="text/css">
 <style type="text/css">
 <!--

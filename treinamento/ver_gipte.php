@@ -1,5 +1,5 @@
 <?
-$ACESSO = 'S'; // Verifica se o acesso é permitido de acordo com o usuário
+$ACESSO = 'S'; // Verifica se o acesso Ã© permitido de acordo com o usuÃ¡rio
 $ExternoPermitido = "S";
 include_once ('cabeca.inc.php');
 
@@ -27,6 +27,9 @@ table {
 }
 </style>
 <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.8.9.custom.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
 <script language="JavaScript" type="text/javascript" src="scripts/jquery-1.4.4.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="scripts/jquery-ui-1.8.9.custom.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="scripts/grid.locale-pt-br.js"></script>
@@ -259,7 +262,7 @@ if ($agrupamento == 'P'){
 						<th width="8%" align="center">Perguntas</th>
 						<th colspan="3" align="center">1&ordm; Prova</th>
 						<th colspan="4" align="center">2&ordm; Prova</th>
-						<th width="33%">Observação</th>
+						<th width="33%">ObservaÃ§Ã£o</th>
 					</tr>
 					<?
 			}

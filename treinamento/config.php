@@ -2,9 +2,9 @@
 // Autor: Lucas Oliveira Silva 
 // Data: 05/05/2011 11:07
 // Local: Datamace
-// Objetivo: Libera as provas, de acordo com a matÈria, tipo, data e hor·rios
+// Objetivo: Libera as provas, de acordo com a mat√©ria, tipo, data e hor√°rios
 
-$ACESSO = 'S'; // Verifica se o acesso È permitido de acordo com o usu·rio
+$ACESSO = 'S'; // Verifica se o acesso √© permitido de acordo com o usu√°rio
 $ExternoPermitido = "S";
 include_once ('cabeca.inc.php');
 
@@ -131,9 +131,8 @@ $check_conf_libera_aval['1']			= 'checked';
 $check_conf_tipo_padrao[$conf_tipo_padrao] = 'checked';
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
-<!-- #BeginTemplate "/Templates/menu.dwt" --><!-- DW6 -->
+
+<html><!-- #BeginTemplate "/Templates/menu.dwt" --><!-- DW6 -->
 <head>
 <!-- #BeginEditable "doctitle" -->
 <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.8.9.custom.css">
@@ -209,51 +208,44 @@ $check_conf_tipo_padrao[$conf_tipo_padrao] = 'checked';
 
 </script>
 <!-- #EndEditable -->
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="/Templates/stilo.css" type="text/css">
 <style type="text/css">
 <!--
-.style1 {
-	color: #FFFFFF
-}
-.style2 {
-	font-size: 18px;
-	font-weight: normal;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	color: #FFFFFF;
-}
-.style3 {
-	color: #000099
-}
+.style1 {color: #FFFFFF}
+.style2 {font-size: 18px; font-weight: normal; font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF;}
+.style3 {color: #000099}
 -->
 </style>
 </head>
 <body bgcolor="#FFFFFF">
 <div align="center">
-	<table width="100%" border="0">
-		<tr>
-			<td><table width="100%" border="0" bordercolorlight="#FFCC30" bordercolordark="#FFCC38" class="bgTabela" bordercolor="#FF0000">
-					<tr align="center" valign="middle">
-						<td width="17%"><div align="center" class="style1">
-								<div align="left"><a href="http://www.datamace.com.br"><img src="../imagens/novologo.jpg" width="155" height="41" border="0"> </a></div>
-							</div></td>
-						<td width="60%" valign="middle"><p class="style1"><font face="Verdana, Arial, Helvetica, sans-serif" class="style2">Intranet 
-								DATAMACE</font></p></td>
-						<td width="23%" valign="bottom" align="right"><span class="style1"><font size="1"> <font class="unnamed1"> 
-							<script language="JavaScript">
+  <table width="100%" border="0">
+    <tr>
+      <td>
+        <table width="100%" border="0" bordercolorlight="#FFCC30" bordercolordark="#FFCC38" class="bgTabela" bordercolor="#FF0000">
+          <tr align="center" valign="middle">
+            <td width="17%"> <div align="center" class="style1">
+              <div align="left"><a href="http://www.datamace.com.br"><img src="../imagens/novologo.jpg" width="155" height="41" border="0">
+                </a></div>
+            </div></td>
+            <td width="60%" valign="middle"> <p class="style1"><font face="Verdana, Arial, Helvetica, sans-serif" class="style2">Intranet
+            DATAMACE</font></p></td>
+            <td width="23%" valign="bottom" align="right"><span class="style1"><font size="1"> <font class="unnamed1">
+              <script language="JavaScript">
       var diasemana = new Array;
-      var mesescrito = new Array;   
+      var mesescrito = new Array;
       diasemana[1] = "Segunda-feira";
-      diasemana[2] = "TerÁa-feira";
+      diasemana[2] = "Ter√ßa-feira";
       diasemana[3] = "Quarta-feira";
       diasemana[4] = "Quinta-feira";
       diasemana[5] = "Sexta-feira";
-      diasemana[6] = "S·bado";
+      diasemana[6] = "S√°bado";
       diasemana[0] = "Domingo";
-     
+
       mesescrito[0] = "Janeiro";
       mesescrito[1] = "Fevereiro";
-      mesescrito[2] = "MarÁo";
+      mesescrito[2] = "Mar√ßo";
       mesescrito[3] = "Abril";
       mesescrito[4] = "Maio";
       mesescrito[5] = "Junho";
@@ -273,25 +265,25 @@ $check_conf_tipo_padrao[$conf_tipo_padrao] = 'checked';
       dia = datahoje.getDate();
       mes = datahoje.getMonth();
       ano = datahoje.getYear();
-      diaindex = datahoje.getDay();   
+      diaindex = datahoje.getDay();
      document.write (diasemana[diaindex] + '<br>' + dia + ' de ' + mesescrito[mes] + ' de ' + ano);
 
-              </script> 
-							</font> </font></span></td>
-					</tr>
-				</table>
-				<table width="100%" border="0" bordercolorlight="#FFCC30" bordercolordark="#FFCC30" class="bgTabela">
-					<tr>
-						<td width="77%" align="left" valign="top" bgcolor="#FFFFFF"><!-- #BeginEditable "Centro" -->
+              </script>
+              </font> </font></span></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" bordercolorlight="#FFCC30" bordercolordark="#FFCC30" class="bgTabela">
+          <tr>
+            <td width="77%" align="left" valign="top" bgcolor="#FFFFFF"><!-- #BeginEditable "Centro" -->
 							<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" name="form" id="form" >
 								<input type="hidden" name="id_opc" id="id_opc">
 								<input type="hidden" name="msgok" id="msgok" value="<?=$msgok ?>">
 								<input type="hidden" name="msg" id="msg" value="<?=$msg ?>">
 								<p>&nbsp;</p>
-								<p class="TituloTreino" align="center">LiberaÁ„o de Provas / Dias de prova</p>
+								<p class="TituloTreino" align="center">Libera√ß√£o de Provas / Dias de prova</p>
 								<table width="89%" align="center">
 									<tr>
-										<td width="28%" align="right" id="e_conf_id">CÛdigo :</td>
+										<td width="28%" align="right" id="e_conf_id">C√≥digo :</td>
 										<td width="72%"><input type="text" name="conf_id" id="conf_id" maxlength="10" value="<?=$conf_id ?>" class="TXTINT TXTLOAD" help="config" helpid_opc="1" pri_focu="S" btn_navega="S"></td>
 									</tr>
 									<tr>
@@ -299,7 +291,7 @@ $check_conf_tipo_padrao[$conf_tipo_padrao] = 'checked';
 										<td><input type="text" name="conf_data" id="conf_data" value="<?=$conf_data ?>" class="TXTDATE" calendario="S"></td>
 									</tr>
 									<tr>
-										<td align="right" id="e_conf_horario">Hor·rio :</td>
+										<td align="right" id="e_conf_horario">Hor√°rio :</td>
 										<td><input type="text" name="conf_hora_inicial" id="conf_hora_inicial" maxlength="5" size="5" value="<?=$conf_hora_inicial ?>" class="TXTHORA">
 											a
 											<input type="text" name="conf_hora_final" id="conf_hora_final" maxlength="5" size="5" value="<?=$conf_hora_final ?>" class="TXTHORA"></td>
@@ -323,9 +315,9 @@ $check_conf_tipo_padrao[$conf_tipo_padrao] = 'checked';
 										<td colspan="2">&nbsp;</td>
 									</tr>
 									<tr>
-										<td align="right">AvaliaÁ„o do Treinamento:</td>
+										<td align="right">Avalia√ß√£o do Treinamento:</td>
 										<td><input name="conf_libera_aval_tre" id="conf_libera_aval_tre" type="checkbox" value="1" <?=$check_conf_libera_aval[$conf_libera_aval_tre] ?>>
-											-> N„o filtra por hor·rio</td>
+											-> N√£o filtra por hor√°rio</td>
 									</tr>
 									<tr>
 										<td align="right" id="e_conf_tipo_padrao">Tipo do Evento :</td>
@@ -335,22 +327,22 @@ $check_conf_tipo_padrao[$conf_tipo_padrao] = 'checked';
 											Palestra
 											<input type="radio" id="conf_tipo_padrao" name="conf_tipo_padrao" value="WORKSHOP" <?=$check_conf_tipo_padrao["WORKSHOP"] ?>/>
 											Workshop
-											<input type="radio" id="tipo" name="conf_tipo_padrao" value="SEMIN&Aacute;RIO" <?=$check_conf_tipo_padrao["SEMIN¡RIO"] ?>/>
+											<input type="radio" id="tipo" name="conf_tipo_padrao" value="SEMIN&Aacute;RIO" <?=$check_conf_tipo_padrao["SEMIN√ÅRIO"] ?>/>
 											Semin&aacute;rio
 											<input type="radio" id="conf_tipo_padrao" name="conf_tipo_padrao" value="OUTROS" <?=$check_conf_tipo_padrao["OUTROS"] ?>/>
 											Outros</td>
 									</tr>
 									<tr>
 										<td align="right" id="e_conf_evento_padrao">Evento :</td>
-										<td><input type="text" name="conf_evento_padrao" id="conf_evento_padrao" mxlength="50" size="50" value="<?=$conf_evento_padrao ?>" title="Nome do evento ao qual est· liberando a Prova/Evento. Se preenchido o cliente n„o precisar· preencher"></td>
+										<td><input type="text" name="conf_evento_padrao" id="conf_evento_padrao" mxlength="50" size="50" value="<?=$conf_evento_padrao ?>" title="Nome do evento ao qual est√° liberando a Prova/Evento. Se preenchido o cliente n√£o precisar√° preencher"></td>
 									</tr>
 									<tr>
 										<td align="right" id="e_conf_instrutor_padrao">Palestrante / Instrutor :</td>
-										<td><? $db->comboBox("select ins_id, ins_nome from instrutor " . (($conf_novo) ? " where ins_ativo = 'S'" : ""), $conf_instrutor_padrao, "conf_instrutor_padrao","","S", 'title="Instrutor que est· aplicando a Prova/Evento. Se preenchido o cliente n„o precisar· preencher"'); ?></td>
+										<td><? $db->comboBox("select ins_id, ins_nome from instrutor " . (($conf_novo) ? " where ins_ativo = 'S'" : ""), $conf_instrutor_padrao, "conf_instrutor_padrao","","S", 'title="Instrutor que est√° aplicando a Prova/Evento. Se preenchido o cliente n√£o precisar√° preencher"'); ?></td>
 									</tr>
 									<tr>
 										<td align="right" id="e_conf_local_padrao">Local :</td>
-										<td><input type="text" name="conf_local_padrao" id="conf_local_padrao" mxlength="50" size="50" value="<?=$conf_local_padrao ?>" title="Local da Prova/Evento. Se preenchido o cliente n„o precisar· preencher"></td>
+										<td><input type="text" name="conf_local_padrao" id="conf_local_padrao" mxlength="50" size="50" value="<?=$conf_local_padrao ?>" title="Local da Prova/Evento. Se preenchido o cliente n√£o precisar√° preencher"></td>
 									</tr>									<tr>
 										<td colspan="2">&nbsp;</td>
 									</tr>
@@ -366,176 +358,188 @@ $check_conf_tipo_padrao[$conf_tipo_padrao] = 'checked';
 								</table>
 							</form>
 							<!-- #EndEditable --></td>
-						<td align="right" width="23%" valign="top" ><table width="100%" border="0" class="bgTabela">
-								<tr bgcolor="#FFCC33" valign="top">
-									<td colspan="2" class="bgTabela"><table width="90%" border="0" align="center">
-											<tr valign="top">
-												<td valign="top"><table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
-														<tr valign="top">
-															<td valign="top"><table width="100%" border="0" class="bgTabela">
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaRotulo" height="12"><a href="/corporativo/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Corporativo</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Home</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="/a/"><font face="Verdana, Arial, Helvetica, sans-serif">S.A.D</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../corporativo/mapadosite/mapasite.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Mapa 
-																			do site</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../ISO9001/Documentos/D04.PDF"><font face="Verdana, Arial, Helvetica, sans-serif">Organograma</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../assistencia/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Assist&ecirc;ncia 
-																			M&eacute;dica</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="/corporativo/dadosdaempresa.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Dados 
-																			da Empresa</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="/corporativo/aniversarios/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Anivers&aacute;rios</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../corporativo/feriados.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Pontes 
-																			e Feriados</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="/corporativo/fome.htm"><font face="Verdana, Arial, Helvetica, sans-serif">T&ocirc; 
-																			com fome</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="/servicosgerais/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Manuten&ccedil;&atilde;o</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../corporativo/escolaridade.php"><font face="Verdana, Arial, Helvetica, sans-serif">Escolaridade</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../representantes/index.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Representantes</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../suporte/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Suporte</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../corporativo/Inforvirus.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Informa&ccedil;&otilde;es 
-																			sobre v&iacute;rus</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../colaboradores/index.htm">Colaboradores</a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../saude/" target="_blank">Sa&uacute;de e Qualidade de vida</a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../eventos.htm">Eventos Datamace</a></td>
-																	</tr>
-																</table></td>
-														</tr>
-													</table>
-													<table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
-														<tr valign="top">
-															<td><table width="100%" border="0" class="bgTabela">
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td height="16" bgcolor="#CC9900" class="TabelaRotulo"><a href="../estrutura/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Estrutura</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao" height="9"><a href="/estrutura/rede.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Rede</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../estrutura/micros.php"><font face="Verdana, Arial, Helvetica, sans-serif">n&ordm; 
-																			micros</font></a></td>
-																	</tr>
-																</table></td>
-														</tr>
-													</table>
-													<table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
-														<tr valign="top">
-															<td><table width="100%" border="0" class="bgTabela">
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaRotulo" valign="top"><a href="../Apoio/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Apoio</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao" valign="top"><a href="../Apoio/emails.php"><font face="Verdana, Arial, Helvetica, sans-serif">E-mails</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao" valign="top"><a href="../Apoio/links.html"><font face="Verdana, Arial, Helvetica, sans-serif">Links</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao" valign="top"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="/corporativo/ramais.php">Ramais</a></font></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao" valign="top"><a href="/corporativo/telefones2.php"><font face="Verdana, Arial, Helvetica, sans-serif">Telefones 
-																			&uacute;teis</font></a></td>
-																	</tr>
-																</table></td>
-														</tr>
-														<tr valign="top">
-															<td><table width="100%" border="0" class="bgTabela">
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaRotulo"><a href="../entretenimento/index.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Entretenimento</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../entretenimento/filmes/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Videoteca</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../entretenimento/livros/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Biblioteca</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="/entretenimento/enquetes.php"><font face="Verdana, Arial, Helvetica, sans-serif">Enquetes</font></a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../entretenimento/mural.htm">Mural 
-																			de an&uacute;ncios</a></td>
-																	</tr>
-																</table>
-																<table width="100%" border="0" class="bgTabela">
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaRotulo" valign="top"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="treinamento.php">Treinamento</a></font></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao" valign="top"><a href="../treinamento">Portal</a></td>
-																	</tr>
-																</table></td>
-														</tr>
-														<tr valign="top">
-															<td><table width="100%" border="0" class="bgTabela">
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaRotulo"><a href="../Intersystem/index.htm">Intersystem</a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../Intersystem/compromisso.htm">Compromisso</a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../Intersystem/dadosintersystem.htm">Dados 
-																			da empresa</a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../Intersystem/missao.htm">Miss&atilde;o</a></td>
-																	</tr>
-																	<tr bgcolor="#CC9900" bordercolor="#CC9900">
-																		<td class="TabelaPadrao"><a href="../Intersystem/servicosclientes.htm">Servi&ccedil;os</a></td>
-																	</tr>
-																</table></td>
-														</tr>
-													</table></td>
-											</tr>
-										</table></td>
-								</tr>
-							</table></td>
-					</tr>
-				</table>
-				<br>
-				<a href="javascript:history.go(-1)"><img src="/imagens/back_seta.jpg" width="13" height="21" border="0">voltar</a> <br>
-				<hr align="center">
-				<p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#999999"> Datamace Inform&aacute;tica LTDA - Todos os diretos reservados</font></p></td>
-		</tr>
-	</table>
+            <td align="right" width="23%" valign="top" >
+              <table width="100%" border="0" class="bgTabela">
+                <tr bgcolor="#FFCC33" valign="top">
+                  <td colspan="2" class="bgTabela">
+                    <table width="90%" border="0" align="center">
+                      <tr valign="top">
+                        <td valign="top">
+                          <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
+                            <tr valign="top">
+                              <td valign="top">
+                                <table width="100%" border="0" class="bgTabela">
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaRotulo" height="12"><a href="/corporativo/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Corporativo</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Home</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="/a/"><font face="Verdana, Arial, Helvetica, sans-serif">S.A.D</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../corporativo/mapadosite/mapasite.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Mapa
+                                     do site</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../ISO9001/Documentos/D04.PDF"><font face="Verdana, Arial, Helvetica, sans-serif">Organograma</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../assistencia/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Assist&ecirc;ncia
+                                     M&eacute;dica</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="/corporativo/dadosdaempresa.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Dados
+                                     da Empresa</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="/corporativo/aniversarios/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Anivers&aacute;rios</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../corporativo/feriados.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Pontes
+                                     e Feriados</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="/corporativo/fome.htm"><font face="Verdana, Arial, Helvetica, sans-serif">T&ocirc;
+                                     com fome</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao"><a href="/servicosgerais/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Manuten&ccedil;&atilde;o</font></a>                                    </td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../corporativo/escolaridade.php"><font face="Verdana, Arial, Helvetica, sans-serif">Escolaridade</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../representantes/index.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Representantes</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../suporte/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Suporte</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../corporativo/Inforvirus.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Informa&ccedil;&otilde;es
+                                     sobre v&iacute;rus</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../colaboradores/index.htm">Colaboradores</a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../saude/" target="_blank">Sa&uacute;de e Qualidade de vida</a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../eventos.htm">Eventos Datamace</a></td>
+                                 </tr>
+                               </table>
+                              </td>
+                            </tr>
+                          </table>
+                          <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
+                            <tr valign="top">
+                              <td>
+                                <table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td height="16" bgcolor="#CC9900" class="TabelaRotulo"><a href="../estrutura/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Estrutura</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" height="9"><a href="/estrutura/rede.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Rede</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao"><a href="../estrutura/micros.php"><font face="Verdana, Arial, Helvetica, sans-serif">n&ordm;
+                                      micros</font></a></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                          <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
+                           <tr valign="top">
+                             <td> <table width="100%" border="0" class="bgTabela">
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaRotulo" valign="top"><a href="../Apoio/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Apoio</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao" valign="top"><a href="../Apoio/emails.php"><font face="Verdana, Arial, Helvetica, sans-serif">E-mails</font></a></td>
+                                 </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" valign="top"><a href="../Apoio/links.html"><font face="Verdana, Arial, Helvetica, sans-serif">Links</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" valign="top"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="/corporativo/ramais.php">Ramais</a></font></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" valign="top"><a href="/corporativo/telefones2.php"><font face="Verdana, Arial, Helvetica, sans-serif">Telefones
+                                    &uacute;teis</font></a></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                            <tr valign="top">
+                              <td><table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaRotulo"><a href="../entretenimento/index.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Entretenimento</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao"><a href="../entretenimento/filmes/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Videoteca</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao"><a href="../entretenimento/livros/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Biblioteca</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao"><a href="/entretenimento/enquetes.php"><font face="Verdana, Arial, Helvetica, sans-serif">Enquetes</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao"><a href="../entretenimento/mural.htm">Mural
+                                      de an&uacute;ncios</a></td>
+                                  </tr>
+                                </table>
+                                <table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaRotulo" valign="top"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="treinamento.php">Treinamento</a></font></td>
+                                  </tr>
+
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" valign="top"><a href="../treinamento">Portal</a></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                            <tr valign="top">
+                              <td><table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaRotulo"><a href="../Intersystem/index.htm">Intersystem</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao"><a href="../Intersystem/compromisso.htm">Compromisso</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao"><a href="../Intersystem/dadosintersystem.htm">Dados
+                                      da empresa</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao"><a href="../Intersystem/missao.htm">Miss&atilde;o</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao"><a href="../Intersystem/servicosclientes.htm">Servi&ccedil;os</a></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                          </table></td>
+
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <a href="javascript:history.go(-1)"><img src="/imagens/back_seta.jpg" width="13" height="21" border="0">voltar</a>
+        <br>
+        <hr align="center">
+        <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#999999">
+          Datamace Inform&aacute;tica LTDA - Todos os diretos reservados</font></p>
+      </td>
+    </tr>
+  </table>
 </div>
-<p align="center">&nbsp;</p>
 </body>
-<!-- #EndTemplate -->
-</html>
+<!-- #EndTemplate --></html>

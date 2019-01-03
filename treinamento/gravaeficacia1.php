@@ -35,11 +35,11 @@ include('cabeca.inc.php');
     $nome_usuario = $linha->nome;
     $email_usuario = $linha->email;
    
-   	$_smtp_host            = 'smtp.datamace.com.br';
+   	$_smtp_host            = 'pop.datamace.com.br';
 	$_smtp_port            = '587';
 	$_smtp_autentica       = 'enabled';
-	$_smtp_usuario         = 'treino@datamace.com.br';
-	$_smtp_senha           = 'treino221';
+	$_smtp_usuario         = 'sad@datamace.com.br';
+	$_smtp_senha           = 'datamace123';
 	$_confirma_recebimento  = 'N';
 	$_texto_padrao         = 'Formulário Eficácia';
 

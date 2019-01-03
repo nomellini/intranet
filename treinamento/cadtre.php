@@ -65,10 +65,10 @@ if ($id_opc == '2'){
 		}
 		if ($link_prova){
 			$opcao = 'rg';
-			$msg = "<script>alert('Registro gravado com êxito. Boa prova!');</script>";
+			$msg = "<script>alert('Registro gravado com Ãªxito. Boa prova!');</script>";
 			include($link_prova);
 		}else{
-			echo "<script>alert('Registro gravado com êxito!');</script>";
+			echo "<script>alert('Registro gravado com Ãªxito!');</script>";
 			include($linkPagina);
 		}
 		die();
@@ -106,7 +106,7 @@ if (!$empestado) $empestado = 'SP';
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Datamace Inform&aacute;tica Ltda.</title>
 <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.8.9.custom.css">
 <link rel="stylesheet" href="/Templates/stilo.css" type="text/css">
@@ -291,7 +291,7 @@ function fun_desenv(){
             <td id="e_empnome">Nome da Empresa:</td>
             <td colspan="3"><input name="empnome" type="text" id="empnome" value="<?=$empnome ?>" size="50" maxlength="150" <? if ($tot_rg) echo "readonly" ?> autocomplete="off">
                 <? if ($tot_rg){ ?>
-                A empresa não pode ser alterada
+                A empresa nÃ£o pode ser alterada
                 <? }else{ ?>
                 <input type="checkbox" id="desenv" value="S" onclick="fun_desenv();" />
                 Desenvolvimento Profissional

@@ -175,7 +175,8 @@ function FuncoesPegaChamadoPendenteUsuario_ordem($usuario, $Campo) {
 	
 	$saida = array();	
 
-	$sql .= "SELECT coalesce(s.id_usuario,0) sigame, coalesce(uco.Ic_Ordem,0) ordem, c.rnc_acao_responsavel, sis.sistema, c.datauc, c.horauc, c.Ds_Versao, c.Dt_Release, cat.categoria, data_limite_1, data_limite_2, data_limite_3, data_limite_4, "; 
+/*
+$sql .= "SELECT coalesce(s.id_usuario,0) sigame, coalesce(uco.Ic_Ordem,0) ordem, c.rnc_acao_responsavel, sis.sistema, c.datauc, c.horauc, c.Ds_Versao, c.Dt_Release, cat.categoria, data_limite_1, data_limite_2, data_limite_3, data_limite_4, "; 
 	$sql .= "ct.id_usuario as Editando_Id, ue.nome as Editando_Nome, cat.pos_venda pos_venda_ca, cp.Ic_PosVenda pos_venda_cp,";
 	$sql .= " datediff(now(), dataa) diasAbertura, datediff(now(), datauc) diasUltimoContato, ";
 	$sql .= "  c.rnc_depto_responsavel, c.rnc_prazo, dataprevistaliberacao, liberado, id_chamado_espera, "; 
@@ -183,8 +184,8 @@ function FuncoesPegaChamadoPendenteUsuario_ordem($usuario, $Campo) {
 	$sql .= "  destinatario_id, consultor_id, remetente_id, "; 
 	$sql .= "  LEFT(c.descricao, 150) as descricao, cl.id_cliente, cl.cliente, cl.telefone, "; 
 	$sql .= "  cl.senha as senhacliente, p.id_prioridade prioridadeId, p.prioridade, p.valor "; 
-	$sql .= "  , (select count(1) from chamado c2 where (c2.id_chamado_espera = c.id_chamado)) as qtde "; 
-	$sql .= "  , (select count(1) from contato_temp ct2 where (ct2.id_usuario < $usuario and  ct2.data = '" . date("Y-m-d") . "' and ct2.id_chamado = c.id_chamado)) as qtdeeditando "; 	
+//	$sql .= "  , (select count(1) from chamado c2 where (c2.id_chamado_espera = c.id_chamado)) as qtde "; 
+//	$sql .= "  , (select count(1) from contato_temp ct2 where (ct2.id_usuario < $usuario and  ct2.data = '" . date("Y-m-d") . "' and ct2.id_chamado = c.id_chamado)) as qtdeeditando "; 	
 	$sql .= "FROM "; 
 	$sql .= "  chamado c "; 
 	$sql .= "    left join cliente cl on c.cliente_id = cl.id_cliente "; 	
@@ -204,6 +205,46 @@ function FuncoesPegaChamadoPendenteUsuario_ordem($usuario, $Campo) {
 	$sql .= ") "; 		
 	$sql .= "ORDER BY   coalesce(uco.Ic_Ordem,0) desc, "; 
 	
+	*/
+	
+	
+	
+	
+	$sql = "SELECT coalesce(uco.Ic_Ordem,0) ordem, c.rnc_acao_responsavel, sis.sistema, c.datauc, c.horauc, c.Ds_Versao, c.Dt_Release, cat.categoria, data_limite_1, data_limite_2, data_limite_3, data_limite_4, ";
+
+	$sql .= "ct.id_usuario as Editando_Id, ue.nome as Editando_Nome, cat.pos_venda pos_venda_ca, cp.Ic_PosVenda pos_venda_cp,";
+	$sql .= " datediff(now(), dataa) diasAbertura, datediff(now(), datauc) diasUltimoContato, ";
+	$sql .= "  c.rnc_depto_responsavel, c.rnc_prazo, dataprevistaliberacao, liberado, id_chamado_espera, ";
+	$sql .= "  c.sistema_id, c.externo, c.rnc, c.id_chamado, c.lido, c.lidodono, c.dataa,c.horaa, c.status, ";
+	$sql .= "  destinatario_id, consultor_id, remetente_id, ";
+	$sql .= "  LEFT(c.descricao, 150) as descricao, cl.id_cliente, cl.cliente, cl.telefone, ";
+	$sql .= "  p.id_prioridade prioridadeId, p.prioridade, p.valor ";
+	$sql .= "FROM ";
+	$sql .= "  chamado c ";
+	$sql .= "    left join cliente cl on c.cliente_id = cl.id_cliente ";
+	$sql .= "    left join clienteplus cp on  cp.id_cliente = cl.id_cliente ";
+	$sql .= "    inner join prioridade p on c.prioridade_id = p.id_prioridade ";
+	$sql .= "    left join categoria cat on c.categoria_id = cat.id_categoria ";
+	$sql .= "    inner join sistema sis on c.sistema_id = sis.id_sistema ";
+	$sql .= "    left join contato_temp ct on (ct.id_chamado = c.id_chamado and ct.id_usuario = $usuario) ";
+	$sql .= "    left join usuario ue on ue.id_usuario = ct.id_usuario ";
+	$sql .= "    left join rl_chamado_usuario_ordem uco on ((uco.id_chamado = c.id_chamado) and (uco.id_usuario = $usuario)) ";
+
+	$sql .= "WHERE visible = 1 and ";
+	$sql .= "( ";
+	$sql .= "  ( (c.descricao is not null) AND (c.descricao <> '') ) ";
+	$sql .= "  AND ( (c.destinatario_id = $usuario) or (c.consultor_id = $usuario) ) ";
+	$sql .= "  AND (c.status <> 1) ";
+	$sql .= ") ";
+	$sql .= "ORDER BY   coalesce(uco.Ic_Ordem,0) desc, ";	
+	
+	
+	
+	
+	
+	
+	
+		
 	if ($Campo == "")
 	{
 		$sql .= "  p.valor, dataa desc, horaa desc "; 
@@ -566,6 +607,20 @@ function GUID()
 }
 
 
+function funcoes_ShowConfiguracoes()
+{
+	session_start();
+	$lista = "Nm_Cliente : " . $_SESSION["Nm_Cliente"] . "<br>";
+	$lista .= "Nm_Plano : " . $_SESSION["Nm_Plano"] . "<br>";
+	$lista .= "Ic_GestaoContatos: " . $_SESSION["Ic_GestaoContatos"]  . "<br>";
+	$lista .= "Ic_UploadArquivo: " . $_SESSION["Ic_UploadArquivo"] . "<br>";
+	$lista .= "EMail: ". $_SESSION["Ic_Email"] . "<br>";
+	$lista .= "Ic_BaseConhecimento: " .$_SESSION["Ic_BaseConhecimento"] . "<br>";
+	$lista .= "Ic_Relatorios: " .$_SESSION["Ic_Relatorios"]  . "<br>";
+	$lista .= "Ic_Release : " . $_SESSION["Ic_Release"]  . "<br>";
+	$lista .= "Qt_ChamadosMax : " . $_SESSION["Qt_ChamadosMax"] . "<br>";
+//	echo($lista);
+}
 
 
 

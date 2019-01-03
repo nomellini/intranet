@@ -10,14 +10,14 @@ include_once ('cabeca.inc.php');
 $db = new DB();
 
 if ($id_opc == '2') {
-	$result	= mysql_query("select count(0) from instrutor where ins_id = $ins_id");
+	$result	= mysql_query("select count(0) from treinamento.instrutor where ins_id = $ins_id");
 	$comp	= " instrutor set " .
 				" ins_id = $ins_id, " .
 				" ins_ativo = '$ins_ativo', " .
 				" ins_nome = '$ins_nome', " .
 				" ins_email = '$ins_email'";
-			
-	if (mysql_num_rows($result) > 0){
+	$Fetch = mysql_fetch_array($result);
+	if ($Fetch["qtd"] > 0){
 		$sSQL = "update " . $comp .
 				" where ins_id = $ins_id  ";
 		$msgok = 'U';
@@ -26,7 +26,6 @@ if ($id_opc == '2') {
 		$msgok = 'I';
 	}
 	mysql_query($sSQL);
-
 	$id_opc = '1';
 
 }elseif ($id_opc == '3') {
@@ -40,15 +39,12 @@ if ($id_opc == '2') {
 if ($id_opc == '1') {
 	$result	= mysql_query("select * from instrutor where ins_id = $ins_id");
 	if (mysql_num_rows($result) > 0){
-		$linha					= mysql_fetch_object($result);
+		$linha			= mysql_fetch_object($result);
 		$ins_id			= $linha->ins_id;
 		$ins_ativo		= $linha->ins_ativo;
 		$ins_nome		= $linha->ins_nome;
 		$ins_email		= $linha->ins_email;
-	}else{
-		$ins_id			= '';
-	}
-		
+	}		
 }
 
 if (!$ins_id){
@@ -198,6 +194,8 @@ if (!$ins_id){
                                         <td colspan="2"><input name="BTNGravar" id="BTNGravar" type="button" value="Gravar" />
                                             &nbsp;
                                             <input name="BTNNovo" type="button" id="BTNNovo" value="Novo" />
+                                            &nbsp;
+                                            <input name="BTNExcluir" type="button" id="BTNExcluir" value="Excluir" />
                                             &nbsp;
                                             <input name="BTNVoltar" id="BTNVoltar" type="button"  value="Voltar" voltarPara=<?=$linkPagina ?>/></td>
                                     </tr>

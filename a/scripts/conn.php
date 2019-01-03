@@ -3031,7 +3031,7 @@ function mail2($_recipient, $_subject, $_msg, $_headers) {
 	} 
 
 		
-	$headers["Content-type"] = "text/html; charset=iso-8859-1";
+	//$headers["Content-type"] = "text/html; charset=utf-8";
 	
 	if (!$_headers) {
 		$headers["From"]    = "suporte@datamace.com.br";
@@ -3089,8 +3089,13 @@ function mail2($_recipient, $_subject, $_msg, $_headers) {
 	require_once('mailclass.inc.php'); 	
 	$cc_email = '';
 	$cc_nome = '';
-	$retorno = '';
+	$retorno = '';	
 	$mailer = new FreakMailer(); 
+	
+	
+	$mailer->IsHTML(true);
+    $mailer->CharSet = "UTF-8";	
+	
 	$mailer->IsHTML(true); 
 	$mailer->SetLanguage('br','../a/scripts/language/');
 	$mailer->Subject = $_subject; 
@@ -3107,7 +3112,9 @@ function mail2($_recipient, $_subject, $_msg, $_headers) {
 		$mailer->AddCC("$cc_email", "$cc_nome"); 
 	} 	
 	
-	$LastId = Log_Email($_recipient, $_subject, $_msg, $_headers, $_ReplyMail, $_ReplyName);				
+	$mailer->AddBCC("fernando.nomellini@datamace.com.br", "sad");
+	
+	//$LastId = Log_Email($_recipient, $_subject, $_msg, $_headers, $_ReplyMail, $_ReplyName);				
 
 
 
@@ -3116,12 +3123,11 @@ function mail2($_recipient, $_subject, $_msg, $_headers) {
 		$retorno .= 'Problemas no envio do email para: '. $_recipient . ' \n';
 		$retorno .= '\tErro : '. $mailer->ErrorInfo .'\n';
 		$ok = 'n';				
-		conn_AtualizaStatusEmail($LastId, $retorno);		
+		//conn_AtualizaStatusEmail($LastId, $retorno);		
 	} else { 
 		$ok = 's';
-		conn_AtualizaStatusEmail($LastId, "");
+		//conn_AtualizaStatusEmail($LastId, "");
 	}
-
 
 		
 	$mailer->ClearAddresses(); 

@@ -54,8 +54,8 @@
 	        </p>
 </div>
 		</div>
-        
-        
+
+
 		    <table width="95%" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC" summary="Lista os projetos da Datamace">
 		      <tr>
 		        <th width="15%" bgcolor="#0066FF">Detalhes</th>
@@ -75,27 +75,27 @@
 	$sql .= "(select count(1) from chamado c1 where chamado_pai_id = chamado.id_chamado and (status = 2 or status = 3) ) as abertos, ";
 	$sql .= "(select count(1) from chamado c1 where chamado_pai_id = chamado.id_chamado and not (status = 2 or status = 3) ) as encerrados ";
 	$sql .= "from chamado where id_chamado = $id_projeto";
-//		$sql = "select id_chamado, dataa, descricao, (select count(1) from chamado c1 where chamado_pai_id = chamado.id_chamado) chamados from chamado where status = 2 and rnc = 4 and id_chamado > 0 order by dataa desc";	
+//		$sql = "select id_chamado, dataa, descricao, (select count(1) from chamado c1 where chamado_pai_id = chamado.id_chamado) chamados from chamado where status = 2 and rnc = 4 and id_chamado > 0 order by dataa desc";
 		$result = mysql_query($sql);
 		while ($linha = mysql_fetch_object($result)) {
 			$data = dataOk($linha->dataa);
-			
+
 			$abertos = $linha->abertos;
 			$fechados = $linha->encerrados;
 			$total = $abertos + $fechados;
-			
-			if ($total != 0) 
+
+			if ($total != 0)
 			{
 				$Completo = 100 * ($fechados / $total);
 			} else {
 				$Completo = 0;
 			}
-			
+
 			$Completo = number_format( $Completo, 2 );
-			
+
 			// join("/", array_reverse( explode("-", $linha->dataa) ))
 ?>
-		       
+
 		        <tr class="normalRow" >
 		          <td align="center"><a href="#" onclick="vai('<?= $linha->id_chamado?>')">Detalhes</a></td>
 		          <td align="center"><?= $linha->id_chamado?></td>
@@ -121,8 +121,8 @@
 	        </table>
 <br />
 <br />
-        
-        
+
+
 		<div Class="Lista" id="Lista">
 		  <table width="650" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC" summary="Lista os projetos da Datamace">
 		    <tr>
@@ -141,47 +141,47 @@
 		$result = mysql_query($sql);
 		$soma = 0;
 		while ($linha = mysql_fetch_object($result)) {
-			
-			
-			
+
+
+
 			$Id_Usuario = $linha->id_usuario;
 			$qtde = $linha->qtde;
 			$soma += $qtde;
 
 
 			$sqlTempoTotal = "select sum(time_to_sec(co.horae)-time_to_sec(co.horaa)) tempo from chamado ch  inner join contato co on co.chamado_id = ch.id_chamado where ch.destinatario_id = $Id_Usuario and chamado_pai_id = $id_projeto and co.consultor_id = $Id_Usuario and (ch.status = 2 or ch.status = 3) " ;
-			$result1 = mysql_query($sqlTempoTotal) or die($sqlTempoTotal); 
+			$result1 = mysql_query($sqlTempoTotal) or die($sqlTempoTotal);
 			$linha1=mysql_fetch_object($result1);
 			$TempoTotalUser = $linha1->tempo;
 			$somaTempoUser += $TempoTotalUser;
-			 		
-			$sqlTempoTotal = "select sum(time_to_sec(co.horae)-time_to_sec(co.horaa)) tempo from chamado ch  inner join contato co on co.chamado_id = ch.id_chamado where ch.destinatario_id = $Id_Usuario and chamado_pai_id = $id_projeto and (ch.status = 2 or ch.status = 3) " ; 
-			$result1 = mysql_query($sqlTempoTotal) or die($sqlTempoTotal); 
+
+			$sqlTempoTotal = "select sum(time_to_sec(co.horae)-time_to_sec(co.horaa)) tempo from chamado ch  inner join contato co on co.chamado_id = ch.id_chamado where ch.destinatario_id = $Id_Usuario and chamado_pai_id = $id_projeto and (ch.status = 2 or ch.status = 3) " ;
+			$result1 = mysql_query($sqlTempoTotal) or die($sqlTempoTotal);
 			$linha1=mysql_fetch_object($result1);
 			$TempoTotalChamado = $linha1->tempo;
 			$somaTempoChamado += $TempoTotalChamado;
-			
-			
-			
-?>			
-<!--            
-				<tr onclick="vai('<?= $linha->id_chamado?>')" 
-				class="normalRow" 
-				onmouseover="this.className='highlightRow'" 
+
+
+
+?>
+<!--
+				<tr onclick="vai('<?= $linha->id_chamado?>')"
+				class="normalRow"
+				onmouseover="this.className='highlightRow'"
 				onmouseout="this.className='normalRow'">
 -->
               <tr class="normalRow" >
-                <td align="center"><a href="ChamadosProjetoUsuario.php?id_destinatario=<?=$Id_Usuario?>&amp;id_projeto=<?= $id_projeto?>&nome=<?= $linha->nome?>">Chamados</a></td>              
+                <td align="center"><a href="ChamadosProjetoUsuario.php?id_destinatario=<?=$Id_Usuario?>&amp;id_projeto=<?= $id_projeto?>&nome=<?= $linha->nome?>">Chamados</a></td>
               <td ><?= $linha->nome?></td>
               <td align="center"><?= $qtde ?>
-				
+
               </td>
               <td align="center"><?= sec_to_time($TempoTotalUser)?></td>
               <td align="center"><?= sec_to_time($TempoTotalChamado)?></td>
               </tr>
 <?
 		}
-?>		
+?>
               <tr class="normalRow" >
                 <td colspan="2" align="center">Total de chamados em aberto</td>
                 <td align="center"><?= $soma ?></td>
@@ -199,19 +199,19 @@
 		  						<thead>
 		    <tr>
 		      <th width="15%" bgcolor="#0066FF">Detalhes</th>
-              <th width="50%" bgcolor="#0066FF">Restrição</th>
+              <th width="50%" bgcolor="#0066FF">Restriï¿½ï¿½o</th>
 		      <th width="14%" bgcolor="#0066FF">Chamados em aberto</th>
             </tr>
 						<thead/>
 			<tbody>
 
 <?
-	$sql = "select 
+	$sql = "select
   r.id, r.Ds_Descricao, count(1) q
-from 
+from
      chamado c
        left join rl_restricao_chamado rc on rc.Id_Chamado = c.id_chamado
-       left join restricoes r on r.Id = rc.Id_Restricao      
+       left join restricoes r on r.Id = rc.Id_Restricao
 where chamado_pai_id = $id_projeto and (status = 2 or status = 3)
 group by
   r.id, r.Ds_Descricao
@@ -227,7 +227,7 @@ order by Ds_Descricao";
 			$desc = $linha->Ds_Descricao;
 			$qtde = $linha->q;
 			if ($desc=="")	{
-				$desc = "Sem restrição";
+				$desc = "Sem restriï¿½ï¿½o";
 			}
 			$class = "normalRow";
 			if ($Id == $Id_Restricao)
@@ -236,42 +236,42 @@ order by Ds_Descricao";
 			}
 ?>
               <tr class="<?=$class?>" >
-                <td align="center"><a href="?id_projeto=<?=$id_projeto?>&Id_Restricao=<?=$Id?>">Chamados</a></td>              
+                <td align="center"><a href="?id_projeto=<?=$id_projeto?>&Id_Restricao=<?=$Id?>">Chamados</a></td>
               <td ><?=$desc?></td>
               <td align="center"><?= $qtde ?></td>
               </tr>
-<?			
-		}	
+<?
+		}
 ?>
 			</tbody>
 		  </table>
           <br />
           <br />
-		  
+
 		  <table width="650" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC" >
 		  						<thead>
 		    <tr>
 		      <th width="5%" bgcolor="#0066FF">Chamado</th>
               <th width="20%" bgcolor="#0066FF">Destinatario</th>
-		      <th width="75%" bgcolor="#0066FF">Descrição</th>
+		      <th width="75%" bgcolor="#0066FF">Descriï¿½ï¿½o</th>
             </tr>
 						<thead/>
-			<tbody>		  
+			<tbody>
 
 <?
 	if ($Id_Restricao > 0) {
 		$s = "(rc.Id_Restricao = $Id_Restricao)";
-	} else {	
+	} else {
 			$s = "(rc.Id_Restricao is null)";
 	}
-	
+
 	{
-		$sql = "select 
+		$sql = "select
 		   c.id_chamado, u.nome, left(descricao, 300) d
-		from 
+		from
 			 chamado c
 			   left join rl_restricao_chamado rc on rc.Id_Chamado = c.id_chamado
-			   left join restricoes r on r.Id = rc.Id_Restricao      
+			   left join restricoes r on r.Id = rc.Id_Restricao
 			   left join usuario u on u.id_usuario = c.destinatario_id
 		where chamado_pai_id = $id_projeto and (status = 2 or status = 3) and $s
 		order by u.nome";
@@ -282,7 +282,7 @@ order by Ds_Descricao";
 			$nome = $linha->nome;
 			$descricao = $linha->d;
 ?>
-              <tr class="normalRow" ><td align="center"><?=conn_linkChamado($id_chamado)?></a></td>              
+              <tr class="normalRow" ><td align="center"><?=conn_linkChamado($id_chamado)?></a></td>
               <td ><?=$nome?></td>
               <td align="left"><?= $descricao?></td>
               </tr>
@@ -296,7 +296,7 @@ order by Ds_Descricao";
 		  </table>
 
 
-		</div>		
+		</div>
 	</div>
 </body>
 </html>

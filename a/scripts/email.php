@@ -28,10 +28,20 @@
 	}
 	
 	$sistema = pegaSistema( $objChamado->sistema_id );  
-	$descricao = nl2br($objChamado->descricao);
+
+	$descricao = nl2br(conn_executeScalar("select descricao from chamado where id_chamado=$objChamado->id_chamado"));
+	
+//	$descricao = nl2br($objChamado->descricao);	
+	
 	$Prioridade = pegaPrioridade($objChamado->prioridade_id);
 
-  $msg="<p>
+  $msg="
+  
+  <head>
+	<meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" />
+  </head>
+  
+  <p>
   <font size=\"2\" face=\"Verdana, Arial, Helvetica, sans-serif\">
     
     Contato encaminhado por <em>$Usuario</em> para 

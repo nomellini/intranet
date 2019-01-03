@@ -1,4 +1,5 @@
-<?php require_once('../../Connections/sad.php'); ?>
+<?php require_once('../cabeca.php'); ?>
+
 <?
     if ( isset($id_chamado))
 	{
@@ -71,9 +72,9 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsUsuarios = "SELECT id_usuario, nome FROM usuario WHERE ativo = 1 ORDER BY nome ASC";
-$rsUsuarios = mysql_query($query_rsUsuarios, $sad) or die(mysql_error());
+$rsUsuarios = mysql_query($query_rsUsuarios) or die(mysql_error());
 $row_rsUsuarios = mysql_fetch_assoc($rsUsuarios);
 $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 
@@ -82,15 +83,14 @@ if (isset($_POST['id'])) {
   $colname_rsChamado = (get_magic_quotes_gpc()) ? $_POST['id'] : addslashes($_POST['id']);
 }
 $colname_rsChamado = $id;
-mysql_select_db($database_sad, $sad);
+
 $query_rsChamado = sprintf("SELECT * FROM chamado WHERE id_chamado = %s", GetSQLValueString($colname_rsChamado, "int"));
-$rsChamado = mysql_query($query_rsChamado, $sad) or die(mysql_error());
+$rsChamado = mysql_query($query_rsChamado) or die(mysql_error());
 $row_rsChamado = mysql_fetch_assoc($rsChamado);
 $totalRows_rsChamado = mysql_num_rows($rsChamado);
 
-mysql_select_db($database_sad, $sad);
 $query_rsDonos = "SELECT nome, email FROM usuario WHERE id_usuario = 12";
-$rsDonos = mysql_query($query_rsDonos, $sad) or die(mysql_error());
+$rsDonos = mysql_query($query_rsDonos) or die(mysql_error());
 $row_rsDonos = mysql_fetch_assoc($rsDonos);
 $totalRows_rsDonos = mysql_num_rows($rsDonos);
 
@@ -99,51 +99,50 @@ if (isset($_POST['id'])) {
   $colname_rsCategoria = (get_magic_quotes_gpc()) ? $_POST['id'] : addslashes($_POST['id']);
 }
 $colname_rsCategoria = $id;
-mysql_select_db($database_sad, $sad);
 $query_rsCategoria = sprintf("SELECT * FROM categoria WHERE sistema_id = (select sistema_id from chamado where id_chamado = %s) ORDER BY categoria ASC", GetSQLValueString($colname_rsCategoria, "int"));
-$rsCategoria = mysql_query($query_rsCategoria, $sad) or die(mysql_error());
+$rsCategoria = mysql_query($query_rsCategoria) or die(mysql_error());
 $row_rsCategoria = mysql_fetch_assoc($rsCategoria);
 $totalRows_rsCategoria = mysql_num_rows($rsCategoria);
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsSistena = "SELECT id_sistema, sistema FROM sistema ORDER BY sistema ASC";
-$rsSistena = mysql_query($query_rsSistena, $sad) or die(mysql_error());
+$rsSistena = mysql_query($query_rsSistena) or die(mysql_error());
 $row_rsSistena = mysql_fetch_assoc($rsSistena);
 $totalRows_rsSistena = mysql_num_rows($rsSistena);
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsContatos = "SELECT id_contato, historico, dataa, horaa FROM contato WHERE chamado_id = $id_chamado order by dataa desc, horaa desc";
-$rsContatos = mysql_query($query_rsContatos, $sad) or die(mysql_error());
+$rsContatos = mysql_query($query_rsContatos) or die(mysql_error());
 $row_rsContatos = mysql_fetch_assoc($rsContatos);
 $totalRows_rsContatos = mysql_num_rows($rsContatos);
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsStatus = "SELECT * FROM status";
-$rsStatus = mysql_query($query_rsStatus, $sad) or die(mysql_error());
+$rsStatus = mysql_query($query_rsStatus) or die(mysql_error());
 $row_rsStatus = mysql_fetch_assoc($rsStatus);
 $totalRows_rsStatus = mysql_num_rows($rsStatus);
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsPrioridade = "SELECT id_prioridade, prioridade FROM prioridade";
-$rsPrioridade = mysql_query($query_rsPrioridade, $sad) or die(mysql_error());
+$rsPrioridade = mysql_query($query_rsPrioridade) or die(mysql_error());
 $row_rsPrioridade = mysql_fetch_assoc($rsPrioridade);
 $totalRows_rsPrioridade = mysql_num_rows($rsPrioridade);
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsDiagnostico = "SELECT * FROM diagnostico order by diagnostico";
-$rsDiagnostico = mysql_query($query_rsDiagnostico, $sad) or die(mysql_error());
+$rsDiagnostico = mysql_query($query_rsDiagnostico) or die(mysql_error());
 $row_rsDiagnostico = mysql_fetch_assoc($rsDiagnostico);
 $totalRows_rsDiagnostico = mysql_num_rows($rsDiagnostico);
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsMotivos = "SELECT * FROM motivo ORDER BY motivo ASC";
-$rsMotivos = mysql_query($query_rsMotivos, $sad) or die(mysql_error());
+$rsMotivos = mysql_query($query_rsMotivos) or die(mysql_error());
 $row_rsMotivos = mysql_fetch_assoc($rsMotivos);
 $totalRows_rsMotivos = mysql_num_rows($rsMotivos);
 
-mysql_select_db($database_sad, $sad);
+
 $query_rsClientes = "SELECT id_cliente, concat(cliente,  ' [', id_cliente, ']') cliente FROM cliente ORDER BY cliente ASC";
-$rsClientes = mysql_query($query_rsClientes, $sad) or die(mysql_error());
+$rsClientes = mysql_query($query_rsClientes) or die(mysql_error());
 $row_rsClientes = mysql_fetch_assoc($rsClientes);
 $totalRows_rsClientes = mysql_num_rows($rsClientes);
 
@@ -151,14 +150,14 @@ $colname_rsContatosEmAndamento = "-1";
 if (isset($_GET['id'])) {
   $colname_rsContatosEmAndamento = (get_magic_quotes_gpc()) ? $_GET['id'] : addslashes($_GET['id']);
 }
-mysql_select_db($database_sad, $sad);
+
 $query_rsContatosEmAndamento = sprintf("SELECT * FROM contato_temp WHERE id_chamado = %s", $colname_rsContatosEmAndamento);
-$rsContatosEmAndamento = mysql_query($query_rsContatosEmAndamento, $sad) or die(mysql_error());
+$rsContatosEmAndamento = mysql_query($query_rsContatosEmAndamento) or die(mysql_error());
 $row_rsContatosEmAndamento = mysql_fetch_assoc($rsContatosEmAndamento);
 $totalRows_rsContatosEmAndamento = mysql_num_rows($rsContatosEmAndamento);
 ?><?
-	require("../scripts/conn.php");	   		
-	require("../scripts/funcoes.php");
+
+	require_once("../scripts/funcoes.php");
 	if ( isset($id_usuario) ) {
 		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );	  
 		if ($ok<>$id_usuario) { header("Location: index.php"); }
@@ -258,16 +257,16 @@ $totalRows_rsContatosEmAndamento = mysql_num_rows($rsContatosEmAndamento);
 		$dono = $linha->dono;
 		$categoria = $linha->categoria;	
 		$sistema = $linha->sistema;
-		mysql_select_db($database_sad, $sad);
+
 		$query_rsCat = "SELECT id_categoria, categoria FROM categoria ";
 		$query_rsCat .= " WHERE sistema_id = " . $linha->sistema_id;
 		$query_rsCat .= " order by categoria";
-		$rsCat = mysql_query($query_rsCat, $sad) or die(mysql_error());
+		$rsCat = mysql_query($query_rsCat) or die(mysql_error());
 		$row_rsCat = mysql_fetch_assoc($rsCat);
 		$totalRows_rsCat = mysql_num_rows($rsCat);  		 	  
 		  
 	} else {
-		$descricao = "Chamado não $id existe";
+		$descricao = "Chamado nÃ£o $id existe";
 	}
 }
 	
@@ -275,7 +274,7 @@ $totalRows_rsContatosEmAndamento = mysql_num_rows($rsContatosEmAndamento);
 ?><html>
 <head>
 <title>usuarios</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../stilos.css" type="text/css">
 </head>
 
@@ -298,7 +297,7 @@ $totalRows_rsContatosEmAndamento = mysql_num_rows($rsContatosEmAndamento);
     <tr>
       <td width="663" valign="top">
 	  <FieldSet>
-	  <Legend>Resumo do Chamado para manutenção</Legend>
+	  <Legend>Resumo do Chamado para manutenÃ§Ã£o</Legend>
 	  	<div class="oListaContatos">
 	  <table width="100%" border="0" cellspacing="1" cellpadding="1">
         <tr valign="top">
@@ -443,7 +442,7 @@ do {
         <tr valign="top">
           <td>Diagn&oacute;stico</td>
           <td><select name="id_diagnostico" class="borda_fina" id="id_diagnostico">
-            <option value="0" <?php if (!(strcmp(0, $row_rsChamado['diagnostico_id']))) {echo "selected=\"selected\"";} ?>>Não cadastrado</option>
+            <option value="0" <?php if (!(strcmp(0, $row_rsChamado['diagnostico_id']))) {echo "selected=\"selected\"";} ?>>NÃ£o cadastrado</option>
             <?php
 do {  
 ?>
@@ -634,7 +633,7 @@ mysql_free_result($rsContatosEmAndamento);
 ?>
 <script>
   function vai() {
-    if ( window.confirm('Confirma gravação das alterações ?') ) {
+    if ( window.confirm('Confirma gravaÃ§Ã£o das alteraÃ§Ãµes ?') ) {
 	  document.form1.submit();
 	}
   }

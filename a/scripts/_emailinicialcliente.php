@@ -1,15 +1,15 @@
 <?
-$msg="DATAMACE INFORMÁTICA
+$msg="DATAMACE INFORMï¿½TICA
 --------------------
 $objChamado->nomecliente,
 
-O chamado que você encaminhou ao suporte já está sendo analisado.
-A Partir desse momento ele é conhecido pelo código designado abaixo.
+O chamado que vocÃª encaminhou ao suporte jÃ¡ estÃ¡ sendo analisado.
+A Partir desse momento ele Ã© conhecido pelo cÃ³digo designado abaixo.
 
-  Código   : $objChamado->id_chamado
+  CÃ³digo   : $objChamado->id_chamado
   Abertura : $objChamado->dataaf - $objChamado->horaa
 
-Descrição do chamado:
+DescriÃ§Ã£o do chamado:
 ---------------------
 $objChamado->descricao
 
@@ -19,10 +19,10 @@ $objContato->historico
 
 Para saber tudo sobre esse chamado, consulte o Atendimento On Line no site.
 http://www.datamace.com.br -> Comunidade -> Apoio ao cliente -> Atendimento On line";
- 
- $recipient = "$objChamado->email"; 
+
+ $recipient = "$objChamado->email";
  $subject = "SAD - Chamado $objChamado->id_chamado";
  $headers = "From: Suporte Datamace <suporte@datamace.com.br>\n";
- mail2($recipient, $subject, $msg, $headers); 
- 
+ mail2($recipient, $subject, $msg, $headers);
+
 ?>

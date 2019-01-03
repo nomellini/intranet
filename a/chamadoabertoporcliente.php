@@ -96,7 +96,7 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 <script src="coolbuttons.js"></script>
 <head>
 <title>Chamado <?=$id_chamado?> do cliente <?=$id_cliente?> </title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="scripts/stilos.css" type="text/css">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 </head>
@@ -178,7 +178,7 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 	  echo "<option value=$id $se>$si - $ve</option>";
 	}
 	if (!$qtde) {
-      echo "<option value=-1>Sistema não cadastrado</option>";	  
+      echo "<option value=-1>Sistema nÃ£o cadastrado</option>";	  
 	}
 	$sistema = pegaSistemas(1, $id_cliente, 1);
 	$qtde = count($sistema);
@@ -192,7 +192,7 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 	  echo "<option value=$id $se>$si</option>";
 	}
 	if (!$qtde) {
-      echo "<option value=-1>Sistema não cadastrado</option>";	  
+      echo "<option value=-1>Sistema nÃ£o cadastrado</option>";	  
 	}
 	
 	
@@ -241,7 +241,7 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
               <input type="text" name="pessoacontatada" class="unnamed1" size="40" maxlength="100" onKeyPress="teclado();" >            </td>
           </tr>
           <tr> 
-            <td colspan="2" height="10"><span id=cat>Seleção de categoria</span></td>
+            <td colspan="2" height="10"><span id=cat>SeleÃ§Ã£o de categoria</span></td>
             <td width="53%" height="10">Motivo<br>
               <select name="motivo" class="unnamed1" >
                 <option value=0></option>
@@ -279,8 +279,8 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
 <div style="with=50%">
   <table width="98%" border="0" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC" align="center">
     <tr> 
-      <td bgcolor="#FFFFFF"> <h3>Descrição do problema</h3>
-<h4>Texto abaixo inserido pelo cliente está no contato número 1</h4>
+      <td bgcolor="#FFFFFF"> <h3>DescriÃ§Ã£o do problema</h3>
+<h4>Texto abaixo inserido pelo cliente estÃ¡ no contato nÃºmero 1</h4>
 <?	
     foreach ($contatos as $contato) {
 		echo( nl2br($contato["historico"]));
@@ -296,7 +296,7 @@ $totalRows_rsUsuarios = mysql_num_rows($rsUsuarios);
           <tr> 
             <td colspan="3"> Descri&ccedil;&atilde;o da Solu&ccedil;&atilde;o 
               ou Encaminhamento <br>
-              <textarea name="historico" cols="100" rows="15" class="unnamed1">Em análise</textarea>
+              <textarea name="historico" cols="100" rows="15" class="unnamed1">Em anÃ¡lise</textarea>
               <br>
               <font size="1">procurar por uma palavra (chamados anteriores e base 
               conhecimento WEB)</font> 
@@ -482,7 +482,7 @@ function NovaJanelaSolucao() {
 	
 	
     if (document.form.descricao.value=='') {
-	  window.alert( 'Digite a descrição do problema');
+	  window.alert( 'Digite a descriÃ§Ã£o do problema');
 	  document.form.descricao.focus();
 	  return false;
 	}
@@ -495,7 +495,7 @@ function NovaJanelaSolucao() {
 	
 	if (document.form.action.value == "encaminhar") {
 		if (document.form.destinatario.value==0) {
-		  window.alert( 'Selecione para quem será encaminhado o contato');
+		  window.alert( 'Selecione para quem serÃ¡ encaminhado o contato');
 		  document.form.destinatario.focus();
 		  return false;
 		}

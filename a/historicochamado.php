@@ -194,7 +194,7 @@
 	$ClienteIntersystem = '';
 	$sql = "select Ic_Intersystem, Ic_Datacenter, Ic_SLA, Qt_SLA, Ic_PosVenda from clienteplus where id_cliente = '$id_cliente'";
 	$result = mysql_query($sql); $linha=mysql_fetch_object($result);
-	$ClienteIntersystem = $linha->Ic_Intersystem ? "<BR/><BR/><B><FONT COLOR=ff0000>INTERSYSTEM SERVI�OS</font></b><BR/>" : "" ;
+	$ClienteIntersystem = $linha->Ic_Intersystem ? "<BR/><BR/><B><FONT COLOR=ff0000>INTERSYSTEM SERVIÇOS</font></b><BR/>" : "" ;
 	$ClienteDatacenter = $linha->Ic_Datacenter ? "<BR/><B><FONT COLOR=ff0000>---> USA DATACENTER <---</font></b><BR/>" : "" ;
 	$inter = $linha->Ic_Intersystem == 1;
 
@@ -203,7 +203,7 @@
 	$ClienteSLAMsg = $linha->Ic_SLA ? "cliente com SLA diferenciado : $Qt_SLA" : '';
 	$ClienteSLA = $linha->Ic_SLA ? "<BR/><B><FONT COLOR=ff00000>---> cliente com SLA diferenciado  : $Qt_SLA : 348640 <---</font></b><BR/>" : "" ;
 	$ClientePosVenda = '';
-	$ClientePosVenda = $linha->Ic_PosVenda ? "<BR/><BR/><B><FONT COLOR=ff00000>---> ! P�S VENDA ! <---</font></b><BR/>" : "" ;
+	$ClientePosVenda = $linha->Ic_PosVenda ? "<BR/><BR/><B><FONT COLOR=ff00000>---> ! PÓS VENDA ! <---</font></b><BR/>" : "" ;
 
 
 
@@ -332,6 +332,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 <link href="sgq/attendere.css" rel="stylesheet" type="text/css">
+
+<!-- Toastrs -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./js/toastr.js"></script>
+<link href="./css/toastr.css" rel="stylesheet" />
+
+
 <style type="text/css">
 <!--
 		.dragTest {
@@ -949,7 +956,7 @@
   <script>
   function vai() {
     if ('-<?=$bl?>' == '-1') {
-	  window.alert('Consultoria Bloqueada');
+	  toastr.error('Consultoria Bloqueada');
 	  return;
 	}
 
@@ -964,7 +971,7 @@
   }
 
   if ('-<?=$sigame?>' != '-') {
-    window.alert('Chamado colocado na lista de SIGA-ME');
+    toastr.info('Chamado colocado na lista de SIGA-ME');
   }
 
 
@@ -1076,11 +1083,11 @@ where
 order by hora ";
 
 
-	  $msg = "Usu�rios trabalhando neste chamado\\n\\n";
+	  $msg = "Usuários trabalhando neste chamado\\n\\n";
 	  $result = mysql_query($sql) or die (mysql_error() . " - " . $sql);
 	  while ($linha = mysql_fetch_object($result)) {
 		$temMsg = true;
-	  	$msg .= "$linha->nome, desde �s $linha->hora\\n";
+	  	$msg .= "$linha->nome, desde às $linha->hora\\n";
 	  }
 
 	  mysql_free_result($result);
@@ -1088,7 +1095,7 @@ order by hora ";
 	  if ($temMsg) {
 ?>
 <script>
-  window.alert( '<?=$msg?>' );
+  toastr.info( '<?=$msg?>' );
 </script>
 <?
 		}  // End if tem mensagem

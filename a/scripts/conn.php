@@ -33,6 +33,7 @@
 	$pwd = "data1371";
 	$base = "sad";
 	$link = mysql_connect($host, $user, $pwd) or die(mysql_error());
+	mysql_set_charset("utf8");
 	mysql_select_db($base) or die(mysql_error());
 
 	if ($v_id_usuario) $USRNOME = peganomeusuario($v_id_usuario);
@@ -66,7 +67,7 @@ function conn_temDocumentacao($chamado_id)
 	*	Chamado 405595
 	*		
 	*	Fernando o Edson conversou comigo e pediu para alterar o SAD para que ao encerrar um chamado que tenha 
-	*	dados preenchidos em DOCUMENTAÇAO o mesmo seja inserido na base de conhecimento automaticamente marcado 
+	*	dados preenchidos em DOCUMENTAÃ‡AO o mesmo seja inserido na base de conhecimento automaticamente marcado 
 	*	como DOCUMENTACAO INTERNET 	
 	*		
 	************************************************************************************************************/
@@ -210,10 +211,10 @@ Atenciosamente,
 Consultoria Datamace";
 
 		$email_destinatario = PegaEmailUsuario($id_destinatario);
-		mail2($email_destinatario, "SAD: Encerramento Automático: $id_chamado ", $msg, "SAD");
+		mail2($email_destinatario, "SAD: Encerramento AutomÃ¡tico: $id_chamado ", $msg, "SAD");
 
 		$email_destinatario = $objChamado->email;
-		mail2($email_destinatario, "SAD: Encerramento Automático: $id_chamado ", $msg, "SAD");
+		mail2($email_destinatario, "SAD: Encerramento AutomÃ¡tico: $id_chamado ", $msg, "SAD");
 
 		$objContato->gravaContato();	
 		$objChamado->gravaChamado();
@@ -367,14 +368,14 @@ Consultoria Datamace";
 		
 		$nome = peganomeusuario($ok);	
 						
-		$msg = "O chamado $linkFilho foi incluído no projeto $linkPai por <b>$nome</b><br><br>";		
+		$msg = "O chamado $linkFilho foi incluÃ­do no projeto $linkPai por <b>$nome</b><br><br>";		
 		$msg .= conn_projetos_obterEstatisticas($id_chamado_pai);
 		
 		$emails = split(",", $e);
 		if (count($emails) == 0)
 			$emails = split(";", $e);
 		foreach( $emails as $email ){
-			mail2($email, "Projeto $id_chamado_pai - Chamado incluído: $id_chamado_filho", $msg, "Projetos");
+			mail2($email, "Projeto $id_chamado_pai - Chamado incluÃ­do: $id_chamado_filho", $msg, "Projetos");
 		}
 	}
 	
@@ -403,14 +404,14 @@ Consultoria Datamace";
 		$linkPai = conn_linkChamado($id_chamado_pai);	
 
 		$nome = peganomeusuario($ok);	
-		$msg = "O chamado $linkFilho foi excluído do projeto $linkPai por <b>$nome</b><br><br>";				
+		$msg = "O chamado $linkFilho foi excluÃ­do do projeto $linkPai por <b>$nome</b><br><br>";				
 		$msg .= conn_projetos_obterEstatisticas($id_chamado_pai);
 		
 		$emails = split(",", $e);
 		if (count($emails) == 0)
 			$emails = split(";", $e);
 		foreach( $emails as $email ){
-			mail2($email, "Projeto $id_chamado_pai - Chamado excluído: $id_chamado_filho", $msg, "Projetos");
+			mail2($email, "Projeto $id_chamado_pai - Chamado excluÃ­do: $id_chamado_filho", $msg, "Projetos");
 		}
 		
 	}
@@ -488,11 +489,11 @@ Consultoria Datamace";
 		}		
 		
 		$dias[1] = "Segunda-feira";
-		$dias[2] = "Terça-feira";
+		$dias[2] = "TerÃ§a-feira";
 		$dias[3] = "Quarta-feira";
 		$dias[4] = "Quinta-feira";
 		$dias[5] = "Sexta-feira";
-		$dias[6] = "Sábado";
+		$dias[6] = "SÃ¡bado";
 		$dias[7] = "Domingo";
 		
 		$lData = explode("/", $data);		
@@ -614,7 +615,7 @@ function pegarnc($_chamado, $_oque) {
      if ($linha) {
          return $linha->descricao;
      } else {
-       return "Área nao cadastrada ($id)";
+       return "Ãrea nao cadastrada ($id)";
      }
    } else {
      return "nao cadastrado";
@@ -647,7 +648,7 @@ function pegaDiagnostico($id) {
      if ($linha) {
          return $linha->diagnostico;
      } else {
-       return "diagnóstico nao cadastrado ($id) !";
+       return "diagnÃ³stico nao cadastrado ($id) !";
      }
  }
 
@@ -848,7 +849,7 @@ function conn_PegaAguardandoChamado($pChamado)
 		
 		$esperoStatus = pegaStatusDoChamado($espero);	
 		
-		$result = "<p style=\"text-align:center; padding:0; margin:0; border:1px solid #cccccc;\">Este chamado depende do chamado <a href=historicochamado.php?id_chamado=".$espero." target=\"_blank\">".number_format($espero,0,',','.')." ($esperoStatus)</a> para ser concluído<br></p>";
+		$result = "<p style=\"text-align:center; padding:0; margin:0; border:1px solid #cccccc;\">Este chamado depende do chamado <a href=historicochamado.php?id_chamado=".$espero." target=\"_blank\">".number_format($espero,0,',','.')." ($esperoStatus)</a> para ser concluÃ­do<br></p>";
 	} else {
 		$result = "";
 	}
@@ -1108,9 +1109,9 @@ function contatosPorSQL($sql)
 	 } else if ($dias == 2) {
 	 	$m = "Anteontem";
 	 } else if ($dias < 365) {
-	 	$m = "há $dias dias";
+	 	$m = "hÃ¡ $dias dias";
 	 } else {
-	 	$m = "há " . dateDiff(DataOk($linha->dataa));
+	 	$m = "hÃ¡ " . dateDiff(DataOk($linha->dataa));
 	 }
 		   
    	 $tmp["dias"] = $m;
@@ -1317,7 +1318,7 @@ function pegaClientePorCodigoOrdem($codigo, $ordem) {
 		
         $tmp["endereco"] = $linha->endereco;
         if (!$tmp["endereco"]) {
-          $tmp["endereco"] = "Endereço nao cadastrado.";
+          $tmp["endereco"] = "EndereÃ§o nao cadastrado.";
         }
         $tmp["bairro"] = $linha->bairro;
         $tmp["cidade"] = $linha->cidade;
@@ -1357,7 +1358,7 @@ function pegaClientePorCodigoUnico($codigo) {
         $tmp["funcionarios"] = $linha->funcionarios;
         $tmp["endereco"] = $linha->endereco;
         if (!$tmp["endereco"]) {
-          $tmp["endereco"] = "Endereço nao cadastrado.";
+          $tmp["endereco"] = "EndereÃ§o nao cadastrado.";
         }
         $tmp["bairro"] = $linha->bairro;
         $tmp["cidade"] = $linha->cidade;
@@ -1650,7 +1651,7 @@ order by
        $gerente = 0;
      }
 
-      // É gerente $gerente = 1
+      // Ã‰ gerente $gerente = 1
       //
       // Para encaminhar um contato:
       //   Eu sou o dono do contato ? (destinatario)
@@ -2421,7 +2422,7 @@ function loga_email_EncerraChamadoSigame($id_usuario, $id_chamado)
     loga_email_Sigame($id_usuario, $id_chamado, $mensagem, $assunto, 1);		
 	
 	$contato = conn_obterUltimoContato($id_usuario, $id_chamado);	
-	$mensagem = "$nome encerrou um chamado:<br><a target=_blank href=$SITEROOT/a/historicochamado.php?id_chamado=$id_chamado>$id_chamado</a> - $descricao<br><br>Contém uma um mais palavra chave cadastrada";	
+	$mensagem = "$nome encerrou um chamado:<br><a target=_blank href=$SITEROOT/a/historicochamado.php?id_chamado=$id_chamado>$id_chamado</a> - $descricao<br><br>ContÃ©m uma um mais palavra chave cadastrada";	
 	loga_email_PalavraChave($id_usuario, $id_chamado, $mensagem, $contato);	
 }
 
@@ -2435,7 +2436,7 @@ function loga_email_NovoContatoSigame($id_usuario, $id_chamado)
 	$assunto = "Siga-me - Novo contato";
     loga_email_Sigame($id_usuario, $id_chamado, $mensagem, $assunto, 2);
 
-	$mensagem = "$nome inseriu um contato no chamado:<br><a target=_blank href=$SITEROOT/a/historicochamado.php?id_chamado=$id_chamado>$id_chamado</a> - $descricao<br><br>Contém uma um mais palavra chave cadastrada";	
+	$mensagem = "$nome inseriu um contato no chamado:<br><a target=_blank href=$SITEROOT/a/historicochamado.php?id_chamado=$id_chamado>$id_chamado</a> - $descricao<br><br>ContÃ©m uma um mais palavra chave cadastrada";	
 	loga_email_PalavraChave($id_usuario, $id_chamado, $mensagem, $contato);
 }
 
@@ -2886,7 +2887,7 @@ function obterCorPorGrau($Grau)
 |  7 | marketing              |
 |  8 | outra                  |
 |  9 | nenhuma                |
-| 10 | jurídico               |
+| 10 | jurÃ­dico               |
 | 11 | Qualidade de software  |
 | 12 | TI                     |
 */
@@ -3319,7 +3320,7 @@ function connAlterarRestricao($IdChamado, $IdUsuario, $IdRestricao, $IcStatus)
 	mysql_query($sql);
 	
 	/*
-		2. Inserir o histórico das alteraçoes
+		2. Inserir o histÃ³rico das alteraÃ§oes
 	*/
 	$DataHoraAtual = date("Y-m-d H:i:s");
 	$sql = "insert into restricao_historico (Id_Chamado, Id_Restricao, Id_Usuario, Dt_Data, Ic_Status)
@@ -3328,5 +3329,12 @@ function connAlterarRestricao($IdChamado, $IdUsuario, $IdRestricao, $IcStatus)
 
 }
 
+
+
+function conn_InserirNaFilaRetaguarda($IdConsultor, $IdChamado) 
+{
+	$sql = "insert into retaguarda_fila (Dt_Solicitacao, Id_Consultor, Id_Chamado, Ic_Status) values (now(), $IdConsultor, $IdChamado, 1);";
+	conn_ExecuteNonQuery($sql);
+}
 
 ?>

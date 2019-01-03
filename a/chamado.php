@@ -56,7 +56,7 @@
 	$horaa = $objChamado->horaa;	
 	
 	
-	// Estas duas variáveis serão passadas via hidden field.
+	// Estas duas variÃ¡veis serÃ£o passadas via hidden field.
 	$dataAbertura = $dataa;
 	$horaAbertura = $horaa;
 	
@@ -77,11 +77,34 @@
 ?>
 <html>
 <script src="coolbuttons.js"></script>
+
+    <script>
+		function AdicionarAjuda() {
+			
+			$.ajax({
+				method: "POST",
+				url: "InsereFilaRetaguarda.php",
+				data: { IdConsultor: "<?=$ok?>",  IdChamado: "<?=$chamado?>"} 
+			}).done(function() {
+				$('#ajuda').html("Ajuda Solicitada ");
+				$("#btnAjuda").prop('disabled', 'true');
+			});
+			
+
+		}
+	</script>  
+
+
 <head>
 <title>Novo chamado</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="scripts/stilos.css" type="text/css">
 <link rel="stylesheet" href="stilos.css" type="text/css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="../scripts/formataData.js"></script>
+
 
 </head>
 <body bgcolor="#FFFFFF" text="#000000" leftmargin="1" topmargin="1" marginwidth="1" marginheight="1">
@@ -177,7 +200,7 @@
 	  echo "<option value='$id'>$si</option>";
 	}
 	if (!$qtde) {
-      echo "<option value=-1>Sistema não cadastrado:: $ok :: $id_cliente</option>";	  
+      echo "<option value=-1>Sistema nÃ£o cadastrado:: $ok :: $id_cliente</option>";	  
 	}
 ?>
     </OPTGROUP>
@@ -191,7 +214,7 @@
 	  echo "<option value=$id>$si</option>";	  
 	}
 	if (!$qtde) {
-      echo "<option value=-1>Sistema não cadastrado</option>";	  
+      echo "<option value=-1>Sistema nÃ£o cadastrado</option>";	  
 	}
 	
 	
@@ -228,7 +251,7 @@
             <td width="53%" valign="top"> 
               <p>
   <select name="origem" class="unnamed1" onBlur="selecionapessoa('<?=$id_cliente?>')">
-    <option value=0>Selecione uma opção</option>
+    <option value=0>Selecione uma opÃ§Ã£o</option>
     <?
     $s = 0;
 	if ($ok == 1) { $s=7; }
@@ -259,7 +282,7 @@
             </label></td>
           </tr>
           <tr> 
-            <td colspan="2" height="10"><span id=cat>Seleção de categoria</span></td>
+            <td colspan="2" height="10"><span id=cat>SeleÃ§Ã£o de categoria</span></td>
             <td width="53%" height="10">Motivo<br>
               <select name="motivo" class="unnamed1" >
                 <option value=0></option>
@@ -286,7 +309,7 @@
                 	<label>Projeto </label>                    
                     <select name="id_projeto_pai" class="unnamed1" id="id_projeto_pai">
                     
-                        <option value="0" selected>Selecione apenas se este chamado fará parte de um projeto</option>
+                        <option value="0" selected>Selecione apenas se este chamado farÃ¡ parte de um projeto</option>
                         <?                
                             while ( list($id, $linha) = each ( $ListaDeProjetos ) )
                             {
@@ -306,7 +329,17 @@
               Descri&ccedil;&atilde;o do Problema [ <a href="javascript:toLower( document.form.descricao ); ">Min&uacute;sculas</a> 
               ]<br>
               <textarea id="ta1" name="descricao" cols="120" rows="10" class="unnamed1"></textarea>
+              
+              
             </p>
+<p>
+
+<?php if ($ok==12  || ($Usuario_Area==1)) { ?>
+<button id="btnAjuda" onClick="javascript:AdicionarAjuda();" type="button" class="btn btn-primary btn-sm">Ajuda</button>  <span id="ajuda"></span>   / <a href="retaguarda/index.php" target="_blank">Ver fila retaguarda</a><br>
+<?php } ?>
+</p>
+
+
             <p>
 <?
   $restricoes = conn_obterListaRestricoes($ok, 0);
@@ -405,7 +438,7 @@
 ?>
                 <?
     /*
-	  Este código é repetido em novocontato.php
+	  Este cÃ³digo Ã© repetido em novocontato.php
 	*/
     require("_email.htm"); 	
 				
@@ -414,7 +447,7 @@
 ?>
                 <br>
                 <input type="checkbox" name="base" value="1" onClick="alterna(sp_base)">
-                BASE DE CONHECIMENTO (Selecione esta opção se este contato deve 
+                BASE DE CONHECIMENTO (Selecione esta opÃ§Ã£o se este contato deve 
                 constar na base de conhecimento)<br>
                 <br>
               </p>
@@ -463,7 +496,7 @@
               <select name="diagnostico" class="unnamed1">
                 <?
     if( !$objChamado->diagnostico_id ) {
-	  echo "<option value=0 selected>Não colocar diagnóstico</option>";
+	  echo "<option value=0 selected>NÃ£o colocar diagnÃ³stico</option>";
 	}				  
 	$sistema = pegaDiagnosticos();
 	while ( list($tmp1, $tmp) = each($sistema) ) {
@@ -638,7 +671,7 @@
   
   	if (document.form.action.value == 'cancelar')
 	{
-		var confirma = confirm("CANCELAR a abertura deste chamado ?\nIsto irá apagar todo o registro feito até o momento");	
+		var confirma = confirm("CANCELAR a abertura deste chamado ?\nIsto irÃ¡ apagar todo o registro feito atÃ© o momento");	
 		if (!confirma) {
 			return false;			
 		} else {
@@ -652,12 +685,12 @@
     if('-<?=$pode?>'=='-1') {   
 	  if (document.form.base.checked) {	   
 	    if (document.form.base_desc.value=='') {
-	      window.alert( 'Digite a descrição para BASE DE CONHECIMENTO');
+	      window.alert( 'Digite a descriÃ§Ã£o para BASE DE CONHECIMENTO');
 		  document.form.base_desc.focus();
 		  return;
 		}	   
 		if (document.form.diagnostico.value==0) {
-		  window.alert( 'Entre com o diagnóstico' );
+		  window.alert( 'Entre com o diagnÃ³stico' );
 		  document.form.diagnostico.focus();
 		  return;
 		}  
@@ -676,7 +709,7 @@
 		if (true) {	
 	?>	
 	if (document.form.Ds_Versao.value=='') {
-		window.alert( 'Favor fornecer o número da versão');
+		window.alert( 'Favor fornecer o nÃºmero da versÃ£o');
 		document.form.Ds_Versao.focus();
 		return false;
 	}	
@@ -705,7 +738,7 @@
        	
 	
 	if (document.form.origem.value == 39) {
-		var confirma = confirm("O relatório de visita já está anexado ?");	
+		var confirma = confirm("O relatÃ³rio de visita jÃ¡ estÃ¡ anexado ?");	
 		if (!confirma) {
 			return false;			
 		}
@@ -715,7 +748,7 @@
 	
 	// Implementado em 29/09/2003 - Fernando Nomellini	
     if (document.form.pessoacontatada.value=='') {
-	  window.alert( 'campo "Pessoa contatada" obrigatório. Vide chamado # 42180');
+	  window.alert( 'campo "Pessoa contatada" obrigatÃ³rio. Vide chamado # 42180');
 	  document.form.pessoacontatada.focus();
 	  return false;
 	}
@@ -735,7 +768,7 @@
 	}
 	
     if (document.form.descricao.value=='') {
-	  window.alert( 'Digite a descrição do problema');
+	  window.alert( 'Digite a descriÃ§Ã£o do problema');
 	  document.form.descricao.focus();
 	  return false;
 	}
@@ -743,14 +776,14 @@
 
     var editor_data = CKEDITOR.instances.historico.getData();		
     if (editor_data == '') {
-		window.alert( 'Digite a descrição da solução ou encaminhamento');
+		window.alert( 'Digite a descriÃ§Ã£o da soluÃ§Ã£o ou encaminhamento');
 		document.form.historico.focus();
 		return false;
 	}
 
 	/*	
 	if (document.form.historico.value=='') {
-		window.alert( 'Digite a descrição da solução ou encaminhamento');
+		window.alert( 'Digite a descriÃ§Ã£o da soluÃ§Ã£o ou encaminhamento');
 		document.form.historico.focus();
 		return false;
 	}
@@ -758,7 +791,7 @@
 	
 	if (document.form.action.value == "encaminhar") {
 		if (document.form.destinatario.value==0) {
-		  window.alert( 'Selecione para quem será encaminhado o contato');
+		  window.alert( 'Selecione para quem serÃ¡ encaminhado o contato');
 		  document.form.destinatario.focus();
 		  return false;
 		}
@@ -766,7 +799,7 @@
 	
 	
 		/*
-		  Atendendo ao pedido do Edson por telefone (não documentado)
+		  Atendendo ao pedido do Edson por telefone (nÃ£o documentado)
 		  no dia 01/08/2004
 		*/
 	if (document.form.action.value == "encerrar") {		
@@ -781,7 +814,7 @@
 	{
 		if (!validateEmail(document.form.emailcontatado.value))
 		{
-			window.alert( 'Email inválido');
+			window.alert( 'Email invÃ¡lido');
 			document.form.emailcontatado.focus();
 			return false;			
 		}		
@@ -840,7 +873,7 @@ function testaemail() {
 
 				return false;
 	} else  if (!validaEmail()) {
-		alert('Atenção. Email inválido');	
+		alert('AtenÃ§Ã£o. Email invÃ¡lido');	
 		return false;
 	  }
 }

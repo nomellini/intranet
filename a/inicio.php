@@ -103,7 +103,7 @@ if  ($action == "novaOrdem")
 
 
 		if ( $row_rsConsultores['qtde'] >= 4) {
-			$msg = "não pode alterar para não dispon?vel";
+			$msg = "nÃ£o pode alterar para nÃ£o dispon?vel";
 		} else {
 			if ($acao=="mudaestado") {
 				$status = $status + 1;
@@ -303,7 +303,7 @@ $totalRows_rsEstadoConsulto = mysql_num_rows($rsEstadoConsulto);
 <head>
 <title>Inicio</title>
 <meta http-equiv="refresh" content="600;URL=inicio.php">
-<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Language" content="pt-br" />
 <link rel="stylesheet" href="stilos.css" type="text/css">
 <!-- Courtesy of SimplytheBest.net - http://simplythebest.net/scripts/ -->
@@ -331,6 +331,11 @@ a.subbar {
 }
 .style7 {font-family: Verdana, Geneva, Arial, Helvetica, sans-serif}
 </STYLE>
+
+<!-- Toastrs -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./js/toastr.js"></script>
+<link href="./css/toastr.css" rel="stylesheet" />
 
 </head>
 <body bgcolor="#FFFFFF" text="#000000" leftmargin="3" topmargin="3" marginwidth="1" marginheight="1">
@@ -477,11 +482,11 @@ a.subbar {
 ?>
 
 									<p><a href="/a/versao/">
-                      <?  $i_msg = "Libera??o de Release";
+                      <?  $i_msg = "LiberaÃ§Ã£o de Release";
 			    if ($i_conta < 0) { echo "<font color=#ff0000 >$i_msg: " . -$i_conta .  " release(s) em andamento</font>"; } else {echo $i_msg;}
 
 			    if($i_conta > 0) {?>
-                      <font color = #ff0000 size = 2>: Você tem
+                      <font color = #ff0000 size = 2>: VocÃª tem
                       <?=$i_conta?>
                       tarefa(s)</font>
                       <? } ?>
@@ -586,7 +591,7 @@ do {
                   Qualidade</strong></a>
                     <? if ($gerente) {?>
                     <br>
-                  [<a href="rnc/rnc.php?action=novo&tipo=<?=SAD_NAOCONFORMIDADE?>">não conformidade</a>] - [<a href="rnc/rnc.php?action=novo&tipo=<?=SAD_ACAOPREVENTIVA?>">A??o Preventiva</a>] - [<a href="rnc/rnc.php?action=novo&tipo=<?=SAD_ACAOMELHORIA?>">A??o Melhoria</a>]
+                  [<a href="rnc/rnc.php?action=novo&tipo=<?=SAD_NAOCONFORMIDADE?>">nÃ£o conformidade</a>] - [<a href="rnc/rnc.php?action=novo&tipo=<?=SAD_ACAOPREVENTIVA?>">AÃ§Ã£o Preventiva</a>] - [<a href="rnc/rnc.php?action=novo&tipo=<?=SAD_ACAOMELHORIA?>">AÃ§Ã£o Melhoria</a>]
                   <?
 				   if (($ok == 12) or ($ok==1) or ($ok==98) ) {
 				  ?>
@@ -607,7 +612,7 @@ do {
 					  if ($minhasLigacoes) {
 					?>
                   <br>
-                  <a href="espera/consultor.php" class="style1">Minhas ligações</a>
+                  <a href="espera/consultor.php" class="style1">Minhas ligaÃ§Ãµes</a>
                   <?
 					 }
 					  if ($DesktopSigame<>0) {
@@ -650,8 +655,8 @@ do {
                 <td width="33%" align="right"> <a href="/a/relatorios/relatbaseweb.php"><font size="1">Base
                   de conhecimento web</font></a> <br> <a href="/suporte/index.php"><font size="1">Base
                     de Solu&ccedil;&otilde;es</font></a> <br>
-                  <a href="javascript:online();">Quem está On Line</a> <br>
-                  <a href="/a/errosFujitsu.php"><font size="1">Erros versão FJ</font></a>
+                  <a href="javascript:online();">Quem estÃ¡ On Line</a> <br>
+                  <a href="/a/errosFujitsu.php"><font size="1">Erros versÃ£o FJ</font></a>
                   </td>
                 </tr>
               </table></td>
@@ -992,7 +997,7 @@ Ordenar por <?=$strLinks?><table border="0" cellspacing="0" cellpadding="0">
 			   }
    			   $rncTipo = '';
 			   if ($tmp["rnc"]==1) {
-			     $rncTipo = "<strong>não conformidade</strong>";
+			     $rncTipo = "<strong>nÃ£o conformidade</strong>";
 			     if (!$teste) {
     				 $cor_fundo = "#cccccc";
 				 } else {
@@ -1001,10 +1006,10 @@ Ordenar por <?=$strLinks?><table border="0" cellspacing="0" cellpadding="0">
 			   }
 
    			   if ($tmp["rnc"]==3) {
-			     $rncTipo = "<strong>A??o de Melhoria</strong>";
+			     $rncTipo = "<strong>AÃ§Ã£o de Melhoria</strong>";
 			   }
    			   if ($tmp["rnc"]==2) {
-			     $rncTipo = "<strong>A??o Preventiva</strong>";
+			     $rncTipo = "<strong>AÃ§Ã£o Preventiva</strong>";
 			   }
 
 			   if ($tmp["rnc"]==4) {
@@ -1021,7 +1026,7 @@ Ordenar por <?=$strLinks?><table border="0" cellspacing="0" cellpadding="0">
 				if ($tmp["rnc"]!=0) {
 					$rncResponsavel =  $tmp["rnc_acao_responsavel"];
 					$rncPrazo = $tmp["rncPrazo"];
-					$rncMensagem = "<br>--> ".$rncTipo."<br>Departamento respons?vel pela a??o: <strong>$rncResponsavel</strong>. Prazo: <strong>$rncPrazo</strong>";
+					$rncMensagem = "<br>--> ".$rncTipo."<br>Departamento respons?vel pela aÃ§Ã£o: <strong>$rncResponsavel</strong>. Prazo: <strong>$rncPrazo</strong>";
 				}
 
 
@@ -1215,7 +1220,7 @@ if ($dataprevista <> '00/00/0000') {
 					    $msg = " para " . peganomeusuario($destinatarioId);
 						$seta = "encaminhado.gif";
 					  } else {
-					    $msg = " à você por " . peganomeusuario($remetenteId);
+					    $msg = " Ã  vocÃª por " . peganomeusuario($remetenteId);
 						$seta = "recebido.gif";
 					  }
                       $figura = "<img src=\"figuras/$seta\" align=\"absmiddle\" border=0>";
@@ -1426,7 +1431,7 @@ onSubmit="javascript:enviaConsultaRapida(); return false;">
                     <tr>
                       <td bgcolor="#F9FDFF" onMouseDown="this.className='subbarselected'; abrirlista('encaminhadosnl', 0, <?=$linha->quantidade?>);" onMouseOver="this.className='subbarhover'" onMouseOut="this.className='subbarnotselone'">
 
-                        <strong>Encaminhados não lidos</strong></span> </td>
+                        <strong>Encaminhados nÃ£o lidos</strong></span> </td>
                     </tr>
                     <?
 	}
@@ -1454,7 +1459,7 @@ or  (consultor_id   =$ok and lidodono=0)) and status > 1 and descricao is not nu
                       <td bgcolor="#F9FDFF" onMouseDown="this.className='subbarselected'; abrirlista('novidades', 0, <?=$linha->quantidade?>);" onMouseOver="this.className='subbarhover'" onMouseOut="this.className='subbarnotselone'">
 
 
-                        <strong><? if ($linha->quantidade!=0) {?><img src="figuras/idea01.gif" alt="Novidades" width="16" height="22" align="absmiddle"><? } ?>Contatos não lido </strong>(<?=$linha->quantidade?>) </span> </td>
+                        <strong><? if ($linha->quantidade!=0) {?><img src="figuras/idea01.gif" alt="Novidades" width="16" height="22" align="absmiddle"><? } ?>Contatos nÃ£o lido </strong>(<?=$linha->quantidade?>) </span> </td>
                     </tr>
                     <?
 	}
@@ -1502,7 +1507,7 @@ or  (consultor_id   =$ok and lidodono=0)) and status > 1 and descricao is not nu
                 <tr>
                   <td height="100%" bgcolor="#FFFFFF">
                     <span id="chamados_lista"><br>
- <blockquote>Para ver a lista de chamados por prioridade ou por pasta, clique na prioridade ou na pasta desejada ao lado. Você pode criar quantas pastas desejar e incluir um chamado em qualquer pasta.</blockquote> </span>
+ <blockquote>Para ver a lista de chamados por prioridade ou por pasta, clique na prioridade ou na pasta desejada ao lado. VocÃª pode criar quantas pastas desejar e incluir um chamado em qualquer pasta.</blockquote> </span>
                   </td>
               </tr>
 
@@ -1646,16 +1651,16 @@ contaencaminhados.innerHTML = '<?=$contaencaminhados?>';
 
 
  if( <?=$msgnova?> ) {
-   msgnova.innerHTML = "<br>Existe <?=$msgnova?> chamado(s) com mensagens não lidas (<img src=figuras/idea01.gif  align=absmiddle>) [<a href='?naolido=1'>ver apenas não lidos</a>]";
+   msgnova.innerHTML = "<br>Existe <?=$msgnova?> chamado(s) com mensagens nÃ£o lidas (<img src=figuras/idea01.gif  align=absmiddle>) [<a href='?naolido=1'>ver apenas nÃ£o lidos</a>]";
  }
 
  if ( '<?=$naolido?>' == '1')
  {
-   msgnova.innerHTML = "<br>Vendo apenas não lidos [<a href='?naolido=0'>ver todos</a>]";
+   msgnova.innerHTML = "<br>Vendo apenas nÃ£o lidos [<a href='?naolido=0'>ver todos</a>]";
  }
 
  if( <?=$lembretenovo?> ) {
-   lembretenovo.innerHTML = "<br>Extiste(m) <?=$lembretenovo?> chamado(s) com lembretes não lidos (<img src=figuras/lembrete.jpg  align=absmiddle>)<br>";
+   lembretenovo.innerHTML = "<br>Extiste(m) <?=$lembretenovo?> chamado(s) com lembretes nÃ£o lidos (<img src=figuras/lembrete.jpg  align=absmiddle>)<br>";
  }
 
 
@@ -1774,6 +1779,18 @@ function mudaStatusParaDisponivel()
 
   }
 </script>
+
+<script>
+
+	<?
+		if ($ok == 12 || $area==1) {
+			$qtde = conn_executeScalar("select count(1) from  retaguarda_fila where ic_status=1 ");
+			if ($qtde > 0)
+				echo 'toastr["info"]("<a href=\'./retaguarda/index.php\' target=\'blank\'>HÃ¡ ' . $qtde . ' pessoa(s) na fila</a>");';		}
+	?>
+
+</script>
+
 <?php
 mysql_free_result($rsStatusConsultor);
 mysql_free_result($rsUsuario);

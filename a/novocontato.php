@@ -1,11 +1,7 @@
-<form name="drag1"> 
-	<input type="hidden" name="id_chamado">
-   	<input type="hidden" name="id_contato">
-</form><?
-	require("scripts/conn.php");
-	require("scripts/funcoes.php");	
-	require("scripts/classes.php");	
-//	include("fckeditor/fckeditor.php") ;	
+<?
+
+	require_once("cabeca.php");
+	require_once("scripts/classes.php");	
 
 		
 	if ( isset($id_usuario) ) {
@@ -18,25 +14,16 @@
 	}
 	
 
-
 	$objChamado = new chamado();
 	$objChamado->lerChamado($id_chamado);
 	$EncerraAutomatico = $objChamado->prioridade_id==4;
 	$Ic_ImpedeEncerramentoAutomatico = $objChamado->Ic_ImpedeEncerramentoAutomatico;
-	
-	
+
 	
 	$SqlProjetoPendente = "select count(1) qtde from chamado c1 where chamado_pai_id = $id_chamado and (status = 2 or status = 3) and Chamado_pai_motivo = 'P'";
 	$QtdeProjetoPendente = conn_ExecuteScalar($SqlProjetoPendente);
 	$ProjetoPendente = $QtdeProjetoPendente > 0;
 	
-	//echo "<-- FERNANDO $SqlProjetoPendente   //   $QtdeProjetoPendente  //  $ProjetoPendente -->";	
-/*	if (!$EncerraAutomatico) {
-		$Dt_EncerramentoAutomatico = AMD2DMA(obterDataEncerramento());	
-	} else {
-		$Dt_EncerramentoAutomatico = AMD2DMA($objChamado->Dt_EncerramentoAutomatico);
-	}
-*/	
 
 	$Dt_EncerramentoAutomatico = AMD2DMA(obterDataEncerramento());		
 	$Ds_Versao = $objChamado->Ds_Versao;
@@ -49,7 +36,7 @@
 	
 	if ($ProjetoPendente) {
 		$fl_PodeEncerrar = false;
-		$Ds_MotivoNaoEncerrar = "Este projeto tem $QtdeProjetoPendente chamados pendentes e não pode ser encerrado";
+		$Ds_MotivoNaoEncerrar = "Este projeto tem $QtdeProjetoPendente chamados pendentes e nÃ£o pode ser encerrado";
 	}
 
     list($tmp1, $tmp) = each(pegaClientePorCodigoUnico($id_cliente));
@@ -164,20 +151,20 @@
 	 
 	 $PodeEncerrarQualquerChamado = $god; ;//($ok==12  || $ok==141 || $ok == 54);
 	 
-     $chEncaminhado = 1; //Nao posso encerrar, pois é um chamado encaminhado	 	 
+     $chEncaminhado = 1; //Nao posso encerrar, pois Ã© um chamado encaminhado	 	 
 	 
 	 
 	 
 	 if ( ($id_usuario == $objChamado->destinatario_id ) and ($id_usuario == $objChamado->consultor_id ) )	 
-	    $chEncaminhado = 0;  //Posso encerrar se sou o destinatário	e dono do chamado
+	    $chEncaminhado = 0;  //Posso encerrar se sou o destinatÃ¡rio	e dono do chamado
 	 else if ( ($id_usuario == $superior_id) and ( $objChamado->consultor_id == $objChamado->destinatario_id ))
-	    $chEncaminhado = 0;  //Posso encerrar se sou o superior do dono do chamado e o chamado está com quem o abriu
+	    $chEncaminhado = 0;  //Posso encerrar se sou o superior do dono do chamado e o chamado estÃ¡ com quem o abriu
 	 else if ( ($id_usuario == $superior_id) and ( $id_usuario == $objChamado->destinatario_id ))
-	    $chEncaminhado = 0;  //Posso encerrar se sou o superior do dono do chamado e o chamado está com o superior
+	    $chEncaminhado = 0;  //Posso encerrar se sou o superior do dono do chamado e o chamado estÃ¡ com o superior
 	 else if ( ($id_usuario == $superior_id) and ( $id_usuario == conn_obterSuperior($objChamado->destinatario_id)) )
-	    $chEncaminhado = 0;  //Posso encerrar se sou o superior do dono do chamado e o chamado está com um subordinado meu
+	    $chEncaminhado = 0;  //Posso encerrar se sou o superior do dono do chamado e o chamado estÃ¡ com um subordinado meu
 	 else if ( ($id_usuario == $objChamado->consultor_id) and ( $id_usuario == conn_obterSuperior($objChamado->destinatario_id)) )	
-	    $chEncaminhado = 0;  //Posso encerrar se sou o  dono do chamado e o chamado está com um subordinado meu	 
+	    $chEncaminhado = 0;  //Posso encerrar se sou o  dono do chamado e o chamado estÃ¡ com um subordinado meu	 
 	 else  if ($PodeEncerrarQualquerChamado) 
     	 $chEncaminhado = 0; // Indica quem pode encerrar qualquer chamado
 	 
@@ -196,7 +183,7 @@
 	}		
 	
 	 
-	 // Armazeno em uma tabela temporária a data e hora da abertura do novo contato para este funcionario	
+	 // Armazeno em uma tabela temporÃ¡ria a data e hora da abertura do novo contato para este funcionario	
 	if (!isset($horae)) {
 		$horae = date("H:i:s");
 	}
@@ -244,23 +231,23 @@
 	$sql = "select Ic_Intersystem, Ic_Datacenter, Ic_SLA, Ic_PosVenda from clienteplus where id_cliente = '$id_cliente'";		
 	$result = mysql_query($sql) ;	
 	$linha=mysql_fetch_object($result);
-	$ClienteIntersystem = $linha->Ic_Intersystem ? "<BR/><BR/><B><FONT COLOR=ff0000>INTERSYSTEM SERVIÇOS</font></b><BR/>" : "" ;	
+	$ClienteIntersystem = $linha->Ic_Intersystem ? "<BR/><BR/><B><FONT COLOR=ff0000>INTERSYSTEM SERVIÃ‡OS</font></b><BR/>" : "" ;	
 	$ClienteDatacenter = $linha->Ic_Datacenter ? "<BR/><B><FONT COLOR=ff0000>---> USA DATACENTER <---</font></b><BR/>" : "" ;
 	$inter = $linha->Ic_Intersystem == 1;	
 	$ClienteSLA = '';
 	$ClienteSLA = $linha->Ic_SLA ? "<BR/><B><FONT COLOR=ff00000>---> cliente com SLA diferenciado: 348640  <---</font></b><BR/>" : "" ;
 	$ClientePosVenda = '';
-	$ClientePosVenda = $linha->Ic_PosVenda ? "<BR/><B><FONT COLOR=ff00000>---> ! PÓS VENDA ! <---</font></b><BR/>" : "" ;	
+	$ClientePosVenda = $linha->Ic_PosVenda ? "<BR/><B><FONT COLOR=ff00000>---> ! PÃ“S VENDA ! <---</font></b><BR/>" : "" ;	
 	
 	$tem_documentacao = conn_temDocumentacao($id_chamado);	
 	$JaFoiParaBase = connChamadoJaEstaNaBaseWeb($id_chamado);
-?><script src="../scripts/jquery-1.4.2.js"></script>		
+?>
 
-<script language="JavaScript" type="text/javascript" src="../scripts/formataData.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="../scripts/formataData.js"></script>
 <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 
-<script type="text/javascript" charset="utf-8">	
+<script type="text/javascript" >	
  $(function() {
   var fieldCount = 0;
   $("#addFieldButton").click(function() {
@@ -278,16 +265,33 @@
   });
  });
 </script>
+
+    <script>
+		function AdicionarAjuda() {
+			
+			$.ajax({
+				method: "POST",
+				url: "InsereFilaRetaguarda.php",
+				data: { IdConsultor: "<?=$ok?>",  IdChamado: "<?=$id_chamado?>"} 
+			}).done(function() {
+				$('#ajuda').html("Ajuda Solicitada");
+				$("#btnAjuda").prop('disabled', 'true');
+			});
+			
+
+		}
+	</script>  
+
 <script src="coolbuttons.js"></script>
 
 <script>
-	//carrega a function divFlutua na página
+	//carrega a function divFlutua na pÃ¡gina
 	$(document).ready(function () { divFlutua(); });
-	//executa o a function divFlutua sempre que a página é rolada
+	//executa o a function divFlutua sempre que a pÃ¡gina Ã© rolada
 	$(document).scroll(function () { divFlutua(); });
 	//function responsavel por fazer a div flutuar na pagina
 	function divFlutua() {
-		// aplica animação na div toda fez que o scroll da janela é usado
+		// aplica animaÃ§Ã£o na div toda fez que o scroll da janela Ã© usado
 		$(window).scroll(function () {
 			$(".flutua").css('margin-top', $(window).scrollTop()-13);
 		});
@@ -305,8 +309,16 @@
 <html>
 <head>
 <title>Hist&oacute;rico</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	
+
+    <meta charset="utf-8">    
+
+
+    
+    
+
 <link rel="stylesheet" href="stilos.css" type="text/css">
+
 <style type="text/css">
 <!--
 .dragTest {
@@ -351,7 +363,7 @@
 <br>
 <br>
 
-<hr size="1" noshade>
+<hr size="1" noshade="noshade">
 <div align="center"> 
   <table width="98%" border="0">
     <tr> 
@@ -457,9 +469,6 @@
         <div align="center"> 
           <p><a name="Contato"></a>Novo Contato [<a href="#Inicio">navegar para o inicio</a>]<br>
           </p>
-		  <p>
-		  <? 			echo $LinkGrhNet;		   ?>          
-		  </p>
         </div>
         <table width="98%" border="0" align="center">
           <tr valign="bottom">
@@ -478,12 +487,12 @@
           <tr valign="bottom"> 
             <td width="29%"> 
               <select name="origem" class="bordagrafite02">
-<option value=0>Selecione uma opção</option>			  
+<option value="0">Selecione uma opÃ§Ã£o</option>			  
 <?
     $s = 0;
 	/*
-	  Atenção à linha abaixo.
-	  Quando o usuário foi 1 (Edson) SEMPRE será Origem = 7 (Encaminhamento Interno)
+	  AtenÃ§Ã£o Ã  linha abaixo.
+	  Quando o usuÃ¡rio foi 1 (Edson) SEMPRE serÃ¡ Origem = 7 (Encaminhamento Interno)
 	*/
 	if ($ok == 1) { $s=7; }  
 	$sistema = pegaOrigens();
@@ -532,7 +541,7 @@
     </span>
 <span id="listaReleases">
 	<select name="Id_Release" class="botao_fino">
-		<option selected value="0" >Selecione</option>
+		<option selected="selected" value="0" >Selecione</option>
 		<? 
         $Id_Release = $objChamado->Id_Release;		
 		$releases = Release::obterReleasesEmAndamento($Id_Release);
@@ -599,10 +608,18 @@
               </p>
 
 
+<br>
+<?php if ($ok==12  || ($Usuario_Area==1)) { ?>
+<button id="btnAjuda" onClick="javascript:AdicionarAjuda('<?=$ok?>','<?=$id_chamado?>');" type="button" class="btn btn-primary btn-sm">Ajuda</button>  <span id="ajuda"></span>   / <a href="retaguarda/index.php" target="_blank">Ver fila retaguarda</a><br><br>
+
+<?php } ?>
+
 <?
 	$restricoesUsuario = funcoesObterRestricaoChamadoUsuario($ok, $id_chamado);
 	if (count($restricoesUsuario)>0) {
 ?>              
+
+
             <table border="0" cellspacing="1" cellpadding="1">
               <tr>
                 <td>&nbsp;</td>
@@ -613,7 +630,7 @@
 ?>
               <tr>
                 <td>
-                <input <?php if (!(strcmp($linha["ok"],1))) {echo "checked=\"checked\"";} ?> type="checkbox" name="IdsRestricoes[]" id="IdsRestricoes[]" value="<?=$linha["id"]?>"/></td>
+                <input <?php if (!(strcmp($linha["ok"],1))) {echo "checked=\"checked\"";} ?> type="checkbox" name="IdsRestricoes[]" id="IdsRestricoes[]" value="<?=$linha["id"]?>"></td>
                 <td><p>	
                   <?=$linha["descricao"]?> 
                 </p></td>
@@ -647,7 +664,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
               <input name="userfile[]" type="file" class="borda_fina" size="50" multiple >              
               <div id="additionalEmails"></div>			  
               <input name="button" type="button" class="borda_fina" id="addFieldButton"  value="Anexar + Arquivo" > <input type="hidden" name="MAX_FILE_SIZE" value="99999999">	
-<input type="button" name="button2" id="button2" value="DOCUMENTAÇÃO" onClick="Documentacao()"><br>
+<input type="button" name="button2" id="button2" value="DOCUMENTAÃ‡ÃƒO" onClick="Documentacao()"><br>
 			  <br>
               
 <?
@@ -655,9 +672,9 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 	{
 						
 ?>
-        <input type="checkbox" value="1" onClick="alterna(comunica)"> Comunicar outras áreas: <br>
+        <input type="checkbox" value="1" onClick="alterna(comunica)"> Comunicar outras Ã¡reas: <br>
         <span id="comunica" style="Display : none "> 
-        <hr size="1" />                
+        <hr size="1">                
         <?
 	
             $lista = funcoes_obterAreasComUsuarios($id_chamado);
@@ -674,7 +691,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
                 echo '<input  type="checkbox" '.$checked.' '.$disabled.' value="' . $Item_Id_Usuario .'"> ' . $Item_area .  "<br>";
             }		
         ?>
-        <hr size="1" />
+        <hr size="1">
         </span>
 <?
 	}
@@ -694,7 +711,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 <input name="lembrete" type="checkbox" id="lembrete" value="1">Incluir lembrete<br>
                
 <? if ($externo) {?>
-	Atenção ! Este chamado foi aberto pelo cliente.<br>
+	AtenÃ§Ã£o ! Este chamado foi aberto pelo cliente.<br>
 <? } ?>				
                 <input type="checkbox" name="publicar" value="1">
                 Publicar para o cliente
@@ -715,14 +732,14 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 ?>
                 <input type="checkbox" name="base" value="1" onClick="alterna(sp_base)">
 				<? 
-					if ($JaFoiParaBase) {echo "<font color=#FF0000>Este chamado já está na base.</font> - ";}
+					if ($JaFoiParaBase) {echo "<font color=#FF0000>Este chamado jÃ¡ estÃ¡ na base.</font> - ";}
                 ?>                
-                BASE DE CONHECIMENTO (Selecione esta opção se este contato deve constar na base de conhecimento)
+                BASE DE CONHECIMENTO (Selecione esta opÃ§Ã£o se este contato deve constar na base de conhecimento)
 				<? 
-					if ($JaFoiParaBase) {echo "<font color=#FF0000> - Tenha certeza de que a documentação mudou antes de inserir novamente</font>";}					
+					if ($JaFoiParaBase) {echo "<font color=#FF0000> - Tenha certeza de que a documentaÃ§Ã£o mudou antes de inserir novamente</font>";}					
                 ?>
                 <br>
-              <span id=sp_base style="Display : none "> 
+              <span id="sp_base" style="Display : none "> 
               <table width="60%" border="0" cellspacing="1" cellpadding="1" bgcolor="#CCCCCC">
                 <tr> 
                   <td bgcolor="#FFFFFF"> 
@@ -772,7 +789,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
         <select name="diagnostico" class="bordagrafite02">
         <?
         if( !$objChamado->diagnostico_id ) {
-        echo "<option value=0 selected>Não colocar diagnóstico</option>";
+        echo "<option value=0 selected>NÃ£o colocar diagnÃ³stico</option>";
         }				  
         $sistema = pegaDiagnosticos();
         while ( list($tmp1, $tmp) = each($sistema) ) {
@@ -837,7 +854,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
           </tr>
           <tr> 
             <td colspan="3">
-              <span id=botoes> 
+              <span id="botoes"> 
               <table width="95%" border="0" cellspacing="1" cellpadding="1">
                 <tr> 
                   <td>
@@ -847,7 +864,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
                       <br><br>                  
   <?
 
-						// Nem sempre o dono do chamado faz parte da lista de contatos do usuário atual....
+						// Nem sempre o dono do chamado faz parte da lista de contatos do usuÃ¡rio atual....
 						$BloquearDiretoParaDono = "";
 						$DonoDoChamado = connPegaDonoDoChamado($id_chamado);
 				  		$DonoEmFerias = $DonoDoChamado["Ferias"];
@@ -981,7 +998,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 
 	function cancelar()
 	{		
-		var confirma = confirm("Cancelar irá apagar o rascunho deste contato. Confirma esta operação ?");	
+		var confirma = confirm("Cancelar irÃ¡ apagar o rascunho deste contato. Confirma esta operaÃ§Ã£o ?");	
 		if (confirma) {
 			document.form.action.value = "cancelar";
 			document.form.submit();
@@ -992,7 +1009,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 
 	if (document.form.action.value == "cancelar")
 	{
-		var confirma = confirm("Cancelar irá apagar o rascunho deste contato. Confirma ?");	
+		var confirma = confirm("Cancelar irÃ¡ apagar o rascunho deste contato. Confirma ?");	
 		if (confirma) {
 			document.form.submit();
 			return false;
@@ -1006,7 +1023,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 	{
 		if (!validateEmail(document.form.emailcontatado.value))
 		{
-			window.alert( 'Email inválido');
+			window.alert( 'Email invÃ¡lido');
 			document.form.emailcontatado.focus();
 			return false;			
 		}		
@@ -1015,14 +1032,14 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 
 	if (document.form.prioridade.value==7) {				
 		if (document.form.idchamadodepende.value == "") {
-			window.alert( 'Digite o número do chamado o qual este chamado espera, ou altere a prioridade');
+			window.alert( 'Digite o nÃºmero do chamado o qual este chamado espera, ou altere a prioridade');
 			document.form.idchamadodepende.focus();
 			return false;
 		}
 	}
 	
 	if (document.form.origem.value == 39) {
-		var confirma = confirm("O relatório de visita já está anexado ?");	
+		var confirma = confirm("O relatÃ³rio de visita jÃ¡ estÃ¡ anexado ?");	
 		if (!confirma) {
 			return false;			
 		}
@@ -1030,9 +1047,9 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 
 	/*
 		Chamado 186.261.
-		Consultores não podem alterar para urgente ou urgentíssomo.
-		Consultores não podem alterar prioridade, caso a mesma já estejam
-			como urgente ou urgentíssimo
+		Consultores nÃ£o podem alterar para urgente ou urgentÃ­ssomo.
+		Consultores nÃ£o podem alterar prioridade, caso a mesma jÃ¡ estejam
+			como urgente ou urgentÃ­ssimo
 	*/
 	if ( '-1' != '-<?=$gestor?>' ) {
 		var pAtual =  document.form.prioridade.value;
@@ -1040,13 +1057,13 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 		
 		if ((pAnterior==2) | (pAnterior==3)) {
 			if ((pAtual!=4)&(pAtual!=2)&(pAtual!=3)&(pAtual!=9)) {
-					window.alert( 'Você não pode alterar uma prioridade que é Urgente ou Urgentissimo');
+					window.alert( 'VocÃª nÃ£o pode alterar uma prioridade que Ã© Urgente ou Urgentissimo');
 					document.form.prioridade.value = pAnterior;
 					return false;
 			}
 		} else {		
 			if ((pAtual==2)|(pAtual==3)) {
-					window.alert( 'Você não pode alterar a prioridade para Urgente ou Urgentissimo');
+					window.alert( 'VocÃª nÃ£o pode alterar a prioridade para Urgente ou Urgentissimo');
 					document.form.prioridade.focus();
 					return false;
 			}
@@ -1101,13 +1118,13 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 		if (document.form.base.checked) {
 		
 			if (document.form.base_desc.value=='') {
-				window.alert( 'Digite a descrição para BASE DE CONHECIMENTO');
+				window.alert( 'Digite a descriÃ§Ã£o para BASE DE CONHECIMENTO');
 				document.form.base_desc.focus();
 				return;
 			}
 						
 			if (document.form.diagnostico.value==0) {
-				window.alert( 'Entre com o diagnóstico' );
+				window.alert( 'Entre com o diagnÃ³stico' );
 				document.form.diagnostico.focus();
 				return;
 			}  
@@ -1116,7 +1133,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
    
 	if ( document.form.action.value == 'manter' ) {		
 	  if ( '-<?=$chManter?>'=='-1' ) {
-	    window.alert('Você nao pode manter aberto um contato que foi aberto por <?=$AbertoPor?>\nVoce deve encaminhar'); 
+	    window.alert('VocÃª nao pode manter aberto um contato que foi aberto por <?=$AbertoPor?>\nVoce deve encaminhar'); 
 		return;
 	  }
 	}
@@ -1127,7 +1144,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 					
 		
 		if ( '-<?=$chEncaminhado?>'=='-1' ) {
-			window.alert('Você nao pode encerrar um contato que foi aberto por <?=$AbertoPor?>\nVoce deve encaminhar'); 
+			window.alert('VocÃª nao pode encerrar um contato que foi aberto por <?=$AbertoPor?>\nVoce deve encaminhar'); 
 			return;
 		}
 		
@@ -1152,7 +1169,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 		}		
 		
 		/*
-		Atendendo ao pedido do Edson por telefone (não documentado)
+		Atendendo ao pedido do Edson por telefone (nÃ£o documentado)
 		no dia 01/08/2004
 		*/
 		if (document.form.prioridade.value==4) {
@@ -1172,7 +1189,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 		if('-<?=$pode?>'=='-1') {   
 			<?		
 			if ($tem_documentacao && !$JaFoiParaBase) {		
-				$base_desc = 'ver documentação';
+				$base_desc = 'ver documentaÃ§Ã£o';
 				$_comando = "document.form.base.checked = true;sp_base.style.display='';document.form.base_programa.value='.';document.form.base_desc.value='$base_desc';document.form.base_cliente.checked=true;";
 				echo $_comando;
 			}
@@ -1197,7 +1214,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 					echo $_comando;
 					*/
 			?>		
-				//window.alert("Este chamado precisa ser inserido na Base de conhecimento / Documentação Internet");						
+				//window.alert("Este chamado precisa ser inserido na Base de conhecimento / DocumentaÃ§Ã£o Internet");						
 				//return false;
 		}
 		
@@ -1209,10 +1226,10 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 		if ('<?=$restricoes["mensagemRestricoes"]?>' != '')
 		{
 			if ('<?=$restricoes["impedeEncerrer"]?>' == '1') {
-				window.alert('Chamado com restrições pendentes (<?=$restricoes["mensagemRestricoes"]?>) e não pode ser encerrado'); 
+				window.alert('Chamado com restriÃ§Ãµes pendentes (<?=$restricoes["mensagemRestricoes"]?>) e nÃ£o pode ser encerrado'); 
 				return;				
 			} else {
-				if ( !window.confirm('Chamado com restrições pendentes (<?=$restricoes["mensagemRestricoes"]?>). Confirma encerramento ?') ) {
+				if ( !window.confirm('Chamado com restriÃ§Ãµes pendentes (<?=$restricoes["mensagemRestricoes"]?>). Confirma encerramento ?') ) {
 					return false;
 				}
 			}
@@ -1221,7 +1238,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 		*/
 
 		
-		//Se chegou até aqui,pode encerrar, setamos a prioridade para normal (1)
+		//Se chegou atÃ© aqui,pode encerrar, setamos a prioridade para normal (1)
 		document.form.prioridade.value = 1;
 		
 	} // End if Encerrar
@@ -1230,7 +1247,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 
 	if ( document.form.action.value == 'manter' ) {		
 	  if ( '-<?=$chManter?>'=='-1' ) {
-	    window.alert('Você nao pode manter aberto um contato que foi aberto por <?=$AbertoPor?>\nVoce deve encaminhar'); 
+	    window.alert('VocÃª nao pode manter aberto um contato que foi aberto por <?=$AbertoPor?>\nVoce deve encaminhar'); 
 		return;
 	  }
 	}
@@ -1239,7 +1256,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 
     var editor_data = CKEDITOR.instances.historico.getData();		
     if (editor_data == '') {
-	  window.alert( 'Digite a descrição da solução ou encaminhamento');
+	  window.alert( 'Digite a descriÃ§Ã£o da soluÃ§Ã£o ou encaminhamento');
 	  document.form.historico.focus();
 	  return;
 	}
@@ -1247,7 +1264,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 	
 	if (document.form.action.value == "encaminhar") {
 		if (document.form.destinatario.value==0) {
-		  window.alert( 'Selecione para quem será encaminhado o contato');
+		  window.alert( 'Selecione para quem serÃ¡ encaminhado o contato');
 		  document.form.dest.focus();
 		  return;
 		}
@@ -1255,7 +1272,7 @@ Criar novo lembrete</a> / <font size="1">procurar palavra </font> <input type="t
 	
 
 	  if (document.form.publicar.checked) {
-	     if ( window.confirm('Este contato será visivel para o cliente, confirma o texto ?') ) {
+	     if ( window.confirm('Este contato serÃ¡ visivel para o cliente, confirma o texto ?') ) {
             botoes.innerHTML = "<font size=5>AGUARDE...</font>";
             document.form.submit();
 		 }
@@ -1328,7 +1345,7 @@ function mudouPrioridade()
 	if (document.form.prioridade.value==4) {
 		
 		if ( <?=$Ic_ImpedeEncerramentoAutomatico?> == "1" ) {
-			alert("Este chamado não pode ser encerrado automaticamente");
+			alert("Este chamado nÃ£o pode ser encerrado automaticamente");
 			document.form.prioridade.value = 9;
 			esp.readOnly = true;
 			esp.disabled = "disabled";
@@ -1485,12 +1502,12 @@ where
 order by hora ";
 	  
 
-	  $msg = "Usuários trabalhando neste chamado\\n\\n";
+	  $msg = "UsuÃ¡rios trabalhando neste chamado\\n\\n";
 	  $temMsg = 'n';	  
 	  $result = mysql_query($sql);
 	  while ($linha = mysql_fetch_object($result)) {
 		$temMsg = 's';	  
-	  	$msg .= "$linha->nome, desde às $linha->hora\\n";
+	  	$msg .= "$linha->nome, desde Ã s $linha->hora\\n";
 	  }
 	  
 	  mysql_free_result($result);	  
@@ -1528,7 +1545,7 @@ order by hora ";
 		$("#idchamadodependeretorno").text("Analisando.....");		
 	
 		if (chamado == <?=$id_chamado?>) {
-			alert('Não pode usar o próprio chamado para depender dele');
+			alert('NÃ£o pode usar o prÃ³prio chamado para depender dele');
 			limpaChamadoDependete();
 			return false;			
 		}
@@ -1576,7 +1593,7 @@ function validateEmail(email) {
 
 function Documentacao()
 {
-    window.open('documentacao.php?id_chamado=<?=$id_chamado?>', "Seleção", "scrollbars=yes, height=600, width=800");	
+    window.open('documentacao.php?id_chamado=<?=$id_chamado?>', "SeleÃ§Ã£o", "scrollbars=yes, height=600, width=800");	
 }
 
 
@@ -1665,52 +1682,15 @@ Object.size = function(obj) {
 }
 	
     </script>
-  <script type="text/javascript" src="js/dragEngine.js"></script> 
-  
-  
-<? 
-
-	  $temMsg = false;
-	  
-		$sql = "select  c.id_chamado, c.hora from contato_temp c inner join usuario u on c.id_usuario = u.id_usuario  where       c.id_usuario = $id_usuario and
-      data = '" . date("Y-m-d") . "'
-      and id_chamado <> $id_chamado
-order by hora ";
-	  
-
-	  $msg = "Você já está trabalhando nos seguintes chamados:\\n\\n";
-	  $result = mysql_query($sql) or die (mysql_error() . " - " . $sql);
-	  while ($linha = mysql_fetch_object($result)) {
-		$temMsg = true;
-	  	$msg .= "$linha->id_chamado, desde às $linha->hora\\n";
-	  }
-	  
-	  
- 	  	$msg .= "\\nHora início deste contato: $Hora_Novo_Contato.\\n";
-	  	$msg .= "\\n\\nAtualizar para $Hora_Atual ?\\n";
-	  
-	  
-	  
-	  mysql_free_result($result);  
-	  
-	  if ($temMsg) {
-?>
-<script>
-		if ( confirm( '<?=$msg?>' ) )
-		{
-			reverter('<?=$Hora_Atual?>');
-		} 
-</script>
-<?	
-		}  // End if tem mensagem
-		
-?>  
-  
-  
-  
+    <script type="text/javascript" src="js/dragEngine.js"></script>   
+    
   
   
 </p>
   
 </body>
+<form name="drag1"> 
+	<input type="hidden" name="id_chamado">
+   	<input type="hidden" name="id_contato">
+</form>
 </html>

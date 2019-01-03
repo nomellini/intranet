@@ -1,10 +1,10 @@
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <table width="98%" border="0" align="center" cellpadding="1" cellspacing="1" class="CorBordaTabelaSad" >
 <?
 
 
   while ( list($tmp1, $tmp) = each($contatos) ) {
-			   $abertura = "dia : " . $tmp["dataa"] . "<br>hora : " . $tmp["horaa"] . "<br>duração : " . $tmp["tempo"] ; ;
+			   $abertura = "dia : " . $tmp["dataa"] . "<br>hora : " . $tmp["horaa"] . "<br>duraÃ§Ã£o : " . $tmp["tempo"] ; ;
 			   $encerramento = $tmp["datae"] . "<br>" . $tmp["horae"] ;
 
 
@@ -17,7 +17,7 @@
                  $descricao = eregi_replace($palavra, "<b><font size=3 color=#FF0000>$palavra</font></b>", $descricao);
                 }    
 								
-				$Data_Contato = implode( explode("-",  $tmp["DataContato"]));
+				$Data_Contato = implode( explode("-",  $tmp["DataContato"])); 
 				if ($Data_Contato <= 20101007)  {
 					$descricao = nl2br(" ".$descricao);
 				}	
@@ -27,11 +27,11 @@
 				$descricao = preg_replace("/(\[)([0-9]{0,3})([.])?([0-9]{0,3})(\])/", '<a href="historicochamado.php?id_chamado=$2$4" target="_blank">$2$3$4</a>', $descricao);
 				
 				// Chave de abertura 	           #1
-				// de 0 a três caracteres 0 a 9.   #2
+				// de 0 a trÃªs caracteres 0 a 9.   #2
 				// um ponto opcional               #3
-				// de zero a três caracterez 0-9   #4
-				// vírgula Obrigatória             #5
-				// Espaços em branco opcionais     #6				
+				// de zero a trÃªs caracterez 0-9   #4
+				// vÃ­rgula ObrigatÃ³ria             #5
+				// EspaÃ§os em branco opcionais     #6				
 				// Zeros opcionais	               #7
 				// digitos do contato              #8
 				// Chave de fechamento             #9
@@ -40,7 +40,7 @@
 				//$descricao .= 	 $tmp["DataContato"];
 												
 			
-			// Descrição do nome;			
+			// DescriÃ§Ã£o do nome;			
 			
 			if ($NovoContato) {
 				$class =  "SubitemSadNovoContato";		
@@ -118,7 +118,7 @@
 				$contador = "Contato # " . sprintf("%03d", $Ccontador);
 				$msg="$descricao $frase";
 				if ($publicar) {
-					$msg = "$msg<br><i>Visível para o cliente</i>";
+					$msg = "$msg<br><i>VisÃ­vel para o cliente</i>";
 				}
 							  				
 	?>
@@ -133,9 +133,9 @@
                       <td class="TituloSubitemSad"><a name="c_<?=$Ccontador?>"><a name="Id_<?=$tmp["contato_id"]?>"></a>
 <?
 	   print "[<a href=\"#c_1\">Primeiro</a>]";
-	   print "[<a href=\"#c_". (($Ccontador)+1)."\">Próximo</a>]";
+	   print "[<a href=\"#c_". (($Ccontador)+1)."\">PrÃ³ximo</a>]";
 	   print "[<a href=\"#c_". (($Ccontador)-1)."\">Anterior</a>]";	   
-	   print "[<a href=\"#c_".$UltimoContato."\">Último</a>]";
+	   print "[<a href=\"#c_".$UltimoContato."\">Ãšltimo</a>]";
 	   if ($Ccontador == $UltimoContato) {
 		   print "<a name=c_ultimo></a>";
 	   }
@@ -311,7 +311,7 @@
                     
 
 				  <?
-				  print $contador . ". Duração do contato: ";
+				  print $contador . ". DuraÃ§Ã£o do contato: ";
                   print $tmp["tempo"];
 				  $segundos += $tmp["temposec"];
 				  ?>

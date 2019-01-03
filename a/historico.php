@@ -26,7 +26,7 @@
 	$semPontoNemEspaco = str_replace(".", "", $id_cliente);
 	$semPontoNemEspaco = str_replace(" ", "", $semPontoNemEspaco);
 	
-	// Se o resultado for numérico, mantenho o número
+	// Se o resultado for numÃ©rico, mantenho o nÃºmero
 	if (is_numeric($semPontoNemEspaco)) {
 		$id_cliente = $semPontoNemEspaco;
 	}
@@ -104,19 +104,19 @@
 	}
 	
 	if ($fl_posvenda == 1) {
-		$msgbl = "<br><h3>Cliente em pós venda";
+		$msgbl = "<br><h3>Cliente em pÃ³s venda";
 		//$bl =1 ;
 	}
 
 
 	
 	/*
-	  Se o usuário for da administração, eu libero o cliente,
-	  mas aviso que o cliente está bloqueado.
+	  Se o usuÃ¡rio for da administraÃ§Ã£o, eu libero o cliente,
+	  mas aviso que o cliente estÃ¡ bloqueado.
 	
 	if  (!$atendimento)  {
       if ($fl_posvenda==1) {	  
-	    $msgbl .= " - pós venda";
+	    $msgbl .= " - pÃ³s venda";
 	  }
  	  $bl = 0;
 	}
@@ -127,7 +127,7 @@
 	  }
 	
 	/*
-	   Qualquer alteração aqui deve ser feita em historicochamado.php, pois o código   é o mesmo
+	   Qualquer alteraÃ§Ã£o aqui deve ser feita em historicochamado.php, pois o cÃ³digo   Ã© o mesmo
 	*/	
     $fernando = ($ok == 12);
 	$nunes = ($ok==141);
@@ -153,7 +153,7 @@
 	$data = explode('-', $data);
 	$datainicioposvenda = "$data[2]/$data[1]/$data[0]";
 	$inter = $linha->Ic_Intersystem == 1;
-	$ClienteIntersystem = $linha->Ic_Intersystem ? "<BR/><BR/><FONT COLOR=ff0000>INTERSYSTEM SERVIÇOS</font><BR/>" : "" ;	
+	$ClienteIntersystem = $linha->Ic_Intersystem ? "<BR/><BR/><FONT COLOR=ff0000>INTERSYSTEM SERVIÃ‡OS</font><BR/>" : "" ;	
 	$ClienteDatacenter = '';
 	$ClienteDatacenter = $linha->Ic_Datacenter ? "<BR/><B><FONT COLOR=ff0000>---> USA DATACENTER <---</font></b><BR/>" : "" ;
 	
@@ -164,7 +164,7 @@
 	$ClienteSLA = $linha->Ic_SLA ? "cliente com SLA diferenciado : $Qt_SLA - 348640" : '';
 	
 	$ClientePosVenda = '';
-	$ClientePosVenda = $linha->Ic_PosVenda ? "<BR/><B><FONT COLOR=ff00000>---> ! PÓS VENDA ! <---</font></b><BR/>" : "" ;
+	$ClientePosVenda = $linha->Ic_PosVenda ? "<BR/><B><FONT COLOR=ff00000>---> ! PÃ“S VENDA ! <---</font></b><BR/>" : "" ;
 
 
    loga_online($ok, $REMOTE_ADDR,  $id_cliente);	
@@ -196,7 +196,7 @@
   function seleciona() {
     window.name = "pai";
     value = document.form.clientecodigo.value;
-    window.open('selecionacliente.php?id_cliente='+value, "Seleção", "scrollbars=yes, height=488, width=600");
+    window.open('selecionacliente.php?id_cliente='+value, "SeleÃ§Ã£o", "scrollbars=yes, height=488, width=600");
   }
   
   
@@ -223,7 +223,7 @@ function filter2 (phrase, _id){
 <html>
 <head>
 <title>Hist&oacute;rico</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="stilos.css" type="text/css">
 </head>
 <body bgcolor="#FFFFFF" text="#000000" leftmargin="1" topmargin="1" marginwidth="1" marginheight="1">
@@ -309,7 +309,7 @@ function filter2 (phrase, _id){
           </td>
           <td width="50%"><p>Treinamentos cobrados<br>
               <select name="id_produto" class="unnamed1" >
-                <option value=0 selected="selected">Selecione uma opção</option>
+                <option value=0 selected="selected">Selecione uma opÃ§Ã£o</option>
                 <?
 			  
 
@@ -347,7 +347,7 @@ function filter2 (phrase, _id){
 	  echo "<option value='$id'>$si</option>";
 	}
 	if (!$qtde) {
-      echo "<option value=-1>Sistema não cadastrado:: $ok :: $id_cliente</option>";	  
+      echo "<option value=-1>Sistema nÃ£o cadastrado:: $ok :: $id_cliente</option>";	  
 	}
 ?>
     </OPTGROUP>
@@ -400,7 +400,7 @@ function filter2 (phrase, _id){
         </div></td>
       <td width="18%" align="center"><b>
           <font color="#FFFFFF" size="1">
-            Aberto Por -> Está com
+            Aberto Por -> EstÃ¡ com
           </font>
         </b></td>
       <td width="10%"><b>

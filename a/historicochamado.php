@@ -323,7 +323,7 @@
   function seleciona() {
     window.name = "pai";
     value = document.form.clientecodigo.value;
-    window.open('selecionacliente.php?id_cliente='+value, "Sele��o", "scrollbars=yes, height=488, width=600");
+    window.open('selecionacliente.php?id_cliente='+value, "Seleção", "scrollbars=yes, height=488, width=600");
   }
 </script>
 <html>
@@ -672,7 +672,7 @@
 	}
 ?>
 <br>p: <?=($ordemUsuario+1)?>
-<a href="javascript:novaOrdem(<?=$id_chamado?>, <?=$ordemMax?>)"><img src="imagens/SadTopo.png" width="10" height="15" border="0" align="absbottom" title="Prioridade M�xima"></a><a href="javascript:novaOrdem(<?=$id_chamado?>, <?=$ordemCima?>)"><img src="imagens/Sad_Cima_Ordem.png" border="0" height="15" width="10" align="absbottom" title="Aumentar Prioridade"></a><a href="javascript:novaOrdem(<?=$id_chamado?>, <?=$ordemBaixo?>)"><img src="imagens/Sad_Baixo_Ordem.png" border="0" height="15" width="10" align="absbottom" title="Diminuir Prioridade"></a><a href="javascript:novaOrdem(<?=$id_chamado?>, 0)"><img src="imagens/SadBotton.png" width="10" height="15"  border="0" align="absbottom" title="Prioridade M�nima"></a>
+<a href="javascript:novaOrdem(<?=$id_chamado?>, <?=$ordemMax?>)"><img src="imagens/SadTopo.png" width="10" height="15" border="0" align="absbottom" title="Prioridade Máxima"></a><a href="javascript:novaOrdem(<?=$id_chamado?>, <?=$ordemCima?>)"><img src="imagens/Sad_Cima_Ordem.png" border="0" height="15" width="10" align="absbottom" title="Aumentar Prioridade"></a><a href="javascript:novaOrdem(<?=$id_chamado?>, <?=$ordemBaixo?>)"><img src="imagens/Sad_Baixo_Ordem.png" border="0" height="15" width="10" align="absbottom" title="Diminuir Prioridade"></a><a href="javascript:novaOrdem(<?=$id_chamado?>, 0)"><img src="imagens/SadBotton.png" width="10" height="15"  border="0" align="absbottom" title="Prioridade Mínima"></a>
 <? } ?>
 </form>
 
@@ -1109,7 +1109,7 @@ function Documentacao()
 }
 
 <? if ($_ReadyOnlyStatus) { ?>
-	window.alert('<?=$_ReadyOnlyMessage ?>');
+	toastr.info('<?=$_ReadyOnlyMessage ?>');
 <? } ?>
 </script>
 
@@ -1118,6 +1118,6 @@ function Documentacao()
 
 <script>
  if ('' != '<?=$ClienteSLA?>') {
- 	window.alert("<?=$ClienteSLAMsg?>");
+ 	toastr.info("<?=$ClienteSLAMsg?>");
  }
 </script>

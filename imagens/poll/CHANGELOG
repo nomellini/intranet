@@ -1,0 +1,156 @@
+oooooooooooooooooooooo
+O  - is bug fix      O
+o  + is new feature  o
+O  * is misc         O
+oooooooooooooooooooooo
+
+
+[> 15-NOVEMBER-2000 -- v0.1.99
+- Ugh, missed an is_numeric() call in polllist.php3.  That has
+  been replace with a PHP3-happy expression. (thx james)
+- Fixed a parse error where some versions of PHP did not like
+  having stuff like ${$this} with the brackets, so all instances
+  were changed to $$this.  (thx james)
+- Fixed potential problem where "logout" did not force the 
+  authentication cookie to expire on some browsers.  It should
+  work much better now.  Also _hopefully_ fixed problem with
+  invalid logins when using correct information.
+- Fixed potential problem with using spaces or commas in your
+  admin user name.  They should work now.
+- If specified $urlpath does not end in a slash, one is added.
++ Inline results now have the total number of votes displayed at
+  the bottom.
+
+[> 13-NOVEMBER-2000 -- v0.1.98
+- booth.php3 now just passes a pid to dovote.php3 instead of a
+  serialized poll object.  dovote.php3 then uses this pid to
+  create the poll again.  it now involves a little more overhead,
+  but it shouldn't make a noticieable different.  The change is 
+  because versions of Apache before 1.3.2 or so could not handle 
+  the previous method.
+- A comment in config.php3 said that the urlpath variable does not 
+  need an ending slash.  It should have said that it DOES need the 
+  slash.
+- Removed a call to "is_numeric" because it is not supported
+  in PHP3.
+- Fixed problem with authentication cookie timing out very quickly. 
++ Added logout option in the admin sector, which should invalidate
+  your authentication cookie.
+
+[> 07-NOVEMBER-2000 -- v0.1.97.1
+- Fixed problem with PHP3 not being able to find functions in the
+  admin.php3 file (PHP4 did not have this problem).
+- Rearranged the way passwords were handled a little, hopefully
+  fixing an incompatibility.
+
+[> 05-NOVEMBER-2000 -- v0.1.97
++ Results table is now displayed instead of the voting booth if the 
+  visitor has already on that particular poll.  This is done via
+  cookies.  If the user is not accepting cookies, they will instead
+  be forwarded to the full-page results after voting, and will just
+  see the regular booth in the page during subsequent visits.
++ Added the ability to display a random activated poll and also the
+  ability to display the newest activated poll (will display the
+  poll with the most current timestamp, without any updating on your
+  part).  This is in addition to the previous ability to display
+  a specific poll.  See README for implementation details.
++ Added authentication to administration page.  Code originally
+  contributed by Robert "Longwalker" Brim  (Please see README)
++ Added several code snippets to support the authentication stuff.
+  This includes option to change your password and detection to
+  add a new admin account if none exists.  At the moment only one
+  admin account may exist.  Multiple accounts with different 
+  levels of permission will be added in a future version.
++ Added ability to view a poll under the adminstration page.  As
+  of right now it does not include statistics-- It simply displays
+  the question, options, and code snippet needed to embed the chosen
+  poll.  Will add statistic-related information in a future release.
+- Sympoll usually attempts to detect the URL path of its directory.
+  Under certain web server configurations, it was not getting the
+  correct URL.  There is now an option in includes/config.php3 to
+  override the value it detects.
+- Fixed "reset" and "delete" not working in admin (thx aaron rogers)
+- Fixed minor bug where the number of option fields given when 
+  editing a poll was one less than specified in the config file.
+* Adjusted bars in images/ directory so that they look at least 
+  somewhat decent when scaled horizontally OR vertically.
+* Code for admin page reorganized and somewhat improved.
+* Many other minor code tweaks
+
+[> 03-SEPTEMBER-2000 -- v0.1.96
+- Fixed a bug that caused the entire script to not work under 
+  PHP 4.0.2.  PHP 4.0.1 and eariler would tolerate it, but 4.0.2
+  would not.
+* Slightly changed the format of the poll list page.  It's now using
+  one less layer of tables to format, so hopefully that should help
+  some of the smaller browsers with correct rendering.
+
+[> 04-AUGUST-2000 -- v0.1.95.2
+- Fixed a problem where I was declaring variables GLOBAL when they
+  should not have been.  PHP4 didn't seem to mind, but PHP3 would
+  print out a warning message and continue. (thx chi)
+
+[> 03-AUGUST-2000 -- v0.1.95.1
+- Ack!  sympoll.mysql for some reason did not make it into v0.1.95. 
+  It is added here.  That file addition is the only change.
+  (thx roger/cwchan)
+
+[> 01-AUGUST-2000 -- v0.1.95
+* README modified to reflect changes.
+* Moved config.php3 to includes/
+* Renamed polls.php3 to polllist.php3
+* Sympoll now has some object-oriented PHP in it.  This should hopefully
+  reduce database calls a little, and makes the code look cleaner to me.  =)
+* On admin page, if no polls currently exist, the only option to select will
+  be "create".
++ Added HTML header and footer support.  see includes/header.php3 and
+  includes/footer.php3.  Currently these are utilized on the results
+  page and the list of polls.
++ Added the ability to view results without voting.  This can be done by either
+  clicking on "Vote!" without selecting an option, or by clicking the "Results"
+  link in the booth.
+- Fixed some formatting (cosmetic) that looked weird when long options or 
+  questions were used.  May have some more work to do here at some point.
+- When cookies are on and a person tries to vote a 2nd time, they will be
+  forwarded to the results (with a note that says they already voted once).  
+  Previously, they would go to a blank page that told them they already voted.
+- Fixed potential problem with HTML not liking "quotation marks" when entering
+  questions or options.
+- Fixed(?) a strange problem that sometimes caused a url to be missing a slash.
+- Fixed some minor bugs that didn't seem to cause any problems.
+
+[> 06-APRIL-2000 -- v0.1.3.1
+* moved blank.gif to images/
+* added a _teeny_ bit of security:  admin.php3 can now be named to 
+  anything.php3.  it is recommended that you do NOT leave it as admin.php3, 
+  and still rename it to whatever.disabled when not in use (eMail 
+  ralusp@mail.com if you're confused about this).
+- added missing semicolon and quotes in embed instructions displayed after 
+  create/edit polls.  (thx cyberdots)
+
+[> 28-MARCH-2000 -- v0.1.3
+* new format for the admin page
+* much more simplification of the config file (this was my main objective).
+
+[> 22-MARCH-2000 -- v0.1.2
+- choices should now be displayed in the same order as entered.
+- a few other minor bug fixes.
+* some changes in the database tables format.  this SHOULD be the
+  last change here for a while-- no need to worry about this happening
+  every release. 
+* cleaned up the config file a little.
+* some code cleanup, html cleanup, and tweaks
+
+[> 03-MARCH-2000 -- v0.1.1
+- fixed bug that caused deleting a poll to occationally delete 
+  choices from other polls.  in doing so, i also added a new field
+  to the polllist table, and thus the old tables cannot be used.
+  since i don't believe anybody except myself is using this at the
+  moment, i don't see a need to include an upgrade script to preserve
+  the table data.
+
+[> 21-FEB-2000 -- v0.1.0 
+* initial release.  includes functional voting booth, results 
+  displayed as a vertical bargraph and as a count, a comprehensive
+  list of togglable polls, and form-based poll administration.
+

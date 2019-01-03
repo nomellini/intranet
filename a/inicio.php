@@ -1249,7 +1249,7 @@ if ($dataprevista <> '00/00/0000') {
   }
 ?>
 p: <?=($ordemUsuario+1)?>
-<a href="javascript:novaOrdem(<?=$chamado?>, <?=$ordemMax?>)"><img src="imagens/SadTopo.png" width="10" height="15" border="0" align="absbottom" title="Prioridade M?xima"></a><a href="javascript:novaOrdem(<?=$chamado?>, <?=$ordemCima?>)"><img src="imagens/Sad_Cima_Ordem.png" border="0" height="15" width="10" align="absbottom" title="Aumentar Prioridade"></a><a href="javascript:novaOrdem(<?=$chamado?>, <?=$ordemBaixo?>)"><img src="imagens/Sad_Baixo_Ordem.png" border="0" height="15" width="10" align="absbottom" title="Diminuir Prioridade"></a><a href="javascript:novaOrdem(<?=$chamado?>, <?=ORDEM_MIN?>)"><img src="imagens/SadBotton.png" width="10" height="15"  border="0" align="absbottom" title="Prioridade M?nima"></a> 					<div>
+<a href="javascript:novaOrdem(<?=$chamado?>, <?=$ordemMax?>)"><img src="imagens/SadTopo.png" width="10" height="15" border="0" align="absbottom" title="Prioridade Máxima"></a><a href="javascript:novaOrdem(<?=$chamado?>, <?=$ordemCima?>)"><img src="imagens/Sad_Cima_Ordem.png" border="0" height="15" width="10" align="absbottom" title="Aumentar Prioridade"></a><a href="javascript:novaOrdem(<?=$chamado?>, <?=$ordemBaixo?>)"><img src="imagens/Sad_Baixo_Ordem.png" border="0" height="15" width="10" align="absbottom" title="Diminuir Prioridade"></a><a href="javascript:novaOrdem(<?=$chamado?>, <?=ORDEM_MIN?>)"><img src="imagens/SadBotton.png" width="10" height="15"  border="0" align="absbottom" title="Prioridade Mínima"></a> 					<div>
 			  <?
 			  	$restricoes = funcoesObterStatusRestricao($chamado);
 				echo $restricoes["display"];

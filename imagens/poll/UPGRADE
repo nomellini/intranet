@@ -1,0 +1,53 @@
+FOR USERS OF SYMPOLL 0.1.97 OR LATER:
+You must replace ALL of the old files with the new ones
+for complete functionality.  That is all.
+
+*#*#*#*#*##*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
+
+FOR USERS OF SYMPOLL 0.1.96 OR EARILER:
+
+You must replace ALL of the old files with the new ones
+for complete functionality.
+
+Also, you will need to add a table to your database.  The new 
+table is used to store administration account information.
+The declaration for this table has been included in the file
+upgrade.mysql.  It can be merged into your Sympoll database
+by issuing the following command in your shell.  Remember to
+replace <user> with your MySQL user name.  Keep in mind that 
+this may be different than your login for the operating system.
+Also replace <sympdb> with the Sympoll database name, which
+would be `sympoll` if you followed the README file exactly.  
+You may have had to use a different database name though.  
+Finally, this assumes you are in the same directory as the 
+upgrade.mysql file:
+
+mysql -u<user> -p <sympdb> < upgrade.mysql
+
+Alright, now that we've finished that you're almost done.  The
+last step is to browse to your admin.php3 file (or whatever
+you may have renamed it to) so that you can set up your admin 
+account.  Simply click the Authenticate button without entering
+anything in the text fields.  Sympoll will detect that an admin
+account does not exist and it will prompt you to create one. 
+Once this account is created you can log in using it.  Note that 
+once you create your admin account, clicking the authenticate
+button will generate an Invalid Login error unless the correct 
+login information is specified.
+
+One last thing.  For consistancy in the code, please replace
+display_boothUI with display_booth in any places that you
+embedded a poll.  The first will still work for backwards
+compatibility, but it will be removed in a future version.
+
+
+Note 1)
+Remember, once you've added the new database table, the FIRST
+person to attempt to log in gets to create the admin account.
+Be sure that it is you!  =P
+
+Note 2)
+I recommend reviewing the notes at the bottom of the README file for
+other important information.
+
+

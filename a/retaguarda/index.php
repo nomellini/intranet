@@ -82,7 +82,11 @@ where ic_status = 1";
         
     <tr>
       <td><?=$linha->nome?></td>
-      <td><?=$linha->id_chamado?></td>
+      <? if (!$linha->sistema) { ?>
+    	  <td><?=$linha->id_chamado ?></td>
+      <? } else { ?>
+	      <td><a href="../historicochamado.php?&id_chamado=<?=$linha->id_chamado?>" target="_self"> <?=$linha->id_chamado?> </a></td>      
+      <? } ?>      
       <td><?=$linha->cliente_id?></td>      
       <td><?=$linha->sistema?></td>
       <td><?=$linha->descricao?></td>      
@@ -141,7 +145,14 @@ where u.area = 1 and u.ativo=1 and ic_status = 2 order by Dt_Atendimento desc li
         
     <tr>
       <td><?=$linha->nome?></td>
-      <td><?=$linha->id_chamado?></td>
+      
+      <? if (!$linha->sistema) { ?>
+    	  <td><?=$linha->id_chamado ?></td>
+      <? } else { ?>
+	      <td><a href="../historicochamado.php?&id_chamado=<?=$linha->id_chamado?>" target="_self"> <?=$linha->id_chamado?> </a></td>      
+      <? } ?>        
+      
+      
       <td><?=$linha->sistema?></td>
       <td><?=$linha->descricao?></td>      
       <td><?=$linha->retaguarda ?></td>            
@@ -166,6 +177,7 @@ where u.area = 1 and u.ativo=1 and ic_status = 2 order by Dt_Atendimento desc li
     </div>
 
 
+<a href="relatorio.php">Ver estatísticas</a>
 </body>
 
 </html>

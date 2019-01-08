@@ -55,8 +55,8 @@ function obterLinkGrhNetTeste($Sistema)
 {
 	$GRHNET_BASE_TESTE_LINK = "";
 	if (strpos($Sistema,'GRHNET') !== false) {
-		$GRHNET_BASE_TESTE_NOME = "CLIQUE AQUI PARA ENTRAR NO GRHNET BD5 :: (admin/datamace) ";
-		$GRHNET_BASE_TESTE_LINK = "<h3><a href=http://dtmweb/grhnetbd5/ target=_blank>$GRHNET_BASE_TESTE_NOME</a></h3>";	
+		$GRHNET_BASE_TESTE_NOME = "CLIQUE AQUI PARA ENTRAR NO GRHNET RTV141g :: (admin/datamace) ";
+		$GRHNET_BASE_TESTE_LINK = "<h3><a href=http://dtmweb/rtv141g/ target=_blank>$GRHNET_BASE_TESTE_NOME</a></h3>";	
 	}	
 	return 	$GRHNET_BASE_TESTE_LINK;
 }
@@ -3112,7 +3112,8 @@ function mail2($_recipient, $_subject, $_msg, $_headers) {
 		$mailer->AddCC("$cc_email", "$cc_nome"); 
 	} 	
 	
-	$mailer->AddBCC("fernando.nomellini@datamace.com.br", "sad");
+	//Descomento esta linha para testar os emails enviados.
+	//$mailer->AddBCC("fernando.nomellini@datamace.com.br", "sad");
 	
 	//$LastId = Log_Email($_recipient, $_subject, $_msg, $_headers, $_ReplyMail, $_ReplyName);				
 

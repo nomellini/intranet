@@ -1,0 +1,186 @@
+# MySQL dump 7.1
+#
+# Host: localhost    Database: hardware
+#--------------------------------------------------------
+# Server version	3.22.32-log
+
+#
+# Table structure for table 'cpu'
+#
+DROP TABLE IF EXISTS cpu;
+CREATE TABLE cpu (
+  controle smallint(5) unsigned DEFAULT '0' NOT NULL,
+  usuario varchar(100),
+  serie varchar(50),
+  processador varchar(50),
+  placamae varchar(50),
+  ram varchar(10),
+  dvideo varchar(50),
+  drede varchar(50),
+  dsom varchar(50),
+  dmodem varchar(50),
+  dusb varchar(50),
+  zip tinyint(1),
+  dr144 tinyint(1),
+  cdrom tinyint(1),
+  obs longtext,
+  hd1 text,
+  hd2 text,
+  PRIMARY KEY (controle)
+);
+
+#
+# Dumping data for table 'cpu'
+#
+
+INSERT INTO cpu VALUES (19,'Alberto Araújo','97066042','Intel - Pentium III - 550','.','128','','','','','',1,1,1,'-','8,0 GB','');
+INSERT INTO cpu VALUES (2,'Sandra','falta verificar','Pentium III - 500','','64','','','',NULL,'',0,1,1,'-','8,4 GB','');
+INSERT INTO cpu VALUES (1,'Ronaldo','falta verificar','Intel - Pentium III - 500','-','64','-','-','-','','-',1,1,1,'-','8,4 GB','-');
+INSERT INTO cpu VALUES (3,'BBS','falta verificar','Intel - Pentium-S CPU',NULL,'32',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'-','206 MB',NULL);
+INSERT INTO cpu VALUES (4,'Lurdinha','falta verificar','Intel - Pentium III - 550',NULL,'64',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,'-','1,6 GB',NULL);
+INSERT INTO cpu VALUES (5,'Treino 01','falta verificar','Intel - Pentim II - 350',NULL,'64',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,'-','2,0 GB',NULL);
+INSERT INTO cpu VALUES (6,'Hélio','falta verificar','Intel - Pentium III - 550',NULL,'64',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,'-','1,2 GB',NULL);
+INSERT INTO cpu VALUES (7,'Rodrigo','falta verificar','Intel - Pentium III - 550',NULL,'64',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,'-','8,4 GB',NULL);
+INSERT INTO cpu VALUES (8,'Antonio','falta verificar','Intel - Pentium III - 450',NULL,'64',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,'-','1,2 GB',NULL);
+INSERT INTO cpu VALUES (9,'Treino 02','falta verificar','Intel - Pentim II - 350',NULL,'64',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,'-','1,2 GB',NULL);
+INSERT INTO cpu VALUES (10,'Treino 03','falta verificar','Intel - Pentium II - 400',NULL,'64',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,'-','500 MB',NULL);
+INSERT INTO cpu VALUES (11,'Treino 04','falta verificar','Intel - Pentim II - 350',NULL,'64',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,'-','1,2 GB',NULL);
+INSERT INTO cpu VALUES (12,'Treino 05','falta verificar','Intel - Pentium II - 400',NULL,'64',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,'-','1,2 GB',NULL);
+INSERT INTO cpu VALUES (13,'Treino 06','falta verificar','Intel - Pentim II - 350',NULL,'64',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,'-','1,7 GB',NULL);
+INSERT INTO cpu VALUES (14,'Nilza','falta verificar','Intel - Pentium II - 400','','64','','','',NULL,'',0,1,0,'-','3,2 GB','');
+INSERT INTO cpu VALUES (22,'Marcelo Chinaglia','falta verificar','Intel - Pentium III - 550',NULL,'64',NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,'-','8,0 GB',NULL);
+INSERT INTO cpu VALUES (30,'Servidor 2000','.','Pentium III',NULL,'256',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'-','.',NULL);
+INSERT INTO cpu VALUES (31,'Servidor Novell','.','.',NULL,'.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'-','.',NULL);
+INSERT INTO cpu VALUES (32,'Sala de Reunião','falta verificar','Pentium III - 550','.','64','','','','','',0,1,1,'-','6 GB','');
+INSERT INTO cpu VALUES (34,'Sala de Marketing','falta verificar','Pentium III - 550','.','64','','','','','',1,1,1,'-','6 GB','');
+INSERT INTO cpu VALUES (27,'Enéas','falta verificar','Pentium III - 500','.','64','','','','','',0,1,1,'-','6 GB','');
+INSERT INTO cpu VALUES (28,'Carolina','.','.',NULL,'.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'-','.',NULL);
+INSERT INTO cpu VALUES (24,'Marcello Grec','falta verificar','Intel - Pentium III - 500','.','128','','','','','',1,1,1,'-','6 GB','');
+INSERT INTO cpu VALUES (20,'Rogério','falta verificar','Intel - Pentium III - 500','.','128','','','','','',1,1,1,'-','6 GB','');
+INSERT INTO cpu VALUES (15,'Humberto','falta verificar','Intel - Pentium III - 650','.','128','','','','','',1,1,1,'-','6 Gb','');
+INSERT INTO cpu VALUES (18,'Cristiano','falta verificar','Intel - Pentium III - 550','.','128','','','','','',1,1,1,'-','6 GB','');
+INSERT INTO cpu VALUES (21,'Elisângela','falta verificar','Intel - Pentium III - 500','.','64','','','','','',1,1,1,'-','8,0 GB','');
+INSERT INTO cpu VALUES (16,'Ricardo','falta verificar','Intel - Pentium III - 550','.','64','','','','','',1,1,1,'-','6,4 GB','');
+INSERT INTO cpu VALUES (25,'Edson','falta verificar','Intel - Pentium III - 550','.','64','','','','','',1,1,1,'-','12 GB','');
+INSERT INTO cpu VALUES (17,'Fábio','falta verificar','Intel -Pentium III - 650','.','128','','','','','',1,1,1,'-','10 GB','');
+INSERT INTO cpu VALUES (26,'Servidor Linux','.','.',NULL,'.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'-','.',NULL);
+INSERT INTO cpu VALUES (29,'Fernando','.','.',NULL,'.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'-','.',NULL);
+INSERT INTO cpu VALUES (33,'Leandro','.','.',NULL,'.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'-','.',NULL);
+
+#
+# Table structure for table 'perifericos'
+#
+DROP TABLE IF EXISTS perifericos;
+CREATE TABLE perifericos (
+  controle smallint(6),
+  marcamodelo varchar(100),
+  serie varchar(50),
+  local varchar(50),
+  id_tipo smallint(6),
+  obs longtext,
+  controle_p int(11),
+  id_periferico int(11) DEFAULT '0' NOT NULL auto_increment,
+  PRIMARY KEY (id_periferico)
+);
+
+#
+# Dumping data for table 'perifericos'
+#
+
+INSERT INTO perifericos VALUES (27,'Pro View','',NULL,3,'',27,32);
+INSERT INTO perifericos VALUES (27,'Rima Perform 300','falta verificar',NULL,1,'',27,31);
+INSERT INTO perifericos VALUES (14,'HP - Deskjet 840C','falta verificar',NULL,1,'',14,33);
+INSERT INTO perifericos VALUES (34,'Techmedia','',NULL,3,'',34,30);
+INSERT INTO perifericos VALUES (34,'HP - Deskjet 840C','falta verificar',NULL,1,'',34,29);
+INSERT INTO perifericos VALUES (19,'Proview','001862',NULL,3,'',19,8);
+INSERT INTO perifericos VALUES (2,'Techmedia','J4RTCM1448G',NULL,3,'',2,13);
+INSERT INTO perifericos VALUES (1,'HP - Deskjet 710C','BR98H1514H',NULL,1,'',1,14);
+INSERT INTO perifericos VALUES (2,'HP - Deskjet 840C','falta',NULL,1,'',2,12);
+INSERT INTO perifericos VALUES (1,'Techmedia','J61015237',NULL,3,'',1,15);
+INSERT INTO perifericos VALUES (3,'Samsung','LK96177',NULL,3,'',3,16);
+INSERT INTO perifericos VALUES (4,'Pro View','001880',NULL,3,'',4,17);
+INSERT INTO perifericos VALUES (5,'Sync Master','H8UC901516BR',NULL,3,'',5,18);
+INSERT INTO perifericos VALUES (6,'Five Star','JCD63804872',NULL,3,'',6,19);
+INSERT INTO perifericos VALUES (7,'Five Star','QCD62000595',NULL,3,'',7,20);
+INSERT INTO perifericos VALUES (8,'Five Star','QCD61600730',NULL,3,'',8,21);
+INSERT INTO perifericos VALUES (9,'Five Star','FCD62318821',NULL,3,'',9,22);
+INSERT INTO perifericos VALUES (10,'Techmedia','J61055074',NULL,3,'',10,23);
+INSERT INTO perifericos VALUES (11,'Five Star','KCD63320346',NULL,3,'',11,24);
+INSERT INTO perifericos VALUES (12,'Updating','96W022757',NULL,3,'',12,25);
+INSERT INTO perifericos VALUES (13,'Techmedia','J61035948',NULL,3,'',13,26);
+INSERT INTO perifericos VALUES (22,'Techmedia','J61060308',NULL,3,'',22,27);
+INSERT INTO perifericos VALUES (29,'Genius','-',NULL,2,'',29,46);
+INSERT INTO perifericos VALUES (14,'Proview','falta verificar',NULL,3,'',14,34);
+INSERT INTO perifericos VALUES (32,'Proview','falta verificar',NULL,3,'',32,35);
+INSERT INTO perifericos VALUES (25,'Techmedia','falta verificar',NULL,3,'',25,36);
+INSERT INTO perifericos VALUES (16,'Techmedia','falta verificar',NULL,3,'',16,37);
+INSERT INTO perifericos VALUES (17,'Proview','falta verificar',NULL,3,'',17,38);
+INSERT INTO perifericos VALUES (18,'Five Star','falta verificar',NULL,3,'',18,39);
+INSERT INTO perifericos VALUES (15,'Proview','falta verificar',NULL,3,'',15,40);
+INSERT INTO perifericos VALUES (20,'AOC','falta verificar',NULL,3,'',20,41);
+INSERT INTO perifericos VALUES (24,'Proview','falta verificar',NULL,3,'',24,42);
+INSERT INTO perifericos VALUES (19,'Pro View','falta verificar',NULL,3,'',19,43);
+INSERT INTO perifericos VALUES (21,'HP - Deskjet 840C','',NULL,1,'',21,44);
+INSERT INTO perifericos VALUES (21,'Techmedia','',NULL,3,'',21,45);
+
+#
+# Table structure for table 'software'
+#
+DROP TABLE IF EXISTS software;
+CREATE TABLE software (
+  id_software smallint(5) unsigned DEFAULT '0' NOT NULL auto_increment,
+  controle smallint(6),
+  software varchar(50),
+  serie varchar(50),
+  obs longtext,
+  PRIMARY KEY (id_software)
+);
+
+#
+# Dumping data for table 'software'
+#
+
+INSERT INTO software VALUES (12,1,'Windows 98 Full','H8QYV-CB7GC-X44BV-63BT2-9M9GY','');
+INSERT INTO software VALUES (11,2,'Windows 98 Full','50819-028-5104891-06168','');
+INSERT INTO software VALUES (13,1,'Office 2000 Standard','G6XRX-TWFCY-T8DRD-X9DKY-4HK8J','');
+INSERT INTO software VALUES (10,2,'MS Office 2000 Standard','','');
+INSERT INTO software VALUES (7,4,'Windows 95 OEM','05097-OEM-0020732-48568','');
+INSERT INTO software VALUES (8,7,'Windows 95 OEM','24296-OEM-0014612-84974','');
+INSERT INTO software VALUES (9,8,'Windows 95 OEM','24296-OEM-0014612-84615','');
+INSERT INTO software VALUES (14,1,'Dicionário Aurélio','11014536','');
+INSERT INTO software VALUES (15,34,'Windows ME','D8GDK-8D9WQ-K3G2J-6BY9P-36FMW','');
+INSERT INTO software VALUES (16,27,'Windows 98','','');
+INSERT INTO software VALUES (17,27,'Windows 98','K49KK-DCVKV-R4K49-3GCRC-T3D3D','');
+INSERT INTO software VALUES (18,14,'Windows 98','MHJ7K-JQ6M8-HMZBP-V7PYH-QPN72','');
+INSERT INTO software VALUES (19,32,'Windows 98','V9KX6-KC3MM-2F48M-DCQBP-9VC6T','');
+INSERT INTO software VALUES (20,25,'Windows 98','TKH3X-W9HWT-KR3QY-83P88-DV4KD','');
+INSERT INTO software VALUES (21,16,'Windows 98','CPW6R-QWRMP-VBCVM-X7QYB-WBTXF','');
+INSERT INTO software VALUES (22,17,'Windows 2000','','');
+INSERT INTO software VALUES (23,18,'Windows 2000','falta verificar','');
+INSERT INTO software VALUES (24,15,'Windows 2000','falta verificar','');
+INSERT INTO software VALUES (25,20,'Windows 2000','','');
+INSERT INTO software VALUES (26,24,'NT - Workstation','','');
+INSERT INTO software VALUES (27,19,'Windows 98','CPV4X-T4VXT-YVY9T-FFC2J-68349','');
+INSERT INTO software VALUES (28,21,'Windows 95','P4M7K-QG8JH-YJRKT-CXWBW-4WF3H','');
+INSERT INTO software VALUES (29,29,'Windows Me','','');
+
+#
+# Table structure for table 'tipos'
+#
+DROP TABLE IF EXISTS tipos;
+CREATE TABLE tipos (
+  id_tipo smallint(5) unsigned DEFAULT '0' NOT NULL auto_increment,
+  tipo char(60),
+  PRIMARY KEY (id_tipo)
+);
+
+#
+# Dumping data for table 'tipos'
+#
+
+INSERT INTO tipos VALUES (1,'Impressora');
+INSERT INTO tipos VALUES (2,'Scanner');
+INSERT INTO tipos VALUES (3,'Monitor');
+INSERT INTO tipos VALUES (4,'CD-RW');
+INSERT INTO tipos VALUES (5,'Fita DAT');
+

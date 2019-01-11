@@ -1,0 +1,7 @@
+mysqldump datamace -e --add-drop-table -hlocalhost -uroot -pmarcia > datamace
+mysqldump hardware -e --add-drop-table -hlocalhost -uroot -pmarcia > hardware
+mysqldump sympoll  -e --add-drop-table -hlocalhost -uroot -pmarcia > sympoll
+mysqldump phorum   -e --add-drop-table -hlocalhost -uroot -pmarcia > phorum
+mysqldump suporte  -e --add-drop-table -hlocalhost -uroot -pmarcia > suporte
+mysqldump atendimento -e --add-drop-table -hlocalhost -uroot -pmarcia > atendimento
+echo "<h1>BOSTA</h1>"

@@ -1,0 +1,60 @@
+# MySQL dump 7.1
+#
+# Host: localhost    Database: sympoll
+#--------------------------------------------------------
+# Server version	3.22.32-log
+
+#
+# Table structure for table 'sympoll_auth'
+#
+DROP TABLE IF EXISTS sympoll_auth;
+CREATE TABLE sympoll_auth (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  user varchar(16) DEFAULT '' NOT NULL,
+  pass varchar(16) DEFAULT '' NOT NULL,
+  secret varchar(32),
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'sympoll_auth'
+#
+
+INSERT INTO sympoll_auth VALUES (1,'webmaster','wez6WHUvIHwJk','c24bb099339be8cb04a527e494bc8800');
+
+#
+# Table structure for table 'sympoll_data'
+#
+DROP TABLE IF EXISTS sympoll_data;
+CREATE TABLE sympoll_data (
+  pollID int(11) DEFAULT '0' NOT NULL,
+  choiceID int(11) DEFAULT '0' NOT NULL,
+  choice varchar(250) DEFAULT '' NOT NULL,
+  votes int(11) DEFAULT '0' NOT NULL
+);
+
+#
+# Dumping data for table 'sympoll_data'
+#
+
+INSERT INTO sympoll_data VALUES (3,2,'Alberto',29),(3,1,'Cristiano',4),(3,0,'Rogério',7),(2,0,'Humberto',29),(2,1,'Montanha',10),(2,2,'SeaHELL',1),(2,3,'Sandmann',2),(4,0,'Mercurio',0),(4,1,'Venus',0),(4,2,'Marte',4),(4,3,'Jupiter',0),(4,4,'Saturno',0),(4,5,'Urano',1),(4,6,'Netuno',2),(4,7,'Plutão',33),(5,1,'Obsceno',0),(5,0,'Objeto, pois ele encapsula',31),(5,2,'Obtuso',0),(5,3,'Ob',3),(5,4,'Obiscate',0),(5,5,'Obediente',2),(6,0,'Carro',0),(6,1,'Caminhão (na caçamba',4),(6,2,'Ônibus (por baixo da roleta)',5),(6,3,'Taxi (correndo atrás)',0),(6,4,'OVNI (junto com o Dr. Zachari Smith)',14),(6,5,'Bicicleta Barra Circular',0),(6,6,'Motocicleta 50 cc',0),(6,7,'Disco Voador',6),(6,8,'Vassoura 50cc',5),(6,9,'Aspirador a Jato (com fio bem comprido)',1),(7,0,'Deixar Crescer',20),(7,1,'Cortar',19),(8,0,'Eneas',2),(8,1,'Marcio',0),(8,2,'Ricardo Garcia',27),(8,3,'Rodrigo',3),(8,4,'Rogerio',2),(8,5,'Willians',5),(9,0,'Samuel -----> Ronie Von',2),(9,1,'Cristiano ---> Tom Cruise',1),(9,2,'Humberto --> Pequeno Polegar',0),(9,3,'Rogério -----> Bussunda',6),(9,4,'Fernando ---> Gulliver',0),(9,5,'Eneas -> Alfred E. Newman',4),(10,0,'começaram a se mijar de rir',5),(10,1,'um deles reconheceu ele como pai',10),(9,6,'Helio --> Homer Simpson',21),(10,2,'ele correu demais (estilo papaleguas)',15),(10,3,'ele era do 509-E',2),(11,0,'Ele tem medo de ficar resfriado comendo gelatina gelada',6),(11,1,'No planeta dele não existe gelatina gelada',12),(11,2,'Para não doer os dentes',3),(11,3,'porque na caixa está escrito para preparar tem que levar ao fogo',5),(11,4,'Para ver se o microondas funciona',0),(11,5,'Para derreter e virar ki-suco',2),(11,6,'Para ver se alguém fazia enquete sobre este assunto',4),(12,0,'webmaster so trabalhar de oculos escuro (nao ve as cores)',1),(12,1,'a paleta de cores quebrou, e so tem cor quente',1),(12,2,'webmaster é daltonico',0),(12,3,'webmaster tem barulho de trem na cabeça',2),(12,4,'webmaster fuma bombril',18),(12,5,'software de criação da página tá possuído',2),(12,6,'não enche que está muito bom!!!',11),(13,0,'pensou que seu carro era anfíbio ?',4),(13,1,'Queria testar a vedação do carro ?',3),(13,2,'Demorou muito para manobrar o carro e sair da água ?',6),(13,3,'Ainda não aprendeu a virar o volante ?',7),(13,4,'Na concessionária falaram para ela que quando chovia não molhava dentro do carro !',4),(13,5,'Ela achou que estava no Titanic ?',3),(14,0,'Iria assistir à um filme no Cinema.',4),(14,1,'Iria à um Restaurante.',0),(14,2,'Iria assistir à uma peça de Teatro.',0),(14,3,'Compraria um Guaraná e um saquinho de Pipoca, sentaria em frente ao prédio e assistiria o ESPETÁCULO',14),(14,4,'Iria Dormir um sono bem tranquilo.',0),(14,5,'Iria dar uma festa em Comemoração à sua Liberdade.',1),(15,0,'ele é Tãtã',7),(15,1,'não é um celular, é uma caixinha de música disfarçada',0),(15,2,'descobriu que esse barulho espanta pernilongo',0),(15,3,'é o hino nacional dos Webmasters',1),(15,4,'lhe traz boas recordações',0),(15,5,'o celular caiu no chão e emperrou nessa música',5),(15,6,'foi a pior que ele encontrou',0),(15,7,'se identificou com essa música,',2),(15,8,'ele fuma Bom Bril....',16),(16,0,'Pilhas Ray-O-Vac: para  acender a Lanterninha,',10),(16,1,'Philco: para melhorar a  Imagem,',1),(16,2,'Volkswagen: para aprender a fazer gol,',6),(16,3,'Toyota: para sair da lama,',5),(16,4,'Igreja  Universal: porque só Deus salva,',6),(16,5,'Uninove, porque Uninove é DEZ.',0),(17,0,'Sim',12),(17,1,'Não',3),(18,0,'Comeu todo bolo de fuba em casa',2),(18,1,'Ele esta tentando dar o calote em todo pessoal',8),(18,2,'Ele ta tentando virar ator de filme mexicano',2),(18,3,'Ta só esperando socarmos ele',2),(18,4,'Ta pensando que enrola o pessoal',2),(18,5,'Ele fumou Bom Bril',1),(19,0,'está acostumado com escova de dois cabos.',3),(19,1,'sente muita cócega na boca e põe a mão no bolso prá disfarçar.',1),(19,2,'fica brincando com as bolinhas prá passar o tempo.',3),(19,3,'puxa em cima e empurra embaixo.',0),(19,4,'sei lá.',5);
+
+#
+# Table structure for table 'sympoll_list'
+#
+DROP TABLE IF EXISTS sympoll_list;
+CREATE TABLE sympoll_list (
+  pollID int(11) DEFAULT '0' NOT NULL auto_increment,
+  identifier varchar(50) DEFAULT '' NOT NULL,
+  question varchar(250) DEFAULT '' NOT NULL,
+  timeStamp int(11) DEFAULT '0' NOT NULL,
+  status int(11) DEFAULT '0' NOT NULL,
+  PRIMARY KEY (pollID)
+);
+
+#
+# Dumping data for table 'sympoll_list'
+#
+
+INSERT INTO sympoll_list VALUES (3,'desenvolvimento_1','Quem você acha que vai cortar o cabelo primeiro ?',974738258,1),(2,'intranet_2','Qual é o funcionário mais esquisito da Datamace ?',974737712,1),(4,'eneas','De qual planeta veio o nosso amigo ENEAS ?',974740646,1),(5,'Montanha2','Você acha que o Montanha é um Garoto Orientado à.........',974741882,1),(6,'Eneas3','Você acha que o Nosso Amigo Enéas vem trabalhar de:',974747418,1),(7,'carol1','O que a Carol deve fazer com o seu cabelo ?',974894020,1),(8,'cds','De acordo com o pedido de cd, quem tem o pior gosto musical?',974900762,1),(9,'sosias','Qual a melhor correspondência entre funcionário Datamace e personagem ?',974977139,1),(10,'antonio','Quando o Antonio correu, os ladrões não foram atrás porque:',974977357,1),(11,'eneas','O Eneas esquenta a gelatina no microondas antes de comê-la por quê ?',975004175,1),(12,'Guliver_1','A intranet é psicodelica porque?',975944108,1),(13,'lurdinha','O que levou lurdinha a afundar seu carro na enchente ?',975609855,1),(14,'advogado','Se estivesse num prédio em ardendo em chamas, seu Advogado e sua Sogra, o que você faria primeiro?',975664827,1),(15,'webmaster','Você acha que o Celular do Webmaster toca a musiquinha \\\"Tãããã, Tãããã, Tãããã, Tãããã, Tãããã, Tãããã\\\", porquê:',975686824,1),(16,'Patrocinio','Quem você acha que será o novo patrocinador do Corinthians?',975687527,1),(17,'a1','Você gostaria de receber vale-refeição ?',980275235,1),(18,'Eneas','pq o Eneas passou mal no aniversário dele ??',981724613,1),(19,'Eneas de novo','Pq o eneas escova os dentes com uma mão no bolso?',984158468,1);
+

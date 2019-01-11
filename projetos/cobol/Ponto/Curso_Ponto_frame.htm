@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Curso_Ponto</title>
+<script src="Curso_Ponto_utils.js"></script>
+<script>
+<!--
+var g_NavBarLoaded = g_TitleBarLoaded = false;
+
+function FileEntry(pageName, vmlImage, rasterImage) {
+	this.PageName = pageName;
+	this.VMLImage = vmlImage;
+	this.RasterImage = rasterImage;
+	}
+
+g_FileList = new  Array(
+	new FileEntry('Page-1', 'Curso_Ponto1_vml.htm', 'Curso_Ponto1_raster.htm'),
+	new FileEntry('Page-2', 'Curso_Ponto2_vml.htm', 'Curso_Ponto2_raster.htm'),
+	new FileEntry('Page-3', 'Curso_Ponto3_vml.htm', 'Curso_Ponto3_raster.htm'),
+	new FileEntry('Page-4', 'Curso_Ponto4_vml.htm', 'Curso_Ponto4_raster.htm'),
+	new FileEntry('Page-5', 'Curso_Ponto5_vml.htm', 'Curso_Ponto5_raster.htm'),
+	new FileEntry('Page-6', 'Curso_Ponto6_vml.htm', 'Curso_Ponto6_raster.htm'),
+	new FileEntry('Page-7', 'Curso_Ponto7_vml.htm', 'Curso_Ponto7_raster.htm'),
+	new FileEntry('Page-8', 'Curso_Ponto8_vml.htm', 'Curso_Ponto8_raster.htm'),
+	new FileEntry('Page-9', 'Curso_Ponto9_vml.htm', 'Curso_Ponto9_raster.htm'),
+	new FileEntry('Page-10', 'Curso_Ponto10_vml.htm', 'Curso_Ponto10_raster.htm'),
+	new FileEntry('Page-11', 'Curso_Ponto11_vml.htm', 'Curso_Ponto11_raster.htm'),
+	new FileEntry('Page-12', 'Curso_Ponto12_vml.htm', 'Curso_Ponto12_raster.htm'),
+	new FileEntry('Page-13', 'Curso_Ponto13_vml.htm', 'Curso_Ponto13_raster.htm'),
+	new FileEntry('Page-14', 'Curso_Ponto14_vml.htm', 'Curso_Ponto14_raster.htm'),
+	new FileEntry('Page-15', 'Curso_Ponto15_vml.htm', 'Curso_Ponto15_raster.htm'));
+
+
+function HTMLExport() { }
+
+g_theApp = new HTMLExport();
+
+g_theApp.ActiveViewMgr = null;
+g_theApp.UseVML = SupportsVML();
+g_theApp.FileList = g_FileList;
+g_theApp.CurrentPageIX = -1;
+g_theApp.DrawingTitle = "Curso_Ponto";
+
+function BlankPage(color)
+	{
+	if ( (null != color) && ("" == color) )
+		color = "black";
+		
+	return "<html><body bgcolor='" + color + "'><body></html>";
+	}
+	
+//-->
+</script>
+</head>
+
+<frameset rows="*,30">
+	<frame name="frmPageView" src="javascript:parent.BlankPage('white')" frameborder="no" scrolling="auto">
+	
+  <frame name="frmNavBar" src="Curso_Ponto_nav.htm" frameborder="no" scrolling="no">
+</frameset>
+
+<noframes>
+
+</noframes></html>
+

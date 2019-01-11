@@ -1,0 +1,1110 @@
+# MySQL dump 7.1
+#
+# Host: localhost    Database: datamace
+#--------------------------------------------------------
+# Server version	3.22.32-log
+
+#
+# Table structure for table 'TelCol'
+#
+DROP TABLE IF EXISTS TelCol;
+CREATE TABLE TelCol (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  nome char(100),
+  divisao char(50),
+  residencial char(50),
+  celular char(50),
+  homepage char(100),
+  email char(100),
+  ramal char(10),
+  abr char(30),
+  nasc date,
+  ativo tinyint(1),
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'TelCol'
+#
+
+INSERT INTO TelCol VALUES (6,'Carolina Matias de Caldas','Administrativa','759-8987','','','carolina@datamace.com.br','213','Carol','0000-00-00',1);
+INSERT INTO TelCol VALUES (5,'Aparecida Maria Marchine Garcia','Administrativa','','','',NULL,NULL,NULL,NULL,1);
+INSERT INTO TelCol VALUES (4,'Antonio das Graças de Souza','Suporte','4335-4440','9602-7569','','antonio@datamace.com.br','233','Antonio','0000-00-00',1);
+INSERT INTO TelCol VALUES (3,'Luis Casarez Pazos','Suporte','4472-4874','','','luis@datamace.com.br','221','Luis','0000-00-00',1);
+INSERT INTO TelCol VALUES (2,'Alberto Carneiro de Araújo','Desenvolvimento','7689-3381','9405-9302','','aaraujo@datamace.com.br','212','Alberto Araújo','0000-00-00',1);
+INSERT INTO TelCol VALUES (1,'Fernando Nomellini','Desenvolvimento','4352-0742','9756-1050','www.nomellini.org','fernando@datamace.com.br','230','Fernando','1971-08-13',1);
+INSERT INTO TelCol VALUES (7,'Célia Regina Salmin','Recepção','4109-0026','9213-7392','','celia@datamace.com.br','200/228','Célia','0000-00-00',1);
+INSERT INTO TelCol VALUES (8,'Cristiano de Favari','Desenvolvimento','4330-2356','9676-6912','','cristiano@datamace.com.br','218','Cristiano','1973-07-05',1);
+INSERT INTO TelCol VALUES (9,'Edson Milton Cabezaolias','Desenvolvimento','4330-5156','9151-8960','','edson@datamace.com.br','239','Edson','2000-11-29',1);
+INSERT INTO TelCol VALUES (10,'Elisangela Nepomuceno de Souza','Desenvolvimento','4335-0062','9439-0760','','elisangela@datamace.com.br','217','Elis','1976-05-17',1);
+INSERT INTO TelCol VALUES (11,'Eneas Eduardo Silvestre','Desenvolvimento','5669-3237','','','eneas@datamace.com.br','231','Eneas','1977-02-09',1);
+INSERT INTO TelCol VALUES (12,'Fábio Cristófalo da Silva','Desenvolvimento','4365-3008','9817-5735','www.cristofalo.hpg.com.br','fabio@datamace.com.br','217','Fábio','1962-07-28',1);
+INSERT INTO TelCol VALUES (13,'Hélio Aparecido Vezu','Suporte','4392-1159','9809-6951','','helio@datamace.com.br','223','Hélio','1973-03-13',1);
+INSERT INTO TelCol VALUES (14,'Humberto Rodrigo Sandmann','Desenvolvimento','4392-7062','9331-9850','','humberto@datamace.com.br','219','Humberto','1981-06-01',1);
+INSERT INTO TelCol VALUES (15,'José Ronaldo de Lima e Silva','Administrativa','4351-2495','9671-9986','','ronaldo@datamace.com.br','237','Ronaldo','0000-00-00',1);
+INSERT INTO TelCol VALUES (16,'Julio Edgard Gerdullo','Vendas','591-2710','','','julio@datamace.com.br','224','Julio','0000-00-00',1);
+INSERT INTO TelCol VALUES (17,'Maria de Lourdes Valentim','Suporte','4475-3985','9674-9933','','lurdinha@datamace.com.br','222','Lurdinha','0000-00-00',1);
+INSERT INTO TelCol VALUES (18,'Marcello Grec','Desenvolvimento','4341-5530','9671-8311','','grec@datamace.com.br','215','Marcello','1976-02-02',1);
+INSERT INTO TelCol VALUES (19,'Marcelo Chinaglia','Suporte','4220-5468','9106-0607','','marcelo@datamace.com.br','232','Marcelo','0000-00-00',1);
+INSERT INTO TelCol VALUES (20,'Nilza Aparecida Machado','Treinamento','4356-2036','9672-4234','','nilza@datamace.com.br','235','Nilza','0000-00-00',1);
+INSERT INTO TelCol VALUES (21,'Ricardo Hudson','Desenvolvimento','4352-1696','9618-7533','','ricardo@datamace.com.br','220','Ricardo','1970-11-18',1);
+INSERT INTO TelCol VALUES (22,'Rodrigo Souza de Freitas','Suporte','4077-4118','9827-3888','','rodrigo@datamace.com.br','238','rodrigo','0000-00-00',1);
+INSERT INTO TelCol VALUES (28,'Samuel Duarte Rocha','Marketing','6914-2087','9944-6009','','samuel@datamace.com.br','224','Samuel','2000-06-25',1);
+INSERT INTO TelCol VALUES (25,'Rogério Monteiro Pires','Desenvolvimento','4351-3179','9152-5624','','rogerio@datamace.com.br','226','Rogério','0000-00-00',1);
+INSERT INTO TelCol VALUES (30,'Sandra Rita da Silva','Intersystem','',' 9705-3539','','','','Sandra 1','0000-00-00',1);
+INSERT INTO TelCol VALUES (26,'Sueli Quirino Salmin','Administrativa','4109-0026','','','','','Sueli','2000-03-07',1);
+INSERT INTO TelCol VALUES (29,'Willians Machado','Intersystem','4352-2903','9822-0646','','','','Willians','0000-00-00',1);
+INSERT INTO TelCol VALUES (31,'Ricardo Garcia','Intersystem','4356-2036','9618-7588','','','','Ricardo','0000-00-00',1);
+INSERT INTO TelCol VALUES (32,'Rafael Delgado Calvo','Intersystem','','','','','','Rafael','0000-00-00',NULL);
+INSERT INTO TelCol VALUES (33,'Nilzete de Lourdes Machado','Intersystem','7684-1926','','','','','Nilzete','0000-00-00',1);
+INSERT INTO TelCol VALUES (34,'Neide Regina Machado','Intersystem','','9989-2358','','','','Neide','2000-04-26',1);
+INSERT INTO TelCol VALUES (35,'Michael de Oliveira Machado','Intersystem','','','','','','Michael','0000-00-00',NULL);
+INSERT INTO TelCol VALUES (36,'Márcio de jesus da Silva','Intersystem','','9824-3633','','','','Márcio','0000-00-00',1);
+INSERT INTO TelCol VALUES (37,'Katia Sirley França Camargo','Intersystem','','','','','','Katia','0000-00-00',NULL);
+INSERT INTO TelCol VALUES (38,'Carlos da Silva Junior','Intersystem','','9989-2358 ( Samuel )','','','','Carlos','0000-00-00',1);
+INSERT INTO TelCol VALUES (43,'Samuel Duarte Rocha','Marketing','(11) 6914-2087','(11) 9944-6009','','samuel@datamace.com.br','224','Samuel','2000-06-25',NULL);
+INSERT INTO TelCol VALUES (40,'Sandra Aparecida Guiráo','Administrativa','4356-3675','9379-1513','','sandra.guirao@datamace.com.br','','Sandra Guiráo','0000-00-00',1);
+INSERT INTO TelCol VALUES (42,'Cesar Leandro Cabezaolias','Desenvolvimento','4351-2609','9333-1631','www.cesarle.hpg.com.br','leandro@datamace.com.br','230','Leandro','1977-09-21',1);
+
+#
+# Table structure for table 'amigo'
+#
+DROP TABLE IF EXISTS amigo;
+CREATE TABLE amigo (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  nome char(50),
+  cd1 char(50),
+  cd2 char(50),
+  cd3 char(50),
+  cd4 char(50),
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'amigo'
+#
+
+INSERT INTO amigo VALUES (1,'Fernando Nomellini','Alice in Chains - The Best of the Box','Riding With The King - Eric Clapton e B.B.King','LENNY KRAVITZ  - Greatest Hits','Um Dodge Viper Vermelho Conversível');
+INSERT INTO amigo VALUES (2,'Cristiano','Megadeth - Risk','Joe Satriani - Engines of Creation','Iron Maiden - Brave the New World','ou todos (hehehe)');
+INSERT INTO amigo VALUES (3,'Cesar Leandro Cabezaolias','Metallica - S&M','Bruce Dickinson: Balls To Picasso','Kiss -  Psycho-circus','AC/DC - Back in Black');
+INSERT INTO amigo VALUES (4,'Nilza','Roberto Carlos novo sairá 1a quinzena dez/2000','Roberto Carlos novo','Roberto Carlos novo','Roberto Carlos novo');
+INSERT INTO amigo VALUES (5,'Ricardo Garcia','Ultimo da Ivete Sangalo','Ultimo do Belo','As melhores Chitaozinho e Xororó','');
+INSERT INTO amigo VALUES (6,'Rodrigo Souza de Freitas','Jorge Aragão  Ao Vivo  Vol. II   (. Preferido. )','Zeca Pagodinho Ao Vivo ( 1999 )','Melhores do Ano Vol..II','Melhores do Ano 2000');
+INSERT INTO amigo VALUES (7,'Nilzete','Roberto Carlos (novo)','Chitãozinho e Xororó (novo) (c/ música 123)','','');
+INSERT INTO amigo VALUES (8,'Marcello Henrique da Costa Grec','Enya - A Day Without Rain (lançamento 21/11/2000)','','','');
+INSERT INTO amigo VALUES (9,'Ricardo Hudson','Enya - A Day Without Rain','Já foi lançado !!!  : ))))','','');
+INSERT INTO amigo VALUES (10,'Willians','O RAPA - LADO A LADO B','Raul Seixas','Gilberto Gil (novo)','The Doors');
+INSERT INTO amigo VALUES (11,'Hélio Vezu','The Cult  -  Pure Cult','Blues Collection - Eric Alexander  (submarino tem)','','');
+INSERT INTO amigo VALUES (12,'Neide','Roberto Carlos (Novo)','Sandy e JR (último)','','');
+INSERT INTO amigo VALUES (13,'Lurdinha','Riding With The King - Eric Clapton e B.B.King','Greatest Hits - Lenny Kravitz','The Best of The Box - Alice In Chains','');
+INSERT INTO amigo VALUES (14,'Humberto','The Corrs - In Blue','Green Day - Warning','Yngwie Malmsteen - Facing The Animal','Santana - Supernatural');
+INSERT INTO amigo VALUES (15,'Rogerio Monteiro Pires','In Step   -  STEVIE RAY VAUGHAN','Riding With The King - Eric Clapton e B.B.King','','');
+INSERT INTO amigo VALUES (16,'Marcelo Chinaglia','Enya - A Day Without Rain (lançamento 21/11/2000)','1492-Conquest of Paradise - Vangelis ( Warner )','Dream - Kitaro ( G & K )','Era 1 ou 2 - Banda Era');
+INSERT INTO amigo VALUES (18,'Aparecida','Sandy e Junior Ao Vivo - lançado em novembro/2000','As meninas','','');
+INSERT INTO amigo VALUES (25,'Alberto Longo','Enya - A Day Without Rain','U2 - All That You Can\'t Leave Behind','Kitaro - Mandala','Vangelis - Conquest of Paradise');
+INSERT INTO amigo VALUES (19,'Fábio Cristófalo da Silva','Matrix - Trilha Sonora','60 Segundos  - Trilha Sonora','VANGELIS - Reprise 1990-1999','Os Últimos Embalos de Disco - The Last Days Of Dis');
+INSERT INTO amigo VALUES (20,'Elis','The Corrs - Unplugged','Pearl Jam - Ten','Cranberries - No need to argue','');
+INSERT INTO amigo VALUES (22,'Sandra Guiráo','Enya - A Day Without Rain','Djavan ao Vivo - Vol. I','','');
+INSERT INTO amigo VALUES (23,'Eneas Eduardo','Maybe You´ve Been Brainwashed Too-New Radicals  -','','','');
+INSERT INTO amigo VALUES (24,'Ronaldo','COLEÇÃO KID ABELHA','ESTÚPIDO CUPIDO','','');
+INSERT INTO amigo VALUES (26,'Alberto Araújo','Adriana Calcanhoto - Público','','','');
+INSERT INTO amigo VALUES (27,'Antonio das Graças de Souza','MILTON NASCIMENTO\\GILBERTO GIL','COLECAO MILENIUM - MELHORES DO SECULO','','');
+INSERT INTO amigo VALUES (28,'Carolina','Sex Pistols - Kiss This','Midnight Oil - The Real Thing','Alice Chains - Unplugged','');
+INSERT INTO amigo VALUES (29,'Sueli','Renascer Praise - A pesca (evangelico)','Louvor - Vol I - De todos nós','Obs. podem ser encontrados na loja vereda cristã,','Marechal Deodoro, em frente ao Shoppinho !');
+INSERT INTO amigo VALUES (30,'Célia Regina Salmin','Renascer Praise Vol.7(aoVivoem Israel) CD Evangéli','Klim ( Vocal Band) - CD Evangélico','Shania Twain (Come on Over)','Cd\'s evang.Loja Vereda Cristã-Frte Shop.Coração');
+INSERT INTO amigo VALUES (31,'Sandra (Inter)','Lenny Kravitz - Greatest Hits','Smashing Pumpkins - qualquer um','Madonna- Ray of Light','Madonna - Bedtime Stories');
+INSERT INTO amigo VALUES (32,'marcio','Creed (novo)','Lenny Kravitz (novo)','Bush (último)','Trio Virgulino 1º procurar em casa do Norte');
+INSERT INTO amigo VALUES (33,'Michael','Rio Negro e Solimões (ao vivo)','','','');
+INSERT INTO amigo VALUES (34,'Katia','Zeca Pagodinho (ultimo)','','','');
+INSERT INTO amigo VALUES (35,'Junior','Lulu Santos (acustico)','','','');
+INSERT INTO amigo VALUES (36,'Samuel D. Rocha','Ed Motta (Último CD)','','','');
+INSERT INTO amigo VALUES (37,'Rafael Delgado','The Cranberries - Album Bary The Hatchet','Era - Album II','','');
+INSERT INTO amigo VALUES (38,'Edson','Legião Urbana (mais do mesmo)','','','');
+INSERT INTO amigo VALUES (39,'Julio Edgard Gerdullo','Richard Clayderman ( Hit\'s)','','','');
+
+#
+# Table structure for table 'cobolweb'
+#
+DROP TABLE IF EXISTS cobolweb;
+CREATE TABLE cobolweb (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  dia date,
+  ocorrencia char(255),
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'cobolweb'
+#
+
+INSERT INTO cobolweb VALUES (1,'2001-01-29','Menu');
+INSERT INTO cobolweb VALUES (2,'2001-01-29','Pessoais');
+INSERT INTO cobolweb VALUES (3,'2001-02-02','Dependentes');
+INSERT INTO cobolweb VALUES (4,'2001-05-02','Financeiro');
+
+#
+# Table structure for table 'cxsug'
+#
+DROP TABLE IF EXISTS cxsug;
+CREATE TABLE cxsug (
+  id bigint(20) unsigned DEFAULT '0' NOT NULL,
+  datestamp datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+  thread int(11) DEFAULT '0' NOT NULL,
+  parent int(11) DEFAULT '0' NOT NULL,
+  author char(37) DEFAULT '' NOT NULL,
+  subject char(255) DEFAULT '' NOT NULL,
+  email char(200) DEFAULT '' NOT NULL,
+  attachment char(64) DEFAULT '' NOT NULL,
+  host char(50) DEFAULT '' NOT NULL,
+  email_reply char(1) DEFAULT 'N' NOT NULL,
+  approved char(1) DEFAULT 'N' NOT NULL,
+  msgid char(100) DEFAULT '' NOT NULL,
+  PRIMARY KEY (id),
+  KEY author (author),
+  KEY datestamp (datestamp),
+  KEY subject (subject),
+  KEY thread (thread),
+  KEY parent (parent),
+  KEY approved (approved),
+  KEY msgid (msgid)
+);
+
+#
+# Dumping data for table 'cxsug'
+#
+
+INSERT INTO cxsug VALUES (11,'2000-12-14 09:10:29',10,10,'GAQTSS','RE: Atualização de versão pela Internet.','','','10.1.0.2','','Y','<2528fdf987d4ceb2eccf8942b5d3d54a.>');
+INSERT INTO cxsug VALUES (12,'2000-12-14 10:05:58',10,11,'Hélio','RE: Atualização de versão pela Internet.','helio@datamace.com.br','','10.1.0.21','','Y','<80f3fee4f479d6c7c29d4377470670c7.>');
+INSERT INTO cxsug VALUES (9,'2000-12-01 11:03:44',9,0,'GAQTSS','Bem-vindos !','','','10.1.0.2','','Y','<f63034215541bd50214e90e4da2f5e96.>');
+INSERT INTO cxsug VALUES (10,'2000-12-12 08:14:35',10,0,'Hélio','Atualização de versão pela Internet.','helio@datamace.com.br','','10.1.0.21','','Y','<08fb01f5c26c93340cee530faef07196.>');
+INSERT INTO cxsug VALUES (14,'2000-12-15 13:37:20',10,12,'GAQTSS','RE: Atualização de versão pela Internet.','','','10.1.0.2','','Y','<1d0842825c0f76af71a57f8564b7ba14.>');
+INSERT INTO cxsug VALUES (13,'2000-12-14 13:04:21',13,0,'Aparecida','Musica de espera','','','192.168.0.55','','Y','<2e8eadf5425538f9aef536ce00f4bbe6.>');
+INSERT INTO cxsug VALUES (15,'2000-12-15 13:40:34',13,13,'GAQTSS','RE: Musica de espera','','','10.1.0.2','','Y','<a040c5ea6faa95bbc6204557a48effd6.>');
+INSERT INTO cxsug VALUES (16,'2000-12-15 15:41:06',10,14,'Hélio','RE: Atualização de versão pela Internet.','helio@datamace.com.br','','10.1.0.21','','Y','<7d09c05ba2f1d53fa03999d5e0321797.>');
+INSERT INTO cxsug VALUES (17,'2000-12-15 17:06:22',10,16,'GAQTSS','RE: Atualização de versão pela Internet.','','','10.1.0.2','','Y','<7707378ace94ed7ebd0daa2d3fe7d8ad.>');
+INSERT INTO cxsug VALUES (18,'2000-12-16 10:00:28',10,17,'Edson','RE: Atualização de versão pela Internet.','edson@datamace.com.br','','192.168.0.5','','Y','<60acae511efa263401efac9c1d6de3cd.>');
+INSERT INTO cxsug VALUES (19,'2000-12-28 15:57:50',19,0,'Ricardo Garcia','Aviso sobre correções nos programas','ricardo@rhintersystem.com.br','','192.168.0.5','Y','Y','<587ea7f131189b87a17ee88267e167d7.>');
+INSERT INTO cxsug VALUES (20,'2000-12-29 07:55:08',19,19,'GAQTSS','RE: Aviso sobre correções nos programas','','','10.1.0.2','','Y','<8d648ce2c605c9594b7db02e56079666.>');
+INSERT INTO cxsug VALUES (21,'2001-01-09 10:19:41',21,0,'Hélio','Solicitação de compras.','helio@datamace.com.br','','10.1.0.21','','Y','<5b0fe07fe28b3e19ce477e86a576cca3.>');
+INSERT INTO cxsug VALUES (22,'2001-01-09 15:52:58',21,21,'GAQTSS','RE: Solicitação de compras.','','','10.1.0.2','','Y','<f52de5ae1a314ced00fb7cba13998324.>');
+INSERT INTO cxsug VALUES (23,'2001-01-17 15:19:20',23,0,'Alberto Araújo','Check List antes de cada Treinamento','aaraujo@datamace.com.br','','192.168.0.5','','Y','<a71065c3556aab3b15ab004d1d2ccc13.>');
+INSERT INTO cxsug VALUES (24,'2001-01-23 11:23:22',23,23,'GAQTSS','RE: Check List antes de cada Treinamento','','','10.1.0.2','','Y','<e91b32b71863c441ff7e03153c987d0a.>');
+INSERT INTO cxsug VALUES (25,'2001-01-23 12:13:30',25,0,'Ricardo hudson','Pos-vendas','ricardo@datamace.com.br','','ws245140200.canbrasnet.com.br','Y','Y','<b32c329fa35ae3588d57b57624c90ded.>');
+INSERT INTO cxsug VALUES (26,'2001-01-23 15:48:34',25,25,'GAQTSS','RE: Pos-vendas','','','10.1.0.2','','Y','<2cd17e5f27dcb3b2141daaf213d12051.>');
+INSERT INTO cxsug VALUES (27,'2001-01-23 16:15:07',27,0,'Alberto M Longo','Implementação de Benefício','alberto@datamace.com.br','','192.168.0.5','','Y','<cd941b6f63e6114bf1c6173b92ebeac9.>');
+INSERT INTO cxsug VALUES (28,'2001-01-25 11:31:55',27,27,'GAQTSS','RE: Implementação de Benefício','','','192.168.0.5','','Y','<b37e34d38be3915e5fde0d7a649dacd1.>');
+INSERT INTO cxsug VALUES (29,'2001-01-29 17:31:00',29,0,'Hélio','Luzes de emergência.','helio@datamace.com.br','','10.1.0.21','','Y','<23580fe367166cfc09ed45259357e430.>');
+INSERT INTO cxsug VALUES (30,'2001-01-29 18:18:57',29,29,'GAQTSS','RE: Luzes de emergência.','','','10.1.0.2','','Y','<b51c979a7541ac3464e6c3f4c3d65075.>');
+INSERT INTO cxsug VALUES (31,'2001-02-09 09:06:14',29,30,'Alberto Araújo','RE: Luzes de emergência.','aaraujo@datamace.com.br','','192.168.0.5','','Y','<1d2651bee8edb0a0f5fccd6e550f6e47.>');
+INSERT INTO cxsug VALUES (32,'2001-02-14 17:55:56',32,0,'Carolina','Cadastro de e-mail','carolina@datamace.com.br','','10.1.0.28','','Y','<4bfc1dd8d7aa79bad1f81b594a2ece62.>');
+INSERT INTO cxsug VALUES (33,'2001-02-19 15:02:59',32,32,'GAQTSS','RE: Cadastro de e-mail','','','10.1.0.2','','Y','<861c5ffcf94568d0f3544133fc30e27f.>');
+INSERT INTO cxsug VALUES (34,'2001-02-23 11:36:32',34,0,'Hélio','Ramais.','helio@datamace.com.br','','10.1.0.21','','Y','<84448be8e4f99b12be4d1316cdbba0f3.>');
+INSERT INTO cxsug VALUES (35,'2001-02-23 11:58:06',32,33,'Hélio','RE: Cadastro de e-mail','helio@datamace.com.br','','10.1.0.21','','Y','<1db0d84d976afc4c6d1ef944c825bc9b.>');
+INSERT INTO cxsug VALUES (36,'2001-02-23 13:28:44',32,35,'Carolina','RE: Cadastro de e-mail','carolina@datamace.com.br','','10.1.0.28','','Y','<c57e8371d01a1b5b5221781d11ea8a9a.>');
+INSERT INTO cxsug VALUES (37,'2001-02-23 13:35:11',32,35,'Carolina','RE: Cadastro de e-mail','carolina@datamace.com.br','','10.1.0.28','','Y','<461f79d7fa6b18d4f6a10975063599ce.>');
+INSERT INTO cxsug VALUES (38,'2001-02-28 10:31:42',34,34,'GAQTSS','RE: Ramais.','','','10.1.0.2','','Y','<ce2c74e7b96073275e4e16f9845c14cf.>');
+INSERT INTO cxsug VALUES (39,'2001-03-13 09:39:51',39,0,'Alberto Araújo','Consultores Suporte','aaraujo@datamace.com.br','','10.1.0.3','Y','Y','<406257cbecf9a32fcf2ea6f03c50a0b3.>');
+INSERT INTO cxsug VALUES (40,'2001-03-14 21:08:06',39,39,'GAQTSS','RE: Consultores Suporte','','','10.1.0.2','','Y','<be2bd334a95ae77f8f8b8b23fec4750f.>');
+INSERT INTO cxsug VALUES (41,'2001-03-15 11:25:11',41,0,'Alberto Araújo','Manutenção estrutura telefônica','aaraujo@datamace.com.br','','10.1.0.3','','Y','<386ea08a4e76641c56e7d5e3d8dcc573.>');
+INSERT INTO cxsug VALUES (42,'2001-03-15 11:50:12',42,0,'Hélio','Versão 32 Bits','helio@datamace.com.br','','10.1.0.21','','Y','<584904e53b489813a37d22026812b127.>');
+INSERT INTO cxsug VALUES (43,'2001-03-15 14:15:27',43,0,'Alberto Araújo','Procedimentos','aaraujo@datamace.com.br','','10.1.0.3','Y','Y','<1c84a563958b56a1fa8adc139746b538.>');
+INSERT INTO cxsug VALUES (44,'2001-03-19 15:38:07',41,41,'GAQTSS','RE: Manutenção estrutura telefônica','','','10.1.0.2','','Y','<2f5e50c357d5787464b42ec34f328d0d.>');
+INSERT INTO cxsug VALUES (45,'2001-03-20 16:15:35',45,0,'Humberto Rodrigo Sandmann','Espaço','humberto@datamace.com.br','','10.1.0.5','','Y','<3b2c88582d56113072cd0335b78231b9.>');
+INSERT INTO cxsug VALUES (46,'2001-03-20 18:25:21',42,42,'GAQTSS','RE: Versão 32 Bits','','','10.1.0.2','','Y','<c02b23496f9e5748e32e15995d5cc7bd.>');
+INSERT INTO cxsug VALUES (47,'2001-03-20 18:25:49',43,43,'GAQTSS','RE: Procedimentos','','','10.1.0.2','','Y','<610fa33c5aa48fdb16d60a07db41162d.>');
+INSERT INTO cxsug VALUES (48,'2001-03-20 18:26:30',45,45,'GAQTSS','RE: Espaço','','','10.1.0.2','','Y','<e9e39d7fa96a199db8fd9bb38621ce58.>');
+INSERT INTO cxsug VALUES (49,'2001-03-29 18:08:58',49,0,'Alberto Araujo','Acessórios','aaraujo@datamace.com.br','','10.1.0.3','','Y','<84b9809b4d36e1ac4331be58103d04d9.>');
+INSERT INTO cxsug VALUES (50,'2001-03-30 10:28:29',50,0,'Sueli','Exaustor.','celia@datamace.com.br','','10.1.0.21','','Y','<50a70ab8c6b71241bfc4c4bccc5572cf.>');
+INSERT INTO cxsug VALUES (51,'2001-03-30 11:54:42',49,49,'GAQTSS','RE: Acessórios','','','10.1.0.2','','Y','<ba97daf727620744f3229ecbb8a8424c.>');
+INSERT INTO cxsug VALUES (52,'2001-03-30 11:55:30',50,50,'GAQTSS','RE: Exaustor.','','','10.1.0.2','','Y','<cef7676999beb8559ef1e078c838c7df.>');
+INSERT INTO cxsug VALUES (53,'2001-04-25 10:14:45',53,0,'Alberto Araujo','Sugestões do Fórum','aaraujo@datamace.com.br','','10.1.0.3','Y','Y','<a001b1a6b5ede50094d3e9b999aaf858.>');
+INSERT INTO cxsug VALUES (54,'2001-04-25 10:43:31',53,53,'GAQTSS','RE: Sugestões do Fórum','','','10.1.0.2','','Y','<1136f4f0c2540a3ca63dbf1d2011ef3d.>');
+INSERT INTO cxsug VALUES (55,'2001-04-25 10:50:29',53,54,'Alberto Araujo','RE: Sugestões do Fórum','aaraujo@datamace.com.br','','10.1.0.3','Y','Y','<e024e5cb82028c2b915064c8b657e62e.>');
+INSERT INTO cxsug VALUES (56,'2001-04-30 08:37:37',39,39,'Marcelo','Consultores Suporte','','','10.1.0.25','','Y','<dd0b9f251034a0bca00f5fb5f9aa5149.>');
+INSERT INTO cxsug VALUES (57,'2001-04-30 09:21:24',39,56,'Alberto Araujo','RE: Consultores Suporte','aaraujo@datamace.com.br','','10.1.0.3','Y','Y','<9554d862c1511610d7ed8fc214dfd3ee.>');
+INSERT INTO cxsug VALUES (58,'2001-04-30 10:41:54',39,57,'Marcelo','Consultores Suporte','','','10.1.0.25','','Y','<50538ac1ae3228be56797e2e2434f5ac.>');
+INSERT INTO cxsug VALUES (59,'2001-04-30 11:27:59',59,0,'Alberto Araujo','Padronização e-mails','aaraujo@datamace.com.br','','10.1.0.3','Y','Y','<2dba403359bac32bed2315f68b71bc42.>');
+INSERT INTO cxsug VALUES (60,'2001-05-03 12:11:55',60,0,'Alberto Araujo','Parceria','aaraujo@datamace.com.br','','10.1.0.3','Y','Y','<2bad0900b43d0582178ca5c1da20b656.>');
+INSERT INTO cxsug VALUES (63,'2001-05-04 11:31:14',63,0,'GAQTSS','Ganhadores TOP IDEA','','','192.168.0.58','','Y','<99b4c0aa919957118d35cfe8206f98ce.>');
+INSERT INTO cxsug VALUES (62,'2001-05-04 11:14:15',60,60,'GAQTSS','RE: Parceria','','','192.168.0.58','','Y','<69f1efacc2b3b5f2a0be8f4c9a3550d3.>');
+INSERT INTO cxsug VALUES (64,'2001-05-08 11:40:19',64,0,'Humberto Sandmann','Formato da caixa de sugestões','humberto@datamace.com.br','','10.1.0.5','','Y','<305a3eda0a52cfef2dda8292abbf4c5b.>');
+INSERT INTO cxsug VALUES (65,'2001-05-08 11:45:14',65,0,'Humberto Sandmann','Gerenciador de pessoas','humberto@saopaulo.net','','10.1.0.5','','Y','<ef26f6878d17bde0399a0d1f33318310.>');
+INSERT INTO cxsug VALUES (66,'2001-05-08 14:11:43',66,0,'Alberto Araujo','Messenger Microsoft','aaraujo@datamace.com.br','','10.1.0.3','Y','Y','<9e363898dd5c6d72f61b289626af36f2.>');
+INSERT INTO cxsug VALUES (67,'2001-05-08 14:23:45',66,66,'Fernando Nomellini','RE: Messenger Microsoft','fernando@datamace.com.br','','192.168.0.55','Y','Y','<5d16434aa804932e97f2af55e228267f.>');
+INSERT INTO cxsug VALUES (68,'2001-05-15 11:29:54',64,64,'GAQTSS','RE: Formato da caixa de sugestões','','','10.1.0.5','','Y','<5cdd6f9aa479a962f8948ada2074a28a.>');
+INSERT INTO cxsug VALUES (69,'2001-05-15 11:37:17',69,0,'Hélio','Energia Elétrica','helio@datamace.com.br','','10.1.0.21','','Y','<501240bb33fe328e070b7b149a163d72.>');
+INSERT INTO cxsug VALUES (70,'2001-05-15 16:39:26',69,69,'GAQTSS','RE: Energia Elétrica','','','10.1.0.20','','Y','<4369403d0b4d3dbeed73efcd1445d53f.>');
+INSERT INTO cxsug VALUES (71,'2001-05-15 16:42:36',65,65,'GAQTSS','RE: Gerenciador de pessoas','','','10.1.0.20','','Y','<b68243405347dfe52a746aec121376f3.>');
+INSERT INTO cxsug VALUES (72,'2001-05-15 16:45:12',59,59,'GAQTSS','RE: Padronização e-mails','','','10.1.0.20','','Y','<cb0b3d15280ca4aa3eaf56fca1e7d9f1.>');
+INSERT INTO cxsug VALUES (73,'2001-05-15 16:46:24',59,59,'GAQTSS','RE: Padronização e-mails','','','10.1.0.20','','Y','<499845a0ebc4c93b0ff64c93f86b8e39.>');
+INSERT INTO cxsug VALUES (74,'2001-05-24 15:38:13',74,0,'Nilza','Controle de Pendências','nilza@datamace.com.br','','192.168.0.51','Y','Y','<72d7c4383ee9cd612b847d8955a26a41.>');
+INSERT INTO cxsug VALUES (75,'2001-05-24 16:05:41',75,0,'Nilza','Sistema de Atendimento da Consultoria Interna','nilza@datamace.com.br','','192.168.0.51','Y','Y','<9566e53ead2891d79770b6de1be5a31b.>');
+INSERT INTO cxsug VALUES (76,'2001-05-24 16:07:14',76,0,'Nilza','Controle de Pendências','nilza@datamace.com.br','','192.168.0.51','Y','Y','<07af8bcad0008a0237d948f8a44d5afb.>');
+INSERT INTO cxsug VALUES (77,'2001-05-24 16:43:27',75,75,'Alberto','RE: Sistema de Atendimento da Consultoria Interna','aaraujo@datamace.com.br','','10.1.0.3','Y','Y','<11fec2a57621ff8dd159fd1273195434.>');
+INSERT INTO cxsug VALUES (78,'2001-05-24 16:52:40',78,0,'Alberto','Compras Técnicas','aaraujo@datamace.com.br','','10.1.0.3','Y','Y','<5ed57862f28de93f9e968c95b0df67b9.>');
+INSERT INTO cxsug VALUES (79,'2001-05-25 17:08:13',79,0,'Alberto','Economia de Energia','aaraujo@datamace.com.br','','10.1.0.3','Y','Y','<def0af2ab100eb5cc6fd119f14800ab3.>');
+INSERT INTO cxsug VALUES (80,'2001-05-31 10:21:07',79,79,'Edson','RE: Economia de Energia','edson@datamace.com.br','','10.1.0.8','','Y','<aee9cb3ca6f5cf096c4adbe2a0501acd.>');
+INSERT INTO cxsug VALUES (81,'2001-05-31 10:38:25',81,0,'Alberto / Hélio','Micros e Equipamentos','aaraujo@datamace.com.br','','10.1.0.3','Y','Y','<5432aa6f14d5569538bc71364ba0405a.>');
+INSERT INTO cxsug VALUES (82,'2001-05-31 10:43:49',75,77,'Alberto','RE: Sistema de Atendimento da Consultoria Interna','aaraujo@datamace.com.br','','10.1.0.3','Y','Y','<49d2dfb25ff6276326ed4950c9f6cb95.>');
+INSERT INTO cxsug VALUES (83,'2001-05-31 11:02:52',81,81,'Nilza','RE: Micros e Equipamentos','nilza@datamace.com.br','','192.168.0.51','','Y','<f71e23b4b976b3c03c9a63d1337959ea.>');
+INSERT INTO cxsug VALUES (84,'2001-05-31 14:40:19',75,75,'Nilza','RE: Sistema de Atendimento da Consultoria Interna','nilza@datamace.com.br','','192.168.0.51','','Y','<13cd7fa5958969100b4a20ca02355985.>');
+
+#
+# Table structure for table 'cxsug_bodies'
+#
+DROP TABLE IF EXISTS cxsug_bodies;
+CREATE TABLE cxsug_bodies (
+  id bigint(20) unsigned DEFAULT '0' NOT NULL auto_increment,
+  body text NOT NULL,
+  thread int(11) DEFAULT '0' NOT NULL,
+  PRIMARY KEY (id),
+  KEY thread (thread)
+);
+
+#
+# Dumping data for table 'cxsug_bodies'
+#
+
+INSERT INTO cxsug_bodies VALUES (1,'<HTML><b>Até que enfim !!!!!!!!!!!!!!!!!!!!</b></HTML>',0);
+INSERT INTO cxsug_bodies VALUES (8,'Sejam bem vindos à Caixa de Sugestão da Datamace<br>\r\npara entrar com uma nova sugestão, selecione a opção \"Novo Tópico\"\r\n\r\nQualquer dúvida ligue para mim no ramal 230.\r\nUm abraço : Fernando Nomellini',0);
+INSERT INTO cxsug_bodies VALUES (5,'<HTML>Eu sugiro tomar um monte de <b>cerveja</b> para comemorar o funcionamento do Phorum !</HTML>',2);
+INSERT INTO cxsug_bodies VALUES (9,'<HTML>                       Sejam bem-vindos ao sistema de sugestões. \r\n\r\nPrezado colaborador,\r\n\r\nQuantas vezes você já teve uma idéia que achava interessante e nunca falou a ninguém sobre ela ? Quantas vezes você tomando café com um colega comenta sobre uma sugestão que gostaria de dar, mas nunca o fez ? Sua hora chegou !\r\n\r\nO sistema de sugestões, através da ferramenta de Fórum, substitui as tradicionais \"caixinhas\" espalhadas pela empresa, onde os colaboradores depositam suas sugestões e comentários.\r\n\r\nSeu principal objetivo é facilitar a comunicação entre os colaboradores, de forma a trazer benefícios para toda a comunidade Datamace, tanto a curto quanto a longo prazo.\r\n\r\nAgora é a hora de você colocar sua idéia para fora. Participe ativamente e não deixe de consultar esta área. As melhores idéias concorrem a prêmios , através do programa de reconhecimento e recompensa a ser divulgado muito em breve pela diretoria.\r\n\r\nContamos com a colaboração de todos e temos plena certeza que o sistema de sugestões será peça fundamental para a mudança que a Datamace está sofrendo.\r\n\r\n                                 Sua idéia aqui vale ouro. Participe !\r\n\r\nUm grande abraço,\r\n\r\n                                     Grupo Apoio - Sistema de Sugestões</HTML>',4);
+INSERT INTO cxsug_bodies VALUES (7,'<HTML>Estou somente testanto, logo eu apago</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (10,'<HTML>Poderiamos ter um único arquivo que quando executado ja atualiza a versão toda.\r\nIsso economizaria muitas ligações e sempre são ligações demoradas.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (11,'<HTML>Helio,\r\n\r\nObrigado por enviar sua sugestão.\r\n\r\nTemos uma dúvida.\r\nEste único arquivo, seria para versões na Internet, ou para distribuição normal ?</HTML>',10);
+INSERT INTO cxsug_bodies VALUES (12,'<HTML>Versões na Internet.\r\nAtualização normal em disquete não caberia, a versão tem +/- 8MB\r\nA não ser que fosse liberada em CD.</HTML>',10);
+INSERT INTO cxsug_bodies VALUES (13,'<HTML>  Ao invés da música de espera, o cliente poderia ficar escutando gravações a respeito da Datamace, Ex. Produtos, Serviços, Programa da Qualidade, das Qualidades da Datamace.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (14,'<HTML>A liberação em CD foi uma das alternativas cogitadas.\r\nNa verdade, é até possível liberar um único arquivo divido em 6 discos, fazendo o processo de Multivolume do pkzip.\r\n\r\nPodemos colocar as duas formas na Internet. \r\n1 único arquivo ou divido em vários, devido ao problema de linha.\r\n\r\nSua sugestão está sendo encaminhada.\r\n\r\nObrigado.</HTML>',10);
+INSERT INTO cxsug_bodies VALUES (15,'<HTML>Aparecida,\r\n\r\nObrigado por enviar sua sugestão. \r\n\r\nEstamos encaminhando sua idéia para a diretoria.</HTML>',13);
+INSERT INTO cxsug_bodies VALUES (16,'<HTML>PARA CRIAR UM ARQUIVO DIVIDIDO EM VARIOS (MULTIVOLUME)\r\nÉ MELHOR DEIXAR COMO ESTA PORQUE O CLIENTE TEM A OPCAO\r\nDE RETIRAR APENAS O QUE ELE PRECISA.\r\nHOJE EM DIA, AS LINHAS TELEFONICAS E OS EQUIPAMENTOS\r\nMELHORARAM MUITO, UM ARQUIVO DE 8MEGAS JA NÃO É CONSIDERADO\r\nTÃO GRANDE.</HTML>',10);
+INSERT INTO cxsug_bodies VALUES (17,'<HTML>Exato, por isto que a cópia em discos não compensa nenhuma alteração.\r\nNa Internet com certeza, é uma boa idéia. Colocamos as duas opções e o cliente escolhe qual ele quer tirar. Obviamente, damos preferência para ele retirar o arquivo único de 8 MB.\r\n\r\nEstamos encaminhando a sugestão para a diretoria analisar.\r\nEm breve, retornaremos a conclusão.\r\n\r\nGAQTSS</HTML>',10);
+INSERT INTO cxsug_bodies VALUES (18,'<HTML>Moçada\r\n\r\nTemos um grupo de apoio formalizado para resolver este assunto. Acho que devemos aguardar o inicio dos seus trabalhos para não atropelarmos o grupo. Por falar nisto, moçada do grupo de liberação de versão: quando vamos começar este trabalho?</HTML>',10);
+INSERT INTO cxsug_bodies VALUES (19,'<HTML>Meus amigos,\r\n\r\nBoa tarde!!!\r\n\r\n\r\nGostaria de discutir a possibilidade dos clientes receberem avisos sobre as alterações de programas no decorrer do mês.\r\n\r\nEstou sugerindo isto e inclusive acredito que já tenha sido discutido por alguém aqui na Datamace, pois em vários clientes que visito eles fazem a mesma solicitação.: Ricardo por favor será que poderíamos receber avisos quando ocorrem correções nos programas, pois teríamos como nos antecipar ao problema.\r\n\r\n\r\nPortanto Drs....poderíamos dar uma atenção para este assunto??? Acredito ser de relevante importância.\r\n\r\n\r\nDede já agradeço o tempo e atenção dispensados.\r\n\r\nRicardo Garcia</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (20,'<HTML>Olá Ricardo,\r\n\r\nObrigado por enviar sua sugestão.\r\nEstamos encaminhando para a diretoria.</HTML>',19);
+INSERT INTO cxsug_bodies VALUES (21,'<HTML>Poderiamos ter um espaço parecido com o da manutenção\r\nonde pudesse ser feita solicitações de compras. Desde um cesto de lixo\r\naté um mouse ou um software por exemplo.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (22,'<HTML>Olá Hélio,\r\n\r\nObrigado por enviar sua sugestão. \r\n\r\nSua idéia é bastante viável. Vamos conversar com o Edson e pedir para o Fernando implementar na Intranet.</HTML>',21);
+INSERT INTO cxsug_bodies VALUES (23,'<HTML>Sugiro que, para evitar problemas descobertos na última hora (quando está para começar o treinamento), elaboremos um check list o qual seria conferido, preferencialmente pelo próprio instrutor, na véspera do treinamento.\r\nVeficando condições de equipamentos (micros, monitores, mouses), funcionamento da rede, condições das bases de dados de treinamento, login dos treinandos, entre outras coisas.\r\nSaliento a importância de haver alguma antecedência, permitindo haja tempo para resolver problemas mais sérios.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (24,'<HTML>Alberto,\r\n\r\nObrigado por enviar sua sugestão.\r\nEstamos encaminhando sua mensagem para a diretoria e você está concorrendo ao programa de reconhecimento e recompensa no final deste mês.\r\n\r\nAgradecemos sua colaboração.\r\nGAQTSS</HTML>',23);
+INSERT INTO cxsug_bodies VALUES (25,'<HTML>Sugiro mudanças no pos-venda. Na verdade sugiro a criação do conceito de pós venda onde uma pessoa tenha um check list a seguir. A profundidade desse pos-venda deve ser discutida para que a Datamace possa saber até onde deseja ir. Acredito que, numa versão light, funcionaria assim :\r\n\r\n* o Ronaldo não seria mais pertubado com coisas rotineiras tipo : foram os disquetes ? Agendou treinamento ? Tem consultoria ? Tem conversão ? Mandou os arquivo ? Está usando a conversão ? e etc.\r\n\r\n* a pessoa que receber esse tarefa deve controlar se, por exemplo, a conversão está ok, se o cliente está usando o sistema ou vai querer reconverter por não ter usado, fizeram o treinamento, tem dúvidas pendentes, a implantação está a contento e etc.\r\n\r\nSendo uma versão light pode ser feita por formulários padrões e ligações idem. Já numa versão complexa necessitaria de uma pessoa específica por requisitar visitas a clientes o que inviablilizaria ser alguem do desenvolvimento.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (26,'<HTML>Ricardo,\r\n\r\nObrigado por enviar sua sugestão.\r\nEstamos encaminhando sua idéia para a diretoria e ao final deste mês estaremos selecionando as melhores para o programa de recompensa e reconhecimento (TOP IDEA).\r\n\r\nEsperamos você aqui de volta em breve.\r\n\r\nGAQTSS\r\nDatamace Informática Ltda.</HTML>',25);
+INSERT INTO cxsug_bodies VALUES (27,'<HTML>Atualmente a Família Datamace é composta por 27 colaboradores, entre diretoria, funcionários e representantes comerciais. A minha sugestão é a implementação do benefício Vale Refeição para os colaboradores, pois, é sabido que a sua maioria faz a tua refeição diária pelos restaurantes aqui por perto.\r\n\r\n- Sabe-se que tal benefício pode ser utilizado na dedução do IRRF da empresa (desde que seja filiada ao PAT-Programa de Alimentação do Trabalhador), caso contrário não há a possibilidade;</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (28,'<HTML>Alberto,\r\n\r\nObrigado por enviar sua sugestão. Ela é de grande valor para todos nós.\r\nEstamos encaminhando sua idéia para a diretoria e ao final deste mês estaremos selecionando as melhores para o programa de recompensa e reconhecimento (TOP IDEA). \r\n\r\nEsperamos você aqui de volta, em breve. \r\n\r\nGAQTSS \r\nDatamace Informática Ltda.</HTML>',27);
+INSERT INTO cxsug_bodies VALUES (29,'<HTML>Seria bom colocar luzes de emergência nas casas. Na Santa Ifigênia vende\r\nas luzes que são adaptadas ao lado de qualquer luminaria, cada uma esta no máximo R$ 40,00</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (30,'<HTML>Hélio,\r\n\r\nObrigado por enviar sua sugestão. Estamos analisando sua idéia e ao final deste mês estaremos selecionando as melhores para o programa TOP IDEA. \r\n\r\n\r\nAtenciosamente,\r\n\r\nGAQTSS \r\nDatamace Informática Ltda.</HTML>',29);
+INSERT INTO cxsug_bodies VALUES (31,'<HTML>Parabéns pela sugestão !!\r\n\r\nIsso realmente é necessário. Já sentimos essa necessidade algumas  vezes !!!</HTML>',29);
+INSERT INTO cxsug_bodies VALUES (32,'<HTML>Pensei em uma sugestão mas não sei qual a viabilidade da mesma, de qualquer forma...\r\nAcredito ser interessante criar um espaço onde pudéssemos consultar e-mails de clientes (um cadastro geral e exclusivo dos funcionários). O caso é o seguinte, todos nos temos em nosso catálogo de endereços (outlook) e-mails de clientes com os quais nos comunicamos e que ficam restritos somente a nossa pessoa, porém há situações diversas como, por exemplo, o envio dos arquivos da versão 8.11 do GIP, somente pela internet (com algumas excessões). O problema é que clientes que constam como correio no DTMENU, estamos tendo que, primeiro entrar em contato por telefone, para depois enviarmos as implementações pela internet. Se tivermos esse cadastro à parte, ganharíamos um tempo valioso, além disso, infelizmente nosso cadastro consta de desatualizações diversas e por conta disso alguns clientes saem prejudicados.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (33,'<HTML>Carolina, \r\n\r\nObrigado por enviar sua idéia. Estamos analisando sua sugestão.\r\n\r\nAtenciosamente, \r\n\r\nGAQTSS \r\nDatamace Informática Ltda.</HTML>',32);
+INSERT INTO cxsug_bodies VALUES (34,'<HTML>Ajustar os ramais de forma ordenada. Os funcionários da IMP instalaram\r\no PABX sem nenhuma sequencia de ramais. Seria util ordenar os ramais\r\npara localizarmos melhor os funcionários.\r\nPor exemplo, se na consultoria ficar: Alberto 13, Helio 14, Rodrigo 15, \r\ntodos saberiamos que a Lurdinha é ramal 16, o Antonio 17.....\r\nMesma coisa na sala dos Analistas. \r\nFicaria:\r\nElis 20, Fabio 21, todos saberiamos que o Cris é 22, Humberto 23.....\r\nAlem disso, outra sugestão seria instalar um ramal na cozinha para que a Célia\r\nnão tenha que sair de sua mesa pra procurar alguem ou mesmo solicitar algo\r\npra D.Sueli/Cida</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (35,'<HTML>Eu acredito que enquanto os clientes não derem a importância nescessária,\r\nsempre teremos este tipo de problema. Principalmente quem utiliza email\'s\r\ngratuitos do tipo Bol, IG..Quando solicitado o email é informado para nos avisar \r\nem caso de troca de email. Mas nem sempre isso acontece.\r\nSempre teremos email\'s desatualizados. Poderiamos Informar o ocorrido em um Boletim por exemplo.</HTML>',32);
+INSERT INTO cxsug_bodies VALUES (36,'<HTML>Helio talvez tenha me expressado mal.\r\nSugeri que fosse criado um cadastro de e-mail à parte para aqueles clientes os quais não estão cadastrados na internet.\r\nNesse caso da versão liguei para aproximadamente 200 clientes, se tivéssemos esse cadastro à parte seria economizado tempo, pois vários clientes receberam as atualizações num prazo posterior ao que seria ideal, enquanto outros não consegui localizar, pois seus telefones estavam desatualizados e em alguns casos a telefônica não sabe informar o novo número, ou seja, ainda não receberam as atualizações.</HTML>',32);
+INSERT INTO cxsug_bodies VALUES (37,'<HTML>Helio talvez tenha me expressado mal.\r\nSugeri que fosse criado um cadastro de e-mail à parte para aqueles clientes os quais não estão cadastrados na internet.\r\nNesse caso da versão liguei para aproximadamente 200 clientes, se tivéssemos esse cadastro à parte seria economizado tempo, pois vários clientes receberam as atualizações num prazo posterior aquele que seria ideal, enquanto outros não consegui localizar, pois seus telefones estavam desatualizados; e em alguns casos a telefônica não sabe informar o novo número, ou seja, ainda não receberam as atualizações.</HTML>',32);
+INSERT INTO cxsug_bodies VALUES (38,'<HTML>Hélio, \r\n\r\nObrigado por enviar sua idéia. Estamos analisando sua sugestão. \r\n\r\nAtenciosamente, \r\n\r\nGAQTSS \r\nDatamace Informática Ltda.</HTML>',34);
+INSERT INTO cxsug_bodies VALUES (39,'<HTML>Imaginando que em breve chegará a época do ano na qual a quantidade de ligações diminui sensivelmente, sugiro que que pense na possibilidade de, eventualmente, consultores que atuam apenas de forma interna (atendimento telefônico), possam fazer visitas a determinados clientes, conforme estratégia que pode ser definida entre a área administrativa e de marketing.\r\nNa minha opinião isso pode contribuir o desenvolvimento profissional, além de estimular o relacionamento da Datamace com os clientes mais importantes.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (40,'<HTML>Alberto, \r\n\r\nObrigado por enviar sua sugestão. \r\nEstamos analisando-a e direcionando-a para os responsáveis pela área.\r\n \r\nAtenciosamente, \r\n\r\nGAQTSS \r\nDatamace Informática Ltda.</HTML>',39);
+INSERT INTO cxsug_bodies VALUES (41,'<HTML>Sugiro que consideremos a possibilidade de haver uma terceirização dos serviços de manutenção, ao menos das instalações de telefonia.\r\nIsso devido à sobrecarga de tarefas atribuídas ao Hélio, o qual não decididamente não tem tempo para atender todas as necessidades na velocidade que precisamos. Estamos com diversos problemas de infiltração nas tubulações, ramais que não funcionam, outros que \"ouvem\" as conversas de outros ramais etc.\r\nCaso não seja considerada viável essa alternativa, sugiro que tentemos encontrar uma solução que melhore a situação atual.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (42,'<HTML>Verificar a possibilidade de Eliminar a versão 32 bit\'s. Esta  gerando trabalho dobrado para muita gente.\r\nEm alguns casos de clientes que tem essa versão, foi passado por engano a\r\nversão 16 bits, a qual funcionou normalmente.\r\nAlem disso, a 32 bit\'s só funciona através de janela do windows e não como tela cheia.</HTML>',41);
+INSERT INTO cxsug_bodies VALUES (43,'<HTML>Quando forem iniciados os trabalhos de elaboração dos procedimentos, sugiro que seja dada prioridade aos seguintes pontos:\r\n- Geração de versões: GIP, PE, GRHGER, GRHAV, CO, LF (tanto para casos de licença para clientes novos ou atualizações)\r\n- Atualização das versões na Internet e BBS</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (44,'<HTML>Alberto, \r\n\r\nObrigado por enviar sua idéia. Estamos analisando sua sugestão. \r\n\r\nAtenciosamente, \r\n\r\nGAQTSS \r\nDatamace Informática Ltda.</HTML>',41);
+INSERT INTO cxsug_bodies VALUES (45,'<HTML>Gostaria que fosse revisto a questão espacial na datamace, e sugiro a criação de alternativas para melhorar o ambiente de desenvolvimento que se encontra lotado. Acredito que a Datamace tenha planos de construir um prédio, porém até este evento seria bom tomarmos outras soluções, visando melhor qualidade de execução de trabalho e maior rentabilidade. Poderiamos aumentar a nossa área alocando ou repensando espaços alternativos, tendo de rever esse paradigma.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (46,'<HTML>Hélio, \r\n\r\nObrigado por enviar sua idéia. Estamos analisando sua sugestão. \r\n\r\nAtenciosamente, \r\n\r\nGAQTSS \r\nDatamace Informática Ltda.</HTML>',42);
+INSERT INTO cxsug_bodies VALUES (47,'<HTML>Alberto, \r\n\r\nObrigado por enviar sua idéia. Estamos analisando sua sugestão. \r\n\r\nAtenciosamente, \r\n\r\nGAQTSS \r\nDatamace Informática Ltda.</HTML>',43);
+INSERT INTO cxsug_bodies VALUES (48,'<HTML>Humberto, \r\n\r\nObrigado por enviar sua idéia. Estamos analisando sua sugestão. \r\n\r\nAtenciosamente, \r\n\r\nGAQTSS \r\nDatamace Informática Ltda.</HTML>',45);
+INSERT INTO cxsug_bodies VALUES (49,'<HTML>Sugiro que haja um pequeno estoque de acessórios (mouse, teclado, filtro de linha, adptador serial/PS2, etc) para que não se \"canibalize\" os servidores ou os micros da sala de treinamento sempre que alguém necessita de algum dos itens acima.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (50,'<HTML>É nescessário instalar um exaustor  (tipo Sugar) na cozinha.\r\nO teto e os armários com o tempo poderão ficar amarelados.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (51,'<HTML>Alberto,\r\n\r\nObrigado por enviar sua idéia. Estamos analisando sua sugestão. \r\n\r\nAtenciosamente, \r\n\r\nGAQTSS \r\nDatamace Informática Ltda.</HTML>',49);
+INSERT INTO cxsug_bodies VALUES (52,'<HTML>D. Sueli, \r\n\r\nObrigado por enviar sua idéia. Estamos analisando sua sugestão. \r\n\r\nAtenciosamente, \r\n\r\nGAQTSS \r\nDatamace Informática Ltda.</HTML>',50);
+INSERT INTO cxsug_bodies VALUES (53,'<HTML>Seria interessante houvesse registro, no próprio Fórum, quando alguma sugestão é atendida. Notei que muitas das sugestões apresentadas neste Fórum foram aproveitadas e implementadas. Acho que seria mais um fator de motivação para que todos continuem colaborando, pois nem todos ficam sabendo.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (54,'<HTML>Olá Alberto,\r\n\r\n  Obrigado por enviar sua mensagem.\r\n  Realmente estamos atrasados com os cronogramas de recompensa e reconhecimento. Na verdade estamos aguardando uma definição do GAQTSS e da diretoria para decidirmos se vamos realizar uma só apresentação englobando, premiações e apresentações dos novos módulos WEB, Windows, etc. Apesar de uma coisa não ter nada a ver com outra, seria apenas uma oportunidade para juntar todo o pessoal e realizar tudo de uma só vez. Já estamos no segundo período do TOP IDEA e já temos os vencedores, mas não divulgamos ainda devido a este fato. Vamos agilizar este procedimento para que tenhamos uma demonstração mais rápida dos resultados, motivando o pessoal a sempre dar suas sugestões. \r\n  Teremos novidades muito em breve.</HTML>',53);
+INSERT INTO cxsug_bodies VALUES (55,'<HTML>Legal. Sem problemas. Na verdade, escrevi porque percebi, sem querer, que algumas sugestões propostas no fórum estão sendo ou foram implementadas, e, independentemente da premiação, acho que seria legal as pessoas saberem.</HTML>',53);
+INSERT INTO cxsug_bodies VALUES (56,'<HTML>Na verdade esta visão de ociosidade em determinados momentos é completamente equivocada e divorciada da nossa realidade por várias razões à considerar:\r\n \r\n1.) Já temos visitado, eventualmente, clientes que estão com maior grau de dificuldades, para \"apagar incendios\".\r\n \r\n2.) Temos coberto com visitas para instalação, treinamento e consultoria a clientes que contratam esse serviço e não são atendidos pela Inter System por falta de calendário. \r\n \r\n3.) Atendemos vários clientes que nos visitam para dirimir dúvidas pessoalmente.\r\n \r\n4.) Estamos montando um cronograma de treinamentos para o pessoal, nos sistemas que cada um ainda não atende, inclusive quanto aos novos sistemas em Windows.\r\n \r\n5.) Ministramos treinamentos do sistema de Ponto Eletrônico durante pelo menos, quatro dias por mês e Contabilidade quando existe demanda.\r\n \r\n6.) Devemos considerar as férias do pessoal. São praticamente seis meses com uma pessoa a menos.\r\n \r\n7.) Na verdade, o período mais calmo é exatamente, o momento de atender o cliente com mais agilidade e eficiência, aprofundar estudos de casos críticos, reverter o quadro de tensão e descontentamento gerado nas épocas de pico, proporcionando um atendimento rápido e dirimente. \r\n \r\n8.) E por último, na citada época calma, temos uma variação de 100 a 130 contatos/dia que dividindo por quatro consultores (considerando sempre um a menos pelos motivos citados acima), temos em média, 30 ligações/dia por consultor que considero um número bastante razoável.\r\n \r\nDesta forma, agradecemos a observação e preocupação porém. concluímos que  já atendemos a este item onde, procuramos atender a todos dentro da prioridade de cada caso.</HTML>',39);
+INSERT INTO cxsug_bodies VALUES (57,'<HTML>Apenas para esclarecer:\r\n1) Em momento algum citei a palavra \"ociosidade\", a mesma foi citada apenas em seu próprio relato.\r\n2) Minha sugestão foi feita apenas visando auxiliar , mas diante da farta argumentação, já estou convencido que é desnecessário.</HTML>',39);
+INSERT INTO cxsug_bodies VALUES (58,'<HTML>Ok....\r\n\r\nAgradeço novamente a sua valiosa contribuição, a qual nos permitiu inclusive a divulgar a realidade do setor, muitas vezes desconhecida.\r\n\r\nObrigado.</HTML>',39);
+INSERT INTO cxsug_bodies VALUES (59,'<HTML>Aproveitando a criação do novo logo, sugiro que se crie um \"papel de parede\"  e uma \"assinatura\" padronizados para todos os emails enviados pela Datamace, mudando apenas o departamento e o nome do remetente.\r\n\r\nObs: Desconsiderar essa sugestão caso isso já esteja no projeto de reformulação visual.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (60,'<HTML>Sugiro que a Datamace considere a possibilidade de efetuar uma ou mais parcerias pensando em seu novo site/comunidade.\r\nA Datamace pode negociar a colocação de banners de empresas (talvez algum cliente interessado em divulgação, ou mesmo fornecedores, como a Canbrás, DTS etc) e como retorno, obter rendimentos ou algum tipo de \"troca\" em produtos e/ou serviços.\r\nSeja qual for a foma encontrada, o importante é não esquecer do potencial criado com o novo site e o poder de divulgação que ele representa.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (63,'<HTML>Olá pessoal,\r\n\r\n    Os ganhadores dos últimos dois períodos do programa de recompensa e reconhecimento TOP IDEA foram :\r\n\r\n    Carolina\r\n    D Sueli\r\n    Hélio\r\n    Humberto\r\n\r\n    e Alberto, escolhido por ter enviado as melhores sugestões.\r\n\r\n    Lembramos que os períodos correspondentes foram de 01/12/2000 a 31/01/2001 e 01/02/2001 a 31/03/2001 e que os ganhadores devem escolher entre dois ingressos cada para qualquer evento ou a compra de livros, ambos até o valor de 100,00. Mande suas opções para celia@datamace.com.br ou cristiano@datamace.com.br.\r\n    O grupo GAQTSS agradece os colaboradores que participaram do TOP IDEA e convida todos a deixarem suas sugestões no Fórum para que possamos melhorar a cada dia a qualidade de nosso trabalho.\r\n\r\n     Um abraço a todos,\r\n\r\n     GAQTSS</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (62,'<HTML>Alberto,\r\n\r\nObrigado por enviar sua mensagem.\r\nEm breve estaremos em contato com a Sato Consultoria e outras empresas para discutirmos a possibilidade de compartilharmos o conteúdo de assuntos legais em nossa comunidade. Além disto temos que buscar empresas para  negociarmos a colocação de banners em nossa página, como você mencionou.\r\nApós os ajustes finais do site, podemos trabalhar esta parte. Vamos marcar uma reunião assim que possível com a diretoria para discutirmos melhor este assunto.\r\n\r\nObrigado.\r\nGAQTSS</HTML>',60);
+INSERT INTO cxsug_bodies VALUES (64,'<HTML>Sugiro q se crie uma caixa de sugestões com o formato NNTP, pois apesar desta estar disponivel não é real a cultura de acesso a foruns por seus participantes... já implantando a caixa de sugestões em formato NNTP, os usuários ao acessarem seus email\'s (tarefas quase que diária), poderiam mais fácilmente acessar a caixa de sugestões, e estarem assim contribuindo de forma mais direta.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (65,'<HTML>Acredito que a Datamace cada dia mais cresce, e cada vez mais rápido. Assim seria ideal a contratação de uma pessoa para gerenciar o área de RH da Datamace, afinal sabemos da importância desde setor dentro das organizações, visando assim um profissional que cuide de programas de recompensas e melhoras no nosso ambiente de trabalho de forma contínua, distriuindo e aliviando também problemas de sobrecarga de tarefas sobre alguns colaboradores.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (66,'<HTML>Gostaria de sugerir, para o Grupo Gerencial da Datamace, que avaliasse o programa MS Messenger.\r\nTrata-se de um comunicador (como o ICQ), porém, muito mais simples. Com menos recursos, é verdade, mas prático e objetivo.\r\nDuas pessoas conversam através dele como num chat, com bastante simplicidade. Pelo que sei, a utilização é livre, inclusive a Microsoft a estimula.\r\nO único pré-requisito é que se abra uma conta de e-mail no Hotmail, o qual é gratuito.\r\nTalvez possa ser interessante, em determinados casos, a sua utilização em algum atendimento específico do Suporte.\r\nEm nossa rede há um instalador, para quem quiser experimentar, em:\r\n\r\nn:\\util\\messenger\\mmssetup.exe \r\n\r\nObs: primeiro criar uma conta de email em   www.hotmail.com</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (67,'<HTML>No próprio programa existe a possibilidade de se criar uma conta hotmail, caso você ainda não a tenha.</HTML>',66);
+INSERT INTO cxsug_bodies VALUES (68,'<HTML>Humberto, \r\n\r\nObrigado por enviar sua idéia. Estamos analisando sua sugestão. \r\n\r\nAtenciosamente, \r\n\r\nGAQTSS \r\nDatamace Informática Ltda.</HTML>',64);
+INSERT INTO cxsug_bodies VALUES (69,'<HTML>Sugestão para economia de energia elétrica para evitar multas:\r\nConsiderando que o micro fica ligado das 8:00 às 18:00, desligando 1 hora +/- referente ao almoço, calculo que economizaremos aproximadamente 10% de energia por micro. O que deve ser bastante significativo pois temos mais de 30 micros.\r\nSegue abaixo reportagem do Estadão: \r\n\r\n\".....Quem ultrapassar o limite estabelecido poderá pagar o preço da eletricidade comercializada no Mercado Atacadista de Energia Elétrica (MAE), R$ 459,89 o Megawatt (MW). Há previsão de que essa mesma tarifa supere R$ 600,00 a partir de junho.\r\n\r\nAlternativa\r\n\r\nAinda conforme o plano, essa alternativa traria menos \"estragos\" ao governo, já que a sociedade teria de cortar bem menos que aquilo divulgado pela equipe do presidente Fernando Henrique Cardoso. Caso prevaleça essa proposta, todos os consumidores teriam cota de consumo.\r\n\r\nO corte global seria de 20%. \"Os apagões somente ocorreriam para os grandes consumidores\", disse uma fonte do governo. \"Com isso, ficariam suspensos os apagões para os consumidores residenciais e os cortes no fornecimento, por exemplo, para hospitais, medidas consideradas impopulares.......\"</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (70,'<HTML>Hélio,\r\n\r\n\r\n\r\nObrigado por enviar sua mensagem. Estamos analisando sua sugestão.\r\n\r\n\r\nAtenciosamente,\r\n\r\n\r\nGAQTSS\r\nDatamace Informática Ltda.</HTML>',69);
+INSERT INTO cxsug_bodies VALUES (71,'<HTML>Humberto,\r\n\r\n\r\n\r\nObrigado por enviar sua mensagem. Estamos analisando sua sugestão.\r\n\r\n\r\nAtenciosamente,\r\n\r\n\r\nGAQTSS\r\nDatamace Informática Ltda.</HTML>',65);
+INSERT INTO cxsug_bodies VALUES (72,'<HTML>Alberto,\r\n\r\n\r\n\r\nObriga por enviar sua mensagem. Estamos analisando sua sugestão.\r\n\r\n\r\n\r\nAtenciosamente,\r\n\r\n\r\n\r\nGAQTSS\r\nDatamace Informática Ltda.</HTML>',59);
+INSERT INTO cxsug_bodies VALUES (73,'<HTML>Alberto,\r\n\r\n\r\n\r\nObriga por enviar sua mensagem. Estamos analisando sua sugestão.\r\n\r\n\r\n\r\nAtenciosamente,\r\n\r\n\r\n\r\nGAQTSS\r\nDatamace Informática Ltda.</HTML>',59);
+INSERT INTO cxsug_bodies VALUES (74,'<HTML>Sugiro que o Controle de Pendências no Desenvolvimento seja liberado na rede.\r\n\r\nHoje funciona da seguinte forma: cada consultor abre suas pendências em formulário próprio, disponivel para impressão na Intranet  e encaminha para Marcelo que cria o Controle de Pendências. O problema é que este registro não pode ser consultado por quem abriu a pendência porque está fora da rede. \r\n\r\nEu tenho vários transtornos e acredito que todos que abrem pendências sentem o mesmo problema porque abrimos a pendência e depois perdemos o controle, muitas vezes fico em dúvida se abri a pendência ou não; envio pendência para Desenvolvimento e esta é devolvida porque já foi anteriormente aberta por mim; alúém me pergunta e eu não sei se abri, quando abri? e assim vai.\r\n\r\nAcho que liberar na rede evita todos estes transtornos.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (75,'<HTML>Sugiro que seja feita uma adaptação no Sistema de Atendimento atual DT05A4 para que todos tenham acesso às informações cadastradas.\r\n\r\nHoje funciona assim: o DT05A4 está na rede mas cada micro da consultoria interna tem um disquete que permite o acesso.\r\n\r\nO que estou sugerindo é que não necessite deste disquete que as informações possam ser acessadas por todos na rede, pois precisamos delas sempre que damos continuidade a um atendimento feito pela consultoria interna.</HTML>',74);
+INSERT INTO cxsug_bodies VALUES (76,'<HTML>Sugiro que o Controle de Pendências no Desenvolvimento seja liberado na rede.\r\n\r\nHoje funciona da seguinte forma: cada consultor abre suas pendências em formulário próprio, disponivel para impressão na Intranet  e encaminha para Marcelo que cria o Controle de Pendências. O problema é que este registro não pode ser consultado por quem abriu a pendência porque está fora da rede. \r\n\r\nEu tenho vários transtornos e acredito que todos que abrem pendências sentem o mesmo problema porque abrimos a pendência e depois perdemos o controle, muitas vezes fico em dúvida se abri a pendência ou não; envio pendência para Desenvolvimento e esta é devolvida porque já foi anteriormente aberta por mim; alguém me pergunta e eu não sei se abri, quando abri? e assim vai.\r\n\r\nAcho que liberar na rede evita todos estes transtornos.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (77,'<HTML>Ótima idéia, pois muitas vezes damos continuidade a atendimentos que iniciaram na consultoria e algumas vezes até vamos pessoalmente nas instalações do cliente resolver o problema. Quanto mais informações estiverem disponíveis, melhor os resultados</HTML>',75);
+INSERT INTO cxsug_bodies VALUES (78,'<HTML>Sugiro que um colaborador seja incumbido de fazer todas as especificações e cotações de compras técnicas, quando for decidida uma aquisição.\r\nChamo de compras técnicas coisa do tipo: software de rede, no-breakes, hubs e outros equipamentos.\r\nTal pessoa seria encarregada de especificar (contando com a colaboração de outros colegas que possam ajudar) e fazer as cotações.\r\nAs aprovações continuariam sendo necessárias e feitas pelo Edson e/ou Ronaldo, contudo, a responsabilidade de \"correr atrás\" ficaria com essa pessoa.\r\nEla também teria que posicionar aos outros colaboradores o andamento das aquisições, interagindo, dessa forma, com a diretoria.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (79,'<HTML>Na casa 11, há algumas lâmpadas que são incandecentes (mais ou menos umas 12) as quais poderiam ser substituídas pro lâmpadas fluorescentes compactas.\r\nEm alguns casos, há 2 ou 3 lâmpadas numa mesma luminária. Talvez seja possível também diminuir a quantidade de lâmpadas.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (80,'<HTML>A primeira providência que procuramos tomar, foi trocar as lâmpadas incandescentes por fluorescentes daquelas de rosca, porém nós não fomos os únicos a ter esta idéia e o que ocorreu é que não existe mais este tipo de lâmpada no comércio para venda. Estamos aguardando a normalização do comércio para trocar as lâmpadas.\r\nNo caso das luminárias coma mais de uma lâmpada, já foram retiradas as excedentes.</HTML>',79);
+INSERT INTO cxsug_bodies VALUES (81,'<HTML>Sugiro que seja nomeada uma pessoa para ser responsável por todos os equipamentos de informática.\r\nA partir daí, estabelecer regras quanto a remanejamentos, equipamentos de reserva, planos de contingência etc, tais como:\r\n- Deverá existir pelo menos uma CPU reserva, com windows instalado e configurado para rede, apto para substituir rapidamente qualquer micro com pane\r\n- Pelo menos um monitor reserva\r\n- Os remanejamentos devem ser comunicados previamente ao responsável\r\n- Não permitir o \"canibalismo\" dos micros da sala de treinamento, sala de reunião e sala dos servidores\r\n- A pessoa em questão também fica responsável pelo estoque de acessórios (mouse, teclado, cabos, filtros de linha, adaptadores, placas de rede etc), tanto pela distribuição quanto pela reposição do estoque\r\n- Deve ser nomeada uma segunda pessoa, para assumir as responsabilidades na ausência da primeira\r\n- Tudo deve ser controlado, havendo relatório sobre o quê há em estoque, equipamentos em conserto e etc.\r\n\r\nObs: Alguns dos item acima já são atendidos, contudo, a centralização da responsabilidade e a elaboração de regras gerais são essenciais para que se consiga mudar a cultura vigente.</HTML>',0);
+INSERT INTO cxsug_bodies VALUES (82,'<HTML>Desconhecíamos que, criando um arquivo no diretório C:\\WINDOWS\\DESKTOP \r\né possível dispensar o uso do disquete.\r\nEntendo que isso atende a solicitação que gerou esse tópico.</HTML>',75);
+INSERT INTO cxsug_bodies VALUES (83,'<HTML>Parabéns pela sugestão. Eu sinto na pele as dificuldades por não termos essa definição de pessoas e organização de equipamentos e acessórios. Várias vezes já ocorreu das pessoas retirarem equipamentos da sala de treinamento e eu é que fico correndo atrás para repor.\r\n\r\nSemana passada o micro um da sala de treinamento deu um problema sério após o horário de almoço no nosso retorno para o treinamento. O Rodrigo, NA MELHOR DAS BOAS VONTADES, tentou de todas as formas resolver o problema rapidamente para que pudessemos continuar mas foi necessário retirar o micro da sala e substituiu pelo meu micro da bancada um.\r\n\r\nDei o treinamento normal mas no dia seguinte quando fui utilizar o meu micro já de volta na bancada um, o micro da sala de treinamento já estava consertado e Antonio estava dando treinamento de ponto normal, mas eu só consegui trabalhar 13 horas Alberto teve que reinstalar tudo na minha máquina e no final veio Helio e acabou trocando a placa de rede que queimou.\r\n\r\nO correto seria ter um micro reserva para não mexer no que está funcionando normal como era o caso do meu micro.  \r\n\r\nTambém acho que este estoque de acessório e configuração deste micro reserva deve estar na Intranet porque pode ocorrer das 2 pessoas não estarem na empresa e se for senso comum o que temos disponivel fica mais fácil de resolver os problemas que comumente ocorrem.</HTML>',81);
+INSERT INTO cxsug_bodies VALUES (84,'<HTML>Pessoal depois que fiz a sugestão o Eneas explicou-me que se eu editasse o arquivo USUARIO.TXT no C:\\WINDOWS\\DESKTOP e informasse NIL eu poderia acessar o sistema de atendimento telefônico pelo DTMENU ou DT05A4.\r\n\r\nOk deu certo. Posso registrar meus atendimentos e fazer consultas sempre que for necessário.\r\n\r\nOcorre que o procedimento acima não dá certo para todos sendo necessário ampliar e divulgar o procedimento para que todos possam acessar o sistema de atendimento.</HTML>',75);
+
+#
+# Table structure for table 'eneas'
+#
+DROP TABLE IF EXISTS eneas;
+CREATE TABLE eneas (
+  id bigint(20) unsigned DEFAULT '0' NOT NULL,
+  datestamp datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+  thread int(11) DEFAULT '0' NOT NULL,
+  parent int(11) DEFAULT '0' NOT NULL,
+  author char(37) DEFAULT '' NOT NULL,
+  subject char(255) DEFAULT '' NOT NULL,
+  email char(200) DEFAULT '' NOT NULL,
+  attachment char(64) DEFAULT '' NOT NULL,
+  host char(50) DEFAULT '' NOT NULL,
+  email_reply char(1) DEFAULT 'N' NOT NULL,
+  approved char(1) DEFAULT 'N' NOT NULL,
+  msgid char(100) DEFAULT '' NOT NULL,
+  PRIMARY KEY (id),
+  KEY author (author),
+  KEY datestamp (datestamp),
+  KEY subject (subject),
+  KEY thread (thread),
+  KEY parent (parent),
+  KEY approved (approved),
+  KEY msgid (msgid)
+);
+
+#
+# Dumping data for table 'eneas'
+#
+
+INSERT INTO eneas VALUES (1,'2000-12-06 17:31:22',1,0,'Mister - M','Pizza','','','10.1.0.9','','Y','<a0bf307b6ced7549d6e4b07f377b7d03.>');
+INSERT INTO eneas VALUES (2,'2000-12-06 17:32:50',1,1,'Trabalhadores Noturnos','RE: Pizza','','','192.168.0.55','','Y','<67e2b7e97925ecb1d3775bac825449df.>');
+INSERT INTO eneas VALUES (3,'2000-12-06 17:36:18',1,1,'He-Man','RE: Pizza','','','192.168.0.56','','Y','<55920c34103e042a3952a48ed9911f0d.>');
+INSERT INTO eneas VALUES (4,'2000-12-07 09:57:31',1,1,'Mister - M','RE: Pizza','','','10.1.0.9','','Y','<2480f4653961570a0219e1118bc562ba.>');
+INSERT INTO eneas VALUES (5,'2000-12-07 10:01:19',5,0,'Mister - M','Origens','','','10.1.0.9','','Y','<5fe64b8900240b3cced8f3f6945809ed.>');
+INSERT INTO eneas VALUES (6,'2000-12-07 13:38:44',5,5,'Trabalhadores Noturnos','RE: Origens','','','192.168.0.55','','Y','<68b62f86ee5fdb98c9b92c7292bdaf7f.>');
+INSERT INTO eneas VALUES (7,'2000-12-07 14:02:24',5,5,'Mister - M','RE: Origens','','','10.1.0.9','','Y','<78658dddda52c5d9d5cb623168b8730f.>');
+INSERT INTO eneas VALUES (8,'2000-12-07 14:05:09',5,5,'He-Man','RE: Origens','','','192.168.0.56','','Y','<71be399511b98c7cb40f262b3ad1638e.>');
+INSERT INTO eneas VALUES (9,'2000-12-07 14:08:00',9,0,'Mister - M','Miolo da Pão','','','10.1.0.9','','Y','<ee5cc2fc3ffbeda562e51e8986ea9309.>');
+INSERT INTO eneas VALUES (10,'2000-12-07 14:22:17',10,0,'Fritz','O dossiê da pizza','','','10.1.0.2','','Y','<47ef20d2bcb81beec5ee1b45b4f922cf.>');
+INSERT INTO eneas VALUES (11,'2000-12-07 17:45:44',9,9,'He-Man','RE: Miolo da Pão','','','192.168.0.56','','Y','<9b49e3ce38c6f0d7d90c730825c9fcbc.>');
+INSERT INTO eneas VALUES (12,'2000-12-07 17:50:44',9,9,'Mister - M','RE: Miolo da Pão','','','10.1.0.9','','Y','<73482c860fd58a9cffa3865b775c6763.>');
+INSERT INTO eneas VALUES (13,'2000-12-07 17:54:34',5,5,'Mister - M','RE: Origens','','','10.1.0.9','','Y','<05444779808fdacfa8f45dcceff1a429.>');
+INSERT INTO eneas VALUES (14,'2000-12-08 09:44:22',5,13,'Gulliver','RE: Origens','','','192.168.0.55','','Y','<b68692b192726c4321b126b9f4450625.>');
+INSERT INTO eneas VALUES (15,'2000-12-08 10:09:57',5,13,'Mister - M','RE: Origens','','','10.1.0.9','','Y','<a36a865af086d189be4d0c2f3f4ae5b6.>');
+INSERT INTO eneas VALUES (16,'2000-12-08 13:37:57',1,1,'Y-MEM','RE: Pizza','','','192.168.0.57','','Y','<ca5f4e5a7bbf6cbe25729b1ee20ba824.>');
+INSERT INTO eneas VALUES (17,'2000-12-08 13:38:48',1,1,'Y-MEM','RE: Pizza','','','192.168.0.57','','Y','<c70d8b6dca8964c56f788021b6158110.>');
+INSERT INTO eneas VALUES (18,'2000-12-08 16:36:14',1,1,'Homem Cueca','RE: Pizza','','','192.168.0.55','','Y','<a68037b5dd49a3f2efc455d273cba54f.>');
+INSERT INTO eneas VALUES (19,'2000-12-08 16:41:23',9,9,'He-Man','RE: Miolo da Pão','','','192.168.0.56','','Y','<65d6eb75bb4d595800b7cd770c66ae47.>');
+INSERT INTO eneas VALUES (20,'2000-12-08 16:41:51',5,5,'Homem Cueca','RE: Origens','','','192.168.0.55','','Y','<7e18b42f8162885084bb0377662f5c19.>');
+INSERT INTO eneas VALUES (21,'2000-12-08 16:42:58',1,1,'menino frauda','RE: Pizza','','','192.168.0.56','','Y','<c65abf97d9a75b8017fc53dffdc618cd.>');
+INSERT INTO eneas VALUES (22,'2000-12-08 16:44:06',9,19,'Homem Cueca','RE: Miolo da Pão','','','192.168.0.55','','Y','<2c2eac34087fdb9d52c42cdb299961da.>');
+INSERT INTO eneas VALUES (23,'2000-12-08 16:44:43',5,5,'menino frauda','RE: Origens','','','192.168.0.56','','Y','<b2eeeb338e05d0efa67e52f7082035e0.>');
+INSERT INTO eneas VALUES (24,'2000-12-08 16:47:12',5,23,'Homem Cueca','RE: Origens','','','192.168.0.55','','Y','<69eab420152206ea3cd783de78e93ed3.>');
+INSERT INTO eneas VALUES (25,'2000-12-08 16:47:55',1,21,'Homem Cueca','RE: Pizza','','','192.168.0.55','','Y','<6a161ec30ec6929fe7ff82513fbf0b00.>');
+INSERT INTO eneas VALUES (26,'2000-12-08 16:53:00',9,9,'menino frauda','RE: Miolo da Pão','','','192.168.0.56','','Y','<c26c58bb60907c8c113ab1226a9654b8.>');
+INSERT INTO eneas VALUES (27,'2000-12-08 16:54:51',5,5,'menino frauda','RE: Origens','','','192.168.0.56','','Y','<860a1ed7b014261b257adc1ed2a12650.>');
+INSERT INTO eneas VALUES (28,'2000-12-08 16:55:32',1,1,'menino frauda','RE: Pizza','','','192.168.0.56','','Y','<ecc64b40cc74633466a81f9565a75db5.>');
+INSERT INTO eneas VALUES (29,'2000-12-08 16:57:00',10,10,'He-Man','RE: O dossiê da pizza','','','192.168.0.56','','Y','<c5f5e99a6218dd18a966f4b8a7968abe.>');
+INSERT INTO eneas VALUES (30,'2000-12-09 11:53:09',9,9,'SUPER-E','RE: Miolo da Pão','','','192.168.0.57','','Y','<f6755881df2af14d9ff8d535df0868ff.>');
+INSERT INTO eneas VALUES (31,'2000-12-11 08:52:42',10,10,'Mister - M','RE: O dossiê da pizza','','','10.1.0.9','','Y','<c92cfc4225c9b7313e94f7c9cd61f086.>');
+INSERT INTO eneas VALUES (32,'2000-12-11 11:07:45',10,10,'SUPER E','RE: O dossiê da pizza','','','192.168.0.5','','Y','<900d43ca3156491e84c7b6b5ca839b3f.>');
+INSERT INTO eneas VALUES (33,'2000-12-12 08:52:28',9,9,'Mister - M','RE: Miolo da Pão','','','10.1.0.9','','Y','<071926fe7dd47045fc34dad5d5a4ced6.>');
+INSERT INTO eneas VALUES (34,'2000-12-12 15:41:16',34,0,'Homem Cueca','KD O MANO ?','','','192.168.0.55','','Y','<f56a049e40543dcebb1089025f98da64.>');
+INSERT INTO eneas VALUES (35,'2000-12-13 08:09:13',34,34,'Mister - M','RE: KD O MANO ?','','','10.1.0.9','','Y','<85849314228be3e9d2909ff2a7dd0bf8.>');
+INSERT INTO eneas VALUES (36,'2000-12-13 08:10:24',10,10,'Mister - M','RE: O dossiê da pizza','','','10.1.0.9','','Y','<3899b190c2a8e25d2238d60aa322ce08.>');
+INSERT INTO eneas VALUES (37,'2000-12-13 18:04:55',34,34,'MANO BRAL','RE: KD O MANO ?','','','ws245140200.canbrasnet.com.br','','Y','<aa22408fa94d53d1769ae3d198d76743.>');
+INSERT INTO eneas VALUES (38,'2000-12-13 18:08:28',9,9,'SUPER E','RE: Miolo da Pão','','','ws245140200.canbrasnet.com.br','','Y','<d0170761d73b8a09d2113b34c19da2e2.>');
+INSERT INTO eneas VALUES (39,'2000-12-14 10:41:41',9,33,'Mister - M','RE: Miolo da Pão','','','10.1.0.9','','Y','<f1c2fd15055fc4ac4063ab40f8a623e7.>');
+INSERT INTO eneas VALUES (40,'2000-12-14 10:55:59',5,5,'Mister - M','RE: Origens','','','10.1.0.9','','Y','<ff2c76bda56df3c5460a4a7b30ddb721.>');
+INSERT INTO eneas VALUES (41,'2000-12-14 11:42:21',34,34,'He-Man','RE: KD O MANO ?','','','192.168.0.56','','Y','<c33be2e55832070407ba8339baf160c6.>');
+INSERT INTO eneas VALUES (42,'2000-12-14 11:42:50',10,10,'He-Man','RE: O dossiê da pizza','','','192.168.0.56','','Y','<43d6ca56bbe37c2d4d13aeed3699198a.>');
+INSERT INTO eneas VALUES (43,'2000-12-15 13:45:08',10,10,'Fritz','RE: O dossiê da pizza','','','10.1.0.2','','Y','<095bfc6e5d068d65bad2c933c6bff15b.>');
+INSERT INTO eneas VALUES (44,'2000-12-15 13:54:07',44,0,'ET de varginha','Matemática','','','10.1.0.2','','Y','<5540543a3b52e7488d638dc469dc94f1.>');
+INSERT INTO eneas VALUES (45,'2001-01-17 08:58:10',45,0,'new car','carro novo do Eneas','','','192.168.0.56','','Y','<b3dc067379c9369614ae66010719bdd5.>');
+INSERT INTO eneas VALUES (46,'2001-01-17 09:02:45',45,45,'new car','carro novo do Eneas','','','192.168.0.56','','Y','<d326f64872c151d2f10456dd66c52f75.>');
+INSERT INTO eneas VALUES (47,'2001-01-17 09:03:52',34,34,'menino frauda','RE: KD O MANO ?','','','192.168.0.56','','Y','<793b0c5edd9c5cd6069cfb9b3d0516c5.>');
+INSERT INTO eneas VALUES (48,'2001-02-02 18:24:12',48,0,'Gladstone Monteiro Pires','Vejam isto !!','','','10.1.0.2','','Y','<f3b8cf04d255eb9e1c4564ea1ba5dc48.>');
+INSERT INTO eneas VALUES (49,'2001-02-08 19:31:34',49,0,'Chuck','Dossiê','','','10.1.0.2','','Y','<3203a3a7c4c85aa1832d617320fac205.>');
+
+#
+# Table structure for table 'eneas_bodies'
+#
+DROP TABLE IF EXISTS eneas_bodies;
+CREATE TABLE eneas_bodies (
+  id bigint(20) unsigned DEFAULT '0' NOT NULL auto_increment,
+  body text NOT NULL,
+  thread int(11) DEFAULT '0' NOT NULL,
+  PRIMARY KEY (id),
+  KEY thread (thread)
+);
+
+#
+# Dumping data for table 'eneas_bodies'
+#
+
+INSERT INTO eneas_bodies VALUES (1,'<HTML>Porque o Enéas carrega pizza de lado ????</HTML>',50);
+INSERT INTO eneas_bodies VALUES (2,'<HTML>Disseram por ai que no planeta dele, a gravidade é menor do que a gravidade na Terra. E por esse motivo, o queijo da pizza lá não escorre para baixo quando se carrega a pizza de lado.</HTML>',1);
+INSERT INTO eneas_bodies VALUES (3,'<HTML>Por que o Eneas perguntou p/ o motoboy se a pizza estava bem embalada ???\r\n\r\n(mas só depois de fechar o portão, senão apanha do motoboy)</HTML>',1);
+INSERT INTO eneas_bodies VALUES (4,'<HTML>Acho que é porque no planeta dele, que conforme a enquete é Plutão, a comida é de plástico rígido, nao deforma.......</HTML>',1);
+INSERT INTO eneas_bodies VALUES (5,'<HTML>Gostaria de colocar em discussão, as Origens do nosso amigo.\r\nSerá que o resultado da enquete está correta ???\r\nPode nosso amigo ter nascido mesmo e Plutão ???\r\nAhhh, por falar em Plutão, vai aqui uma outra pergunta: \r\nAlguém sabe como é chamado a pessoa que nasce em Plutão ???</HTML>',0);
+INSERT INTO eneas_bodies VALUES (6,'<HTML>Tenho quase certeza de que ele veio de Melmark, deve ser vizinho do ALF.</HTML>',5);
+INSERT INTO eneas_bodies VALUES (7,'<HTML>Pode ser, será que em Melmark tem Pizza ???</HTML>',5);
+INSERT INTO eneas_bodies VALUES (8,'<HTML>não, deve ser tudo comida de plástico rígido (como disseram anteriormente) sem gelo e Diet p/ ele não ficar resfriado e tb não engordar!!!</HTML>',5);
+INSERT INTO eneas_bodies VALUES (9,'<HTML>Por que será que nosso amigo tira o miolo do pão e come só a casca ???</HTML>',4);
+INSERT INTO eneas_bodies VALUES (10,'<HTML>Amigos, \r\n\r\nNão percam em breve o Dossiê da pizza possuída VOL I.\r\n\r\nEle veio de longe.\r\nEle não se conteve.\r\nEle dirige uma nave com 2 marchas (1a e 5a)\r\nEle tem luz na ponta dos dedos...\r\n\r\nNão percam. \r\n\r\n                              O Dossiê da pizza possuída VOL I.\r\n                                        Comming soon</HTML>',70);
+INSERT INTO eneas_bodies VALUES (11,'<HTML>pq no planeta dele a comida é dura e rígida, ele não conhece a sensação de mole, por isso ele tira o miolo do pão e joga fora!\r\nA desculpa é q engorda, mas na verdade, como ele nunca experimentou um alimento inconsistente, ele não sabe o gosto q tem e não experimenta pq tem medo de gostar!!!</HTML>',9);
+INSERT INTO eneas_bodies VALUES (12,'<HTML>Se é assim, então porque ele esquenta a gelatina para comer ???</HTML>',9);
+INSERT INTO eneas_bodies VALUES (13,'<HTML>Faz sentido.....Mas por falar em Melmark, quen nasce em Marte é marciano, quen nasce em Vênus é venuziano, e quem nasce em Melmark, é chamado de quê ???</HTML>',5);
+INSERT INTO eneas_bodies VALUES (14,'<HTML>Eneas ?</HTML>',5);
+INSERT INTO eneas_bodies VALUES (15,'<HTML>Na Lata !!!!!!!!!!!!!!!!</HTML>',5);
+INSERT INTO eneas_bodies VALUES (16,'<HTML>pq é uma nova meneira p/ deixar as mãos livres e exigir da pizzaria uma embalagem a toda prova!</HTML>',1);
+INSERT INTO eneas_bodies VALUES (17,'<HTML>pq é uma nova meneira p/ deixar as mãos livres e exigir da pizzaria uma embalagem a toda prova!</HTML>',1);
+INSERT INTO eneas_bodies VALUES (18,'<HTML>Ai Don, certo ?\r\nO Mano é mó vacilão.\r\nele curte as treta do queijo tudo embolado.</HTML>',1);
+INSERT INTO eneas_bodies VALUES (19,'<HTML>pois é, para não ficar doente! (Segundo o próprio)\r\nquanto a ser mole, ai só perguntando para ele pq ele come este tipo de comida !!!\r\nnem Freud explica!!!\r\nmas os Eneasianos devem saber!!!\r\nAliás, pq o Eneas come gelatina e não come o miolo do pão, ele sente o sabor da gelatina ???</HTML>',9);
+INSERT INTO eneas_bodies VALUES (20,'<HTML>Ai Don.\r\nTô ligado que esse mano é lá da ZL,\r\ntem umas tretas com uns otro mano da ZN.\r\naquilo não é nave espacial nada, é um som que ele carrega no ombro ,cheio de luzinha piscando. escutando um hap na mó das altura.</HTML>',5);
+INSERT INTO eneas_bodies VALUES (21,'<HTML>homem cueca!!! Pq o Eneas gosta de embolar o meio de campo ???</HTML>',1);
+INSERT INTO eneas_bodies VALUES (22,'<HTML>Tá ligado que esse lançe de Gelatina com casca de pão é mór embrulho no estômago. O mano é uma avestruz, se eu cruzo com o mano meto uns pipocos no vacilão.</HTML>',9);
+INSERT INTO eneas_bodies VALUES (23,'<HTML>Homem cueca!!!  Então, a hora q ele vai embora eu não consigo ve-lo sair ???</HTML>',5);
+INSERT INTO eneas_bodies VALUES (24,'<HTML>> Homem cueca!!!  Então, a hora q ele vai embora eu não\r\n> consigo ve-lo sair ???\r\n\r\n  Ô menino. deixa de ser burro. ele nunca vai embora. esse é o lance. C tá ligado que ele mora na datamace.</HTML>',5);
+INSERT INTO eneas_bodies VALUES (25,'<HTML>>homem cueca!!! Pq o Eneas gosta de embolar o meio de\r\n> campo ???\r\n\r\n  Pra responder essa é cem reau mais o buzão.</HTML>',1);
+INSERT INTO eneas_bodies VALUES (26,'<HTML>Calma homem cueca, o mano ta perdido no nosso planeta e não sabe como voltar para o dele! \r\nAliás, alguem descobriu de onde ele veio ?\r\nEle é ou não é um Eneasiano ???</HTML>',9);
+INSERT INTO eneas_bodies VALUES (27,'<HTML>Onde ele dorme??\r\nE q história é aquela de gastar 4 litros de gasolina todos os dias???\r\nPq ele só usa 2 marchas no carro dele, 1ª e 5ª !!!\r\nNo disco voador não tem marcha ???</HTML>',5);
+INSERT INTO eneas_bodies VALUES (28,'<HTML>Tem desconto ???</HTML>',1);
+INSERT INTO eneas_bodies VALUES (29,'<HTML>Estamos todos ansiosos pelo dossiê \"Eneas\"</HTML>',10);
+INSERT INTO eneas_bodies VALUES (30,'<HTML>CALMEM AMIGOS ELE ESTÁ SE ADPTANDO NO PLANETA TERRA, POR ISSO ISSO FAZ ALGUMAS EXPERIÊNCIAS ESTRANHAS COM NOSSOS ALIMENTOS. O PLANETA DELE FICA PRÓXIMO DO SOL  ,  ENTÃO ELE NÃO VAI SE ACUSTUMAR COMER COISAS GELADAS MESMO, NÃO ESTRANHEM ELE COLOCAR GELATINA NO MICRO ONDAS , REFRIGERANTE E OUTRAS COISAS MAIS. NÃO SE PREUCUPEM EM FAZER COMENTÁTIOS DELE SOBRE ISSO, POIS ELE TAMBÉM GOSTA DE ESQUENTAR CABEÇA , MAS NÃO  TEM COMO ENTRAR  NO MICRO-ONDAS  AINDA!</HTML>',9);
+INSERT INTO eneas_bodies VALUES (31,'<HTML>Ei, esse dossiê sai ou não sai ?????</HTML>',10);
+INSERT INTO eneas_bodies VALUES (32,'<HTML>ningúem esquece desse cara!</HTML>',10);
+INSERT INTO eneas_bodies VALUES (33,'<HTML>Colocar a cabeça no Microondas....hmmmmmmm.....Será que é assim que ele seca os cabelos..........hmmmmmmmm.......será que é só essa parte do corpo que ele põe no microondas ???? ..........hmmmmmmmm.......ôôôôôôôôôôô Super-E, responde prá gente, como é a sensação de colocar a cabeça no microondas ?????</HTML>',9);
+INSERT INTO eneas_bodies VALUES (34,'<HTML>Ai Don.\r\nKadê o Mano Eneas ? não dá um trampo com os camarada mais ?\r\nmudou de lugar ?</HTML>',0);
+INSERT INTO eneas_bodies VALUES (35,'<HTML>Parece que o Mano tá cantando em outra freguesia por uns tempo....\r\nDizem que ele está até se saindo bem, e que ele até <big><big><b>DÁ</b></big></big> para um bom consultor.......veja só !!!!!</HTML>',34);
+INSERT INTO eneas_bodies VALUES (36,'<HTML>Pô, Fritz, cade o dossiê ???????</HTML>',10);
+INSERT INTO eneas_bodies VALUES (37,'<HTML>HEHE, O PESSOAL SENTINDO A FALTA, HEEIMMM</HTML>',34);
+INSERT INTO eneas_bodies VALUES (38,'<HTML>DEVE SER SENSAÇÃO LEGAl, por quê vc está interesando em colocar a sua Mister M , quer fazer mais um de seus truques, desenvolva uma mágica p/ não queimar! e sair geladinha !</HTML>',9);
+INSERT INTO eneas_bodies VALUES (39,'<HTML>Não, não estou interessado, esse negócio de por partes do corpo no microondas é coisa de Extraterrestre........\r\nMas a mágica eu posso preparar para você........\r\nSó preciso que você faça umas experiências antes.....Topa ?????</HTML>',9);
+INSERT INTO eneas_bodies VALUES (40,'<HTML>Isso eu te respondo menino frauda, aliás,já trocou a frauda hoje ???? bom, deixa quieto, vamos voltar ao assunto do Mister E....\r\n\r\nEle dorme na Datamace, em baixo da bancada (presta atenção, quando ele se despede do pessoal, vai em direção ao micro dele e some.....)\r\n\r\nEle gasta 4 litros todos os dias....Bebendo.....Pois não usa carro (ele dorme na Datamace...lembra ???)\r\n\r\nEle usa duas marchas, mas não no carro (Ele não tem carro....Lembra ???) as marchas que ele usa são nele mesmo, mas não são a 1ª e 5ª, são a 1ª e a Ré, que ele engata com muito prazer.\r\n\r\nNo disco não tem marcha, como eu disse (as marchas quem tem é ele... Lembra ????)</HTML>',5);
+INSERT INTO eneas_bodies VALUES (41,'<HTML>É, pois não temos c/ quem tirar o sarro!!!</HTML>',34);
+INSERT INTO eneas_bodies VALUES (42,'<HTML>Demoro c/ esse dossiê!!!</HTML>',10);
+INSERT INTO eneas_bodies VALUES (43,'<HTML>Calma ae, deu mau contato com o além.</HTML>',10);
+INSERT INTO eneas_bodies VALUES (44,'<HTML>Amigo Enéas,\r\n\r\nVc poderia me dizer a a raiz ENÉSIMA de PI ?\r\n\r\nObrigado\r\nLaPLace & Associados</HTML>',43);
+INSERT INTO eneas_bodies VALUES (45,'<HTML>Alguém já notou que o nosso caro amigo Eneas</HTML>',0);
+INSERT INTO eneas_bodies VALUES (46,'<HTML>...trocou de carro (ops), nave ??\'?\r\nSerá que esta tem mais marchas ???\r\nSerá que é a prova de moto boy (entregador de pizza) ???\r\nVoa mais rápido que a outra, ou ele tem medo de passar dos 40 Km/h???\r\n\r\nAlguem já descobriu onde ele mora ???</HTML>',45);
+INSERT INTO eneas_bodies VALUES (47,'<HTML>Shiiiii marquinho, será que ele vai voltar ??</HTML>',34);
+INSERT INTO eneas_bodies VALUES (48,'<HTML>Fatos\r\n--------\r\n\r\nPrimeiro :\r\nO  cara usa o banheiro das mulheres porque tem preguiça de subir as escadas, onde fica o banheiro masculino.\r\n\r\nSegundo :\r\nDizem que vai trazer bolo de fubá no dia do aniversário pra economizar.\r\n\r\nTerceiro :\r\nMudou de casa pra gastar menos gasolina. Economiza agora R$ 7,65 por mês.\r\n\r\nQuarto :\r\nEnfiou o carro na enchente, porque ficar parado com o motor ligado, gasta gasolina. Melhor socar o carro na água.\r\n\r\nPergunto : De que planeta ele vem ??? \r\nEneotônio\r\nEneotão\r\nEneasturno\r\nEneonésimo\r\n\r\nSugestões são em vindas...</HTML>',0);
+INSERT INTO eneas_bodies VALUES (49,'<HTML>Por motivos de tempo, trabalho e amendoins muchos, a entrega do  dossiê foi adiada. Isto não quer dizer que foi cancelada. Aguardem !!!!</HTML>',0);
+
+#
+# Table structure for table 'filmeRecomendo'
+#
+DROP TABLE IF EXISTS filmeRecomendo;
+CREATE TABLE filmeRecomendo (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  nome varchar(50),
+  filme varchar(100),
+  motivo longtext,
+  data date,
+  rate double(4,2) DEFAULT '0.00',
+  qtde int(11) DEFAULT '0',
+  link varchar(100),
+  genero varchar(50),
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'filmeRecomendo'
+#
+
+INSERT INTO filmeRecomendo VALUES (2,'Fernando Nomellini','<b>Um sonho de liberdade</b><br>(The Shawshank Redemption) (1994)','Com <b><font color=#ff0000>Tim Robbins</font></b> e <b><font color=#ff0000>Morgan Freeman</B></font><br>Condenado a uma pena dupla de prisão perpétua pelo assassinato de sua mulher e do amante dela, o jovem banqueiro Andy Dufresne é enviado em 1946 à  penitenciária Shawshank, na Nova Inglaterra. Faz amizade com Ellis \"Red\" Redding, que controla o mercado negro no presí­dio, onde cumpre pena há 20 anos. Com o tempo, a habilidade de Andy para lidar com finanças abre algumas portas - e fecha outras.<h4><font color=\"#0000CC\">Imperdível</font></h4>','2000-11-06',5.00,10,'us.imdb.com/Title?0111161','Drama');
+INSERT INTO filmeRecomendo VALUES (3,'Fábio Cristófalo da Silva','Tempo de Matar<br>(Time to Kill) (1996)','Uma garota negra de apenas 9 anos de idade é estuprada por dois racistas brancos completamente bêbados. Em um ato desesperado de ódio e vingança, seu pai mata os homens a tiros. Agora, Carl Lee Hailey <b>(Samuel L. Jackson)</b> irá a julgamento pelo assassinato de dois cidadãos brancos. É assim que a lei pretende tratar o caso. Para defendê-lo, Hailey conta com o corajoso Jake Brigance <b>(Matthew McConaughey)</b> e sua assistente, a idealista Ellen Roark <b>(Sadra Bullock)</b> - dois jovens advogados em busca da verdade. Em poucos dias o julgamento transforma-se em uma violenta batalha racial, onde a vida de todas as pessoas envolvidas com o caso está correndo perigo.','2000-11-07',4.94,6,'us.imdb.com/Title?0117913','Drama');
+INSERT INTO filmeRecomendo VALUES (6,'Fábio Cristófalo da Silva','Irmãos Gêmeos<br>(Twins) (1988)','O grandalhão <b>Arnold Schwarzenegger</b> e o baixinho <b>Danny DeVito</b> irmãos? Gêmeos? Coisas de um cientista maluco!\r\n','2000-11-07',4.06,6,'us.imdb.com/Title?0096320','Comédia');
+INSERT INTO filmeRecomendo VALUES (7,'Fábio Cristófalo da Silva','Michael Collins, O Preço da Liberdade<br>(Michael Collins) (1996)','Um irlandês comum resolve ir contra o sistema de repressão da Inglaterra contra seu país. Mesmo depois de um violento combate entre rebeldes irlandeses e a bem treinada força militar inglesa, que resultou na vitória esmagadora do Governo. Esse homem se chama Michael Collins <b>(Liam Neeson)</b> - o herói de uma nação. Uma lenda imortal na luta pela liberdade!','2000-11-07',5.00,2,'us.imdb.com/Title?0117039','Drama');
+INSERT INTO filmeRecomendo VALUES (5,'Fábio Cristófalo da Silva','Crime perfeito, Um<br>(Perfect murder, A) (1998)','Nesta refilmagem do clássico Disque M para Matar, um milionário de Wall Street vê sua fortuna ir embora à medida que vai perdendo tudo no mercado de ações. Para piorar, descobre que sua rica mulher, com um seguro de vida avaliado em US$ 100 milhões, está tendo um romance com um artista plástico. Temendo a dupla falência, ele tem a idéia de cometer um crime perfeito\r\n','2000-11-07',4.50,2,'us.imdb.com/Title?0120787','Ação/Aventura');
+INSERT INTO filmeRecomendo VALUES (9,'Fábio Cristófalo da Silva','O Paciente Inglês<br> (The English Patient) (1996)','Um aristocrata europeu de identidade desconhecida <b>(Fiennes)</b> sofre um acidente de avião durante a II Guerra. É tratado na Itália por uma dedicada enfermeira, Hannah <b>(Binoche)</b>. Na longa e sofrida recuperação de suas queimaduras, o ferido conta a ela histórias de seu passado e do grande amor de sua vida, Katherine <b>(Kristin)</b>. Um amigo de Hannah, Caravaggio <b>(Dafoe)</b>, desconfia de antigas ligações nazistas do desconhecido.','2000-11-07',4.03,6,'us.imdb.com/Title?0116209','Drama');
+INSERT INTO filmeRecomendo VALUES (10,'Fábio Cristófalo da Silva','A Negociação<br>(The Negociator) (1998)','Danny Roman <b>(Samuel L. Jackson)</b> é um especialista em negociação com seqüestradores, que acaba sendo vítima de uma conspiração policial. Para virar o jogo, e tentar provar sua inocência, ele pega seu ex-chefe como refém. Chris Sabian <b>(Kevin Spacey)</b>, um outro ?negociador?, é chamado para tentar reverter a situação, iniciando uma negociação longa e tensa, cheias de reviravoltas.\r\n','2000-11-07',4.81,5,'novanet.co.cr/magaly/archivos/negociator/negociator.html','Ação/Aventura');
+INSERT INTO filmeRecomendo VALUES (11,'Fábio Cristófalo da Silva','Nascido em 4 de Julho<br>(Born on the Fourth of July) (1989)','Um retrato da Guerra do Vietnã sem retoques, duro e cruel, chocante e ...<br><br><marquee><font color=red><big><big><big><b><i>REAL</b></i></big></big></big></font></marquee><br><br><br>','2000-11-07',4.97,6,'club.imusic.com/soundtracks/bornonthe4thofjuly.html','Drama');
+INSERT INTO filmeRecomendo VALUES (12,'Fábio Cristófalo da Silva','187 O Código<br> (One Eight Seven) (1997)','Numa escola de Nova Iorque, Trevor Garfield <b>(Samuel L. Jackson)</b> é um professor que sobrevive depois de ter sido esfaqueado por um aluno. Ele se muda para Los Angeles, onde vai lecionar como professor substituto, mas reencontra a violência que imaginava ter deixado para trás. Além das classes serem controladas por marginais, a direção da escola tem medo de tomar atitudes, o que obriga o novo professor a ter que agir por conta própria e fazer justiça com as próprias mãos. \r\n','2000-11-07',4.80,8,'movies.warnerbros.com/187/','Ação/Aventura');
+INSERT INTO filmeRecomendo VALUES (13,'Fábio Cristófalo da Silva','Conspiração Tequila<br>(Tequila Sunrise) (1988)','Depois de conseguir juntar muito dinheiro, o traficante Mac Mckussic <b>(Mel Gibson)</b> quer mudar de vida. Mas seus planos podem ir por água abaixo quando reencontra o velho amigo Nick Frescia <b>(Kurt Russel)</b>, que virou policial. A situação fica ainda mais complicada quando percebe que sua mulher Jo Ann <b>(Michelle Pfeiffer)</b> começa a se apaixonar por Nick.\r\n','2000-11-07',4.38,5,'','Ação/Aventura');
+INSERT INTO filmeRecomendo VALUES (14,'Fábio Cristófalo da Silva','Sem Medo de Viver<br>(Fearless) (1993)','Do mesmo diretor de A Testemunha, Peter Weir, este filme traz <b>Jeff Bridges</b> interpretando o arquiteto Max Klein, um homem que mudou seu estilo de vida depois de encarar a morte de perto numa queda de avião. Desse desastre, nasce a amizade dele com uma outra sobrevivente, Carla <b>(Rosie Perez)</b>, que não consegue superar uma terrível perda. O novo amigo será peça fundamental para que ela cure essa dor.\r\n','2000-11-07',4.75,3,'','Drama');
+INSERT INTO filmeRecomendo VALUES (15,'Fábio Cristófalo da Silva','O Exorcista<br>(The Exorcist) (1973)','Um jovem padre atormentado por suas próprias dúvidas é chamado para exorcizar uma menina de 12 anos Linda Blair, indicada ao Oscar. Ele tem de enfrentar seus próprios medos antes de iniciar essa luta entre o <big><b><font color=blue>BEM</font></b></big> e o <big><b><font color=Red>MAL</font></b></big>.\r\n\r\n<br>\r\n<center><a href=\"http://www.warnerbros.com/pages/link/external.jsp?url=http%3a%2f%2fwww.theexorcist.net%2f&fromtout=home_men\" target=_blanck><i><h2><u>clique aqui e sinta o Drama</u></h2></i></a></center>\r\n','2000-11-07',5.00,1,'','Suspense');
+INSERT INTO filmeRecomendo VALUES (16,'Fábio Cristófalo da Silva','Esfera<br>(Sphere) (1998)','Uma equipe de cientistas é chamada para desvendar um terrível mistério: tentar descobrir como deter a esfera uma força que entra na mente das pessoas, transformando seus maiores medos em realidade. Terríveis acidentes começam a acontecer e o tempo é cada vez mais escasso.\r\nAtor(es): <b>Dustin Hoffman</b> , <b>Samuel L. Jackson</b> , <b>Sharon Stone</b> \r\n','2000-11-08',4.75,4,'','Ficção');
+INSERT INTO filmeRecomendo VALUES (17,'Fábio Cristófalo da Silva','Twister, O Lado Selvagem da Natureza<br>(Twister) (1996)','Cientistas perseguem um furacão com a maior capacidade destrutiva dos últimos 50 anos. Com a idéia de lançar sensores para medir o interior do tornado, os caçadores de tempestade esperam obter informações que permitam criar um sistema de prevenção eficiente.<br>Ator(es): <b>Bill Paxton</b> , <b>Cary Elwes</b> , <b>Helen Hunt</b> \r\n<br><br><center><a href=\"http://www.warnerbros.com/pages/link/external.jsp?url=http%3a%2f%2fmovies.warnerbros.com%2ftwister%2f&frompage=movies\" target=_blanck><i><u>Clique aqui para mais detalhes</u></i></a></center>\r\n','2000-11-08',4.69,6,'','Ação/Aventura');
+INSERT INTO filmeRecomendo VALUES (18,'Fábio Cristófalo da Silva','O Homem Bicentenário<br>(Bicentennial Man) (1999)','Na primeira década do novo milênio, com os avanços da tecnologia global, Richard Martin <b>(Sam Neill)</b> compra um presente para sua família, um novo robô Ndr 114. O produto é batizado com o nome de Andrew <b>(Robin Williams)</b> por sua filha mais jovem. O Homem Bicentenário (Bicentennial Man), da Columbia Pictures / Touchstone Pictures, segue as aventuras e a vida de Andrew, um robô comprado para ser um eletrodoméstico sofisticado, programado para cumprir tarefas rotineiras. À medida que Andrew começa a sentir emoções e a pensar de modo criativo, a família Martin logo descobre que não levou para casa um robô qualquer. No filme, que custou aproximadamente US$100 milhões, a história se passa em São Francisco e avança em 30, 70 e 120 anos mostrando três futuros diferentes para o robô que quer se tornar humano e mostrar às pessoas como é possível se abrir para receber os outros com compaixão','2000-11-17',5.00,1,'http://www.culturevulture.net/Movies/BicentennialMan.html','Ficção');
+INSERT INTO filmeRecomendo VALUES (19,'Fábio Cristófalo da Silva','Armageddon<br>(1998)','A NASA recebe o alerta de que a terra tem apenas 18 dias antes de ser atingida por um asteróide do tamanho do Estado de Texas. Uma equipe de perfuradores de petróleo é enviada para a superfície do asteróide e colocar em seu interior uma carga nuclear capaz de explodi-lo.\r\n<br>Atores:<br><CENTER><B><A HREF=\"javascript:OpenLores();\">Liv Tyler - (Baixa Resolução)</A><br><A  HREF=\"javascript:OpenHires();\">Liv Tyler - (Alta Resolução)</A><br>Ben Affleck<br>Billy Bob Thornton<br>Bruce Willis</b></CENTER>\r\n\r\n<script language=\"JavaScript\">\r\nfunction OpenLores()\r\n{       F1=open(\"http://www.liv-tyler.org/frame-lowres/index.html\",\"lowres\",\"width=750,height=550,resizable=no\");\r\n        F1.focus();\r\n}\r\nfunction OpenHires()\r\n{       F2=open(\"http://www.liv-tyler.org/frame-hires/index.html\",\"hires\",\"width=1020,height=730,resizable=no\");\r\n        F2.focus();\r\n}\r\n</script>\r\n','2000-11-17',4.84,6,'www.jessicasteen.com/armageddon.html','Ficção');
+
+#
+# Table structure for table 'filmes'
+#
+DROP TABLE IF EXISTS filmes;
+CREATE TABLE filmes (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  nome varchar(100),
+  descricao longtext,
+  estado tinyint(1),
+  quem varchar(100),
+  quandor date,
+  quandod date,
+  genero varchar(50),
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'filmes'
+#
+
+INSERT INTO filmes VALUES (1,'A Vida é Bela','A vida pode ser bela até em um campo de concentração nazista quando o amor transcende o sofrimento.\r\n',1,'Alberto Araújo','2001-05-07','2001-05-16','Drama/Comédia');
+INSERT INTO filmes VALUES (2,'Patch Adams.  O Amor é Contagioso (114 minutos)','Conheça Patch Adams (<b>Robin Williams</b>), um médico que não parece, não age e não pensa como qualquer médico que você já conheceu.  Baseado numa história real.',1,'Alberto Araujo','2001-04-20','2001-05-07','Drama/Comédia');
+INSERT INTO filmes VALUES (3,'A Conquista da Qualidade do Sebrae','São vários filmes de curta duração que abordam a conscientização para a conquista da qualidade.',1,NULL,NULL,NULL,'Qualidade');
+INSERT INTO filmes VALUES (4,'A Conquista da Qualidade do Sebrae','São vários filmes de curta duração que abordam a conscientização para a conquista da qualidade.',1,NULL,NULL,NULL,'Qualidade');
+INSERT INTO filmes VALUES (5,'1º Encontro de Usuários DATAMACE - 2000','Apresentação de produtos, equipe, representantes, clientes. Dinâmicas e cases de clientes: Protege, Niagara e Monsanto.\r\n\r\nDaniel de Carvalho Luz apresentou a palestra Gerenciamento de Pessoas',1,'CÉLIA REGINA SALMIN','2000-11-23','2000-11-27','Datamace');
+INSERT INTO filmes VALUES (6,'O Poder do Entusiasmo (47 minutos)','LUIZ  MARINS FILHO, Ph.D.\r\n\r\nEste vídeo orienta a prática de uma postura de vida com entusiasmo e oferece as ferramentas capazes de transformar nosso dia-a-dia numa vida cheia de realizações e crescimento pessoal e profissional. Inclui dez dicas para viver com entusiasmo.',NULL,'LUIS','2001-05-04','2001-05-03','Qualidade');
+INSERT INTO filmes VALUES (7,'Seja Amigo da Mudança (32 minutos)','Marco Aurélio F.Vianna analisa o que as pessoas de sucesso fazem para conquistar destaque. Como quebrar paradigmas e alcançar o desenvolvimento pessoal. A Datamace adotou este filme para o treinamento GIP, é apresentado no final do 1o dia de treinamento para motivar os alunos a aprender.    ',1,'fer','2000-11-23','2000-11-23','Qualidade');
+INSERT INTO filmes VALUES (8,'Seja Amigo da Mudança (32 minutos)','Marco Aurélio F.Vianna analisa o que as pessoas de sucesso fazem para conquistar destaque. Como quebrar paradigmas e alcançar o desenvolvimento pessoal. A Datamace adotou este filme para o treinamento GIP, é apresentado no final do 1o dia de treinamento para motivar os alunos a aprender.    ',1,NULL,NULL,NULL,'Qualidade');
+INSERT INTO filmes VALUES (9,'Fernão Capelo Gaitova','Conheçam Fernão Capelo Gaiovota. É a história de todos aqueles que não aceitam o destino imposto pela vida, pelo meio e condições onde nascem.  ',1,NULL,NULL,NULL,'Motivacional');
+INSERT INTO filmes VALUES (10,'Se7en, Os Sete Crimes Capitais (128 minutos)','Brad Pitt &#8211; Morgan Freeman. Um inteligente serial killer  escolhe suas vitimas de acordo com os pecados que teriam cometido.\r\n\r\n \r\n\r\nÉ muito interessante a questão dos 7 pecados capitais: orgulho, inveja, avareza, ira, gula, luxúria, preguiça, como eles se manifestam e dominam nossas vontades. Quantas coisas deixamos de fazer por  preguiça ou por orgulho?  O filme é interessante pois mostra pessoas dominadas por estes egos e porisso escolhidas para morrer. O final do filme é supreendente.',NULL,'leandro','2001-05-31','2001-05-18','Suspense');
+INSERT INTO filmes VALUES (11,'Sociedade dos Poetas Mortos (129 minutos)','Robin Williams. Todas as pessoas deveriam assistir  este filme, com olhos de professores, que somos todos os dias em nossas vidas, sempre aprendemos e ensinamos com nossos filhos, companheiros, amigos.  &#8220;Carpe Diem, rapazes: aproveitem o dia! Façam de suas vidas algo extraordinário&#8221;  essa é a frase que o professor John (<b>Robin Williams</b>) usa para estimular, motivar seus alunos.',1,'LUIS','2001-04-27','2001-05-03','Drama');
+INSERT INTO filmes VALUES (12,'Vida de Inseto (102 minutos)','Filme infantil. Animação computadorizada Disney/Pixar.  É infantil mas para qualquer idade porque Flik e outros insetos e formigas são encantadores. Vale a pena assistir.',1,'LUIS','2001-04-27','2001-05-04','Infantil');
+INSERT INTO filmes VALUES (13,'O Pequeno Príncipe (45 minutos)','Filme infantil. Mensagens para qualquer idade. É um desenho baseado no clássico de Antoine de Saint Exupéry.\r\n<br>\r\n&#8220;Tu te tornas eternamente responsável por quem cativas&#8221;',1,'Luis','2001-04-12','2001-04-17','Infantil');
+INSERT INTO filmes VALUES (14,'Não Ouça o Cliente (21 MINUTOS)','Luiz Almeida Marins Filho, Ph.D.\r\n\r\nAo assistir essa fita entendemos o porquê de muitos clientes irem embora trocarem de fornecedor.',1,NULL,NULL,NULL,'Qualidade');
+INSERT INTO filmes VALUES (15,'Desvendando o Micro PC - unidade 1','Conceitos gerais de informática, hardware e software.',1,NULL,NULL,NULL,'Técnico');
+INSERT INTO filmes VALUES (16,'Desvendando o Micro PC - unidade 2','Introdução à operação do PC.\r\n\r\nConceitos iniciais do DOS.\r\n\r\nComandos e programas do DOS',1,'fer','2000-11-06','2000-11-06','Técnico');
+INSERT INTO filmes VALUES (17,'Distúrbios da  Aprendizagem (2:10 hs)<br>Teoria e Prática da Didática','Prof.Celso Antunes orienta, motiva e enaltece,  as pessoas apaixonadas pela educação. Explica porquê o professor tem que mudar as práticas pedagogicas evoluindo da aprendizagem mecânica para a aprendizagem significativa, pois só ela será capaz de construir o homem deste próximo milênio. Ele explica de forma brilhante as 8 inteligências comprovadas pela ciência e também comprovado pela ciência que até os 72 anos elas podem ser desenvolvidas. Vale a pena assistir.',1,'Helio','2000-11-06','2000-11-08','Técnico');
+INSERT INTO filmes VALUES (19,'Elizabeth','Uma mulher a frente do seu tempo, capaz de conquistar o mundo por amor ao seu povo. Subiu ao trono da Inglaterra em 1558 e tornou-se a mulher mais poderosa do mundo. Sete indicações para o Oscar.',1,'','2001-05-11','2001-05-11','Drama');
+INSERT INTO filmes VALUES (20,'Além da Linha Vermelha (170 minutos)','Desconcertante(Revista Veja). O melhor filme contemporâneo de guerra.',1,'LUIS','2001-05-25','2001-05-28','Guerra');
+INSERT INTO filmes VALUES (21,'Matrix (136 minutos)','A realidade como você nunca imaginou. É uma fantástica aventura cibernética, onde a Terra foi totalmente dominada por máquinas dotadas de inteligência artificial.',1,'CELIA REGINA SALMIN','2001-04-20','2001-04-23','Ficção');
+INSERT INTO filmes VALUES (22,'Vidas em Jogo','Michael Douglas. Você não precisa saber as regras do jogo. Basta apenas tentar sobreviver.',NULL,'JUNIOR','2001-03-13','2001-02-22','Drama');
+INSERT INTO filmes VALUES (24,'Gloria (105 minutos)','Sharon Stone. Uma magnífica performance. Um deslumbre.Impetuosa, sem limites. Ela é...Gloria a mulher. ',1,'Dna. Cida','2001-03-09','2001-03-14','Drama');
+INSERT INTO filmes VALUES (25,'A Conquista da Qualidade - Bloco II','Filmes de curta duração para serem utilizados no Bloco II do Programa de Qualidade Datamace.Por enquanto indisponivel até encerrar o bloco II.',1,NULL,NULL,NULL,'Qualidade');
+INSERT INTO filmes VALUES (26,'O Desafio do Futuro (33 minutos)','Marco Aurélio F.Vianna. Transforme ameaças em oportunidades.Indisponivel até ser assistido em aula do Programa de Qualidade.',1,NULL,NULL,NULL,'Qualidade');
+INSERT INTO filmes VALUES (27,'Tire o \"S\" da Crise. (34 minutos)','Marco Aurélio F.Vianna. Aborda o lado positivo da crise, que é a capacidade das empresas de criar novas oportunidades e crescer.Informação é fator crítico de sucesso absoluto das organizações.Indisponivel até ser utilizado em aulas do Programa de Qualidade.',1,NULL,NULL,NULL,'Qualidade');
+INSERT INTO filmes VALUES (28,'A Empresa Inteligente (52 minutos)','Eduardo Botelho. O autor afirma que o grande capital de uma empresa é, sem dúvida, a inteligência e que as energias básicas para a sobrevivência empresarial são: idéias, conhecimentos, informações e trabalho. Indisponível até ser utilizado em aula do Programa de Qualidade.',1,NULL,NULL,NULL,'Qualidade');
+INSERT INTO filmes VALUES (29,'O Caça-Fantasma do Desperdício (28 minutos)','Mário Donadio. Filme utilizado em aula do Programa de Qualidade - Bloco II para reforçar os conceitos dos \"5S\".',1,NULL,NULL,NULL,'Qualidade');
+INSERT INTO filmes VALUES (30,'Amor Além da Vida (114 minutos)','Robin Williams e Annabella Sciorra. Você acredita em vida após a morte? Se você tem interesse neste assunto não pode deixar de assistir este filme. É maravilhoso acreditar que você pode reencontrar, num outro plano, pessoas que você ama e, ainda mais, o seu amor pode provocar este reencontro mesmo quando ele seria impossível.  ',1,'Marcelo','2001-05-07','2001-05-18','Drama');
+INSERT INTO filmes VALUES (31,'Cidade dos Anjos (114 minutos)','Nicolas Cage e Meg Ryan. Os anjos estão por toda a parte. Presentes nas bibliotecas lendo em conjunto com as pessoas, acalmando as pessoas envolvidas em um assalto, consolando, tentando transmitir bons pensamentos. Neste filme vemos o quanto é grande o esforço deles porque os nossos pensamentos e nossa falta de sensibilidade nos impede de ouvi-los. Mas Maggie (Meg Ryan) também não acreditava em anjos até se apaixonar por um. O filme é lindo.',1,'Aparecida','2001-03-09','2001-03-14','Drama');
+INSERT INTO filmes VALUES (33,'Valmont - Uma História de Seduções','Retrata as tramas de sedução armadas por uma sensual e aristocrática viúva.',1,NULL,NULL,NULL,'Drama');
+INSERT INTO filmes VALUES (34,'A Força do amor','Conta a paixão de um ladrão (Richard Gere) por\r\numa estudante Européia. Ele fará de tudo para conquistá-la.',1,'Sandra Guiráo','2001-01-26','2001-03-02','Romance');
+INSERT INTO filmes VALUES (35,'A Primeira Noite de um Homem','O roteiro mostra o dilema do universitário (Dustin Hoffman) que tem um caso com a mulher do sócio, até que a filha de sua amante aparece. Ele se apaixona pela garota e fica dividido entre as duas.',1,'Rafael Delgado','2000-11-27','2000-12-12','Drama');
+INSERT INTO filmes VALUES (36,'Mr. Holland, Adorável Professor','Emocionante. Este é um filme que expõe os sentimentos mais fortes do ser humano ao tratar de ideais, do encontro de gerações e do afeto entre pais e filhos.',1,'Elis','2001-02-23','2001-03-05','Drama');
+INSERT INTO filmes VALUES (37,'Estranha Obsessão - The Fan','Gil Renard ( De Niro ) é um torcedor fanático que, como tantos outros, lotam estádios para vibrar, sofrer e se envolver em cada partida. Mas a vida de Gil não vai nada bem e para seu total desespero, Bobby Rayburn (Snipes), o jogador mais caro do time entra numa fase ruim. Gil acredita ser o único capaz de ajudar seu ídoloe esta disposto a tudo para ver o seu time vencer... tudo mesmo. Sua adoração se transforma numa perigosa obsessão sem limites e sem piedade. Ele coloca vidas em risco e pode estar em qualquer lugar...nas arquibancadas, no campo, no vestiário ou bem do lado de sua vítima.',1,NULL,NULL,NULL,'Drama');
+INSERT INTO filmes VALUES (38,'Mudança de Código (102 min)','Um ex-soldado, que foi abandonado em uma missão quer vingar-se do presidente dos EUA. Para isso, invade uma base militar e controla vários misseis nucleares, ameaçando detoná-los em Washington. Só um homem pode evitar o desastre. Quem é ele? Dolph Lundgren.  ',1,'ghjghj','2001-05-22','2001-05-22','Ação');
+INSERT INTO filmes VALUES (39,'Titanic (194 min.)','',1,'Fábio Cristófalo da Silva','2000-11-22','2000-11-29','Drama');
+INSERT INTO filmes VALUES (40,'Cilada da Sorte (99 min)','Cilada da sorte é a estoria de um confuso e absurdo trio de assaltantes às voltas com uma mal sucedida empreitada.',1,'Rodrigo Souza de Freitas','2000-12-01','2001-01-29','Comédia');
+INSERT INTO filmes VALUES (41,'Em Busca do ouro perdido','Dois amigos se metem em muita confusão para achar o ouro!',1,'Leandro','2001-01-13','2001-01-15','Comédia');
+INSERT INTO filmes VALUES (42,'Acusação (132 min.)','James Woods é um advogado de defesa determinado, que acredita na inocência de quem lhe oferecer o melhor honorário. ',1,'Sandra Guiráo','2001-01-10','2001-02-15','Drama');
+INSERT INTO filmes VALUES (43,'Vitima do passado (110 min.)','Howard Campbell Jr., um escritor americano vivendo na Alemanha pré II Guerra, que é pressionado a trabalhar como espião para o governo Americano.',1,'Rafael Delgado','2000-12-08','2001-01-29','Drama');
+INSERT INTO filmes VALUES (44,'A REDE - 105 min.','Uma analista de Sistemas (Sandra Bullock) passa dias procurando vírus de computador até um dia que ela descobre uma criminosa teia de corrupção e conspiração. Acessa arquivos altamente secretos do governo e passa a ser procurada por piratas da informática.',1,'Carolina Matias','2001-01-30','2001-02-08','Aventura');
+INSERT INTO filmes VALUES (45,'O resgate do soldado Ryan  (168 min.)','...',1,'Elis','2001-04-27','2001-05-21','Aventura');
+INSERT INTO filmes VALUES (46,'O sexto sentido (112 min.)','suspense',1,'Marcelo','2001-04-12','2001-04-16','Suspense');
+INSERT INTO filmes VALUES (47,'O soldado do futuro','As guerras intergalácticas de um futuro não muito distante, serão disputadas por soldados treinados para se tornarem obedientes e inescrupulosas máquinas de matar.  ',NULL,'Junior','2001-03-14','2001-03-13','Ação');
+INSERT INTO filmes VALUES (48,'O corvo (85 min.)','\"A lenda diz que quando uma pessoa morre o corvo leva sua alma embora... mas às vezes o corvo traz essa alma de volta.\"',1,'TESTE','2000-11-20','2000-11-20','Aventura');
+INSERT INTO filmes VALUES (49,'Twin peaks Os ultimos dias de Laura Palmer (134 min.)','Misterios, charadas e suspense.',1,'C','2001-03-16','2001-03-26','Drama');
+INSERT INTO filmes VALUES (50,'Em nome de Deus (105 min.)','incrivel e emocionante romance entre um filósofo e mestre de teologia e uma linda jovem da aristocracia da França do século XII.',1,'Rafael Delgado','2000-12-08','2001-01-09','Romance');
+INSERT INTO filmes VALUES (51,'As filhas de Marvin (98 min.)','',1,'CELIA','2000-12-28','2001-01-09','Drama');
+INSERT INTO filmes VALUES (52,'Denise está chamando (80 min.)','Comédia que explora a paranóia da solidão causada pela idéia de globalização e pelo mundo experimentado apenas através do computador.',1,NULL,NULL,NULL,'Comédia');
+INSERT INTO filmes VALUES (53,'Bagdad Café (90 min.)','Durante uma viagem aos Estados Unidos uma turista alemã, discute c/ o marido que resolve largá-la em pleno deserto de Mojave, que fica no Estado de Nevada. A amizade c/ uma mulher negra dona de um bar de estrada, abre novos horizontes na vida dela.',1,'Elisangela Nepomuceno de Souza','2000-12-29','2001-02-12','Drama/Comédia');
+INSERT INTO filmes VALUES (54,'Hannah e suas irmãs (106 min.)','',1,NULL,NULL,NULL,'Drama/Comédia');
+INSERT INTO filmes VALUES (55,'Emma (121 min.)','Emma sente um grande vazio em sua vida quando sua querida governanta se casa com o vizinho! Ela decide, então, se ocupar dando conselhos na vida sentimental das amigas.A situação se inverte quando ela se apaixona por um amigo de seu pai.  ',1,'LUIS','2001-05-25','2001-05-28','Romance');
+INSERT INTO filmes VALUES (56,'Um espírito baixou em mim (88 min.)','Lily Tomlin interpreta uma rica e excêntrica personagem (Edwina Cutwater) que possui uma doença fatal. Quando ela morre, um guru maluco, contratado pela mulher, tenta transportar sua alma para o corpo de uma linda garota. ',1,'Fábio Cristófalo da Silva','2001-01-22','2001-03-02','Comédia');
+INSERT INTO filmes VALUES (57,'Três solteirões e um Bebê (102 min.)','Três pacatos solteirões encontram na porta de casa um lindo bebê. Aquela criança muda a vida deles para sempre.',1,NULL,NULL,NULL,'Comédia');
+INSERT INTO filmes VALUES (58,'A bela da Tarde (100 min.)','Pierre e Séverine recém casados, formam um casal feliz. Séverine dedica-se inteiramente a seu marido, um respeitável cirurgião que passa muito tempo no trabalho.A jovem esposa se sente um pouco abandonada e começa a ter estranhos devaneios. Decide então combater seu tédio e insatisfação sexual prostituindo-se num bordel parisiense durante suas tardes desocupadas.',1,NULL,NULL,NULL,'Drama');
+INSERT INTO filmes VALUES (59,'Vem dançar comigo (95 min.)','Um jovem bailarino de 21 anos, desafia as rígidas regras de uma competição da Federação de Dança para defender a liberdade artística. ',1,'Antonio das Graças','2001-01-27','2001-02-28','Comédia/Romance');
+INSERT INTO filmes VALUES (85,'Além do Limite da Honra','Filme com Demi Moore. Ela é escolhida para passar pelas piores provas e conquistar o lugar das mulheres na Marinha de Guerra. Filmão vale a pena assistir.',1,'Alberto Araujo','2001-04-20','2001-05-07','Drama');
+INSERT INTO filmes VALUES (60,'Guerra nas estrelas','Ambientado 30 anos após \"Star Wars: Episódio 1 A Ameaça Fantasma\", \" Star Wars: Uma Nova Esperança\", o quarto episódio da saga, nos leva de volta ao deserto planeta de Tatooine. O jovem Luke Skywalker(Mark hamil) começa a descobrir seu destino quando, ao procurarum andróide perdido, é salvo pelo ermitãoJedi Obi-Kenobi (Alec Guinness). A Guerra Civil continua pela galáxia, e as Forças rebeldes lutam contra o terrível Império Galático. Luke e Obi-Wan conseguem a ajuda do piloto Han Solo (Harrison Ford), e reforçada pela excêntrica dupla de robôs R2-D2 e C-3PO, a equipeparte para resgatar a líder dos rebeldes, Princesa Leia (Carrie Fisher) e fazer uso dos planos roubadospara destruir a arma definitiva do Império.\r\nEm um confronto lendário, o grupo lança um ataque contra a Estrela da Morte, em uma tensa batalha contra o grande maligno, Lord Darth vader.\r\n',1,'D.Cida','2001-05-25','2001-05-29','Aventura');
+INSERT INTO filmes VALUES (61,'O Império Contra - Ataca','A batalha pela galáxia se intensifica neste emocionantequinto episódio da inesquecível saga.À medida que as Forças Imperiais lançam um ataque total contra a Aliança Rebelde, Han Solo(Harisson Ford) e a Princesa Leia (Carrie Fisher) fogem para a Cidade das Nuvens, onde são capturados por Darth Vader. LukeSkywalker (mark Hamill) viaja para o misterioso planeta pantanoso de Degobah, onde o sábio Mestre Jedi Yoda ensina ao jovem herópi os caminhos da Força\r\nO que Luke não pode imaginar é que seu treinamento Jedi será necessário muito em breve. Uma surpreendente revelação e o dueto da vida ou morte com Darth Vader terá que esperar.\r\n\r\n',1,'Rogerio Monteiro Pires','2001-01-13','2001-01-18','Aventura');
+INSERT INTO filmes VALUES (62,'O Retorno de Jedi','No espetacular sexto sentido da saga de Star Wars, Darth Vader prepara a segunda Estrela da Morte para desfechar o golpe final na Aliança Rebelde.\r\nLuke Skywalker (Mark hamill) reúne seus dróides aliadosR2-D2 e C-3PO, bem como a Princesa Leia (Carrie Fisher), para lebertar seu amigo Han Solo (Harrison Ford), aprisionado pelo terrível senhor do crime, Jabba the Hutt. Reunidos, os Rebeldes dirigem-se à lua do planeta Endor, de onde lançam um ataque desesperado contra toda a Frota Imperial.\r\nMas a batalha definitiva é entre pai e filho, pois Luke enfrenta Darth Vader uma última vez, pelo destino da galáxia que está em perigo.\r\n',1,'Rogerio Monteiro Pires','2001-01-13','2001-01-18','Aventura');
+INSERT INTO filmes VALUES (63,'Castelo rá tim bum','Duas histórias \"Uma Babá Nada Boba\" e \"Travessura de Cupido\" .',1,'Marcelo','2001-01-27','2001-02-22','Infantil');
+INSERT INTO filmes VALUES (64,'Sonhos e Paixões','É uma divertida história de tres mulheres em busca da realização profissional e amorosa.',1,'Alberto Araújo','2001-03-08','2001-03-19','Comédia/Romance');
+INSERT INTO filmes VALUES (65,'O Dono da Noite','Uma história de redenção no submundo das drogas.',NULL,'leandro','2001-05-31','2001-05-11','Drama');
+INSERT INTO filmes VALUES (66,'O último Magnata','Robert De Niro é um magnata de Hollywood que luta para manter seu império. Mas cada tentativa o deixa mais perto da morte...',1,'LUIS','2001-04-27','2001-05-03','Drama');
+INSERT INTO filmes VALUES (73,'A Bela Adormecida','',1,'Antonio','2001-01-27','2001-02-28','Infantil');
+INSERT INTO filmes VALUES (67,'Rei Leão','O filme é encantador quando assistimos até esquecemos que é um desenho de tão real que são as expressões dos personagens.  ',1,'LUIS','2001-04-27','2001-05-03','Infantil');
+INSERT INTO filmes VALUES (68,'De Volta à Lagoa Azul','De volta à lagoa azul continua a fantástica história de sucesso de \"A Lagoa Azul\".',1,NULL,NULL,NULL,'Romance');
+INSERT INTO filmes VALUES (74,'Tom & Jerry','',1,'Marcelo','2001-04-06','2001-04-16','Infantil');
+INSERT INTO filmes VALUES (69,'O Máskara','O Máskara, um filme para todas as idades e pessoas, normais ou não. Uma máscara transforma um bancário bobalhão e desastrado em um fantástico super-herói dotado de poderes incríveis. ',1,NULL,NULL,NULL,'Comédia');
+INSERT INTO filmes VALUES (70,'O Quinto Elemento','No século XXIII motorista de táxi ajuda mulher a escapar de uma gangue. Seu envolvimento com a passageira misteriosa o colocará em uma luta pela salvação do planeta. Do mesmo diretor de ´Assassinos´. \r\n',1,'Elis','2001-04-06','2001-04-23','Ficção');
+INSERT INTO filmes VALUES (71,'Perdidos no Espaço','Refilmagem da série dos anos 60. A fim de colonizar um novo planeta, a família Robinson viaja a bordo da nave Júpiter 2, pilotada pelo Major Don Wes. O problema é que a nave foi sabotada e começa a vagar sem rumo. \r\n\r\n\r\n',1,'Alberto Araujo','2001-04-20','2001-05-07','Ficção');
+INSERT INTO filmes VALUES (72,'O suspeito da rua arlington','Após a morte da esposa, uma agente do FBI envolvida em operação anti-terrorismo, um professor de história desconfia que seus vizinhos possam ser terroristas. \r\n',1,'Dona Cida','2001-05-25','2001-05-29','suspense');
+INSERT INTO filmes VALUES (75,'Branca de Neve e os 7 Anões','',1,'Marcelo','2001-04-12','2001-04-16','Infantil');
+INSERT INTO filmes VALUES (76,'Cinderela','',1,'Antonio','2001-01-27','2001-02-28','Infantil');
+INSERT INTO filmes VALUES (77,'Último tango em Paris<br>124 Min','Paul (Brando), um americano cuja esposa acaba de cometer suicídio, encontra uma jovem (Schneider) quando vai alugar um apartamento em Paris. Os dois passam a manter um relacionamento baseado apenas em sexo, sem que saibam sequer os nomes um do outro.',1,'Elis','2001-03-15','2001-04-18','Drama');
+INSERT INTO filmes VALUES (78,'Endless Summer II','Filme de Surf',1,NULL,NULL,NULL,'Aventura');
+INSERT INTO filmes VALUES (79,'Os Safados','Com Micheal Caine e Steve Martin.',1,'Sandra Guiráo','2001-01-10','2001-01-15','Comédia');
+INSERT INTO filmes VALUES (80,'Asterix - Os Doze Trabalhos de Asterix','-',1,'Celia Regina','2001-03-09','2001-03-16','Infantil');
+INSERT INTO filmes VALUES (81,'Asterix Entre os Bretões','-',1,'Celia Regina','2001-03-09','2001-03-16','Infantil');
+INSERT INTO filmes VALUES (82,'Rain Man','Jovem ambicioso cruza os EUA acompanhado pelo irmão mais velho e autista, Raymond, único herdeiro da fortuna do pai. Dotado de extrema habilidade matemática e excelente memória, Raymond age imperturbavelmente, alterando-se apenas quando seus hábitos e rotinas são quebrados',1,'Elis','2001-02-12','2001-02-23','Drama');
+INSERT INTO filmes VALUES (83,'A máscara do Zorro','O mais famoso espadachim de todos os tempos está de volta numa movimentada aventura de amor e honra; sobre a excitante e divertida fábula de um bandido malandro cujo único conhecimento de uma espada era que \"a ponta deve estar virada para o outro homem\" e que por vingança, é transformado num herói. ',1,'Fábio','2001-03-12','2001-04-02','Aventura');
+INSERT INTO filmes VALUES (84,'Casper. Como tudo começou (filme)','O fantasma camarada',1,'Elis','2001-04-27','2001-06-05','Aventura');
+INSERT INTO filmes VALUES (86,'O 13o Guerreiro','Filme com Antonio Bandeiras. Ele é o 13o Guerreiro escolhido pelo destino para ajudar a ganhar a batalha com o desconhecido. Filmão vale a pena assistir.',1,'Dona Cida.','2001-05-25','2001-05-29','Aventura');
+INSERT INTO filmes VALUES (87,'Um Amor de Verdade','O filme narra a divertida história de um casal divorciado, lutando por seus direitos profissionais, pessoais e sexuais.',1,NULL,NULL,NULL,'Comédia/Romance');
+INSERT INTO filmes VALUES (88,'Dirty Dancing - Ritmo Quente','Filme com Patrick Swayze. O filme conta a história de um instrutor de dança muito sedutor que trabalha numa colônia de férias durante o verão. Insinuante, suas aulas chocam os pais e desencadeiam paixões nas adolescentes hospedadas na estância.',1,NULL,NULL,NULL,'Romance');
+INSERT INTO filmes VALUES (89,'Agora & Sempre','Filme com Demi Moore e Melanie Griffith. O filme mostra o reencontro, após muitos anos, de quatro amigas que cresceram juntas. Num dos momentos mais sensíveis do filme, as amigas se abrem umas com as outras, revelando o que se tornaram, quais os sonhos se perderam e juntas tentam achar um caminho melhor para o futuro. ',1,'Sandra Aparecida Guiráo','2001-03-27','2001-04-09','Comédia');
+INSERT INTO filmes VALUES (90,'O Amante','Uma bonita e polêmica história de amor.Uma garota de 15 anos aceita carona de um chinês em um carro de luxo. Ela é francesa, de uma família pobre, ele é milionário e tem o dobro da idade dela. Nada impede, porém, que sintam uma paixão incontólável um pelo outro. Se tornam amantes.',1,'LUIS','2001-05-25','2001-05-28','Drama');
+INSERT INTO filmes VALUES (91,'Robocop - O Policial do Futuro','Um supertira indestrutível, meio robô, meio homem, programado para cumprir a lei.',1,NULL,NULL,NULL,'Ficção');
+INSERT INTO filmes VALUES (92,'De Salto Alto','Um apresentadora de tevê tem um conturbado relacionamento com a mãe, famosa cantora e atriz. Depois de quinze anos longe uma da outra, a mãe volta e encontra a filha casada com um ex-amante seu, Manuel, que, por sua vez tem uma nova conquista: Isabel. Ele aparece morto e as três são suspeitas de assassinato.',1,'Luis','2001-04-12','2001-04-17','Comédia');
+INSERT INTO filmes VALUES (93,'Platoon','Este drama de guerra retrata o sofrimento de um pelotão de jovens americanos despreparados para enfrentar a dura realidade da selva no vietnã.',1,'Rafael Delgado','2001-03-06','2001-03-28','Guerra');
+INSERT INTO filmes VALUES (94,'Tomates Verdes Fritos','O filme tem como fio condutor as visitas que Evelyn, uma frustada dona de casa, faz à tia do marido em um asilo. Lá conhece Ninny que a cada visita lhe conta um pouco da história de duas mulheres ligadas por uma forte e comovente amizade. Esses encontros se tornam muito importantes para as duas, e Evelyn vai descobrindo outro sentido para a vida e se tornando uma nova mulher.',1,NULL,NULL,NULL,'Drama');
+
+#
+# Table structure for table 'forums'
+#
+DROP TABLE IF EXISTS forums;
+CREATE TABLE forums (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  name char(50) DEFAULT '' NOT NULL,
+  active smallint(6) DEFAULT '0' NOT NULL,
+  description char(255) DEFAULT '' NOT NULL,
+  config_suffix char(50) DEFAULT '' NOT NULL,
+  folder char(1) DEFAULT '0' NOT NULL,
+  parent int(11) DEFAULT '0' NOT NULL,
+  display int(11) DEFAULT '0' NOT NULL,
+  table_name char(50) DEFAULT '' NOT NULL,
+  moderation char(1) DEFAULT 'n' NOT NULL,
+  mod_email char(50) DEFAULT '' NOT NULL,
+  mod_pass char(50) DEFAULT '' NOT NULL,
+  email_list char(50) DEFAULT '' NOT NULL,
+  email_return char(50) DEFAULT '' NOT NULL,
+  email_tag char(50) DEFAULT '' NOT NULL,
+  check_dup smallint(6) DEFAULT '0' NOT NULL,
+  multi_level smallint(6) DEFAULT '0' NOT NULL,
+  collapse smallint(6) DEFAULT '0' NOT NULL,
+  flat smallint(6) DEFAULT '0' NOT NULL,
+  staff_host char(50) DEFAULT '' NOT NULL,
+  lang char(50) DEFAULT '' NOT NULL,
+  html char(40) DEFAULT 'N' NOT NULL,
+  table_width char(4) DEFAULT '' NOT NULL,
+  table_header_color char(7) DEFAULT '' NOT NULL,
+  table_header_font_color char(7) DEFAULT '' NOT NULL,
+  table_body_color_1 char(7) DEFAULT '' NOT NULL,
+  table_body_color_2 char(7) DEFAULT '' NOT NULL,
+  table_body_font_color_1 char(7) DEFAULT '' NOT NULL,
+  table_body_font_color_2 char(7) DEFAULT '' NOT NULL,
+  nav_color char(7) DEFAULT '' NOT NULL,
+  nav_font_color char(7) DEFAULT '' NOT NULL,
+  allow_uploads char(1) DEFAULT 'N' NOT NULL,
+  PRIMARY KEY (id),
+  KEY name (name),
+  KEY active (active),
+  KEY parent (parent)
+);
+
+#
+# Dumping data for table 'forums'
+#
+
+INSERT INTO forums VALUES (1,'Caixa de Sugestões',1,'Utilize esse espaço para enviar sugestões e/ou discutir sugestões já enviadas.','cxsug','0',2,30,'cxsug','n','','marcia','','','',0,0,0,0,'','lang/portugues.php','Y','100%','#CC9900','#FFFFFF','#effffa','#FFFFF0','#000000','#000000','#CC9900','#000000','N');
+INSERT INTO forums VALUES (2,'Qualidade Total',1,'','qt','1',0,0,'','n','','','','','',0,0,0,0,'','lang/portugues.php','N','100%','#CC9900','#000000','#FFFFFF','','#000000','','#ffffff','#000000','N');
+INSERT INTO forums VALUES (8,'Contos do Humberto',1,'','','0',5,30,'humberto','n','','marcia','','','',0,1,1,1,'','lang/portugues.php','Y','100%','#000080','#FFFFFF','#FFFFFF','#c0c0c0','#000000','#000000','#FFFFFF','#000000','N');
+INSERT INTO forums VALUES (7,'Contos do Rogério',1,'','','0',5,30,'rogerio','n','','marcia','','','',0,1,1,1,'','lang/portugues.php','Y','100%','#000080','#FFFFFF','#FFFFFF','#c0c0c0','#000000','#000000','#FFFFFF','#000000','N');
+INSERT INTO forums VALUES (6,'Contos do Eneas',1,'Contos e histórias sobre o ENEAS','eneas','0',5,30,'eneas','n','','marcia','','','',0,1,1,1,'','lang/portugues.php','Y','100%','#000080','#FFFFFF','#FFFFFF','#c0c0c0','#000000','#000000','#FFFFFF','#000000','N');
+INSERT INTO forums VALUES (5,'Entretenimento',1,'Forums para entretenimento','entretenimento','1',0,0,'','n','','','','','',0,0,0,0,'','lang/portugues.php','N','100%','#000080','#FFFFFF','#FFFFFF','','#000000','','#FFFFFF','#000000','N');
+INSERT INTO forums VALUES (4,'Tutorial',0,'Para aprender a utilizar a ferramenta de Fórum.','turorial','0',0,30,'tutorial','n','','marcia','','','',0,1,0,0,'','lang/portugues.php','N','100%','#000080','#FFFFFF','#FFFFFF','#c0c0c0','#000000','#000000','#FFFFFF','#000000','N');
+
+#
+# Table structure for table 'funcionarios'
+#
+DROP TABLE IF EXISTS funcionarios;
+CREATE TABLE funcionarios (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  Nome char(100),
+  nascimento date,
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'funcionarios'
+#
+
+INSERT INTO funcionarios VALUES (1,'Fernando','2000-08-13');
+INSERT INTO funcionarios VALUES (2,'Rafael','2000-01-24');
+INSERT INTO funcionarios VALUES (3,'Nilza','2000-02-04');
+INSERT INTO funcionarios VALUES (4,'Marcello','2000-02-02');
+INSERT INTO funcionarios VALUES (5,'Alberto Araujo','2000-02-05');
+INSERT INTO funcionarios VALUES (6,'Eneas','2000-02-09');
+INSERT INTO funcionarios VALUES (7,'Ronaldo','2000-03-02');
+INSERT INTO funcionarios VALUES (8,'Michael','2000-03-04');
+INSERT INTO funcionarios VALUES (9,'Sueli','2000-03-07');
+INSERT INTO funcionarios VALUES (10,'Ricardo','2000-03-18');
+INSERT INTO funcionarios VALUES (11,'Willians','2000-04-04');
+INSERT INTO funcionarios VALUES (12,'Marcelo','2000-04-15');
+INSERT INTO funcionarios VALUES (13,'Neide','2000-04-26');
+INSERT INTO funcionarios VALUES (14,'Marcio','2000-05-11');
+INSERT INTO funcionarios VALUES (16,'Elisangela','2000-05-17');
+INSERT INTO funcionarios VALUES (17,'Aparecida','2000-05-20');
+INSERT INTO funcionarios VALUES (18,'Humberto','2000-06-01');
+INSERT INTO funcionarios VALUES (19,'Carolina','2000-06-08');
+INSERT INTO funcionarios VALUES (20,'Nilzete','2000-06-11');
+INSERT INTO funcionarios VALUES (21,'Samuel','2000-06-25');
+INSERT INTO funcionarios VALUES (22,'Cristiano','2000-07-05');
+INSERT INTO funcionarios VALUES (23,'Antonio','2000-07-11');
+INSERT INTO funcionarios VALUES (24,'Junior','2000-07-14');
+INSERT INTO funcionarios VALUES (25,'Rogério','2000-07-18');
+INSERT INTO funcionarios VALUES (26,'Sandra 2','2000-07-25');
+INSERT INTO funcionarios VALUES (27,'Fábio','2000-07-28');
+INSERT INTO funcionarios VALUES (28,'Rosana','2000-07-31');
+INSERT INTO funcionarios VALUES (29,'Celia','2000-08-15');
+INSERT INTO funcionarios VALUES (30,'Júlio','2000-09-07');
+INSERT INTO funcionarios VALUES (31,'Rodrigo','2000-09-19');
+INSERT INTO funcionarios VALUES (32,'Sandra 1','2000-09-23');
+INSERT INTO funcionarios VALUES (33,'Lurdinha','2000-10-25');
+INSERT INTO funcionarios VALUES (34,'Ricardo Hudson','2000-11-18');
+INSERT INTO funcionarios VALUES (35,'Edson','2000-11-29');
+INSERT INTO funcionarios VALUES (36,'Helio','1973-03-13');
+INSERT INTO funcionarios VALUES (37,'Leandro','1977-09-21');
+INSERT INTO funcionarios VALUES (38,'Luiz','2000-04-23');
+
+#
+# Table structure for table 'humberto'
+#
+DROP TABLE IF EXISTS humberto;
+CREATE TABLE humberto (
+  id bigint(20) unsigned DEFAULT '0' NOT NULL,
+  datestamp datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+  thread int(11) DEFAULT '0' NOT NULL,
+  parent int(11) DEFAULT '0' NOT NULL,
+  author char(37) DEFAULT '' NOT NULL,
+  subject char(255) DEFAULT '' NOT NULL,
+  email char(200) DEFAULT '' NOT NULL,
+  attachment char(64) DEFAULT '' NOT NULL,
+  host char(50) DEFAULT '' NOT NULL,
+  email_reply char(1) DEFAULT 'N' NOT NULL,
+  approved char(1) DEFAULT 'N' NOT NULL,
+  msgid char(100) DEFAULT '' NOT NULL,
+  PRIMARY KEY (id),
+  KEY author (author),
+  KEY datestamp (datestamp),
+  KEY subject (subject),
+  KEY thread (thread),
+  KEY parent (parent),
+  KEY approved (approved),
+  KEY msgid (msgid)
+);
+
+#
+# Dumping data for table 'humberto'
+#
+
+INSERT INTO humberto VALUES (1,'2000-12-06 17:32:04',1,0,'Mister - M','Esquisito','','','10.1.0.9','','Y','<c66d4657af4b4f6566bff1b26c414103.>');
+INSERT INTO humberto VALUES (2,'2000-12-06 17:37:06',1,1,'He-Man','RE: Esquisito','','','192.168.0.56','','Y','<f04310a1dc39592b5e8c5dec018846b4.>');
+INSERT INTO humberto VALUES (3,'2000-12-07 12:29:07',1,1,'Mister - M','RE: Esquisito','','','10.1.0.9','','Y','<38c021eb7d673286155e7da59885bbd9.>');
+INSERT INTO humberto VALUES (4,'2000-12-07 14:06:10',1,3,'1berto','RE: Esquisito','','','192.168.0.5','','Y','<2439e5ff3040579d1be341f9ecaa5fa6.>');
+INSERT INTO humberto VALUES (5,'2000-12-07 14:08:08',1,1,'He-Man','RE: Esquisito','','','192.168.0.56','','Y','<e11c5ceca50fd9b2053ce80405ceb199.>');
+INSERT INTO humberto VALUES (6,'2000-12-07 14:13:02',1,1,'Mister - M','RE: Esquisito','','','10.1.0.9','','Y','<b5f4fb16968da84cd2449d3ee037237a.>');
+INSERT INTO humberto VALUES (7,'2000-12-08 16:47:20',1,1,'He-Man','RE: Esquisito','','','192.168.0.56','','Y','<2d4b1d04cdae5643bec4641f4eb6510d.>');
+INSERT INTO humberto VALUES (8,'2000-12-11 08:50:24',1,1,'Mister - M','RE: Esquisito','','','10.1.0.9','','Y','<48d04d4ff7b8fd2554cab0e694e25081.>');
+INSERT INTO humberto VALUES (9,'2000-12-15 12:22:54',1,1,'Mister - M','RE: Esquisito','','','10.1.0.9','','Y','<b6e7570d6c72799b9792037fdebb79cc.>');
+INSERT INTO humberto VALUES (10,'2001-02-02 19:00:44',10,0,'Mascarado','Funcionário Esquisito compra Carro bomba','','','10.1.0.2','','Y','<6e57eb8ce13b3dc198221bf22ddb7707.>');
+INSERT INTO humberto VALUES (11,'2001-02-06 17:17:08',10,10,'SUPER-ESQ','RE: Funcionário Esquisito compra Carro bomba','','','192.168.0.57','','Y','<03ce46e313507216aa6e5a696987cd28.>');
+
+#
+# Table structure for table 'humberto_bodies'
+#
+DROP TABLE IF EXISTS humberto_bodies;
+CREATE TABLE humberto_bodies (
+  id bigint(20) unsigned DEFAULT '0' NOT NULL auto_increment,
+  body text NOT NULL,
+  thread int(11) DEFAULT '0' NOT NULL,
+  PRIMARY KEY (id),
+  KEY thread (thread)
+);
+
+#
+# Dumping data for table 'humberto_bodies'
+#
+
+INSERT INTO humberto_bodies VALUES (1,'<HTML>Porque o Humberto é esquisito ???</HTML>',55);
+INSERT INTO humberto_bodies VALUES (2,'<HTML>Porque ele fuma bom bril!!!</HTML>',1);
+INSERT INTO humberto_bodies VALUES (3,'<HTML>Hmmmmmmm.....não sei não, será que não é de tanto encapsular ???</HTML>',1);
+INSERT INTO humberto_bodies VALUES (4,'<HTML>obrigado pelo comentario, encapsular é a mesma coisa q agregar, logo tenho varias agregacoes.... entao vejo como um elogio... afinal é bom agregar conhecimentos... ou nao????</HTML>',1);
+INSERT INTO humberto_bodies VALUES (5,'<HTML>Será q ele faz isso ao mesmo tempo ??? (fuma bom bril e encapsula) por isso q ele é desse jeito!\r\nAhh, eu ia esquecendo, ele tb come unhas enquanto faz tudo isso!!!</HTML>',1);
+INSERT INTO humberto_bodies VALUES (6,'<HTML>Faz, encapsula <big><b>GRANDES E VOLUMOSOS</b></big> conhecimentos, como ele mesmo disse.\r\nAgora Roer as Unhas é para não machucar na hora de agregar tudo.......</HTML>',1);
+INSERT INTO humberto_bodies VALUES (7,'<HTML>Ele ainda tem dedos ???</HTML>',1);
+INSERT INTO humberto_bodies VALUES (8,'<HTML>Ó He-Man, bem que eu tentei ver se ele ainda tem dedos, mas não consegui.....ele não tira a mão da Boca !!!!!</HTML>',1);
+INSERT INTO humberto_bodies VALUES (9,'<HTML>Tira a mão da boca, o menino !!!!!!!</HTML>',1);
+INSERT INTO humberto_bodies VALUES (10,'<HTML>Funcionário Esquisito compra Carro bomba\r\n---------------------------------------------------------------\r\n\r\nDa redação\r\n\r\nHá 15 dias, o funcionário esquisito da divisão de sistemas, Montanha Sandmann , adquiriu em caráter emergencial uma banheira Vectra de cor cinza. Acostumado a andar de Mercedes do Trabalho para a Universidade e da Universidade para casa, o colaborador em procura empolgante por uma viatura que lhe oferecesse segurança, estabilidade e um ar condicionado,  acabou por se apaixonar pelo auto quando leu no pára brisa, escrito em giz amarelo com água : \r\n   \" Vendo carro bomba ! Fofura. 8 donos e só 2 batidas. Apenas hoje. Ocasião !\"\r\nTestou e comprou o carro em apenas 30 minutos. Não se conteve. Retirou rapidamente o carro da loja, e olhando no retrovisor, viu aquela multidão de funcionários da loja se abraçando e batendo palmas. Neste momento,  o carro morreu. Foi a primeira de uma centena que viriam a acontecer. Hoje, ainda emocionado,  transporta toda sexta, o pessoal do desenvolvimento para almoçar no Shopping, passando com vigor e potência por qualquer obstáculo, seja este uma lombada, um cachorro, uma velhinha ou o cara da bicicleta. Se você vir um carro com uma tampa de cabeça na altura do volante, saiba que você está diante de um piloto arrojado e dinâmico como há tempos não se via nas rodovias brasileiras. Parabéns bravo funcionário , siga em frente que de ré só carangueijo.\r\n\r\nFelicidades. \r\nDos amigos esquisitos.</HTML>',0);
+INSERT INTO humberto_bodies VALUES (11,'<HTML>EU QUE NÃO FICO NA FRENTE DESSE CARA  , ELE PRECISA COLOCAR 3 ALMOFADAS P/ FICAR NA ALTURA CERTA,  PENSA QUE ESTÁ JOGANDO VIDEO GAME QUANDO ANDA. ELE ESTA ACOSTUMADO ANDAR EM CIMA DA CALÇADA, PRA DEIXAR MAIS ESPAÇO NA RUA....\r\nCUIDADO CRIANÇAS , SENHORAS O MONTANHA , ESTA POR AI!</HTML>',10);
+
+#
+# Table structure for table 'livros'
+#
+DROP TABLE IF EXISTS livros;
+CREATE TABLE livros (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  titulo varchar(100),
+  genero varchar(50),
+  descricao longtext,
+  localizacao varchar(100),
+  quem varchar(50),
+  quando date,
+  estado tinyint(1) DEFAULT '1',
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'livros'
+#
+
+INSERT INTO livros VALUES (1,'Servidor Internet com Linux','Técnico - Linux','Como montar um servidor de internet utilizando o Linux - Apache.','Sala de desenvolvimento','ddfb','2000-11-09',1);
+INSERT INTO livros VALUES (2,'Delphi 5 - Guia do Desenvolvedor','Técnico - Desenvolvimento de Software','Steve Teixeira e Xavier Pacheco\r\nEditora Campus\r\nInclui CD ROM\r\n','Sala de desenvolvimento','Humberto Rodrigo Sandmann','2000-11-10',1);
+INSERT INTO livros VALUES (3,'365 Dicas de Delphi','Técnico - Desenvolvimento de Software','Dicas de aspectos pouco conhecidos sobre a Linguagem Delphi e APIs do Windows.','Sala de Desenvolvimento',NULL,NULL,1);
+INSERT INTO livros VALUES (4,'Programando Delphi 3 Técnicas Avançadas','Técnico - Desenvolvimento de Software','Don Taylor\r\nMakron Books','Sala de Desenvolvimento',NULL,NULL,1);
+INSERT INTO livros VALUES (5,'Delphi 4  Curso completo','Técnico - Desenvolvimento de Software','Marcelo Leão\r\nAxcel Books','Sala de Desenvolvimento',NULL,NULL,1);
+INSERT INTO livros VALUES (6,'Delphi 4 - Bíblia do programador','Técnico - Desenvolvimento de Software','Tom Swan\r\nBerkley','Sala de desenvolvimento',NULL,NULL,1);
+INSERT INTO livros VALUES (7,'Delphi 4.0 - Passo a passo Lite','Técnico - Desenvolvimento de Software','Makron Books','Sala de desenvolvimento','Eneas Eduardo','2001-02-12',NULL);
+INSERT INTO livros VALUES (8,'Usando o Delphi  2 - O guia de referência mais completo','Técnico - Desenvolvimento de Software','Makron Books','Sala de desenvolvimento','','2001-04-10',NULL);
+INSERT INTO livros VALUES (9,'Dominando o Delphi 4 - \"A bíblia\"','Técnico - Desenvolvimento de Software','Marco Cantu\r\nMakron Books','Sala de desenvolvimento',NULL,NULL,1);
+INSERT INTO livros VALUES (10,'System Builder - Manual do usuário','Técnico - Desenvolvimento de Software','Ferramenta de desenvolvimento de\r\naplicação Client/Server\r\nSquadra','Sala de desenvolvimento',NULL,NULL,1);
+INSERT INTO livros VALUES (11,'Delphi 5 - Objetos e Herança','Técnico - Desenvolvimento de Software','Ivan José de Mecenas Filho\r\nBook Express\r\n','Sala de desenvolvimento',NULL,NULL,1);
+INSERT INTO livros VALUES (12,'Desenvolvendo aplicações em Delphi 5','Técnico - Desenvolvimento de Software','Bruno Sonnino\r\nMakron Books\r\n','Sala de desenvolvimento',NULL,NULL,1);
+INSERT INTO livros VALUES (13,'Delphi 4 Total - Dominando a ferramenta','Técnico - Desenvolvimento de Software','Maurício Longo/Ronaldo Smith Jr.\r\n','Sala de desenvolvimento','Marcello Grec','2001-02-05',1);
+INSERT INTO livros VALUES (14,'Construtivismo e Mudança - Sanny S. da Rosa','teoria e prática da didatica','A Sanny orienta educadores para as novas práticas de ensino e avaliações. Critica avaliações pontuais e incentiva avaliações processuais onde o aluno deve ser avaliado durante o curso e não apenas em época de prova. ','Armário da Sala de Consultoria',NULL,NULL,1);
+INSERT INTO livros VALUES (15,'Contabilidade Basica e comercial','Técnico - Contabilidade','Livro didático e prático que permite compreender com facilidade os conceitos contábeis.\r\n2 livros.','Armario Consultoria',NULL,NULL,1);
+INSERT INTO livros VALUES (16,'UML - Guia do Usuário','Técnico - Engenharia de Software','Tutorial avançado sobre Unified Modeling Language (UML)\r\nNão deixe de ler este livro se você se interessa por modelagem de sistemas complexos. Vale a pena !','Sala de desenvolvimento',NULL,NULL,1);
+
+#
+# Table structure for table 'rogerio'
+#
+DROP TABLE IF EXISTS rogerio;
+CREATE TABLE rogerio (
+  id bigint(20) unsigned DEFAULT '0' NOT NULL,
+  datestamp datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+  thread int(11) DEFAULT '0' NOT NULL,
+  parent int(11) DEFAULT '0' NOT NULL,
+  author char(37) DEFAULT '' NOT NULL,
+  subject char(255) DEFAULT '' NOT NULL,
+  email char(200) DEFAULT '' NOT NULL,
+  attachment char(64) DEFAULT '' NOT NULL,
+  host char(50) DEFAULT '' NOT NULL,
+  email_reply char(1) DEFAULT 'N' NOT NULL,
+  approved char(1) DEFAULT 'N' NOT NULL,
+  msgid char(100) DEFAULT '' NOT NULL,
+  PRIMARY KEY (id),
+  KEY author (author),
+  KEY datestamp (datestamp),
+  KEY subject (subject),
+  KEY thread (thread),
+  KEY parent (parent),
+  KEY approved (approved),
+  KEY msgid (msgid)
+);
+
+#
+# Dumping data for table 'rogerio'
+#
+
+INSERT INTO rogerio VALUES (1,'2000-12-06 17:29:38',1,0,'Mister - M','Sunguinha','','','10.1.0.9','','Y','<d1e0eeccd7ba60d705a70650119a8b63.>');
+INSERT INTO rogerio VALUES (2,'2000-12-06 17:38:10',1,1,'He-Man','RE: Sunguinha','','','192.168.0.56','','Y','<b487a27fdac353ba283d8de837d7d58a.>');
+INSERT INTO rogerio VALUES (3,'2000-12-07 09:50:48',1,1,'Mister - M','RE: Sunguinha','','','10.1.0.9','','Y','<02cc84b4155babe604f327d0e2ef73d0.>');
+INSERT INTO rogerio VALUES (4,'2000-12-07 14:09:22',1,1,'He-Man','RE: Sunguinha','','','192.168.0.56','','Y','<2b3e987e6efe2513788c525893cfb95f.>');
+INSERT INTO rogerio VALUES (7,'2000-12-07 17:56:22',1,1,'Mister - M','RE: Sunguinha','','','10.1.0.9','','Y','<3eab3c234d2a197a7cef9d12ed03deb3.>');
+INSERT INTO rogerio VALUES (8,'2000-12-07 17:58:55',8,0,'Mister - M','Recompensa','','','10.1.0.9','','Y','<66b1f4c12b3dd2a5f4f5711834222727.>');
+INSERT INTO rogerio VALUES (9,'2000-12-08 16:48:33',8,8,'He-Man','RE: Recompensa','','','192.168.0.56','','Y','<0c829ab89f85839a8fb2650593ce35aa.>');
+INSERT INTO rogerio VALUES (10,'2000-12-08 16:50:40',1,1,'He-Man','RE: Sunguinha','','','192.168.0.56','','Y','<6fb2e036f5400c65a3833b724232c76d.>');
+INSERT INTO rogerio VALUES (11,'2000-12-11 09:05:51',11,0,'Mister - M','Afogamento','','','10.1.0.9','','Y','<ea9dd09632ea00f9da264bbc4967878c.>');
+INSERT INTO rogerio VALUES (12,'2000-12-11 13:16:10',1,1,'He-Man','RE: Sunguinha','','','192.168.0.56','','Y','<9e6da211c3a10e1e3eef271a924135b3.>');
+INSERT INTO rogerio VALUES (13,'2000-12-11 14:51:09',1,1,'Mister - M','RE: Sunguinha','','','10.1.0.9','','Y','<a42f151656db5f86a792b8eb55cd8e57.>');
+INSERT INTO rogerio VALUES (14,'2000-12-14 11:47:47',14,0,'Mister - M','Cadê o Rogério ???','','','10.1.0.9','','Y','<0c370dfe4cc016b6825e7508377da059.>');
+
+#
+# Table structure for table 'rogerio_bodies'
+#
+DROP TABLE IF EXISTS rogerio_bodies;
+CREATE TABLE rogerio_bodies (
+  id bigint(20) unsigned DEFAULT '0' NOT NULL auto_increment,
+  body text NOT NULL,
+  thread int(11) DEFAULT '0' NOT NULL,
+  PRIMARY KEY (id),
+  KEY thread (thread)
+);
+
+#
+# Dumping data for table 'rogerio_bodies'
+#
+
+INSERT INTO rogerio_bodies VALUES (1,'<HTML>O que vocês acham que estava acontecendo quando o Rogério estava dançando de sunguinha entre a televisão e a mãe dele ????</HTML>',54);
+INSERT INTO rogerio_bodies VALUES (2,'<HTML>pq estava passando na televisão a dança da Popozuda e ele se animou!!!</HTML>',1);
+INSERT INTO rogerio_bodies VALUES (3,'<HTML>Alguém sabe onde foi parar o Boletim de Ocorrência emitido na época ????</HTML>',1);
+INSERT INTO rogerio_bodies VALUES (4,'<HTML>Será q o Rogerio não é parente do Humberto ???</HTML>',1);
+INSERT INTO rogerio_bodies VALUES (5,'<HTML><img src=\"/phorum/images/gull.gif\" width=\"300\" height=\"150\"></HTML>',71);
+INSERT INTO rogerio_bodies VALUES (6,'<HTML><img src=\"http://192.168.0.5/phorum/images/gull.gif\" width=\"300\" height=\"150\"></HTML>',72);
+INSERT INTO rogerio_bodies VALUES (7,'<HTML>Acho que não, já viram como eles são diferentes ????</HTML>',1);
+INSERT INTO rogerio_bodies VALUES (8,'<HTML>Oferece-se vultuosa recompensa para quem resgatar uma cópia do Boletim de Ocorrência da <big><big><b>\"Dança da Sunguinha\"</b></big></big></HTML>',74);
+INSERT INTO rogerio_bodies VALUES (9,'<HTML>ops, já estamos todos investigando esse caso e logo-logo resolveremos esse problema, eu e a liga da justiça!!!</HTML>',8);
+INSERT INTO rogerio_bodies VALUES (10,'<HTML>Ahhh, então é por isso q o Humberto róe unhas ???\r\nEle fica espiando o Rogério dançar na frente da TV de sunguinha!!!</HTML>',1);
+INSERT INTO rogerio_bodies VALUES (11,'<HTML>Numa bela tarde de sol, próximo ao final de mais um ano, eis que estavam num lazer só, o Fábio, Ricardo, e o ROGÉRIO. \r\nSim pessoal, os três dentro d\'água, no meio da represa e eis que de repente o nosso amigo Rogério começa a se debater feito uma vaca doida, começa a tossir feito um cachorro com um osso atravessado na garganta.....\r\nPois é, quase se afogou na represa. Agora pergunto eu, como ele conseguiu isso, sendo que o mesmo estava de PÉ DE PATO, MÁSCARA DE MERGULHO, TUBO SNORQUEL e acreditem ou não, tudo isso e de COLETE SALVA VIDAS ????</HTML>',0);
+INSERT INTO rogerio_bodies VALUES (12,'<HTML>Mister - M , faça uma comparação entre os dois!!!\r\ne depois explique sua mágica!!!</HTML>',1);
+INSERT INTO rogerio_bodies VALUES (13,'<HTML>É fácil, responda as seguintes perguntas:\r\nComo fica a cena se você colocar uma sunguinha tamanho 36 (Small) em um corpinho esbelto tamanho 56 (XXX-G Extra-Large) ???\r\nComo fica o objeto ???\r\nPorque o Humberto Rói as Unhas ???\r\nO que a mãe do Rogério estava querendo fazer ???\r\nO que o Rogério assiste de domingo á tarde no SBT ???\r\nPorquê \"Silvio Santos Vem Aí, lá lá lá lá lá láááá\" ???\r\n\r\nAgora a mágica foi a Seguinte:\r\n\r\nLembra a quinta Sinfonia de Beethoven sem segurar a última nota, era assim:\r\n..............tchan, tchan, tchan, tchan...\r\n..............tchan, tchan, tchan, tchan...\r\nSem graça né, então Beethoven resolveu segurar as últimas notas ficou assim:\r\n..............tchan, tchan, tchan, tchaaaaaaaannnnnn... \r\n..............tchan, tchan, tchan, tchaaaaaaaannnnnn...\r\n\r\nAnalogamente, tanto Beethoven para fazer sucesso com sua Quinta Sinfonia, quanto a Sunguinha do Rogério, fizeram as mesmas coisas:\r\n........SEGURARAM O TCHAAANNNN.......</HTML>',1);
+INSERT INTO rogerio_bodies VALUES (14,'<HTML>Um caso muito interessante foi o do <big><big><b>Rogério x Pinheiro x Mãe</b></big></big>. Vejam só, e façam seus comentários:\r\n\r\nO que o nosso amigo Rogério estava pensando, quando o seguinte fato ocorreu:\r\n\r\n1) Tinha uma visita agendada em um cliente, e marcou de ir com o Pinheiro, e iriam se encontrar na estação Saúde do Metrô as 9:00 hs.\r\n\r\n2) Saiu da casa dele e foi para a estação São Judas do Metrô esperar o Pinheiro as 8:00 hs.\r\n\r\n3) Chegando lá, as 9:00 hs, percebeu que tinha esquecido os disquetes com os programas para atualizar no cliente em sua casa, então ligou pra mãe dele e pediu para ela leva os disquetes à estação em que estava, estação Santa Cruz.\r\n\r\n4) 10:00 hs, liga o Pinheiro, da estação Saúde, perguntando - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n5) 10:00 hs, liga a mãe, da estação Santa Cruz, perguntando - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n6) 10:15 hs, liga o Pinheiro, da estação Saúde, perguntando - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n7) 10:15 hs, liga a mãe, da estação Santa Cruz, perguntando - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n8) 10:30 hs, liga o Pinheiro, da estação Saúde, perguntando - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n9) 10:30 hs, liga a mãe, da estação Santa Cruz, perguntando - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n10) 10:45 hs, liga o Pinheiro, da estação Saúde, perguntando - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n11) 10:45 hs, liga a mãe, da estação Santa Cruz, perguntando - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n12) 10:45 hs, O Ronaldo pergunta - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n13) 10:45 hs, O Ricardo pergunta - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n14) 10:45 hs, O Fábio pergunta - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n15) 10:45 hs, O Cachoro do Rogério pergunta - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n16) 10:45 hs, O Cliente pergunta - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n17) 11:00 hs, liga o Pinheiro, da estação Saúde, perguntando - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n18) 11:00 hs, liga a mãe, da estação Santa Cruz, perguntando - <big><b>Cadê o Rogério ???</b></big>\r\n\r\n19) 11:15 hs, chega o Rogério na Datamace, todo esbaforido, para fazer novas cópias de disquetes e escuta a frase em côro - <big><b>Rogéééééééééério, que cê tá fazendo aqui ??? </b></big></HTML>',0);
+
+#
+# Table structure for table 'servicosGerais'
+#
+DROP TABLE IF EXISTS servicosGerais;
+CREATE TABLE servicosGerais (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  nome varchar(50),
+  descricao longtext,
+  dataprevista date,
+  concluido tinyint(1) DEFAULT '0',
+  dataconclusao date,
+  solucao longtext,
+  urgente tinyint(1) DEFAULT '0',
+  datasolicitacao date,
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'servicosGerais'
+#
+
+INSERT INTO servicosGerais VALUES (2,'Helio','Instalação de um mouse na sala de treinamento.','2000-11-13',1,'2000-11-13','Ligado',1,'2000-11-10');
+INSERT INTO servicosGerais VALUES (3,'Cristiano','Já temos um ponto de rede instalado na sala de reunião.\r\nNecessitamos de um cabo para ligá-lo ao micro e configurar o client Novell e os drivers da placa de rede.','2000-11-18',1,'2000-11-14','Configuração',0,'2000-11-10');
+INSERT INTO servicosGerais VALUES (11,'Fábio','Falta filtro de linha para separar o Hub da sala de Programação do Micro\r\ndo Marcello....','2000-11-16',1,'2000-11-16','Comprado e entregue.\r\nInclusive foi entregue outro filtro para eneas',1,'2000-11-14');
+INSERT INTO servicosGerais VALUES (6,'nilza','instalar windows no micro 1 da sala de treinamento','2000-11-18',1,'2000-11-18','Instalado',1,'2000-11-10');
+INSERT INTO servicosGerais VALUES (7,'nilza','desinstalar windows 2000 do micro 7 da sala de treinamento e instalar windows 95','2000-11-18',1,'2000-11-18','Formatado o HD e instalado win95.\r\nCriação do treino 7',1,'2000-11-10');
+INSERT INTO servicosGerais VALUES (25,'Rodrigo Souza de Freitas','Micro esta travando direto...quase impossível trabalhar...','2000-02-24',1,'2001-02-17','',1,'2001-01-02');
+INSERT INTO servicosGerais VALUES (9,'Nilza','Na bancada 1 da casa 11 tem micro com office word para confecção de manuais e outros trabalhos e o ponto de rede funcionando certinho. Agora Edson colocou micro do Eneas na mesma bancada tentamos ligar e o ponto de rede do lado dele não deu certo. Por favor alguém verificar urgente 2a feira para que ele possa trabalhar, pois 2a à tarde eu preciso usar a rede.','2000-11-13',1,'2000-11-13','Ligado',1,'2000-11-11');
+INSERT INTO servicosGerais VALUES (10,'Nilza','Por favor verificar se na casa 7 - sala do fundo (Carolina) tem um ponto de rede disponivel. Edson informou que pediu 3 pontos e que 2 estão sendo usados Carolina e BBS. Tem um sobrando?','2000-11-13',1,'2000-11-28','Temos pontos livres',1,'2000-11-11');
+INSERT INTO servicosGerais VALUES (12,'Alberto Araújo','Precisamos afixar o número da casa 7','2000-12-02',1,'2000-12-02','ta lá',0,'2000-11-23');
+INSERT INTO servicosGerais VALUES (13,'Samuel','A lampada da área de serviço (casa 7)derreteu o suporte de plástico. Será necessário a troca do mesmo.','2000-12-02',1,'2000-12-02','ok',1,'2000-11-28');
+INSERT INTO servicosGerais VALUES (14,'Cristiano','Precisamos trocar algumas(ou todas quem sabe) lâmpadas na sala de desenvolvimento. \r\nVerificar também um reator que não está funcionando.','2000-12-09',1,'2000-12-02','ok',0,'2000-12-01');
+INSERT INTO servicosGerais VALUES (15,'Helio','Lampada sala de treinamento','2000-12-02',1,'2000-12-02','trocada',0,'2000-12-02');
+INSERT INTO servicosGerais VALUES (17,'Nilza','Quando for possivel por favor instalar unidade CD ROOM no micro bancada 1 casa 11 e programa A PRIORI.  ','2001-01-13',1,'2001-01-22','instalado',0,'2000-12-05');
+INSERT INTO servicosGerais VALUES (26,'Carolina','Preciso que seja visto o ponto de rede da recepção. A Célia entrará de férias e eu terei que utilizar o micro lá, pois não posso deixar abandonar minhas rotinas neste período.','2001-01-04',1,'2001-01-04','Ja tem ponto de rede na recepção.',1,'2001-01-04');
+INSERT INTO servicosGerais VALUES (18,'Nilza','O micro número 1 da sala de treinamento está com monitor tremendo. Helio já trocou o monitor mas parece que o problema está relacionado a placa para utilizar a TV desde que foi instalada gerou este problema de tremedeira no monitor e é muito ruim p/o treinando que fica o dia inteiro olhando p/ o monitor.','2001-01-13',1,'2001-02-03','ok,\r\nplaca de tv retirada, porem a configuracao continua. quando nescessario basta conectar a placa novamente. a placa ficara na minha gaveta. Hélio',1,'2000-12-13');
+INSERT INTO servicosGerais VALUES (19,'Nilza','Sobre a impressora da sala de treinamento parece que o problema é da impressora enão de configuração. É preciso programar um dia para leva-la para manutenção porque está em garantia. Edson levou p/manutenção.','0000-00-00',1,'2001-01-29','Ok,edson trouxe de volta.',0,'2000-12-13');
+INSERT INTO servicosGerais VALUES (20,'Fábio Cristófalo da Silva','Formatar e reinstalar windows no micro da Carolina','2001-01-13',1,'2001-02-05','Formatado e Reinstalados os programas',0,'2000-12-15');
+INSERT INTO servicosGerais VALUES (21,'Carolina','A tomada onde ligo meu micro está com algum problema, todos os dias preciso mexer nela para que o micro ligue.','2001-01-13',1,'2001-01-12','refeita ligacao',0,'2000-12-18');
+INSERT INTO servicosGerais VALUES (24,'Eneas Eduardo','Impressora Rima Xt 300 da Bancada 2 \r\nnão está funcionando, ao ligar faz um barulho no rolo da impressora e não imprime nada , já passei WD mas não resolveu.','2001-01-20',1,'2001-01-29','Ok, edson levou para arrumar.\r\nestava na garantia.',0,'2000-12-28');
+INSERT INTO servicosGerais VALUES (27,'Samuel','O telefone instalado na sala de Marketing não funciona corretamente:\r\n\r\n1) interferência com o tel. da bancada;\r\n2) não recebe ligações internas;\r\n3) não transfere ligações externas.','2000-01-13',1,'2001-01-16','PARAFUSO ESTAVA FECHANDO CURTO\r\nFIOS OXIDADOS',1,'2001-01-05');
+INSERT INTO servicosGerais VALUES (28,'Alberto Araújo','Um dos pontos de rede da bancada superior casa 11 não está funcionando.','2000-01-12',1,'2001-01-12','',1,'2001-01-08');
+INSERT INTO servicosGerais VALUES (29,'Alberto','Substituição do conector RJ-45 de um ponto de rede da bancada superior do sobrado','2000-01-12',1,'2001-01-12','',1,'2001-01-09');
+INSERT INTO servicosGerais VALUES (30,'Alberto Araújo','Comprar mouse','2001-01-10',1,'2001-01-16','',1,'2001-01-09');
+INSERT INTO servicosGerais VALUES (31,'Alberto Araujo','Instalar ponto de telefone na bancada superior','2000-01-20',1,'2001-01-27','',1,'2001-01-10');
+INSERT INTO servicosGerais VALUES (32,'Samuel','Meu telefone parou de funcionar totalmente','2000-01-16',1,'2001-01-16','PARAFUSO ESTAVA FECHANDO CURTO\r\nFIOS OXIDADOS',1,'2001-01-15');
+INSERT INTO servicosGerais VALUES (33,'Rodrigo','Para Segurança da Datamace.\r\ninstalar os extintores na área de serviço e no corredor ao lado.\r\nTerminada a reforma na empresa(Casa7) e os extintores não foram fixados.','0000-00-00',1,'2001-02-17','',0,'2001-01-17');
+INSERT INTO servicosGerais VALUES (34,'Hélio','Verificar porque o numero 41222908 da\r\nBBS não esta funcionando.',NULL,0,NULL,NULL,0,'2001-01-18');
+INSERT INTO servicosGerais VALUES (35,'Hélio','Concluir ligação camera de video','2001-01-20',1,'2001-01-20','ok',0,'2001-01-18');
+INSERT INTO servicosGerais VALUES (36,'Nilza','Telefone da bancada 1 não transfere ligação','0000-00-00',1,'2001-01-29','mudar configuracao de tom para pulso',0,'2001-01-22');
+INSERT INTO servicosGerais VALUES (37,'Marcelo Chinaglia','Instalação do Zip-drive interno na minha máquina em substituição ao externo que deverá ser instalado na máquina do Rodrigo.','2001-01-27',1,'2001-01-25','Elis instalou.',0,'2001-01-23');
+INSERT INTO servicosGerais VALUES (38,'Nilza','O telefone da bancada 1 casa onze está chiando impedindo de ouvir direito e no aparelho da sala de reuniões ouvimos o é falado no aparelho da bancada e aquele outro chamado não está transferindo.','2001-01-27',1,'2001-02-03','Infiltração na instalaçao na sala\r\nde marketing\r\n',1,'2001-01-26');
+INSERT INTO servicosGerais VALUES (39,'Alberto M Longo','Não estou conseguindo enviar e-mail... o recebimento esta legal.\r\nGera o erro: Este programa executou uma operação ilegal e será fechado.','0000-00-00',1,'2001-02-02','Formatado hd  \r\nok',0,'2001-01-26');
+INSERT INTO servicosGerais VALUES (40,'Nilza','4 micros da Inter foram enviados para manutenção na Beti. Retornaram mas ninguém consegue faze-los funcionar o Rafael disse-me que tem que confirgurar a rede e lá ninguém sabe fazer isso. Por favor Helio seria possivel configurar a rede em dois micros da Inter? Lá só tem 2 micros funcionando. 2 chegaram da Beti mas ninguem sabe configurar rede. E dois continuam na Beti.','2001-02-03',1,'2001-02-08','OK, CONFIGURADOS\r\n',1,'2001-01-29');
+INSERT INTO servicosGerais VALUES (41,'Nilza/Eneas','O telefone da bancada 1 está mudo. Não conseguimos receber nenhuma ligação nem interna nem externa. Mudo mesmo. Antes era só chiado.','0000-00-00',1,'2001-02-03','fio rompido sala de marketing devido infiltração',1,'2001-01-29');
+INSERT INTO servicosGerais VALUES (42,'Cristiano','Colocar o quadro de Delphi na parede.  (Sala de sistemas).\r\nFalar comigo antes para combinarmos onde colocar o quadro.','0000-00-00',1,'2001-02-12','OK, COLOCADO',0,'2001-01-30');
+INSERT INTO servicosGerais VALUES (43,'Fábio Cristófalo da Silva','Fazer urgente 3 cabos de rede com 2 metros de comprimento.......\r\ntk\'s  \r\n  \r\n:-)','0000-00-00',1,'2001-02-13','',1,'2001-02-09');
+INSERT INTO servicosGerais VALUES (47,'Alberto Araujo','Ramal 214 totalmente sem condições de uso...\r\ne o 230 (ao lado) ... está com muito ruído...\r\n\r\nUREGENTE -  URGENTE - URGENTE - URGENTE','0000-00-00',1,'2001-04-11','',1,'2001-03-12');
+INSERT INTO servicosGerais VALUES (45,'Nilza','Na parede em frente ao Fernando existe uma infiltração de água e em cima do Leandro também. Helinho por favor verifique se existe a possibilidade de voce consertar isso urgente caso contrário passe a bola p/Edson porque o Beto disse-me que se cair pingos na máquina do Fernando pode causar danos graves.  ','2000-02-24',0,'0000-00-00','',1,'2001-02-14');
+INSERT INTO servicosGerais VALUES (46,'Alberto Araujo','Ramais da bancada superior (casa 11) estão com muito ruído.','0000-00-00',1,'2001-04-11','',1,'2001-03-09');
+INSERT INTO servicosGerais VALUES (54,'Alberto Araujo','Goteira na bancada de cima da casa 11\r\n(pelo suporte das lâmpadas)',NULL,0,NULL,NULL,1,'2001-05-16');
+INSERT INTO servicosGerais VALUES (49,'Rodrigo Souza de Freitas','Micro número 07, precisa configurar o monitor.\r\nPrecisou formatar o H.D., e Instalar o Windows novamente.','2001-05-09',1,'2001-05-12','',0,'2001-03-13');
+INSERT INTO servicosGerais VALUES (53,'Alberto Araujo','Ramal 214 está mudo','2001-04-21',0,'0000-00-00','',0,'2001-04-12');
+INSERT INTO servicosGerais VALUES (51,'NILZA','Por favor resolver urgente o problema do micro um da sala de treinamento, pois dia 09 inicia nova turma com previsao de 16 treinandos na sala','0000-00-00',1,'2001-04-11','',1,'2001-04-02');
+INSERT INTO servicosGerais VALUES (52,'Cristiano','Precisamos substituir 6 lâmpadas queimadas na sala de sistemas','2001-04-21',0,'0000-00-00','',0,'2001-04-03');
+
+#
+# Table structure for table 'telUteis'
+#
+DROP TABLE IF EXISTS telUteis;
+CREATE TABLE telUteis (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  nome char(100),
+  descricao char(200),
+  telefone char(50),
+  fax char(50),
+  contato char(50),
+  homepage char(100),
+  email char(100),
+  endereco char(250),
+  horario char(100),
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'telUteis'
+#
+
+INSERT INTO telUteis VALUES (1,'Suporte CANBRAS','net a cabo','0800-193300','','','','',NULL,NULL);
+INSERT INTO telUteis VALUES (2,'Beth','Suprimentos de computador','530-2127 530-5359 536-0141 535-5275','','','','',NULL,NULL);
+INSERT INTO telUteis VALUES (3,'Commit','Venda de vídeos para as aulas de QT','3081-9988','','Leonardo','www.commit.com.br','',NULL,NULL);
+
+#
+# Table structure for table 'tutorial'
+#
+DROP TABLE IF EXISTS tutorial;
+CREATE TABLE tutorial (
+  id bigint(20) unsigned DEFAULT '0' NOT NULL,
+  datestamp datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
+  thread int(11) DEFAULT '0' NOT NULL,
+  parent int(11) DEFAULT '0' NOT NULL,
+  author char(37) DEFAULT '' NOT NULL,
+  subject char(255) DEFAULT '' NOT NULL,
+  email char(200) DEFAULT '' NOT NULL,
+  attachment char(64) DEFAULT '' NOT NULL,
+  host char(50) DEFAULT '' NOT NULL,
+  email_reply char(1) DEFAULT 'N' NOT NULL,
+  approved char(1) DEFAULT 'N' NOT NULL,
+  msgid char(100) DEFAULT '' NOT NULL,
+  PRIMARY KEY (id),
+  KEY author (author),
+  KEY datestamp (datestamp),
+  KEY subject (subject),
+  KEY thread (thread),
+  KEY parent (parent),
+  KEY approved (approved),
+  KEY msgid (msgid)
+);
+
+#
+# Dumping data for table 'tutorial'
+#
+
+INSERT INTO tutorial VALUES (7,'2000-12-01 15:03:00',5,5,'Antonio','RE: Aprendendo','','','ws245140200.canbrasnet.com.br','','Y','<8151c04ff47719bd1a8b919c1c9be671.>');
+INSERT INTO tutorial VALUES (6,'2000-12-01 15:03:00',5,5,'Edson','RE: Aprendendo','edson@datamace.com.br','','ws245140200.canbrasnet.com.br','Y','Y','<e700db4b64abbd55c24309e32c6b5d95.>');
+INSERT INTO tutorial VALUES (5,'2000-12-01 10:18:53',5,0,'Fernando Nomellini','Aprendendo','','','192.168.0.55','','Y','<8ad50f9ab2019f997654a267468081e0.>');
+INSERT INTO tutorial VALUES (8,'2000-12-01 15:03:25',8,0,'nilza','treinamento','nilza@datamace.com.br','','ws245140200.canbrasnet.com.br','','Y','<c2a453e25d7da9ba4c4640e123484e07.>');
+INSERT INTO tutorial VALUES (9,'2000-12-01 15:03:53',9,0,'Marcelo','nljljm,','','','ws245140200.canbrasnet.com.br','','Y','<51eaf9dce17f3d36f0267710ee9348e1.>');
+INSERT INTO tutorial VALUES (10,'2000-12-01 15:04:29',8,8,'nilza','RE: treinamento','nilza@datamace.com.br','','ws245140200.canbrasnet.com.br','','Y','<9caf0bd2f639b9580281f2dd55bca7a9.>');
+INSERT INTO tutorial VALUES (11,'2000-12-01 15:07:21',8,10,'1berto','RE: treinamento','','','ws245140200.canbrasnet.com.br','','Y','<44a2cdcb6b5ecf95efba05ae9f7a90b0.>');
+INSERT INTO tutorial VALUES (12,'2000-12-01 15:09:15',12,0,'Edson','Solicitação de Recursos','edson@datamace.com.br','','ws245140200.canbrasnet.com.br','Y','Y','<0375939bea1e8e6dbda64695e6e0f245.>');
+INSERT INTO tutorial VALUES (13,'2000-12-01 15:12:19',8,11,'Edson','RE: treinamento','edson@datamace.com.br','','ws245140200.canbrasnet.com.br','','Y','<c7360c1ef9b47bdb4d71e2427d8bd584.>');
+INSERT INTO tutorial VALUES (14,'2000-12-01 15:16:45',12,12,'nilza','RE: Solicitação de Recursos','nilza@datamace.com.br','','ws245140200.canbrasnet.com.br','','Y','<837bcd3eee37481d7d271ef5ba908071.>');
+INSERT INTO tutorial VALUES (15,'2000-12-04 15:00:00',12,12,'d.sueli','RE: Solicitação de Recursos','','','ws245140200.canbrasnet.com.br','','Y','<f13bab95005f111599301d3871717b86.>');
+INSERT INTO tutorial VALUES (16,'2000-12-04 15:02:34',16,0,'Ricardo','Fotos','ricardo@datamace.com.br','','ws245140200.canbrasnet.com.br','','Y','<49be523572d2a6ecbdfbce3ffa00e8fd.>');
+INSERT INTO tutorial VALUES (17,'2000-12-04 15:02:57',12,15,'d.sueli','RE: Solicitação de Recursos','','','ws245140200.canbrasnet.com.br','','Y','<a5ba47e2f0b90b787a3dbc0dd9abff2f.>');
+INSERT INTO tutorial VALUES (18,'2000-12-04 15:03:49',16,16,'Fábio','RE: Fotos','fabiocs@canbrasnet.com.br','','ws245140200.canbrasnet.com.br','','Y','<6341c2a9fea4cdbbd39c5b34ceb66314.>');
+INSERT INTO tutorial VALUES (19,'2000-12-04 15:04:18',19,0,'Fernando','novo assunto','fernando@datamace.com.br','','10.1.0.31','','Y','<d108a291f469a221b961e877f5cbbe7e.>');
+INSERT INTO tutorial VALUES (20,'2000-12-05 10:01:09',16,18,'X-tudo no prato','RE: Fotos','','','10.1.0.2','','Y','<0d09ca67737f5deaac11204a2440f00c.>');
+
+#
+# Table structure for table 'tutorial_bodies'
+#
+DROP TABLE IF EXISTS tutorial_bodies;
+CREATE TABLE tutorial_bodies (
+  id bigint(20) unsigned DEFAULT '0' NOT NULL auto_increment,
+  body text NOT NULL,
+  thread int(11) DEFAULT '0' NOT NULL,
+  PRIMARY KEY (id),
+  KEY thread (thread)
+);
+
+#
+# Dumping data for table 'tutorial_bodies'
+#
+
+INSERT INTO tutorial_bodies VALUES (1,'teste',7);
+INSERT INTO tutorial_bodies VALUES (5,'Este fórum foi criado especialmente para aprender a utilizar essa ferramenta !\r\nFernando Nomellini',4);
+INSERT INTO tutorial_bodies VALUES (4,'fghfghfg',3);
+INSERT INTO tutorial_bodies VALUES (6,'Aprendendo a aprender a utlizar o forum',5);
+INSERT INTO tutorial_bodies VALUES (7,'xxxxxxxx',5);
+INSERT INTO tutorial_bodies VALUES (8,'Pessoal vamos trocar ideia sobre criar um treinamento a distancia para nossos clientes?',0);
+INSERT INTO tutorial_bodies VALUES (9,'gdrtrec',7);
+INSERT INTO tutorial_bodies VALUES (10,'Alguem já fez algum treinamento a distancia?',8);
+INSERT INTO tutorial_bodies VALUES (11,'eu sim porem tive preguica de ir ate la pegar o certificado',8);
+INSERT INTO tutorial_bodies VALUES (12,'Sempre que for necessário um novo recurso, tais como: micros, equipamentos, material de apoio, software, etc, devemos relacionar no Forum para conhecimento de todos.',11);
+INSERT INTO tutorial_bodies VALUES (13,'Eu não, pois a distância era tão grande que eu fiquei com preguiça de ir até lá',8);
+INSERT INTO tutorial_bodies VALUES (14,'Solicitei ao Edson um ventilador de teto para sala de treinamento porque os clientes reclamam muito quando está muito calor.\r\n\r\nSolicitei a substituição das cadeiras da sala de treinamento por cadeiras de rodinhas porque a disposição da sala melhorou o acompanhamento dos exercicios dos alunos, os alunos se comunicam melhor porque um esta do lado do outro, se algum aluno se atrasa nos exercicios olha dos lados e recupera o tempo alcançando os demais. A unica desvantagens é ficar virando o pescoço causando desconforto. Um aluno sugeriu a cadeira de rodinha.',12);
+INSERT INTO tutorial_bodies VALUES (15,'yyyEdson escreveu:\r\n> \r\n> Sempre que for necessário um novo recurso, tais como: micros,\r\n> equipamentos, material de apoio, software, etc, devemos\r\n> relacionar no Forum para conhecimento de todos.',12);
+INSERT INTO tutorial_bodies VALUES (16,'Pessoal o que fazer com \"amigos\" que perdem fotos ?',31);
+INSERT INTO tutorial_bodies VALUES (17,'d.sueli escreveu:\r\n> \r\n> yyyEdson escreveu:\r\n> > \r\n> > Sempre que for necessário um novo recurso, tais como:\r\n> micros,\r\n> > equipamentos, material de apoio, software, etc, devemos\r\n> > relacionar no Forum para conhecimento de todos.',12);
+INSERT INTO tutorial_bodies VALUES (18,'Eu acho que tem que encher ele de porrada, ainda mais se for as da Gabriela....',16);
+INSERT INTO tutorial_bodies VALUES (19,'corpo da mensagem.',0);
+INSERT INTO tutorial_bodies VALUES (20,'Olha , o \"amigo\" que perdeu as fotos da Gabriela disse que esta tal é um travesti que faz ponto ali atrás do Sebrae. É fácil fácil tirar outra foto dela. Dá pra encarar ?',16);
+

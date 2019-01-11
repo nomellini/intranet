@@ -1,0 +1,816 @@
+<VisioDocument xmlns="urn:schemas-microsoft-com:office:visio">
+	<DocumentProperties>
+		<Title>Apresentação Projetos</Title>
+		<HyperlinkBase href=""></HyperlinkBase>
+	</DocumentProperties>
+	<Pages>
+		<Page ID="4" Name="2a Geração" NameU="2a Geração">
+			<Shapes>
+				<Shape ID="1" UniqueID="{8511B039-F628-4B67-89C6-01B20DB558CF}" Name="Sheet.1" NameU="Sheet.1">
+					<XForm>
+						<PinX Unit="MM">1.690375236060433</PinX>
+						<PinY Unit="MM">7.480314960629920</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="2" UniqueID="{658EECF4-DE27-4BDB-9B24-08B3067CF7F9}" Name="12pt. text" NameU="12pt. text" Master="20">
+					<Text>Sistemas Datamace 
+2a Geração</Text>
+					<XForm>
+						<PinX Unit="MM">4.881889763779527</PinX>
+						<PinY Unit="MM">6.968503937007874</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="5" UniqueID="{320689D2-8D21-4B3A-8AD3-EAB37ED27796}" Name="Data store" NameU="Data store" Master="0">
+					<Text>Arquivos MF COBOL 
+ISAM</Text>
+					<XForm>
+						<PinX Unit="MM">8.398950131233594</PinX>
+						<PinY Unit="MM">4.035433070866142</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="6" UniqueID="{1F708370-04EE-41D8-92AD-75064BF6CD2C}" Name="Generic Tower" NameU="Generic Tower" Master="2">
+					<XForm>
+						<PinX Unit="MM">7.414698162729659</PinX>
+						<PinY Unit="MM">4.709126384087909</PinY>
+					</XForm>
+					<Prop ID="13" Name="AssetNumber" NameU="AssetNumber">
+						<Value></Value>
+						<Label>Asset Number</Label>
+					</Prop>
+					<Prop ID="14" Name="SerialNumber" NameU="SerialNumber">
+						<Value></Value>
+						<Label>Serial Number</Label>
+					</Prop>
+					<Prop ID="15" Name="Location" NameU="Location">
+						<Value></Value>
+						<Label>Location</Label>
+					</Prop>
+					<Prop ID="16" Name="Building" NameU="Building">
+						<Value></Value>
+						<Label>Building</Label>
+					</Prop>
+					<Prop ID="17" Name="Room" NameU="Room">
+						<Value></Value>
+						<Label>Room</Label>
+					</Prop>
+					<Prop ID="18" Name="Department" NameU="Department">
+						<Value></Value>
+						<Label>Department</Label>
+					</Prop>
+					<Prop ID="1" Name="Manufacturer" NameU="Manufacturer">
+						<Value></Value>
+						<Label>Manufacturer</Label>
+					</Prop>
+					<Prop ID="2" Name="ProductNumber" NameU="ProductNumber">
+						<Value></Value>
+						<Label>Product Number</Label>
+					</Prop>
+					<Prop ID="3" Name="PartNumber" NameU="PartNumber">
+						<Value></Value>
+						<Label>Part Number</Label>
+					</Prop>
+					<Prop ID="4" Name="ProductDescription" NameU="ProductDescription">
+						<Value Unit="STR">Generic Tower</Value>
+						<Label>Product Description</Label>
+					</Prop>
+					<Prop ID="5" Name="PurchaseDate" NameU="PurchaseDate">
+						<Value></Value>
+						<Label>Purchase Date</Label>
+					</Prop>
+					<Prop ID="6" Name="InstalledDate" NameU="InstalledDate">
+						<Value></Value>
+						<Label>Installed Date</Label>
+					</Prop>
+					<Prop ID="7" Name="WarrantyExp" NameU="WarrantyExp">
+						<Value></Value>
+						<Label>Warranty Exp</Label>
+					</Prop>
+					<Prop ID="8" Name="SupportAgreement" NameU="SupportAgreement">
+						<Value></Value>
+						<Label>Support Agreement</Label>
+					</Prop>
+					<Prop ID="9" Name="SupportContactName" NameU="SupportContactName">
+						<Value></Value>
+						<Label>Support Contact Name</Label>
+					</Prop>
+					<Prop ID="10" Name="ContactPhone" NameU="ContactPhone">
+						<Value></Value>
+						<Label>Contact Phone</Label>
+					</Prop>
+					<Prop ID="11" Name="Comments" NameU="Comments">
+						<Value></Value>
+						<Label>Comments</Label>
+					</Prop>
+					<Prop ID="12" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Cost</Label>
+					</Prop>
+					<Prop ID="19" Name="NetworkName" NameU="NetworkName">
+						<Value></Value>
+						<Label>Network Name</Label>
+					</Prop>
+					<Prop ID="20" Name="IPAddress" NameU="IPAddress">
+						<Value></Value>
+						<Label>IP Address</Label>
+					</Prop>
+					<Prop ID="21" Name="SubnetMask" NameU="SubnetMask">
+						<Value></Value>
+						<Label>Subnet Mask</Label>
+					</Prop>
+					<Prop ID="22" Name="AdminInterface" NameU="AdminInterface">
+						<Value></Value>
+						<Label>Admin. Interface</Label>
+					</Prop>
+					<Prop ID="23" Name="NumberOfPorts" NameU="NumberOfPorts">
+						<Value></Value>
+						<Label>Number of Ports</Label>
+					</Prop>
+					<Prop ID="24" Name="MACAddress" NameU="MACAddress">
+						<Value></Value>
+						<Label>MAC Address</Label>
+					</Prop>
+					<Prop ID="25" Name="CommunityString" NameU="CommunityString">
+						<Value></Value>
+						<Label>Community String</Label>
+					</Prop>
+					<Prop ID="26" Name="NetworkDescription" NameU="NetworkDescription">
+						<Value></Value>
+						<Label>Network Description</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="8" UniqueID="{929FF915-A611-46E2-B3E3-7E357DB2CA48}" Name="Flat Screen Monitor" NameU="Flat Screen Monitor" Master="4">
+					<Text>Client</Text>
+					<XForm>
+						<PinX Unit="MM">2.099737532808399</PinX>
+						<PinY Unit="MM">4.527559055118108</PinY>
+					</XForm>
+					<Prop ID="13" Name="AssetNumber" NameU="AssetNumber">
+						<Value></Value>
+						<Label>Asset Number</Label>
+					</Prop>
+					<Prop ID="14" Name="SerialNumber" NameU="SerialNumber">
+						<Value></Value>
+						<Label>Serial Number</Label>
+					</Prop>
+					<Prop ID="15" Name="Location" NameU="Location">
+						<Value></Value>
+						<Label>Location</Label>
+					</Prop>
+					<Prop ID="16" Name="Building" NameU="Building">
+						<Value></Value>
+						<Label>Building</Label>
+					</Prop>
+					<Prop ID="17" Name="Room" NameU="Room">
+						<Value></Value>
+						<Label>Room</Label>
+					</Prop>
+					<Prop ID="18" Name="Department" NameU="Department">
+						<Value></Value>
+						<Label>Department</Label>
+					</Prop>
+					<Prop ID="1" Name="Manufacturer" NameU="Manufacturer">
+						<Value></Value>
+						<Label>Manufacturer</Label>
+					</Prop>
+					<Prop ID="2" Name="ProductNumber" NameU="ProductNumber">
+						<Value></Value>
+						<Label>Product Number</Label>
+					</Prop>
+					<Prop ID="3" Name="PartNumber" NameU="PartNumber">
+						<Value></Value>
+						<Label>Part Number</Label>
+					</Prop>
+					<Prop ID="4" Name="ProductDescription" NameU="ProductDescription">
+						<Value Unit="STR">Flat Screen Monitor</Value>
+						<Label>Product Description</Label>
+					</Prop>
+					<Prop ID="5" Name="PurchaseDate" NameU="PurchaseDate">
+						<Value></Value>
+						<Label>Purchase Date</Label>
+					</Prop>
+					<Prop ID="6" Name="InstalledDate" NameU="InstalledDate">
+						<Value></Value>
+						<Label>Installed Date</Label>
+					</Prop>
+					<Prop ID="7" Name="WarrantyExp" NameU="WarrantyExp">
+						<Value></Value>
+						<Label>Warranty Exp</Label>
+					</Prop>
+					<Prop ID="8" Name="SupportAgreement" NameU="SupportAgreement">
+						<Value></Value>
+						<Label>Support Agreement</Label>
+					</Prop>
+					<Prop ID="9" Name="SupportContactName" NameU="SupportContactName">
+						<Value></Value>
+						<Label>Support Contact Name</Label>
+					</Prop>
+					<Prop ID="10" Name="ContactPhone" NameU="ContactPhone">
+						<Value></Value>
+						<Label>Contact Phone</Label>
+					</Prop>
+					<Prop ID="11" Name="Comments" NameU="Comments">
+						<Value></Value>
+						<Label>Comments</Label>
+					</Prop>
+					<Prop ID="12" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Cost</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="10" UniqueID="{206E50B0-416C-42CD-A238-A63442BA7D4A}" Name="Sheet.10" NameU="Sheet.10">
+					<XForm>
+						<PinX Unit="MM">3.457303689952930</PinX>
+						<PinY Unit="MM">4.685039370078738</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="11" UniqueID="{B5DE05E4-FE15-4BCC-9E2A-61FB46DAEC21}" Name="Blank form" NameU="Blank form" Master="6">
+					<Text>Portal</Text>
+					<XForm>
+						<PinX Unit="MM">0.925898409784602</PinX>
+						<PinY Unit="MM">0.748031496062992</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="16" UniqueID="{7B3233ED-463C-4274-9627-7D6AF02B8921}" Name="Grid" NameU="Grid" Master="7">
+					<XForm>
+						<PinX Unit="MM">0.499011147252567</PinX>
+						<PinY Unit="MM">0.535268996290332</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">7</Value>
+						<Label>Rows</Label>
+					</Prop>
+					<Prop ID="2" Name="Columns" NameU="Columns">
+						<Value Unit="STR">2</Value>
+						<Label>Columns</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="105" UniqueID="{0C5A4B03-BE1B-4BD8-BEF4-757B94E37E20}" Name="Radio button" NameU="Radio button" Master="11">
+					<Text>Horistas</Text>
+					<XForm>
+						<PinX Unit="MM">1.282219359855653</PinX>
+						<PinY Unit="MM">0.855533661568882</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="113" UniqueID="{EB8D3A57-924E-44FF-A6F7-63E68FF3C9C7}" Name="Radio button.120" NameU="Radio button.120" Master="11">
+					<Text>Mensalistas</Text>
+					<XForm>
+						<PinX Unit="MM">1.296587560753233</PinX>
+						<PinY Unit="MM">0.653051181102363</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="121" UniqueID="{88C6C04E-D401-4605-92D9-727A5331F67C}" Name="Mouse pointer" NameU="Mouse pointer" Master="12">
+					<XForm>
+						<PinX Unit="MM">3.517060367454068</PinX>
+						<PinY Unit="MM">4.448818897637793</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">Handwriting</Value>
+						<Label>Pointer</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="130" UniqueID="{CAB342B7-D4B5-4CF1-B390-1A6B2967E31D}" Name="Sheet.130" NameU="Sheet.130">
+					<Text>?</Text>
+					<XForm>
+						<PinX Unit="MM">0.141732283464567</PinX>
+						<PinY Unit="MM">0.118110236220473</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="138" UniqueID="{47389F68-141E-4534-8EA1-87D076D03951}" Name="Toolbar buttons" NameU="Toolbar buttons" Master="13">
+					<XForm>
+						<PinX Unit="MM">2.709973753280838</PinX>
+						<PinY Unit="MM">5.118110236220471</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">New</Value>
+						<Label>Button Type</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="176" UniqueID="{A1D0736B-0548-412E-9786-F4B9929807A9}" Name="Toolbar buttons.180" NameU="Toolbar buttons.180" Master="13">
+					<XForm>
+						<PinX Unit="MM">2.906824146981626</PinX>
+						<PinY Unit="MM">5.118110236220471</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">Cut</Value>
+						<Label>Button Type</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="214" UniqueID="{792C11A2-E289-4204-8AD3-EF72FFFC1F85}" Name="Toolbar buttons.218" NameU="Toolbar buttons.218" Master="13">
+					<XForm>
+						<PinX Unit="MM">3.103674540682414</PinX>
+						<PinY Unit="MM">5.118110236220471</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">Paste</Value>
+						<Label>Button Type</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="252" UniqueID="{665F44DA-9737-4331-A5C7-F3985CE3FCD6}" Name="Toolbar buttons.256" NameU="Toolbar buttons.256" Master="13">
+					<XForm>
+						<PinX Unit="MM">3.300524934383202</PinX>
+						<PinY Unit="MM">5.118110236220471</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">Copy</Value>
+						<Label>Button Type</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="290" UniqueID="{83D2D6AB-286A-4F4C-B4E2-68D21102E963}" Name="Toolbar buttons.294" NameU="Toolbar buttons.294" Master="13">
+					<XForm>
+						<PinX Unit="MM">3.497375328083990</PinX>
+						<PinY Unit="MM">5.118110236220471</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">Open</Value>
+						<Label>Button Type</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="328" UniqueID="{6B80885D-4C23-4B43-8C84-7170C1F6719B}" Name="Toolbar buttons.332" NameU="Toolbar buttons.332" Master="13">
+					<XForm>
+						<PinX Unit="MM">3.694225721784778</PinX>
+						<PinY Unit="MM">5.118110236220471</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">Save</Value>
+						<Label>Button Type</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="366" UniqueID="{69F5A777-9A8A-46EF-BC75-4EDF1F52C21E}" Name="Sheet.366" NameU="Sheet.366">
+					<XForm>
+						<PinX Unit="MM">2.409311563968678</PinX>
+						<PinY Unit="MM">4.996875196850391</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="367" UniqueID="{493F6D32-550D-4819-A71E-8897B9E2B4BD}" Name="Sheet.367" NameU="Sheet.367">
+					<XForm>
+						<PinX Unit="MM">2.438096997039544</PinX>
+						<PinY Unit="MM">4.275098425196848</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="369" UniqueID="{835E795E-66B9-4876-B1A7-B0159C14FDE6}" Name="Double flexi-arrow.374" NameU="Double flexi-arrow.374" Master="15">
+					<Text>ODBC</Text>
+					<XForm>
+						<PinX Unit="MM">5.741469816272965</PinX>
+						<PinY Unit="MM">5.019685039370078</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="370" UniqueID="{95E8D974-A7C2-4941-B299-FBA529DD2158}" Name="Revision cloud" NameU="Revision cloud" Master="19">
+					<Text>Camada de Interface
+(Windows, HTML, etc)
+DELPHI</Text>
+					<XForm>
+						<PinX Unit="MM">3.477690288713911</PinX>
+						<PinY Unit="MM">2.706692913385826</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="372" UniqueID="{7A504382-51E1-4CA4-ABDC-DF8C2755D350}" Name="Revision cloud.110" NameU="Revision cloud.110" Master="19">
+					<Text>Camada de dados
+e negócios
+COBOL</Text>
+					<XForm>
+						<PinX Unit="MM">8.398950131233596</PinX>
+						<PinY Unit="MM">2.706692913385826</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="3" UniqueID="{0152DA6E-FA03-4DDD-BA9C-69EEBB996049}" Name="Oval  callout" NameU="Oval  callout" Master="21">
+					<Text>Fornecedor externo</Text>
+					<XForm>
+						<PinX Unit="MM">6.036745406824147</PinX>
+						<PinY Unit="MM">5.866141732283463</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="371" UniqueID="{C5B9A561-E92D-4765-987C-63EB3C6BE0F0}" Name="Double flexi-arrow.371" NameU="Double flexi-arrow.371" Master="15">
+					<Text>DLL (COBOL)</Text>
+					<XForm>
+						<PinX Unit="MM">5.741469816272965</PinX>
+						<PinY Unit="MM">4.429133858267716</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="373" UniqueID="{B900E49B-A092-4FA1-BCA1-81A8BD7FA5E5}" Name="Rounded rectangle" NameU="Rounded rectangle" Master="22">
+					<Text>Regra de negócios
++ Interface DOS</Text>
+					<XForm>
+						<PinX Unit="MM">8.464566929133857</PinX>
+						<PinY Unit="MM">5.807086614173228</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="374" UniqueID="{C9486BA0-CC8D-4F6C-9B7C-F35F66551D72}" Name="45 degree  tail" NameU="45 degree  tail" Master="23">
+					<Text>EXTFH</Text>
+					<XForm>
+						<PinX Unit="MM">8.415354330708659</PinX>
+						<PinY Unit="MM">4.945866141870079</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="375" UniqueID="{93A45FA6-A75E-495E-8711-24DF86373FFD}" Name="6pt. text" NameU="6pt. text" Master="24">
+					<Text>06/11/2001</Text>
+					<XForm>
+						<PinX Unit="MM">10.728346456692913</PinX>
+						<PinY Unit="MM">0.196850393700787</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="0" Name="3a Geração" NameU="3a Geração">
+			<Shapes>
+				<Shape ID="1" UniqueID="{442C81C6-728C-4D71-A678-18F15265E8FE}" Name="Sheet.1" NameU="Sheet.1">
+					<XForm>
+						<PinX Unit="MM">1.690375236060431</PinX>
+						<PinY Unit="MM">7.547715715223097</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="2" UniqueID="{1BEB4435-E78E-4963-B4DF-325A2E807CA3}" Name="Sheet.2" NameU="Sheet.2">
+					<XForm>
+						<PinX Unit="MM">6.399409448818897</PinX>
+						<PinY Unit="MM">4.695669291338581</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="6" UniqueID="{DBA50BAA-532F-4D43-8DBC-E35E8DED4919}" Name="Sheet.6" NameU="Sheet.6">
+					<XForm>
+						<PinX Unit="MM">10.049212598425195</PinX>
+						<PinY Unit="MM">4.876089136318897</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="3" UniqueID="{9D37F0B6-2705-4CF7-8F52-3A03F3C7D245}" Name="Data store" NameU="Data store" Master="0">
+					<Text>Mecanismo Relacional
+Data Base</Text>
+					<XForm>
+						<PinX Unit="MM">0.590551181102361</PinX>
+						<PinY Unit="MM">0.393700787401575</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="4" UniqueID="{B56BEE39-0763-4FE7-A9B5-8FED654BBE62}" Name="Generic Tower" NameU="Generic Tower" Master="2">
+					<XForm>
+						<PinX Unit="MM">0.146328125000000</PinX>
+						<PinY Unit="MM">0.787401574803148</PinY>
+					</XForm>
+					<Prop ID="13" Name="AssetNumber" NameU="AssetNumber">
+						<Value></Value>
+						<Label>Asset Number</Label>
+					</Prop>
+					<Prop ID="14" Name="SerialNumber" NameU="SerialNumber">
+						<Value></Value>
+						<Label>Serial Number</Label>
+					</Prop>
+					<Prop ID="15" Name="Location" NameU="Location">
+						<Value></Value>
+						<Label>Location</Label>
+					</Prop>
+					<Prop ID="16" Name="Building" NameU="Building">
+						<Value></Value>
+						<Label>Building</Label>
+					</Prop>
+					<Prop ID="17" Name="Room" NameU="Room">
+						<Value></Value>
+						<Label>Room</Label>
+					</Prop>
+					<Prop ID="18" Name="Department" NameU="Department">
+						<Value></Value>
+						<Label>Department</Label>
+					</Prop>
+					<Prop ID="1" Name="Manufacturer" NameU="Manufacturer">
+						<Value></Value>
+						<Label>Manufacturer</Label>
+					</Prop>
+					<Prop ID="2" Name="ProductNumber" NameU="ProductNumber">
+						<Value></Value>
+						<Label>Product Number</Label>
+					</Prop>
+					<Prop ID="3" Name="PartNumber" NameU="PartNumber">
+						<Value></Value>
+						<Label>Part Number</Label>
+					</Prop>
+					<Prop ID="4" Name="ProductDescription" NameU="ProductDescription">
+						<Value Unit="STR">Generic Tower</Value>
+						<Label>Product Description</Label>
+					</Prop>
+					<Prop ID="5" Name="PurchaseDate" NameU="PurchaseDate">
+						<Value></Value>
+						<Label>Purchase Date</Label>
+					</Prop>
+					<Prop ID="6" Name="InstalledDate" NameU="InstalledDate">
+						<Value></Value>
+						<Label>Installed Date</Label>
+					</Prop>
+					<Prop ID="7" Name="WarrantyExp" NameU="WarrantyExp">
+						<Value></Value>
+						<Label>Warranty Exp</Label>
+					</Prop>
+					<Prop ID="8" Name="SupportAgreement" NameU="SupportAgreement">
+						<Value></Value>
+						<Label>Support Agreement</Label>
+					</Prop>
+					<Prop ID="9" Name="SupportContactName" NameU="SupportContactName">
+						<Value></Value>
+						<Label>Support Contact Name</Label>
+					</Prop>
+					<Prop ID="10" Name="ContactPhone" NameU="ContactPhone">
+						<Value></Value>
+						<Label>Contact Phone</Label>
+					</Prop>
+					<Prop ID="11" Name="Comments" NameU="Comments">
+						<Value></Value>
+						<Label>Comments</Label>
+					</Prop>
+					<Prop ID="12" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Cost</Label>
+					</Prop>
+					<Prop ID="19" Name="NetworkName" NameU="NetworkName">
+						<Value></Value>
+						<Label>Network Name</Label>
+					</Prop>
+					<Prop ID="20" Name="IPAddress" NameU="IPAddress">
+						<Value></Value>
+						<Label>IP Address</Label>
+					</Prop>
+					<Prop ID="21" Name="SubnetMask" NameU="SubnetMask">
+						<Value></Value>
+						<Label>Subnet Mask</Label>
+					</Prop>
+					<Prop ID="22" Name="AdminInterface" NameU="AdminInterface">
+						<Value></Value>
+						<Label>Admin. Interface</Label>
+					</Prop>
+					<Prop ID="23" Name="NumberOfPorts" NameU="NumberOfPorts">
+						<Value></Value>
+						<Label>Number of Ports</Label>
+					</Prop>
+					<Prop ID="24" Name="MACAddress" NameU="MACAddress">
+						<Value></Value>
+						<Label>MAC Address</Label>
+					</Prop>
+					<Prop ID="25" Name="CommunityString" NameU="CommunityString">
+						<Value></Value>
+						<Label>Community String</Label>
+					</Prop>
+					<Prop ID="26" Name="NetworkDescription" NameU="NetworkDescription">
+						<Value></Value>
+						<Label>Network Description</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="7" UniqueID="{285D7A68-2152-4EC6-A20C-9F06F0C4E763}" Name="Flat Screen Monitor" NameU="Flat Screen Monitor" Master="4">
+					<Text>Client</Text>
+					<XForm>
+						<PinX Unit="MM">1.072834645669292</PinX>
+						<PinY Unit="MM">4.527559055118109</PinY>
+					</XForm>
+					<Prop ID="13" Name="AssetNumber" NameU="AssetNumber">
+						<Value></Value>
+						<Label>Asset Number</Label>
+					</Prop>
+					<Prop ID="14" Name="SerialNumber" NameU="SerialNumber">
+						<Value></Value>
+						<Label>Serial Number</Label>
+					</Prop>
+					<Prop ID="15" Name="Location" NameU="Location">
+						<Value></Value>
+						<Label>Location</Label>
+					</Prop>
+					<Prop ID="16" Name="Building" NameU="Building">
+						<Value></Value>
+						<Label>Building</Label>
+					</Prop>
+					<Prop ID="17" Name="Room" NameU="Room">
+						<Value></Value>
+						<Label>Room</Label>
+					</Prop>
+					<Prop ID="18" Name="Department" NameU="Department">
+						<Value></Value>
+						<Label>Department</Label>
+					</Prop>
+					<Prop ID="1" Name="Manufacturer" NameU="Manufacturer">
+						<Value></Value>
+						<Label>Manufacturer</Label>
+					</Prop>
+					<Prop ID="2" Name="ProductNumber" NameU="ProductNumber">
+						<Value></Value>
+						<Label>Product Number</Label>
+					</Prop>
+					<Prop ID="3" Name="PartNumber" NameU="PartNumber">
+						<Value></Value>
+						<Label>Part Number</Label>
+					</Prop>
+					<Prop ID="4" Name="ProductDescription" NameU="ProductDescription">
+						<Value Unit="STR">Flat Screen Monitor</Value>
+						<Label>Product Description</Label>
+					</Prop>
+					<Prop ID="5" Name="PurchaseDate" NameU="PurchaseDate">
+						<Value></Value>
+						<Label>Purchase Date</Label>
+					</Prop>
+					<Prop ID="6" Name="InstalledDate" NameU="InstalledDate">
+						<Value></Value>
+						<Label>Installed Date</Label>
+					</Prop>
+					<Prop ID="7" Name="WarrantyExp" NameU="WarrantyExp">
+						<Value></Value>
+						<Label>Warranty Exp</Label>
+					</Prop>
+					<Prop ID="8" Name="SupportAgreement" NameU="SupportAgreement">
+						<Value></Value>
+						<Label>Support Agreement</Label>
+					</Prop>
+					<Prop ID="9" Name="SupportContactName" NameU="SupportContactName">
+						<Value></Value>
+						<Label>Support Contact Name</Label>
+					</Prop>
+					<Prop ID="10" Name="ContactPhone" NameU="ContactPhone">
+						<Value></Value>
+						<Label>Contact Phone</Label>
+					</Prop>
+					<Prop ID="11" Name="Comments" NameU="Comments">
+						<Value></Value>
+						<Label>Comments</Label>
+					</Prop>
+					<Prop ID="12" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Cost</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="128" UniqueID="{512F5A77-E82B-418F-8312-6A1E5C5C30A1}" Name="Sheet.128" NameU="Sheet.128">
+					<XForm>
+						<PinX Unit="MM">2.430400802813823</PinX>
+						<PinY Unit="MM">4.685039370078740</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="13" UniqueID="{65433EED-CA09-4F89-893A-7A8F385B9391}" Name="Blank form" NameU="Blank form" Master="6">
+					<Text>Portal</Text>
+					<XForm>
+						<PinX Unit="MM">0.925898409784602</PinX>
+						<PinY Unit="MM">0.748031496062992</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="18" UniqueID="{E2D22BC7-780B-4899-9F93-374F20E3C80B}" Name="Grid" NameU="Grid" Master="7">
+					<XForm>
+						<PinX Unit="MM">0.499011147252567</PinX>
+						<PinY Unit="MM">0.535268996290332</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">7</Value>
+						<Label>Rows</Label>
+					</Prop>
+					<Prop ID="2" Name="Columns" NameU="Columns">
+						<Value Unit="STR">2</Value>
+						<Label>Columns</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="107" UniqueID="{5175AE4B-8035-45D1-8377-A6C3816F748D}" Name="Radio button" NameU="Radio button" Master="11">
+					<Text>Horistas</Text>
+					<XForm>
+						<PinX Unit="MM">1.282219359855653</PinX>
+						<PinY Unit="MM">0.855533661568882</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="120" UniqueID="{49B23C31-3068-417E-B946-A74B2788DAE8}" Name="Radio button.120" NameU="Radio button.120" Master="11">
+					<Text>Mensalistas</Text>
+					<XForm>
+						<PinX Unit="MM">1.296587560753233</PinX>
+						<PinY Unit="MM">0.653051181102363</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="9" UniqueID="{FD4C5F0C-DF5D-4408-8FB7-23BC08FC3661}" Name="Mouse pointer" NameU="Mouse pointer" Master="12">
+					<XForm>
+						<PinX Unit="MM">2.490157480314961</PinX>
+						<PinY Unit="MM">4.448818897637795</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">Handwriting</Value>
+						<Label>Pointer</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="134" UniqueID="{D504EC1B-E5A6-4405-B84E-1D96BA07192F}" Name="Sheet.134" NameU="Sheet.134">
+					<Text>?</Text>
+					<XForm>
+						<PinX Unit="MM">0.141732283464567</PinX>
+						<PinY Unit="MM">0.118110236220473</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="142" UniqueID="{D653CDF0-61D6-4F89-8370-9CD5F4CA0411}" Name="Toolbar buttons" NameU="Toolbar buttons" Master="13">
+					<XForm>
+						<PinX Unit="MM">1.683070866141732</PinX>
+						<PinY Unit="MM">5.118110236220472</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">New</Value>
+						<Label>Button Type</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="180" UniqueID="{C1893DD3-A59A-4851-A4B3-31E17615F253}" Name="Toolbar buttons.180" NameU="Toolbar buttons.180" Master="13">
+					<XForm>
+						<PinX Unit="MM">1.879921259842520</PinX>
+						<PinY Unit="MM">5.118110236220472</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">Cut</Value>
+						<Label>Button Type</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="218" UniqueID="{6E652387-1DF7-4532-8408-B40987AF42B2}" Name="Toolbar buttons.218" NameU="Toolbar buttons.218" Master="13">
+					<XForm>
+						<PinX Unit="MM">2.076771653543307</PinX>
+						<PinY Unit="MM">5.118110236220472</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">Paste</Value>
+						<Label>Button Type</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="256" UniqueID="{23BE3195-5D76-4C69-9DC3-243E361EAEFE}" Name="Toolbar buttons.256" NameU="Toolbar buttons.256" Master="13">
+					<XForm>
+						<PinX Unit="MM">2.273622047244094</PinX>
+						<PinY Unit="MM">5.118110236220472</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">Copy</Value>
+						<Label>Button Type</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="294" UniqueID="{FA7EEDE1-D9AA-44CB-9BB3-0B2676E22C21}" Name="Toolbar buttons.294" NameU="Toolbar buttons.294" Master="13">
+					<XForm>
+						<PinX Unit="MM">2.470472440944882</PinX>
+						<PinY Unit="MM">5.118110236220472</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">Open</Value>
+						<Label>Button Type</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="332" UniqueID="{8768EFD6-B8F5-45B7-9787-B78483E787D0}" Name="Toolbar buttons.332" NameU="Toolbar buttons.332" Master="13">
+					<XForm>
+						<PinX Unit="MM">2.667322834645669</PinX>
+						<PinY Unit="MM">5.118110236220472</PinY>
+					</XForm>
+					<Prop ID="1" Name="subtype" NameU="subtype">
+						<Value Unit="STR">Save</Value>
+						<Label>Button Type</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="370" UniqueID="{1F63D8C3-0A14-438A-B9E2-6A23420E21C1}" Name="Sheet.370" NameU="Sheet.370">
+					<XForm>
+						<PinX Unit="MM">1.382408676829571</PinX>
+						<PinY Unit="MM">4.996875196850393</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="371" UniqueID="{513AC6D1-BFAE-47BB-9772-430B3D7653F3}" Name="Sheet.371" NameU="Sheet.371">
+					<XForm>
+						<PinX Unit="MM">1.411194109900437</PinX>
+						<PinY Unit="MM">4.275098425196850</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="372" UniqueID="{9CF46511-840D-4D17-887A-5433303370F8}" Name="Double flexi-arrow" NameU="Double flexi-arrow" Master="15">
+					<Text>COM +</Text>
+					<XForm>
+						<PinX Unit="MM">4.283267716535433</PinX>
+						<PinY Unit="MM">4.645669291338582</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="374" UniqueID="{26E03BD4-4A4B-4784-B24C-C11788B2DF36}" Name="Double flexi-arrow.374" NameU="Double flexi-arrow.374" Master="15">
+					<Text>ODBC, BDE, OLE DB etc</Text>
+					<XForm>
+						<PinX Unit="MM">8.531692913385827</PinX>
+						<PinY Unit="MM">4.645669291338582</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="108" UniqueID="{6BB1781D-8C81-4AC5-AB2C-691F27E40B28}" Name="Revision cloud" NameU="Revision cloud" Master="19">
+					<Text>Camada de Interface
+(Windows, HTML, etc)</Text>
+					<XForm>
+						<PinX Unit="MM">2.480314960629921</PinX>
+						<PinY Unit="MM">2.805118110236220</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="109" UniqueID="{FA476F97-52E4-4C93-9352-9B22FC7D35A1}" Name="Revision cloud.109" NameU="Revision cloud.109" Master="19">
+					<Text>Camada de negócios
+Regras</Text>
+					<XForm>
+						<PinX Unit="MM">6.417322834645669</PinX>
+						<PinY Unit="MM">2.755905511811023</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="110" UniqueID="{85130FB8-081E-44DF-A203-3F7C0BEB90AA}" Name="Revision cloud.110" NameU="Revision cloud.110" Master="19">
+					<Text>Camada de dados
+Mecanismo relacional, Mecanismo de armazenamento, etc</Text>
+					<XForm>
+						<PinX Unit="MM">10.039370078740157</PinX>
+						<PinY Unit="MM">2.706692913385826</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="111" UniqueID="{B12012EE-578A-4032-B60E-50D3A9A50C60}" Name="12pt. text" NameU="12pt. text" Master="20">
+					<Text>Sistemas Datamace 
+3a Geração</Text>
+					<XForm>
+						<PinX Unit="MM">5.078740157480315</PinX>
+						<PinY Unit="MM">6.771653543307086</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="112" UniqueID="{12281ED0-DDC0-4904-B829-1A4E05997E7F}" Name="6pt. text" NameU="6pt. text" Master="24">
+					<Text>06/11/2001</Text>
+					<XForm>
+						<PinX Unit="MM">10.728346456692913</PinX>
+						<PinY Unit="MM">0.196850393700787</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+	</Pages>
+</VisioDocument>

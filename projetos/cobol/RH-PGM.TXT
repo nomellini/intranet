@@ -1,0 +1,644 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³   P R O G R A M A S   E   B O O K S     -     R. H.   G E R E N C I A L      ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ PROGR.³ DESCRICAO                                                            ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         AVALIACAO DE DESEMPENHO                                              ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHA01A ³ MANUTENCAO E CONSULTA DA TABELA DE GRUPOS                            ³
+³RHA01B ³ MANUTENCAO E CONSULTA DA TABELA DE FATORES                           ³
+³RHA01C ³ MANUTENCAO E CONSULTA DA TABELA DE PESOS                             ³
+³RHA02A ³ MANUTENCAO DO CADASTRO DE FUNCIONARIOS                               ³
+³RHA02B ³ LANCAMENTO DA AVALIACAO DE DESEMPENHO                                ³
+³RHA02C ³ AVALIACAO POR OBJETIVO                                               ³
+³RHA03A ³ IMPRESSAO DA PLANILHA PARA AVALIACAO DE DESEMPENHO                   ³
+³RHA03B ³ IMPRESSAO DO RELATORIO DE AVALIACAO DE DESEMPENHO                    ³
+³RHA03C ³ AVALIACAO POR OBJETIVO                                               ³
+³RHA03D ³ RELATORIO DE AVALIACAO DE DESEMPENHO POR GRUPO                       ³
+³RHA03E ³ IMPRESSAO DO RELATORIO DE FUNCIONARIOS NAO AVALIADOS                 ³
+³RHA03F ³ PROGRAMACAO DA AVALIACAO                                             ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         CARGOS E SALARIOS                                                    ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHB01A ³ DESCRICAO DE CARGOS                                                  ³
+³RHB01B ³ MANUTENCAO E CONSULTA DA TABELA DE FATORES DE AVALIACAO              ³
+³RHB01C ³ MANUTENCAO DO RELACIONAMENTO DE CARGO X FATOR DE AVALIACAO           ³
+³RHB01D ³ IMPRESSAO DA DESCRICAO DE CARGOS                                     ³
+³RHB02A ³ MANUTENCAO DO CADASTRO DE EMPRESAS - RECURSOS HUMANOS                ³
+³RHB02B ³ MANUTENCAO DO CADASTRO DE PESQUISAS SALARIAIS                        ³
+³RHB02C ³ LANCAMENTO DA COLETA DE DADOS DA PESQUISA SALARIAL                   ³
+³RHB02D ³ PROCESSAMENTO DA ESTATISTICA DE PESQUISA SALARIAL                    ³
+³RHB02E ³ RELATORIO DA PESQUISA SALARIAL                                       ³
+³RHB02F ³ IMPRESSAO RELATORIO ESTATISTICA COMPARATIVA POR CARGOS               ³
+³RHB02G ³ IMPRESSAO RELATORIO DESVIOS PERCENTUAIS POR CARGO                    ³
+³RHB03A ³ QUADRO DE PESSOAL                                                    ³
+³RHB03B ³ MANUTENCAO DO HISTORICO DE MOVIMENTO DO QUADRO DE VAGAS              ³
+³RHB03C ³ RELATORIO DO QUADRO DE PESSOAL                                       ³
+³RHB03D ³ CONSULTA A VAGAS                                                     ³
+³RHB04A ³ MANUTENCAO DO CADASTRO DE REQUISICAO DE PESSOAL                      ³
+³RHB04B ³ IMPRESSAO DO RELATORIO DE REQUIS. DE PESSOAL                         ³
+³RHB04C ³ IMPRESSAO DO RELATORIO DE REQUIS. DE PESSOAL                         ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         TREINAMENTO                                                          ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHC01A ³ TABELA DE CURSOS                                                     ³
+³RHC01B ³ TABELA DE ENTIDADES                                                  ³
+³RHC01C ³ TABELA DE PARAMETROS DE TREINAMENTO                                  ³
+³RHC01D ³ CURSOS EFETUADOS - POR FUNCIONARIO                                   ³
+³RHC01E ³ CURSOS EFETUADOS - POR CURSO                                         ³
+³RHC01F ³ CADASTRO DE NAO FUNCIONARIOS                                         ³
+³RHC02A ³ RELACIONAMENTO DE CURSO x CARGO                                      ³
+³RHC02B ³ RELACIONAMENTO DE CURSO x EMPRESA                                    ³
+³RHC02C ³ RELACIONAMENTO DE CURSO x FUNCIONARIO                                ³
+³RHC02D ³ RELACIONAMENTO DE CURSO X ENTIDADE                                   ³
+³RHC03A ³ SOLICITACAO DE TREINAMENTO                                           ³
+³RHC03B ³ RELATORIO DE SOLICITACAO DE TREINAMENTO                              ³
+³RHC03C ³ RELATORIO DE ESTATISTICA DE ATENDIMENTO                              ³
+³RHC04A ³ ORCAMENTO ANUAL DE TREINAMENTO                                       ³
+³RHC04B ³ RELATORIO DE ORCAMENTO ANUAL DE CURSOS                               ³
+³RHC04C ³ RELATORIO DE ORCAMENTO x REALIZADO                                   ³
+³RHC04D ³ RELATORIO DO CENARIO DO ORCAMENTO                                    ³
+³RHC05A ³ PLANEJAMENTO ANUAL DE CURSOS                                         ³
+³RHC05B ³ RELATORIO DE PLANEJAMENTO ANUAL DE CURSOS                            ³
+³RHC05C ³ RELATORIO DE CURSOS PLANEJAMENTO x REALIZADO - QUANTIDADES           ³
+³RHC05D ³ RELATORIO DE CURSOS PLANEJAMENTO x REALIZADO - VALORES               ³
+³RHC05E ³ RELATORIO DE CURSOS PLANEJAMENTO x REALIZADO - HORAS                 ³
+³RHC05F ³ RELATORIO DO CENARIO DO PLANEJAMENTO                                 ³
+³RHC05G ³ RELATORIO DE ESTATISTICA DE TREINAMENTO                              ³
+³RHC06A ³ TABELA DE LOCAIS                                                     ³
+³RHC06B ³ TABELA DE MENSAGENS DE TREINAMENTO                                   ³
+³RHC06C ³ CADASTRO DE TURMAS                                                   ³
+³RHC06D ³ RELATORIO DE TURMAS                                                  ³
+³RHC06E ³ PROGRAMACAO DE TREINAMENTO POR TURMA                                 ³
+³RHC06F ³ RELATORIO DE PROGRAMACAO DE CURSOS                                   ³
+³RHC06G ³ CARTA DE CONVOCACAO                                                  ³
+³RHC06H ³ EMISSAO DE LISTA DE PRESENCA                                         ³
+³RHC06I ³ EMISSAO DE CERTIFICADO DE CONCLUSAO                                  ³
+³RHC06J ³ EMISSAO DE ETIQUETAS                                                 ³
+³RHC06K ³ MODELOS: ETIQUETA DE CONVOCACAO E CERTIFICADO DE CONCLUSAO           ³
+³RHC07A ³ TABELA DE FATORES DE AVALIACAO                                       ³
+³RHC07B ³ TABELA DE RESULTADOS POR PONTOS                                      ³
+³RHC07C ³ TABELA DO PROCESSO DE AVALIACAO                                      ³
+³RHC07D ³ EDITOR DE TEXTO E PLANILHA DE AVALIACAO                              ³
+³RHC07E ³ AVALIACAO DO TREINAMENTO E DO TREINANDO                              ³
+³RHC07G ³ RELATORIO DE AVALIACAO DO TREINAMENTO                                ³
+³RHC07H ³ RELATORIO DE AVALIACAO DO TREINANDO 1/2/3                            ³
+³RHC07I ³ RELATORIO DE RECICLAGEM                                              ³
+³RHC07J ³ RELATORIO DE NAO AVALIADOS                                           ³
+³RHC08A ³ TABELA DE COMPONENTES DO CUSTO                                       ³
+³RHC08B ³ LANCAMENTO DO CUSTO DO TREINAMENTO                                   ³
+³RHC08C ³ LANCAMENTO DE DESPESAS DO DEPTO DE TREINAMENTO                       ³
+³RHC08D ³ LANCAMENTO DE CUSTO ANUALIZADO                                       ³
+³RHC08E ³ REL.ANALISE DE CUSTO DE TREINAMENTO                                  ³
+³RHC08F ³ RELATORIO DE CUSTOS                                                  ³
+³RHC09A ³ RELATORIO DE NECESSIDADES GLOBAIS DE TREINAMENTO                     ³
+³RHC09B ³ RELATORIO DE NECESSIDADES REAIS DE TREINAMENTO                       ³
+³RHC09C ³ RELATORIO DE CURSOS PREVISTOS x REALIZADOS                           ³
+³RHC09D ³ RELATORIO DE CURSO REALIZADOS                                        ³
+³RHC09E ³ RELATORIO DE VALIDACAO DE CURSOS                                     ³
+³RHC09F ³ RELATORIO DE CURSOS REALIZADOS POR PERIODO                           ³
+³RHC09G ³ RELATORIO ESTATISTICA DE TREINAMENTO I                               ³
+³RHC09H ³ PLANILHA DE DADOS PROFISSIONAIS                                      ³
+³RHC09I ³ SELECAO E PESQUISA DO CADASTRO DE TREINANDOS                         ³
+³RHC10A ³ ARQUIVO DE PALAVRAS-CHAVE PARA CURSOS DE FORMACAO                    ³
+³RHC10B ³ CADASTRO DE CURSOS DE FORMACAO                                       ³
+³RHC10C ³ ARQUIVO DE RELACIONAMENTOS                                           ³
+³RHC10D ³ RELATORIO CURSOS DE FORMACAO/FUNCIONARIO x PALAVRA CHAVE             ³
+³RHC10E ³ RELATORIO CURSOS DE FORMACAO/FUNCIONARIO x PALAVRA CHAVE             ³
+³RHC11A ³ GERADOR DE ARQUIVOS/RELATORIO(TELA INICIAL)                          ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         RECRUTAMENTO/SELECAO/PRE-ADMISSAO                                    ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHD01A ³ ARQUIVO DE PALAVRAS-CHAVE                                            ³
+³RHD01B ³ TABELA DE FONTES DE RECRUTAMENTO                                     ³
+³RHD01C ³ BANCO DE CANDIDATOS                                                  ³
+³RHD01D ³ ARQUIVO DE RELACIONAMENTOS  MANUTENCAO E CONSULTA DO                 ³
+³RHD01E ³ SELECAO E PESQUISA DO CADASTRO DE CANDIDATOS                         ³
+³RHD01F ³ TESTES DE CANDIDATOS                                                 ³
+³RHD01G ³ PLANILHA DE PRETENDENTES                                             ³
+³RHD01H ³ RELATORIO DE PRETENDENTES                                            ³
+³RHD01I ³ RELATORIO DE ESTATISTICA POR DATA                                    ³
+³RHD01J ³ RELATORIO DE ESTATISTICA POR FONTES DE RECRUTAMENTO                  ³
+³RHD01K ³ RELATORIO DE CARGOS x FONTES                                         ³
+³RHD01L ³ RELATORIO DATAS DE TESTES                                            ³
+³RHD01M ³ EDITOR DE TEXTOS                                                     ³
+³RHD01N ³ PROCESSADOR DE TEXTOS                                                ³
+³RHD02A ³ CADASTRO DE RECRUTAMENTO INTERNO                                     ³
+³RHD02B ³ ARQUIVO DE RELACIONAMENTOS                                           ³
+³RHD02C ³ SELECAO E PESQUISA DO CADASTRO DE FUNCIONARIOS                       ³
+³RHD03A ³ TABELA DE MOTIVOS DE REPROVACAO                                      ³
+³RHD03B ³ TABELA DE PARAMETROS                                                 ³
+³RHD03C ³ CADASTRO DE PRE-ADMISSAO                                             ³
+³RHD03D ³ DOCUMENTOS DE PRE-ADMISSAO                                           ³
+³RHD03E ³ CADASTRO DE DEPENDENTES DE PRE-ADMISSAO                              ³
+³RHD03F ³ CADASTRO DE DOCUMENTOS                                               ³
+³RHD03G ³ DOCUMENTOS DE ADMISSAO                                               ³
+³RHD03H ³ ROTINA DE ADMISSAO                                                   ³
+³RHD03I ³ RELATORIO DE ADMISSAO DE CANDIDATOS PRE-ADMITIDOS                    ³
+³RHD03J ³ RELATORIO DE ESTATISTICAS DE PRE-ADMISSAO                            ³
+³RHD03K ³ CONTROLE DE DOCUMENTOS                                               ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         SEGURANCA/EXTINTORES                                                 ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHE01A ³ TABELA DE TIPOS DE EXTINTORES                                        ³
+³RHE01B ³ TABELA DE OCORRENCIAS DE EXTINTORES                                  ³
+³RHE01C ³ TABELA DE FORNECEDORES                                               ³
+³RHE01D ³ CADASTRO DE EXTINTORES                                               ³
+³RHE01E ³ CONTROLE DE EXTINTORES COM TERCEIROS                                 ³
+³RHE01F ³ CADASTRO DE HIDRANTES                                                ³
+³RHE01G ³ LANCAMENTO DE OCORRENCIAS COM EXTINTORES                             ³
+³RHE01H ³ RELATORIO DE CONTROLE DE EXTINTORES                                  ³
+³RHE01I ³ RELATORIO DE OCORRENCIA DE EXTINTORES                                ³
+³RHE01J ³ RELATORIO DE MANUTENCAO DE EXTINTORES                                ³
+³RHE01K ³ RELATORIO DE CONTROLE DE HIDRANTES                                   ³
+³RHE01L ³ PLANILHA DE CONTROLE DE VISTORIA DE EXTINTORES                       ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         SEGURANCA/E.P.I.                                                     ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHE02A ³ TABELA DE E.P.I                                                      ³
+³RHE02B ³ RELACIONAMENTO DE CARGO x E.P.I                                      ³
+³RHE02C ³ TABELA DE MOTIVOS DE ENTREGA DE EPI                                  ³
+³RHE02D ³ TABELA DE LOCAL DE RISCO                                             ³
+³RHE02E ³ RELACIONAMENTO DE EPI x LOCAL DE RISCO                               ³
+³RHE02F ³ CADASTRO DE FUNCIONARIOS COM E.P.I                                   ³
+³RHE02G ³ RELATORIO DE EPI POR FUNCIONARIO                                     ³
+³RHE02H ³ RELATORIO DE DEVOLUCAO EPI POR FUNCIONARIO                           ³
+³RHE02I ³ RECIBO DE ENTREGA DE E.P.I                                           ³
+³RHE02J ³ FICHA DE CONTROLE DE E.P.I                                           ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         SEGURANCA/C.I.P.A.                                                   ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHE03A ³ TABELA DE DIAS DEBITADOS                                             ³
+³RHE03B ³ TABELA DE CAUSAS BASICAS                                             ³
+³RHE03C ³ CADASTRO DE ACIDENTES DO TRABALHO                                    ³
+³RHE03D ³ IMPRESSAO DO ANEXO II - NORMA REGULAMENTADORA 5                      ³
+³RHE03E ³ EDITOR DE TEXTOS - ATA DE REUNIAO DA CIPA                            ³
+³RHE03F ³ IMPRESSAO DE ATAS                                                    ³
+³RHE03G ³ COMUNICACAO DE ACIDENTE DO TRABALHO                                  ³
+³RHE03H ³ RELATORIO DE ACIDENTE DO TRABALHO                                    ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         SEGURANCA/RISCOS AMBIENTAIS                                          ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHE04A ³ TABELA DE GUIA DE RISCOS E ACOES                                     ³
+³RHE04B ³ TABELA DE PRODUTOS QUIMICOS                                          ³
+³RHE04C ³ TABELA DE DISTANCIAS                                                 ³
+³RHE04D ³ CADASTRO DE RISCOS AMBIENTAIS                                        ³
+³RHE04E ³ RELATORIO DE RISCOS AMBIENTAIS                                       ³
+³RHE04F ³ RELATORIO DEMONTRATIVO DE ACOES                                      ³
+³RHE04G ³ CONSULTA A FUNCIONARIOS                                              ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         SEGURANCA/BRIGADISTAS E CIPEIROS                                     ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHE05A ³ CADASTRO DE BRIGADISTAS E CIPEIROS                                   ³
+³RHE05B ³ RELATORIO DO CADASTRO DE BRIGADISTA/CIPEIRO                          ³
+³RHE05C ³ NECESSIDADE DE TREINAMENTO DE BRIGADISTA/CIPEIRO                     ³
+³RHE05D ³ RELATORIO DE CURSOS PREVISTOS x REALIZADOS                           ³
+³RHE05E ³ RELATORIO DE CURSO REALIZADO x BRIGADISTAS                           ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         MEDICINA/CONTROLE AMBULATORIAL                                       ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHF01A ³ TABELA C.I.D                                                         ³
+³RHF01B ³ CADASTRO DE ATENDIMENTO AMBULATORIAL                                 ³
+³RHF01C ³ RELATORIO DO CADASTRO DE ATENDIMENTO AMBULATORIAL                    ³
+³RHF01D ³ RELATORIO DE ESTATISTICA ATENDIMENTO AMBULATORIAL                    ³
+³RHF01E ³ FICHA CLINICA                                                        ³
+³RHF01F ³ RELATORIO DO CONTROLE DE ATENDIMENTO AMBULATORIAL                    ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         MEDICINA/ESTOQUE DE MEDICAMENTOS                                     ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHF02A ³ TABELA MOVIMENTO DE MEDICAMENTOS                                     ³
+³RHF02B ³ TABELA CLASSIF.AUX                                                   ³
+³RHF02C ³ CADASTRO DE MEDICAMENTOS                                             ³
+³RHF02D ³ MOVIMENTACAO DE MEDICAMENTOS                                         ³
+³RHF02E ³ ANALISE DE NECESSIDADES                                              ³
+³RHF02F ³ RELATORIO DE PRE-FECHAMENTO                                          ³
+³RHF02G ³ PROCESSAMENTO DE FECHAMENTO                                          ³
+³RHF02H ³ RELATORIO DE MEDICAMENTOS                                            ³
+³RHF02I ³ RELATORIO DE MOVIMENTACAO DIARIA                                     ³
+³RHF02J ³ RELATORIO DE MOVIMENTACAO POR ITEM                                   ³
+³RHF02K ³ RELATORIO DE ANALISE DE MOVIMENTOS                                   ³
+³RHF02L ³ RELATORIO DE MEDICAMENTOS SEM MOVIMENTACAO                           ³
+³RHF02M ³ RELATORIO DE MEDICAMENTOS ABAIXO DO ESTOQUE MINIMO                   ³
+³RHF02N ³ RELATORIO DE CONSUMO DOS ITENS                                       ³
+³RHF02O ³ RELATORIO DE ANALISE DE NECESSIDADES                                 ³
+³RHF02P ³ RELATORIO DE CONSUMO TRIMESTRAL DOS ITENS                            ³
+³RHF02Q ³ RELATORIO DE MEDICAMENTOS                                            ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         MEDICINA/P.C.M.S.O.                                                  ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHF03A ³ TABELA DE EXAMES COMPLEMENTARES                                      ³
+³RHF03B ³ TABELA DE MEDICOS                                                    ³
+³RHF03C ³ PROGRAMA DE CONTROLE MEDICO E SAUDE OCUPACIONAL                      ³
+³RHF03D ³ TABELA DE GRUPOS PROFISSIOGRAFICOS                                   ³
+³RHF03E ³ FUNCIONARIOS POR GRUPO PROFISSIOGRAFICO                              ³
+³RHF03F ³ CADASTRO DE EXAMES MEDICOS                                           ³
+³RHF03G ³ RELATORIO PROGRAMACAO DE CONTROLE MEDICO E SAUDE OCUPACIONAL         ³
+³RHF03H ³ RELATORIO DE EXAME ADMISSIONAL                                       ³
+³RHF03I ³ RELATORIO DE EXAMES MEDICOS                                          ³
+³RHF03J ³ RELATORIO DE ESTATISTICA DE EXAMES                                   ³
+³RHF03K ³ RELATORIO DE VENCIMENTO DE EXAMES                                    ³
+³RHF03L ³ RELATORIO DE EXAMES VENCIDOS                                         ³
+³RHF03M ³ CARTA DE CONVOCACAO                                                  ³
+³RHF03N ³                                                                      ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         RELACOES TRABALHISTAS                                                ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHG01A ³ TABELA DE TIPOS DE RECLAMACAO                                        ³
+³RHG01B ³ TABELA DE TIPOS DE ENCERRAMENTO                                      ³
+³RHG01C ³ TABELA DE TRIBUNAIS                                                  ³
+³RHG01D ³ TABELA DE ADVOGADOS                                                  ³
+³RHG01E ³ TABELA DE SITUACAO ATUAL                                             ³
+³RHG02A ³ CADASTRO DE PROCESSOS TRABALHISTAS                                   ³
+³RHG02B ³ CADASTRO DE RECLAMANTES                                              ³
+³RHG02C ³ SITUACAO DO PROCESSO                                                 ³
+³RHG02D ³ HISTORICO DO PROCESSO                                                ³
+³RHG02E ³ VALORES DO PROCESSO                                                  ³
+³RHG03A ³ CADASTRO DE AGENDA                                                   ³
+³RHG03B ³ CADASTRO DE AGENDA DE PRAZOS                                         ³
+³RHG03C ³ RESULTADO DE AUDIENCIA                                               ³
+³RHG03D ³ RESUMO DA AGENDA                                                     ³
+³RHG04A ³ RELATORIO DE ANDAMENTO DE PROCESSOS                                  ³
+³RHG04B ³ RELATORIO DE PROCESSOS                                               ³
+³RHG04C ³ RELATORIO DE VALORES DE PROCESSOS                                    ³
+³RHG04D ³ RELATORIO DE AUDIENCIA                                               ³
+³RHG04E ³ RELATORIO DEMONSTRATIVO DE VALORES DE PROCESSOS                      ³
+³RHG04F ³ RELATORIO ESTATISTICO DE PROCESSOS TRABALHISTAS                      ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         UTILITARIOS                                                          ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHH01A ³ RECUPERACAO DE ARQUIVOS                 (COM BASE NO GPA11A)         ³
+³RHH03A ³ PROGRAMA ATUALIZADOR DE VERSAO                                       ³
+ÃÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³         SUB-ROTINAS                                                          ³
+ÃÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHS001 ³                                                                      ³
+³RHS002 ³                                                                      ³
+³RHS003 ³ HELP DE CAMPOS PARA GERADOR DE RELATORIOS                            ³
+³RHS004 ³ TELAS AUXILIARES                                                     ³
+³RHS005 ³ TELAS DO PROGRAMA DE CADASTRO DE TREINANDOS                          ³
+³RHS006 ³ HELP DO CADASTRO DE REQUISICAO DE PESSOAL                            ³
+³RHS007 ³ HELP DE DIRETORIO P/ EDITOR DE TEXTOS                                ³
+³RHS008 ³ HELP DE DIRETORIO P/ EDITOR DE TEXTOS                                ³
+³RHS009 ³ SUB-ROTINA - HELP DE TABELAS                                         ³
+³RHS010 ³ SUB-PROGRAMA PARA OPCOES DE TELA                                     ³
+³RHS011 ³ GERADOR DE FORMATOS - montagem e selecao                             ³
+³RHS012 ³ GERADOR DE RELATORIO-IMPRESSAO                                       ³
+³RHS013 ³ CALENDARIO COM AGENDA                                                ³
+³RHS014 ³ A G E N D A                                                          ³
+³RHS015 ³ EDITOR DE TEXTOS                                                     ³
+³RHS016 ³ GERA ARQUIVO TEXTO                                                   ³
+³RHS017 ³ EDITOR DE TEXTOS PARA PROGRAMA DE CONTROLE AMBULATORIAL              ³
+³RHS018 ³ SUB-ROTINA - HELP DE FUNCIONARIO                                     ³
+³RHS019 ³ DESCRICAO DE CARGOS - PARA ATENDIMENTO AMBULATORIAL                  ³
+³RHS020 ³ RELACIONAMENTO DE EPI - PARA ATENDIMENTO AMBULATORIAL                ³
+³RHS021 ³ MAPAS DE RISCO        - PARA ATENDIMENTO AMBULATORIAL                ³
+³RHS022 ³ HISTORICO DE CARGO - PARA ATENDIMENTO AMBULATORIAL                   ³
+³RHS023 ³ DADOS DO FUNCIONARIO - PARA ATENDIMENTO AMBULATORIAL                 ³
+³RHS024 ³ FICHA CLINICA - PARA ATENDIMENTO AMBULATORIAL                        ³
+³RHS025 ³ SUB-ROTINA - HELP DE PRETENDENTES                                    ³
+³RHS026 ³                                                                      ³
+³RHS027 ³ EDITOR DE TEXTOS AUXILIAR                                            ³
+³RHS028 ³                                                                      ³
+³RHS029 ³                                                                      ³
+³RHS030 ³                                                                      ³
+³RHS031 ³ TELA DE PROPAGANDA DOS SISTEMA DATAMACE                              ³
+³RHS032 ³ SUB-ROTINA - HELP DE PRETENDENTES                                    ³
+³RHS033 ³ IMPRESSAO DE TEXTOS (SUB-ROTINA)                                     ³
+³RHS034 ³ TELAS DE PRE-ADMISSAO                                                ³
+³RHS035 ³ TELA INICIAL DE PROCESSOS TRABALHISTAS                               ³
+³RHS036 ³ TELA INICIAL DE AUDIENCIAS                                           ³
+³RHS037 ³ TELA INICIAL DE PRE-ADMISSAO                                         ³
+³RHS038 ³ EDITOR DE TEXTOS                                                     ³
+³RHS039 ³ HELP DE LISTA DE CAMPOS PARA EDITOR DE TEXTOS                        ³
+³RHS040 ³                                                                      ³
+³RHS041 ³ IMPRESSAO DE DOCTOS LAY-OUT EXTERNO                                  ³
+³RHS042 ³ IMPRESSAO DO TERMO DE RESPONSABILIDADE PARA CONCESSAO DE SAL.FAMILIA ³
+³RHS043 ³ IMPRESSAO DA DECLARACAO DE ENCARGO DE FAMILIA PARA FINS DE I.RENDA   ³
+³RHS044 ³ SUB-ROTINA ATESTADO DE SAUDE OCUPACIONAL                             ³
+³RHS045 ³                                                                      ³
+³RHS046 ³                                                                      ³
+³RHS047 ³                                                                      ³
+³RHS048 ³                                                                      ³
+³RHS049 ³                                                                      ³
+³RHS050 ³                                                                      ³
+³RHS051 ³                                                                      ³
+³RHS052 ³                                                                      ³
+³RHS053 ³ TELA INICIAL DE RECLAMANTES                                          ³
+³RHS054 ³ CADASTRO DE EXAME ADMISSIONAL                                        ³
+ÀÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ÚÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ COPY BOOK³ MODULO            ³ DESCRICAO                                     ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ RHACITRA ³ SEGURANCA         ³ ACIDENTE DE TRABALHO                          ³
+³ RHADMEXA ³ MEDICINA          ³ EXAME ADMISSIONAL                             ³
+³ RHADMITI ³ RECRUTAMENTO      ³ REGISTRO DE ADMITIDOS                         ³
+³ RHAGENDA ³ RH                ³ REGISTRO DE AGENDA GERAL                      ³
+³ RHAGEPRA ³ TRABALHISTA       ³ AGENDA DE PRAZOS                              ³
+³ RHAGEPRO ³ TRABALHISTA       ³ AGENDA DE PROCESSOS                           ³
+³ RHARQAUX ³ TREINAMENTO       ³ AUXILIAR DO REL.PREVISTO X REALIZADO          ³
+³ RHARQDIR ³ RECRUTAMENTO      ³ REGISTRO DE TEXTOS                            ³
+³ RHAVALIA ³ AVALIACAO         ³ AVALIACAO DE DESEMPENHO                       ³
+³ RHAVAOBJ ³ AVALIACAO         ³ AVALIACAO POR OBJETIVOS                       ³
+³ RHAVATRE ³ TREINAMENTO       ³ AVALIACAO DO TREINAMENTO                      ³
+³ RHFUNCUR ³ TREINAMENTO       ³ TABELA DE FUNCIONARIOS x CURGO                ³
+³ RHBRIGAD ³ SEGURANCA         ³ BRIGADISTAS E CIPEIROS                        ³
+³ RHCADAMB ³ MEDICINA          ³ CADASTRO AMBULATORIAL                         ³
+³ RHCADMED ³ MEDICINA          ³ CADASTRO DE MEDICOS                           ³
+³ RHCADNOM ³ RECRUTAMENTO      ³ HELP DO CADASTRO DECANDIDATOS                 ³
+³ RHCADPES ³ CARGOS E SALARIOS ³ CADASTRO DE PESQUISA SALARIAL                 ³
+³ RHCADPRO ³ SEGURANCA         ³ CADASTRO DE PRODUTOS QUIMICOS                 ³
+³ RHCADRIS ³ SEGURANCA         ³ CADASTRO DE RISCO AMBIENTAL                   ³
+³ RHCHNPAR ³ RH                ³ PASSAGEM DE PARAMETROS ENTRE PROGRAMAS        ³
+³ RHCONMED ³ MEDICINA          ³ ARQUIVO DE CONTROLE DO MOVTO DE MEDICAMENTOS  ³
+³ RHCONTRO ³ RH                ³ ARQUIVO DE CONTROLE                           ³
+³ RHCURFOR ³ TREINAMENTO       ³ RELACIONAMENTO DE CURSOS E FORNECEDORES       ³
+³ RHDATCOM ³ RH                ³ REGISTRO DE DATAS COMEMORATIVAS (AGENDA)      ³
+³ RHEXTINT ³ SEGURANCA         ³ CADASTRO DE EXTINTORES                        ³
+³ RHFOREPI ³ SEGURANCA         ³ CADASTRO DE FUNCIONARIOS COM E.P.I.           ³
+³ RHFORPCH ³ TREINAMENTO       ³ ARQUIVO DE PALAVRAS CHAVE DE FORMACAO         ³
+³ RHFORREL ³ TREINAMENTO       ³ ARQUIVO DE RELACIONAMENTO DE FORMACAO         ³
+³ RHFUNCUR ³ TREINAMENTO       ³ RELACIONAMENTO DE CURSOS E FUNCIONARIOS       ³
+³ RHFUNQUA ³ CARGOS E SALARIOS ³ REGISTRO DE QUADRO X FUNCIONARIOS             ³
+³ RHGERMOD ³ RH                ³ ARQUIVO GERADOR DE MODELOS                    ³
+³ RHGUIRIS ³ SEGURANCA         ³ TAB.DE GUIAS DE RISCOS E ACOES EMERGENCIAIS   ³
+³ RHHIDRAN ³ SEGURANCA         ³ CADASTRO DE HIDRANTES                         ³
+³ RHHISCAR ³ CARGOS E SALARIOS ³ REGISTRO DE HISTORICO DE CARGOS               ³
+³ RHHISPRO ³ TRABALISTA        ³ REGISTRO DE HISTORICO DE PROCESSOS            ³
+³ RHLANOCO ³ SEGURANCA         ³ LANCAMENTO DE OCORRENCIAS COM EXTINTORES      ³
+³ RHLANPES ³ CARGOS E SALARIOS ³ LANCAMENTO DE PESQUISA SALARIAL               ³
+³ RHMOVMED ³ MEDICINA          ³ MOVIMENTO DE MEDICAMENTOS                     ³
+³ RHMOVPES ³ CARGOS E SALARIOS ³ HISTORICO DO MOVIMENTO DO QUADRO DE PESSOAL   ³
+³ RHNECMED ³ MEDICINA          ³ NECESSIDADES DE MEDICAMENTOS                  ³
+³ RHNUMSEQ ³ RECRUTAMENTO      ³ REGISTRO DE SEQUENCIA PARA PRE-ADMISSAO       ³
+³ RHPALCHA ³ RECRUTAMENTO      ³ CADASTRO DE PALAVRAS CHAVES                   ³
+³ RHPEMPRE ³ CARGOS E SALARIOS ³ CADASTRO DE EMPRESAS DA PESQUISA SALARIAL     ³
+³ RHPEREXA ³ MEDICINA          ³ CADASTRO DE EXAMES NAO ADMISSIONAIS           ³
+³ RHPESQUI ³ CARGOS E SALARIOS ³ ESTATISTICAS DA PESQUISA SALARIAL             ³
+³ RHPLACUR ³ TREINAMENTO       ³ ARQUIVO DE PLANEJAMENTO ANUAL DE CURSOS       ³
+³ RHPREADM ³ RECRUTAMENTO      ³ CADASTRO DE PRE-ADMISSAO                      ³
+³ RHPREDEP ³ RECRUTAMENTO      ³ CADASTRO DE DEPENDENTES DE PRE-ADMISSAO       ³
+³ RHPRETEN ³ RECRUTAMENTO      ³ CADASTRO DE CANDIDATOS                        ³
+³ RHPROCES ³ TRABALHISTA       ³ CADASTRO DE PROCESSOS TRABALHISTAS            ³
+³ RHPROMED ³ MEDICINA          ³ REGISTRO DE PROGRAMACAO PCMSO                 ³
+³ RHQUAPES ³ CARGOS E SALARIOS ³ CADASTRO DO QUADRO DE PESSOAL                 ³
+³ RHRECINT ³ RECRUTAMENTO      ³ CADASTRO DE RECRUTAMENTO INTERNO              ³
+³ RHRECLAM ³ TRABALHISTA       ³ CADASTRO DE RECLAMANTES                       ³
+³ RHRELACI ³ RECRUTAMENTO      ³ RELACIONAMENTO RECR. EXTERNO                  ³
+³ RHRELADM ³ RECRUTAMENTO      ³ EXAME ADMISSAO x PRETENDENTE                  ³
+³ RHRELINT ³ RECRUTAMENTO      ³ RELACIONAMENTO RECR. INTERNO                  ³
+³ RHRELPER ³ MEDICINA          ³ CADASTRO DE EXAMES PERIODICOS                 ³
+³ RHREQNOM ³ CARGOS E SALARIOS ³ REGISTRO DO CADASTRO DE NOMES DE REQUISICOES  ³
+³ RHREQPES ³ CARGOS E SALARIOS ³ REGISTRO DE REQUISICAO DE PESSOAL             ³
+³ RHTREAUX ³ TREINAMENTO       ³ REGISTRO AUXILIAR DE TREINANDOS               ³
+³ RHTREINO ³ TREINAMENTO       ³ CADASTRO DE TREINANDOS                        ³
+³ RHTURMAS ³ TREINAMENTO       ³ CADASTRO DE TURMAS                            ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ COPY BOOK³ MODULO            ³ DESCRICAO                                     ³
+³ ANTERIOR ³ ATUAL             ³ DESCRICAO                                     ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          ³ AVALIACAO         ³                                               ³
+³ RHTABGAG ³ RHTABRAA          ³ TABELA DE GRUPOS                              ³
+³ RHTABGAF ³ RHTABRAB          ³ TABELA DE FATORES DE AVALIACAO DE DESEMPENHO  ³
+³ RHTABGAP ³ RHTABRAC          ³ TABELA DE PESOS                               ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          ³ CARGOS E SALARIOS ³                                               ³
+³ RHTABGAD ³ RHTABRBA          ³ TABELA DE DESCRICAO DE CARGOS                 ³
+³ RHTABGAO ³ RHTABRBB          ³ TABELA DE FATORES DE AVALIACAO DE CARGOS      ³
+³ RHTABGAW ³ RHTABRBC          ³ TABELA DE CARGO x FATOR-AVALIACAO             ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          ³ TREINAMENTO       ³                                               ³
+³ RHTABGAC ³ RHTABRCA          ³ TABELA DE CURSOS                              ³
+³ RHTABGAN ³ RHTABRCB          ³ TABELA DE ENTIDADES                           ³
+³ RHTABGAY ³ RHTABRCC          ³ TABELA DE CARGO x CURSO                       ³
+³ RHTABGAZ ³ RHTABRCE          ³ TABELA DE ENTIDADE x CURSO                    ³
+³ RHTABGAL ³ RHTABRCF          ³ TABELA DE LOCAIS DE CURSOS                    ³
+³ RHTABGAM ³ RHTABRCG          ³ TABELA DE MENSAGENS PARA CARTA DE CONVOCACO   ³
+³ RHTABGAA ³ RHTABRCH          ³ TABELA DE FATORES DE AVALIACAO DO TREINAMENTO ³
+³ RHTABGBQ ³ RHTABRCI          ³ TAB.DE RESULTADO DA AVALIACAO DO TREINAMENTO  ³
+³ RHTABGBR ³ RHTABRCJ          ³ TABELA DE PROCESSO DE AVALIACAO               ³
+³ RHEMPCUR ³ RHTABRCK          ³ TABELA DE EMPRESA x CURSO                     ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          ³ RECRUTAMENTO      ³                                               ³
+³ RHTABGAR ³ RHTABRDA          ³ TABELA DE FONTES DE RECRUTAMENTO              ³
+³ RHTABGBM ³ RHTABRDB          ³ TABELA DE MOTIVOS DE REPROVACAO- PRE-ADMISSA  ³
+³ RHTABGBN ³ RHTABRDC          ³ TABELA DE PARAMETROS DE PRE-ADMISSAO          ³
+³ RHTABGBO ³ RHTABRDD          ³ TABELA DE PROCESSOS DE ADMISSAO               ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          ³ SEGURANCA DO TRAB.³                                               ³
+³ RHTABGAT ³ RHTABREA          ³ TABELA DE TIPOS DE EXTINTORES                 ³
+³ RHTABGAJ ³ RHTABREB          ³ TABELA DE OCORRENCIAS DE EXTINTORES           ³
+³ RHTABGAB ³ RHTABREC          ³ TABELA DE FORNECEDORES DE EXTINTORES          ³
+³ RHTABGAI ³ RHTABRED          ³ TABELA DE E.P.I.                              ³
+³ RHTABGAX ³ RHTABREE          ³ TABELA DE CARGO x E.P.I.                      ³
+³ RHTABGAK ³ RHTABREF          ³ TABELA DE MOTIVOS DE ENTREGA DE E.P.I.        ³
+³ RHTABGAE ³ RHTABREG          ³ TABELA DE LOCAL DE RISCO                      ³
+³ RHTABGAV ³ RHTABREH          ³ TABELA DE E.P.I. X LOCAL DE RISCO             ³
+³ RHTABGAH ³ RHTABREI          ³ TABELA DE DIAS DEBITADOS                      ³
+³ RHTABGBH ³ RHTABREJ          ³ TABELA DE CAUSAS BASICAS DE ACIDENTES         ³
+³ RHTABGAU ³ RHTABREK          ³ TABELA DE TIPOS DE RISCO                      ³
+³ RHPROQUI ³ RHTABREL          ³ TABELA DE PRODUTOS QUIMICOS                   ³
+³ RH       ³ RH   REM          ³ TABELA DE DISTANCIAS                          ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          ³ MEDICINA DO TRAB. ³                                               ³
+³ RHTABGAS ³ RHTABRFA          ³ TABELA DE C.I.D.                              ³
+³ RHTABGBF ³ RHTABRFB          ³ TABELA DE TRANSACOES DE ESTOQUES              ³
+³ RHTABGBG ³ RHTABRFC          ³ TABELA DE CLASSIF. AUXILIAR                   ³
+³ RHTABGBI ³ RHTABRFD          ³ TABELA DE EXAMES COMPLEMENTARES               ³
+³ RHTABGBJ ³ RHTABRFE          ³ TABELA DE MEDICOS                             ³
+³ RHTABGBL ³ RHTABRFF          ³ GRUPO PROFISSIOGRAFICO                        ³
+³ RHTABGBP ³ RHTABRFG          ³ TABELA DE PARAMETROS DE EMISSAO DO ASO        ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          ³ RELACOES TRABALH. ³                                               ³
+³ RHTABGBA ³ RHTABRGA          ³ TABELA DE TIPO DE RECLAMACAO                  ³
+³ RHTABGBB ³ RHTABRGB          ³ TABELA DE TIPO DE ENCERRAMENTO                ³
+³ RHTABGBC ³ RHTABRGC          ³ TABELA DE TRIBUNAIS                           ³
+³ RHTABGBD ³ RHTABRGD          ³ TABELA DE ADVOGADOS                           ³
+³ RHTABGBE ³ RHTABRGE          ³ TABELA DE TIPO DE SITUACAO                    ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ RHTABGRH ³ RH                ³ TABELAS GERAIS                                ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ³
+³ COPY BOOK³ MODULO            ³ DESCRICAO                                     ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ RHRACT   ³ ROTINA DE I/O     ³ ACIDENTE DE TRABALHO                          ³
+³ RHRADM   ³ ROTINA DE I/O     ³ ADMITIDOS                                     ³
+³ RHRADX   ³ ROTINA DE I/O     ³ EXAME ADMISSIONAL                             ³
+³ RHRAGE   ³ ROTINA DE I/O     ³ AGENDA DE PROCESSOS                           ³
+³ RHRAGN   ³ ROTINA DE I/O     ³ AGENDA GERAL                                  ³
+³ RHRAGP   ³ ROTINA DE I/O     ³ AGENDA DE PRAZOS                              ³
+³ RHRAMB   ³ ROTINA DE I/O     ³ CADASTRO AMBULATORIAL                         ³
+³ RHRAUX   ³ ROTINA DE I/O     ³ AUXILIAR DE REL.PREVISTO X REALIZADO          ³
+³ RHRAVA   ³ ROTINA DE I/O     ³ CADASTRO DE AVALIACAO DE DESEMPENHO           ³
+³ RHRAVT   ³ ROTINA DE I/O     ³ AVALIACAO DO TREINAMENTO                      ³
+³ RHRBRI   ³ ROTINA DE I/O     ³ CADASTRO DE BRIGADISTAS E CIPEIROS            ³
+³ RHRCAD   ³ ROTINA DE I/O     ³ CADASTRO DE PRODUTOS QUIMICOS                 ³
+³ RHRCAP   ³ ROTINA DE I/O     ³ CADASTRO DE PESQUISA SALARIAL                 ³
+³ RHRCTM   ³ ROTINA DE I/O     ³ ARQUIVO DE CONTROLE DO MOVTO DE MEDICAMENTOS  ³
+³ RHRCTR   ³ ROTINA DE I/O     ³ CADASTRO DE CONTROLE DO RH                    ³
+³ RHRDAT   ³ ROTINA DE I/O     ³ DATAS COMEMORATIVAS                           ³
+³ RHRDIR   ³ ROTINA DE I/O     ³ CADASTRO DE ARQUIVOS TEXTO                    ³
+³ RHRDTR   ³ ROTINA DE I/O     ³ DESPESAS DE TREINAMENTO NAO RELAC.AO TREINANDO³
+³ RHREPI   ³ ROTINA DE I/O     ³ CADASTRO DE FUNCIONARIOS COM EPI              ³
+³ RHREXT   ³ ROTINA DE I/O     ³ CADASTRO DE EXTINTORES                        ³
+³ RHRFOR   ³ ROTINA DE I/O     ³ RELACIONAMENTO DE CURSOS E FORNECEDORES       ³
+³ RHRFPC   ³ ROTINA DE I/O     ³ ARQUIVO DE PALAVRAS CHAVE DE FORMACAO         ³
+³ RHRFRL   ³ ROTINA DE I/O     ³ ARQUIVO DE RELACIONAMENTO DE FORMACAO         ³
+³ RHRFUC   ³ ROTINA DE I/O     ³ RELACIONAMENTO DE CURSOS E FUNCIONARIOS       ³
+³ RHRFUQ   ³ ROTINA DE I/O     ³ REGISTRO DE QUADRO X FUNCIONARIOS             ³
+³ RHRGER   ³ ROTINA DE I/O     ³ ARQUIVO GERADOR DE MODELOS                    ³
+³ RHRGUI   ³ ROTINA DE I/O     ³ TAB.DE GUIAS DE RISCOS E ACOES EMERGENCIAIS   ³
+³ RHRHIC   ³ ROTINA DE I/O     ³ REGISTRO DE HISTORICO DE CARGOS               ³
+³ RHRHID   ³ ROTINA DE I/O     ³ CADASTRO DE HIDRANTES                         ³
+³ RHRHIS   ³ ROTINA DE I/O     ³ REGISTRO DE HISTORICO DE PROCESSOS            ³
+³ RHRINT   ³ ROTINA DE I/O     ³ CADASTRO DE RECRUTAMENTO INTERNO              ³
+³ RHRLAN   ³ ROTINA DE I/O     ³ LANCAMENTO DE OCORRENCIAS COM EXTINTORES      ³
+³ RHRLAP   ³ ROTINA DE I/O     ³ LANCAMENTO DE PESQUISA SALARIAL               ³
+³ RHRLTR   ³ ROTINA DE I/O     ³ LANCAMENTO DE DEPESAS DE TREINAMENTO          ³
+³ RHRMED   ³ ROTINA DE I/O     ³ CADASTRO DE MEDICOS                           ³
+³ RHRMOV   ³ ROTINA DE I/O     ³ HISTORICO DO MOVIMENTO DO QUADRO DE PESSOAL   ³
+³ RHRMTR   ³ ROTINA DE I/O     ³ LANCAMENTO MENSAL DE TREINAMENTO              ³
+³ RHRMVM   ³ ROTINA DE I/O     ³ MOVIMENTO DE MEDICAMENTOS                     ³
+³ RHRNEC   ³ ROTINA DE I/O     ³ NECESSIDADES DE MEDICAMENTOS                  ³
+³ RHRNOM   ³ ROTINA DE I/O     ³ HELP DO CADASTRO DECANDIDATOS                 ³
+³ RHROBJ   ³ ROTINA DE I/O     ³ CADASTRO DE AVALIACAO POR OBJETIVOS           ³
+³ RHRPAD   ³ ROTINA DE I/O     ³ CADASTRO DE PRE-ADMISSAO                      ³
+³ RHRPCH   ³ ROTINA DE I/O     ³ CADASTRO DE PALAVRAS CHAVES                   ³
+³ RHRPDP   ³ ROTINA DE I/O     ³ CADASTRO DE DEPENDENTES DE PRE-ADMISSAO       ³
+³ RHRPES   ³ ROTINA DE I/O     ³ ESTATISTICAS DA PESQUISA SALARIAL             ³
+³ RHRPEX   ³ ROTINA DE I/O     ³ CADASTRO DE EXAMES NAO ADMISSIONAIS           ³
+³ RHRPLA   ³ ROTINA DE I/O     ³ ARQUIVO DE PLANEJAMENTO ANUAL DE CURSOS       ³
+³ RHRPRM   ³ ROTINA DE I/O     ³ REGISTRO DE PROGRAMACAO PCMSO                 ³
+³ RHRPRO   ³ ROTINA DE I/O     ³ CADASTRO DE PROCESSOS TRABALHISTAS            ³
+³ RHRPRT   ³ ROTINA DE I/O     ³ CADASTRO DE CANDIDATOS                        ³
+³ RHRQUA   ³ ROTINA DE I/O     ³ CADASTRO DO QUADRO DE PESSOAL                 ³
+³ RHRRDM   ³ ROTINA DE I/O     ³ EXAME ADMISSAO x PRETENDENTE                  ³
+³ RHRREC   ³ ROTINA DE I/O     ³ CADASTRO DE RECLAMANTES                       ³
+³ RHRREI   ³ ROTINA DE I/O     ³ RELACIONAMENTO RECR. INTERNO                  ³
+³ RHRREL   ³ ROTINA DE I/O     ³ RELACIONAMENTO RECR. EXTERNO                  ³
+³ RHRREP   ³ ROTINA DE I/O     ³ CADASTRO DE REQUISICAO DE PESSOAL             ³
+³ RHRRHP   ³ ROTINA DE I/O     ³ CADASTRO DE EMPRESAS DA PESQUISA SALARIAL     ³
+³ RHRRIS   ³ ROTINA DE I/O     ³ CADASTRO DE RISCO AMBIENTAL                   ³
+³ RHRRPE   ³ ROTINA DE I/O     ³ CADASTRO DE EXAMES PERIODICOS                 ³
+³ RHRSEQ   ³ ROTINA DE I/O     ³ REGISTRO DE SEQUENCIA PARA PRE-ADMISSAO       ³
+³ RHRTBR   ³ ROTINA DE I/O     ³ TABELAS                                       ³
+³ RHRTRE   ³ ROTINA DE I/O     ³ CADASTRO DE TREINANDOS                        ³
+³ RHRTUR   ³ ROTINA DE I/O     ³ CADASTRO DE TURMAS                            ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ COPY BOOK³ MODULO            ³ DESCRICAO                                     ³
+ÃÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³RHS001    ³                                                                   ³
+³RHS002    ³                                                                   ³
+³RHS003    ³                                                                   ³
+³RHS004    ³  TELAS AUXILIARES                                                 ³
+³RHS005    ³  TELAS DO PROGRAMA DE CADASTRO DE TREINANDOS                      ³
+³RHS006    ³  HELP DO CADASTRO DE REQUISICAO DE PESSOAL                        ³
+³RHS007    ³  HELP DE DIRETORIO P/ EDITOR DE TEXTOS                            ³
+³RHS008    ³                                                                   ³
+³RHS009    ³  SUB-ROTINA - HELP DE TABELAS                                     ³
+³RHS010    ³  SUB-PROGRAMA PARA OPCOES DE TELA                                 ³
+³RHS011    ³                                                                   ³
+³RHS012    ³                                                                   ³
+³RHS013    ³  CALENDARIO COM AGENDA                                            ³
+³RHS014    ³  A G E N D A                                                      ³
+³RHS015    ³  EDITOR DE TEXTOS                                                 ³
+³RHS016    ³                                                                   ³
+³RHS017    ³  EDITOR DE TEXTOS PARA PROGRAMA DE CONTROLE AMBULATORIAL          ³
+³RHS018    ³  SUB-ROTINA - HELP DE FUNCIONARIO                                 ³
+³RHS019    ³  DESCRICAO DE CARGOS - PARA ATENDIMENTO AMBULATORIAL              ³
+³RHS020    ³  RELACIONAMENTO DE EPI - PARA ATENDIMENTO AMBULATORIAL            ³
+³RHS021    ³  MAPAS DE RISCO        - PARA ATENDIMENTO AMBULATORIAL            ³
+³RHS022    ³  HISTORICO DE CARGO - PARA ATENDIMENTO AMBULATORIAL               ³
+³RHS023    ³  DADOS DO FUNCIONARIO - PARA ATENDIMENTO AMBULATORIAL             ³
+³RHS024    ³  FICHA CLINICA - PARA ATENDIMENTO AMBULATORIAL                    ³
+³RHS025    ³  SUB-ROTINA - HELP DE PRETENDENTES                                ³
+³RHS026    ³                                                                   ³
+³RHS027    ³  EDITOR DE TEXTOS AUXILIAR                                        ³
+³RHS028    ³                                                                   ³
+³RHS029    ³                                                                   ³
+³RHS030    ³                                                                   ³
+³RHS031    ³  TELA DE PROPAGANDA DOS SISTEMA DATAMACE                          ³
+³RHS032    ³  SUB-ROTINA - HELP DE PRETENDENTES                                ³
+³RHS033    ³  IMPRESSAO DE TEXTOS (SUB-ROTINA)                                 ³
+³RHS034    ³  TELAS DE PRE-ADMISSAO                                            ³
+³RHS035    ³  TELA INICIAL DE PROCESSOS TRABALHISTAS                           ³
+³RHS036    ³  TELA INICIAL DE AUDIENCIAS                                       ³
+³RHS037    ³  TELA INICIAL DE PRE-ADMISSAO                                     ³
+³RHS038    ³  EDITOR DE TEXTOS                                                 ³
+³RHS039    ³  HELP DE LISTA DE CAMPOS PARA EDITOR DE TEXTOS                    ³
+³RHS040    ³  SUB-PROGRAMA PARA CALCULO DO V.TRANSPORTE                        ³
+³RHS041    ³  IMPRESSAO DE DOCTOS LAY-OUT EXTERNO                              ³
+³RHS042    ³  IMPRESSAO DO TERMO DE RESPONSABILIDADE PARA CONCESSAO DE         ³
+³RHS043    ³  IMPRESSAO DA DECLARACAO DE ENCARGO DE FAMILIA PARA FINS DE       ³
+³RHS044    ³                                                                   ³
+³RHS044    ³                                                                   ³
+³RHS044    ³                                                                   ³
+³RHS044    ³                                                                   ³
+³RHS044    ³                                                                   ³
+³RHS044    ³                                                                   ³
+³RHS044    ³                                                                   ³
+³RHS044    ³                                                                   ³
+³RHS044    ³                                                                   ³
+³RHS053    ³  TELA INICIAL DE RECLAMANTES                                      ³
+³RHS054    ³  CADASTRO DE EXAME ADMISSIONAL                                    ³
+ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+        MODULO A - AVALIACAO - OK
+³ RHTABGAG ³ RHTABRAA  TRAG   TRAA          ³ TABELA DE GRUPOS                              ³
+³ RHTABGAF ³ RHTABRAB  TRAF   TRAB          ³ TABELA DE FATORES DE AVALIACAO DE DESEMPENHO  ³
+³ RHTABGAP ³ RHTABRAC  TRAP   TRAC          ³ TABELA DE PESOS                               ³
+
+        MODULO B - CARGOS E SALARIOS - OK
+³ RHTABGAD ³ RHTABRBA  TRAD   TRBA          ³ TABELA DE DESCRICAO DE CARGOS                 ³
+³ RHTABGAO ³ RHTABRBB  TRAO   TRBB          ³ TABELA DE FATORES DE AVALIACAO DE CARGOS      ³
+³ RHTABGAW ³ RHTABRBC  TRAW   TRBC          ³ TABELA DE CARGO x FATOR-AVALIACAO             ³
+
+        MODULO C - TREINAMENTO -
+³ RHTABGAC ³ RHTABRCA  TRAC   TRCA          ³ TABELA DE CURSOS                              ³
+³ RHTABGAN ³ RHTABRCB  TRAN   TRCB          ³ TABELA DE ENTIDADES                           ³
+³ RHTABGAY ³ RHTABRCC  TRAY   TRCC          ³ TABELA DE CARGO x CURSOS                      ³
+³ RHTABGAQ ³ RHTABRCD  TRAQ   TRCD          ³ TABELA DE FUNCIONARIOS x CARGO                ³
+³ RHTABGAZ ³ RHTABRCE  TRAZ   TRCE          ³ TABELA DE ENTIDADE x CURSO                    ³
+³ RHTABGAL ³ RHTABRCF  TRAL   TRCF          ³ TABELA DE LOCAIS DE CURSOS                    ³
+³ RHTABGAM ³ RHTABRCG  TRAM   TRCG          ³ TABELA DE MENSAGENS PARA CARTA DE CONVOCACO   ³
+³ RHTABGAA ³ RHTABRCH  TRAA   TRCH          ³ TABELA DE FATORES DE AVALIACAO DO TREINAMENTO ³
+³ RHTABGBQ ³ RHTABRCI  TRBQ   TRCI          ³ TAB.DE RESULTADO DA AVALIACAO DO TREINAMENTO  ³
+³ RHTABGBR ³ RHTABRCJ  TRBR   TRCJ          ³ TABELA DE PROCESSO DE AVALIACAO               ³
+
+        MODULO D - RECRUTAMENTO E SELECAO
+³ RHTABGAR ³ RHTABRDA  TRAR   TRDA          ³ TABELA DE FONTES DE RECRUTAMENTO              ³
+³ RHTABGBM ³ RHTABRDB  TRBM   TRDB          ³ TABELA DE MOTIVOS DE REPROVACAO- PRE-ADMISSA  ³
+³ RHTABGBN ³ RHTABRDC  TRBN   TRDC          ³ TABELA DE PARAMETROS DE PRE-ADMISSAO          ³
+³ RHTABGBO ³ RHTABRDD  TRBO   TRDD          ³ TABELA DE PROCESSOS DE ADMISSAO               ³
+
+        MODULO E - SEGURANCA DO TRABALHO
+³ RHTABGAT ³ RHTABREA  TRAT   TREA          ³ TABELA DE TIPOS DE EXTINTORES                 ³
+³ RHTABGAJ ³ RHTABREB  TRAJ   TREB          ³ TABELA DE OCORRENCIAS DE EXTINTORES           ³
+³ RHTABGAB ³ RHTABREC  TRAB   TREC          ³ TABELA DE FORNECEDORES DE EXTINTORES          ³
+³ RHTABGAI ³ RHTABRED  TRAI   TRED          ³ TABELA DE E.P.I.                              ³
+³ RHTABGAX ³ RHTABREE  TRAX   TREE          ³ TABELA DE CARGO x E.P.I.                      ³
+³ RHTABGAK ³ RHTABREF  TRAK   TREF          ³ TABELA DE MOTIVOS DE ENTREGA DE E.P.I.        ³
+³ RHTABGAE ³ RHTABREG  TRAE   TREG          ³ TABELA DE LOCAL DE RISCO                      ³
+³ RHTABGAV ³ RHTABREH  TRAV   TREH          ³ TABELA DE E.P.I. X LOCAL DE RISCO             ³
+³ RHTABGAH ³ RHTABREI  TRAH   TREI          ³ TABELA DE DIAS DEBITADOS                      ³
+³ RHTABGBH ³ RHTABREJ  TRBH   TREJ          ³ TABELA DE CAUSAS BASICAS DE ACIDENTES         ³
+³ RHTABGAU ³ RHTABREK  TRAU   TREK          ³ TABELA DE TIPOS DE RISCO                      ³
+
+³ RHPROQUI ³ RHTABREL  PRQ    TREL          ³ TABELA DE PRODUTOS QUIMICOS                   ³
+³ RH       ³ RH   REM  TR     TREM          ³ TABELA DE DISTANCIAS                          ³
+
+        MODULO F - MEDICINA DO TRABALHO
+³ RHTABGAS ³ RHTABRFA  TRAS   TRFA          ³ TABELA DE C.I.D.                              ³
+³ RHTABGBF ³ RHTABRFB  TRBF   TRFB          ³ TABELA DE TRANSACOES DE ESTOQUES              ³
+³ RHTABGBG ³ RHTABRFC  TRBG   TRFC          ³ TABELA DE CLASSIF. AUXILIAR                   ³
+³ RHTABGBI ³ RHTABRFD  TRBI   TRFD          ³ TABELA DE EXAMES COMPLEMENTARES               ³
+³ RHTABGBJ ³ RHTABRFE  TRBJ   TRFE          ³ TABELA DE MEDICOS                             ³
+³ RHTABGBL ³ RHTABRFF  TRBL   TRFF          ³ GRUPO PROFISSIOGRAFICO                        ³
+³ RHTABGBP ³ RHTABRFG  TRBP   TRFG          ³ TABELA DE PARAMETROS DE EMISSAO DO ASO        ³
+
+        MODULO G - RELACOES TRABALHISTAS
+³ RHTABGBA ³ RHTABRGA  TRBA   TRGA          ³ TABELA DE TIPO DE RECLAMACAO                  ³
+³ RHTABGBB ³ RHTABRGB  TRBB   TRGB          ³ TABELA DE TIPO DE ENCERRAMENTO                ³
+³ RHTABGBC ³ RHTABRGC  TRBC   TRGC          ³ TABELA DE TRIBUNAIS                           ³
+³ RHTABGBD ³ RHTABRGD  TRBD   TRGD          ³ TABELA DE ADVOGADOS                           ³
+³ RHTABGBE ³ RHTABRGE  TRBE   TRGE          ³ TABELA DE TIPO DE SITUACAO                    ³

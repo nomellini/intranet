@@ -1,0 +1,654 @@
+<!-- #BeginEditable "php" --> <!-- #EndEditable --> 
+<html><!-- #BeginTemplate "/Templates/menu.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>C&aacute;lculo de Digito Verificador - CPF</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="/Templates/stilo.css" type="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+.style2 {font-size: 18px; font-weight: normal; font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF;}
+.style3 {color: #000099}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF">
+<div align="center"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td>
+        <table width="100%" border="0" bordercolorlight="#FFCC30" bordercolordark="#FFCC38" class="bgTabela" bordercolor="#FF0000">
+          <tr align="center" valign="middle"> 
+            <td width="17%"> <div align="center" class="style1">
+              <div align="left"><a href="http://www.datamace.com.br"><img src="../../imagens/novologo.jpg" width="155" height="41" border="0">
+                </a></div>
+            </div></td>
+            <td width="60%" valign="middle"> <p class="style1"><font face="Verdana, Arial, Helvetica, sans-serif" class="style2">Intranet 
+            DATAMACE</font></p></td>
+            <td width="23%" valign="bottom" align="right"><span class="style1"><font size="1"> <font class="unnamed1"> 
+              <script language="JavaScript">
+      var diasemana = new Array;
+      var mesescrito = new Array;   
+      diasemana[1] = "Segunda-feira";
+      diasemana[2] = "Terça-feira";
+      diasemana[3] = "Quarta-feira";
+      diasemana[4] = "Quinta-feira";
+      diasemana[5] = "Sexta-feira";
+      diasemana[6] = "Sábado";
+      diasemana[0] = "Domingo";
+     
+      mesescrito[0] = "Janeiro";
+      mesescrito[1] = "Fevereiro";
+      mesescrito[2] = "Março";
+      mesescrito[3] = "Abril";
+      mesescrito[4] = "Maio";
+      mesescrito[5] = "Junho";
+      mesescrito[6] = "Julho";
+      mesescrito[7] = "Agosto";
+      mesescrito[8] = "Setembro";
+      mesescrito[9] = "Outubro";
+      mesescrito[10] = "Novembro";
+      mesescrito[11] = "Dezembro";
+
+      var datahoje = new Date();
+      var dia;
+      var mes;
+      var ano;
+      var diaindex;
+
+      dia = datahoje.getDate();
+      mes = datahoje.getMonth();
+      ano = datahoje.getYear();
+      diaindex = datahoje.getDay();   
+     document.write (diasemana[diaindex] + '<br>' + dia + ' de ' + mesescrito[mes] + ' de ' + ano);
+
+              </script>
+              </font> </font></span></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" bordercolorlight="#FFCC30" bordercolordark="#FFCC30" class="bgTabela">
+          <tr>
+            <td width="77%" align="left" valign="top" bgcolor="#FFFFFF"><!-- #BeginEditable "Centro" --> 
+              <p>&nbsp;</p>
+              <div align="center"> 
+                <p><b><font size="3">Instru&ccedil;&otilde;es para o c&aacute;lculo 
+                  do DV para CPF</font></b></p>
+              </div>
+              <blockquote>
+<div align="center">
+                  <p align="left">C&aacute;lculo do algoritmo do CPF</p>
+                  <p align="left">O CPF &eacute; composto por onze algarismos, 
+                    onde os dois &uacute;ltimos s&atilde;o chamados de d&iacute;gitos 
+                    verificadores, ou seja, os dois &uacute;ltimos d&iacute;gitos 
+                    s&atilde;o criados a partir dos nove primeiros. O c&aacute;lculo 
+                    &eacute; feito em duas etapas utilizando o m&oacute;dulo 11.</p>
+                  <p align="left">Para exemplificar melhor, iremos calcular os 
+                    d&iacute;gitos verificadores de um CPF imagin&aacute;rio, 
+                    por exemplo, 385.383.188-XX.</p>
+                  <p align="left">Fazendo o c&aacute;lculo do primeiro d&iacute;gito 
+                    verificador</p>
+                  <p align="left">O primeiro d&iacute;gito &eacute; calculado 
+                    com a distribui&ccedil;&atilde;o dos d&iacute;gitos colocando-se 
+                    os valores 10, 9, 8, 7, 6, 5, 4, 3, 2 conforme a representa&ccedil;&atilde;o 
+                    abaixo:</p>
+                  <div align="left"></div>
+                  <table width="565" border="1">
+                    <tr> 
+                      <td width="192" height="37">N&uacute;meros do CPF</td>
+                      <td width="41" height="37"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">5</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">1</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td width="192" height="25">Valores definidos para c&aacute;lculo</td>
+                      <td width="41" height="25"> 
+                        <div align="center">10</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">9</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">7</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">6</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">5</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">4</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">2</div>
+                      </td>
+                    </tr>
+                  </table>
+                  <br>
+                  <table width="565" border="1">
+                    <tr> 
+                      <td width="192" height="37">N&uacute;meros do CPF</td>
+                      <td width="41" height="37"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">5</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">1</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="41" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td width="192" height="25">Valores definidos para c&aacute;lculo</td>
+                      <td width="41" height="25"> 
+                        <div align="center">10</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">9</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">7</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">6</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">5</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">4</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">2</div>
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td width="192" height="25">Totais</td>
+                      <td width="41" height="25"> 
+                        <div align="center">30</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">72</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">40</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">21</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">48</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">15</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">4</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">24</div>
+                      </td>
+                      <td width="41" height="25"> 
+                        <div align="center">16</div>
+                      </td>
+                    </tr>
+                  </table>
+                  <p align="left">Em seguida efetuaremos o somat&oacute;rio dos 
+                    resultados (30+72+40+21+48+15+4+24+16), o resultado obtido 
+                    (270) ser&aacute; divido por 11. Considere como quociente 
+                    apenas o valor inteiro, o resto da divis&atilde;o ser&aacute; 
+                    respons&aacute;vel pelo c&aacute;lculo do primeiro d&iacute;gito 
+                    verificador.</p>
+                  <p align="left">Vamos acompanhar: 270 dividido por 11 obtemos 
+                    24 de quociente e 6 de resto da divis&atilde;o. Caso o resto 
+                    da divis&atilde;o seja menor que 2, o nosso primeiro d&iacute;gito 
+                    verificador se torna 0 (zero), caso contr&aacute;rio subtrai-se 
+                    o valor obtido de 11, que &eacute; nosso caso, sendo assim 
+                    nosso d&iacute;gito verificador &eacute; 11-6, ou seja, 5 
+                    (cinco), j&aacute; temos parte do CPF, confira: 385.383.188-5X.</p>
+                  <p align="left"><b>Fazendo o c&aacute;lculo do segundo d&iacute;gito 
+                    verificador</b></p>
+                  <p align="left">Para o c&aacute;lculo do segundo d&iacute;gito 
+                    ser&aacute; usado o primeiro d&iacute;gito verificador j&aacute; 
+                    calculado. Montaremos uma tabela semelhante &agrave; anterior, 
+                    s&oacute; que desta vez usaremos na segunda linha os valores 
+                    11, 10, 9, 8, 7, 6, 5, 4, 3, 2, j&aacute; que estamos incorporando 
+                    mais um algarismo para esse c&aacute;lculo. Veja:</p>
+                  <table width="82%" border="1">
+                    <tr> 
+                      <td width="32%" height="37">N&uacute;meros do CPF</td>
+                      <td width="5%" height="37"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">5</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">1</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="5%" height="37">
+                        <div align="center">5</div>
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td width="32%" height="25">Valores definidos para c&aacute;lculo</td>
+                      <td width="5%" height="25"> 
+                        <div align="center">11</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">10</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">9</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">7</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">6</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">5</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">4</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="5%" height="25">
+                        <div align="center">2</div>
+                      </td>
+                    </tr>
+                  </table>
+                  <p>&nbsp;</p>
+                  <p align="left">Na pr&oacute;xima etapa faremos como na situa&ccedil;&atilde;o 
+                    do c&aacute;lculo do primeiro d&iacute;gito verificador. Multiplicaremos 
+                    os valores de cada coluna e efetuaremos o somat&oacute;rio 
+                    dos resultados obtidos:</p>
+                  <p align="left"> 33+80+45+24+56+18+5+32+24+10=327.</p>
+                  <table width="82%" border="1">
+                    <tr> 
+                      <td width="32%" height="37">N&uacute;meros do CPF</td>
+                      <td width="5%" height="37"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">5</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">1</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="5%" height="37"> 
+                        <div align="center">5</div>
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td width="32%" height="25">Valores definidos para c&aacute;lculo</td>
+                      <td width="5%" height="25"> 
+                        <div align="center">11</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">10</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">9</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">8</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">7</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">6</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">5</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">4</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">3</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">2</div>
+                      </td>
+                    </tr>
+                    <tr> 
+                      <td width="32%" height="25">Totais</td>
+                      <td width="5%" height="25"> 
+                        <div align="center">33</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">80</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">45</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">24</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">56</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">18</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">5</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">32</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">24</div>
+                      </td>
+                      <td width="5%" height="25"> 
+                        <div align="center">10</div>
+                      </td>
+                    </tr>
+                  </table>
+                  <p align="left">Agora pegamos esse valor e dividimos por 11. 
+                    Considere novamente apenas o valor inteiro do quociente, no 
+                    caso 29 e com o resto da divis&atilde;o, no nosso caso 8, 
+                    usaremos para o c&aacute;lculo do segundo d&iacute;gito verificador, 
+                    assim como na primeira parte.</p>
+                  <p align="left">Caso o valor do resto da divis&atilde;o seja 
+                    menor que 2, esse valor passa automaticamente a ser zero, 
+                    que n&atilde;o &eacute; o nosso caso, caso contr&aacute;rio 
+                    &eacute; necess&aacute;rio subtrair o valor obtido de 11 para 
+                    se obter o d&iacute;gito verificador, ent&atilde;o temos 11 
+                    - 8 = 3.</p>
+                  <p align="left">Neste caso chegamos ao final dos c&aacute;lculos 
+                    e descobrimos que os d&iacute;gitos verificadores do nosso 
+                    CPF hipot&eacute;tico s&atilde;o os n&uacute;meros 5 e 3, 
+                    portanto o CPF ficaria assim: 385.383.188-53<br>
+                  </p>
+                </div>
+                <p>Edson Milton Cabezaolias</p>
+              </blockquote>
+              <!-- #EndEditable --></td>
+            <td align="right" width="23%" valign="top" > 
+              <table width="100%" border="0" class="bgTabela">
+                <tr bgcolor="#FFCC33" valign="top"> 
+                  <td colspan="2" class="bgTabela"> 
+                    <table width="90%" border="0" align="center">
+                      <tr valign="top"> 
+                        <td valign="top"> 
+                          <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
+                            <tr valign="top"> 
+                              <td valign="top"> 
+                                <table width="100%" border="0" class="bgTabela">
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaRotulo" height="12"><a href="/corporativo/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Corporativo</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Home</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/a/"><font face="Verdana, Arial, Helvetica, sans-serif">S.A.D</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../corporativo/mapadosite/mapasite.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Mapa 
+                                     do site</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../ISO9001/Documentos/D04.PDF"><font face="Verdana, Arial, Helvetica, sans-serif">Organograma</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../assistencia/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Assist&ecirc;ncia 
+                                     M&eacute;dica</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/corporativo/dadosdaempresa.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Dados 
+                                     da Empresa</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/corporativo/aniversarios/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Anivers&aacute;rios</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../corporativo/feriados.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Pontes 
+                                     e Feriados</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/corporativo/fome.htm"><font face="Verdana, Arial, Helvetica, sans-serif">T&ocirc; 
+                                     com fome</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="/servicosgerais/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Manuten&ccedil;&atilde;o</font></a>                                    </td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../corporativo/escolaridade.php"><font face="Verdana, Arial, Helvetica, sans-serif">Escolaridade</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../representantes/index.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Representantes</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../suporte/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Suporte</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../corporativo/Inforvirus.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Informa&ccedil;&otilde;es 
+                                     sobre v&iacute;rus</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../colaboradores/index.htm">Colaboradores</a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../../saude/" target="_blank">Sa&uacute;de e Qualidade de vida</a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../../eventos.htm">Eventos Datamace</a></td>
+                                 </tr>
+                               </table>
+                              </td>
+                            </tr>
+                          </table>
+                          <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
+                            <tr valign="top"> 
+                              <td> 
+                                <table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td height="16" bgcolor="#CC9900" class="TabelaRotulo"><a href="../../estrutura/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Estrutura</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao" height="9"><a href="/estrutura/rede.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Rede</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../estrutura/micros.php"><font face="Verdana, Arial, Helvetica, sans-serif">n&ordm; 
+                                      micros</font></a></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                          <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
+                           <tr valign="top"> 
+                             <td> <table width="100%" border="0" class="bgTabela">
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaRotulo" valign="top"><a href="../../Apoio/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Apoio</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao" valign="top"><a href="../../Apoio/emails.php"><font face="Verdana, Arial, Helvetica, sans-serif">E-mails</font></a></td>
+                                 </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao" valign="top"><a href="../../Apoio/links.html"><font face="Verdana, Arial, Helvetica, sans-serif">Links</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" valign="top"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="/corporativo/ramais.php">Ramais</a></font></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" valign="top"><a href="/corporativo/telefones2.php"><font face="Verdana, Arial, Helvetica, sans-serif">Telefones 
+                                    &uacute;teis</font></a></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                            <tr valign="top"> 
+                              <td><table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaRotulo"><a href="../../entretenimento/index.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Entretenimento</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../entretenimento/filmes/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Videoteca</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../entretenimento/livros/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Biblioteca</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="/entretenimento/enquetes.php"><font face="Verdana, Arial, Helvetica, sans-serif">Enquetes</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../entretenimento/mural.htm">Mural 
+                                      de an&uacute;ncios</a></td>
+                                  </tr>
+                                </table>
+                                <table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaRotulo" valign="top"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="../../treinamento/treinamento.php">Treinamento</a></font></td>
+                                  </tr>
+                                  
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" valign="top"><a href="../../treinamento">Portal</a></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                            <tr valign="top"> 
+                              <td><table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaRotulo"><a href="../../Intersystem/index.htm">Intersystem</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../Intersystem/compromisso.htm">Compromisso</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../Intersystem/dadosintersystem.htm">Dados 
+                                      da empresa</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../Intersystem/missao.htm">Miss&atilde;o</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../Intersystem/servicosclientes.htm">Servi&ccedil;os</a></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                          </table></td>
+
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <a href="javascript:history.go(-1)"><img src="/imagens/back_seta.jpg" width="13" height="21" border="0">voltar</a> 
+        <br>
+        <hr align="center">
+        <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#999999"> 
+          Datamace Inform&aacute;tica LTDA - Todos os diretos reservados</font></p>
+      </td>
+    </tr>
+  </table>
+</div>
+<p align="center">&nbsp;</p>
+</body>
+<!-- #EndTemplate --></html>
+

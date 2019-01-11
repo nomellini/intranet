@@ -1,0 +1,477 @@
+<!-- #BeginEditable "php" --> <!-- #EndEditable --> 
+<html><!-- #BeginTemplate "/Templates/menu.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>File Status</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="/Templates/stilo.css" type="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+.style2 {font-size: 18px; font-weight: normal; font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF;}
+.style3 {color: #000099}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF">
+<div align="center"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td>
+        <table width="100%" border="0" bordercolorlight="#FFCC30" bordercolordark="#FFCC38" class="bgTabela" bordercolor="#FF0000">
+          <tr align="center" valign="middle"> 
+            <td width="17%"> <div align="center" class="style1">
+              <div align="left"><a href="http://www.datamace.com.br"><img src="../../imagens/novologo.jpg" width="155" height="41" border="0">
+                </a></div>
+            </div></td>
+            <td width="60%" valign="middle"> <p class="style1"><font face="Verdana, Arial, Helvetica, sans-serif" class="style2">Intranet 
+            DATAMACE</font></p></td>
+            <td width="23%" valign="bottom" align="right"><span class="style1"><font size="1"> <font class="unnamed1"> 
+              <script language="JavaScript">
+      var diasemana = new Array;
+      var mesescrito = new Array;   
+      diasemana[1] = "Segunda-feira";
+      diasemana[2] = "Terça-feira";
+      diasemana[3] = "Quarta-feira";
+      diasemana[4] = "Quinta-feira";
+      diasemana[5] = "Sexta-feira";
+      diasemana[6] = "Sábado";
+      diasemana[0] = "Domingo";
+     
+      mesescrito[0] = "Janeiro";
+      mesescrito[1] = "Fevereiro";
+      mesescrito[2] = "Março";
+      mesescrito[3] = "Abril";
+      mesescrito[4] = "Maio";
+      mesescrito[5] = "Junho";
+      mesescrito[6] = "Julho";
+      mesescrito[7] = "Agosto";
+      mesescrito[8] = "Setembro";
+      mesescrito[9] = "Outubro";
+      mesescrito[10] = "Novembro";
+      mesescrito[11] = "Dezembro";
+
+      var datahoje = new Date();
+      var dia;
+      var mes;
+      var ano;
+      var diaindex;
+
+      dia = datahoje.getDate();
+      mes = datahoje.getMonth();
+      ano = datahoje.getYear();
+      diaindex = datahoje.getDay();   
+     document.write (diasemana[diaindex] + '<br>' + dia + ' de ' + mesescrito[mes] + ' de ' + ano);
+
+              </script>
+              </font> </font></span></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" bordercolorlight="#FFCC30" bordercolordark="#FFCC30" class="bgTabela">
+          <tr>
+            <td width="77%" align="left" valign="top" bgcolor="#FFFFFF"><!-- #BeginEditable "Centro" --> 
+              <p>&nbsp;</p>
+              <p class="Titulo" align="center"><font size="2"><a href="index.htm">Cobol</a> 
+                - Tabela de FILE STATUS</font></p>
+              <p><font size="2">Code Meaning<br>
+                <br>
+                </font><b><font size="2">00</font></b><font size="2"> Successful 
+                completion<br>
+                <br>
+                <b>02</b> Indexed files only. One of two possibilities: For a 
+                READ statement, the key value for the current key is equal to 
+                the value of that same key in the next record in the current key 
+                of reference. For a WRITE or REWRITE statement, the record just 
+                written created a duplicate key value for at least one alternate 
+                record key for which duplicates are allowed.<br>
+                <br>
+                <b>04</b> The length of the record being processed does not conform 
+                to the fixed file attributes for that file.<br>
+                <br>
+                <b>05</b> The referenced optional file is not present at the time 
+                the OPEN statement is executed.<br>
+                <br>
+                <b>07</b> Sequential files only. For an OPEN or CLOSE statement 
+                with the REEL/UNIT phrase the referenced file is a non-reel/unit 
+                medium.<br>
+                <br>
+                <b>10</b> No next logical record exists. You have reached the 
+                end of the file.<br>
+                <br>
+                <b>14</b> Relative files only. The number of significant digits 
+                in the relative record number is larger than the size of the relative 
+                key data item described for that file.<br>
+                <br>
+                <b>21</b> Sequentially accessed files only. Indicates a sequence 
+                error. The ascending key requirements of successive record key 
+                values has been violated, or, the prime record key value has been 
+                changed by a COBOL program between successful execution of a READ 
+                statement and execution of the next REWRITE statement for that 
+                file.<br>
+                <br>
+                <b><!-- #BeginLibraryItem "/Library/Untitled.lbi" --><font size="2">22</font><!-- #EndLibraryItem --></b> 
+                Indexed and relative files only. Indicates a duplicate key condition. 
+                Attempt has been made to store a record that would create a duplicate 
+                key in the indexed or relative file OR a duplicate alternate record 
+                key that does not allow duplicates.<br>
+                <br>
+                <b>23</b> Indicates no record found. An attempt has been made 
+                to access a record, identified by a key, and that record does 
+                not exist in the file. Alternatively a START or READ operation 
+                has been tried on an optional input file that is not present.<br>
+                <br>
+                <b>24</b> Relative and indexed files only. Indicates a boundary 
+                violation arising from one of the following conditions: an attempt 
+                is made to write beyond the externally defined boundaries of a 
+                file; a sequential WRITE operation has been tried on a relative 
+                file, but the number of significant digits in the relative record 
+                number is larger than the size of the relative key data item described 
+                for the file.<br>
+                <br>
+                <b>30</b> The I/O statement was unsuccessfully executed as the 
+                result of a boundary violation for a sequential file or as the 
+                result of an I/O error, such as a data check parity error, or 
+                a transmission error.<br>
+                <br>
+                <b>34</b> The I/O statement failed because of a boundary violation. 
+                This condition indicates that an attempt has been made to write 
+                beyond the externally defined boundaries of a sequential file.<br>
+                <br>
+                <b>35</b> An OPEN operation with the I-O, INPUT, or EXTEND phrases 
+                has been tried on a non-OPTIONAL file that is not present.<br>
+                <br>
+                <b>37</b> An OPEN operation has been tried on a file which does 
+                not support the open mode specified in the OPEN statement.<br>
+                <br>
+                <b>38</b> An OPEN operation has been tried on a file previously 
+                closed with a lock.<br>
+                <br>
+                <b>39</b> A conflict has been detected between the fixed file 
+                attributes and the attributes specified for that file in the program.<br>
+                <br>
+                <b>41</b> An OPEN operation has been tried on file already opened.<br>
+                <br>
+                <b>42</b> A CLOSE operation has been tried on file already closed.<br>
+                <br>
+                <b>43</b> Files in sequential access mode. The last I/O statement 
+                executed for the file, before the execution of a DELETE or REWRITE 
+                statement, was not a READ statement.<br>
+                <br>
+                <b>44</b> A boundary violation exists. Possible violations are:- 
+                An attempt has been made to WRITE or REWRITE a record that is 
+                larger than the largest, or smaller than the smallest record allowed 
+                by the RECORD IS VARYING clause of the associated file.- An attempt 
+                has been made to REWRITE a record to a file, and the record is 
+                not the same size as the record being replaced.<br>
+                <br>
+                <b>46</b> A sequential READ operation has been tried on a file 
+                open in the INPUT or I-O mode but no valid next record has been 
+                established.<br>
+                <br>
+                <b>47</b> A READ or START operation has been tried on a file not 
+                opened INPUT or I-O.<br>
+                <br>
+                <b>48</b> A WRITE operation has been tried on a file not opened 
+                in the OUTPUT, I-O, or EXTEND mode, or on a file open I-O in the 
+                sequential access mode.<br>
+                <br>
+                <b>49</b> A DELETE or REWRITE operation has been tried on a file 
+                that is not opened I-O.<br>
+                </font></p>
+              <p align="center"><br>
+                <font size="2">When using ANSI'74 or ANSI'85 file status codes, 
+                the run-time system returns extended file status codes if the 
+                extended file status is more specific.<br>
+                Extended file status codes are of the form:<br>
+                <br>
+                <b>9/nnn</b><br>
+                <br>
+                where nnn is one of the following values:</font></p>
+              <p><font size="2">001 Insufficient buffer space. Could also indicate 
+                an out of memory situation.<br>
+                002 File not open when access tried.<br>
+                003 Serial mode error.<br>
+                004 Illegal file name.<br>
+                005 Illegal device specification.<br>
+                006 Attempt to write to a file opened for input.<br>
+                007 Disk space exhausted.<br>
+                008 Attempt to input from a file opened for output.<br>
+                009 No room in directory (also, directory does not exist).<br>
+                010 File name not supplied.<br>
+                012 Attempt to open a file which is already open.<br>
+                013 File not found.<br>
+                014 Too many files open simultaneously.<br>
+                015 Too many indexed files open.<br>
+                016 Too many device files open.<br>
+                017 Record error: probably zero length.<br>
+                018 Read part record error: EOF before EOR or file open in wrong 
+                mode.<br>
+                019 Rewrite error: open mode or access mode wrong.<br>
+                020 Device or resource busy.<br>
+                021 File is a directory.<br>
+                022 Illegal or impossible access mode for OPEN.<br>
+                023 Illegal or impossible access mode for CLOSE.<br>
+                024 Disk I/O error.<br>
+                025 Operating system data error.<br>
+                026 Block I/O error.<br>
+                027 Device not available.<br>
+                028 No space on device.<br>
+                029 Attempt to delete open file.<br>
+                030 File system is read only.<br>
+                031 Not owner of file.<br>
+                032 Too many indexed files, or no such process.<br>
+                033 Physical I/O error.<br>
+                034 Incorrect mode or file descriptor.<br>
+                035 Attempt to access a file with incorrect permission.<br>
+                036 File already exists.<br>
+                037 File access denied.<br>
+                038 Disk not compatible.<br>
+                039 File not compatible.<br>
+                040 Language initialization not set up correctly.<br>
+                041 Corrupt index file.<br>
+                042 Attempt to write on broken pipe.<br>
+                043 File information missing for indexed file.<br>
+                045 Attempt to open an NLS file using an incompatible program.<br>
+                047 Indexed structure overflow. (Could indicate that you have 
+                reached the maximum number of duplicate keys.)<br>
+                065 File locked.<br>
+                066 Attempt to add duplicate record key to indexed file.<br>
+                067 Indexed file not open.<br>
+                068 Record locked.<br>
+                069 Illegal argument to ISAM module.<br>
+                070 Too many indexed files open.<br>
+                071 Bad indexed file format.<br>
+                072 End of indexed file.<br>
+                073 No record found in indexed file.<br>
+                074 No current record in indexed file.<br>
+                075 Indexed data file name too long.<br>
+                077 Internal ISAM module failure.<br>
+                078 Illegal key description in indexed file.<br>
+                081 Key already exists in indexed file.<br>
+                100 Invalid file operation.<br>
+                101 Illegal operation on an indexed file.<br>
+                102 Sequential file with non-integral number of records.<br>
+                104 Null file name used in a file operation.<br>
+                105 Memory allocation error.<br>
+                129 Attempt to access record zero of relative file.<br>
+                135 File must not exist.<br>
+                138 File closed with lock - cannot be opened.<br>
+                139 Record length or key data inconsistency.<br>
+                141 File already open - cannot be opened.<br>
+                142 File not open - cannot be closed.<br>
+                143 REWRITE/DELETE in sequential mode not preceded by successful 
+                READ.<br>
+                146 No current record defined for sequential read.<br>
+                147 Wrong open mode or access mode for READ/START.<br>
+                148 Wrong open mode or access mode for WRITE.<br>
+                149 Wrong open mode or access mode for REWRITE/ DELETE.<br>
+                150 Program abandoned at user request.<br>
+                151 Random read on sequential file.<br>
+                152 REWRITE on file not opened I-O.<br>
+                158 Attempt to REWRITE to a line-sequential file.<br>
+                159 Malformed line sequential-file.<br>
+                161 File header not found.<br>
+                173 Called program not found.<br>
+                180 End-of-file marker error.<br>
+                182 Console input or console output open in wrong direction.<br>
+                183 Attempt to open line sequential file for I-O.<br>
+                188 File name too large.<br>
+                193 Error in variable length count.<br>
+                194 File size too large.<br>
+                195 DELETE/REWRITE not preceded by a READ.<br>
+                196 Record number too large in relative or indexed file.<br>
+                210 File is closed with lock.<br>
+                213 Too many locks.<br>
+                218 Malformed MULTIPLE REEL/UNIT file.<br>
+                219 Operating system shared file limit exceeded. </font></p>
+              <p><font size="2">Copyright (C) 2000 MERANT International Ltd. All 
+                rights reserved.</font></p>
+                 <!-- #EndEditable --></td>
+            <td align="right" width="23%" valign="top" > 
+              <table width="100%" border="0" class="bgTabela">
+                <tr bgcolor="#FFCC33" valign="top"> 
+                  <td colspan="2" class="bgTabela"> 
+                    <table width="90%" border="0" align="center">
+                      <tr valign="top"> 
+                        <td valign="top"> 
+                          <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
+                            <tr valign="top"> 
+                              <td valign="top"> 
+                                <table width="100%" border="0" class="bgTabela">
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaRotulo" height="12"><a href="/corporativo/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Corporativo</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Home</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/a/"><font face="Verdana, Arial, Helvetica, sans-serif">S.A.D</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../corporativo/mapadosite/mapasite.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Mapa 
+                                     do site</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../ISO9001/Documentos/D04.PDF"><font face="Verdana, Arial, Helvetica, sans-serif">Organograma</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../assistencia/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Assist&ecirc;ncia 
+                                     M&eacute;dica</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/corporativo/dadosdaempresa.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Dados 
+                                     da Empresa</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/corporativo/aniversarios/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Anivers&aacute;rios</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../corporativo/feriados.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Pontes 
+                                     e Feriados</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/corporativo/fome.htm"><font face="Verdana, Arial, Helvetica, sans-serif">T&ocirc; 
+                                     com fome</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="/servicosgerais/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Manuten&ccedil;&atilde;o</font></a>                                    </td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../corporativo/escolaridade.php"><font face="Verdana, Arial, Helvetica, sans-serif">Escolaridade</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../representantes/index.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Representantes</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../suporte/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Suporte</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../corporativo/Inforvirus.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Informa&ccedil;&otilde;es 
+                                     sobre v&iacute;rus</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../colaboradores/index.htm">Colaboradores</a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../../saude/" target="_blank">Sa&uacute;de e Qualidade de vida</a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../../eventos.htm">Eventos Datamace</a></td>
+                                 </tr>
+                               </table>
+                              </td>
+                            </tr>
+                          </table>
+                          <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
+                            <tr valign="top"> 
+                              <td> 
+                                <table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td height="16" bgcolor="#CC9900" class="TabelaRotulo"><a href="../../estrutura/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Estrutura</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao" height="9"><a href="/estrutura/rede.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Rede</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../estrutura/micros.php"><font face="Verdana, Arial, Helvetica, sans-serif">n&ordm; 
+                                      micros</font></a></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                          <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
+                           <tr valign="top"> 
+                             <td> <table width="100%" border="0" class="bgTabela">
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaRotulo" valign="top"><a href="../../Apoio/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Apoio</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao" valign="top"><a href="../../Apoio/emails.php"><font face="Verdana, Arial, Helvetica, sans-serif">E-mails</font></a></td>
+                                 </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao" valign="top"><a href="../../Apoio/links.html"><font face="Verdana, Arial, Helvetica, sans-serif">Links</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" valign="top"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="/corporativo/ramais.php">Ramais</a></font></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" valign="top"><a href="/corporativo/telefones2.php"><font face="Verdana, Arial, Helvetica, sans-serif">Telefones 
+                                    &uacute;teis</font></a></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                            <tr valign="top"> 
+                              <td><table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaRotulo"><a href="../../entretenimento/index.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Entretenimento</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../entretenimento/filmes/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Videoteca</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../entretenimento/livros/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Biblioteca</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="/entretenimento/enquetes.php"><font face="Verdana, Arial, Helvetica, sans-serif">Enquetes</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../entretenimento/mural.htm">Mural 
+                                      de an&uacute;ncios</a></td>
+                                  </tr>
+                                </table>
+                                <table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaRotulo" valign="top"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="../../treinamento/treinamento.php">Treinamento</a></font></td>
+                                  </tr>
+                                  
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" valign="top"><a href="../../treinamento">Portal</a></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                            <tr valign="top"> 
+                              <td><table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaRotulo"><a href="../../Intersystem/index.htm">Intersystem</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../Intersystem/compromisso.htm">Compromisso</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../Intersystem/dadosintersystem.htm">Dados 
+                                      da empresa</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../Intersystem/missao.htm">Miss&atilde;o</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../Intersystem/servicosclientes.htm">Servi&ccedil;os</a></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                          </table></td>
+
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <a href="javascript:history.go(-1)"><img src="/imagens/back_seta.jpg" width="13" height="21" border="0">voltar</a> 
+        <br>
+        <hr align="center">
+        <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#999999"> 
+          Datamace Inform&aacute;tica LTDA - Todos os diretos reservados</font></p>
+      </td>
+    </tr>
+  </table>
+</div>
+<p align="center">&nbsp;</p>
+</body>
+<!-- #EndTemplate --></html>
+

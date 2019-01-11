@@ -1,11 +1,10 @@
 <?
-session_start();
+require_once("cabeca.php");
+require_once("scripts/cores.php");
 
-require("cabeca.php");
-require("scripts/cores.php");
 
-define(ORDEM_MIN, -5);
-define(ORDEM_MAX, 99999);
+define("ORDEM_MIN", -5);
+define("ORDEM_MAX", 99999);
 
 if  ($action == "novaOrdem")
 {
@@ -477,11 +476,8 @@ a.subbar {
                 <tr valign="top">
 
                   <td width="33%">
-<?
-	if ($_SESSION["Ic_Release"])	{
-?>
 
-									<p><a href="/a/versao/">
+	<p><a href="/a/versao/">
                       <?  $i_msg = "Liberação de Release";
 			    if ($i_conta < 0) { echo "<font color=#ff0000 >$i_msg: " . -$i_conta .  " release(s) em andamento</font>"; } else {echo $i_msg;}
 
@@ -491,10 +487,6 @@ a.subbar {
                       tarefa(s)</font>
                       <? } ?>
                       </a> <br>
-
-<?
-	}
-?>
 
                     <? if($manut) {	?>
                     <a href="manut/index.php">Manuten&ccedil;&atilde;o de tabelas</a><br>

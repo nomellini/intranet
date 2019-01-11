@@ -1,0 +1,854 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³         P R O G R A M A S     -     G E S T A O     I N T E G R A D A     D E     P E S S O A L          ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ PROGR. ³ DESCRICAO                                                                                       ³
+ÃÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPMENU ³ MENU PRINCIPAL DO SISTEMA                                       9.00                            ³
+³        ³                                                                                                 ³
+³ GPA01A ³ TABELA DE PREVIDENCIA SOCIAL                                     OK                             ³
+³ GPA01B ³ TABELA DE I.R.R.F.                                               OK                             ³
+³ GPA01C ³ TABELA DE EVENTOS                                                OK                             ³
+³ GPA01D ³ TABELA DE BANCOS                                                 OK                             ³
+³ GPA01E ³ TABELA DE SINDICATOS                                             OK                             ³
+³ GPA01F ³ TABELA DE PARAMETROS                                             OK                             ³
+³ GPA01G ³ TABELA DE C.DE CUSTOS                                            OK                             ³
+³ GPA01H ³ TABELA DE DIRETORIAS                                             OK                             ³
+³ GPA01I ³ TABELA DE DEPARTAMENTOS                                          OK                             ³
+³ GPA01J ³ TABELA DE SETORES                                                OK                             ³
+³ GPA01K ³ TABELA DE SECOES                                                 OK                             ³
+³ GPA01L ³ TABELA DE HORAS PADRAO                                           OK                             ³
+³ GPA01M ³ TABELA DE HORARIOS                                               OK                             ³
+³ GPA01N ³ TABELA DE MENSAGENS                                              OK                             ³
+³ GPA01O ³ TABELA DE ANUIDADE                                               OK                             ³
+³ GPA01P ³ TABELA DE SEGURO DE VIDA                                         OK                             ³
+³ GPA01Q ³ TABELA DE CESTA BASICA                                           OK                             ³
+³ GPA01R ³ TABELA DE REFEICOES                                              OK                             ³
+³ GPA01S ³ TABELA DE ASSISTENCIA MEDICA                                     OK                             ³
+³ GPA01T ³ TABELA DE USUARIO                                                OK                             ³
+³ GPA01U ³ TABELA DE INDICES FINANCEIROS                                    OK                             ³
+³ GPA01V ³ TABELA DE AGREGADOS                                              OK                             ³
+³ GPA02A ³ CADASTRO DE FUNCIONARIOS                                         OK                             ³
+³ GPA03A ³ ALTERACOES GLOBAIS                                                                              ³
+³ GPA04A ³ OCORRENCIAS                                                      OK                             ³
+³ GPA05A ³ FICHA DE REGISTRO                                                                               ³
+³ GPA05B ³ IMPRESSAO DA FICHA DE REGISTRO VIA MODELO                                                       ³
+³ GPA06A ³ TRANSFERENCIAS                                                                                  ³
+³ GPA07A ³ AFASTAMENTOS                                                     OK                             ³
+³ GPA08A ³ EVENTOS AUTOMATICOS                                              OK                             ³
+³ GPA09A ³ CADASTRO DE EMPRESAS                                             OK                             ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          DEPENDENTES                                                                                     ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPA10A ³ CADASTRO DE DEPENDENTES                                          OK                             ³
+³ GPA10B ³ RELATORIO DE DEPENDENTES                                         OK                             ³
+³ GPA10C ³ CARTAS CARTEIRAS DE VACINACAO                                    OK                             ³
+³ GPA10D ³ ETIQUETAS                                                        OK                             ³
+³ GPA10E ³ DECLARACAO DE ENCARGOS\TERMO DE RESPONSABILIDADE                 OK                             ³
+³ GPA10F ³ CONTROLE POR FAIXA ETARIA E TABELA DE BRINDES                    OK                             ³
+³ GPA10G ³ FICHA DE SALARIO FAMILIA                                         OK                             ³
+³ GPA10H ³ CARTAO DE DEPENDENTES PARA ASSISTENCIA MEDICA                    OK                             ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          UTILITARIOS                                                                                     ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPA11A ³ RECUPERACAO DE ARQUIVOS                                                                         ³
+³ GPA11B ³ ELIMINACAO DE REGISTROS                                                                         ³
+³ GPA11C ³                                                                                                 ³
+³ GPA11D ³                                                                                                 ³
+³ GPA11E ³ LANCAMENTOS                 ELIMINAR                                                            ³
+³ GPA11F ³ FICHA FINANCEIRA            ELIMINAR                                                            ³
+³ GPA11G ³ CONFIGURACAO DE PROGRAMAS                                                                       ³
+³ GPA11H ³ AUDITORIA (LOG)                                                                                 ³
+³ GPA11I ³ ACERTA ACUMULADOS ANUAIS                                                                        ³
+³ GPA11J ³ IMPORTACAO DE DADOS DA VERSAO 7 (CADFUN E F.FINANC.)                                            ³
+³ GPA11L ³ TROCA O NUMERO DOS EVENTOS NA FICHA FINANCEIRA                                                  ³
+³ GPA11M ³ PROGRAMA DE ATUALIZACAO DA VERSAO                                                               ³
+³ GPA11N ³ PROGRAMA DE CORRECAO DE MEDIAS DE FERIAS                                                        ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          PENSIONISTAS                                                                                    ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPA12A ³ CADASTRO DE PENSIONISTAS                                         OK                             ³
+³ GPA12B ³ RECIBO PENSIONISTAS                                              OK                             ³
+³ GPA12C ³ RELACAO BANCARIA                                                 OK                             ³
+³ GPA12D ³ INFORME DE RENDIMENTOS                                           OK                             ³
+³ GPA12F ³ DOC PARA PENSIONISTAS                                            OK                             ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          IMPORTACAO                                                                                      ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPA13A ³ IMPORTACAO DE DADOS CADASTRAIS                                                                  ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          RELATORIOS                                                                                      ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPA14A ³ FUNCIONARIOS                                                                                    ³
+³ GPA14B ³ ADMITIDOS E DEMITIDOS                                                                           ³
+³ GPA14C ³ MANEQUINS                                                                                       ³
+³ GPA14D ³ ETIQUETA DE PONTO                                                                               ³
+³ GPA14E ³ PLANILHAS                                                                                       ³
+³ GPA14F ³ EDITOR DE TEXTOS                                                                                ³
+³ GPA14G ³ PROCESSADOR DE TEXTOS                                                                           ³
+³ GPA14H ³ DOCUMENTOS DE ADMISSAO                                                                          ³
+³ GPA14I ³ EXPERIENCIA                                                                                     ³
+³ GPA14J ³ EXAME MEDICO MENSAL                                                                             ³
+³ GPA14K ³ ANIVERSARIANTES                                                                                 ³
+³ GPA14L ³ TRANSFERENCIAS                                                                                  ³
+³ GPA14M ³ ETIQUETA DE ENDERECO                                                                            ³
+³ GPA14N ³ AUTORIZACAO DE COMPRAS                                                                          ³
+³ GPA14O ³ ALTERACAO DE ENDERECO                                                                           ³
+³ GPA14P ³ QUADRO DE HORARIOS                                                                              ³
+³ GPA14Q ³ REL. DE AFASTADOS NO ANO                                                                        ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          ADIANTAMENTO SALARIAL                                                                           ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPB01A ³ LANCAMENTO                                                       OK                             ³
+³ GPB02A ³ PROCESSAMENTO                                                    OK                             ³
+³ GPB03A ³ RELATORIO DE ANALISE                                             OK                             ³
+³ GPB04A ³ RECIBO                                                                                          ³
+³ GPB05A ³ RELACAO BANCARIA                                                                                ³
+³ GPB06A ³ RELACAO DE TROCO                                                                                ³
+³ GPB07A ³ CHEQUE                                                                                          ³
+³ GPB08A ³ DISQUETE                                                                                        ³
+³ GPB09A ³ RELATORIO DE I.R.R.F.                                                                           ³
+³ GPB10A ³ IMPORTACAO                                                                                      ³
+³ GPB11A ³ D.A.R.F.  DARF                                                                                  ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          PAGAMENTO MENSAL                                                                                ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPC01A ³ LANCAMENTO MANUAL                                                OK                             ³
+³ GPC02A ³ IMPORTACAO DE LANCAMENTO                                                                        ³
+³ GPC03A ³ LANCAMENTO RETROATIVO                                                                           ³
+³ GPC04A ³ LANCAMENTO CONDICIONADO                                                                         ³
+³ GPC05A ³ PROCESSAMENTO                                                    OK                             ³
+³ GPC06A ³ RELATORIO DE ANALISE DE VENCIMENTOS E DESCONTOS                  OK                             ³
+³        ³ RECIBO                                                                                          ³
+³        ³ RELACAO BANCARIA                                                                                ³
+³        ³ RELACAO DE TROCO                                                                                ³
+³        ³ CHEQUE                                                                                          ³
+³        ³ DISQUETE                                                                                        ³
+³ GPC12A ³ RECIBO EM TELA                                                   OK                             ³
+³ GPC13A ³ RELATORIO COMPARATIVO DE VENCIMENTOS                                                            ³
+³ GPC14A ³ LANCAMENTO DE ORIGENS                                                                           ³
+³ GPC14B ³ IMPORTACAO DE ORIGENS                                                                           ³
+³ GPC14C ³ RELATORIO DE ORIGENS                                                                            ³
+³ GPC14D ³ PROCESSAMENTO DA MAO DE OBRA                                                                    ³
+³ GPC14E ³ RELATORIO DE MAO DE OBRA                                                                        ³
+³ GPC14F ³ RELATORIO DE PREVIDENCIA                                                                        ³
+³ GPC14G ³ RELATORIO DE FGTS                                                                               ³
+³ GPC51A ³ LANCAMENTO MANUAL                                                                               ³
+³ GPC52A ³ IMPORTACAO DE LANCAMENTO                                                                        ³
+³ GPC53A ³ PROCESSAMENTO                                                                                   ³
+³ GPC54A ³ RELATORIO DE ANALISE                                                                            ³
+³ GPC58A ³ FOLHA SEMANAL                                                                                   ³
+³ GPC59A ³ FECHAMENTO SEMANAL                                                                              ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          PROCESSAMENTO MENSAL                                                                            ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPD01A ³ RELATORIO DE FOLHA DE PAGAMENTO                                                                 ³
+³ GPD02A ³ RELATORIO DE 14 COLUNAS DA FOLHA DE PAGAMENTO                                                   ³
+³ GPD03A ³ RELATORIO CONSOLIDADO                                                                           ³
+³ GPD04A ³ RELATORIO GENERICO DE EVENTOS                                                                   ³
+³ GPD05A ³ RELATORIO DE PREVIDENCIA SOCIAL                                                                 ³
+³ GPD06A ³ RELATORIO DE I.R.R.F.                                                                           ³
+³ GPD07A ³ CADASTRO DE CONSOLIDADOS     ELIMINAR                                                           ³
+³ GPD08A ³ FECHAMENTO                                                                                      ³
+³ GPD09A ³ RELATORIO DE FICHA FINANCEIRA                                                                   ³
+³ GPD10A ³ MANUTENCAO DA FICHA FINANCEIRA                                                                  ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          F.G.T.S.                                                                                        ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPD12A ³ LANCAMENTO FGTS                                                                                 ³
+³ GPD12E ³ RECIBO DO FGTS                                                                                  ³
+³ GPD12F ³ MANUTENCAO DE ARQUIVOS DE TRANSACOES                                                            ³
+³ GPD12G ³ PROCESSAMENTO DE TRANSACOES                                                                     ³
+³ GPD12H ³ EXTRATO DO FGTS                                                                                 ³
+³ GPD12I ³ IMPORTACAO DO FGTS                                                                              ³
+³ GPD12J ³ RELATORIO DE MOVIMENTACAO DO FGTS                                                               ³
+³ GPD12K ³ EMISSAO DO DOCUMENTO DE CADASTRO DO TRABALHADOR                                                 ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          G.R.P.S. / G.F.I.P / CONTR.INDIVIDUAL                                                           ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPD13A ³ MANUTENCAO E CONSULTA DA TABELA DA G.R.P.S. E DA G.F.I.P.                                       ³
+³ GPD13B ³ MANUTENCAO E CONSULTA DA TABELA DE TOMADORES DE SERVICO                                         ³
+³ GPD13C ³ PROCESSAMENTO DA GRPS E DA GFIP                                                                 ³
+³ GPD13D ³ TELA DE CONSULTA DA G.R.P.S.                                                                    ³
+³ GPD13E ³ GUIA DA PREVIDENCIA SOCIAL (G.P.S.)                                                             ³
+³ GPD13F ³ SEFIP - SISTEMA EMPRESA DE RECOLHIMENTO DO FGTS E PREV.SOCIAL                                   ³
+³ GPD13G ³ GFIP EM PAPEL                                                                                   ³
+³ GPD13H ³ EMISSAO DE CARNE DE CONTR.INDIVIDUAL (INSS)                                                     ³
+³ GPD13I ³ GUIA DA PREVIDENCIA SOCIAL (G.R.P.S. - ANTIGO)                                                  ³
+³ GPD13J ³ TELA CONSULTA/EXCLUSAO DE VALORES NAO RECOLHIDOS DE PREVIDENCIA                                 ³
+³ GPD13K ³ REL.DA TABELA DA G.R.P.S. E DA G.F.I.P. POR TOMADOR                                             ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          FERIAS                                                                                          ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPE01A ³ ATUALIZACAO DE DADOS DE FERIAS                                   OK                             ³
+³ GPE02A ³ LANCAMENTO DE FERIAS                                             OK                             ³
+³ GPE03A ³ DEMONSTRATIVO DE FERIAS                                          OK                             ³
+³        ³ RECIBO DE FERIAS                                                                                ³
+³ GPE05A ³ DOCUMENTOS DE FERIAS                                                                            ³
+³        ³ RELACAO BANCARIA                                                                                ³
+³        ³ CHEQUE DE FERIAS                                                                                ³
+³        ³ DISQUETE DE FERIAS                                                                              ³
+³ GPE09A ³ RELATORIO DE IRRF DE FERIAS                                                                     ³
+³ GPE09B ³ RELATORIO DE FERIAS                                                                             ³
+³ GPE09C ³ RELATORIO DE PROGRAMACAO                                                                        ³
+³ GPE09D ³ RELATORIO DE ANALISE                                                                            ³
+³ GPE09F ³ ETIQUETA DE ALTERACAO DE FERIAS                                                                 ³
+³ GPE10A ³ PROGRAMACAO INDIVIDUAL                                                                          ³
+³ GPE10B ³ PROGRAMACAO COLETIVA                                                                            ³
+³ GPE12A ³ EXPORTACAO DE VALORES DE FERIAS NO LAY-OUT DE LANCTOS                                           ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          CARGOS E SALARIOS                                                                               ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPF01A ³ TABELA DE CARGOS                                                                                ³
+³ GPF02A ³ TABELA DE SALARIOS                                                                              ³
+³ GPF03A ³ TABELA DE CORRECOES                                                                             ³
+³ GPF04A ³ MANUTENCAO DE SALARIOS                                                                          ³
+³ GPF05A ³ ALTERACAO COLETIVA                                                                              ³
+³ GPF06A ³ VERBAS FIXAS                                                                                    ³
+³ GPF06B ³ RELATORIO DE VERBAS FIXAS                                                                       ³
+³ GPF06C ³ TABELA DE CONDICOES DE V.FIXAS E BENEFICIOS                                                     ³
+³ GPF07A ³ RELATORIO DE ANALISE DE SALARIOS                                                                ³
+³ GPF07B ³ RELATORIO DE PROJECOES                                                                          ³
+³ GPF07C ³ RELATORIO DE EVOLUCAO SALARIAL                                                                  ³
+³ GPF07D ³ RELATORIO DE CARGOS                                                                             ³
+³ GPF07E ³ ETIQUETA DE ALTERACAO SALARIAL                                                                  ³
+³ GPF07F ³ RELATORIO DE ANALISE DE CARGOS                                                                  ³
+³ GPF07G ³ DISTRIBUICAO DE CARGOS POR CENTRO DE CUSTO                                                      ³
+³ GPF07H ³ DISTRIBUICAO DE SALARIOS POR CENTRO DE CUSTO                                                    ³
+³ GPF07I ³ RELATORIO DE CARGOS X INSTRUCAO                                                                 ³
+³ GPF07J ³ RELATORIO DE POSICAO SALARIAL                                                                   ³
+³ GPF07K ³ RELATORIO DE MASSA SALARIAL POR TIPO DE MAO DE OBRA                                             ³
+³ GPF07L ³ RELATORIO DE POLITICA SALARIAL                                                                  ³
+³ GPF08A ³ TABELA DE MOTIVOS DE ALTERACOES SALARIAIS                                                       ³
+³ GPF09A ³ MANUTENCAO DE BASES                                                                             ³
+³ GPF10A ³ TABELA DE BASES                                                                                 ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          13o. SALARIO                                                                                    ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPG01A ³ LANCAMENTO                                                                                      ³
+³ GPG02A ³ PROCESSAMENTO                                                                                   ³
+³ GPG03A ³ RELATORIO DE 13o. SALARIO                                                                       ³
+³ GPG10A ³ RELATORIO DE CONSOLIDACAO 13o                                                                   ³
+³ GPG10C ³ RELATORIO DE PREVISAO                                                                           ³
+³ GPG10D ³ RELATORIO DE CONCILIACAO 13o                                                                    ³
+³ GPG10E ³ DEMONSTRATIVO DE HORAS/VALORES INTEGRAVEIS                                                      ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          BENEFICIOS                                                                                      ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          VALE TRANSPORTE  (V.T.)                                                                         ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPH01A ³ TABELA CALENDARIO-DIAS                                                                          ³
+³ GPH01B ³ TABELA DE CONDUCOES                                                                             ³
+³ GPH01C ³ TABELA DE PARAMETROS                                                                            ³
+³ GPH01D ³ TABELA DE UNIDADE DE ENTREGA                                                                    ³
+³ GPH01E ³ CADASTRO DE VALE TRANSPORTE                                                                     ³
+³ GPH01F ³ PROCESSAMENTO                                                                                   ³
+³ GPH01G ³ CONSULTA                                                                                        ³
+³ GPH01H ³ DISQUETE                                                                                        ³
+³ GPH01I ³ RECIBO                                                                                          ³
+³ GPH01J ³ ETIQUETA                                                                                        ³
+³ GPH01K ³ RELATORIO DE FUNCIONARIO                                                                        ³
+³ GPH01L ³ RELATORIO DO PROCESSAMENTO                                                                      ³
+³ GPH01M ³ RELATORIO DE COMPRA                                                                             ³
+³ GPH01N ³ RELATORIO DE DISTRIBUICAO                                                                       ³
+³ GPH01O ³ RELATORIO DE ENTREGA                                                                            ³
+³ GPH01P ³ RELATORIO DE RESUMO                                                                             ³
+³ GPH01Q ³ RELACAO BANCARIA DE VALE TRANSPORTE                                                             ³
+³ GPH01R ³ RELATORIO DE COMPOSICAO                                                                         ³
+³ GPH01S ³ RELATORIO DE AUDITORIA                                                                          ³
+³ GPH01T ³ RELATORIO EXTRATO DE BENEFICIOS (V.T. / V.R.)                                                   ³
+³ GPH02A ³ BENEFICIOS                                                                                      ³
+³ GPH03A ³ RELATORIO DE BENEFICIOS                                                                         ³
+³ GPH04A ³ RELATORIO DE ENTREGA                                                                            ³
+³ GPH05A ³ RELATORIO DE CESTA BASICA                                                                       ³
+³ GPH06A ³ RECIBO ENTREGA DE BENEFICIO                                                                     ³
+³ GPH07A ³ TABELA DE FATORES E CALCULO DO BENEFICIO PREVIDENCIARIO                                         ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          VALE REFEICAO                                                                                   ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPH08A ³ TABELA DE CALENDARIO-DIAS                                                                       ³
+³ GPH08B ³ TABELA BENEFICIOS                                                                               ³
+³ GPH08C ³ TABELA PARAMETROS                                                                               ³
+³ GPH08D ³ TABELA DE UNIDADE DE ENTREGA                                                                    ³
+³ GPH08E ³ CADASTRO DE VALE REFEICAO                                                                       ³
+³ GPH08F ³ PROCESSAMENTO                                                                                   ³
+³ GPH08G ³ CONSULTA                                                                                        ³
+³ GPH08H ³ DISQUETE                                                                                        ³
+³ GPH08I ³ RECIBO                                                                                          ³
+³ GPH08J ³ ETIQUETA                                                                                        ³
+³ GPH08K ³ RELATORIO DE FUNCIONARIO                                                                        ³
+³ GPH08L ³ RELATORIO DO PROCESSAMENTO                                                                      ³
+³ GPH08M ³ RELATORIO DE COMPRA                                                                             ³
+³ GPH08N ³ RELATORIO POR TIPO                                                                              ³
+³ GPH08O ³ RELATORIO DE ENTREGA                                                                            ³
+³ GPH08P ³ RELATORIO DE RESUMO                                                                             ³
+³ GPH08Q ³ RELACAO BANCARIA                                                                                ³
+³ GPH08R ³ RELACAO DE CONFERENCIA                                                                          ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          CONTAGEM DE TEMPO PARA APOSENTADORIA                                                            ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPH09A ³ TABELA DE PARAMETROS                                                                            ³
+³ GPH09B ³ CADASTRO                                                                                        ³
+³ GPH09C ³ RECALCULO                                                                                       ³
+³ GPH09D ³ RELATORIO                                                                                       ³
+³ GPH09E ³ FOLHA DE CALCULO                                                                                ³
+³ GPH09F ³ RELATORIO DE ESTABILIDADE                                                                       ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          CONTROLE DE ESTOQUE DE BENEFICIOS                                                               ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPH10A ³ TABELA DE PARAMETROS                                                                            ³
+³ GPH10B ³ PROCESSAMENTO DE ESTOQUE DE BENEFICIOS                                                          ³
+³ GPH10C ³ REL. DE PRESTACAO DE CONTAS DE BENEFICIOS                                                       ³
+³ GPH10D ³ CONSULTA PRESTACAO DE CONTAS POR CENTRO DE CUSTO                                                ³
+³ GPH10E ³ DEVOLUCAO DE BENEFICIOS                                                                         ³
+³ GPH10F ³ LANCAMENTO DE COMPRA AVULSA DE BENEFICIOS                                                       ³
+³ GPH10G ³ DISTRIBUICAO AVULSA DE BENEFICIOS                                                               ³
+³ GPH10H ³ CONSULTA DE ESTOQUES DE BENEFICIOS                                                              ³
+³ GPH10I ³ FECHAMENTO MENSAL - ESTOQUE DE BENEFICIOS                                                       ³
+³ GPH10J ³ REL. MOVIMENTO MENSAL DE BENEFICIOS                                                             ³
+³ GPH10K ³ REL. DISTRIBUICAO DE BENEFICIOS                                                                 ³
+³ GPH10L ³ REL. POSICAO DIARIA DE BENEFICIOS                                                               ³
+³ GPH10M ³ REL. PENDENCIA DE PRESTACAO DE CONTAS                                                           ³
+³ GPH10N ³ TABELA PROCESSO DE DISTRIBUICAO AVULSA                                                          ³
+³ GPH10O ³ REL. PRESTACAO DE CONTAS POR PROCESSO                                                           ³
+³ GPH10O ³ CONSULTA MOVIMENTACOES AVULSAS                                                                  ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          BANCO DE HORAS                                                                                  ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPH11A ³ PARAMETROS DO BANCO DE HORAS                                                                    ³
+³ GPH11B ³ CONSULTA BANCO DE HORAS                                                                         ³
+³ GPH11C ³ REL. BANCO DE HORAS                                                                             ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          PREVIDENCIA PRIVADA                                                                             ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPH12A ³ PREVID.PRIVADA - LANCTO                                                                         ³
+³ GPH12B ³ PREVID.PRIVADA - PROCESSAMENTO                                                                  ³
+³ GPH12C ³ PREVID.PRIVADA - EXTRATO                                                                        ³
+³ GPH12D ³ PREVID.PRIVADA - RELATORIO                                                                      ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          PLANOS DE SAUDE                                                                                 ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPH13A ³ TABELA DE PLANOS DE SAUDE                                                                       ³
+³ GPH13B ³ CADASTRO DE PLANOS DE SAUDE                                                                     ³
+³ GPH13C ³ REL. DE INCLUSAO DE ASS. MEDICA (FUNCION./DEPEND.)                                              ³
+³ GPH13D ³ REL. DE EXCLUSAO DE ASS. MEDICA (FUNCION./DEPEND.)                                              ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          RELACOES SINDICAIS                                                                              ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPI01A ³ LANCAMENTO                                                                                      ³
+³ GPI02A ³ RELATORIO SINDICAL                                                                              ³
+³ GPI03A ³ RELATORIO DE FUNCIONARIOS SINDICALIDOS                                                          ³
+³ GPI04A ³ RELATORIO DE ESTATISTICA P/ O DIEESE                                                            ³
+³ GPI05A ³ GUIA DE RECOLHIMENTO DE CONTRIBUICAO SINDICAL                                                   ³
+³ GPI06A ³ EXPORTA MENSALIDADE E CADASTRO <SIN.METAL.ABC>                                                  ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          PROCESSAMENTO ANUAL                                                                             ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPJ01A ³ RELATORIO DE CRITICA                                                                            ³
+³ GPJ02A ³ FECHAMENTO ANUAL          ELIMINAR                                                              ³
+³ GPJ03A ³ RAIS E DIRF                                                                                     ³
+³ GPJ04A ³ PIS PAGAMENTO EMPRESA                                                                           ³
+³ GPJ05A ³ RAIS GERADA EM FORMULARIO                                                                       ³
+³ GPJ06A ³ RAIS GERADA EM DISQUETE                                                                         ³
+³ GPJ07A ³ DIRF GERADA EM FORMULARIO                                                                       ³
+³ GPJ08A ³ DIRF GERADA EM DISQUETE                                                                         ³
+³ GPJ09A ³ INFORME DE RENDIMENTO                                                                           ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          RESCISAO CONTRATUAL                                                                             ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPK01A ³ ATUALIZACAO DE DADOS DE RESCISAO                                                                ³
+³ GPK02A ³ LANCAMENTO                                                                                      ³
+³ GPK03A ³ PROCESSAMENTO                                                                                   ³
+³        ³ CONSULTA                                                                                        ³
+³ GPK05A ³ TERMO DE RESCISAO                                                                               ³
+³ GPK06A ³ CD / SEGURO DESEMPREGO                                                                          ³
+³ GPK07A ³ PROCESSO DE RESCISAO                                                                            ³
+³ GPK07B ³ PARAMETRO DO PROCESSO DE RESCISAO                                                               ³
+³        ³ CHEQUE                                                                                          ³
+³ GPK09A ³ HISTORICO DE DEMITIDOS                                                                          ³
+³ GPK10A ³ RELATORIO DE RESCISAO                                                                           ³
+³ GPK10B ³ RELATORIO DE I.R.R.F.                                                                           ³
+³ GPK10C ³ RELATORIO DE SALARIO DE CONTRIBUICAO-RSC R.S.C.                                                 ³
+³ GPK10D ³ RELATORIO DE MEDIAS EM HORAS E VALOR                                                            ³
+³        ³ RELACAO BANCARIA                                                                                ³
+³ GPK10F ³ RELATORIO DE DEMITIDOS P/ BANCOS                                                                ³
+³ GPK10G ³ GRFP - GUIA DE REC.RESCISORIO DO FGTS / PREV.SOCIAL G.R.F.P.                                    ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          CONTABILIDADE                                                                                   ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPL01A ³ TABELA DE CONTAS                                                                                ³
+³ GPL02A ³ PROVISAO DE 13o/FERIAS                                                                          ³
+³ GPL03A ³ PROCESSAMENTO                                                                                   ³
+³ GPL04A ³ RELATORIO CONTABIL                                                                              ³
+³ GPL05A ³ RELATORIO DE VALORES PENDENTES                                                                  ³
+³ GPL06A ³ RELATORIO DE CUSTO                                                                              ³
+³ GPL07A ³ EXPORTACAO DT(DATAMACE)                                                                         ³
+³ GPL08A ³ EXPORTA TABELA DE CONTAS                                                                        ³
+³ GPL09A ³ INTERFACE CONTABIL (ABC71)                                                                      ³
+³ GPL10A ³ RATEIO DE FOLHA DE PAGAMENTO                                                                    ³
+³ GPL11A ³ RELATORIO DE VERBAS PROVISIONADAS x VERBAS PAGAS                                                ³
+³ GPL12A ³ RELATORIO DE EVENTOS CRIADOS NO MES                                                             ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          GERADORES                                                                                       ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPM01A ³ GERADOR DE RELATORIOS E ARQUIVOS                                                                ³
+³ GPM01B ³ GERADOR DE RELATORIOS E ARQUIVOS                                                                ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          MODELOS                                                                                         ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPM02A ³ GERADOR DE MODELOS                                                                              ³
+³ GPM02B ³ GERADOR DE MODELOS                                                                              ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          ESTATISTICA 1                                                                                   ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPM03A ³ GERA ESTATISTICA                                                                                ³
+³ GPM03B ³ ESTATISTICA DE EVENTOS                                                                          ³
+³ GPM03C ³ RELATORIO DE ESTATISTICA                                                                        ³
+³ GPM03D ³ RELATORIO DE EVENTOS                                                                            ³
+³ GPM03E ³ RELATORIO COMPARATIVO                                                                           ³
+³ GPM03F ³ ORGANOGRAMA                                                                                     ³
+³ GPM03G ³ RELATORIO DE CENTRO DE CUSTO/MDO                     (METAGAL)                                  ³
+³ GPM03H ³ RELATORIO DE DEMONSTRATIVO DE PESSOAL                                                           ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          ESTATISTICA 2                                                                                   ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPM04A ³                                                                                                 ³
+³ GPM04B ³                                                                                                 ³
+³ GPM04C ³                                                                                                 ³
+³ GPM04D ³                                                                                                 ³
+³ GPM04E ³                                                                                                 ³
+³ GPM04F ³                                                                                                 ³
+³ GPM04G ³                                                                                                 ³
+³ GPM04H ³                                                                                                 ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          EXPORTADORES DE DADOS                                                                           ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPM05A ³ EXPORTACAO DE DEPENDENTES                                                                       ³
+³ GPM05B ³ EXPORTACAO DE LANCAMENTOS                                                                       ³
+³ GPM05C ³ MANUTENCAO E CONSULTA DO SELETOR DE VERBAS                                                      ³
+³ GPM05D ³ EXPORTA HISTORICOS (FICHA DE REGISTRO)                                                          ³
+³ GPM05E ³ EXPORTACAO SISTEMA MASTERSAF                                                                    ³
+³ GPM05F ³ EXPORTACAO SEGURO DE VIDA PADRAO SUSEP 64                                                       ³
+³ GPM05G ³ EXPORTACAO DE DADOS (FUNC., DEPEND., BENEF. E TABELAS)                                          ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          EXPORTADORES DE DADOS                                                                           ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPM06A ³ CAGED 97                                                                                        ³
+³ GPM07A ³ I.N. 068/95                                                                                     ³
+³ GPM08A ³ ABERTURA DE CONTAS BANCARIAS                                                                    ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          POLICIA FEDERAL                                                                                 ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPM09A ³ TABELA DE ACADEMIAS                                                                             ³
+³ GPM09B ³ CADASTRO                                                                                        ³
+³ GPM09C ³ REL. FUNCIONARIOS                                                                               ³
+³ GPM09D ³ REL. EXAME MEDICO                                                                               ³
+³ GPM09E ³ REL. DE FORMACAO                                                                                ³
+³ GPM09F ³ REL. DE FILIACAO                                                                                ³
+³ GPM09G ³ REL. DATAS                                                                                      ³
+³ GPM09H ³ REL. COMPRA DE ARMAS E MUNICOES                                                                 ³
+³ GPM09I ³ DISQUETE                                                                                        ³
+³ GPM09J ³ REL. NECESSIDADE DE RECICLAGEM                                                                  ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          AUTONOMOS                                                                                       ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPN01A ³ CADATRO DE AUTONOMOS                                                                            ³
+³ GPN02A ³ TABELA DE EVENTOS                                                                               ³
+³ GPN02B ³ TABELA DE PARAMETROS                                                                            ³
+³ GPN02C ³ TABELA DE I.R.R.F.                                                                              ³
+³ GPN02D ³ TABELA DE PREVIDENCIA SOCIAL                                                                    ³
+³ GPN03A ³ DADOS P/ DIRF                                                                                   ³
+³ GPN04A ³ LANCAMENTO                                                                                      ³
+³ GPN05A ³ PROCESSAMENTO                                                                                   ³
+³ GPN06A ³ LANCAMENTO DE FICHA FINANCEIRA                                                                  ³
+³ GPN08A ³ FECHAMENTO MENSAL                                                                               ³
+³ GPN09A ³ FECHAMENTO ANUAL                                                                                ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          RELATORIO DE AUTONOMOS                                                                          ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPN10A ³ RELATORIO DE AUTONOMOS                                                                          ³
+³ GPN10B ³ RELATORIO DE ANALISE DE VENCIMENTOS E DESCONTOS                                                 ³
+³ GPN10C ³ R.P.A.                                                                                          ³
+³ GPN10D ³ R.P.S.                                                                                          ³
+³ GPN10E ³ RELACAO BANCARIA                                                                                ³
+³        ³ CHEQUE                                                                                          ³
+³ GPN10G ³ RELACAO PAGAMENTO                                                                               ³
+³ GPN10H ³ RELATORIO 14 COLUNAS                                                                            ³
+³ GPN10I ³ RELATORIO GENERICO DE EVENTOS                                                                   ³
+³ GPN10J ³ RELATORIO DE IRRF/INSS                                                                          ³
+³ GPN10K ³ DIRF GERADA EM FORMULARIO                                                                       ³
+³ GPN10L ³ INFORME DE RENDIMENTO                                                                           ³
+³ GPN10M ³ RELATORIO DE RETENCAO DO I.R.R.F.                                                               ³
+³ GPN10N ³ FICHA FINANCEIRA                                                                                ³
+³ GPN11A ³ GRPS AUTONOMOS                                                                                  ³
+³ GPN13A ³ ETIQUETA DE ENDERECAMENTO                                                                       ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          * SUB-PROGRAMAS *                                                                               ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPS000 ³ GERENCIAMENTO DA TABELA DE EVENTOS                                                              ³
+³ GPS001 ³ LANCAMENTO DE VERBAS FIXAS                                                                      ³
+³ GPS002 ³ LANCAMENTOS DE EVENTOS AUTOMATICOS, ORIGENS (LANORI) E AGREGADOS                                ³
+³ GPS003 ³ LANCAMENTO DE FERIAS                                                                            ³
+³ GPS004 ³ VERIFICA LANCAMENTO DE ORIGENS NO FECHAMENTO                                                    ³
+³ GPS005 ³ MANUTENCAO E CONSULTA DO SELETOR DE VERBAS                                                      ³
+³ GPS006 ³                                                                                                 ³
+³ GPS007 ³                                                                                                 ³
+³ GPS008 ³ CALCULO DA PROVISAO DE FERIAS E 13o SALARIO                                                     ³
+³ GPS009 ³ LANCAMENTO CONDICIONADO                                                                         ³
+³ GPS010 ³ OPCOES DE TELA PARA EMISSAO DE RELATORIOS                                                       ³
+³ GPS011 ³                                                                                                 ³
+³ GPS012 ³ PAGAMENTO EM DISQUETE 1 (CNAB)                                                                  ³
+³ GPS013 ³ PAGAMENTO EM DISQUETE 2                                                                         ³
+³ GPS014 ³ PAGAMENTO EM DISQUETE 3 (FEBRABAN) (ITAU - SISPAG)                                              ³
+³ GPS015 ³ GERADOR DE RELATORIOS                                                                           ³
+³ GPS016 ³                                                                                                 ³
+³ GPS017 ³                                                                                                 ³
+³ GPS018 ³
+³ GPS019 ³                                                                                                 ³
+³ GPS020 ³                                                                                                 ³
+³ GPS021 ³                                                                                                 ³
+³ GPS022 ³ EDITOR DO HELP                                                                                  ³
+³ GPS023 ³                                                                                                 ³
+³ GPS024 ³ GERADOR DE ARQUIVOS                                                                             ³
+³ GPS025 ³ HELP DE DIRETORIO P/ EDITOR TEXTO                                                               ³
+³ GPS026 ³                                                                                                 ³
+³ GPS027 ³ HELP DE CAMPOS PARA GERADOR/EDITOR                                                              ³
+³ GPS028 ³ HELP DE TABELAS                                                                                 ³
+³ GPS029 ³                                                                                                 ³
+³ GPS030 ³ LANCAMENTO DE VALE TRANSPORTE NA FOLHA                                                          ³
+³ GPS031 ³                                                                                                 ³
+³ GPS032 ³                                                                                                 ³
+³ GPS033 ³                                                                                                 ³
+³ GPS034 ³ MANUTENCAO DO RATEIO                                                                            ³
+³ GPS035 ³ PARAMETROS DO RATEIO                                                                            ³
+³ GPS036 ³ EMISSAO DA FICHA FINANCEIRA (AUTONOMOS)                                                         ³
+³ GPS037 ³                                                                                                 ³
+³ GPS038 ³                                                                                                 ³
+³ GPS039 ³ CALCULO DE IRRF, PREV.SOCIAL E SALARIO FAMILIA                                                  ³
+³ GPS040 ³ HELP CADASTRO DE FUNCIONARIOS - CADFUN                                                          ³
+³ GPS041 ³                                                                                                 ³
+³ GPS042 ³ CALCULO DE VERBAS FIXAS                                                                         ³
+³ GPS043 ³ PROPAGANDA DATAMACE                                                                             ³
+³ GPS044 ³ TRANSFERENCIA DE FUNCIONARIOS                                                                   ³
+³ GPS045 ³ SUB-ROTINA DE CALCULO DE BENEFICIO PREVIDENCIARIO                                               ³
+³ GPS046 ³ SUB-ROTINA DE CALCULO DA PENSAO ALIMENTICIA                                                     ³
+³ GPS047 ³                                                                                                 ³
+³ GPS048 ³ SUB-ROTINA DE ATUALIZACAO DO CADASTRO DE PENSIONISTAS (FECHAMENTO)                              ³
+³ GPS049 ³ PAGAMENTO EM DISQUETE - CARTAO SALARIO                                                          ³
+³ GPS050 ³ CALCULO DAS BASES DO SELETOR DE VERBAS                                                          ³
+³ GPS051 ³                                                                                                 ³
+³ GPS052 ³ HELP CADASTRO DE PENSIONISTAS                                                                   ³
+³ GPS053 ³ CALCULO DA MEDIA EM VERBAS FIXAS                                                                ³
+³ GPS058 ³                                                                                                 ³
+³ GPS059 ³                                                                                                 ³
+³ GPS060 ³ IMPRESSAO DA G.R.P.S. EM PAPEL BRANCO (SEST/SENAT)                                              ³
+³ GPS061 ³ PAGAMENTO EM DISQUETE - IMPORTACAO                                                              ³
+³ GPS062 ³ MANUTENCAO DE PARAMETROS DO USUARIO                                                             ³
+³ GPS063 ³ SUB-ROTINA DE IMPRESSAO DE TEXTOS (RESCISORIOS)                                                 ³
+³ GPS064 ³ SUB-ROTINA DE IMPRESSAO DO R.S.C. NA RESCISAO                                                   ³
+³ GPS065 ³ SUB-ROTINA DE IMPRESSAO DO INFORME DE RENDIMENTO NA RESCISAO                                    ³
+³ GPS066 ³ SUB-ROTINA DE IMPRESSAO DA REQUISICAO CHEQUE RESCISAO                                           ³
+³ GPS067 ³ SUB-ROTINA DE IMPRESSAO DA SOL. CHEQUE ADMINISTRATIVO RESCISAO                                  ³
+³ GPS068 ³ SUB-ROTINA DE IMPRESSAO DO TERMO DE RESCISAO                                                    ³
+³ GPS069 ³ SUB-ROTINA DE CONDICIONAMENTO DE BENEFICIOS E VERBAS FIXAS                                      ³
+³ GPS070 ³ SUB-ROTINA DE IMPRESSAO DA DESCRICAO DE CARGOS                                                  ³
+³ GPS071 ³                                                                                                 ³
+³ GPS072 ³                                                                                                 ³
+³ GPS073 ³                                                                                                 ³
+³ GPS074 ³ SUB-ROTINA DE CALCULO DE APOSENTADORIA                                                          ³
+³ GPS075 ³                                                                                                 ³
+³ GPS076 ³                                                                                                 ³
+³ GPS077 ³                                                                                                 ³
+³ GPS078 ³ SUB-ROTINA DO PROCESSADOR DE TEXTOS                                                             ³
+³ GPS079 ³                                                                                                 ³
+³ GPS080 ³ SUB-ROTINA DO SCROLL ARQUIVO ESTOQUE DE BENEFICIOS POR C.CUSTO                                  ³
+³ GPS081 ³ HELP CADASTRO DE EMPRESAS                                                                       ³
+³ GPS082 ³ SUB-ROTINA DE IMPRESSAO AVULSA DE RECIBO DE BENEFICIOS                                          ³
+³ GPS098 ³ SUB-ROTINA DE CARGA DE EVENTOS DE AUTONOMOS                                                     ³
+³ GPS099 ³ HELP CADASTRO DE AUTONOMOS                                                                      ³
+³ GPSEN  ³ QUEBRA GALHO PARA MOSTRAR SENHA                                                                 ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          * ESPECIAIS *                                       ³         CLIENTE:         ³    SISTEMA:    ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPLANCA³ LANCAMENTOS DE EVENTOS - FORA DO SISTEMA            ³                          ³                ³
+³        ³                                                     ³                          ³                ³
+³ GPZ001 ³ CHEQUE SUPERMERCADO                                 ³ COOPERFERTIL             ³                ³
+³ GPZ002 ³ CONVENIO COM RHODIA (EXPORTA DADOS)                 ³ LAZZURIL                 ³                ³
+³ GPZ003 ³ HOLERITH DE PAGAMENTO                               ³ CAMARA MUNICIPAL         ³                ³
+³ GPZ004 ³ HOLERITH EM ARQUIVO TEXTO P/ IMPRESSORA LASER       ³ CSTC                     ³                ³
+³ GPZ005 ³ HOLERITH DE PAGAMENTO                               ³ ABC71                    ³                ³
+³ GPZ006 ³ HOLERITH EM ARQUIVO TEXTO P/ IMPRESSORA LASER       ³ LATUS (CANBRAS)          ³                ³
+³ GPZ007 ³ CONTABILIZACAO DA FOLHA                             ³ MONSANTO                 ³ PLATINUM       ³
+³ GPZ008 ³ HOLERITH DE PAGAMENTO                               ³ SOMA                     ³                ³
+³ GPZ009 ³ HOLERITH EM ARQUIVO TEXTO P/ IMPRESSORA LASER       ³ SACHS                    ³                ³
+³ GPZ010 ³ HOLERITH DE PAGAMENTO                               ³ SETAL                    ³                ³
+³ GPZ011 ³ EXPORTA P/ RHODIA                                   ³ METAGAL                  ³ RHODIA         ³
+³ GPZ012 ³ HOLERITH DE PAGAMENTO                               ³ SIND.SAUDE SP            ³                ³
+³ GPZ013 ³ CONTABILIZACAO DA FOLHA                             ³ COOPERVOLKS              ³ RMS            ³
+³ GPZ014 ³ CONVENIO PAO DE ACUCAR                              ³                          ³                ³
+³ GPZ015 ³ CONTABILIZACAO DA FOLHA                             ³ CUT                      ³ ????????       ³
+³ GPZ016 ³ QUADRO DE PESSOAL                                   ³ PARIZOTTO                ³                ³
+³ GPZ017 ³ HOLERITH DE PAGAMENTO                               ³ SOLORRICO-CUBATAO        ³                ³
+³ GPZ018 ³ FUNDO DE PENSAO                                     ³ BANCO PANAMERICANO       ³                ³
+³ GPZ019 ³ CONTABILIZACAO DA FOLHA                             ³ SOLORRICO                ³ ????????       ³
+³ GPZ020 ³ CONTABILIZACAO DA FOLHA                             ³ ERNST & YOUNG / ESTOK    ³ RM             ³
+³ GPZ021 ³ CONTABILIZACAO DA FOLHA                             ³ INBRA                    ³ WK HERCULES    ³
+³ GPZ022 ³ CONTABILIZACAO DA FOLHA                             ³ APM                      ³ MICROINTERDATA ³
+³ GPZ023 ³ EXPORTA SEGURO DE VIDA                              ³ BANCO PANAMERICANO       ³                ³
+³ GPZ024 ³ EXPORTA DADOS P/ RELOGIO RODBEL                     ³ ARICANDUVA               ³ RODBEL         ³
+³ GPZ025 ³ MULTICHECK                                          ³ INTERPRINT               ³                ³
+³ GPZ026 ³ RELATORIO DE CCUSTO/LOCACAO                         ³ METAGAL                  ³                ³
+³ GPZ027 ³ RELATORIO DE ROTATIVIDADE                           ³ ESTOK                    ³                ³
+³ GPZ028 ³ CONTABILIZACAO DA FOLHA                             ³ TRANSAMERICA/SBPS        ³ SBPS           ³
+³ GPZ029 ³ RELATORIO DE ESTATISTICA POR CCUSTO/LOCACAO         ³ INTERPRINT               ³                ³
+³ GPZ030 ³ EXPORTA DEPENDENTES                                 ³ PRO-MATRE                ³ INTERCLINICAS  ³
+³ GPZ031 ³ EXPORTA P/ SISTEMA CHEQUE SUPERMERCADO              ³ METAGAL                  ³                ³
+³ GPZ032 ³ HOLERITH DE PAGAMENTO                               ³ ED.ATUAL                 ³                ³
+³ GPZ033 ³ CONTABILIZACAO DA FOLHA                             ³ REAL SEGUROS             ³ CONSIST        ³
+³ GPZ034 ³ HOLERITH EM ARQUIVO TEXTO P/ IMPRESSORA LASER       ³ METAGAL                  ³                ³
+³ GPZ035 ³ EXPORTA SEGURO DE VIDA                              ³ REAL SEGUROS             ³ ADP            ³
+³ GPZ036 ³ EXPORTA SEGURO DE VIDA                              ³ SBPS                     ³ ADP            ³
+³ GPZ037 ³ CONTABILIZACAO DA FOLHA                             ³ LA BASQUE                ³ AGL            ³
+³ GPZ038 ³ GFIP PARCELADA                                      ³ SAL CISNE                ³                ³
+³ GPZ039 ³ CONTABILIZACAO DA FOLHA                             ³ ASEM HOSPITALAR          ³ XTDC           ³
+³ GPZ040 ³ CALCULO DE PREMIO                                   ³ UEMURA                   ³                ³
+³ GPZ041 ³ IMPORTACAO SAP                                      ³ ALLERGAN                 ³ SAP            ³
+³ GPZ042 ³ CONTABILIZACAO DA FOLHA                             ³ BENFICA                  ³ GENEXUS        ³
+³ GPZ043 ³ EXPORTA DADOS P/ DECLARACAO IR. P/ MES COMPETENCIA  ³ BANCO PANAMERICANO       ³                ³
+³ GPZ044 ³ CONVENIO DROGA RAIA                                 ³ GRUPO S.SANTOS           ³ DROGA RAIA     ³
+³ GPZ045 ³ CONTABILIZACAO DA FOLHA                             ³ R-PRECISION/PAO ACUCAR   ³ MXM            ³
+³ GPZ046 ³ CONTABILIZACAO DA FOLHA                             ³ VICTOR HUGO / FORMTAP    ³ DATASUL/MAGNUS ³
+³ GPZ047 ³ EXPORTA DADOS P/ SEGURO DE VIDA                     ³ SABESPREV                ³                ³
+³ GPZ048 ³ CONTABILIZACAO DA FOLHA                             ³ COSTEIRA                 ³ SMK            ³
+³ GPZ049 ³ CONTABILIZACAO DA FOLHA                             ³ TERCO                    ³ WK HERCULES    ³
+³ GPZ050 ³ CONTABILIZACAO DA FOLHA                             ³ SETAL                    ³ FINPAC-PEOPLEWARE
+³ GPZ051 ³ CONTABILIZACAO DA FOLHA                             ³ INTERPRINT               ³ INTERQUADRAN   ³
+³ GPZ052 ³ IMPORTACAO/EXPORTACAO (PREMIO DE VENDAS)            ³ REAL                     ³                ³
+³ GPZ053 ³ EXPORTACAO DO CADASTRO DE FUNCIONARIOS              ³ REAL                     ³                ³
+³ GPZ054 ³ HOLERITH EM ARQUIVO TEXTO P/ IMPRESSORA LASER       ³ HSPM                     ³                ³
+³ GPZ055 ³ EXPORTA VALORES DE REMUNERACAO                      ³ MEDCORP                  ³                ³
+³ GPZ056 ³ CARTAO DE PONTO EM ARQUIVO TEXTO P/ IMPRESSORA LASER³ HSPM                     ³                ³
+³ GPZ057 ³ CONTABILIZACAO DA FOLHA                             ³ WORCESTER                ³ ??????????     ³
+³ GPZ058 ³ CONTABILIZACAO DA FOLHA                             ³ UNION ASSESSORIA         ³ ??????????     ³
+³ GPZ059 ³ HOLERITH EM ARQUIVO TEXTO P/ IMPRESSORA LASER       ³ MESQUITA                 ³                ³
+³ GPZ060 ³ CONTABILIZACAO DA FOLHA                             ³ UEMURA                   ³ INTERQUADRAN   ³
+³ GPZ061 ³ EXPORTA DADOS SEGURO DE VIDA NOBRE                  ³ MEDCORP                  ³                ³
+³ GPZ062 ³ EXPORTACAO DE DADOS ASSISTENCIA MEDICA              ³ KPMG                     ³                ³
+³ GPZ063 ³ INTERFACE CONTABIL                                  ³ ZAMBOM                   ³ MAXIPRO        ³
+³ GPZ064 ³ EXPORTACAO ABERTURA DE CONTA BANCO DO BRASIL        ³ PROTEGE                  ³                ³
+³ GPZ065 ³ EXPORTACAO ABERTURA DE CONTA BAMERINDUS-HSBC        ³ PROTEGE                  ³                ³
+³ GPZ066 ³ RELATORIO NEGATIVO DE LANCAMENTOS                   ³ PROTEGE                  ³                ³
+³ GPZ067 ³ HOLLERITH/VALE CESTA BASICA                         ³ WABCO                    ³                ³
+³ GPZ068 ³ RELATORIO LIVRO DE DEMITIDOS                        ³ PROTEGE                  ³                ³
+³ GPZ069 ³ RELATORIO SEGURO DE VIDA                            ³ PROTEGE                  ³                ³
+³ GPZ070 ³ CONVENIO PAO DE ACUCAR                              ³ INTERPRINT               ³                ³
+³ GPZ071 ³ INTERFACE CONTABIL                                  ³ PROTEGE                  ³ WK - HERCULES  ³
+³ GPZ072 ³ PROCESSAMENTO CONTABIL POR RATEIO                   ³ PHOENIX                  ³                ³
+³ GPZ073 ³ EXPORTACAO DE VALORES DE PREVIDENCIA PRIVADA        ³ LAZZURIL                 ³                ³
+³ GPZ074 ³ CONTABILIZACAO DA FOLHA                             ³ TELETRIM                 ³ TRADE          ³
+³ GPZ075 ³ CONTABILIZACAO DA FOLHA                             ³ OAB                      ³ ZAP            ³
+³ GPZ076 ³ HOLERITH EM ARQUIVO TEXTO P/ IMPRESSORA LASER       ³ LATUS (CANBRAS)          ³                ³
+³ GPZ077 ³ CONTABILIZACAO DA FOLHA                             ³ MESQUITA                 ³ DATASUL/MAGNUS ³
+³ GPZ078 ³ ATUALIZACAO CLIENTE/SECAO                           ³ PROTEGE                  ³                ³
+³ GPZ079 ³ CONTABILIZACAO DA FOLHA                             ³ JANDAIA                  ³ NETWORK        ³
+³ GPZ080 ³ IMPORTACAO DE LANCTOS(premios)                      ³ ESTOK                    ³                ³
+³ GPZ081 ³ R.E. EM DISQUETE    (DUPLICACAO)                    ³ SEBIL                    ³                ³
+³ GPZ082 ³ R.E. EM FORMULARIO  (DUPLICACAO)                    ³ SEBIL                    ³                ³
+³ GPZ083 ³ RECIBO DE PAGAMENTO ESPECIAL                        ³ PROTEGE                  ³                ³
+³ GPZ084 ³ CONTABILIZACAO DA FOLHA                             ³ LAZZURIL                 ³ WK HERCULES    ³
+³ GPZ085 ³ CONTABILIZACAO DA FOLHA                             ³ ALLERGAN                 ³ MICRO SIGA     ³
+³ GPZ086 ³ RELATORIO GERENCIAL COM RESUMO                      ³ TELETRIM                 ³                ³
+³ GPZ087 ³ EXPORTACAO DE VALORES DE PREVIDENCIA PRIVADA        ³ ALLERGAN                 ³                ³
+³ GPZ088 ³ EXPORTACAO DE VALORES DE PREVIDENCIA PRIVADA        ³ KPMG                     ³                ³
+³ GPZ089 ³ EXPORTACAO DE DADOS CADASTRAIS (HK)                 ³ PROTEGE                  ³                ³
+³ GPZ090 ³ PREMIO UEMURA 13                                    ³ UEMURA                   ³                ³
+³ GPZ091 ³ CONTABILIZACAO DA FOLHA                             ³ PH-ARCANGELI             ³ AGL VERSAO 2   ³
+³ GPZ092 ³ CONTABILIZACAO DA FOLHA                             ³ SENSORMATIC              ³ DATASUL/MAGNUS ³
+³ GPZ093 ³ CONTABILIZACAO DA FOLHA                             ³ LATUS (CANBRAS)          ³ MICROSIGA      ³
+³ GPZ094 ³ EXPORTACAO DA FICHA FINANCEIRA E CADASTRO           ³ ADSERT                   ³                ³
+³ GPZ095 ³ RELATORIO DE MAIORIDADE                             ³ MESQUITA                 ³                ³
+³ GPZ096 ³ EXPORTA DADOS PARA SEGURADORA                       ³ METAGAL                  ³                ³
+³ GPZ097 ³ EXP/IMP DADOS PARA ABERTURA DE CONTAS B.BRASIL      ³ FUNERARIA/HSPM           ³                ³
+³ GPZ098 ³ GERA CADASTRO BANCO DO BRASIL                       ³ PROEVI                   ³                ³
+³ GPZ099 ³ EXP. EVENTOS PARA SISTEMA GERENCIAL                 ³ GRABER                   ³                ³
+³ GPZ100 ³ RENOVACAO PESQUISA SOCIAL                           ³ PROTEGE                  ³                ³
+³ GPZ101 ³ CONTABILIZACAO DA FOLHA                             ³ RACE                     ³ ADP            ³
+³ GPZ102 ³ IMPRESSAO DE DOCUMENTOS LAY-OUT EXTERNO             ³ ???????                  ³                ³
+³ GPZ104 ³ CONTABILIZACAO DA FOLHA                             ³ CONIBRA                  ³ MICROSIGA      ³
+³ GPZ105 ³ EXP.DADOS PARA ABERTURA DE CONTAS BANCO SAFRA       ³ COOPERVOLKS              ³                ³
+³ GPZ106 ³ EXP.DADOS PARA ABERTURA DE CONTAS BANCO BAMERINDUS  ³ SPLICE                   ³                ³
+³ GPZ107 ³ EXP.DADOS PARA ARQUIVO DE DESPESAS                  ³ SPLICE                   ³                ³
+³ GPZ108 ³ EXP.DADOS PARA ABERTURA DE CONTAS BANCO UNIBANCO    ³ ACIL                     ³                ³
+³ GPZ109 ³ EXP.DADOS PARA ASSISTENCIA MEDICA                   ³ PROTEGE                  ³                ³
+³ GPZ110 ³ EXP.DADOS DE RH                                     ³ PROTEGE                  ³                ³
+³ GPZ111 ³ PROTEGE (ROTA)                                      ³ PROTEGE                  ³                ³
+³ GPZ112 ³ PROTEGE (CCUSTO)                                    ³ PROTEGE                  ³                ³
+³ GPZ113 ³                                                     ³                          ³                ³
+³ GPZ114 ³ EXP.DADOS CONTABEIS                                 ³ ADSERT                   ³                ³
+³ GPZ115 ³ QUADRO GERENCIAL                                    ³ MESQUITA                 ³                ³
+³ GPZ116 ³ REL.CLASSIF.SALARIAL                                ³ MESQUITA                 ³                ³
+³ GPZ117 ³ REL.ACOMP.RESCISOES                                 ³ MESQUITA                 ³                ³
+³ GPZ118 ³ REL.COMPAR.POR DIRETORIA                            ³ MESQUITA                 ³                ³
+³ GPZ119 ³ EXP.DADOS GERENCIAIS                                ³ ADSERT                   ³                ³
+³ GPZ120 ³ EXP.DADOS DE SEGURO DE VIDA - BCN                   ³ PARIZOTTO                ³                ³
+³ GPZ121 ³ CONTABILIZACAO DA FOLHA                             ³ MONSANTO                 ³ SAP/3          ³
+³ GPZ122 ³ CONTABILIZACAO DA FOLHA                             ³ ASS.FUNC.PUBLIC/ASBRASIL ³ MAGNUS DATASUL ³
+³ GPZ123 ³ CONTABILIZACAO DA FOLHA               nao convertido³ MAXIQUALY                ³ PROSOFT        ³
+³ GPZ124 ³ EXP/IMP DADOS PARA ABERTURA DE CONTAS B.BRASIL      ³ SPLICE                   ³                ³
+³ GPZ125 ³ CONTABILIZACAO DA FOLHA        (Versao EMS 2.0)     ³ PENTAGRAMA               ³ MAGNUS DATASUL ³
+³ GPZ126 ³ CONTABILIZACAO DA FOLHA                             ³ META                     ³ MAGNUS DATASUL ³
+³ GPZ127 ³ CESTA TICKET                                        ³ SCHIMIDT                 ³ TICKET         ³
+³ GPZ128 ³ FUNDO DE PENSAO                                     ³ GRUPO S.SANTOS           ³                ³
+³ GPZ129 ³ EXPORTA DADOS PARA SEPACO                           ³ NOVAFLEX                 ³ SEPACO         ³
+³ GPZ130 ³ CONTABILIZACAO DA FOLHA                             ³ TECFIL                   ³ BAAN IV        ³
+³ GPZ131 ³ IMPORTACAO DIAS UTEIS PARA VT                       ³ PROTEGE                  ³                ³
+³ GPZ132 ³ IMPORTACAO DIAS UTEIS PARA VR                       ³ PROTEGE                  ³                ³
+³ GPZ133 ³                                                     ³                          ³                ³
+³ GPZ134 ³ EXPORTA DADOS                                       ³ BORLEM                   ³                ³
+³ GPZ135 ³ EXPORTA DADOS SUL AMERICA SAUDE                     ³ UEMURA                   ³ SUL AMERICA    ³
+³ GPZ136 ³ CRIA DIRETORIA                                      ³ MONSANTO                 ³                ³
+³ GPZ137 ³ RELATORIO CONVENIO HIPERCHEQUE                      ³ PROTEGE                  ³                ³
+³ GPZ138 ³ CONTABILIZACAO DA FOLHA                             ³ MOLPLASTIC               ³ BRASIL INFORM. ³
+³ GPZ139 ³ CONTABILIZACAO DA FOLHA                             ³ MAIS                     ³ SERCON         ³
+³ GPZ140 ³ EXPORTA ARQUIVO VT/VR (LEITORA)                     ³ PROTEGE                  ³                ³
+³ GPZ141 ³ LANCAMENTO ESPECIAL PARA AUTONOMOS                  ³ PROTEGE                  ³                ³
+³ GPZ142 ³ COMPLEMENTO DA CONTABILIZACAO(AUTONOMOS POR UNIDADE)³ PROTEGE                  ³                ³
+³ GPZ143 ³ EXPORTA DADOS DE FUNCIONARIOS(PACIENTE???)          ³ SPLICE                   ³                ³
+³ GPZ144 ³ CONTABILIZACAO DA FOLHA                             ³ SOLORRICO                ³                ³
+³ GPZ145 ³ ATUALIZA CLIENTE/SETOR/SECAO                        ³ ESTRELA AZUL             ³                ³
+³ GPZ146 ³ IMPORTACAO DIAS UTEIS PARA VT                       ³ ESTRELA AZUL             ³                ³
+³ GPZ147 ³ RELATORIO CALENDARIO VT E VR                        ³ PROTEGE                  ³                ³
+³ GPZ148 ³ ATUALIZA CADFUN (LE TEXTO E ALIMENTA LOCACAO        ³ ESTRELA AZUL             ³                ³
+³ GPZ149 ³ COMPARATIVO VENCIMENTOS (VARIANTE DO GPC13A)        ³ PROTEGE                  ³                ³
+³ GPZ14B ³ LANCAMENTO AUTONOMOS ESPECIAL                       ³ PROTEGE                  ³                ³
+³ GPZ150 ³ RELATORIO VALE TRANSPORTE - ESPECIAL                ³ PROTEGE                  ³                ³
+³ GPZ151 ³ CESTA - CBA                                         ³ SCHIMIDT                 ³ TICKET         ³
+³ GPZ152 ³ RECIBO DE PAGAMENTO ESPECIAL                        ³ ESTRELA AZUL             ³                ³
+³ GPZ153 ³ EXPORTACAO DE DADOS CADASTRAIS - SISTEMA S.A.R.     ³ ESTRELA AZUL             ³                ³
+³ GPZ154 ³ GERA ARQUIVO SEGURO DE VIDA                         ³ ESTRELA AZUL             ³                ³
+³ GPZ155 ³ IMPORTACAO DIAS UTEIS PARA VR                       ³ ESTRELA AZUL             ³                ³
+³ GPZ156 ³ RELATORIO CALENDARIO VT E VR                        ³ ESTRELA AZUL             ³                ³
+³ GPZ157 ³ CONTABILIZACAO DA FOLHA                             ³ ITALMA                   ³                ³
+³ GPZ158 ³ RELATORIO DE ALOCACAO DE MAO DE OBRA COM ENCARGOS   ³ PARIZOTTO                ³                ³
+³ GPZ159 ³ CONTABILIZACAO DA FOLHA                             ³ ADIB JATENE              ³                ³
+³ GPZ160 ³ RECIBO DE BENEFICIOS (VT E VR JUNTOS)               ³ PROTEGE                  ³                ³
+³ GPZ161 ³ EXPORTA SEGURO DE VIDA                              ³ PARIZOTTO                ³ BRADESCO       ³
+³ GPZ162 ³ CONTABILIZACAO DA FOLHA PELA POSICAO ATUAL          ³ CATERINA                 ³                ³
+³ GPZ163 ³ ATUALIZA CENTRO DE CUSTO GERENCIAL                  ³ ESTRELA AZUL             ³                ³
+³ GPZ164 ³ RELATORIO DE QUOTAS                                 ³ MEDCORP                  ³                ³
+³ GPZ165 ³ EXPORTA DADOS DE LANCAMENTO                         ³ MONSANTO                 ³                ³
+³ GPZ166 ³ SALVA DADOS DE BENEFICIOS                           ³ PROTEGE                  ³                ³
+³ GPZ167 ³ GERA ARQUIVO P/IMPRESSAO DE RECIBO - BENEFICIOS     ³ PROTEGE                  ³                ³
+³ GPZ168 ³ CONTABILIZACAO DA FOLHA                             ³ ESTRELA AZUL             ³ WK HERCULES    ³
+³ GPZ169 ³ GERA ARQUIVO PARA CONFERENCIA ASSIST.MEDICA         ³ PROTEGE                  ³                ³
+³ GPZ170 ³ CONTABILIZACAO DA FOLHA - SAP                       ³ ALLERGAN                 ³ SAP/3          ³
+³ GPZ171 ³ CONTABILIZACAO DA FOLHA                             ³ UNIMAR                   ³                ³
+³ GPZ172 ³ PROCESSAMENTO INDIVIDUAL VT                         ³ PROTEGE                  ³                ³
+³ GPZ173 ³ RELATORIO DE QUOTAS                                 ³ COOPERPLUS               ³                ³
+³ GPZ174 ³ EXPORTA MOVIMENTO ESTOQUE BENEF. P/ CONTAB          ³ PROTEGE                  ³                ³
+³ GPZ175 ³ IMPORTA EVENTOS AUTOMATICOS                         ³ MONSANTO                 ³                ³
+³ GPZ176 ³ EXPORTA MOVIMENTO BENEFICIOS PARA TEXTO             ³ PROTEGE                  ³                ³
+³ GPZ177 ³ EXPORTA DADOS PARA SEGURO DE VIDA                   ³ SAL CISNE                ³                ³
+³ GPZ178 ³ LE ARQ. IMPORT. LANC. E CRIA OUTRO COM SOMATORIA    ³ PROTEGE                  ³                ³
+³ GPZ179 ³ DEPTO/SETOR - CLIENTE/POSTO - INTEGRACAO HK         ³ POLIX                    ³                ³
+³ GPZ180 ³ EMISSAO DE CARTOES DE PONTO(folha de frequencia)    ³ PARIZOTTO                ³                ³
+³ GPZ181 ³ IMPORTACAO DE LANCTOS(DESCTOS)                      ³ WABCO/TRANSAMERICA/AGROC ³ BANCO ALFA     ³
+³ GPZ182 ³ HOLERITH DE PAGAMENTO  (DOIS POR FOLHA)             ³ PERSTORP                 ³                ³
+³ GPZ183 ³ ATUALIZA UNIDADE DE ENTREGA VT (VIA ARQUIVO TEXTO)  ³ ESTRELA AZUL             ³                ³
+³ GPZ184 ³ RELATORIO UNIMED                                    ³ SPLICE                   ³                ³
+³ GPZ185 ³                                                     ³                          ³                ³
+³ GPZ186 ³ EMISSAO DE folha de frequencia                      ³ ASA                      ³                ³
+³ GPZ187 ³ EXP. EVENTOS PARA SISTEMA GERENCIAL (COMPL. GPZ099) ³ GRABER                   ³                ³
+³ GPZ188 ³ TAB.PARAMETROS P/ GPZ189 - ESPECIAL SOPLAST         ³ SOPLAST                  ³                ³
+³ GPZ189 ³ RELATORIO DE AUDITORIA                              ³ SOPLAST                  ³                ³
+ÃÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³          ROTINAS DE LEITURA DE ARQUIVOS                                                                  ³
+ÃÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ GPRACA ³ GPRHID ³ GPRDEM ³ GPRPAR ³ GPRFER ³ GPRSEL ³ GPRAUT ³ GPRLAU ³ GPRESB ³ GPRRAT ³ GPRGER ³ GPRTRA³                                                     ³
+³ GPRACL ³ GPRHIF ³ GPRDEP ³ GPRPEN ³ GPRFIX ³ GPRTAB ³ GPRBEN ³ GPRMEC ³ GPREST ³ GPRRES ³ GPRGFI ³ GPRVBE³                                                     ³
+³ GPRALO ³ GPRLAN ³ GPRDIR ³ GPRPRC ³ GPRFUN ³ GPRTBC ³ GPRBIR ³ GPROCO ³ GPREVA ³ GPRRSC ³ GPRGRP ³ GPRVTR³                                                     ³
+³ GPRAPO ³ GPRLAO ³ GPREMP ³ GPRPRV ³ GPRGEA ³ GPRTEM ³                                                    ³
+ÀÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+*  1 ABC71
+*  1 ACIL
+*  1 ADIB JATENE
+*  4 ADSERT
+*  4 ALLERGAN
+*  1 ASA
+*  1 ASEM HOSPITALAR
+*  1 ASSOC.FUNC.PUBLICOS
+*  1 APM
+*  3 BANCO PANAMERICANO
+*  1 BENFICA
+*  1 BORLEM
+*  1 CAMARA MUNICIPAL
+*  2 LATUS (CANBRAS)
+*  1 CATERINA
+*  2 CONIBRA
+*  1 COOPERFERTIL
+*  1 COOPERPLUS
+*  2 COOPERVOLKS
+*  1 COSTEIRA
+*  1 CSTC
+*  1 CUT
+*  1 ED.ATUAL
+*  1 ERNST & YOUNG / STOK
+*  3 ESTOK
+* 11 ESTRELA AZUL
+*  1 FUNDACAO SABESP
+*  1 FUNERARIA/HSPM
+*  2 GRABER
+*  2 GRUPO S.SANTOS
+*  2 HSPM
+*  1 INBRA
+*  4 INTERPRINT
+*  1 ITALMA
+*  1 JANDAIA
+*  2 KPMG
+*  1 LA BASQUE
+*  3 LAZZURIL
+*  1 MAIS
+*  1 MAXIQUALY
+*  3 MEDICORP
+*  7 MESQUITA
+*  1 META
+*  5 METAGAL
+*  1 MOLPLASTIC
+*  5 MONSANTO
+*  1 NOVAFLEX
+*  1 OAB
+?  1 R-PRECISION/PAO ACUCAR
+*  5 PARIZOTTO
+*  1 PENTAGRAMA
+*  1 PERSTORP
+*  1 PH-ARCANGELI
+*  1 PHOENIX
+*  1 POLIX
+*  1 PRO-MATRE
+*  1 PROEVI
+* 32 PROTEGE
+*  1 RACE
+*  2 REAL
+*  2 REAL SEGUROS
+*  1 SACHS
+*  2 SAL CISNE
+*  1 SBPS
+*  2 SCHIMIDT
+*  2 SEBIL
+*  1 SENSORMATIC
+*  2 SETAL
+*  1 SIND. SAUDE SP
+*  2 SOLORRICO
+*  1 SOLORRICO-CUBATAO
+*  1 SOMA
+*  5 SPLICE
+*  1 TECFIL
+*  2 TELETRIM
+*  1 TERCO
+*  1 TRANSAM./SBPS
+*  4 UEMURA
+*  1 UNIMAR
+B  1 UNION ASSESSORIA
+*  1 VICTOR HUGO / FORMTAP
+*  1 WABCO
+*  1 WORCESTER
+*  1 ZAMBOM

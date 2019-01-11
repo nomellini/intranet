@@ -1,0 +1,160 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³      P R O G R A M A S   E   B O O K S     -     R. H.  A V A N C A D O      ³
+ÃÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³  PROGR.  ³ DESCRICAO                                                         ³
+ÃÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³            MODULO GERENCIAL                                                  ³
+ÃÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ ACB01A   ³ PONTO - REALIZA ABONO POR FUNCIONARIO                             ³
+³ ACB01B   ³ PONTO - RETORNA DADOS REFEITORIO PARA ABONO                       ³
+³ ACB02A   ³ PONTO - PROGRAMA EXTRAS PARA FUNCIONARIO                          ³
+³ ACB03A   ³ PONTO - ALTERA HORARIO FUNCIONARIO                                ³
+³ ACB04A   ³ GIP   - ALTERACAO DE ENDERECOS                                    ³
+³ ACB05A   ³ GIP   - PROGRAMACAO DE FERIAS                                     ³
+³ ACB06A   ³ GIP   - REGISTRO DE OCORRENCIAS                                   ³
+³ ACB07A   ³ RH    - CADASTRO DE REQUISICAO DE PESSOAL                         ³
+³ ACC01A   ³ GIP   - REL. CADASTRO FUNCIONARIOS                                ³
+³ ACC02A   ³ GIP   - REL. EXPERIENCIA                                          ³
+³ ACC03A   ³ GIP   - REL. EXAME MEDICO                                         ³
+³ ACC04A   ³ GIP   - REL. ANIVERSARIANTES                                      ³
+³ ACC05A   ³ GIP   - REL. ANALISE DE ADIANTAMENTO                              ³
+³ ACC06A   ³ GIP   - EXTRATO DE F.G.T.S.                                       ³
+³ ACC07A   ³ GIP   - EMISSAO DO RECIBO DE PAGAMENTO                            ³
+³ ACC08A   ³ GIP   - REL. CONTROLE DE FERIAS                                   ³
+³ ACC09A   ³ GIP   - REL. PROGRAMACAO DE FERIAS                                ³
+³ ACC10A   ³ GIP   - REL. ANALISE DE SALARIOS                                  ³
+³ ACC11A   ³ GIP   - REL. POSICAO SALARIAL                                     ³
+³ ACC12A   ³ GIP   - EMISSAO DO RECIBO DE 13o                                  ³
+³ ACC13A   ³ GIP   - REL. VALE TRANSPORTE                                      ³
+³ ACC14A   ³ GIP   - REL. DEPENDENTES                                          ³
+³ ACC15A   ³ GIP   - IMPRESSAO INFORME DE RENDIMENTOS                          ³
+³ ACD01A   ³ PONTO - RELATORIO DE JUSTIFICATIVAS P/ CHEFIA                     ³
+³ ACD02A   ³ PONTO - RELATORIO DE HORAS EXTRAS PARA CHEFIAS                    ³
+³ ACD03A   ³ PONTO - RELATORIO DE OCORRENCIAS DO APONTAMENTO P/ CHEFIAS        ³
+³ ACD04A   ³ PONTO - RELATORIO FLEX - TIME                                     ³
+³ ACD05A   ³ PONTO - RELATORIO DE COMPENSACOES                                 ³
+³ ACD06A   ³ PONTO - RELATORIO DE REFEICOES CONSUMIDAS                         ³
+³ ACD07A   ³ PONTO - RELATORIO DE ABSENTEISMO DIARIO                           ³
+³ ACD08A   ³ PONTO - ESPELHO DO CARTAO                                         ³
+³ ACE01A   ³ RH    - RELATORIO DE CARGOS                                       ³
+³ ACE02A   ³ RH    - RELATORIO DE CUSTO DE CURSOS                              ³
+³ ACE03A   ³ RH    - RELATORIO PREVISTO x REALIZADO                            ³
+³ ACE04A   ³ RH    - RELATORIO NECESSIDADE DE TREINAMENTO                      ³
+³ ACE05A   ³ RH    - RELATORIO CURSOS REALIZADOS                               ³
+³ ACE06A   ³ RH    - RELATORIO FORNECIMENTO DE EPI                             ³
+³ ACE07A   ³ RH    - RELATORIO RISCOS AMBIENTAIS                               ³
+³ ACMENU   ³ MENU DO SISTEMA AC - MODULO GERENCIAL                             ³
+³ ACS00A   ³ MENU DO SUPERVISOR                                                ³
+³ ACS010   ³ SUB-ROTINA - OPCOES DE TELA                                       ³
+³ ACS01A   ³ RELACIONAMENTO DE CHEFIAS                                         ³
+³ ACS02A   ³ SUB-ROTINA - HELP DE SUBORDINADOS                                 ³
+³ ACS03A   ³              EDITOR DE TEXTOS AUXILIAR                            ³
+³ ACS04A   ³              CRIA ARQUIVO DE SUBORDINADOS E CHEFES                ³
+³ ACS05A   ³              HELP DE HORARIOS                                     ³
+³ ACS06A   ³              OPCAO DE TELA                                        ³
+³ ACS07A   ³              BARRA DE PROGRESSO                                   ³
+³ ACS08A   ³              RELATORIO EM TELA                                    ³
+³ ACS09A   ³              MOSTRA HORARIO PARA ACB01A - JUSTIFICATIVAS          ³
+³ ACS10A   ³              MOSTRA REALIZADO PARA ACB01A - JUSTIFICATIVAS        ³
+³ ACS11A   ³              ENTRA DADOS PARA RELATORIOS DO PONTO                 ³
+³ ACS12A   ³              LE FUNPTO PARA RELATORIO DE OCORRENCIAS              ³
+³ ACS13A   ³              EDITOR DE TEXTOS                                     ³
+³ ACS14A   ³              HELP DE CHEFIAS                                      ³
+³ ACS15A   ³              TIRA MARCA DE SUBORDINADOS                           ³
+³ ACS16A   ³              RELATORIO DE CHEFIAS                                 ³
+³ ACS17A   ³              CONTROLE PARA RH-AVANCADO                            ³
+³ ACS18A   ³              CALCULA TEMPO FINAL PARA TELA INATIVA                ³
+³ ACS19A   ³              GERA LOG PARA RH-AVANCADO                            ³
+³ ACS20A   ³              RELACAO DO LOG                                       ³
+³ ACS21A   ³              LIMPA DO LOG ATE DETERMINADA DATA                    ³
+³ ACS22A   ³              HELP DE AREAS SUBORDINADAS                           ³
+³ ACS23A   ³              HELP DE TABELAS                                      ³
+³ ACS24A   ³              CONFIGURACAO DE IMPRESSAO                            ³
+³ ACS25A   ³              ESCOLHER IMPRESSORA                                  ³
+ÃÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³            MODULO PESSOAL                                                    ³
+ÃÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ PC001A   ³ CONSULTA - DADOS PESSOAIS                                         ³
+³ PC002A   ³            DEPENDENTES                                            ³
+³ PC003A   ³            FICHA DE REGISTRO                                      ³
+³ PC004A   ³            RECIBO EM TELA                                         ³
+³ PC005A   ³            DADOS SALARIAIS                                        ³
+³ PC006A   ³            DADOS DE FERIAS                                        ³
+³ PC007A   ³            DADOS DE 13o SALARIO                                   ³
+³ PC008A   ³            DADOS DE FGTS - EXTRATO                                ³
+³ PC009A   ³            DADOS DE FORNECIMENTO DE E.P.I.                        ³
+³ PC010A   ³            DESCRICAO DE CARGOS                                    ³
+³ PC011A   ³            CURSOS REALIZADOS                                      ³
+³ PC012A   ³            DEBITOS                                                ³
+³ PC013A   ³ ENTRA DADOS PARA CONSULTA DO ESPELHO DO CARTAO DE PONTO           ³
+³ PC013B   ³ CONSULTA - MARCACOES DO CARTAO DE PONTO                           ³
+³ PC013C   ³            GRAFICO - ACAO DE OCORRENCIAS                          ³
+³ PC014A   ³            RESUMO MENSAL DO CARTAO DE PONTO                       ³
+³ PC014B   ³            GRAFICO - ACAO DE OCORRENCIAS                          ³
+³ PC015A   ³            VALE TRANSPORTE                                        ³
+³ PC016A   ³            DADOS DE DIRF                                          ³
+³ PC017A   ³            OCORRENCIAS                                            ³
+³ PCMENU   ³ MENU DO SISTEMA PERSONAL CONSULT                                  ³
+³ PCS000   ³ SUB-ROTINA - MENU DO SISTEMA PERSONAL CONSULT                     ³
+³ PCS001   ³              FAZER E RESTAURAR BARRA DE MENSAGEM                  ³
+³ PCS002   ³              FAZER E RESTAURAR TELA DE MENSAGEM                   ³
+³ PCS003   ³              TELAS                                                ³
+³ PCS004   ³              VERIFICA A EXISTENCIA DO FUNCIONARIO NO FUNPTO       ³
+ÃÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³            CORREIO ELETRONICO                                                ³
+ÃÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ EMENU    ³ MENU DO E-MAIL                                                    ³
+³ EMS01A   ³ MENU DE LEITURA DO E-MAIL                                         ³
+³ EMS01B   ³ SUB-ROTINA - LEITURA DE MENSAGEM                                  ³
+³ EMS02A   ³              ENVIA MENSAGEM                                       ³
+³ EMS03A   ³ MENU DE ALTERACAO DE MENSAGEM DO E-MAIL                           ³
+³ EMS03B   ³ SUB-ROTINA - ALTERACAO DE MENSAGEM                                ³
+³ EMS04A   ³ MENU DE EXCLUSAO DO E-MAIL                                        ³
+³ EMS04B   ³ SUB-ROTINA - EXCLUSAO DE MENSAGEM                                 ³
+³ EMS05A   ³              VER SE EXISTE MENSAGEM PARA USUARIO                  ³
+ÃÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³            COPY BOOKS DOS SISTEMAS AC - PC - EM                              ³
+ÃÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ ACB01B   ³ PARAMETROS DO PROGRAMA ACB01A/B                                   ³
+³ ACCADCDC ³ REGISTRO DE CHEFES                                                ³
+³ ACCADSUB ³ REGISTRO DE SUBORDINADOS                                          ³
+³ ACCHEFIA ³ REGISTRO DE CHEFIA                                                ³
+³ ACCONTRO ³ ARQUIVO DE CONTROLE DO SISTEMA RH-AVANCADO                        ³
+³ ACCORPAR ³ PARAMETROS DE CORES                                               ³
+³ ACJANSAL ³ TELA-SALVA-RESTAURA                                               ³
+³ ACLNK006 ³ PARAMETROS DO PROGRAMA                                            ³
+³ ACLNK024 ³                                                                   ³
+³ ACLOGSIS ³                                                                   ³
+³ ACOPCREL ³                                                                   ³
+³ ACS010   ³                                                                   ³
+³ ACS01A   ³                                                                   ³
+³ ACS03A   ³                                                                   ³
+³ ACS05A   ³                                                                   ³
+³ ACS06A   ³                                                                   ³
+³ ACS07A   ³                                                                   ³
+³ ACS08A   ³                                                                   ³
+³ ACS09A   ³                                                                   ³
+³ ACS10A   ³                                                                   ³
+³ ACS11A   ³                                                                   ³
+³ ACS12A   ³                                                                   ³
+³ ACS13A   ³                                                                   ³
+³ ACS14A   ³                                                                   ³
+³ ACS16A   ³                                                                   ³
+³ ACS19A   ³                                                                   ³
+³ ACS23A   ³                                                                   ³
+³ ACS24A   ³                                                                   ³
+³ ACS25A   ³                                                                   ³
+³          ³                                                                   ³
+³ PC014A   ³                                                                   ³
+³ PCCHNPAR ³                                                                   ³
+³ PCINDICE ³                                                                   ³
+³ PCS001   ³                                                                   ³
+³ PCS002   ³                                                                   ³
+³ PCS003   ³                                                                   ³
+³ PCS004   ³                                                                   ³
+³          ³                                                                   ³
+³ EMAIL    ³                                                                   ³
+³ EMAILPAR ³                                                                   ³
+³ EMAUXPAR ³                                                                   ³
+³ EMENU    ³                                                                   ³
+ÀÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

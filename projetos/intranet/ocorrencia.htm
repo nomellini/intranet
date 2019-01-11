@@ -1,0 +1,151 @@
+<SCRIPT language=JavaScript src="file:///W|/sis/net/proj/Templates/cookie.js"></SCRIPT>
+<html>
+<head>
+<title>SEM T&Iacute;TULO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="file:///W|/sis/net/proj/stilos.css" type="text/css">
+<meta http-equiv="refresh" content="60;URL=http://192.168.0.53/">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<SCRIPT>
+  a = GetCookie("ok");
+  if (a!="True") {
+    window.location="http://10.1.0.50/Cobol";
+  }
+</SCRIPT>
+<table width="100%" border="0" cellspacing="1" cellpadding="1" align="center">
+  <tr> 
+    <td valign="top"> 
+      <div align="left"> 
+        <table width="100%" border="0" cellspacing="1" cellpadding="1">
+          <tr> 
+            <td><img src="file:///W|/sis/net/proj/logopcweb.gif" width="264" height="60"></td>
+            <td> 
+              <div align="right"><a href="http://192.168.0.53"><img src="file:///W|/sis/net/proj/sair.gif" width="75" height="31" border="0"></a></div>
+            </td>
+          </tr>
+        </table>
+        <p><font class="DataFOnte" size=1> 
+          <script language=JavaScript class="DataFOnte">
+      var diasemana = new Array;
+      var mesescrito = new Array;
+    
+      diasemana[1] = "Segunda-feira";
+      diasemana[2] = "Terça-feira";
+      diasemana[3] = "Quarta-feira";
+      diasemana[4] = "Quinta-feira";
+      diasemana[5] = "Sexta-feira";
+      diasemana[6] = "Sábado";
+      diasemana[7] = "Domingo";
+     
+      mesescrito[0] = "Janeiro";
+      mesescrito[1] = "Fevereiro";
+      mesescrito[2] = "Março";
+      mesescrito[3] = "Abril";
+      mesescrito[4] = "Maio";
+      mesescrito[5] = "Junho";
+      mesescrito[6] = "Julho";
+      mesescrito[7] = "Agosto";
+      mesescrito[8] = "Setembro";
+      mesescrito[9] = "Outubro";
+      mesescrito[10] = "Novembro";
+      mesescrito[11] = "Dezembro";
+
+      var datahoje = new Date();
+      var dia;
+      var mes;
+      var ano;
+      var diaindex;
+
+      dia = datahoje.getDate();
+      mes = datahoje.getMonth();
+      ano = datahoje.getYear();
+      diaindex = datahoje.getDay();  
+
+     document.write (diasemana[diaindex] + ', ' + dia + ' de ' + mesescrito[mes] + ' de ' + ano);
+</script>
+          <br>
+          </font></p>
+        <!-- #BeginLibraryItem "/menulinha.lbi" --><form name="form" method="post" action="file:///W|/sis/net/proj/Templates/wpcmenu.exe">
+  <input type="hidden" name="fdia">
+  <input type="hidden" name="fmes">
+  <input type="hidden" name="fano">
+  <input type="hidden" name="fcracha" value=":fcracha">
+  <input type="hidden" name="fprog" value="vazio">
+  <input type="hidden" name="ftabela" value=":ftabela">
+  <input type="hidden" name="fmesfecha" value=":fmesfecha">
+  <input type="hidden" name="fanofecha" value=":fanofecha">
+  <table width="100%" border="0" cellspacing="1" cellpadding="1" class="TabelaMenuFundo">
+    <tr> 
+      <td  class="TabelaMenuTD" width="11%" height="5" > 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="javascript:document.form.fprog.value='wpc001a';document.form.submit();">Pessoais</a></font></div></td><td  class="TabelaMenuTD" width="11%" height="5" > 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          13&ordm; Sal&aacute;rio</font></div></td><td  class="TabelaMenuTD" width="11%" height="5" > 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Espelho Ponto</font></div></td><td  class="TabelaMenuTD" width="11%" height="5" > 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="javascript:document.form.fprog.value='wpc002a';document.form.submit();">Dependentes</a></font></div></td><td  class="TabelaMenuTD" width="11%" height="5" > 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <a href="javascript:document.form.fprog.value='wpc008a';document.form.submit();">F.G.T.S</a></font></div></td><td width="11%" class="TabelaMenuTD" height="5"> 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Resumo Pto</font></div></td><td width="11%" class="TabelaMenuTD" height="5"> 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Ficha Registro </font></div></td><td width="11%" class="TabelaMenuTD" height="5"> 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          E.P.I</font></div></td><td width="11%" class="TabelaMenuTD" height="5"> 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <a href="javascript:document.form.fprog.value='wpc015a';document.form.submit();">V. 
+          Transporte</a></font></div></td></tr>
+    <tr> 
+      <td width="11%" class="TabelaMenuTD" height="5"> 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <a href="javascript:document.form.fprog.value='wpc004a';document.form.submit();">Financeiros</a></font></div></td><td width="11%" class="TabelaMenuTD" height="5"> 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Cargo</font></div></td><td width="11%" class="TabelaMenuTD" height="5"> 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <a href="javascript:document.form.fprog.value='wpc0016a';document.form.submit();">Inf. 
+          Rend.</a></font></div></td><td width="11%" class="TabelaMenuTD" height="5"> 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          <a href="javascript:document.form.fprog.value='wpc005a';document.form.submit();">Salariais</a></font></div></td><td width="11%" class="TabelaMenuTD" height="5"> 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Cursos</font></div></td><td width="11%" class="TabelaMenuTD" height="5"> 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Ocorr&ecirc;ncias</font></div></td><td width="11%" class="TabelaMenuTD" height="5"> 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          F&eacute;rias</font></div></td><td width="11%" class="TabelaMenuTD" height="5"> 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          D&eacute;bitos</font></div></td><td width="11%" class="TabelaMenuTD" height="5"> 
+        <div align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+          Time Sheet </font></div></td></tr>
+  </table><div class="DadoFixo">
+    <div align="center">
+      <script language="JavaScript">
+      var datahoje = new Date();
+      var dia;
+      var mes;
+      var ano;
+      var diaindex;
+      dia = datahoje.getDate();
+      mes = datahoje.getMonth();
+      ano = datahoje.getYear();
+      diaindex = datahoje.getDay();  
+
+      if (document.form) {
+        document.form.fdia.value = dia;
+        document.form.fmes.value = mes;
+        document.form.fano.value = ano; 
+      }
+</script>
+    </div></div></form><!-- #EndLibraryItem --><font class="DataFOnte" size=1> 
+        </font> </div>
+    </td>
+  </tr>
+  <tr> 
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+<div align="center"><br>
+  <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">Datamace 
+  Inform&aacute;tica &reg; Todos os diretos reservados<br>
+  GRH AV - PC for WEB</font></div>
+</body>
+</html>

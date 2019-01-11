@@ -527,40 +527,18 @@
                           <input type="button" name="Submit2" value="Manter Pendente" class="unnamed1" onClick="document.form.action.value='manter';vai();"></td>
                         <td> 
                           <input type="button" name="Submit3" value="Encaminhar p/" class="unnamed1" onClick="document.form.destinatario.value = document.form.dest.value; document.form.action.value='encaminhar';vai();">
-                                                <select name="dest" class="bordagrafite02" >
-                        <option value="0"></option>
-                        <?
-    $conta=1;
-	$ListaDeEncaminhamentos = pegaEncaminhaPara($id_chamado, $id_usuario);
-	while ( list($tmp1, $tmp) = each($ListaDeEncaminhamentos) ) {
+                                                <select name="dest">
+                            <option value="0"></option>
+                            <?
+	$sistema = pegaEncaminhaPara($chamado, $id_usuario);
+	while ( list($tmp1, $tmp) = each($sistema) ) {
 	  $id = $tmp["id_usuario"];
-	  $si = $tmp["nome"];	  
-	  $ferias = $tmp["f"];
-		
-
-	  if ($objChamado->destinatario_id == $id) 
-	  {
-		  $ferias = 0;
-	  }
-
-
-	  $se = '';	  
-	  if ($ferias) 
-	  {
-		  echo "<OPTGROUP LABEL='$si'>";
-	  } else 
-	  {
-	  	  if ($id != $ok) 
-			  if ( $objChamado->destinatario_id == $id ) {		
-				$se = 'selected="selected"';
-				$conta=0;
-			  }
-		  echo "<option value=$id $se >$si</option>";	  
-	  }
+	  $si = $tmp["nome"];
+	  echo "<option value=$id>$si</option>";	  
 	}
 	
-?>
-                      </select>
+  ?>
+                          </select>
 
                        </td>
                       </tr>

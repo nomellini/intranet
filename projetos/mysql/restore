@@ -1,0 +1,7 @@
+mysql -hlocalhost -pmarcia -uroot teste  < atendimento
+mysql -hlocalhost -pmarcia -uroot atendimento < atendimento
+mysql -hlocalhost -pmarcia -uroot datamace  < datamace
+mysql -hlocalhost -pmarcia -uroot hardware  < hardware
+mysql -hlocalhost -pmarcia -uroot suporte  < suporte
+mysql -hlocalhost -pmarcia -uroot sympoll  < sympoll
+mysql -hlocalhost -pmarcia -uroot phorum  < phorum

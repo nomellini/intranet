@@ -1,0 +1,52 @@
+DROP TABLE IF EXISTS cliente;
+
+CREATE TABLE cliente (
+  id_cliente char(15) NOT NULL,
+  senha char(6),
+  cliente char(40),
+  endereco char(35),
+  bairro char(20),
+  cidade char(20),
+  uf char(2),
+  cep char(8),
+  telefone char(20),
+  fax char(20),
+  contato1 char(15),
+  contato2 char(15),
+  contato3 char(15),
+  funcionarios char(5),
+  bloqueio bool,  
+  PRIMARY KEY (id_cliente));
+
+
+LOAD DATA LOCAL INFILE  'clientes.txt' REPLACE INTO TABLE cliente
+fields terminated by ',' enclosed by '"';
+
+
+DROP TABLE IF EXISTS treinados;
+
+CREATE TABLE treinados (
+  cliente char(15),
+  sistema int(11),
+  nome char(40),
+  cargo char(25),
+  conceito char(8) ,
+  data date
+);
+
+LOAD DATA LOCAL INFILE  'treinado.txt' REPLACE INTO TABLE treinados
+fields terminated by ',' enclosed by '"';
+
+
+drop table IF EXISTS  clisis;
+
+CREATE TABLE clisis (
+  cliente char(15),
+  sistema int(11),
+  ativo bool
+ );
+
+
+LOAD DATA LOCAL INFILE  'sistemas.txt' REPLACE INTO TABLE clisis
+fields terminated by ',' enclosed by '"';
+

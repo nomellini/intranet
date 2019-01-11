@@ -1,15 +1,6 @@
 <?
-	require("../scripts/conn.php");	
-	require("../scripts/stats.php");	
-	require("../scripts/classes.php");	
-	if ( isset($id_usuario) ) {
-		$ok = verificasenha($cookieEmailUsuario, $cookieSenhamd5 );	  
-		if ($ok<>$id_usuario) { header("Location: index.php"); }
-		$nomeusuario=peganomeusuario($ok);	
-		setcookie("loginok");  
-	} else {
-		header("Location: index.php");
-	}
+	require("../cabeca.php");	
+
 	
     $pode = pegaGerencial($ok);   
 	if(!$pode) {
@@ -24,7 +15,7 @@
 <html>
 <head>
 <title>relat&oacute;rio de pendencias</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../stilos.css" type="text/css">
 <style type="text/css">
 <!--
@@ -76,10 +67,39 @@
   <br>
 </form>
 
+
+
+<table border="0" cellspacing="1" cellpadding="1" border="1">
+
+    <tr>
+      <td>Prioridade</td>
+      <td>Qtde</td>
+    </tr>
+    
+<?
+  $sql = "select p.prioridade, count(1) qtde from chamado c
+		inner join prioridade p on c.prioridade_id = p.id_prioridade 
+		where destinatario_id=$f_id_usuario and c.status > 1 and c.status < 4
+		and c.descricao is not null group by p.prioridade order by prioridade desc";
+	$result = mysql_query($sql);
+	while ($linha = mysql_fetch_object($result))
+	{
+?>        
+    <tr>
+      <td><?=$linha->prioridade?></td>
+      <td><?=$linha->qtde?></td>
+    </tr>
+<?
+	}
+?>    
+    
+
+</table>
+
+
 <br><span id=bloqueados></span>
 <br><?
-  $sql = "select Id_chamado_espera, cliente_id, id_chamado, descricao, dataa, dono.nome as dono, destinatario.nome as destinatario from chamado, usuario dono, usuario destinatario where (chamado.visible=1) and (destinatario.id_usuario=destinatario_id) and (dono.id_usuario=consultor_id) and  (status > 1 and status < 4) " ;
-  $sql .= "and destinatario_id = $f_id_usuario and descricao is not null;";
+
   
   
   $sql = "
@@ -89,6 +109,7 @@ select
 	c.id_chamado, 
 	c.descricao, 
 	c.dataa, 
+	p.prioridade,
 	dono.nome as dono, 
 	destinatario.nome as destinatario,
     (SELECT dataa FROM contato WHERE id_contato = (select max(id_contato) from contato where chamado_id  = c.id_chamado)) as data_ultimo_contato,
@@ -99,18 +120,19 @@ from
 		inner join usuario destinatario on destinatario.id_usuario = c.destinatario_id
 		left join chamado e on e.id_chamado = c.Id_chamado_espera
 		left join status s on s.id_status = e.status		
+		inner join prioridade p on p.id_prioridade = c.prioridade_id
 where 
 	(c.visible=1) and 
 	(c.status > 1 and c.status < 4) and 
 	c.destinatario_id = $f_id_usuario and c.descricao is not null
-order by data_ultimo_contato;";  
-// die($sql);
+order by p.prioridade desc;";  
+
 
   if ($sql) {
     $result = mysql_query($sql) or die (mysql_error());
 	$total = mysql_affected_rows();
-	echo "Chamados que estão com $nome :  $total ";
-?><?
+	echo "Chamados que estÃ£o com $nome :  $total ";
+
  	while ( $linha = mysql_fetch_object($result) ) {
 			$descricao = $linha->descricao;
 			$descricao = eregi_replace("\r\n", "<br>",$descricao);
@@ -132,7 +154,7 @@ order by data_ultimo_contato;";
 ?>
 <table width="100%" border="0" cellspacing="1" cellpadding="1">
   <tr>
-    <td><table width="99%" border="0" cellpadding="1" cellspacing="0" bgcolor="#003366">
+    <td><table width="99%" border="0" cellpadding="1" cellspacing="0" bgcolor="">
     <tr>
       <td><table width="100%" border="0" cellspacing="1" cellpadding="1">
   <tr>
@@ -153,6 +175,8 @@ O dono deste chamado &eacute;
 <?=$linha->dono?>
 <br>
 <br>
+Prioridade: <?=$linha->prioridade?><br>
+
 <em><strong>Descri&ccedil;&atilde;o do chamado</strong></em><br>
 <br>
 <b>
@@ -184,8 +208,10 @@ O dono deste chamado &eacute;
   <?
 }
 ?>
-  <br>
 <br>
+<?
+
+?>
 <br>
 <br>
 <?
@@ -194,7 +220,7 @@ O dono deste chamado &eacute;
   if ($sql) {
     $result = mysql_query($sql);
 	$total = mysql_affected_rows();
-	echo "Chamados que foram abertos por $nome e estão encaminhados :  $total ";
+	echo "Chamados que foram abertos por $nome e estÃ£o encaminhados :  $total ";
 ?>
 <table width="99%" border="0" cellspacing="1" cellpadding="1" bgcolor="#000066">
   <tr bgcolor="#0000FF"> 

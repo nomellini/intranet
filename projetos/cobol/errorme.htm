@@ -1,0 +1,2692 @@
+<!-- #BeginEditable "php" --> <!-- #EndEditable --> 
+<html><!-- #BeginTemplate "/Templates/menu.dwt" --><!-- DW6 -->
+<head>
+<!-- #BeginEditable "doctitle" --> 
+<title>Tabela de erros de run-time (RTS) </title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="/Templates/stilo.css" type="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+.style2 {font-size: 18px; font-weight: normal; font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF;}
+.style3 {color: #000099}
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF">
+<div align="center"> 
+  <table width="100%" border="0">
+    <tr> 
+      <td>
+        <table width="100%" border="0" bordercolorlight="#FFCC30" bordercolordark="#FFCC38" class="bgTabela" bordercolor="#FF0000">
+          <tr align="center" valign="middle"> 
+            <td width="17%"> <div align="center" class="style1">
+              <div align="left"><a href="http://www.datamace.com.br"><img src="../../imagens/novologo.jpg" width="155" height="41" border="0">
+                </a></div>
+            </div></td>
+            <td width="60%" valign="middle"> <p class="style1"><font face="Verdana, Arial, Helvetica, sans-serif" class="style2">Intranet 
+            DATAMACE</font></p></td>
+            <td width="23%" valign="bottom" align="right"><span class="style1"><font size="1"> <font class="unnamed1"> 
+              <script language="JavaScript">
+      var diasemana = new Array;
+      var mesescrito = new Array;   
+      diasemana[1] = "Segunda-feira";
+      diasemana[2] = "Terça-feira";
+      diasemana[3] = "Quarta-feira";
+      diasemana[4] = "Quinta-feira";
+      diasemana[5] = "Sexta-feira";
+      diasemana[6] = "Sábado";
+      diasemana[0] = "Domingo";
+     
+      mesescrito[0] = "Janeiro";
+      mesescrito[1] = "Fevereiro";
+      mesescrito[2] = "Março";
+      mesescrito[3] = "Abril";
+      mesescrito[4] = "Maio";
+      mesescrito[5] = "Junho";
+      mesescrito[6] = "Julho";
+      mesescrito[7] = "Agosto";
+      mesescrito[8] = "Setembro";
+      mesescrito[9] = "Outubro";
+      mesescrito[10] = "Novembro";
+      mesescrito[11] = "Dezembro";
+
+      var datahoje = new Date();
+      var dia;
+      var mes;
+      var ano;
+      var diaindex;
+
+      dia = datahoje.getDate();
+      mes = datahoje.getMonth();
+      ano = datahoje.getYear();
+      diaindex = datahoje.getDay();   
+     document.write (diasemana[diaindex] + '<br>' + dia + ' de ' + mesescrito[mes] + ' de ' + ano);
+
+              </script>
+              </font> </font></span></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" bordercolorlight="#FFCC30" bordercolordark="#FFCC30" class="bgTabela">
+          <tr>
+            <td width="77%" align="left" valign="top" bgcolor="#FFFFFF"><!-- #BeginEditable "Centro" --> 
+              <p align="center"><br>
+                <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="index.htm">Cobol 
+                </a>- <font color="#999999">Tabela de erros de run-time (RTS)</font></font></p>
+              <table width="100%" border="1" align="left">
+                <tr> 
+                  <td><b>001 Insufficient buffer space </b><br>
+                    Recoverable 
+                    <p>You have tried to open a file directly or indirectly and, 
+                      although you have not exceeded your system's file limit, 
+                      something in your system is unable to allocate enough memory 
+                      space for this operation.</p>
+                    <p>Resolution:</p>
+                    <p>Although you can trap this error you must do STOP RUN as 
+                      soon as it is reported.</p>
+                    <p>&nbsp;</p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><b>002 File not open when access attempted </b><br>
+                      Recoverable</p>
+                    <p>You have tried to access a file without opening it first.</p>
+                    <p>Resolution:</p>
+                    <p>Open the file with the open mode that you need and try 
+                      the operation again. As this error implies that your program 
+                      logic contains a mistake, you might want to terminate the 
+                      run and recode your program.</p>
+                    <p>&nbsp;</p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>003 Serial mode error </b><br>
+                    Recoverable 
+                    <p>You have tried to open a device as a relative or indexed 
+                      file.</p>
+                    <p>You are trying to execute a device, not a program.</p>
+                    <p>Resolution:</p>
+                    <p>Open the device in the correct mode or close any open files, 
+                      do STOP RUN and recode your program.</p>
+                    <p>The name of your program is recognized by the operating 
+                      system as a valid device. Rename your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>004 Illegal file name </b><br>
+                    Recoverable 
+                    <p>A file-name contains an illegal character. This could be 
+                      any character that is not part of the permitted character 
+                      set or it could be the system-dependent delimiter, which 
+                      on most systems is the space.</p>
+                    <p>Resolution:</p>
+                    <p>Try the file operation again using the correct file-name.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>005 Illegal device specification </b><br>
+                    Recoverable 
+                    <p>Devices to which your COBOL program can write are defined 
+                      by the operating system. You have tried to write to a device 
+                      that is not defined by your system.</p>
+                    <p>Resolution:</p>
+                    <p>Try the operation again using a device name that your system 
+                      recognizes.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>006 Attempt to write to a file opened for INPUT </b><br>
+                    Recoverable 
+                    <p>You have tried to WRITE to a file that is open for input 
+                      only.</p>
+                    <p>Resolution:</p>
+                    <p>Close the file and open it with a mode such as I-O, which 
+                      allows you to write to the file. As this error implies that 
+                      your program logic contains a mistake, you might want to 
+                      terminate the run and recode your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>007 Disk space exhausted Fatal </b> 
+                    <p>The disk is full.</p>
+                    <p>Resolution:</p>
+                    <p>This error can be trapped, but once it has been reported 
+                      you must do a STOP RUN immediately to terminate your program's 
+                      run. When your program has terminated, delete any files 
+                      that you no longer need. Alternatively, if your operating 
+                      system supports this, put a new disk in a floppy disk drive 
+                      and redirect your program's file operations to this.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>008 Attempt to input from a file opened for OUTPUT </b><br>
+                    Recoverable 
+                    <p>You have tried to read from a file that is open for output 
+                      only.</p>
+                    <p>Resolution:</p>
+                    <p>Close the file and open it with a mode such as I-O, which 
+                      allows you to read from the file. As this error implies 
+                      that your program logic contains a mistake, you might want 
+                      to terminate the run and recode your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>009 No room in directory </b><br>
+                    Recoverable 
+                    <p>The system cannot write to the specified directory for 
+                      one of the following reasons:</p>
+                    <p> The directory does not exist<br>
+                      The directory is full<br>
+                      Your program cannot find the directory</p>
+                    <p>Resolution:</p>
+                    <p>Create the directory if it doesn't exist. If the directory 
+                      is full, either delete any files that you no longer need 
+                      or, if your operating system supports this, put a new disk 
+                      in a floppy disk drive and redirect your program's file 
+                      operations to it. Alternatively, specify a different drive 
+                      or directory for your file operations.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>010 File name not supplied </b><br>
+                    Recoverable 
+                    <p>You have tried to open a file that you have declared as 
+                      an external file, but have not named.</p>
+                    <p>Resolution:</p>
+                    <p>Specify the external file-name.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>011 Process limit reached Fatal </b> 
+                    <p>One of the following has occurred:</p>
+                    <p> The run-time system cannot create a new process as the 
+                      operating system limit on the total number of processes 
+                      per user or system-wide would be exceeded.</p>
+                    <p> Insufficient memory is available to complete the operation.</p>
+                    <p>Resolution:</p>
+                    <p>Terminate any processes that you are no longer using, or 
+                      make more memory available.</p>
+                    <p>Your operating system might enable you to increase the 
+                      maximum number of processes allowed. Refer to your operating 
+                      system documentation for further information.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>012 Attempt to open a file which is already open </b><br>
+                    Recoverable 
+                    <p>You have tried to open a file which is already open and 
+                      so cannot be opened again.</p>
+                    <p>Resolution:</p>
+                    <p>Cancel your second attempt to open the file. If the fact 
+                      that the file is already open is acceptable to you, continue 
+                      to run your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>013 File not found </b><br>
+                    Recoverable 
+                    <p>The operating system has been unable to find a file which 
+                      you have tried to access in your program.</p>
+                    <p>Resolution:</p>
+                    <p>Ensure that you are in the correct directory or that a 
+                      path to the file concerned exists. You can then try the 
+                      file operation again. If the error is the result of a spelling 
+                      mistake then ask for the correct file and try the file operation 
+                      again.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>014 Too many files open simultaneously </b><br>
+                    Recoverable 
+                    <p>You have tried to exceed the maximum number of files which 
+                      you can have open at any one time. This can be a software 
+                      or an operating system constraint, but you must not violate 
+                      it.</p>
+                    <p>Resolution:</p>
+                    <p>Close some of the open files which you are not currently 
+                      accessing, and then try to open the relevant file again. 
+                      You should then be able to continue to run your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>015 Too many indexed files open </b><br>
+                    Recoverable 
+                    <p>You have tried to exceed the maximum number of indexed 
+                      files which you can have open at any one time. This can 
+                      be a software or an operating system restraint, but you 
+                      must not violate it.</p>
+                    <p>Resolution:</p>
+                    <p>Close some of the open indexed files which you are not 
+                      currently accessing, and then try to open the relevant file 
+                      again. You should then be able to continue to run your program. 
+                      (Indexed files count as two files, one for data and one 
+                      for the index.)</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>016 Too many device files open </b><br>
+                    Recoverable 
+                    <p>You have tried to exceed the maximum number of device files 
+                      which you can have open at any one time. This can be a software 
+                      or an operating system constraint, but you must not violate 
+                      it.</p>
+                    <p>Resolution:</p>
+                    <p>Close some of the open device files which you are not currently 
+                      accessing, and then try to open the relevant file again. 
+                      You should then be able to continue to run your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>017 Record error: probably zero length </b><br>
+                    Recoverable 
+                    <p>You have probably tried to access a record that has had 
+                      no value moved into it.</p>
+                    <p>Resolution:</p>
+                    <p>Although this error is recoverable in the sense that it 
+                      can be trapped, once it has been reported you must execute 
+                      a STOP RUN statement immediately and then recode your program 
+                      to ensure that the COBOL record length is not zero.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>018 Read part record error: EOF before EOR or file open 
+                    in wrong mode </b><br>
+                    Recoverable 
+                    <p>A part record has been found at the end of a file. Consequently 
+                      your run-time system treats the data file as a record, and 
+                      not finding a full record, reports this error.</p>
+                    <p>Resolution:</p>
+                    <p>Ensure that the record size you give when you read from 
+                      or WRITE to a file is consistent.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><b>019 Rewrite error: open mode or access mode wrong </b><br>
+                      Recoverable</p>
+                    <p>You are trying to do a REWRITE to a file that has not been 
+                      opened with the correct access mode for this operation.</p>
+                    <p>Resolution:</p>
+                    <p>Close the file and reopen it in a mode such as I-O, which 
+                      allows you to do REWRITE operations on that file. As this 
+                      error implies that your program logic contains a mistake, 
+                      you might want to close any open files and then execute 
+                      a STOP RUN. You can then recode your program to eliminate 
+                      the logic error.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>020 Device or resource busy </b><br>
+                    Recoverable 
+                    <p>You have tried to open a file that is assigned to a device 
+                      or resource (for example, a line printer) that is not available 
+                      at this time.</p>
+                    <p>Resolution:</p>
+                    <p>You can trap the error status returned by open and retry 
+                      the open at regular intervals until it succeeds.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>021 File is a directory Fatal </b> 
+                    <p>You have tried to WRITE to a directory instead of to a 
+                      file.</p>
+                    <p>Alternatively, the attributes are not set up correctly 
+                      to allow you to access a file. That is, it is marked as 
+                      read-only or you don't have sufficient rights to open it.</p>
+                    <p>Resolution:</p>
+                    <p>Recode your program so that it writes to a file and not 
+                      to a directory.</p>
+                    <p>You need to either change your file access attributes or 
+                      recode your program so that it does not violate the existing 
+                      attributes.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>022 Illegal or impossible access mode for OPEN </b><br>
+                    Recoverable 
+                    <p>The mode in which you are trying to open a file violates 
+                      the General Rule of COBOL for that type of file; for example 
+                      you might have opened a line sequential file in the I-O 
+                      mode.</p>
+                    <p>Resolution:</p>
+                    <p>Open the file with a mode that is compatible with that 
+                      type of file.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>023 Illegal or impossible access mode for CLOSE </b><br>
+                    Recoverable 
+                    <p>The mode in which you are trying to close a file is not 
+                      possible for that type of file.</p>
+                    <p>Resolution:</p>
+                    <p>Close the file with a new access mode which is compatible 
+                      with that type of file, or execute a STOP RUN statement 
+                      and recode your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>024 Disk input-output error </b><br>
+                    Recoverable 
+                    <p>You might have performed a read after a WRITE, or there 
+                      might be either a verification failure or a parity error.</p>
+                    <p>Resolution:</p>
+                    <p>In some circumstances this error is fatal, but if it occurs 
+                      during a read you can trap it and then do a close on the 
+                      file before executing a STOP RUN statement.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>025 Operating system data error Fatal </b> 
+                    <p>You are trying to set up terminal characteristics for a 
+                      device which is not a terminal.</p>
+                    <p>Resolution:</p>
+                    <p>Recode your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>026 Block I-O error </b><br>
+                    Fatal 
+                    <p>An error has occurred while you are trying to access a 
+                      disk. This could be the result of a corrupt disk.</p>
+                    <p>Resolution:</p>
+                    <p>If you have a corrupt disk try to run your program again 
+                      using your backup copy.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>027 Device not available </b><br>
+                    Recoverable 
+                    <p>You are trying to access a device which either is not attached 
+                      to your machine or if attached is not on-line.</p>
+                    <p>Resolution:</p>
+                    <p>Attach the device to your machine and ensure that it is 
+                      on-line. Repeat the file operation.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>028 No space on device Fatal </b> 
+                    <p>You have tried a file operation such as WRITE for which 
+                      insufficient space is available on your disk.</p>
+                    <p>Resolution:</p>
+                    <p>When your program has terminated you should delete some 
+                      of the files or directories on your current logged in disk. 
+                      Ensure that you delete sufficient files on your disk so 
+                      that you have enough room to carry out successful file operations.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>029 Attempt to delete open file </b><br>
+                    Recoverable 
+                    <p>You have tried to perform a DELETE FD operation on an open 
+                      file.</p>
+                    <p>Resolution:</p>
+                    <p>Close the file before performing the DELETE FD operation.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>030 File system is read-only </b><br>
+                    Recoverable 
+                    <p>The file system which you are using is read-only, which 
+                      effectively means that it is write-protected. You have tried 
+                      to change a file in some way, for example you might have 
+                      tried to WRITE to a file or to DELETE information in it.</p>
+                    <p>Resolution:</p>
+                    <p>You should abandon your attempt to alter the file unless 
+                      you can make your own personal copy of it. You should then 
+                      be able to alter the contents of your copy, but not of the 
+                      original source.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>031 Not owner of file </b><br>
+                    Recoverable 
+                    <p>You are trying an operation on a file but the file's owner 
+                      has not given you the necessary permission for that operation. 
+                      You could for example be trying to alter the access modes 
+                      for a file, which only the file's owner can do.</p>
+                    <p>Resolution:</p>
+                    <p>You should abandon your tried file operation unless the 
+                      file's owner gives you the permission necessary to do the 
+                      operation you want to carry out.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>032 Too many indexed files, or no such process </b><br>
+                    Recoverable 
+                    <p>You have tried to open an indexed file but the number of 
+                      files that you currently have open is the system limit.</p>
+                    <p>Alternatively, you could be trying to use a process id 
+                      which does not exist, or which your operating system no 
+                      longer recognizes.</p>
+                    <p>Resolution:</p>
+                    <p>You should close some of the indexed files which you are 
+                      no longer accessing, and you should then be able to open 
+                      the file you require.</p>
+                    <p>In this case you must rewrite your code so that it uses 
+                      a process id which your system recognizes.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>033 Physical I-O error </b><br>
+                    Fatal 
+                    <p>You have a hardware error of some type. Perhaps you have 
+                      not put a disk in the relevant drive or you might have tried 
+                      to WRITE to a disk but the processor detected hardware interface 
+                      has failed.</p>
+                    <p>Resolution:</p>
+                    <p>You should try to correct the fault in your hardware; for 
+                      example put a disk in the necessary drive.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>034 Incorrect mode or file descriptor </b><br>
+                    Recoverable 
+                    <p>You are either trying to write to a file which is open 
+                      for read purposes only, or read a file which is open for 
+                      write purposes only.</p>
+                    <p>Resolution:</p>
+                    <p>You should close the file and reopen using the correct 
+                      access mode. As this error implies that your program logic 
+                      contains a mistake, you might want to close any open files, 
+                      execute a STOP RUN statement and then recode your program 
+                      to eliminate the logic error.</p>
+                    <p>Shareable files opened INPUT (read-only) by the COBOL system 
+                      still require write-permission (from the operating system) 
+                      to enable temporary locking to take place.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>035 Attempt to access a file with incorrect permission 
+                    </b><br>
+                    Recoverable 
+                    <p>You are trying a file operation which you do not have sufficient 
+                      permission to achieve. For example you could be trying to 
+                      write data to a file which has been set up with the read 
+                      attribute only.</p>
+                    <p>Resolution:</p>
+                    <p>If you are the owner of the file you can alter the attributes 
+                      of the file so that you have the permission needed to effect 
+                      the particular file operation you were trying. If you are 
+                      not the owner of the file you cannot to carry out that operation 
+                      successfully unless you copy the file and make the changes 
+                      to the copy only. You cannot alter the source file.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>036 File already exists </b><br>
+                    Recoverable 
+                    <p>You are trying an inappropriate operation on an already 
+                      existing file.</p>
+                    <p>Resolution:</p>
+                    <p>As this error implies that your program logic contains 
+                      a mistake, you might like to recode your program to eliminate 
+                      this mistake.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>037 File access denied Fatal </b> 
+                    <p>Your attempt to access a file has been denied by the operating 
+                      system. You might have tried to write to a write-protected 
+                      file or you could have tried to read from an output device.</p>
+                    <p>Resolution:</p>
+                    <p>Alter the access permission on the relevant file. Access 
+                      can be read-only, if you just want to read the contents 
+                      of the file without making any changes, or it can be read 
+                      and write in which case you can alter its contents.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>038 Disk not compatible Fatal </b> 
+                    <p>You have tried to access a disk that is incompatible with 
+                      the current version of your operating system. This could 
+                      be because it was created under a previous version of the 
+                      system or it could have been created under a completely 
+                      different operating system. You would also receive this 
+                      error if you tried to load a disk with a name that clashed 
+                      with a disk that was already loaded.</p>
+                    <p>Resolution:</p>
+                    <p>If the error is a result of a clash of names you can rename 
+                      one of the disks and then you can load both disks together 
+                      if this is what you want.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>039 File not compatible Fatal </b> 
+                    <p>You have tried to access a file that is not compatible 
+                      with the structure of files under the current release of 
+                      your software. This could be because the file was created 
+                      either under a different operating system or under a previous 
+                      version of your current system.</p>
+                    <p>Resolution:</p>
+                    <p>You should create a new copy of the file which has the 
+                      correct structure.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>040 National Language initialization not set up correctly 
+                    Fatal </b> 
+                    <p>You have tried to use the additional language variants, 
+                      but the environment or side file that is required to set 
+                      up the language either has not been set up correctly, or 
+                      does not exist, or is invalid.</p>
+                    <p>This might be because you have the LANG environment variable 
+                      set for use by another system in a format not recognized 
+                      by this COBOL system.</p>
+                    <p>Resolution:</p>
+                    <p>Set up the required environment or side file before you 
+                      try to run the program again.</p>
+                    <p></p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>041 Corrupt index file </b><br>
+                    Recoverable 
+                    <p>Your run-time system does not recognize the control information 
+                      for an indexed file and as the index has been corrupted 
+                      in some way the data in the file is no longer accessible 
+                      by your system. This error is recoverable in the sense that 
+                      it can be trapped but should you receive it, you can do 
+                      little except to close any open files and stop your program's 
+                      run.</p>
+                    <p>Resolution:</p>
+                    <p>You should rerun your program using the backup copy of 
+                      that file. If you have added a great deal of information 
+                      to the file since you last took a backup you might like 
+                      to rebuild the file using the Rebuild utility, which reads 
+                      the data (if this has not been corrupted) and builds a new 
+                      index for it.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>042 Attempt to write on broken pipe </b><br>
+                    Recoverable 
+                    <p>One of the following has occurred:</p>
+                    <p> Your program has created a process as a result of a DD_ 
+                      logical file-name mapping assignment (for example, the process 
+                      might be a line printer spooler). The process was not created 
+                      properly, or has ended prematurely. This error occurs when 
+                      your program tries to write to the process.<br>
+                      Your application has terminated abnormally or prematurely, 
+                      thus breaking the pipe.</p>
+                    <p>Resolution:</p>
+                    <p>You can trap the error status returned by the write operation, 
+                      then open the file again.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>043 File information missing for indexed file Fatal </b> 
+                    <p>The system has crashed on your program's previous run, 
+                      while the file was open. Information was probably added 
+                      to the end of the file, but the directory information was 
+                      not updated and so that data cannot be accessed by your 
+                      system. Alternatively, you have copied the indexed file 
+                      from one disk to another but have copied either only the 
+                      data part of the file or only the index.</p>
+                    <p>Resolution:</p>
+                    <p>If the error is the result of a crash then whether you 
+                      can access the necessary data or not is entirely system 
+                      dependent. If, however, it is the result of a faulty copy 
+                      you should be able to restore the missing part of the file 
+                      from the .dat or .idx file.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>044 Attempt to OPEN an NLS file in a non-NLS program 
+                    Fatal </b> 
+                    <p>The logical file-name is preceded by &quot;%NLS%&quot;, 
+                      but the program which OPENS the file has been compiled without 
+                      the NLS directive set: the OPEN fails.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>045 Attempt to OPEN an NLS file using incompatible language 
+                    definition Fatal </b> 
+                    <p>The NLS control information for a file in your program 
+                      does not match the same NLS control information in the header 
+                      of your index file. Alternatively, your index file has become 
+                      corrupted.</p>
+                    <p>Resolution:</p>
+                    <p>Rebuild your index file, or rerun your program using the 
+                      backup copy of that file. If you have added a great deal 
+                      of information since you last took a backup, you might want 
+                      to rebuild the file using a utility that is able to read 
+                      the data, if it is not corrupt, and build a new index for 
+                      it.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><b>046 NLS support module not found (Fatal)</b></p>
+                    <p>&nbsp;</p>
+                    <p>Your System could not find the National Language Support 
+                      module COBNLSMG.</p>
+                    <p>Alternatively, your system cannot find cobnls.dll (OS/2), 
+                      cobnls.dle (DOS), or cobnls.dlw (Windows).</p>
+                    <p>Ensure that cobnlsmg.gnt is preset in either utils.lbr 
+                      or in a directory on COBDIR, or, if your program is linked, 
+                      ensure that cobnlsmg.obj is linked in to it.</p>
+                    <p>Ensure that cobnlsmg.dle is preset in utils.lbr, or that 
+                      cobnls.dlw is present in a directory specified in COBDIR, 
+                      or that cobnls.dll is preset on the LIBPATH.</p>
+                    <p>&nbsp;</p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>047 Indexed structure overflow Fatal </b> 
+                    <p>The structure of your indexed file contains a fault. You 
+                      have probably tried to put another entry in the index when 
+                      there is no room for it. This may be because you have reached 
+                      the maximum number of duplicate keys.</p>
+                    <p>Alternatively, you have tried to access an old format indexed 
+                      file, created perhaps using CIS COBOL.</p>
+                    <p>Resolution:</p>
+                    <p>If your index has no room for further entries you should 
+                      either reorganize your file or convert it to IDXFORMAT&quot;4&quot; 
+                      using Rebuild, to allow a greater number of duplicate keys.</p>
+                    <p>If you have tried to access an old format indexed file, 
+                      you can run the Rebuild utility to check the consistency 
+                      of this indexed file, and to construct a new indexed file 
+                      if the old one was found to be corrupt.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>048 Attempt to divide by zero Fatal </b> 
+                    <p>You are executing a program that is trying to perform a 
+                      fixed-point divide by zero.</p>
+                    <p>Resolution:</p>
+                    <p>Recode your program so that you can trap the error with 
+                      an ON SIZE ERROR clause</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><b>048-057 hOST FILE STATUS, NOT AN rts MESSAGE</b></p>
+                    <p>If you have COBFSTAT environment variable set to HOSTAT, 
+                      this is mainframe file status code &quot;9x&quot;, where 
+                      x is given by subtracting 48 from the error number.</p>
+                    <p>&nbsp;</p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>055 Routine table overflow Fatal </b> 
+                    <p>You have tried to load too many programs simultaneously.</p>
+                    <p>Resolution:</p>
+                    <p>Cancel any programs that you are no longer using, or use 
+                      fewer separate programs.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>065 File locked </b><br>
+                    Recoverable 
+                    <p>You have tried to open a file which has already been locked, 
+                      or opened for output by another user. Alternatively, you 
+                      have tried to lock or open for output a file which another 
+                      user already has open.</p>
+                    <p>Resolution:</p>
+                    <p>Your program can inform the system operator (if there is 
+                      one) that it is unable to access this file and should wait 
+                      until the other user has finished using the file and closes 
+                      it. You should then be able to continue to run your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>066 Attempt to add duplicate record key to indexed file 
+                    Fatal </b> 
+                    <p>You have tried to add a duplicate key for a key which you 
+                      have not defined as being able to have duplicates.</p>
+                    <p>Resolution:</p>
+                    <p>As this error implies that your program logic contains 
+                      a mistake, you probably should recode.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>067 Indexed file not open </b><br>
+                    Recoverable 
+                    <p>You are trying to access an indexed file which you have 
+                      not opened.</p>
+                    <p>Resolution:</p>
+                    <p>Open the file in the relevant access mode and then retry 
+                      the unsuccessful file operation.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>068 Record locked </b><br>
+                    Recoverable 
+                    <p>You have tried to access a record which is currently locked 
+                      by another user.</p>
+                    <p>Resolution:</p>
+                    <p>Your program can inform the system operator (if there is 
+                      one) that the record is currently locked, and you should 
+                      then wait until the other user has released the lock on 
+                      that record. You should then be able to access the relevant 
+                      record. You should not continually retry to gain access 
+                      to the record without operator intervention, as this could 
+                      result in your application hanging.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>069 Illegal argument to isam module Fatal </b> 
+                    <p>This is the result of an internal system error.</p>
+                    <p>Resolution:</p>
+                    <p>Contact Technical Support who will help you discover the 
+                      cause of your error and how it can be rectified.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>070 Too many indexed files open </b><br>
+                    Recoverable 
+                    <p>You are trying to open an indexed file but you have already 
+                      exhausted the system limit which specifies how many of these 
+                      files can be opened at any one time.</p>
+                    <p>Resolution:</p>
+                    <p>Close some of the open indexed files which you are not 
+                      currently accessing. You should then be able to open the 
+                      indexed file which you require and to continue the program 
+                      run.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>071 Bad indexed file format Fatal </b> 
+                    <p>You are either using a file which has been corrupted, or 
+                      there is an internal system error.</p>
+                    <p>Resolution:</p>
+                    <p>If the disk you are using is corrupt, rerun your program 
+                      using your backup copy of the disk. If this is not the cause 
+                      of the error then you should contact Technical Support who 
+                      will help you discover the cause of your error and how it 
+                      can be rectified.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>072 End of indexed file Fatal </b> 
+                    <p>This is the result of an internal system error.</p>
+                    <p>Resolution:</p>
+                    <p>Contact Technical Support who will help you discover the 
+                      cause of your error and how it can be rectified.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>073 No record found in indexed file Fatal </b> 
+                    <p>This is the result of an internal system error.</p>
+                    <p>Resolution:</p>
+                    <p>Contact Technical Support who will help you discover the 
+                      cause of the error and how it can be rectified.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><b>074 No current record in indexed file Fatal</b></p>
+                    <p>This is the result of an internal system error.</p>
+                    <p>Resolution:</p>
+                    <p>Contact Technical Support who will help you discover the 
+                      cause of the error and how it can be rectified.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>075 Indexed data file name too long Fatal </b> 
+                    <p>When creating indexed files, the extension .idx is added 
+                      to the user-defined file-name, so your file-name must not 
+                      exceed x-4 characters in length, where x is the maximum 
+                      length of file-name.</p>
+                    <p>Resolution:</p>
+                    <p>Rename the file with a shorter file-name, that is, one 
+                      that is less than 10 characters in length.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>076 Can't create lock file in /isam directory Fatal </b> 
+                    <p>For some reason your system is unable to create a lock 
+                      file in the /isam directory. One reason for this could be 
+                      that in its previous run your program terminated abnormally 
+                      (perhaps due to a power failure) leaving some files locked.</p>
+                    <p>Resolution:</p>
+                    <p>You should manually remove all of the files that are still 
+                      locked from the /isam directory before you can successfully 
+                      run your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>077 Internal ISAM module error Fatal </b> 
+                    <p>This is the result of an internal system error.</p>
+                    <p>Resolution:</p>
+                    <p>Contact Technical Support who will help you discover the 
+                      cause of your error and how it can be rectified.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>078 Illegal key description in indexed file </b><br>
+                    Fatal 
+                    <p>This is the result of an internal system error.</p>
+                    <p>Resolution:</p>
+                    <p>Contact Technical Support who will help you discover the 
+                      cause of your error and how it can be rectified.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>079 COBCONFIG syntax error Fatal </b> 
+                    <p>An error exists in the run-time configuration file accessed 
+                      via the environment variable COBCONFIG_.</p>
+                    <p>Resolution:</p>
+                    <p>Check the syntax of the entries in the configuration file. 
+                      You might have used incorrect syntax, or syntax that is 
+                      not compatible with the type of run-time tuneable you are 
+                      configuring (this could include assigning an illegal value 
+                      to the tunable).</p>
+                    <p>&nbsp; </p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>081 Key already exists in indexed file Fatal </b> 
+                    <p>This is the result of an internal system error.</p>
+                    <p>Resolution:</p>
+                    <p>Contact Technical Support who will help you discover the 
+                      cause of your error and how it can be rectified.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>082 CALL convention not supported Fatal </b> 
+                    <p>The CALL convention you have specified is not supported.</p>
+                    <p>Resolution:</p>
+                    <p>Change the convention defined in the special-names paragraph 
+                      to one of the supported CALL conventions.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>086 Remote file system failure </b><br>
+                    Fatal 
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>099 Illegal operation in SORT/MERGE module Fatal </b> 
+                    <p>A SORT or MERGE module has received a RELEASE operation 
+                      outside the Input procedure, or a RETURN operation either 
+                      outside the Output procedure, or before the Input procedure 
+                      has terminated correctly.</p>
+                    <p>Resolution:</p>
+                    <p>Recode your program so that RELEASE and RETURN operations 
+                      are issued by the appropriate procedures.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>100 Invalid file operation Fatal </b> 
+                    <p>You have tried a file operation which violates a general 
+                      rule of COBOL in some way. The most likely cause of this 
+                      error is that you have tried a rewrite on a sequential file 
+                      opened I-O, or on a relative file with access mode sequential 
+                      also opened I-O, without preceding it with a successful 
+                      read NEXT.</p>
+                    <p>Resolution:</p>
+                    <p>Recode your program to ensure that the REWRITE statement 
+                      in error is preceded by a read NEXT.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>101 Illegal operation on an indexed file Fatal </b> 
+                    <p>This is the result of an internal system error.</p>
+                    <p>Resolution:</p>
+                    <p>Contact Technical Support who will help you discover the 
+                      cause of your error and how it can be rectified.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td height="221"><b>102 Sequential file with non-integral number 
+                    of records Fatal </b> 
+                    <p>You have either specified an incorrect record length for 
+                      a sequential file, or the sequential file you are trying 
+                      to access is corrupt in some way, or the file which you 
+                      have specified is not a sequential file.</p>
+                    <p>Resolution:</p>
+                    <p>Recode your program so that it specifies the correct type 
+                      of file, or if the error is the result of a corrupt file, 
+                      try to run the program again using a backup copy of that 
+                      file.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>103 Parameter cannot be passed BY VALUE </b><br>
+                    Fatal 
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>104 Null file name used in a file operation Fatal </b> 
+                    <p>You specified a data-name for a file-name instead of a 
+                      literal, and the data item contained only spaces when you 
+                      tried to open the file.</p>
+                    <p>Resolution:</p>
+                    <p>Recode your program specifying the correct file-name.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>105 Memory allocation error Fatal </b> 
+                    <p>The run-time system is unable to allocate sufficient memory 
+                      space to successfully carry out the tried operation, probably 
+                      because of insufficient memory space on your system.</p>
+                    <p>Resolution:</p>
+                    <p>You should obtain more memory in which to run your program. 
+                      Refer to your operating system documentation for details 
+                      of how you can obtain more memory, if this is possible.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>106 Dictionary error Fatal </b> 
+                    <p>This could be the result of a read or write error to file 
+                      or disk, but it is more likely to be the result of an internal 
+                      system error.</p>
+                    <p>Alternatively, your application might have called many 
+                      programs without canceling them afterward, so that memory 
+                      becomes exhausted during animation.</p>
+                    <p>Resolution:</p>
+                    <p>Contact Technical Support who will help you to discover 
+                      the cause of your error and how it can be rectified.</p>
+                    <p>Ensure that as much memory as possible is available during 
+                      animation by CANCELing any program you do not currently 
+                      need to access.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>107 Operation not implemented in this run-time system 
+                    Fatal </b> 
+                    <p>You are trying to perform a file operation which your run-time 
+                      system does not support.</p>
+                    <p>Resolution:</p>
+                    <p>You should recode your program so that it does not try 
+                      such operations, or you should acquire a version of your 
+                      system that does support this facility.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>108 Failure to initialize data division </b><br>
+                    Fatal 
+                    <p>The run-time system cannot load your program properly because 
+                      the data needed to correctly initialize the Data Division 
+                      has become corrupted.</p>
+                    <p>Resolution:</p>
+                    <p>You should compile your program again to try to obtain 
+                      good intermediate code.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>109 Invalid checksum in run-time system </b><br>
+                    Recoverable 
+                    <p>The internal information in the run-time system has been 
+                      altered. The run-time system might have become corrupted, 
+                      or you might have illegally tried to change the internal 
+                      run-time system information.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>110 Generated code not supported by this RTS Fatal </b> 
+                    <p></p>
+                    <p>Resolution:</p>
+                    <p>Contact Technical Support who will help you to discover 
+                      the cause of the error and how it can be rectified.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>111 Incompatible Class Library and Run-Time Environment 
+                    versions Fatal </b> 
+                    <p>The version numbers for these components do not match.</p>
+                    <p>Resolution:</p>
+                    <p>Check that you have fully installed both the Class Library 
+                      and the Run-Time Environment from the same version of Object 
+                      COBOL. If you have more than one version installed, check 
+                      that your PATH, LIBPATH, and COBDIR environment variables 
+                      specify an appropriate path for the version you are using.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>112 Unable to locate/access the required security key 
+                    </b><br>
+                    Recoverable 
+                    <p>The run-time system cannot locate or cannot access the 
+                      coded security key (dongle) that is required to execute 
+                      this application.</p>
+                    <p>Resolution:</p>
+                    <p>Connect the security key that was supplied with your COBOL 
+                      system to the parallel port of your computer, then re-run 
+                      the application.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>114 Attempt to access item beyond bounds of memory Fatal 
+                    </b> 
+                    <p>Memory access violation has been detected by your operating 
+                      system.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>115 Unexpected signal Fatal </b> 
+                    <p>A signal the run-time system was not expecting has been 
+                      caught.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>116 Cannot allocate memory Fatal </b> 
+                    <p>For some reason a part of your run-time system is unable 
+                      to allocate you sufficient memory to enable you to execute 
+                      your code.</p>
+                    <p>Resolution:</p>
+                    <p>You should try to reduce memory usage by canceling programs 
+                      that are not in use, then try the operation that caused 
+                      this message again.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>117 Bad collating sequence Fatal </b> 
+                    <p>This is an internal system error.</p>
+                    <p>Resolution:</p>
+                    <p>Please contact Technical Support who will help you to discover 
+                      the cause of the error and how it can be rectified.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>118 Symbol not found Fatal </b> 
+                    <p>You have attempted to reference a name that has not been 
+                      defined.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>119 Symbol redefined Fatal </b> 
+                    <p>The run-time system has detected a symbol (for example, 
+                      data item, entry point or module name) which is already 
+                      defined.</p>
+                    <p>OO programs can also cause this error for either of the 
+                      following reasons:</p>
+                    <p> You have defined the same method-name twice in a single 
+                      object<br>
+                      You have defined the same class name with different filenames 
+                      in different programs, in the Class-Control paragraph. Filename 
+                      matching is case-sensitive; class filenames should always 
+                      be coded in lower-case.</p>
+                    <p>Resolution:</p>
+                    <p>You can recode your application to remove the naming duplication.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>120 Symbol string table of zero size Fatal </b> 
+                    <p>You probably have a malformed object file.</p>
+                    <p>Resolution:</p>
+                    <p>Once the program has terminated you must correct your object 
+                      file. If this does not work, contact Technical Support who 
+                      will help you to discover the specific cause of the error.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>121 Symbol is not in TEXT section Fatal </b> 
+                    <p>You have tried to call a subprogram that is not an executable 
+                      program.</p>
+                    <p>Alternatively, you have used the same name for a called 
+                      program as for a previously defined data item.</p>
+                    <p>Resolution:</p>
+                    <p>Check that the subprogram being called is an executable 
+                      one. If required, correct the subprogram's name in the calling 
+                      program and resubmit it to your COBOL system.</p>
+                    <p>Once your program has terminated, recode it to remove the 
+                      naming duplication. Resubmit your program to your COBOL 
+                      system.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>122 Coblongjmp() called below level of cobsavenv() Fatal 
+                    </b> 
+                    <p>You might have returned control to a higher level in the 
+                      CALL/PERFORM hierarchy than the level at which cobsetjmp 
+                      was called. Coblongjmp must be called only from the same 
+                      or from a lower level in the CALL/PERFORM hierarchy as cobsavenv 
+                      was.</p>
+                    <p>Resolution:</p>
+                    <p>Check and correct the logic of your program, and then resubmit 
+                      your program to your COBOL system.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><b>123 Unknown relocation type </b><br>
+                      Fatal</p>
+                    <p>You are using incompatible versions of the object file 
+                      and the COBOL run-time library.</p>
+                    <p>Resolution:</p>
+                    <p>Once the program has terminated, resubmit your object file 
+                      to your COBOL system with the current version of your COBOL 
+                      run-time library. If this does not work, contact Technical 
+                      Support who will help you to discover the specific cause 
+                      of the error.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>124 Communication failure during I/O request to the central 
+                    file handler </b> 
+                    <p></p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>125 All locks/ current transactions canceled due to exceeding 
+                    time limit </b> 
+                    <p></p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>126 Record size exceeds system limit Fatal </b> 
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>129 Attempt to access record zero of relative file </b><br>
+                    Recoverable 
+                    <p>The value specified in the RELATIVE KEY data item contains 
+                      the value zero.</p>
+                    <p>Resolution:</p>
+                    <p>You should ensure that the value in the RELATIVE KEY data 
+                      item is greater than zero, then continue to run your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>135 File not found </b><br>
+                    Recoverable 
+                    <p>The operating system has been unable to find a file which 
+                      you have tried to access in your program.</p>
+                    <p>Resolution:</p>
+                    <p>Ensure that you are in the correct directory or that a 
+                      path to the file concerned exists. You can then try the 
+                      file operation again. If the error is the result of a spelling 
+                      mistake then ask for the correct file and try the file operation 
+                      again.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>137 Illegal device specification - not mass storage </b> 
+                    <p></p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>138 File closed with lock - cannot be opened </b><br>
+                    Recoverable 
+                    <p>You are trying to open a file which you previously closed 
+                      with lock, which violates one of the general rules of COBOL 
+                      programming.</p>
+                    <p>Resolution:</p>
+                    <p>You cannot open the relevant file. As this error implies 
+                      that your program logic contains a mistake, you might want 
+                      to close any remaining open files, execute a STOP RUN statement 
+                      and recode.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>139 Record length or key data inconsistency </b><br>
+                    Recoverable 
+                    <p>A discrepancy exists between the length of a record, or 
+                      the keys which you have specified, in your current program 
+                      and its definition in the program in which it was first 
+                      opened.</p>
+                    <p>Resolution:</p>
+                    <p>Your program has a fault, so you probably should edit your 
+                      code, then resubmit it to your COBOL system before running 
+                      it again.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>141 File already open - cannot be opened </b><br>
+                    Recoverable 
+                    <p>You have tried to open a file which is already open and 
+                      so cannot be opened again.</p>
+                    <p>Resolution:</p>
+                    <p>Cancel your second attempt to open the file and continue 
+                      to run your program if the fact that the file is already 
+                      open is acceptable to you. However as this error implies 
+                      that your program logic contains a mistake, you might want 
+                      to close any open files, execute a STOP RUN statement and 
+                      then recode.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>142 File not open - cannot be closed </b><br>
+                    Recoverable 
+                    <p>You have tried to close a file which is not open which 
+                      is impossible to achieve.</p>
+                    <p>Resolution:</p>
+                    <p>You can abandon your attempt to close the relevant file 
+                      and continue to run your program. However, as this error 
+                      implies that your program logic contains a mistake, you 
+                      might want to close any open files, execute a STOP RUN statement 
+                      and then recode.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>143 Rewrite/delete in sequential mode not preceded by 
+                    successful read </b><br>
+                    Recoverable 
+                    <p>You have failed to do a successful read on a sequentially 
+                      accessed file trying a REWRITE or DELETE on some of the 
+                      information contained in that file.</p>
+                    <p>Resolution:</p>
+                    <p>If the previous read was successful then perform a read 
+                      on the relevant file before you retry the unsuccessful REWRITE 
+                      or DELETE operation. If the previous read was also unsuccessful 
+                      close the file, execute a STOP RUN statement and then recode 
+                      your program before you next run it.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>144 Boundary violation </b><br>
+                    Recoverable 
+                    <p>You have tried to write a record to a variable length record 
+                      file, the length of which is not within the defined range 
+                      for that file.</p>
+                    <p>Resolution:</p>
+                    <p>Recode your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>146 No current record defined for sequential read </b><br>
+                    Recoverable 
+                    <p>The file position indicator in your file is undefined owing 
+                      to a failed read/START or INVALID KEY condition. You have 
+                      tried to read another record in the file but as the current 
+                      record is undefined the system cannot find the start of 
+                      the record for which you have asked.</p>
+                    <p>Resolution:</p>
+                    <p>You should try a START operation, and continue to do so 
+                      until the file position indicator is updated successfully.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>147 Wrong open mode or access mode for read/start </b><br>
+                    Recoverable 
+                    <p>You have tried to carry out a read or START operation on 
+                      a file which has not been opened for INPUT or I-O, or which 
+                      is not open at all.</p>
+                    <p>Resolution:</p>
+                    <p>Open the file for I-O or for INPUT and you should then 
+                      be able to continue to run your program. However, as this 
+                      error implies that your program logic contains a mistake, 
+                      you might want to close any files which are open, execute 
+                      a STOP RUN statement and then recode.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>148 Wrong open mode or access mode for write </b><br>
+                    Recoverable 
+                    <p>You have tried to write to a file in sequential access 
+                      mode that you have not opened for OUTPUT or EXTEND, or you 
+                      have tried to write to a file in random or dynamic access 
+                      mode that has not been opened INPUT or I-O, or which is 
+                      not open at all.</p>
+                    <p>Resolution:</p>
+                    <p>Close the file and reopen it with the correct open mode 
+                      for the file type. However, as this error implies that your 
+                      program logic contains a mistake, you might want to close 
+                      any files that are open, execute a STOP RUN statement and 
+                      then recode.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>149 Wrong open mode or access mode for rewrite/delete 
+                    </b><br>
+                    Recoverable 
+                    <p>You are trying to do a REWRITE or a DELETE on a file that 
+                      you have not opened for I-O, or which is not open at all.</p>
+                    <p>Resolution:</p>
+                    <p>Close the file and reopen for I-O. However, as this error 
+                      implies that your program logic contains a mistake, you 
+                      might want to close any open files, execute a STOP RUN statement 
+                      and then recode.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>151 Random read on sequential file </b><br>
+                    Recoverable 
+                    <p>You are trying to do a random read on a file which has 
+                      sequential organization.</p>
+                    <p>Resolution:</p>
+                    <p>Read the file with the correct access mode. As this error 
+                      implies that your program logic contains a mistake, you 
+                      might like to close any files which are open, execute a 
+                      STOP RUN statement and recode.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>152 REWRITE on file not opened I-O </b><br>
+                    Recoverable 
+                    <p>You have tried a REWRITE on a file that is not open I-O.</p>
+                    <p>Resolution:</p>
+                    <p>Close the relevant file and open it for I-O operations. 
+                      You should then be able to carry out the REWRITE operation 
+                      successfully. However, as this error implies that your program 
+                      logic contains a mistake, you might want to close any open 
+                      files, execute a STOP RUN statement and then recode.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>153 Subscript out of range Fatal </b> 
+                    <p>A subscript which you have used in your program is out 
+                      of the defined range, that is, it is either less than one 
+                      or it is greater than the number of occurrences of the item.</p>
+                    <p>Resolution:</p>
+                    <p>You should recode your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>154 PERFORM nested too deeply Fatal </b> 
+                    <p>This error usually results if you have used GO TO to jump 
+                      out of the range of a PERFORM rather than to jump to an 
+                      EXIT statement at the end of its range.</p>
+                    <p>Resolution:</p>
+                    <p>When your program has terminated you should to recode your 
+                      program to ensure that the GO TO in question jumps to an 
+                      EXIT statement at the end of the PERFORM's range.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>155 Illegal command line Fatal </b> 
+                    <p>The run-time system does not recognize as valid the command 
+                      line format you have specified.</p>
+                    <p>Alternatively, the generic command-line interpreter, which 
+                      must be present if your program is to be run successfully, 
+                      is not found on your system.</p>
+                    <p>Alternatively, you have set an invalid COBSW value.</p>
+                    <p>Resolution:</p>
+                    <p>Rerun your application with a valid command line.</p>
+                    <p>Make sure that the interpreter is present to enable your 
+                      system to pick up the commands correctly and then rerun 
+                      your program.</p>
+                    <p>Reset COBSW to a valid value.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>156 Too many parentheses in compute statement Fatal </b> 
+                    <p>You have coded a COMPUTE statement which is too complex 
+                      for your system to handle successfully.</p>
+                    <p>Resolution:</p>
+                    <p>You should recode your program. We strongly advise you 
+                      to break the relevant COMPUTE statement into a number of 
+                      simpler statements.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>157 Not enough program memory: object file too large 
+                    to load </b><br>
+                    Recoverable 
+                    <p>Either your program is too large for the available memory 
+                      space, or the stack is full.</p>
+                    <p>Resolution:</p>
+                    <p>If you have specified the ON OVERFLOW/EXCEPTION clause 
+                      in the relevant CALL statement, the error is recoverable. 
+                      Any associated imperative statement is executed before the 
+                      next instruction.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>158 Attempt to REWRITE to a line-sequential file </b><br>
+                    Recoverable 
+                    <p>You have used the REWRITE statement in conjunction with 
+                      a file whose organization is line sequential. The REWRITE 
+                      statement cannot be used with line sequential files.</p>
+                    <p>Resolution:</p>
+                    <p>Close the file in error before executing a STOP RUN statement 
+                      to ensure that you do not lose any data from it. Recode 
+                      your program to make the organization of the file to which 
+                      you want to do a REWRITE either sequential, indexed sequential, 
+                      or relative.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>159 Malformed line-sequential file </b><br>
+                    Recoverable 
+                    <p>A line-sequential file which you are trying to access is 
+                      corrupt in some way.</p>
+                    <p>Resolution:</p>
+                    <p>Rerun your program using the backup copy of that file.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>160 Overlay loading error </b><br>
+                    Recoverable 
+                    <p>An error has occurred while trying to load the intermediate 
+                      code for an independent segment. The segment is either missing 
+                      or corrupted in some way.</p>
+                    <p>Resolution:</p>
+                    <p>If the segment is missing, locate it. If you cannot find 
+                      it, or if it is present and corrupt, resubmit your program 
+                      to your COBOL system.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>161 Illegal intermediate code Fatal </b> 
+                    <p>The intermediate code which is currently being processed 
+                      is not valid code. You are probably trying to execute a 
+                      corrupted file or one which has not been submitted to your 
+                      COBOL system successfully.</p>
+                    <p>Resolution:</p>
+                    <p>You should resubmit your source program to your COBOL system, 
+                      to try to obtain uncorrupted intermediate code.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>162 Arithmetic overflow or underflow Fatal </b> 
+                    <p>You are executing a program that is trying to perform a 
+                      floating-point divide by zero.</p>
+                    <p>Resolution:</p>
+                    <p>You should recode your program to avoid this illegal operation.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>163 Illegal character in numeric field Fatal </b> 
+                    <p>The contents of a numeric or numeric edited field are inconsistent 
+                      with the picture definition of that field.</p>
+                    <p>Resolution:</p>
+                    <p>You must adjust your code so that no invalid data is used.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>164 Run-Time subprogram not found Fatal </b> 
+                    <p>You have tried to call a subroutine whose entry address 
+                      has not been set up in your run-time system.</p>
+                    <p>Resolution:</p>
+                    <p>Check to see that you used a valid call number in the unsuccessful 
+                      subroutine call. If not, revise your code to contain a call 
+                      number which your system recognizes. If you did use a valid 
+                      call number but still received this error you should contact 
+                      Technical Support.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>165 Version number incompatibility Fatal </b> 
+                    <p>You have tried to:</p>
+                    <p> Run a program that has:intermediate code which has been 
+                      produced on a version of your COBOL system that is incompatible 
+                      with the run-time system you are using. Your run-time system, 
+                      therefore, cannot execute correctly any generated code you 
+                      are producing or have already produced from this intermediate 
+                      code.</p>
+                    <p> Execute a file which is not in your COBOL system's intermediate 
+                      or generated code.<br>
+                      Load a module whose format is not valid for the Win32 platform.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>166 Recursive COBOL CALL is illegal Fatal </b> 
+                    <p>You have tried to call a COBOL module that is already active.</p>
+                    <p>Resolution:</p>
+                    <p>You should recode your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>167 Too many USING items Fatal </b> 
+                    <p>The list of items which you have supplied in a CALL....USING 
+                      statement is longer than the run-time system can handle.</p>
+                    <p>Resolution:</p>
+                    <p>Once your program has terminated recode it with group items 
+                      rather than elementary items before rerunning it.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>168 Stack overflow Fatal </b> 
+                    <p>You have nested a PERFORM statement or a series of CALL 
+                      statements too deeply.</p>
+                    <p>Resolution:</p>
+                    <p>Edit your program to reduce the number of levels in the 
+                      nested PERFORM or CALL statement.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>169 Illegal configuration information Fatal </b> 
+                    <p>You have tried an operation for which your machine is not 
+                      configured; the most likely cause of this is that Adis is 
+                      not configured correctly.</p>
+                    <p>Resolution:</p>
+                    <p>Check that Adis is configured correctly.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>170 System program not found </b><br>
+                    Fatal 
+                    <p>A system program, for example Adis or Mffh, is not present.</p>
+                    <p>Resolution:</p>
+                    <p>Ensure that all the system programs are available and copy 
+                      those which are not currently present using. Once all the 
+                      necessary system programs are available you can run your 
+                      program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>171 Japanese operations illegal with this RTS Fatal </b> 
+                    <p>You are trying to perform Japanese operations with a non-Japanese 
+                      run-time system, or you have used a Japanese version of 
+                      your COBOL system to produce code which you are now trying 
+                      to run using a non-Japanese run-time system.</p>
+                    <p>Resolution:</p>
+                    <p>You should resubmit your program using a non-Japanese run-time 
+                      system, or if you still want your program to perform Japanese 
+                      operations, you should acquire a Japanese run-time system.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><b>172 Recursive non-MF PERFORM is illegal (Fatal)</b></p>
+                    <p>You have tried full recursion of a PERFORM statement a 
+                      program that was submited to your COBOL system with the 
+                      OSVS parameter of the PERFORM-TYPE directive specified. 
+                      That is, you have tried to end two PERFORMs with the same 
+                      return address.</p>
+                    <p>You should either resubmit your program to your COBOL syste 
+                      with a parameter other than OSVS specified for the PERFORM-TYPE 
+                      directive, or recode your program so that each PERFORM has 
+                      its own unique return address before you resubmit it to 
+                      your COBOL system with the MF parameter of the PERFORM-TYPE 
+                      directive specified.</p>
+                    <p>&nbsp;</p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>173 Called program file not found in drive/directory 
+                    Fatal </b> 
+                    <p>You have tried to call a program which is not present on 
+                      your current logged-in drive or directory, or in a directory 
+                      pointed to by the COBDIR environment variable, or to send 
+                      a message to a class which cannot be loaded.</p>
+                    <p>Resolution:</p>
+                    <p>Once your program has terminated you should copy the relevant 
+                      file into your logged-in drive or directory. If insufficient 
+                      space is available, you should set the COBDIR environment 
+                      variable to search the directory or drive on which the file 
+                      is present when your program calls it.</p>
+                    <p>If the error was caused by a class which could not be loaded, 
+                      find out whether or not the filename for the class (listed 
+                      in the Class-Control paragraph) is a separate executable 
+                      file, or contained in a .dll or .lbr file. If it is a separate 
+                      executable file, the resolution is as above. If it is part 
+                      of a .dll or .lbr file, ensure that the containing file 
+                      has been loaded with a CALL statement before sending messages 
+                      to any of the classes. If the program not found is P2emgr, 
+                      you need to load the GUI Class Library, with a CALL &quot;APIGUI&quot; 
+                      statement.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>174 Imported file not found Fatal </b> 
+                    <p>You have tried to load a .dll file which contains references 
+                      to another .dll file which cannot be found by the operating 
+                      system.</p>
+                    <p>Resolution:</p>
+                    <p>Locate the missing file and ensure it is located on the 
+                      default search path for your operating system.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>175 Attempt to run intermediate code program which had 
+                    severe errors in it Fatal </b> 
+                    <p>You are trying to run a program that produced severe faults 
+                      when you submitted it to your COBOL system with the run-time 
+                      switch E turned off.</p>
+                    <p>Alternatively, you could try to run the program with the 
+                      E run-time switch set, though this might not give the desired 
+                      results.</p>
+                    <p>Resolution:</p>
+                    <p>You should edit your source code to correct all the severe 
+                      faults, resubmit it to your COBOL system, then run the intermediate 
+                      code that is produced.</p>
+                    <p>When your program is being animated, the debugger reports 
+                      this error and enables you to continue to run the program.</p>
+                    <p>&nbsp; </p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>176 Illegal intersegment reference Fatal </b> 
+                    <p>You might have a corrupted file. Alternatively, your code 
+                      contains a segment reference for the Forward Reference Table 
+                      which is illegal.</p>
+                    <p>Resolution:</p>
+                    <p>Resubmit your source code to your COBOL system. If you 
+                      receive this error again, contact Technical Support who 
+                      will help you to discover the specific cause of the error.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>177 Attempt to cancel program failed Fatal </b> 
+                    <p>You have tried to remove a currently executing program 
+                      or its parents or grandparents, from memory.</p>
+                    <p>Resolution:</p>
+                    <p>Once your program has terminated you need to recode your 
+                      program to ensure that you do not try to cancel a program 
+                      (or its parents or grandparents) while it is still being 
+                      executed.</p>
+                    <p>&nbsp; </p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="left" valign="top"> 
+                    <p><b>178 Error during save (Fatal) </b></p>
+                    <p>You cannot save the information witc your program has generated. 
+                      This can be caused by several different reasons but one 
+                      of the most common causes is that you have tried to Build 
+                      a module that is too large for the available memory space.</p>
+                    <p>If the error is caused by a lack of space you can either 
+                      delete some of the files which you no longer need on your 
+                      current disk, or insert a new floppy disk to take the output 
+                      from your program. YOU should then be able to rerun your 
+                      program and save the information given by it.</p>
+                    <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr> 
+                  <td><b>179 Error during chain (program not found) Fatal </b> 
+                    <p>You have tried to chain to another program which your system 
+                      is unable to find.</p>
+                    <p>Resolution:</p>
+                    <p>Once your program has terminated you should copy the relevant 
+                      file into your logged-in drive or directory. If insufficient 
+                      space is available, you should set the COBDIR environment 
+                      variable to include the directory or drive on which the 
+                      file is present when your program calls it.</p>
+                    <p></p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>180 End-of-file marker error Fatal </b> 
+                    <p>A file-marker used to indicate that the end-of-file has 
+                      been reached is missing from one of your files.</p>
+                    <p>Resolution:</p>
+                    <p>You should resubmit your code to your COBOL system, or 
+                      use a debugger to place the end-of-file marker at the end 
+                      of the file. You can then rerun your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>181 Invalid parameter error Fatal </b> 
+                    <p>A parameter which you have used is not one which is recognized 
+                      by your system.</p>
+                    <p>Resolution:</p>
+                    <p>Revise your code to contain a parameter which is known 
+                      by your system.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>182 Console input or console output open in wrong direction 
+                    </b><br>
+                    Fatal 
+                    <p>You are either trying to read input from the screen or 
+                      write to the keyboard.</p>
+                    <p>Resolution:</p>
+                    <p>You should recode your program.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>183 Attempt to open line sequential file for I-O Fatal 
+                    </b> 
+                    <p>You have tried to open a line-sequential file in the input-output 
+                      open mode, but this mode is not supported for files with 
+                      this organization.</p>
+                    <p>Resolution:</p>
+                    <p>When your program has terminated you should recode your 
+                      program to ensure that the file with organization line sequential 
+                      is opened for input, output, or extend. You can then rerun 
+                      your code.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>184 ACCEPT/DISPLAY I-O error Fatal </b> 
+                    <p>You have either tried to read input from the screen or 
+                      write to the keyboard, or the ADIS module has not been able 
+                      to open your terminal's channels for I-O.</p>
+                    <p>Resolution:</p>
+                    <p>Your program logic contains a mistake, so you must recode.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>185 File malformed </b><br>
+                    Recoverable 
+                    <p></p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>186 Attempt to open stdin, stdout or stderr with incorrect 
+                    mode </b><br>
+                    Recoverable 
+                    <p>You have tried to open either a standard input file with 
+                      output mode, or some other file in an incorrect mode.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><b>187 Run-Time System not found on $COBDIR path (Fatal)</b></p>
+                    <p>The run-time system cannot be found on the path you have 
+                      set up in the COBDIR environment variable. Alternatively, 
+                      you might not have installed your COBOL system correctily.</p>
+                    <p>Ensure that the ru-time system is on the path you have 
+                      set up in the COBDIR environment variable. Alternatively, 
+                      ensure that your COBOL system has been installed correctly. 
+                      If it has not, you must reinstall your COBOL system.</p>
+                    <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr> 
+                  <td><b>188 Filename too large Fatal </b> 
+                    <p>A file-name which you have used has more characters than 
+                      the maximum number allowed by your operating system.</p>
+                    <p>Resolution:</p>
+                    <p>You should recode your program to check the length of the 
+                      file in error, and rename it with a shorter file-name. You 
+                      can then run your program again.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>189 Intermediate code load error </b><br>
+                    Fatal 
+                    <p>You are unable to load your intermediate code. You might 
+                      have tried to load intermediate code that either has not 
+                      been successfully produced, or has been corrupted in some 
+                      way.</p>
+                    <p>Resolution:</p>
+                    <p>Try to obtain good intermediate code, for example, by resubmitting 
+                      (or submitting) your source code to your COBOL system. You 
+                      should then be able to load your code and run the program 
+                      successfully.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>190 Too many arguments to CALL </b><br>
+                    Fatal 
+                    <p>A CALL statement in your program cannot be successfully 
+                      executed because of the number of arguments which you have 
+                      used with it.</p>
+                    <p>Resolution:</p>
+                    <p>When your program has terminated you can recode it using 
+                      group items rather than elementary ones. You should then 
+                      be able to run your program successfully.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>191 Terminal type not defined Fatal </b> 
+                    <p>Your terminal is not defined.</p>
+                    <p>Resolution:</p>
+                    <p>Your terminal type is undefined, so your operating system 
+                      is unable to drive your terminal. Set up the necessary environment 
+                      for your terminal.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>192 Required terminal capability description missing 
+                    </b><br>
+                    Fatal 
+                    <p>A compulsory entry, for example cursor movement or clear 
+                      screen, is missing from your terminal configuration database.</p>
+                    <p>Resolution:</p>
+                    <p>Add the missing entry to your terminal configuration database.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>193 Error in variable length count </b><br>
+                    Fatal 
+                    <p>The intermediate code which is currently being processed 
+                      is not a valid operation. You are probably trying to execute 
+                      a corrupt file or one which has not been produced.</p>
+                    <p>Resolution:</p>
+                    <p>You should resubmit your source code to your COBOL system.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>194 File size too large Fatal </b> 
+                    <p>A file which your program is accessing is too large for 
+                      successful execution to continue.</p>
+                    <p>Resolution:</p>
+                    <p>When your program has terminated you should recode your 
+                      program spreading the data over more than one file to ensure 
+                      that no file becomes too large for your operating system 
+                      to handle. Having recoded your program you can then rerun 
+                      it.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>195 DELETE/REWRITE not preceded by a read Fatal </b> 
+                    <p>Before a DELETE or a REWRITE statement can be successfully 
+                      executed in sequential access mode the last input-output 
+                      statement executed for the associated file must have been 
+                      a successful read. In your code no read statement precedes 
+                      your tried DELETE or REWRITE.</p>
+                    <p>Resolution:</p>
+                    <p>When your program has terminated, recode your program, 
+                      making sure that the last input-output statement to be executed 
+                      before the DELETE or REWRITE is a read statement.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>196 Record number too large in relative or indexed file 
+                    Fatal </b> 
+                    <p>The relative record key has exceeded the system limit, 
+                      that is, the file is too large for the system to handle.</p>
+                    <p>Alternatively, the record key which you have specified 
+                      is too large for the system to deal with successfully, or 
+                      the pointer to the record has been corrupted in some way 
+                      so that it is either too large or it is not a multiple of 
+                      the record length.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>197 Screen handling system initialization error Fatal 
+                    </b> 
+                    <p>This error can be caused by one of the following:</p>
+                    <p> Your display adapter is in the wrong mode.<br>
+                      Your screen handling interface has not been correctly initialized 
+                      because your terminal does not have the required capabilities.<br>
+                      Memory has been incorrectly allocated.</p>
+                    <p>Resolution:</p>
+                    <p>The monitor must be in alphanumeric display mode rather 
+                      than graphics display mode.</p>
+                    <p></p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>198 Load failure Fatal </b> 
+                    <p>The system cannot load a program module or, in a multi-threading 
+                      program, start a new thread.</p>
+                    <p>A CALL statement has failed because:</p>
+                    <p> In the case of a DLL, the specified entry point does not 
+                      exist in the file<br>
+                      In the case of an .int or .gnt file, the file has been corrupted<br>
+                      In the case of a call of the form $PROG, name mapping has 
+                      failed<br>
+                      In the case of a call-by-number library routine (CALL data-name, 
+                      where data-name is a pic x with value greater than x'80'), 
+                      the routine does not exist</p>
+                    <p>Any call or attempt to start a thread can fail where internal 
+                      structures have been corrupted; for example, by a protection 
+                      violation.</p>
+                    <p>A statement of the form SET PROCEDURE POINTER TO ENTRY 
+                      entry-point has failed because the entry point cannot be 
+                      found on disk or in the current run-unit.</p>
+                    <p>Rarely, this error can be caused by a CALL statement failing 
+                      because of insufficient available memory or because the 
+                      run-time system version is too old.</p>
+                    <p>Resolution:</p>
+                    <p>Check that the target of your call exists and has not been 
+                      corrupted.</p>
+                    <p>Test that a procedure pointer is valid before using it 
+                      by including code of the form:</p>
+                    <p>set bad-pointer to entry 'just-not-there-ever'</p>
+                    <p>...<br>
+                      set procedure-pointer to entry 'myentrypoint'<br>
+                      if procedure-pointer = bad-pointer<br>
+                      display error<br>
+                      end-if</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>199 Operating System error code lies outside expected 
+                    range Fatal </b> 
+                    <p>A system call has returned an unexpected error number which 
+                      is not documented.</p>
+                    <p>Resolution:</p>
+                    <p>Contact Technical Support who will help you to discover 
+                      the specific cause of this error.</p>
+                    <p>If your program is running on Windows NT, the error returned 
+                      by the system call is written to the Application Event Log. 
+                      The information has Micro Focus COBOL as its source and 
+                      can be viewed using the Event Viewer system tool.</p>
+                    <p></p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>200 Run-time system internal logic error Fatal </b> 
+                    <p>The amount of memory available on your machine is so low 
+                      that not even the run-time system can be fully loaded.</p>
+                    <p>Alternatively, your run-time system has stopped as a result 
+                      of an internal logic error from which you cannot recover.</p>
+                    <p>Resolution:</p>
+                    <p>Free some memory and then you should be able to run your 
+                      program successfully.</p>
+                    <p>Contact Technical Support who will help you to discover 
+                      the cause of the error.</p>
+                    <p>&nbsp;</p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>201 I-O error in paging system Fatal </b> 
+                    <p>No room is available in your current directory or on the 
+                      floppy disk which you are using, for the paging file.</p>
+                    <p>Resolution:</p>
+                    <p>When your program has terminated, delete any files which 
+                      you no longer need from your directory to make room for 
+                      the paging file, or insert a new floppy disk.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>203 CALL parameter not supplied Fatal </b> 
+                    <p>The item you are trying to access in the Linkage Section 
+                      of the currently executing program has not been initialized.</p>
+                    <p>Resolution:</p>
+                    <p>Recode your program to ensure that it contains all of the 
+                      necessary parameters, or check that it is a valid caller.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>206 Reading unwritten data from memory Fatal </b> 
+                    <p>You are trying to read data which has not been written, 
+                      from the core file.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>207 Machine does not exist </b><br>
+                    Recoverable 
+                    <p>You have tried to access a machine that is not connected 
+                      to your network, or which is not on-line.</p>
+                    <p>Resolution:</p>
+                    <p>Make sure the machine is connected to the network and is 
+                      on-line, then try to access it again.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>208 Error in multi-user system Fatal </b> 
+                    <p>This is normally caused by an unexpected error occurring 
+                      in the network or file-sharing facilities. A corrupted network 
+                      message also causes this error to be returned.</p>
+                    <p>Resolution:</p>
+                    <p>Retry the unsuccessful operation. If the error persists, 
+                      contact Technical Support who will help you to discover 
+                      the specific cause of this error.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>209 Network communication error </b><br>
+                    Recoverable 
+                    <p>This is normally given if an incorrect checksum has been 
+                      received in a communications packet.</p>
+                    <p>Resolution:</p>
+                    <p>Your program should continue to execute after you have 
+                      received this error but results might be undefined.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>210 File is closed with lock Fatal </b> 
+                    <p>You have tried to open a file which you have previously 
+                      closed with lock.</p>
+                    <p>Resolution:</p>
+                    <p>Recode your program to avoid opening a file which has previously 
+                      been closed with lock.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><b>211 Program not executable by Run-Time System (Fatal)</b></p>
+                    <p>You have tried to run a program that is incompatible with 
+                      the current version of either your run-time system, your 
+                      object file or yur COBOL run-time library. For example, 
+                      your run-time system does not a program linked using a different 
+                      object file format or COBOL run-time library.</p>
+                    <p>If your object file is incompatible with the current version 
+                      of eitheryour COBOL run-time system, you should relink with 
+                      the current version of your COBOL run-time library.</p>
+                    </td>
+                </tr>
+                <tr> 
+                  <td><b>213 Too many locks </b><br>
+                    Recoverable 
+                    <p>You have either tried to exceed the maximum number of simultaneous 
+                      record locks per file you can have, or you have exhausted 
+                      an operating system or network resource, for example dynamic 
+                      memory.</p>
+                    <p>Resolution:</p>
+                    <p>Execute a COMMIT or an UNLOCK operation on the relevant 
+                      file and you should then be able to continue to run your 
+                      program. You should try not to retain a record lock for 
+                      longer than is necessary.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>214 GO TO has not been ALTERed Fatal </b> 
+                    <p>You have violated one of the general rules of COBOL programming.</p>
+                    <p>Resolution:</p>
+                    <p>Close any files which might be open, execute a STOP RUN 
+                      statement and then edit your program to avoid such illegal 
+                      operations.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>215 Cannot ANIMATE a program running COMMUNICATIONS </b><br>
+                    Fatal 
+                    <p>You have tried to animate a program which makes use of 
+                      the communications module. This cannot be done as both Animator 
+                      and the communications module need full use of the CRT.</p>
+                    <p>Resolution:</p>
+                    <p>You should run your program without the aid of Animator.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>216 Cannot initialize the named communications device 
+                    Fatal </b> 
+                    <p>A device driver is probably missing.</p>
+                    <p>Resolution:</p>
+                    <p>Ensure that all communications drivers are loaded before 
+                      you try to run Communications.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>217 Incompatible host for native code file </b><br>
+                    Fatal 
+                    <p>The .gnt file is not valid for the host processor.</p>
+                    <p>Resolution:</p>
+                    <p>You must resubmit your program to your COBOL system.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>218 Malformed MULTIPLE REEL/UNIT file </b><br>
+                    Fatal 
+                    <p>Either your file header is not correctly formatted, or 
+                      you are not using a MULTIPLE REEL/UNIT file.</p>
+                    <p>Resolution:</p>
+                    <p>You should try to run your program again using a backup 
+                      copy of the relevant file.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><b>219 Operating system shared file limit exceeded </b><br>
+                      Recoverable</p>
+                    <p>You have tried to exceed your operating system's limit 
+                      on the number of shared files that you can have open simultaneously. 
+                      As this figure is operating system dependent, you should 
+                      consult your Release Notes for details of how many shared 
+                      files your system permits to be open at any one time.</p>
+                    <p>Resolution:</p>
+                    <p>Close some of the open shared files you are no longer accessing 
+                      and retry the file operation.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>220 Attempt to execute more than one SORT or MERGE simultaneously 
+                    Fatal </b> 
+                    <p>You have coded your program in such a way that it is trying 
+                      to execute more than one SORT or MERGE operation at the 
+                      same time. For example, you might have coded a SORT statement 
+                      in the input or output procedure of another SORT statement, 
+                      an operation that is specifically prohibited under the rules 
+                      of ANSI COBOL.</p>
+                    <p>Resolution:</p>
+                    <p>You should recode your program to ensure that it does not 
+                      execute more than one SORT or MERGE at any one time.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>221 SORT/MERGE error: see status keys Fatal </b> 
+                    <p>You have tried a SORT/MERGE operation which has been unsuccessful 
+                      for some reason. You might have had too many files open 
+                      when you tried a SORT/MERGE operation, or the file which 
+                      you are trying to access might be locked.</p>
+                    <p>Resolution:</p>
+                    <p>The action you should take depends on the situation in 
+                      which it occurs. Check the status of each file (USING/ GIVING) 
+                      defined in the SORT statement.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>222 SORT/MERGE error: see status keys </b><br>
+                    Fatal 
+                    <p>You have tried a SORT/MERGE operation which has been unsuccessful 
+                      for some reason. You might have had too many files open 
+                      when you tried a SORT/MERGE operation, or the file which 
+                      you are trying to access might be locked.</p>
+                    <p>Resolution:</p>
+                    <p>The action you should take depends on the situation in 
+                      which it occurs. Check the status of each file (USING/ GIVING) 
+                      defined in the SORT statement.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>223 SORT/MERGE error: see status keys Fatal </b> 
+                    <p>You have tried a SORT/MERGE operation which has been unsuccessful 
+                      for some reason. You might have had too many files open 
+                      when you tried a SORT/MERGE operation, or the file which 
+                      you are trying to access might be locked.</p>
+                    <p>Alternatively, you have set the TMP environment variable 
+                      to point to a directory that does not exist.</p>
+                    <p>Resolution:</p>
+                    <p>The action you should take depends on the situation in 
+                      which it occurs.</p>
+                    <p>Either set TMP to point to a directory that does exist, 
+                      or unset TMP.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>224 External Language Initialization failure </b> 
+                    <p></p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>225 Dynamic load error - program component missing Fatal 
+                    </b> 
+                    <p>The run-time system cannot locate the root or overlay of 
+                      a program that is currently loaded in memory.</p>
+                    <p>Alternatively, you have insufficient memory to load your 
+                      program.</p>
+                    <p>Alternatively, the run-time system could not find enough 
+                      file handles to open and, therefore, load the code.</p>
+                    <p>Resolution:</p>
+                    <p>Either the library that contained the program has been 
+                      canceled, or the program is no longer available on the program 
+                      search path. Ensure that the program is available either 
+                      on disk or on an open library.</p>
+                    <p>Either free some memory or restructure your application 
+                      so that it uses less memory.</p>
+                    <p>Increase your operating system file handles limit.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>226 EXTERNAL file definition inconsistent </b> 
+                    <p>Two or more programs define the same external file but 
+                      with different formats. For example, maximum and minimum 
+                      record lengths might be different.</p>
+                    <p>Resolution</p>
+                    <p>Make sure that all of your programs define the external 
+                      file with the same format so that they are consistent. It 
+                      is useful to have the file definition in a COPY file.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>227 EXTERNAL data definition inconsistent Fatal </b> 
+                    <p>Two or more programs are defining the same external data 
+                      item, but the first loaded program has defined the size 
+                      differently from the second or subsequent loaded program.</p>
+                    <p>Resolution:</p>
+                    <p>Make sure that both or all of your programs define the 
+                      size of the external data item as being the same.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>228 Could not allocate memory for EXTERNAL item Fatal 
+                    </b> 
+                    <p></p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>229 SORT/MERGE module does not support EXTERNAL using/giving 
+                    files </b><br>
+                    Recoverable 
+                    <p>You have tried a SORT or MERGE operation which has USING/ 
+                      GIVING files which are defined as EXTERNAL. The SORT/ MERGE 
+                      module does not support USING/ GIVING files defined as EXTERNAL.</p>
+                    <p>Resolution:</p>
+                    <p>Recompile your program to use the callable SORT module 
+                      (EXTSM).</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td align="left"> 
+                    <p><b>230 Floating Point Support Module not found (Fatal)</b></p>
+                    <p>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><b>235 Error in animator communications channel Fatal</b></p>
+                    <p>Animator has encountered system limits or conflicts resulting 
+                      in communications errors. Perhaps two logins on the same 
+                      UNIX system are trying to cross-session animate the same 
+                      program file.</p>
+                    <p>Resolution:</p>
+                    <p>Copy the animated program file to a different directory 
+                      and try animation.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>236 Animated program has terminated unexpectedly Fatal 
+                    </b> 
+                    <p>A program you are animating has terminated without following 
+                      the standard run-time system shut-down process. The termination 
+                      was probably either initiated by the user or caused by a 
+                      severe run-time error.</p>
+                    <p>Resolution:</p>
+                    <p>Run your program without animation to determine if it runs 
+                      successfully; if so, animate the program without cross-session 
+                      or intrasession animation.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>237 Unable to initialize animated process Fatal </b> 
+                    <p>Animator has encountered system limits in starting your 
+                      program. The animated program cannot start because of either 
+                      insufficient memory or too many processes running on the 
+                      UNIX system.</p>
+                    <p>Resolution:</p>
+                    <p>Animate your program when the load on the system has reduced. 
+                      Run the program without animation to determine if it runs 
+                      successfully; if so, animate the program without cross-session 
+                      or intrasession animation. Ask your system administrator 
+                      to expand the number of process slots and virtual memory 
+                      page maps.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <p><b>238 STOP RUN encountered during GNT animation </b><br>
+                      Informational</p>
+                    <p>Animator has encountered a STOP RUN statement while animating 
+                      your .gnt code program.</p>
+                    <p>Resolution:</p>
+                    <p>Step or Zoom the animated program, and Animator will terminate 
+                      the program and its current session.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>239 Shared run-time system initialization failure </b><br>
+                    Informational 
+                    <p>You are calling a COBOL module from a non-COBOL program, 
+                      and have not initialized the shared run-time system.</p>
+                    <p>Resolution:</p>
+                    <p>Ensure that your application calls the cobinit() function 
+                      before executing any COBOL modules. See your COBOL System 
+                      Reference for UNIX for more information about the cobinit() 
+                      function.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>240 Object reference not valid Fatal </b> 
+                    <p>You have tried to use an object reference that contains 
+                      an incorrect or non-existent object handle.</p>
+                    <p>Resolution:</p>
+                    <p>Ensure that the object reference uses the correct object 
+                      handle, and that your program has not previously destroyed 
+                      the object by sending it a Finalize message.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>241 Cannot instantiate an abstract class Fatal </b> 
+                    <p>You have tried to create an instance of a class that has 
+                      been declared ABSTRACT. Such classes cannot be instantiated.</p>
+                    <p>Resolution:</p>
+                    <p>Ensure that you have specified the correct class name. 
+                      Check to see if there is a subclass that you should use 
+                      instead.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>242 Could not resolve DoesNotUnderstand message </b><br>
+                    Fatal 
+                    <p>The run-time system could not resolve the DoesNotUnderstand 
+                      message. This is usually because you have defined a class 
+                      in such a way that this method cannot be found.</p>
+                    <p>Resolution:</p>
+                    <p>Check the logic in your program to ensure that it invokes 
+                      only methods that are supported by the object, or ensure 
+                      that the object supports the DoesNotUnderstand method.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+                <tr> 
+                  <td><b>254 Keyboard interrupt to ANIMATOR during ACCEPT Fatal 
+                    </b> 
+                    <p>While using Animator you have terminated your program with 
+                      a keyboard interrupt.</p>
+                    <p>&nbsp; </p>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+                 <!-- #EndEditable --></td>
+            <td align="right" width="23%" valign="top" > 
+              <table width="100%" border="0" class="bgTabela">
+                <tr bgcolor="#FFCC33" valign="top"> 
+                  <td colspan="2" class="bgTabela"> 
+                    <table width="90%" border="0" align="center">
+                      <tr valign="top"> 
+                        <td valign="top"> 
+                          <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
+                            <tr valign="top"> 
+                              <td valign="top"> 
+                                <table width="100%" border="0" class="bgTabela">
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaRotulo" height="12"><a href="/corporativo/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Corporativo</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Home</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/a/"><font face="Verdana, Arial, Helvetica, sans-serif">S.A.D</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../corporativo/mapadosite/mapasite.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Mapa 
+                                     do site</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../ISO9001/Documentos/D04.PDF"><font face="Verdana, Arial, Helvetica, sans-serif">Organograma</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../assistencia/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Assist&ecirc;ncia 
+                                     M&eacute;dica</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/corporativo/dadosdaempresa.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Dados 
+                                     da Empresa</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/corporativo/aniversarios/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Anivers&aacute;rios</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../corporativo/feriados.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Pontes 
+                                     e Feriados</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="/corporativo/fome.htm"><font face="Verdana, Arial, Helvetica, sans-serif">T&ocirc; 
+                                     com fome</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="/servicosgerais/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Manuten&ccedil;&atilde;o</font></a>                                    </td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../corporativo/escolaridade.php"><font face="Verdana, Arial, Helvetica, sans-serif">Escolaridade</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../representantes/index.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Representantes</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../suporte/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Suporte</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../corporativo/Inforvirus.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Informa&ccedil;&otilde;es 
+                                     sobre v&iacute;rus</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao"><a href="../../colaboradores/index.htm">Colaboradores</a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../../saude/" target="_blank">Sa&uacute;de e Qualidade de vida</a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                   <td class="TabelaPadrao"><a href="../../eventos.htm">Eventos Datamace</a></td>
+                                 </tr>
+                               </table>
+                              </td>
+                            </tr>
+                          </table>
+                          <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
+                            <tr valign="top"> 
+                              <td> 
+                                <table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td height="16" bgcolor="#CC9900" class="TabelaRotulo"><a href="../../estrutura/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Estrutura</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao" height="9"><a href="/estrutura/rede.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Rede</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../estrutura/micros.php"><font face="Verdana, Arial, Helvetica, sans-serif">n&ordm; 
+                                      micros</font></a></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                          <table width="100%" border="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF" align="center">
+                           <tr valign="top"> 
+                             <td> <table width="100%" border="0" class="bgTabela">
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaRotulo" valign="top"><a href="../../Apoio/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Apoio</font></a></td>
+                                 </tr>
+                                 <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                   <td class="TabelaPadrao" valign="top"><a href="../../Apoio/emails.php"><font face="Verdana, Arial, Helvetica, sans-serif">E-mails</font></a></td>
+                                 </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao" valign="top"><a href="../../Apoio/links.html"><font face="Verdana, Arial, Helvetica, sans-serif">Links</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" valign="top"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="/corporativo/ramais.php">Ramais</a></font></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" valign="top"><a href="/corporativo/telefones2.php"><font face="Verdana, Arial, Helvetica, sans-serif">Telefones 
+                                    &uacute;teis</font></a></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                            <tr valign="top"> 
+                              <td><table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaRotulo"><a href="../../entretenimento/index.htm"><font face="Verdana, Arial, Helvetica, sans-serif">Entretenimento</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../entretenimento/filmes/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Videoteca</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../entretenimento/livros/index.php"><font face="Verdana, Arial, Helvetica, sans-serif">Biblioteca</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="/entretenimento/enquetes.php"><font face="Verdana, Arial, Helvetica, sans-serif">Enquetes</font></a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../entretenimento/mural.htm">Mural 
+                                      de an&uacute;ncios</a></td>
+                                  </tr>
+                                </table>
+                                <table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaRotulo" valign="top"><font face="Verdana, Arial, Helvetica, sans-serif"><a href="../../treinamento/treinamento.php">Treinamento</a></font></td>
+                                  </tr>
+                                  
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900">
+                                    <td class="TabelaPadrao" valign="top"><a href="../../treinamento">Portal</a></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                            <tr valign="top"> 
+                              <td><table width="100%" border="0" class="bgTabela">
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaRotulo"><a href="../../Intersystem/index.htm">Intersystem</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../Intersystem/compromisso.htm">Compromisso</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../Intersystem/dadosintersystem.htm">Dados 
+                                      da empresa</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../Intersystem/missao.htm">Miss&atilde;o</a></td>
+                                  </tr>
+                                  <tr bgcolor="#CC9900" bordercolor="#CC9900"> 
+                                    <td class="TabelaPadrao"><a href="../../Intersystem/servicosclientes.htm">Servi&ccedil;os</a></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                          </table></td>
+
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <a href="javascript:history.go(-1)"><img src="/imagens/back_seta.jpg" width="13" height="21" border="0">voltar</a> 
+        <br>
+        <hr align="center">
+        <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#999999"> 
+          Datamace Inform&aacute;tica LTDA - Todos os diretos reservados</font></p>
+      </td>
+    </tr>
+  </table>
+</div>
+<p align="center">&nbsp;</p>
+</body>
+<!-- #EndTemplate --></html>
+

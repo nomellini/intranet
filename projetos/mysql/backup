@@ -1,0 +1,6 @@
+mysqldump datamace -e --add-drop-table -hlocalhost -uroot -pmarcia > datamace
+mysqldump hardware  --add-drop-table -hlocalhost -uroot -pmarcia > hardware
+mysqldump sympoll   --add-drop-table -hlocalhost -uroot -pmarcia > sympoll
+mysqldump phorum    --add-drop-table -hlocalhost -uroot -pmarcia > phorum
+mysqldump suporte   --add-drop-table -hlocalhost -uroot -pmarcia > suporte
+mysqldump atendimento  --add-drop-table -hlocalhost -uroot -pmarcia > atendimento

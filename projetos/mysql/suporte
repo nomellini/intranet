@@ -1,0 +1,96 @@
+# MySQL dump 7.1
+#
+# Host: localhost    Database: suporte
+#--------------------------------------------------------
+# Server version	3.22.32-log
+
+#
+# Table structure for table 'descr'
+#
+DROP TABLE IF EXISTS descr;
+CREATE TABLE descr (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  id_titulo int(11),
+  causa longtext,
+  solucao longtext,
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'descr'
+#
+
+INSERT INTO descr VALUES (19,13,'Alguma variável utilizada como índice assumiu o valor ZERO ou ultrapassou o máximo da tabela. ','Uma das poucas coisas a se verificar (antes de assumir que trata-se de um erro de programa) é analisar se não há alguma referência a um registro de tabela que tenha sido eliminado. Ex:<br>\r\nUm evento é amarrado a uma tabela de usuário, e em seguida esse evento é eliminado da tabela de eventos.');
+INSERT INTO descr VALUES (18,12,'Um programa tentou abrir um arquivo que não se encontra no diretório. O arquivo pode ter sido apagado.','Analisar se o arquivo deveria mesmo existir.<br>\r\nPedir para verificar se o arquivo já existia no último back-up.');
+INSERT INTO descr VALUES (17,11,'Muito provavelmente um erro físico no disco onde os dados estão sendo gravados/lidos','Parar imediatamente a execução do sistema. Contatar área de informática. Retornar o back-up mais atualizado em outro computador, pois os dados já não são confiáveis');
+INSERT INTO descr VALUES (16,10,'Alguma interrupção inesperada, como uma queda de energia ou travamento do microcomputador','Acionar a opção (dentro do sistema) de recuperação de arquivos, recuperando o arquivo danificado.');
+INSERT INTO descr VALUES (15,9,'Um programa .EXE ou .GNT corrompido.\r\n\r\n','Identificar o programa envolvido com o problema (o nome dele aparece relacionado com a mensagem do erro 165). Uma vez identificado o programa, enviar uma nova cópia para o usuário.\r\n');
+INSERT INTO descr VALUES (14,9,'Ausência dos arquivos COBLIB.DEL (para versão 16 bits) ou COBLIB.DLW (para versão 32 bits) no diretório \\DTM','Verificar se os arquivos COBLIB.DLE ou COBLIB.DLW estão presentes no diretório dos dados \\DTM. Se não estiver, enviar e solicitar a gravação em \\DTM.\r\n');
+INSERT INTO descr VALUES (13,8,'Provavelmente a cláusula FILES do CONFIG.NT não existe ou contém um valor baixo','Estando no drive C: na pasta winnt\\system32  (<b>C:\\WINNT\\SYSTEM32</b>)  editar o CONFIG.NT  ( EDIT CONFIG.NT) .<br>\r\nVerificar se existe a linha<br><br>\r\nFILES=valor<br>\r\n<br>\r\nexiste, onde \"valor\"  deve ser igual ou maior que 150.<br>\r\nSe não existir, criar a linha, salvar o arquivo e reiniciar a máquina.');
+INSERT INTO descr VALUES (12,7,'Provavelmente a cláusula FILES do CONFIG.SYS não existe ou contém um valor baixo','Estando na raiz do drive C:  (C:\\)  editar o CONFIG.SYS  ( EDIT CONFIG.SYS) .\r\nVerificar se existe a linha \r\n<br>\r\n<br>\r\nFILES=valor<br>\r\n<br>\r\nexiste, onde \"valor\"  deve ser igual ou maior que 150.<br>\r\nSe não existir, criar a linha, salvar o arquivo e reiniciar a máquina.');
+INSERT INTO descr VALUES (11,6,'Existe a possibilidade de ser por causa do atalho criado no Windows para acesso ao Sistema Datamace.','Clicando com o botão direito sobre o atalho, selecionando \"propriedades\",\r\nclicando na guia \"misc\" (que é abreviação de miscelânea) há um box identificado como \"fundo\" ou \"segundo plano\", nela há uma propriedade chamada \"suspender sempre\".\r\n<br>\r\n<br>\r\nEssa propriedade NÃO DEVE estar ativada, pois isso significa que, quando a\r\n janela DOS for minimizada, ou seja, se o usuário chamar outra janela\r\n(talvez um Word ou Excel por exemplo) a janela minimizada PÁRA de ser processada, só retornando se ela for maximizada. Isso quer dizer que, se for um\r\nprocessamento de folha, por exemplo, o funcionário que estiver sendo processado no momento em que ela for minimizada vai ficar BLOQUEADO para todos os outros micros, fazendo com que todos os que tentarem fazer um processamento ou emissão de relatório que inclua tal registro fiquem bloqueados também.\r\n');
+INSERT INTO descr VALUES (10,4,'Antes de qualquer coisa, não confundir ESPAÇO DE AMBIENTE com ESPAÇO EM DISCO.<br>\r\n<br>\r\n','Para cada sessão DOS que é aberta no Windows existe um \"lugar\" reservado para guardar variáveis.<br>\r\nEssas variáveis servem para \"orientar\" os programas que as procuram. <br>Exemplo:<br>\r\nQuando o GIP é iniciado, o programa Cobol precisa \"saber\" onde estão os arquivos run-time e os outros programas Cobol. <br>Como ele faz para \"descobrir\" ?<br>\r\nEle \"procura\" uma variável de ambiente chamada COBDIR  (que seria a abreviação de DIRETÓRIO DO COBOL, ou seja, onde estão os programas Cobol.<br>\r\nSe ele não encontrar a variável COBDIR no \"ambiente\", ou seja, na sessão DOS, ele vai \"se perder\" e não conseguirá executar os programas corretamente.<br><br>\r\n\r\nPor padrão, o Windows reserva 1024 bytes ( 1 KB ) para as variáveis de ambiente.<br>\r\nQuando existem muitos programas instalados que se utilizam essas variáveis, os 1024 bytes se tornam insuficientes para guarda-las, sendo necessário, dessa forma, aumentar o espaço disponível, fazendo uma mudança no CONFIG.SYS\r\nque fica em C:\\\r\n<br>\r\n<br>\r\nEDIT C:\\CONFIG.SYS<br>\r\n<br>\r\nProcurar pela linha:<br>\r\n<br>\r\nSHELL=C:\\COMMAND.COM C:\\  /P /E:1024<br>\r\n<br>\r\nSe já existir, aumentar o valor 1024 para 2048.<br>\r\n<br>\r\nSe não existir, inserir a linha com o valor de 2048.<br>\r\n<br>\r\nObs: Atenção nas barras, na linha tem barra \"normal\" e também barra \"invertida\"<br>\r\n<br>\r\nDepois de alterar e salvar, é necessário reiniciar o computador.');
+INSERT INTO descr VALUES (9,3,'A variável de ambiente COBDIR não está setada','A Datamace tem por padrão setar a variável de ambiente COBDIR dentro do batch GP.BAT.<br>\r\nEditando o GP.BAT, deve existir uma linha  SET COBDIR=\\DTM\\DTM-PGM<br>\r\n<br>\r\nAs possibilidades são: <br>\r\n<br>\r\nA) A linha não constar no GP.BAT<br>\r\n    - Então deve ser incluída<br>\r\n<br>\r\nB) A linha constar mas estar com REM na frente (REM SET COBDIR = \\DTM\\DTM-PGM), o que significa que ela não está sendo executada.<br>\r\n   - Deve-se retirar o REM<br>\r\n<br>\r\nC) Quando o BAT é executado, há uma mensagem de erro \"ESPAÇO DE AMBIENTE ESGOTADO\" e a variável não é setada.<br>\r\n   -Utilize o procedimento específico, descrito neste documento, para corrigir o problema.<br>\r\n<br>\r\nD) Os usuários entram no Sistema SEM UTILIZAR O BAT<br>\r\n   - Verificar porquê não utilizam<br>\r\n   - Orientar para que utilizem');
+INSERT INTO descr VALUES (8,3,'A cláusula FILES do CONFIG.SYS não existe ou contém um valor baixo','Estando na raiz do drive C:  (C:\\)  editar o CONFIG.SYS  ( EDIT CONFIG.SYS) .\r\nVerificar se existe a linha \r\n<br>\r\n<br>\r\nFILES=valor<br>\r\n<br>\r\nexiste, onde \"valor\"  deve ser igual ou maior que 150.<br>\r\nSe não existir, criar a linha, salvar o arquivo e reiniciar a máquina.<br>\r\n<br>\r\nObs: Em caso de o Sistema Operacional ser Windows NT o procedimento acima não tem utilidade.');
+INSERT INTO descr VALUES (7,3,'O arquivo (programa) que aparece na mensagem não está no diretório DTM-PGM','Solicitar ao usuário que entre no diretório \\DTM\\DTM-PGM e digite:<br>\r\n<br>\r\nDIR nome-do-programa.exe<br>\r\n<br>\r\nOnde nome-do-programa é o que aparece no texto da mensagem.\r\nSe o programa não estiver, além de enviar o programa para ele, é bastante importante tentar descobrir o que pode ter acontecido, pois um programa não \"desaparece\" simplesmente de um diretório. Talvez tenha havido problemas na atualização de versão (seria interessante perguntar quando foi a última, e se foi via disquete ou Internet). É lícito imaginar que, \"o que fez\" um programa \"desaparecer\", pode ter feito outros desaparecerem também.');
+INSERT INTO descr VALUES (6,2,'Falta de Espaço em disco','Procedimento igual ao Windows95/98');
+INSERT INTO descr VALUES (5,2,'A cláusula FILES do <b>CONFIG.NT</b> não existe ou contém um valor baixo','Estando no drive C: na pasta winnt\\system32  (C:\\WINNT\\SYSTEM32)  editar o CONFIG.NT  ( EDIT CONFIG.NT) .\r\nVerificar se existe a linha \r\n<br>\r\n<br>\r\nFILES=<i>valor</i><br>\r\n<br>\r\nexiste, onde \"valor\"  deve ser igual ou maior que 150.\r\nSe não existir, criar a linha, salvar o arquivo e reiniciar a máquina.\r\n');
+INSERT INTO descr VALUES (4,2,'A origem do problema é mesma que no Windows95/98, porém a forma de corrigir é diferente.<br>\r\n<br>\r\nEssa mensagem ocorre quando o Cobol precisa gravar arquivos temporários e não consegue.<br>\r\n<br>\r\nAs variáveis de ambiente TEMP e/ou TMP  não estão \"setadas\" ou o caminho para o qual elas \"apontam\" não existe.','Clicar em:<br>\r\nIniciar<br>\r\nConfigurações<br>\r\nPainel de Controle<br>\r\nSistema<br>\r\nClicar na guia \"Ambiente\"<br>\r\nClicar em uma linha em branco do bloco \"variáveis de sistema\"<br>\r\nDigitar o nome da variável TEMP na caixa de texto apropriada <br>\r\nDigitar o valor C:\\TEMP na caixa de texto apropriada<br>\r\nClicar em Definir variável.<br>\r\n<br>\r\nRepetir o mesmo procedimento para a variável TMP<br>\r\n<br>\r\nObs1: Se não existir a pasta C:\\TEMP, criá-la pelo Windows  Explorer ou pelo prompt    do DOS<br>\r\n<br>\r\nObs2: Pode existir pequenas variações na seqüência em função das diferentes versões do Windows NT, contudo, em linhas gerais, os procedimentos são muito semelhantes e as diferenças são de fácil percepção.');
+INSERT INTO descr VALUES (3,1,'Falta de Espaço em disco','É possível que falte espaço no disco onde está o diretório apontado nas variáveis TEMP e/ou TMP<br>\r\n<br>\r\nVerificar o conteúdo das variáveis TEMP e TMP (como descrito no procedimento do item 1).<br>\r\n<br>\r\nVerificar o espaço em disco na unidade indicada no caminho que consta nessas variáveis. Para isso, digite DIR  e veja qual o espaço restante.\r\nSe houver pouco espaço (menos que 2 ou 3 MB) aconselhar ao usuário a promover uma \"limpeza\" em seu disco rígido ou entrar em contato com o pessoal da área de informática.\r\n');
+INSERT INTO descr VALUES (2,1,'A cláusula FILES do CONFIG.SYS não existe ou contém um valor baixo','Estando na raiz do drive C:  (C:\\)  editar o CONFIG.SYS  ( EDIT CONFIG.SYS) .\r\nVerificar se existe a linha \r\n<br>\r\n<br>\r\nFILES=valor<br>\r\n<br>\r\nexiste, onde \"valor\"  deve ser igual ou maior que 150.\r\nSe não existir, criar a linha, salvar o arquivo e reiniciar a máquina.\r\n<br>\r\nObs: Em caso de o Sistema Operacional ser Windows NT o procedimento acima não tem utilidade.');
+INSERT INTO descr VALUES (1,1,'As variáveis de ambiente TEMP e/ou TMP  não estão \"setadas\" ou o caminho para o qual elas \"apontam\" não existe.','Estando no prompt do DOS, digite SET. Esse comando faz com que as variáveis de ambiente sejam listadas em tela. (Se a tela rolar e não for possível visualizar todas as variáveis, digite    SET  |  MORE , isso forçará uma pausa assim que a tela ficar cheia).<br>\r\nVerificar se TEMP e TMP existem e apontam para um caminho válido (normalmente C:\\WINDOWS\\TEMP) Cuidado, observe se o diretório existe.\r\nSe não estiverem setadas, orientar ao operador que  edite o AUTOEXEC.BAT (que fica em C:\\    ( EDIT C:\\AUTOEXEC.BAT ) e incluir as seguintes linhas:<br>\r\nSET TEMP=C:\\WINDOWS\\TEMP<br>\r\nSET TMP=C:\\WINDOWS\\TEMP<br>\r\nSalvar o arquivo e reiniciar o computador.<br>\r\n<br>\r\nObs1: Cuidado, não esqueça de verificar se o diretório apontado existe.<br>\r\nObs2: Certifique-se de que o usuário esteja digitando a \"barra invertida\"  \"\\\" e não a \"barra normal\"  \"/\".<br>\r\nObs: No AUTOEXEC.BAT, as linhas que iniciarem com REM não são consideradas, ou seja, estão canceladas.');
+
+#
+# Table structure for table 'so'
+#
+DROP TABLE IF EXISTS so;
+CREATE TABLE so (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  so char(100),
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'so'
+#
+
+INSERT INTO so VALUES (1,'Windows NT');
+INSERT INTO so VALUES (2,'Windows 2000');
+INSERT INTO so VALUES (3,'Windows ME');
+INSERT INTO so VALUES (4,'Windows 95/98');
+INSERT INTO so VALUES (5,'DOS');
+INSERT INTO so VALUES (7,'Windows 3.11');
+INSERT INTO so VALUES (6,'Windows NT/2000');
+INSERT INTO so VALUES (8,'Todos');
+
+#
+# Table structure for table 'titulo'
+#
+DROP TABLE IF EXISTS titulo;
+CREATE TABLE titulo (
+  id int(11) DEFAULT '0' NOT NULL auto_increment,
+  titulo varchar(150),
+  id_so int(11),
+  obs text,
+  visitas int(11) DEFAULT '0',
+  PRIMARY KEY (id)
+);
+
+#
+# Dumping data for table 'titulo'
+#
+
+INSERT INTO titulo VALUES (8,'File Status 9014 ou (9 seguido de uma nota musical)',1,'',2);
+INSERT INTO titulo VALUES (7,'File Status 9014 (ou 9 seguido de uma nota musical)',8,'',2);
+INSERT INTO titulo VALUES (6,'Usuário reclama que, ao minimizar a janela do sistema, o processamento pára',4,'',1);
+INSERT INTO titulo VALUES (5,'Espaço de ambiente esgotado',1,'',0);
+INSERT INTO titulo VALUES (4,'Espaço de ambiente esgotado',4,'',7);
+INSERT INTO titulo VALUES (3,'173  Called program file not found in drive/directory (Fatal)',8,'',7);
+INSERT INTO titulo VALUES (2,'223  SORT/MERGE error: see status keys (Fatal)',1,NULL,2);
+INSERT INTO titulo VALUES (1,'223  SORT/MERGE error: see status keys (Fatal)',4,NULL,2);
+INSERT INTO titulo VALUES (9,'165 Version number incompatibility (Fatal)',8,'A princípio, esse erro ocorre quando falta algum dos módulos necessários para a execução do Cobol (run time),\r\n',1);
+INSERT INTO titulo VALUES (11,'File Status 9024',8,'Erro de I-O (disco)',2);
+INSERT INTO titulo VALUES (10,'File Status 9041',8,'Arquivo indexado corrompido',2);
+INSERT INTO titulo VALUES (12,'File Status 35',8,'Arquivo não se encontra no diretório',1);
+INSERT INTO titulo VALUES (13,'153 - Subscript out of range (Fatal)',8,'Um subscritor (índice) assumiu um valor indevido',3);
+

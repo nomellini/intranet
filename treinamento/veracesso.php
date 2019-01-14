@@ -8,15 +8,7 @@ if (!isset($pageRequested))
 	$pageRequested = $_SERVER['REQUEST_URI'];
 }
 
-$USRACESSO = array(
-	"HELIO",
-	"LUCAS",
-	"DEBORA",
-	"FLAVIA CRISTINA",
-	"FLAVIA",
-	"EDSON",
-	"JANAINA QUEIROGA",
-	 12, 240, 343, 334, 349);
+$USRACESSO = array(3, 175, 63, 143, 1, 187, 12, 240, 343, 334, 341);
 
 mysql_select_db(sad);
 

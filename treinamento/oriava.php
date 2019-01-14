@@ -4,7 +4,7 @@ include_once ('cabeca.inc.php');
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Datamace Inform&aacute;tica Ltda.</title>
 <style type="text/css">
 <!--
@@ -50,7 +50,7 @@ a:active {
   </tr>
 </table>
 <p align="center">&nbsp;</p>
-<p align="center"><span class="style1">AVALIAÇÕES DE TREINAMENTO</span></p>
+<p align="center"><span class="style1">AVALIAÃ‡Ã•ES DE TREINAMENTO</span></p>
 <p align="center" class="style5">AVALIA&Ccedil;&Atilde;O DE PR&Eacute;-REQUISITOS</p>
 <p align="center" class="style5"> ROTINAS DE DEPTO PESSOAL</p>
 <p align="center" class="style5"> EXERC&Iacute;CIOS DE FIXA&Ccedil;&Atilde;O DE TREINAMENTO</p>
@@ -62,7 +62,7 @@ a:active {
       <li class="style14">Leia as quest&otilde;es com aten&ccedil;&atilde;o.</li>
       <li class="style14">Clique na resposta que voc&ecirc; achar ser a certa, ela ir&aacute; para o gabarito automaticamente. </li>
       <li class="style14">Clique apenas uma vez em gravar, somente ap&oacute;s responder todas as quest&otilde;es. </li>
-      <li class="style14">Todas questões são obrigatórias. </li>
+      <li class="style14">Todas questÃµes sÃ£o obrigatÃ³rias. </li>
     </ol>    </td>
   </tr>
 </table>
@@ -86,7 +86,7 @@ if (mysql_num_rows($result) > 0){
 	}
 }else{
 ?>
-	<p align="center" class="style5">Nenhuma prova disponível! </p>
+	<p align="center" class="style5">Nenhuma prova disponÃ­vel! </p>
 <?
 }?>
 <p>&nbsp;</p>

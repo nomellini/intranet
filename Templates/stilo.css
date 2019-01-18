@@ -1,0 +1,146 @@
+body {
+	color: #454545;
+	font: 62.5% Verdana, Arial, Helvetica, sans-serif;
+}
+a:link, body_alink, a:visited, body_avisited {
+	text-decoration: none;
+}
+a:hover, a:active, body_ahover {
+	text-decoration: none;
+}
+input, td, th, p, li, select, body, option, optgroup {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: larger;
+	font-weight: normal;
+	text-decoration: none;
+	color: #000066;
+}
+.TituloTreino {
+	font-weight: bold;
+	color: #4A93B6;
+	font-size: 16px;
+	text-align:center;
+}
+.style4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+.style5 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+.style6 {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.unnamed1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #ffffff;
+	font-weight: bold
+}
+.TabelaRotulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: xx-small;
+	background-color: #C4E6E2;
+	color: #000000;
+	font-weight: bold
+}
+a {
+	color: #000099;
+	text-decoration: none
+}
+.TabelaPadrao {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: xx-small;
+	color: #000000;
+	background-color: #DBF0EE
+}
+a:hover {
+	text-decoration: underline;
+	color: #0000FF
+}
+.Titulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	color: #666666
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt
+}
+.bgTabela {
+	background-color: #006699
+}
+.tituloIntranet {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-weight: normal
+}
+.thTreinamento{
+	color:#FFF;
+	background-color:#008ACC;
+	font-weight:bold;
+	text-align:center;
+}
+.thTreinamento a, .thTreinamento a:hover, .thTreinamento a:visited {
+	color:#FFF;
+	text-decoration:none;
+}
+#tabela tbody td{
+	font-size:9px;
+}
+.tfvHighlight {
+	color: #F00;
+	font-weight: bold;
+}
+
+.nome {
+	font-size:large;
+}
+.nomeCentralizado
+{
+	font-size:large;
+	text-align: center;
+}
+.disponivel {	
+	font-weight:bold;
+	color: #030;
+}
+.reservado {	
+	font-weight:bold;
+	color: #000;
+}
+.EmUso {
+	font-weight:bold;
+	color: #F00;
+}
+.TituloReserva
+{
+	font-size: large;
+	text-align: center;
+	color: #333
+}
+.statusAtual
+{
+	color: #F00;
+	font-weight:bold;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+}
+.Centralizado {
+	text-align: center;
+}
+.Negrito
+{
+	font-weight:bold;
+}
+.Destaque
+{
+	font-weight:bold;
+	color: #F00
+}

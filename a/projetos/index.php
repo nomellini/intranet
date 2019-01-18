@@ -7,7 +7,7 @@
 <script type="text/jscript" src="../../scripts/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="../js/sad.js"></script>
 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Projetos</title>
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
@@ -52,7 +52,7 @@ Filtrar:<label for="textfield"></label>
 		  cellspacing="1" 
 		  bgcolor="#CCCCCC" summary="Lista os projetos da Datamace">
 		    <tr>
-		      <th width="15%" bgcolor="#0066FF">Destinatários</th>
+		      <th width="15%" bgcolor="#0066FF">DestinatÃ¡rios</th>
 		      <th width="15%" bgcolor="#0066FF">Detalhes</th>
               <th width="15%" bgcolor="#0066FF">Chamado</th>
 		      <th width="50%%" bgcolor="#0066FF">Descri&ccedil;&atilde;o</th>
@@ -81,6 +81,8 @@ Filtrar:<label for="textfield"></label>
 	$sql .= "from chamado where $status_a and rnc = 4 and id_chamado > 0 order by dataa desc ";
 //		$sql = "select id_chamado, dataa, descricao, (select count(1) from chamado c1 where chamado_pai_id = chamado.id_chamado) chamados from chamado where status = 2 and rnc = 4 and id_chamado > 0 order by dataa desc";	
 		$result = mysql_query($sql);
+		
+//		echo $sql;
 		
 		while ($linha = mysql_fetch_object($result)) {
 			
@@ -132,7 +134,7 @@ Outros: $outros";
 				onmouseout="this.className='normalRow'">
 -->
               <tr class="normalRow" >
-                <td align="center"><a href="ChamadosProjeto.php?id_projeto=<?= $linha->id_chamado?>">Destinatários</a></td>
+                <td align="center"><a href="ChamadosProjeto.php?id_projeto=<?= $linha->id_chamado?>">DestinatÃ¡rios</a></td>
                 <td align="center"><a href="#" onclick="vai('<?= $linha->id_chamado?>')">Detalhes</a></td>
               <td align="center"><?= $linha->id_chamado?></td>
               <td ><?= $linha->descricao?></td>
@@ -192,7 +194,7 @@ Outros: $outros";
           </table>
 		  <p>&nbsp;</p>
 		  <p>&nbsp;</p>
-<!--  Ainda não estou mostrando os chamados encerrados.
+<!--  Ainda nÃ£o estou mostrando os chamados encerrados.
 	  
 		<div Class="Titulo">
 		  <div align="center"><br />

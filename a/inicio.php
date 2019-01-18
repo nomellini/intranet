@@ -1338,7 +1338,10 @@ onSubmit="javascript:enviaConsultaRapida(); return false;">
 
 <?
 }
-  if($mydesktop->sistema==1) {
+ 
+if($mydesktop->sistema==1) 
+  
+{
 ?>
                     <tr>
                       <td bgcolor="#F9FDFF"><hr size="1px" color="#6699FF"><span class="style5 style7">Sistemas</span></td>
@@ -1371,7 +1374,10 @@ onSubmit="javascript:enviaConsultaRapida(); return false;">
   if($mydesktop->cliente==1) {
 ?>
                     <tr>
-                      <td bgcolor="#F9FDFF"><hr size="1px" color="#6699FF"><span class="style5 style7">Clientes</span></td>
+                      <td bgcolor="#F9FDFF">
+                       	<hr size="1px" color="#6699FF">
+                       	<span class="style5 style7">Clientes</span>
+                       </td>
                     </tr>
 
 
@@ -1380,7 +1386,6 @@ onSubmit="javascript:enviaConsultaRapida(); return false;">
 	$sql .= "from chamado inner join sistema on sistema.id_sistema = sistema_id ";
 	$sql .= "where visible = 1 and  destinatario_id = $ok and status <> 1 ";
 	$sql .= "group by cliente_id order by quantidade desc, sistema";
-//	die($sql);
 	$result = mysql_query($sql) or die (mysql_error());
 	while ( $linha = mysql_fetch_object($result) ) {
 ?>
@@ -1391,6 +1396,58 @@ onSubmit="javascript:enviaConsultaRapida(); return false;">
 <?
 	}
 ?>
+
+
+
+
+
+
+                    <tr>
+                      <td bgcolor="#F9FDFF">
+                       	<hr size="1px" color="#6699FF">
+                       	<span class="style5 style7">Enviados por</span>
+                       </td>
+                    </tr>
+
+
+ <?
+	$sql = "select 
+	case (remetente_id)
+	  when 12 
+	  then 'Eu mesmo (Mantive pendente)'
+	 else  
+	 	u.nome
+	end nome, remetente_id, count(*) as quantidade 
+from chamado inner join usuario u on u.id_usuario = remetente_id 
+where visible = 1 and destinatario_id = $ok and status <> 1 group by nome order by quantidade desc, nome";
+	
+
+	$result = mysql_query($sql) or die (mysql_error());
+	while ( $linha = mysql_fetch_object($result) ) {
+?>
+                    <tr>
+                      <td bgcolor="#F9FDFF" onMouseDown="this.className='subbarselected'; abrirlista('recebidosPor', '<?=$linha->remetente_id?>', <?=$linha->quantidade?> );" onMouseOver="this.className='subbarhover'" onMouseOut="this.className='subbarnotselone'"><span class="style5 style7">
+                        <strong><?=$linha->nome?></strong> (<?=$linha->quantidade?>) </span> </td>
+                    </tr>
+
+
+<?
+	}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <tr>
 
 

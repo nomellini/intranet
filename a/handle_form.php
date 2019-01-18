@@ -1,20 +1,20 @@
 <?
 	require("scripts/conn.php");
-	require("scripts/classes.php");	  	
-	require("scripts/cores.php");				  
+	require("scripts/classes.php");
+	require("scripts/cores.php");
 	$id_usuario = $_GET["id_usuario"];
 	$prioridade_id = $_GET["prioridade_id"];
 ?>
 <?php
 // Check variables
 if (empty($_GET['acao'])) {
-        die ('<span style="color:red;">Digite um número no id!</span>');
+        die ('<span style="color:red;">Digite um nÃºmero no id!</span>');
 }
 
 function getSql($ATipo, $AParametro) {
 	global $id_usuario;
-	global $prioridade_id;	
-	
+	global $prioridade_id;
+
 	$sql = "select lido, ";
 	$sql .= " datalidodestinatario, dataprevistaliberacao, ";
 	$sql .= " horalidodestinatario,  ";
@@ -38,15 +38,15 @@ function getSql($ATipo, $AParametro) {
 	$sql .= " chamado.dataa as DataAbertura,  ";
 	$sql .= " Left(descricao, 100) as descricao  ";
 	$sql .= "from  ";
-	$sql .= " chamado "; 
+	$sql .= " chamado ";
 	$sql .= "  inner join usuario on usuario.id_usuario = chamado.destinatario_id  ";
 	$sql .= "  inner join usuario u2 on u2.id_usuario = chamado.remetente_id  ";
 	$sql .= "  inner join sistema on sistema.id_sistema = chamado.sistema_id  ";
 	$sql .= "  inner join prioridade on prioridade.id_prioridade = chamado.prioridade_id  ";
 	$sql .= "  inner join status on status.id_status = chamado.status  ";
-	$sql .= "  left join rl_chamado_usuario_ordem uco on ((uco.id_chamado = chamado.id_chamado) and (uco.id_usuario = $id_usuario)) ";	
-	$sql .= "where chamado.visible = 1 and  ";	
-	if ($ATipo == 'prioridade') {	
+	$sql .= "  left join rl_chamado_usuario_ordem uco on ((uco.id_chamado = chamado.id_chamado) and (uco.id_usuario = $id_usuario)) ";
+	$sql .= "where chamado.visible = 1 and  ";
+	if ($ATipo == 'prioridade') {
 		$sql .= "destinatario_id = $id_usuario and prioridade_id = $AParametro ";
 		$sql .= "and chamado.status <> 1 ";
 	} else if ($ATipo == 'sistema') {
@@ -56,26 +56,29 @@ function getSql($ATipo, $AParametro) {
 		$sql .= "destinatario_id = $id_usuario and cliente_id = '$AParametro' ";
 		$sql .= "and chamado.status <> 1 ";
 	} else if (($ATipo == 'encaminhados') || ($ATipo == 'encaminhadosnl')) {
-		$sql .= " remetente_id = $id_usuario and destinatario_id <> $id_usuario and chamado.status <> 1 ";				
-	} else if ($ATipo == 'novidades') {
-		$sql .= "((destinatario_id=$id_usuario and lido=0) or  (consultor_id   =  $id_usuario and lidodono=0)) and chamado.status > 1 ";	
+		$sql .= " remetente_id = $id_usuario and destinatario_id <> $id_usuario and chamado.status <> 1 ";
+	} else if ($ATipo == 'recebidosPor') {
+		$sql .= " remetente_id = $AParametro and destinatario_id = $id_usuario   and chamado.status <> 1 ";
+	}
+	 else if ($ATipo == 'novidades') {
+		$sql .= "((destinatario_id=$id_usuario and lido=0) or  (consultor_id   =  $id_usuario and lidodono=0)) and chamado.status > 1 ";
 	} else if ($ATipo == 'pasta') {
-		$sql .= " chamado.id_chamado IN (select id_chamado from chamado_pasta where id_pasta =". $AParametro .") ";	
-	} 
+		$sql .= " chamado.id_chamado IN (select id_chamado from chamado_pasta where id_pasta =". $AParametro .") ";
+	}
 
 
 	$sql .= "order by  coalesce(uco.Ic_Ordem,0) desc, ";
 	$sql .= " lido, prioridade desc, chamado.status,valor,  sistema, rnc, chamado.id_chamado ";//limit 15;";
-	
-	return $sql;	
+
+	return $sql;
 
 }
 
 function getTitulo($ATipo, $AParametro) {
-	if ($ATipo == 'prioridade') {	
+	if ($ATipo == 'prioridade') {
 		$sql = "select * from prioridade where id_prioridade =". $AParametro;
 		$result = mysql_query($sql);
-		$linha = mysql_fetch_object($result);	
+		$linha = mysql_fetch_object($result);
 		$prioridadev = $linha->valor;
 		if ($prioridadev  <= 100) {
 		$cor = "#ff0000";
@@ -84,14 +87,14 @@ function getTitulo($ATipo, $AParametro) {
 		} else if ($prioridadev > 200) {
 		$cor = "#009966";
 		}
-		$prioridade = "<b><font color=$cor>$linha->prioridade</font></b>";	
-		return "Por prioridade: $prioridade<br>";	
+		$prioridade = "<b><font color=$cor>$linha->prioridade</font></b>";
+		return "Por prioridade: $prioridade<br>";
 	} else if ($ATipo == 'sistema') {
 		return "Por sistema:";
 	} else if ($ATipo == 'cliente') {
 		return "Por cliente:";
 	} else if ($ATipo == 'novidades') {
-		return "Contatos não lidos:";
+		return "Contatos nÃ£o lidos:";
 	} else if ( ($ATipo == 'encaminhados') | ($ATipo == 'encaminhadosnl')) {
 		return "Encaminhados";
 	} else if ($ATipo == 'pasta') {
@@ -107,17 +110,17 @@ function getTitulo($ATipo, $AParametro) {
 
 /*
 
- Inicio 
+ Inicio
 
 */
 
 
 	echo getTitulo($_GET['acao'], $_GET['id']);
-	$sql = getSql($_GET['acao'], $_GET['id']);	
+	$sql = getSql($_GET['acao'], $_GET['id']);
 
 	$result = mysql_query($sql) or die ($sql);
 	while ( $linha = mysql_fetch_object($result) ) {
-	
+
 		$prioridadev = $linha->valor;
 		if ($prioridadev  <= 100) {
 		$cor = "#ff0000";
@@ -127,126 +130,133 @@ function getTitulo($ATipo, $AParametro) {
 		$cor = "#009966";
 		}
 		$prioridade = "<b><font color=$cor>$linha->prioridade</font></b>";
-		
+
 		$id_sistema = $linha->sistema_id;
 		$extreno = $linha->extrno;
 		$rnc = $linha->rnc;
 		$categoria_id = $linha->categoria_id;
-		
+
 		$dataultimocontato = $linha->datauc;
 		$datalidodestinatario = $linha->datalidodestinatario;
-		
+
 		$horaultimocontato = $linha->horauc;
 		$horalidodestinatario = $linha->horalidodestinatario;
-				
+
 		$horalidosec = abs($linha->horalidosec);
 		$horaucsec = abs($linha->horaucsec);
-		
+
 		$dataprevistaliberacao = dataOK($linha->dataprevistaliberacao);
 
-		$lido = false;		
-		if ($dataultimocontato > $datalidodestinatario) {	
+		$lido = false;
+		if ($dataultimocontato > $datalidodestinatario) {
 			$lido = false;
 		}
-		if ($dataultimocontato <= $datalidodestinatario) {			
+		if ($dataultimocontato <= $datalidodestinatario) {
 			$lido = true;
 		}
 
-		if ($dataultimocontato == $datalidodestinatario) {			
+		if ($dataultimocontato == $datalidodestinatario) {
 			if ($horaucsec > $horalidosec) {
-				$lido = false;			
+				$lido = false;
 			}
 			if ($horaucsec <= $horalidosec) {
-				$lido = true;			
+				$lido = true;
 			}
 		}
-		
+
 		$lido = $linha->lido;
 		$remetente = $linha->remetente;
-		
+
 		$dataultimocontato = dataOk($dataultimocontato);
-		$datalidodestinatario = dataOk($datalidodestinatario);		
-		
-		$lidostr = "<font color=#FF0000>contato <strong>não</strong> lido por $linha->nome</font>";
+		$datalidodestinatario = dataOk($datalidodestinatario);
+
+		$lidostr = "<font color=#FF0000>contato <strong>nÃ£o</strong> lido por $linha->nome</font>";
 		if ($lido) {
 			$lidostr = "<font color=#0000FF>contato lido por $linha->nome</font>";
 		}
-		
+
         $lidostr .= " | uc ($remetente)  : $dataultimocontato $horaultimocontato | ul : $datalidodestinatario $horalidodestinatario | ";
-		
-        /*		
+
+        /*
 		$lido = 1;
 		if ( ($linha->destinatario_id==$id_usuario) and ($linha->lido==0) ) {
 			$lido = 0;
 		}
 		*/
-		
-		
+
+
 		/*
-			Início testes de cores
+			InÃ­cio testes de cores
 		*/
-			   $cor_fundo = CORES_DEFAULT;			   
+			   $cor_fundo = CORES_DEFAULT;
                $cor_borda = "#6666FF";
-			   $largura_borda = 0;	
-			   $rncTipo = "";		   
-			   
+			   $largura_borda = 0;
+			   $rncTipo = "";
+
 			   if ($externo) {
                  $cor_fundo = CORES_EXTERNO;
 			   }
-			   
+
 			   if ($id_sistema == 1024) {
                  $cor_fundo = CORES_QUALIDADE;
 			   }
    			   $rncTipo = '';
 			   if ($rnc == 1) {
-			     $rncTipo = "<strong>Não conformidade</strong>";
+			     $rncTipo = "<strong>NÃ£o conformidade</strong>";
 			     if (!$teste) {
     				 $cor_fundo = "#cccccc";
 				 } else {
                    $cor_fundo = "#$teste";
 				 }
 			   }
-			   
+
    			   if ($rnc == 3) {
-			     $rncTipo = "<strong>Ação de Melhoria</strong>";
+			     $rncTipo = "<strong>AÃ§Ã£o de Melhoria</strong>";
 			   }
    			   if ($rnc == 2) {
-			     $rncTipo = "<strong>Ação Preventiva</strong>";
+			     $rncTipo = "<strong>AÃ§Ã£o Preventiva</strong>";
 			   }
-			   
+
 			   if ($rnc == 4) {
-			     $rncTipo = "<strong>Abertura de projeto</strong>";			   
+			     $rncTipo = "<strong>Abertura de projeto</strong>";
 			     if (!$teste) {
     				 $cor_fundo = "#caaccc";
 					 $largura_borda = 2;
-					 $cor_borda = BORDA_ACAOMELHORIA;					 
+					 $cor_borda = BORDA_ACAOMELHORIA;
 				 } else {
                    $cor_fundo = "#$teste";
 				 }
 			   }
-			   
+
 			   if ( $categoria_id == CATEGORIA_ACAOMELHORIA) {
                  $cor_fundo = CORES_ACAOMELHORIA;
 				 $cor_borda = BORDA_ACAOMELHORIA;
 				 $largura_borda = 3;
-			   }			   
+			   }
 
 		/*
 			Fim Teste de cores
 		*/
-		
-$Mostra = true;		
+
+$Mostra = true;
 $ApenasNaoLidos = false;
 
 if ($_GET['acao'] == "encaminhadosnl")
 	$ApenasNaoLidos = true;
-	
+
 if ($ApenasNaoLidos)
-	if ($lido==1)	
+	if ($lido==1)
 		$Mostra = false;
-		
-if ($Mostra) {		
+
+if ($Mostra) {
 ?>
+
+<head>
+<title>Inicio</title>
+<meta http-equiv="refresh" content="600;URL=inicio.php">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="pt-br" />
+
 <link rel="stylesheet" href="../a/stilos.css" type="text/css">
 <style type="text/css">
 <!--
@@ -255,15 +265,15 @@ if ($Mostra) {
 .style7 {font-family: Verdana, Geneva, Arial, Helvetica, sans-serif}
 -->
 </style>
-
+</head>
 <table width="100%" border="0" cellpadding="1" cellspacing="<?=$largura_borda ?>" bgcolor="<?=$cor_borda?>">
    <tr>
-   
+
    <!--
      <td width="14%"><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#FFFFF2">
     -->
      <td width="14%"><table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="<?=$cor_fundo; ?>">
-     
+
          <tr>
            <td><table width="100%" border="0" cellpadding="1" cellspacing="1">
              <tr>
@@ -287,14 +297,14 @@ if ($Mostra) {
    </tr>
  </table>
 <table border="0" cellspacing="0" cellpadding="0">
-          <tr> 
+          <tr>
             <td><img src="imagens/nulo.gif" width="1" height="1"></td>
           </tr>
         </table>
 <?
- }	
+ }
 	}
 //echo $sql;
 ?>
-uc = data e hora do último contato | ul = data e hora da última leitura do chamado pelo destinatário<br />
+uc = data e hora do Ãºltimo contato | ul = data e hora da Ãºltima leitura do chamado pelo destinatÃ¡rio<br />
 dpl = data prevista de libera&ccedil;&atilde;o
